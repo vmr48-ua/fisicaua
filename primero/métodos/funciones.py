@@ -489,19 +489,20 @@ def fourier(fun,x,l,n): #(funcion,x,periodo(=2l),orden)
         ans += b(fun,x,l,i)
     return ans
 
-"""
 def g(x):
     if -2*pi < x < 0:
-        return -x
+        return 1
     else:
-        return x
+        return pi-x
 
 g = np.vectorize(g)
-grado = 2
+grado = 3
 xa = np.linspace(-2*pi,2*pi,1000)
 plt.figure()
-plt.plot(xa,g(xa),xa,fourier(g,xa,2*pi,grado),fourier(g,xa,2*pi,grado+1),xa,fourier(g,xa,2*pi,grado+2))
-"""
+plt.plot(xa,g(xa),label='función')
+plt.plot(xa,fourier(g,xa,2*pi,grado))
+plt.xlim(-pi,pi)
+plt.show()
 
 #------------------------------------------------------------------------------
 
