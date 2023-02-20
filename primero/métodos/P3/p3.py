@@ -93,7 +93,7 @@ def modelo_discreto_general(x,y,m):
     for i in range(m+1):
         terms[i] = np.dot(y,np.polyval(base[i],x)) #(f,fi)
 
-    return np.linalg.solve(sol,terms)[::-1]
+    return la.solve(sol,terms)[::-1] #orden decreciente
 
 #Ejercicio 4
 x = np.array([0,0.1,0.2,0.3,0.4])
@@ -131,5 +131,10 @@ for i in range(2):
     plt.plot(xplot,np.polyval(B[i],xplot),label='Polinomio de grado {}'.format(i+1))
 plt.grid()
 plt.legend(loc='best')
+
+print(np.poly1d(B[0]))
+print(np.poly1d(B[1]))
+print('Error máximo del polinomio grado 1:',max(abs(np.polyval(B[0],0)-y[0]), abs(np.polyval(B[0],900)-y[1]), abs(np.polyval(B[0],1800)-y[2]), abs(np.polyval(B[0],2700)-y[3])))
+print('Error máximo del polinomio grado 2:',max(abs(np.polyval(B[1],0)-y[0]), abs(np.polyval(B[1],900)-y[1]), abs(np.polyval(B[1],1800)-y[2]), abs(np.polyval(B[1],2700)-y[3])))
 
 plt.show()
