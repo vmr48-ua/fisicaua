@@ -7,7 +7,6 @@ import scipy.linalg as la
 from scipy.integrate import quad
 from scipy.interpolate import CubicSpline, pade, CubicSpline
 
-
 def dy_cinco(f,x0,h):
     return (f(x0-2*h)-8*f(x0-h)+8*f(x0+h)-f(x0+2*h))/(12*h)
 
@@ -380,8 +379,8 @@ def PolLagrange(x,y):
 def PolLagrange2(x,y):
     return np.dot(np.linalg.inv(np.vander(x)), y)
 
-def aproximante(fun,a,b,grado,type='a',plot=False,showPol=False):
-    def chebysevAB(fun,a,b,grado,plot=False,showPol=False):
+def aproximante(fun,a,b,grado,type='a',plot=False,showPol=False,showErr=False):
+    def chebysevAB(fun,a,b,grado,plot=False,showPol=False,showErr=False):
         poly,coef = [],[]
         def wChT(x,a,b): # Función peso llevada al intervalo [a,b]
             return 1/(1-(-1+(2*(x-a))/(b-a))**2)**(0.5)
@@ -401,6 +400,10 @@ def aproximante(fun,a,b,grado,type='a',plot=False,showPol=False):
             plt.xlabel('Abscisas')
             plt.ylabel('Ordenadas')
             plt.grid()
+        def errorCh(f,P,a,b):
+            def wChT(x,a,b): # Función peso llevada al intervalo [a,b]
+                return 1/(1-(-1+(2*(x-a))/(b-a))**2)**(0.5)
+            return np.sqrt(quad(lambda x: wChT(x,a,b)*(f(x) - np.polyval(P,x))**2,a,b)[0])
 
         for i in range(grado+1):
             poly.append(npol.polyfromroots(a+((np.roots(BaseChebysev(i))+1)*(b-a))/2)[::-1])
@@ -414,6 +417,8 @@ def aproximante(fun,a,b,grado,type='a',plot=False,showPol=False):
         if showPol:
             print('Polinomio aproximante de Chebysev de grado {}:'.format(grado))
             print(np.poly1d(polinomio),'\n')
+        if showErr:
+            print('Error obteniendo la norma inducida por el correspondiente error de ||f-p||:',errorCh(fun,polinomio,a,b))
         return polinomio
 
     def legendreAB(fun,a,b,grado,plot=False,showPol=False):
