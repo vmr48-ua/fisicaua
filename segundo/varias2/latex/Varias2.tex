@@ -1,0 +1,610 @@
+\documentclass{report}
+\usepackage[spanish]{babel}
+\addto\captionsspanish{
+  \renewcommand{\contentsname}%
+    {Índice}%
+}
+
+\input{preamble}
+\input{macros}      
+\input{letterfonts}
+
+\title{\Huge{Análisis de\\ varias variables 2}}
+\author{\huge{Víctor Mira Ramírez}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\pagebreak
+
+\chapter{Formas diferenciales}
+  \section*{Introducción}
+    \noindent Vamos a ver en este capítulo un concupto muy importante en matemáticas, que son las formas diferenciales. Como hicimos en \textit{Análisis de varias variables 1}, empezaremos hablando de las formas diferenciales en 2 dimensiones, e iremos poco a poco ampliando el campo de nuestro estudio a dimensiones superiores.
+  \section{Definiciones básicas}
+    \definicion{Diferencial}{
+      Sea $f$ una función definida en un entorno del punto $M_0 = \left(x_0,y_0\right)$ tal que $f$ admite derivadas parciales en un entorno $\mcV\left(M_0\right)$. Se llama \textbf{diferencial de $f$ en $M_0$} a la aplicación lineal definida de $\bbR^2$ en $\bbR$ denotado:
+      \begin{align*}
+        L\left(x_0,y_0\right) \colon &\bbR\times\bbR \to \bbR\\
+        &\phantomarrow{\bbR\times\bbR}{\left(h,k\right)} h \frac{\partial h}{\partial x}\left(x_0,y_0\right) + k \frac{\partial k}{\partial y}\left(x_0,y_0\right)
+      \end{align*}
+      }
+    \comentario{
+      Para el caso particular $g\left(x,y\right)=x$, entonces $\frac{\partial g}{\partial x}\left(x,y\right)=1$ y $\frac{\partial g}{\partial y}\left(x,y\right)=0$ lo que nos da $dg\left(x,y\right)=dx\left(h,k\right)=h$
+      $\left(\text{rotación }dx=h\right)$\ \ \ \ \ \ \ \ \ $g\left(x,y\right)=y$, entonces $\frac{\partial g}{\partial x}\left(x,y\right)=0$ y $\frac{\partial g}{\partial y}\left(x,y\right)=1$ lo que nos da $dg\left(x,y\right)=dy\left(h,k\right)=k$
+      Esto nos da: $df\left(dx,dy\right)=\frac{\partial f}{\partial x}\left(x,y\right)dx+\frac{\partial f}{\partial y}\left(x,y\right)dy$
+      \begin{itemize}
+        \item Escribir $df\left(dx,dy\right)$ es un abuso de notación que debe evitarse, escribiendo en su lugar $df$ únicamente.
+        \item La diferencial puede existir sin que la función sea diferenciable \\($f \in \mathcal{C}_1 \implies f \text{ diferenciable}$, pero $f \text{ diferenciable} \notimplies f \in \mathcal{C}_1$)
+      \end{itemize}
+    }
+    \comentario{
+      Sea $f \in \mathcal{C}_1\left(\mathcal{V}\left(M_0\right)\right)$ una función de una variable,\\
+      \[f'\left(x_0+h\right)=f\left(x_0\right)+f'\left(x_0\right)h + o\left(h\right) \Longleftrightarrow f\left(x_0+h\right)=f\left(x_0\right)+df_{x_0}\left(h\right) + o\left(h\right)\]\\
+      Como tenemos que $h = dx$,$df_{x_0}=f'\left(x_0\right)dx \Longleftrightarrow f'\left(x_0\right)=\frac{df_{x_0}}{dx}
+      \left(\frac{dx}{dt}=x'\left(t\right)\Longleftrightarrow dx = x'\left(t\right)dt\right)$
+    }
+    \definicion{1-forma diferencial}{
+      Sea $\mathcal{U}$ un abierto de $\bbR$ y sea $\left(h,k\right) \in \mathcal{U}$ se llama \textbf{1-Forma diferencial} $w$ a la aplicación
+      \begin{align*}
+        w \colon &\bbR^2 \longrightarrow \bbR\\
+        & \left(h,k\right) \longmapsto w=P\left(x,y\right)h + Q\left(x,y\right)k
+      \end{align*}
+      donde $P$ y $Q$ son funciones "suficientemente regulares".
+    }
+    \comentario{
+      Si $P$ y $Q$ son derivadas parciales de $f$, entonces la 1-forma diferencial w es la diferencial de $f$
+    }
+    \definicion{Producto exterior}{
+      Sean $dx$ y $dy$ dos 1-formas diferenciales, se llama \textbf{producto exterior} 
+      a la aplicación definida por $dx\wedge dy$ ("$dx$ exterior $dy$"):
+      \begin{align*}
+        w \colon &\bbR^2\times\bbR^2 \longrightarrow \bbR\\
+        & \left(h_1,k_1\right)\times\left(h_2,k_2\right) \longmapsto h_1k_2 - h_2k_1
+      \end{align*}
+    }
+    \comentario{Un determinante es el producto exterior de dos 1-formas diferenciales}
+    \teorema{}{
+      \begin{itemize}
+        \item $dx\wedge dx = 0$
+        \item $dx\wedge dy = -dy\wedge dx$
+      \end{itemize}
+    }
+    \noindent A consecuencia de este teorema se obtiene la llamada "\textit{Regla de Sarrus}", cuya demostración es inmediata.
+    \definicion{2-forma diferencial}{
+      Sea $\mathcal{U}$ un abierto de $\bbR^2$ y sea $\left(x,y\right) \in \mathcal{U}$, se llama \textbf{2-forma diferencial} $w$ a la aplicación
+      \begin{align*}
+        w \colon &\bbR^2 \longrightarrow \mathcal{B}_i\left(\bbR^2\times\bbR^2,\bbR\right)\\
+        & \left(x,y\right) \longmapsto f\left(x,y\right)dx\wedge dy
+      \end{align*}
+      donde $\mathcal{B}_i\left(\bbR^2\times\bbR^2,\bbR\right)$ es el conjunto de las apicaciones bilineales.
+    }
+    \comentario{
+      $\forall H_1\left(h_1,k_1\right),H_1'\left(h_1',k_1'\right),H_2\left(h_2,k_2\right)$ y sea $\lambda \in \bbR \colon$\\
+      $dx\wedge dy\left(H_1+\lambda H_1',H_2\right)=dx\wedge dy\left(\left(h_1+\lambda h_1',k_1+\lambda k_1'\right),\left(h_2,k_2\right)\right)=k_2\left(h_1+\lambda h_1'\right)-h_2\left(k_1+\lambda k_1'\right)=$\\
+      $h_1k_1-h_2k_1+\lambda \left(h_1'k_2 - h_2k_1'\right)=dx\wedge dy\left(H_1,H_2\right)+\lambda dx\wedge dy \left(H_1',H_2\right) \implies$ \\$dx\wedge dy$ es lineal respecto a la primera variable. Idem con la segunda.
+      Esto implica que $dx\wedge dy$ es bilineal, y lo es tambien $f\left(x,y\right)dx\wedge dy$.\\ En conclusión, $f\left(x,y\right)dx\wedge dy \in \mathcal{B}_i\left(\bbR^2\times \bbR^2,\bbR\right)$
+    }
+    \definicion{Derivada exterior}{
+      Sea $w$ una 1-forma diferencial definida en $\mathcal{U}$ abierto de $\bbR^2$. Se llama derivada exterior de $w$ y la denotamos $dw$ a la 2-forma diferencial definida por:
+      $$dw = \left(\frac{\partial Q}{\partial x}\left(x,y\right)-\frac{\partial P}{\partial y}\left(x,y\right)\right)dx\wedge dy$$
+    }
+    \vspace{1cm}
+  \section{Formas diferenciales cerradas y exactas}
+    \definicion{Forma diferencial cerrada}{
+      Sea $w$ una 1-forma diferencial de clase $\mathcal{C}_1$ en un abierto $\mathcal{U}$ de $\bbR^2$ se dice que $w$ es cerrada si $dw = 0$
+    }
+    \comentario{
+      Tenemos $w = P\left(x,y\right)dx + Q\left(x,y\right)dy$, si $w \in \mathcal{C}_1$, las derivadas parciales de $P$ y $Q$ existen, y tenemos\\
+      $dw = \left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dx\wedge dy$
+      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+      Si $w = 0 \Longleftrightarrow \frac{\partial Q}{\partial x}\left(x,y\right) = \frac{\partial P}{\partial y}\left(x,y\right) \forall\left(x,y\right)\in\mathcal{U}$
+    }
+    \definicion{Forma diferencial exacta}{
+      Sea $w$ una 1-forma diferenicial de clase $\mathcal{C}_1$ en un abierto de 
+      $\mathcal{U}$ de $\bbR^2$, se dice que $w$ es \textbf{exacta} si existe
+      una función $f\colon\mathcal{U} \to \bbR$ de clase $\mathcal{C}_1$ tal que
+      $df = w$
+    }
+    \comentario{
+      Ya sabemos que si $f\in\mathcal{C}_1\left(\mathcal{U}\right)$, entonces 
+      $df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy$.
+      (Si $\frac{\partial f}{\partial x} = P \text{ y }
+      \frac{\partial f}{\partial y} = Q$ tenemos la estructura de una
+      1-forma diferencial). Si $w = df$, tenemos que 
+      $P=\frac{\partial f}{\partial x}\left(x,y\right)$ y 
+      $Q=\frac{\partial f}{\partial y}\left(x,y\right)$\\ \\
+      Esto significa que para demostrar que $w$ es exacta hay que encontrar $f$
+      tal que $df = w$, es decir, buscamos $f\left(x,y\right)$ que sea solución
+      del sistema $P=\frac{\partial f}{\partial x}$, 
+      $Q=\frac{\partial f}{\partial y}$.\\ \\
+      Como $f \in\mathcal{C}_1\left(\mathcal{U}\right)$, entonces 
+      $\frac{\partial f}{\partial x}$ y $\frac{\partial f}{\partial y}$
+      son continuas. También sabemos que $w \in\mathcal{C}_1\left(\mathcal{U}
+      \right)$, lo que nos dice que $P,Q\in\mathcal{C}_1\left(\mathcal{U}\right)
+      \implies f\in\mathcal{C}_2\left(\mathcal{U}\right)$
+    }
+    \teorema{}{
+      Si $w \in \mathcal{C}_1\left(\mathcal{U}\right) \implies 
+      f\in \mathcal{C}_2\left(\mathcal{U}\right)$
+    }
+    \comentario{
+      Al ser de clase $\mathcal{C}_1$, podemso determinar las derivadas parciales 
+      de $\frac{\partial f}{\partial x}$ y $\frac{\partial f}{\partial y}$.Tenemos
+      $$\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial P}{\partial y}\\ 
+        \frac{\partial^2 f}{\partial x\partial y}=\frac{\partial Q}{\partial x}$$
+      Y con el \textit{Lema de Schwartz} $\left(
+        \frac{\partial^2 f}{\partial y\partial x}=
+        \frac{\partial^2 f}{\partial x\partial y}\right)$, entonces sabemos que\\ 
+      $$ \frac{\partial P}{\partial y}\left(x,y\right)=\frac{\partial Q}{\partial x}
+      \left(x,y\right),\ \forall\left(x,y\right)\in\mathcal{U}$$
+    }
+    \teorema{}{
+      Sea $w$ una 1-forma diferencial de clase $\mathcal{C}_1\left(\mathcal{U}
+      \right)$ y exacta en $\mathcal{U}$, entonces $w$ es cerrada.
+    }
+    \comentario{
+      El recíproco del teorema anterior es falso, salvo si damos a $\mathcal{U}$
+      una cierta geometría. Por ello, vamos a volver a hablar de topología.
+    }
+    \definicion{Conjunto estrellado}{
+      Sea $\mathcal{U}$ un abierto de $\bbR^2$, se dice que $\mathcal{U}$ es
+      estrellado si $\exists a\in\mathcal{U}$ tal que $\forall b\in\mathcal{U}$
+      tenemos $\left[a,b\right]\subset \mathcal{U}$
+    }
+    \ejemplo{}{
+      \begin{enumerate}
+        \item Todo convexo de $\bbR^2$ es un estrellado.
+        \item Si $\mathcal{U}\in\bbR^2\setminus\left\{\left(0,0\right)\right\}$,
+        $\mathcal{U}$ no es estrellado.
+        \item $\left[a,b\right]\in\bbR^2=\left\{ta + \left(1-t\right)b,t\in\left[ 
+        0,1\right]\right\}$ (Parametrización de un segmento)
+      \end{enumerate}
+    }
+    \teorema{Poincaré}{
+      Si $w$ es una 1-forma diferencial de clase $\mathcal{C}_1$ en un abierto
+      estrellado de $\mathcal{U}$ de $\bbR^2$ tal que $dw = 0$ $\left(\text{i.e }
+      w\text{ es cerrada}\right)$ entonces $w$ es exacta.
+    }
+    \noindent Una aplicación en física puede ser, por ejemplo, en mecánica de 
+    fluidos, ya que si en $\left(0,0\right)$ hay un obstáculo y hay un flujo 
+    alrededor de un cilindro (definido en un entorno de $\left(0,0\right)$) 
+    entonces no se pueden usar los teoremas de la mecánica de fluidos.\\ \\
+    La demostración se hará con integrales de línea (curvilíneas o de camino).
+    \ejemplo{Sea $w=x\ dx+y\ dy$ y $\mathcal{U}=\bbR^2$, ¿La forma diferencial 
+    $w$ es cerrada?}{
+      Claro que sí, vamos a demostrarlo. Tenemos $P\left(x,y\right)=x$, 
+      $Q\left(x,y\right)=y$ entonces $\frac{\partial P}{\partial y}\left(x,y
+      \right)=0=\frac{\partial Q}{\partial y}\left(x,y\right)$, lo que implica
+      que $dw=0$, es decir, que $w$ es cerrada. \\ \\Además, como $\bbR^2$ es 
+      estrellado, tenemos gracias al \textit{Teorema de Poincaré} que $w$ es 
+      exacta.
+    }
+    \ejemplo{Usando la anterior forma diferencial, encuentra la función $f$
+    tal que $df=w$}{
+      Tenemos $w=x\ dx+y\ dy = \frac{\partial f}{\partial x}dx + 
+      \frac{\partial f}{\partial y}dy$, lo que nos da: $$\frac{\partial f}
+      {\partial x}=x \hspace{1cm} \frac{\partial f }{\partial y}=y$$ De aquí,
+      obtenemos que $f\left(x,y\right)=\frac{x^2}{2}+g\left(y\right)$, y
+      derivando respecto a $y\colon$\\$\frac{\partial f}{\partial y}=g'\left(
+      y\right)=y \implies f\left(x,y\right)=\frac{1}{2}\left(x^2+y^2\right)+C$
+      y tenemos $w=df$.      
+    }
+    \comentario{
+      En $\bbR^3$, una 1-forma diferencial $w$ se escribe $w=P\left(x,y,z\right)
+      dx + Q\left(x,y,z\right)dy + R\left(x,y,z\right)dz$ donde $P,Q,R$ son tres
+      funciones definidas en un abierto $\mathcal{U}$ de $\bbR^3$. Si además 
+      $\mathcal{U}$ es un estrellado de $\bbR^3$, entonces $w$ es exacta.
+      $$\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}\hspace{1cm}
+        \frac{\partial R}{\partial x}=\frac{\partial P}{\partial z}\hspace{1cm}
+        \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}$$
+    }
+    \clearpage
+    \teorema{}{
+      Sea $w$ una 1-forma diferencial de clase $\mathcal{C}_1\left(\mathcal{U}
+      \right)$, donde $\mathcal{U}$ es un abierto de $\bbR^2$, suponemos el
+      cambio de variable:$$x=f\left(u,v\right)\hspace{1cm}y=g\left(u,v\right)
+      \hspace{1cm}\text{con}f,g\in\mathcal{C}_1$$ $$w=P\left(x,y\right)
+      dx+Q\left(x,y\right)dy = P_1\left(u,v\right)du + Q_1\left(u,v\right)dv$$ 
+      $$\text{con } P_1\left(u,v\right)=P\frac{\partial f}{\partial u}+
+      Q\frac{\partial f}{\partial u} \hspace{1cm} Q_1\left(u,v\right)=
+      P\frac{\partial f}{\partial v}+Q\frac{\partial f}{\partial v}$$
+    }
+    \ejemplo{}{
+      Sea $w=x\ dx+y\ dy$, tenemos el cambio de variable:
+      \begin{align*}
+        \centering
+        \begin{tabular}{c c c} 
+          $\begin{cases}
+              x=r\cos{\theta}\\ 
+              y=r\sin\theta
+            \end{cases}$&
+          $\implies$&
+          $\begin{cases}
+              dx=\cos\theta\ dr-r\sin\theta\ d\theta\\ 
+              dy=\sin\theta\ dr+r\cos\theta\ d\theta
+            \end{cases}$
+        \end{tabular}
+      \end{align*}
+      y por tanto, $w=d\left(\frac{1}{2}\left(x^2+y^2\right)\right)=d\left(
+      \frac{r^2}{2}\right)=r\ dr$
+      }
+\chapter{Campo de gradiente, divergencia y rotacional}
+  \section{Campo escalar, campo vectorial}
+    \definicion{Campo de gradiente}{
+      Sea $\vec{V}$ un campo vectorial con componentes $P$ y $Q$ de clase
+      $\mcC_1$ en $\mcD \subset \bbR^2$. Se dice que $\vec{V}$ es un campo
+      de gradiente si existe un campo escalar $\varphi$ de clase $\mcC_1$ en
+      $\mcD$ tal que:
+      \begin{align*}
+        \begin{tabular}{r l}
+          $\varphi\colon \mcD\subset\bbR^2$ &$\longrightarrow \bbR$\\
+          $M\left(x,y\right)$ &$\longmapsto \varphi\left(M\right)=\varphi\left(x,y\right)$
+        \end{tabular}&
+        \hspace{1cm}\vec{V}=\vec{grad}\ \varphi=\vec{\nabla}\varphi&
+        \text{i.e.}&
+        \vec{V}=
+        \begin{cases}
+            P\left(x,y\right)=\frac{\partial\varphi}{\partial x\left(x,y\right)}\\ 
+            Q\left(x,y\right)=\frac{\partial\varphi}{\partial y\left(x,y\right)}
+        \end{cases}
+      \end{align*}
+    }
+    \teorema{}{
+      Sea $\vec{V}$ un campo vectorial con componentes $P$ y $Q$ de clase 
+      $\mcC_1\left(\mcD\right)\subset\bbR^2$:\\ $\vec{V}$ campo de gradiente
+      $\Longleftrightarrow$ la 1-forma diferencial $w=P\left(x,y\right)dx+Q
+      \left(x,y\right)dy$ es exacta en $\mcD$, i.e. $w=df$.\\ Como consecuencia,
+      sabemos que si $\vec{V}$ es un campo de gradiente $\implies\forall\left(
+      x,y\right)\in\mcD , \frac{\partial P}{\partial y}\left(x,y\right)=
+      \frac{\partial Q}{\partial x}\left(x,y\right)$
+    }
+    \comentario{
+      Si $\mcD$ es un abierto estrellado, entonces $\frac{\partial P}{\partial y}
+      =\frac{\partial Q}{\partial x}\Longleftrightarrow w \text{ es cerrada }
+      \overset{\text{Poincaré}}{\Longleftrightarrow} w\text{ es exacta } 
+      \Longleftrightarrow \vec{V}=\vec{\nabla}\varphi$
+    }
+    \comentario{
+      Si $\mcD$ es un abierto 'simplemente conexo' (no tiene huecos) de $\bbR^3$,
+      entonces $dw=0 \Longleftrightarrow \exists\varphi\in\mcC_1\left(\mcD\right)$
+      tal que $d\varphi = w$ i.e. $w$ cerrada $\Longleftrightarrow w$ exacta
+    }
+    \teorema{}{
+      \begin{itemize}
+        \item Los abiertos estrellados son simplemente conexos.
+        \item En $\bbR^3$, un campo vectorial $\vec{V}\left(P,Q,R\right)$ con
+              $P,Q,R\in\mcC_1\left(\mcD\right)$ donde $\mcD\in\bbR^3$,
+              $$\vec{V}=\vec{\nabla}\varphi \Longleftrightarrow w=Pdx+Qdy+Rdz
+              \text{es exacta.}$$
+        \item \begin{tabular}{c c c}
+                $\begin{cases}
+                  \text{$\mcD$ estrellado}\\ 
+                  \text{\ \ \ \ \ \ \ \ \ \ ó}\\ 
+                  \text{$\mcD$ simplemente conexo}
+                \end{cases}$&
+                $\Longleftrightarrow$&
+                $\begin{cases}
+                  \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\ 
+                  \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\ 
+                  \frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}
+                \end{cases}$
+              \end{tabular}
+      \end{itemize}
+    }
+    \definicion{Rotacional}{
+      Sea $\vec{V}\left(P,Q,R\right)$ un campo vectorial de clase 
+      $\mcC_1\left(\mcD\in\bbR^3\right)$, llamamos rotacional de $\vec{V}$ a:
+      $$\vec{rot}\vec{V}=\vec{\nabla}\times\vec{V}=\left(
+      \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},
+      \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},
+      \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)$$
+    }
+    \teorema{}{
+      Sea $\vec{V}\left(P,Q,R\right)$ de clase $\mcC_1\left(\mcD\in\bbR^3\right)$,
+      si $\vec{V}$ es un campo de gradiente, entonces \hspace{0.5cm}
+      $\vec{\nabla}\times\vec{V}=\vec{0}$ 
+    }
+    \comentario{
+      Si $\mcD$ es simplemente conexo (no hay huecos), entonces el recíproco es
+      cierto, i.e. $\vec{rot}\vec{V}=\vec{0}\implies\vec{V}=\vec{\nabla}\varphi$
+      donde $\varphi\in\mcC_1\left(\mcD\right)$
+    }
+    \definicion{Divergencia}{
+      Sea $\vec{V}\left(P,Q,R\right)$ un campo vectorial de clase 
+      $\mcC_1\left(\mcD\in\bbR^3\right)$, llamamos divergencia de $\vec{V}$ al 
+      escalar: $$\vec{div}\vec{V}=\vec{\nabla}\cdot\vec{V}=
+        \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + 
+        \frac{\partial R}{\partial z}$$
+    }
+    \teorema{}{
+      Sea $\vec{V}\left(P,Q,R\right)$ un campo vectorial de clase 
+      $\mcC_2\left(\mcD\in\bbR^3\right)$, entonces \hspace{0.5cm}
+      $\nabla\cdot\nabla\times\vec{V}=0$
+    }
+    \teorema{}{
+      Si $\mcD$ es simplemente conexo y $\nabla\cdot\vec{V}=0 \implies$
+      $\vec{V}=\vec{\nabla}\times\vec{A}$ (donde $\vec{A}$ es un campo
+      vectorial definido en $\mcD$)
+    }
+    \comentario{
+      El campo $\vec{A}$ no es único, de la misma manera que un campo escalar 
+      $\varphi$ asociado a un campo de vectores.\\Si $\vec{V} = \vec{\nabla}
+      \varphi = \vec{\nabla}\left(\varphi+\text{cte}\right)$ De la misma manera,
+      tenemos que si $\vec{A}f=\vec{A}+\vec{\nabla}f$, entonces $\vec{\nabla}
+      \times\vec{A}f=\vec{\nabla}\times\left(\vec{A}+\vec{\nabla}f\right)=
+      \vec{\nabla}\times\vec{A}+\vec{\nabla}\times\left(\vec{\nabla}f\right)$.
+      Es decir, si $\vec{V}=\vec{\nabla}\times\vec{A}$, existe $f$ tal que 
+      $\vec{V}=\vec{\nabla}\times\left(\vec{A}+\vec{\nabla}f\right)$
+    }
+    \definicion{Laplaciano}{
+      Sea $\varphi$ un compo de clase $\mcC_2$ en $\bbR^2$, llamamos \textbf{
+      Laplaciano de $\varphi$} al campo escalar $\Delta\varphi=\frac{\partial^2
+      \varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y^2}+\frac{\partial^2
+      \varphi}{\partial z^2}$ 
+    }
+    \comentario{
+      Podemos decir que $\Delta\varphi$ se escribe como 
+      $$\Delta\varphi=\frac{\partial}{\partial x}\left(\frac{\partial\varphi}
+      {\partial x}\right)+\frac{\partial}{\partial y}\left(\frac{\partial\varphi}
+      {\partial y}\right)+\frac{\partial}{\partial z}\left(\frac{\partial\varphi}
+      {\partial z}\right)\Longleftrightarrow\Delta\varphi = \vec{div}\left(
+      \vec{grad}\varphi\right)=\vec{\nabla}\cdot\vec{\nabla}\varphi$$
+    }
+    \teorema{}{
+      Sea $\vec{V}$ un campo de gradiente tal que $\vec{\nabla}\cdot\vec{V}=0$,
+      tomando $\varphi$ un campo escalar $\varphi\in\mcC_2\left(\mcD\right)$ 
+      tal que $\vec{V}=\vec{\nabla}\varphi$, entonces $\vec{\nabla}\cdot
+      \vec{\nabla}\varphi=\Delta\varphi=0$
+    }
+  \section{Aplicaciones a la física}
+    \vspace{-0.5cm}
+    \begin{align*}
+      \begin{tabular}{r l}
+        $\varphi\colon \bbR^3$ &$\longrightarrow \bbR$\\
+        $\vec{M}$ &$\longmapsto \varphi\left(M\right)$
+      \end{tabular}&
+      \hspace{1cm}\text{ý}&
+      \hspace{-0.2cm}
+      \begin{tabular}{r l}
+        $\varphi\colon \bbR^3$ &$\longrightarrow \bbR^3$\\
+        $\vec{M}$ &$\longmapsto \vec{\varphi\left(M\right)}$
+      \end{tabular}&
+      \text{donde $\vec{\varphi\left(M\right)}\ $}\left(
+        \begin{tabular}{c}
+          $\varphi_x\left(M\right)$\\ 
+          $\varphi_y\left(M\right)$\\
+          $\varphi_z\left(M\right)$
+        \end{tabular}
+      \right)\text{ vectorial}
+    \end{align*}
+      \subsection*{Operador Nabla (operador diferencial)}
+        $\vec{\nabla}=\left(
+        \begin{tabular}{c}
+          $\frac{\partial}{\partial x}$\\ 
+          $\frac{\partial}{\partial y}$\\ 
+          $\frac{\partial}{\partial z}$ 
+        \end{tabular}\right)
+        \text{ en la base canónica de $\bbR^3$}$
+        \subsubsection*{Gradiente}
+          $\vec{\text{grad}}\varphi=\vec{\nabla}\varphi=\left(
+          \begin{tabular}{c}
+            $\frac{\partial}{\partial x}$\\ 
+            $\frac{\partial}{\partial y}$\\ 
+            $\frac{\partial}{\partial z}$ 
+          \end{tabular}\right)
+          \text{ (Campos escalares)}$
+        \subsubsection*{Divergencia}
+          $\text{div}\vec{\varphi}=\vec{\nabla}\cdot\varphi=
+          \frac{\partial\varphi_x}{\partial x} +\frac{\partial\varphi_y}{\partial y}+
+          \frac{\partial\varphi_z}{\partial z}
+          \text{(Producto escalar)}$
+        \subsubsection*{Rotacional}
+          $\vec{\text{rot}}\vec{\varphi}=\vec{\nabla}\times\varphi=\left(
+          \begin{tabular}{c}
+            $\frac{\partial}{\partial x}$\\ 
+            $\frac{\partial}{\partial y}$\\ 
+            $\frac{\partial}{\partial z}$ 
+          \end{tabular}\right)\times\left(
+          \begin{tabular}{c}
+            $\varphi_x$\\ 
+            $\varphi_y$\\ 
+            $\varphi_z$ 
+          \end{tabular}\right)=\left( 
+            \begin{tabular}{c}
+              $\frac{\partial\varphi_z}{\partial y}-\frac{\partial\varphi_y}{\partial z}$\\ 
+              $\frac{\partial\varphi_x}{\partial z}-\frac{\partial\varphi_z}{\partial x}$\\ 
+              $\frac{\partial\varphi_y}{\partial x}-\frac{\partial\varphi_x}{\partial y}$ 
+            \end{tabular}\right)$
+        \subsubsection*{Laplaciano Escalar}
+          $\Delta\varphi=\vec{\nabla}\cdot\vec{\nabla}\varphi=\vec{\nabla}
+          \vec{\nabla}\varphi=\vec{\nabla}^2\varphi$ (ecuación de difusión)
+        \subsubsection*{Laplaciano Vectorial}
+        $\vec{\Delta}\vec{\varphi}=\left(\Delta\varphi_x,\Delta\varphi_y,\Delta
+        \varphi_z\right)$\vspace{0.2cm}\\ 
+        (Vector cuyas componentes son Laplacianos). Se usa en mecánica de fluidos,
+        (Ecuación de Navier-Stokes), en electromagnetismo (ecuación de d'Alembert)
+      \subsection*{Significado del gradiente}
+        \subsubsection{Leyes en física}
+          \setlength{\tabcolsep}{1.4cm}
+          \hspace{-1.3cm}
+          \begin{tabular}{l l}
+            Ley de Holm local (potencial)      & Ley de Fourier (temperatura)\\
+            \multicolumn{1}{c}{$\vec{f}=-\gamma\vec{\text{grad}}V$}& 
+            \multicolumn{1}{c}{$\vec{f}=-\lambda\vec{\text{grad}}T$}
+          \end{tabular}
+        \subsubsection{Relaciones fundamentales}
+          \setlength\extrarowheight{8pt}
+          \setlength{\tabcolsep}{0.9cm}
+          \hspace{-0.8cm}
+          \begin{tabular}{ l  l }
+            $\vec{\nabla}(\vec{A}+\vec{B})=\vec{\nabla}A+\vec{\nabla}B$&
+            $\vec{\nabla}\times(\vec{A}+\vec{B})=\vec{\nabla}\times\vec{A}
+              +\vec{\nabla}\times\vec{B}$\\ 
+            $\vec{\nabla}\cdot\varphi\vec{A}=\vec{\nabla}\varphi\cdot\vec{A}+\varphi
+              \vec{\nabla}\cdot\vec{A}$& 
+            $\vec{\nabla}\times(\varphi\vec{A})=\vec{A}\times\vec{\nabla}\varphi+
+              \varphi(\vec{\nabla}\times\vec{A})$\\ 
+            $\vec{\nabla}\cdot(\vec{A}\times\vec{B})=\vec{B}\cdot(\vec{\nabla}\times
+              \vec{A})-\vec{A}\cdot(\vec{\nabla}\times\vec{B})$&
+            $\Delta\vec{A}=\vec{\nabla}\vec{\nabla}\cdot A -
+              \vec{\nabla}\times\vec{\nabla}\times A\hspace{0.1cm}\Longleftrightarrow
+              \hspace{0.1cm}\Delta\vec{A}=\vec{\nabla}^2A-\vec{\nabla}\times
+              \vec{\nabla}\times A$
+          \end{tabular}
+\chapter{Integrales de línea}
+  \section{Curvas paramétricas}
+    \definicion{Curva paramétrica}{
+      Sea $I$ un intervalo de $\bbR$, $f$ y $g$ dos funciones defindas en $I$
+      "suficientemente regulares".\\ Sea $C=\left\{M\left(x,y\right)\in\bbR^2
+      \colon\exists t\in I,M\left(t\right)=\left(x\left(t\right),y\left(t\right)
+      \right)\right\}$.Llamamos a $C$ una \textbf{curva paramétrica} en $\bbR^2$. 
+      Tenemos $x=f\left(t\right)$, $y=g\left(t\right)$
+    }
+    \ejemplo{}{
+      Tenemos $t\subset I\in\bbR\left(a_1,a_2,b_1,b_2\right)\in\bbR^4\times\bbR^3$ 
+      dados 
+      \setlength\extrarowheight{0pt}
+      $\begin{cases}
+        x=a_1t+b_1\\
+        y=a_2t+b_2
+      \end{cases}$ tenemos $t=\frac{x-b_1}{a_1}$ lo que nos da $y=a_2\left(\frac
+      {x-b_1}{a_1}\right)+b_2\Longleftrightarrow y=\frac{a_2}{a_1}x+b_2-\frac
+      {a_2b_1}{a_1}$ (ecuación de una recta) i.e. $y = F\left(x\right)$
+    }
+    \ejemplo{}{
+      \setlength\extrarowheight{0pt}
+      $\begin{cases}
+        x=\cos t\\
+        y=\sin t
+      \end{cases}$ con $t\in\left[0,2\pi\right]$ tenemos $x^2+y^2=1$, la
+      parametrización de un círcula en el plano.
+    }
+    \definicion{Curva paramétrica tangente}{
+      Sea $C=\left\{M\left(x,y\right)\in\bbR^2\colon\exists t\in I,M\left(t\right)=
+      \left(f\left(t\right),g\left(t\right)\right)\right\}$ con $f$,$g$ derivables 
+      en $I$.\\Entonces, la curva paramétrica con $t_0\in I$\\
+      \setlength\extrarowheight{0pt}
+      $$\begin{cases}
+        x=f'\left(t_0\right)t + f\left(t_0\right)\\
+        y=g'\left(t_0\right)t + g\left(t_0\right)
+      \end{cases}$$\\
+      es la tangente a $C$ en $M\left(t_0\right)=\left(f'\left(t_0\right),
+      g'\left(t_0\right)\right)\neq\left(0,0\right)$
+    }
+    \comentario{
+      Como $f'\left(t_0\right)\neq 0$, gracias a que $x=f'\left(t_0\right)t + 
+      f\left(t_0\right)$, $t=\frac{x-f\left(t_0\right)}{f'\left(t_0\right)}$, 
+      entonces si la ponemos en $y=g'\left(t_0\right)t + g\left(t_0\right)$, 
+      $y=g'\left(t_0\right)\left(\frac{x-f\left(t_0\right)}{f'\left(t_0\right)}
+      \right)+g\left(t_0\right)=\left[\frac{g'\left(t_0\right)}{f'\left(t_0\right)}
+      x-\frac{g'\left(t_0\right)f\left(t_0\right)}{f'\left(t_0\right)}+g\left(t_0
+      \right)\right]=\frac{g'\left(t_0\right)}{f'\left(t_0\right)}\left(x-f\left(
+      t_0\right)\right)+g\left(t_0\right)=\frac{g'\left(t_0\right)}
+      {f'\left(t_0\right)}\left(x-x_0\right)+g\left(t_0\right)$\\
+      Si $y=F\left(x\right)\implies g\left(t\right)=F\left(f\left(t\right)\right)$
+      \hspace{1cm}$g'\left(t_0\right)=F'\left(f\left(t_0\right)\cdot f'\left(
+      t_0\right)\right)\Longleftrightarrow F'\left(x_0\right)=\frac{g'\left(t_0
+      \right)}{f'\left(t_0\right)}$ y finalmente, $\left[y=F'\left(x_0\right)
+      \left(x-x_0\right)+F\left(x_0\right)\right] \text{ecuación de una tangente}$\\
+      \textbf{Interpretación vectorial:}\\
+      Considerando la parametrización de la definición $\left(x_0=f\left(t_0\right),
+      y_0=g\left(t_0\right)\right)$ y sean $M\left(x,y\right),M_0\left(x_0,y_0\right)
+      \implies \vec{T}=\left(f'\left(t_0\right),g'\left(t_0\right)\right)$\vspace{0.2cm}\\
+      \setlength\extrarowheight{0pt}
+      $\begin{cases}
+        x=f'\left(t_0\right)t+x_0\\
+        y=g'\left(t_0\right)t+y_0
+      \end{cases}\Longleftrightarrow
+      \begin{cases}
+        x-x_0=f'\left(t_0\right)t\\
+        y-y_0=g'\left(t_0\right)t
+      \end{cases}\Longleftrightarrow M_0\vec{M}=t\vec{T}$, entonces $\vec{T}$ es 
+      tangente a $C$ en $M_0$.
+    }
+  \section{Integrales de línea}
+  \subsection*{Introducción}
+    \vspace{-0.5cm}
+    \begin{wrapfigure}{l}{.5\textwidth}
+      \includegraphics[width=.4\textwidth]{integraldelinea.png}
+    \end{wrapfigure}
+    \hfill{} \\ \\ \\ \\
+    \noindent$C=\{M\in\bbR^2\colon\exists t\in\left[a,b\right],M\left(f\left(t\right),
+    g\left(t\right)\right)\}$ con $f$, $g$ derivables en $\left[a,b\right]$, $A\left(f
+    \left(a\right),g\left(a\right)\right)$ y $B\left(f\left(b\right),g\left(b\right)
+    \right)$.\\ \\Consideremos $\vec{V}\left(P\left(x,y\right),Q\left(x,y\right)
+    \right)$ y sea $w$ la 1-forma diferencial, i.e. $w=P\left(x,y\right)dx + Q\left(x,y
+    \right)dy$\\
+    \subsection*{ }
+    \vspace{-1cm}
+    \definicion{Integral de línea}{
+      $\gamma_{\vec{AB}}=\int_{\vec{AB}}\vec{V}\left(M\right)\cdot\vec{dM}=\int_{\vec{AB}}
+      \left(P\left(x,y\right)dx+Q\left(x,y\right)dy\right)=\int_{\vec{AB}}w$ y tenemos 
+      $$\gamma_{\vec{AB}} = \int_{\vec{AB}}w = \int_{a}^{b}\left[P\left(f\left(t\right),g
+      \left(t\right)\right)f'\left(t\right)+Q\left(f\left(t\right),g\left(t\right)g'\left(t
+      \right)\right)\right]dt \rightarrow \text{¡Integral de Riemann!}$$ Donde $dx=f'
+      \left(t\right)dt$,   $dy=g'\left(t\right)dt$ 
+    }
+    \ejemplo{Sea $w=\frac{y}{x^2+y^2}dx-\frac{x}{x^2+y^2}dy,\left(x,y\right)=\left(0,0
+    \right)$, necesistamos una curva parametrizada.}{
+      Sea\setlength\extrarowheight{0pt}
+      $C = \begin{cases}
+        x=\cos\theta\\
+        y=\sin\theta
+      \end{cases} \text{con $\theta\in\left[0,2\pi\right]$}$, denotamos $C^+$ a la curva
+      en el sentido trigonométrico.\\Nos piden calcular 
+      $\gamma_{C^+}=\int_{C^+}w$. \\Volvemos a la definición: $\int_{C^+}w=\int_{0}^{2\pi}
+      \left[\sin\theta\left(-\sin\theta\right)-\cos\theta\left(\cos\theta\right)\right]
+      d\theta=-\int_{0}^{2\pi d\theta}=-2\pi$ \par
+      \vspace{0.2cm}Donde $P\left(f\left(\theta\right),g\left(\theta\right)\right) = 
+      \sin\theta$ y $Q\left(f\left(\theta\right),g\left(\theta\right)\right) = 
+      -\cos\theta$. Y también,$f'\left(\theta\right) = -\sin\theta$ y $g'\left(\theta
+      \right) = \cos\theta$
+    }
+    \comentario{
+      $\gamma_{\vec{AB}}=\int_{\vec{AB}}\vec{V}\left(M\right)dM\left(t\right)=\int_{a}^{b}
+      \vec{V}\left(M\left(t\right)\right)\cdot\vec{T}\left(t\right)\cdot dt$ \hspace{1cm}
+      Donde $\vec{V}\left(M\left(t\right)\right)$ puede ser un campo de fuerzas.
+    }
+    \ejemplo{Sea $w=xy\ dx+y^2\ dy+dz$ una 1-forma diferencial en $\bbR^3$ y sea $C$ la 
+    curva orientada en $\bbR^3$ con la parametrización $\vec{V}\left(t\right)=\left(
+    t^2,t^3,1\right)$ con $t \in \left[0,1\right]$. Calcular $\int_{C}w$}{
+      $\int_{C}w=\int_{0}^{1}\left[t^5\left(2t\right)+t^6\left(3t^2\right)+0\right]dt=
+      \frac{13}{21}$
+    }
+    \clearpage
+    \teorema{}{
+      Si $\vec{V}$ es un \textbf{campo de gradiente} (i.e. $\vec{V}=\vec{\text{grad}}
+      \varphi=\vec{\nabla}\vec{V}$), $\gamma_{\vec{AB}} =\int_{\vec{AB}}\vec{V}\left(
+      M\right)\cdot\vec{dM}=\int_{\vec{AB}}\vec{\nabla}\varphi\left(M\right)\cdot
+      \vec{dM} = \int_{\vec{AB}}d\varphi=\varphi\left(B\right)-\varphi\left(A\right)$
+    }
+    \comentario{
+      \begin{itemize}
+        \item La circulación de un campo de gradiente no depende del camino, solamente
+              de los valores del campo escalar $\varphi$ definido por $\vec{V}=\vec{\nabla}
+              \varphi$ en los extremos del camino $\vec{AB}$.
+        \item $\gamma_{\vec{AB}}=0$ si $A$ y $B$ están en la misma curva de nivel de 
+              $\varphi$
+      \end{itemize}
+    }
+    \teorema{}{
+      \begin{itemize}
+        \item $\int_{\vec{AB}}\left(w_1+w_2\right)=\int_{\vec{AB}}w_1+\int_{\vec{AB}}w_2$
+        \item $\forall\lambda\in\bbR\int_{\vec{AB}}\lambda w_1=\lambda\int_{\vec{AB}}w_1$
+        \item $\left(\vec{V_1}\left(M\right)+\vec{V_2}\left(M\right)\right)\vec{dM}=
+              \int_{\vec{AB}}\vec{V_1}\left(M\right)dM +\int_{\vec{AB}}\vec{V_2}\left(
+              M\right)dM$
+        \item $\forall\lambda\in\bbR$
+      \end{itemize}
+    }
+  \section{Longitud de una curva}
+\chapter{Integrales dobles}
+  \section*{Introducción}
+  \section{Teoremas de Fubini}
+  \section{Teorema de Green-Riemann}
+  \section{Cálculo de Área}
+\end{document}
+
