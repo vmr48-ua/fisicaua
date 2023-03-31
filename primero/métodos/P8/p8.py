@@ -32,7 +32,7 @@ print(la.solve(A,b))
 """Ejercicio 2"""
 """###########"""
 
-A = np.array([[1,2,-1,3],[2,0,3,-1],[-1,0,2,-1],[3,3,-1,2]],dtype=float)
+A = np.array([[1,2,-1,3],[2,0,2,-1],[-1,1,1,-1],[3,3,-1,2]],dtype=float)
 b = np.array([-8,13,8,-1])
 
 def cambio_filas(A,i,j):
@@ -61,18 +61,54 @@ def gauss_parcial(A,b):
         for j in range(i+1,n):
             suma_filas(Ac,j,i,-Ac[j,i]/Ac[i,i])
             suma_filas(bc,j,i,-Ac[j,i]/Ac[i,i])                
-            print(Ac)
-    return solucionU(Ac)
-gauss_parcial(A, b)
+    return solucionU(Ac,bc)
+gauss_parcial(A,b)
+
 
 def gauss_parcial_escalado(A,b):
-    n = len(b)
-    sol = np.zeros(n)  
-    return sol
+    Ac=A.copy()
+    bc=b.copy()
+    n = len(Ac)
+    for i in range(n-1):
+        piv = np.argmax(abs(Ac[i::,i])/[max(abs(Ac[j,i::])) for j in range(i,n)])+i
+        cambio_filas(Ac,piv,i)
+        cambio_filas(bc,piv,i)
+        for j in range(i+1,n):
+            suma_filas(bc,j,i,-Ac[j,i]/Ac[i,i])
+            suma_filas(Ac,j,i,-Ac[j,i]/Ac[i,i])
+    return solucionU(Ac,bc)
+
+gauss_parcial_escalado(A,b)
+
+A = np.array([[0,1,2],[1,1,-1],[2,1,0]],dtype=float)
+
 
 """###########"""
 """Ejercicio 3"""
 """###########"""
+
+def inversa(A):
+    Ac = A.copy()
+    n = len(Ac)
+    I = np.zeros([n,n])
+    for i in range(n):
+        I[i,i] = 1
+    for i in range(n-1):
+        piv = np.argmax(abs(Ac[i::,i]))+i
+        cambio_filas(Ac,piv,i)
+        cambio_filas(I,piv,i)
+        for j in range(i+1,n):
+            suma_filas(I,j,i,-Ac[j,i]/Ac[i,i])
+            suma_filas(Ac,j,i,-Ac[j,i]/Ac[i,i])
+    for i in range(n):
+        prod_fila(I,i,1/Ac[i,i])
+        prod_fila(Ac,i,1/Ac[i,i])
+    for i in range(n-1,0,-1):
+        for j in range(i):
+            suma_filas(I,j,i,-Ac[j,i])
+            suma_filas(Ac,j,i,-Ac[j,i])
+    return I
+
 
 """###########"""
 """Ejercicio 4"""

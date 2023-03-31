@@ -10,9 +10,13 @@
 \contentsline {chapter}{\numberline {3}Integrales de línea}{10}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Curvas paramétricas}{10}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Integrales de línea}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Longitud de una curva}{12}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Integrales dobles}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Teoremas de Fubini}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Teorema de Green-Riemann}{13}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Cálculo de Área}{13}{section.4.3}%
+\contentsline {section}{\numberline {3.3}Longitud de una curva}{13}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Integrales dobles}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Teoremas de Fubini}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Teorema de Green-Riemann}{16}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Superficies parametrizadas}{16}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Introducción}{16}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Área de una superficie}{17}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Integrales de funciones escalares sobre superficies}{19}{section.4.5}%
 \contentsfinish 

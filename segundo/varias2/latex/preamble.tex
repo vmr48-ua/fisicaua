@@ -9,6 +9,29 @@
 \usepackage{afterpage}
 \usepackage[varbb]{newpxmath}
 \usepackage{xfrac}
+\usepackage{amssymb}
+%command for alg-closure that automatically adapts its 'bar' to the arg based on the args length (including '\')
+\newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip} % overline short
+\newcommand{\olsi}[1]{\,\overline{\!{#1}}} % overline short italic
+\makeatletter
+\newcommand\ovl[1]{
+  \tctestifnum{\count@stringtoks{#1}>1} %checks if number of chars in arg > 1 (including '\')
+  {\ols{#1}} %if arg is longer than just one char, e.g. \mathbb{Q}, \mathbb{F},...
+  {\olsi{#1}} %if arg is just one char, e.g. K, L,...
+}
+% FROM TOKCYCLE:
+\long\def\count@stringtoks#1{\tc@earg\count@toks{\string#1}}
+\long\def\count@toks#1{\the\numexpr-1\count@@toks#1.\tc@endcnt}
+\long\def\count@@toks#1#2\tc@endcnt{+1\tc@ifempty{#2}{\relax}{\count@@toks#2\tc@endcnt}}
+\def\tc@ifempty#1{\tc@testxifx{\expandafter\relax\detokenize{#1}\relax}}
+\long\def\tc@earg#1#2{\expandafter#1\expandafter{#2}}
+\long\def\tctestifnum#1{\tctestifcon{\ifnum#1\relax}}
+\long\def\tctestifcon#1{#1\expandafter\tc@exfirst\else\expandafter\tc@exsecond\fi}
+\long\def\tc@testxifx{\tc@earg\tctestifx}
+\long\def\tctestifx#1{\tctestifcon{\ifx#1}}
+\long\def\tc@exfirst#1#2{#1}
+\long\def\tc@exsecond#1#2{#2}
+\makeatother
 \usepackage[makeroom]{cancel}
 \usepackage{mathtools}
 \usepackage{bookmark}
@@ -92,7 +115,7 @@
 \definecolor{myred}{RGB}{127,0,0}
 \definecolor{myyellow}{RGB}{169,121,69}
 \definecolor{myexercisebg}{HTML}{F2FBF8}
-\definecolor{myexercisefg}{HTML}{88D6D1}
+\definecolor{myexercisefg}{HTML}{2A7F7F}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,10 +183,10 @@
 }
 
 %================================
-% Corollery
+% Corollary
 %================================
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Corollary}{Corollary}
+\newtcbtheorem[number within=section]{Corollary}{Corolario}
 {%
 	enhanced
 	,breakable
@@ -182,7 +205,7 @@
 }
 {th}
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{corollary}{Corollary}
+\newtcbtheorem[number within=chapter]{corollary}{Corolario}
 {%
 	enhanced
 	,breakable
@@ -323,7 +346,7 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Exercise}{Exercise}
+\newtcbtheorem[number within=section]{Exercise}{Ejercicio}
 {%
 	enhanced,
 	breakable,
@@ -343,7 +366,7 @@
 {th}
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{exercise}{Exercise}
+\newtcbtheorem[number within=chapter]{exercise}{Ejercicio}
 {%
 	enhanced,
 	breakable,
@@ -601,7 +624,8 @@
 % SELF MADE COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\newcommand{\ejercicio}[2]{\begin{Exercise}{#1}{}#2\end{Exercise}}
+\newcommand{\corolario}[2]{\begin{Corollary}{#1}{}#2\end{Corollary}}
 \newcommand{\teorema}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
 \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
 \newcommand{\ejemplo}[2]{\begin{Example}{#1}{}#2\end{Example}}

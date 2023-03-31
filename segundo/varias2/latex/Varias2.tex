@@ -83,8 +83,8 @@
     }
     \comentario{
       $\forall H_1\left(h_1,k_1\right),H_1'\left(h_1',k_1'\right),H_2\left(h_2,k_2\right)$ y sea $\lambda \in \bbR \colon$\\
-      $dx\wedge dy\left(H_1+\lambda H_1',H_2\right)=dx\wedge dy\left(\left(h_1+\lambda h_1',k_1+\lambda k_1'\right),\left(h_2,k_2\right)\right)=k_2\left(h_1+\lambda h_1'\right)-h_2\left(k_1+\lambda k_1'\right)=$\\
-      $h_1k_1-h_2k_1+\lambda \left(h_1'k_2 - h_2k_1'\right)=dx\wedge dy\left(H_1,H_2\right)+\lambda dx\wedge dy \left(H_1',H_2\right) \implies$ \\$dx\wedge dy$ es lineal respecto a la primera variable. Idem con la segunda.
+      $dx\wedge dy\left(H_1+\lambda H_1',H_2\right)=dx\wedge dy\left(\left(h_1+\lambda h_1',k_1+\lambda k_1'\right),\left(h_2,k_2\right)\right)=dx\wedge dyk_2\left(h_1+\lambda h_1'\right)-dx\wedge dyh_2\left(k_1+\lambda k_1'\right)=$\\
+      $dx\wedge dy\left(h_1k_2-h_2k_1\right)+\lambda dx\wedge dy\left(h_1'k_2 - h_2k_1'\right)=dx\wedge dy\left(H_1,H_2\right)+\lambda dx\wedge dy \left(H_1',H_2\right) \implies$ \\$dx\wedge dy$ es lineal respecto a la primera variable. Idem con la segunda.\\
       Esto implica que $dx\wedge dy$ es bilineal, y lo es tambien $f\left(x,y\right)dx\wedge dy$.\\ En conclusión, $f\left(x,y\right)dx\wedge dy \in \mathcal{B}_i\left(\bbR^2\times \bbR^2,\bbR\right)$
     }
     \definicion{Derivada exterior}{
@@ -131,9 +131,10 @@
       f\in \mathcal{C}_2\left(\mathcal{U}\right)$
     }
     \comentario{
-      Al ser de clase $\mathcal{C}_1$, podemso determinar las derivadas parciales 
-      de $\frac{\partial f}{\partial x}$ y $\frac{\partial f}{\partial y}$.Tenemos
-      $$\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial P}{\partial y}\\ 
+      Al ser de clase $\mathcal{C}_1$, podemos determinar las derivadas parciales 
+      de $\frac{\partial f}{\partial x}$ y $\frac{\partial f}{\partial y}$. Tenemos:
+      $$\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial P}{\partial y}
+        \hspace{2cm} 
         \frac{\partial^2 f}{\partial x\partial y}=\frac{\partial Q}{\partial x}$$
       Y con el \textit{Lema de Schwartz} $\left(
         \frac{\partial^2 f}{\partial y\partial x}=
@@ -234,8 +235,8 @@
 \chapter{Campo de gradiente, divergencia y rotacional}
   \section{Campo escalar, campo vectorial}
     \definicion{Campo de gradiente}{
-      Sea $\vec{V}$ un campo vectorial con componentes $P$ y $Q$ de clase
-      $\mcC_1$ en $\mcD \subset \bbR^2$. Se dice que $\vec{V}$ es un campo
+      Sea $\ovl{V}$ un campo vectorial con componentes $P$ y $Q$ de clase
+      $\mcC_1$ en $\mcD \subset \bbR^2$. Se dice que $\ovl{V}$ es un campo
       de gradiente si existe un campo escalar $\varphi$ de clase $\mcC_1$ en
       $\mcD$ tal que:
       \begin{align*}
@@ -243,9 +244,9 @@
           $\varphi\colon \mcD\subset\bbR^2$ &$\longrightarrow \bbR$\\
           $M\left(x,y\right)$ &$\longmapsto \varphi\left(M\right)=\varphi\left(x,y\right)$
         \end{tabular}&
-        \hspace{1cm}\vec{V}=\vec{grad}\ \varphi=\vec{\nabla}\varphi&
+        \hspace{1cm}\ovl{V}=\ovl{grad}\ \varphi=\ovl{\nabla}\varphi&
         \text{i.e.}&
-        \vec{V}=
+        \ovl{V}=
         \begin{cases}
             P\left(x,y\right)=\frac{\partial\varphi}{\partial x\left(x,y\right)}\\ 
             Q\left(x,y\right)=\frac{\partial\varphi}{\partial y\left(x,y\right)}
@@ -253,11 +254,11 @@
       \end{align*}
     }
     \teorema{}{
-      Sea $\vec{V}$ un campo vectorial con componentes $P$ y $Q$ de clase 
-      $\mcC_1\left(\mcD\right)\subset\bbR^2$:\\ $\vec{V}$ campo de gradiente
+      Sea $\ovl{V}$ un campo vectorial con componentes $P$ y $Q$ de clase 
+      $\mcC_1\left(\mcD\right)\subset\bbR^2$:\\ $\ovl{V}$ campo de gradiente
       $\Longleftrightarrow$ la 1-forma diferencial $w=P\left(x,y\right)dx+Q
       \left(x,y\right)dy$ es exacta en $\mcD$, i.e. $w=df$.\\ Como consecuencia,
-      sabemos que si $\vec{V}$ es un campo de gradiente $\implies\forall\left(
+      sabemos que si $\ovl{V}$ es un campo de gradiente $\implies\forall\left(
       x,y\right)\in\mcD , \frac{\partial P}{\partial y}\left(x,y\right)=
       \frac{\partial Q}{\partial x}\left(x,y\right)$
     }
@@ -265,82 +266,83 @@
       Si $\mcD$ es un abierto estrellado, entonces $\frac{\partial P}{\partial y}
       =\frac{\partial Q}{\partial x}\Longleftrightarrow w \text{ es cerrada }
       \overset{\text{Poincaré}}{\Longleftrightarrow} w\text{ es exacta } 
-      \Longleftrightarrow \vec{V}=\vec{\nabla}\varphi$
+      \Longleftrightarrow \ovl{V}=\ovl{\nabla}\varphi$
     }
     \comentario{
-      Si $\mcD$ es un abierto 'simplemente conexo' (no tiene huecos) de $\bbR^3$,
+      Si $\mcD$ es un abierto 'simplemente conexo' de $\bbR^3$,
       entonces $dw=0 \Longleftrightarrow \exists\varphi\in\mcC_1\left(\mcD\right)$
-      tal que $d\varphi = w$ i.e. $w$ cerrada $\Longleftrightarrow w$ exacta
+      tal que $d\varphi = w$\\ i.e. $w$ cerrada $\Longleftrightarrow w$ exacta.
+      \hspace{3.3cm} $\mcD$ simplemente conexo $\Longleftrightarrow\mcD$ no tiene huecos
     }
     \teorema{}{
       \begin{itemize}
         \item Los abiertos estrellados son simplemente conexos.
-        \item En $\bbR^3$, un campo vectorial $\vec{V}\left(P,Q,R\right)$ con
+        \item En $\bbR^3$, un campo vectorial $\ovl{V}\left(P,Q,R\right)$ con
               $P,Q,R\in\mcC_1\left(\mcD\right)$ donde $\mcD\in\bbR^3$,
-              $$\vec{V}=\vec{\nabla}\varphi \Longleftrightarrow w=Pdx+Qdy+Rdz
-              \text{es exacta.}$$
+              $$\ovl{V}=\ovl{\nabla}\varphi \Longleftrightarrow w=Pdx+Qdy+Rdz
+              \text{ es exacta.}$$
         \item \begin{tabular}{c c c}
                 $\begin{cases}
-                  \text{$\mcD$ estrellado}\\ 
-                  \text{\ \ \ \ \ \ \ \ \ \ ó}\\ 
+                  \text{$\mcD$ estrellado}\\[5pt] 
+                  \text{\ \ \ \ \ \ \ \ \ \ ó}\\[5pt] 
                   \text{$\mcD$ simplemente conexo}
                 \end{cases}$&
                 $\Longleftrightarrow$&
                 $\begin{cases}
-                  \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\ 
-                  \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\ 
+                  \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\[5pt] 
+                  \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\[5pt]
                   \frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}
                 \end{cases}$
               \end{tabular}
       \end{itemize}
     }
     \definicion{Rotacional}{
-      Sea $\vec{V}\left(P,Q,R\right)$ un campo vectorial de clase 
-      $\mcC_1\left(\mcD\in\bbR^3\right)$, llamamos rotacional de $\vec{V}$ a:
-      $$\vec{rot}\vec{V}=\vec{\nabla}\times\vec{V}=\left(
+      Sea $\ovl{V}\left(P,Q,R\right)$ un campo vectorial de clase 
+      $\mcC_1\left(\mcD\in\bbR^3\right)$, llamamos rotacional de $\ovl{V}$ a:
+      $$\ovl{rot}\ovl{V}=\ovl{\nabla}\times\ovl{V}=\left(
       \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},
       \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},
       \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)$$
     }
     \teorema{}{
-      Sea $\vec{V}\left(P,Q,R\right)$ de clase $\mcC_1\left(\mcD\in\bbR^3\right)$,
-      si $\vec{V}$ es un campo de gradiente, entonces \hspace{0.5cm}
-      $\vec{\nabla}\times\vec{V}=\vec{0}$ 
+      Sea $\ovl{V}\left(P,Q,R\right)$ de clase $\mcC_1\left(\mcD\in\bbR^3\right)$,
+      si $\ovl{V}$ es un campo de gradiente, entonces \hspace{0.5cm}
+      $\ovl{\nabla}\times\ovl{V}=\ovl{0}$ 
     }
     \comentario{
       Si $\mcD$ es simplemente conexo (no hay huecos), entonces el recíproco es
-      cierto, i.e. $\vec{rot}\vec{V}=\vec{0}\implies\vec{V}=\vec{\nabla}\varphi$
+      cierto, i.e. $\ovl{rot}\ovl{V}=\ovl{0}\implies\ovl{V}=\ovl{\nabla}\varphi$
       donde $\varphi\in\mcC_1\left(\mcD\right)$
     }
     \definicion{Divergencia}{
-      Sea $\vec{V}\left(P,Q,R\right)$ un campo vectorial de clase 
-      $\mcC_1\left(\mcD\in\bbR^3\right)$, llamamos divergencia de $\vec{V}$ al 
-      escalar: $$\vec{div}\vec{V}=\vec{\nabla}\cdot\vec{V}=
+      Sea $\ovl{V}\left(P,Q,R\right)$ un campo vectorial de clase 
+      $\mcC_1\left(\mcD\in\bbR^3\right)$, llamamos divergencia de $\ovl{V}$ al 
+      escalar: $$\ovl{div}\ovl{V}=\ovl{\nabla}\cdot\ovl{V}=
         \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + 
         \frac{\partial R}{\partial z}$$
     }
     \teorema{}{
-      Sea $\vec{V}\left(P,Q,R\right)$ un campo vectorial de clase 
+      Sea $\ovl{V}\left(P,Q,R\right)$ un campo vectorial de clase 
       $\mcC_2\left(\mcD\in\bbR^3\right)$, entonces \hspace{0.5cm}
-      $\nabla\cdot\nabla\times\vec{V}=0$
+      $\nabla\cdot\nabla\times\ovl{V}=0$
     }
     \teorema{}{
-      Si $\mcD$ es simplemente conexo y $\nabla\cdot\vec{V}=0 \implies$
-      $\vec{V}=\vec{\nabla}\times\vec{A}$ (donde $\vec{A}$ es un campo
+      Si $\mcD$ es simplemente conexo y $\nabla\cdot\ovl{V}=0 \implies$
+      $\ovl{V}=\ovl{\nabla}\times\ovl{A}$ (donde $\ovl{A}$ es un campo
       vectorial definido en $\mcD$)
     }
     \comentario{
-      El campo $\vec{A}$ no es único, de la misma manera que un campo escalar 
-      $\varphi$ asociado a un campo de vectores.\\Si $\vec{V} = \vec{\nabla}
-      \varphi = \vec{\nabla}\left(\varphi+\text{cte}\right)$ De la misma manera,
-      tenemos que si $\vec{A}f=\vec{A}+\vec{\nabla}f$, entonces $\vec{\nabla}
-      \times\vec{A}f=\vec{\nabla}\times\left(\vec{A}+\vec{\nabla}f\right)=
-      \vec{\nabla}\times\vec{A}+\vec{\nabla}\times\left(\vec{\nabla}f\right)$.
-      Es decir, si $\vec{V}=\vec{\nabla}\times\vec{A}$, existe $f$ tal que 
-      $\vec{V}=\vec{\nabla}\times\left(\vec{A}+\vec{\nabla}f\right)$
+      El campo $\ovl{A}$ no es único, de la misma manera que un campo escalar 
+      $\varphi$ asociado a un campo de vectores.\\Si $\ovl{V} = \ovl{\nabla}
+      \varphi = \ovl{\nabla}\left(\varphi+\text{cte}\right)$ De la misma manera,
+      tenemos que si $\ovl{A}f=\ovl{A}+\ovl{\nabla}f$, entonces $\ovl{\nabla}
+      \times\ovl{A}f=\ovl{\nabla}\times\left(\ovl{A}+\ovl{\nabla}f\right)=
+      \ovl{\nabla}\times\ovl{A}+\ovl{\nabla}\times\left(\ovl{\nabla}f\right)$.
+      Es decir, si $\ovl{V}=\ovl{\nabla}\times\ovl{A}$, existe $f$ tal que 
+      $\ovl{V}=\ovl{\nabla}\times\left(\ovl{A}+\ovl{\nabla}f\right)$
     }
     \definicion{Laplaciano}{
-      Sea $\varphi$ un compo de clase $\mcC_2$ en $\bbR^2$, llamamos \textbf{
+      Sea $\varphi$ un campo de clase $\mcC_2$ en $\bbR^2$, llamamos \textbf{
       Laplaciano de $\varphi$} al campo escalar $\Delta\varphi=\frac{\partial^2
       \varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y^2}+\frac{\partial^2
       \varphi}{\partial z^2}$ 
@@ -350,29 +352,29 @@
       $$\Delta\varphi=\frac{\partial}{\partial x}\left(\frac{\partial\varphi}
       {\partial x}\right)+\frac{\partial}{\partial y}\left(\frac{\partial\varphi}
       {\partial y}\right)+\frac{\partial}{\partial z}\left(\frac{\partial\varphi}
-      {\partial z}\right)\Longleftrightarrow\Delta\varphi = \vec{div}\left(
-      \vec{grad}\varphi\right)=\vec{\nabla}\cdot\vec{\nabla}\varphi$$
+      {\partial z}\right)\Longleftrightarrow\Delta\varphi = \ovl{div}\left(
+      \ovl{grad}\varphi\right)=\ovl{\nabla}\cdot\ovl{\nabla}\varphi$$
     }
     \teorema{}{
-      Sea $\vec{V}$ un campo de gradiente tal que $\vec{\nabla}\cdot\vec{V}=0$,
+      Sea $\ovl{V}$ un campo de gradiente tal que $\ovl{\nabla}\cdot\ovl{V}=0$,
       tomando $\varphi$ un campo escalar $\varphi\in\mcC_2\left(\mcD\right)$ 
-      tal que $\vec{V}=\vec{\nabla}\varphi$, entonces $\vec{\nabla}\cdot
-      \vec{\nabla}\varphi=\Delta\varphi=0$
+      tal que $\ovl{V}=\ovl{\nabla}\varphi$, entonces $\ovl{\nabla}\cdot
+      \ovl{\nabla}\varphi=\Delta\varphi=0$
     }
   \section{Aplicaciones a la física}
     \vspace{-0.5cm}
     \begin{align*}
       \begin{tabular}{r l}
         $\varphi\colon \bbR^3$ &$\longrightarrow \bbR$\\
-        $\vec{M}$ &$\longmapsto \varphi\left(M\right)$
+        $\ovl{M}$ &$\longmapsto \varphi\left(M\right)$
       \end{tabular}&
       \hspace{1cm}\text{ý}&
       \hspace{-0.2cm}
       \begin{tabular}{r l}
         $\varphi\colon \bbR^3$ &$\longrightarrow \bbR^3$\\
-        $\vec{M}$ &$\longmapsto \vec{\varphi\left(M\right)}$
+        $\ovl{M}$ &$\longmapsto \ovl{\varphi\left(M\right)}$
       \end{tabular}&
-      \text{donde $\vec{\varphi\left(M\right)}\ $}\left(
+      \text{donde $\ovl{\varphi\left(M\right)}\ $}\left(
         \begin{tabular}{c}
           $\varphi_x\left(M\right)$\\ 
           $\varphi_y\left(M\right)$\\
@@ -381,7 +383,7 @@
       \right)\text{ vectorial}
     \end{align*}
       \subsection*{Operador Nabla (operador diferencial)}
-        $\vec{\nabla}=\left(
+        $\ovl{\nabla}=\left(
         \begin{tabular}{c}
           $\frac{\partial}{\partial x}$\\ 
           $\frac{\partial}{\partial y}$\\ 
@@ -389,7 +391,7 @@
         \end{tabular}\right)
         \text{ en la base canónica de $\bbR^3$}$
         \subsubsection*{Gradiente}
-          $\vec{\text{grad}}\varphi=\vec{\nabla}\varphi=\left(
+          $\ovl{\text{grad}}\varphi=\ovl{\nabla}\varphi=\left(
           \begin{tabular}{c}
             $\frac{\partial}{\partial x}$\\ 
             $\frac{\partial}{\partial y}$\\ 
@@ -397,12 +399,12 @@
           \end{tabular}\right)
           \text{ (Campos escalares)}$
         \subsubsection*{Divergencia}
-          $\text{div}\vec{\varphi}=\vec{\nabla}\cdot\varphi=
+          $\text{div}\ovl{\varphi}=\ovl{\nabla}\cdot\varphi=
           \frac{\partial\varphi_x}{\partial x} +\frac{\partial\varphi_y}{\partial y}+
           \frac{\partial\varphi_z}{\partial z}
           \text{(Producto escalar)}$
         \subsubsection*{Rotacional}
-          $\vec{\text{rot}}\vec{\varphi}=\vec{\nabla}\times\varphi=\left(
+          $\ovl{\text{rot}}\ovl{\varphi}=\ovl{\nabla}\times\varphi=\left(
           \begin{tabular}{c}
             $\frac{\partial}{\partial x}$\\ 
             $\frac{\partial}{\partial y}$\\ 
@@ -419,10 +421,10 @@
               $\frac{\partial\varphi_y}{\partial x}-\frac{\partial\varphi_x}{\partial y}$ 
             \end{tabular}\right)$
         \subsubsection*{Laplaciano Escalar}
-          $\Delta\varphi=\vec{\nabla}\cdot\vec{\nabla}\varphi=\vec{\nabla}
-          \vec{\nabla}\varphi=\vec{\nabla}^2\varphi$ (ecuación de difusión)
+          $\Delta\varphi=\ovl{\nabla}\cdot\ovl{\nabla}\varphi=\ovl{\nabla}
+          \ovl{\nabla}\varphi=\ovl{\nabla}^2\varphi$ (ecuación de difusión)
         \subsubsection*{Laplaciano Vectorial}
-        $\vec{\Delta}\vec{\varphi}=\left(\Delta\varphi_x,\Delta\varphi_y,\Delta
+        $\ovl{\Delta}\ovl{\varphi}=\left(\Delta\varphi_x,\Delta\varphi_y,\Delta
         \varphi_z\right)$\vspace{0.2cm}\\ 
         (Vector cuyas componentes son Laplacianos). Se usa en mecánica de fluidos,
         (Ecuación de Navier-Stokes), en electromagnetismo (ecuación de d'Alembert)
@@ -432,27 +434,27 @@
           \hspace{-1.3cm}
           \begin{tabular}{l l}
             Ley de Holm local (potencial)      & Ley de Fourier (temperatura)\\
-            \multicolumn{1}{c}{$\vec{f}=-\gamma\vec{\text{grad}}V$}& 
-            \multicolumn{1}{c}{$\vec{f}=-\lambda\vec{\text{grad}}T$}
+            \multicolumn{1}{c}{$\ovl{f}=-\gamma\ovl{\text{grad}}V$}& 
+            \multicolumn{1}{c}{$\ovl{f}=-\lambda\ovl{\text{grad}}T$}
           \end{tabular}
         \subsubsection{Relaciones fundamentales}
           \setlength\extrarowheight{8pt}
           \setlength{\tabcolsep}{0.9cm}
           \hspace{-0.8cm}
           \begin{tabular}{ l  l }
-            $\vec{\nabla}(\vec{A}+\vec{B})=\vec{\nabla}A+\vec{\nabla}B$&
-            $\vec{\nabla}\times(\vec{A}+\vec{B})=\vec{\nabla}\times\vec{A}
-              +\vec{\nabla}\times\vec{B}$\\ 
-            $\vec{\nabla}\cdot\varphi\vec{A}=\vec{\nabla}\varphi\cdot\vec{A}+\varphi
-              \vec{\nabla}\cdot\vec{A}$& 
-            $\vec{\nabla}\times(\varphi\vec{A})=\vec{A}\times\vec{\nabla}\varphi+
-              \varphi(\vec{\nabla}\times\vec{A})$\\ 
-            $\vec{\nabla}\cdot(\vec{A}\times\vec{B})=\vec{B}\cdot(\vec{\nabla}\times
-              \vec{A})-\vec{A}\cdot(\vec{\nabla}\times\vec{B})$&
-            $\Delta\vec{A}=\vec{\nabla}\vec{\nabla}\cdot A -
-              \vec{\nabla}\times\vec{\nabla}\times A\hspace{0.1cm}\Longleftrightarrow
-              \hspace{0.1cm}\Delta\vec{A}=\vec{\nabla}^2A-\vec{\nabla}\times
-              \vec{\nabla}\times A$
+            $\ovl{\nabla}(\ovl{A}+\ovl{B})=\ovl{\nabla}A+\ovl{\nabla}B$&
+            $\ovl{\nabla}\times(\ovl{A}+\ovl{B})=\ovl{\nabla}\times\ovl{A}
+              +\ovl{\nabla}\times\ovl{B}$\\ 
+            $\ovl{\nabla}\cdot\varphi\ovl{A}=\ovl{\nabla}\varphi\cdot\ovl{A}+\varphi
+              \ovl{\nabla}\cdot\ovl{A}$& 
+            $\ovl{\nabla}\times(\varphi\ovl{A})=\ovl{A}\times\ovl{\nabla}\varphi+
+              \varphi(\ovl{\nabla}\times\ovl{A})$\\ 
+            $\ovl{\nabla}\cdot(\ovl{A}\times\ovl{B})=\ovl{B}\cdot(\ovl{\nabla}\times
+              \ovl{A})-\ovl{A}\cdot(\ovl{\nabla}\times\ovl{B})$&
+            $\Delta\ovl{A}=\ovl{\nabla}\ovl{\nabla}\cdot A -
+              \ovl{\nabla}\times\ovl{\nabla}\times A\hspace{0.1cm}\Longleftrightarrow
+              \hspace{0.1cm}\Delta\ovl{A}=\ovl{\nabla}^2A-\ovl{\nabla}\times
+              \ovl{\nabla}\times A$
           \end{tabular}
 \chapter{Integrales de línea}
   \section{Curvas paramétricas}
@@ -512,7 +514,7 @@
       \textbf{Interpretación vectorial:}\\
       Considerando la parametrización de la definición $\left(x_0=f\left(t_0\right),
       y_0=g\left(t_0\right)\right)$ y sean $M\left(x,y\right),M_0\left(x_0,y_0\right)
-      \implies \vec{T}=\left(f'\left(t_0\right),g'\left(t_0\right)\right)$\vspace{0.2cm}\\
+      \implies \ovl{T}=\left(f'\left(t_0\right),g'\left(t_0\right)\right)$\vspace{0.2cm}\\
       \setlength\extrarowheight{0pt}
       $\begin{cases}
         x=f'\left(t_0\right)t+x_0\\
@@ -521,28 +523,28 @@
       \begin{cases}
         x-x_0=f'\left(t_0\right)t\\
         y-y_0=g'\left(t_0\right)t
-      \end{cases}\Longleftrightarrow M_0\vec{M}=t\vec{T}$, entonces $\vec{T}$ es 
+      \end{cases}\Longleftrightarrow M_0\ovl{M}=t\ovl{T}$, entonces $\ovl{T}$ es 
       tangente a $C$ en $M_0$.
     }
   \section{Integrales de línea}
-  \subsection*{Introducción}
-    \vspace{-0.5cm}
-    \begin{wrapfigure}{l}{.5\textwidth}
-      \includegraphics[width=.4\textwidth]{integraldelinea.png}
-    \end{wrapfigure}
-    \hfill{} \\ \\ \\ \\
-    \noindent$C=\{M\in\bbR^2\colon\exists t\in\left[a,b\right],M\left(f\left(t\right),
-    g\left(t\right)\right)\}$ con $f$, $g$ derivables en $\left[a,b\right]$, $A\left(f
-    \left(a\right),g\left(a\right)\right)$ y $B\left(f\left(b\right),g\left(b\right)
-    \right)$.\\ \\Consideremos $\vec{V}\left(P\left(x,y\right),Q\left(x,y\right)
-    \right)$ y sea $w$ la 1-forma diferencial, i.e. $w=P\left(x,y\right)dx + Q\left(x,y
-    \right)dy$\\
-    \subsection*{ }
+    \subsection*{Introducción}
+      \vspace{-0.5cm}
+      \begin{wrapfigure}{l}{.5\textwidth}
+        \includegraphics[width=.4\textwidth]{integraldelinea.png}
+      \end{wrapfigure}
+      \hfill{} \\ \\ \\ \\
+      \noindent$C=\{M\in\bbR^2\colon\exists t\in\left[a,b\right],M\left(f\left(t\right),
+      g\left(t\right)\right)\}$ con $f$, $g$ derivables en $\left[a,b\right]$, $A\left(f
+      \left(a\right),g\left(a\right)\right)$ y $B\left(f\left(b\right),g\left(b\right)
+      \right)$.\\ \\Consideremos $\ovl{V}\left(P\left(x,y\right),Q\left(x,y\right)
+      \right)$ y sea $w$ la 1-forma diferencial, i.e. $w=P\left(x,y\right)dx + Q\left(x,y
+      \right)dy$\\
+    \subsection*{}
     \vspace{-1cm}
     \definicion{Integral de línea}{
-      $\gamma_{\vec{AB}}=\int_{\vec{AB}}\vec{V}\left(M\right)\cdot\vec{dM}=\int_{\vec{AB}}
-      \left(P\left(x,y\right)dx+Q\left(x,y\right)dy\right)=\int_{\vec{AB}}w$ y tenemos 
-      $$\gamma_{\vec{AB}} = \int_{\vec{AB}}w = \int_{a}^{b}\left[P\left(f\left(t\right),g
+      $\gamma_{\ovl{AB}}=\int_{\ovl{AB}}\ovl{V}\left(M\right)\cdot\ovl{dM}=\int_{\ovl{AB}}
+      \left(P\left(x,y\right)dx+Q\left(x,y\right)dy\right)=\int_{\ovl{AB}}w$ y tenemos 
+      $$\gamma_{\ovl{AB}} = \int_{\ovl{AB}}w = \int_{a}^{b}\left[P\left(f\left(t\right),g
       \left(t\right)\right)f'\left(t\right)+Q\left(f\left(t\right),g\left(t\right)g'\left(t
       \right)\right)\right]dt \rightarrow \text{¡Integral de Riemann!}$$ Donde $dx=f'
       \left(t\right)dt$,   $dy=g'\left(t\right)dt$ 
@@ -564,47 +566,396 @@
       \right) = \cos\theta$
     }
     \comentario{
-      $\gamma_{\vec{AB}}=\int_{\vec{AB}}\vec{V}\left(M\right)dM\left(t\right)=\int_{a}^{b}
-      \vec{V}\left(M\left(t\right)\right)\cdot\vec{T}\left(t\right)\cdot dt$ \hspace{1cm}
-      Donde $\vec{V}\left(M\left(t\right)\right)$ puede ser un campo de fuerzas.
+      $\gamma_{\ovl{AB}}=\int_{\ovl{AB}}\ovl{V}\left(M\right)dM\left(t\right)=\int_{a}^{b}
+      \ovl{V}\left(M\left(t\right)\right)\cdot\ovl{T}\left(t\right)\cdot dt$ \hspace{1cm}
+      Donde $\ovl{V}\left(M\left(t\right)\right)$ puede ser un campo de fuerzas.
     }
     \ejemplo{Sea $w=xy\ dx+y^2\ dy+dz$ una 1-forma diferencial en $\bbR^3$ y sea $C$ la 
-    curva orientada en $\bbR^3$ con la parametrización $\vec{V}\left(t\right)=\left(
+    curva orientada en $\bbR^3$ con la parametrización $\ovl{V}\left(t\right)=\left(
     t^2,t^3,1\right)$ con $t \in \left[0,1\right]$. Calcular $\int_{C}w$}{
       $\int_{C}w=\int_{0}^{1}\left[t^5\left(2t\right)+t^6\left(3t^2\right)+0\right]dt=
       \frac{13}{21}$
     }
     \clearpage
     \teorema{}{
-      Si $\vec{V}$ es un \textbf{campo de gradiente} (i.e. $\vec{V}=\vec{\text{grad}}
-      \varphi=\vec{\nabla}\vec{V}$), $\gamma_{\vec{AB}} =\int_{\vec{AB}}\vec{V}\left(
-      M\right)\cdot\vec{dM}=\int_{\vec{AB}}\vec{\nabla}\varphi\left(M\right)\cdot
-      \vec{dM} = \int_{\vec{AB}}d\varphi=\varphi\left(B\right)-\varphi\left(A\right)$
+      Si $\ovl{V}$ es un \textbf{campo de gradiente} (i.e. $\ovl{V}=\ovl{\text{grad}}
+      \varphi=\ovl{\nabla}\ovl{V}$), $\gamma_{\ovl{AB}} =\int_{\ovl{AB}}\ovl{V}\left(
+      M\right)\cdot\ovl{dM}=\int_{\ovl{AB}}\ovl{\nabla}\varphi\left(M\right)\cdot
+      \ovl{dM} = \int_{\ovl{AB}}d\varphi=\varphi\left(B\right)-\varphi\left(A\right)$
     }
     \comentario{
       \begin{itemize}
         \item La circulación de un campo de gradiente no depende del camino, solamente
-              de los valores del campo escalar $\varphi$ definido por $\vec{V}=\vec{\nabla}
-              \varphi$ en los extremos del camino $\vec{AB}$.
-        \item $\gamma_{\vec{AB}}=0$ si $A$ y $B$ están en la misma curva de nivel de 
+              de los valores del campo escalar $\varphi$ definido por $\ovl{V}=\ovl{\nabla}
+              \varphi$ en los extremos del camino $\ovl{AB}$.
+        \item $\gamma_{\ovl{AB}}=0$ si $A$ y $B$ están en la misma curva de nivel de 
               $\varphi$
       \end{itemize}
     }
     \teorema{}{
+      \hspace{-0.9cm}
+      \setlength{\tabcolsep}{17pt}
+      \begin{tabular}{l l}
+        $\int_{\ovl{AB}}\left(w_1+w_2\right)=\int_{\ovl{AB}}w_1+\int_{\ovl{AB}}w_2$&
+        $\left(\ovl{V_1}\left(M\right)+\ovl{V_2}\left(M\right)\right)\ovl{dM}=
+          \int_{\ovl{AB}}\ovl{V_1}\left(M\right)dM +\int_{\ovl{AB}}\ovl{V_2}\left(
+          M\right)dM$\\
+        $\forall\lambda\in\bbR\int_{\ovl{AB}}\lambda w_1=\lambda\int_{\ovl{AB}}w_1$&
+        $\forall\lambda\in\bbR\int_{\ovl{AB}}\lambda\ovl{V_1}\left(M\right)dM=
+          \lambda\int_{\ovl{AB}}\ovl{V_1}\left(M\right)dM$ \\
+        Si $C\in\ovl{AB}$, entonces $\int_{\ovl{AB}}w=\int_{\ovl{AC}}w+
+          \int_{\ovl{CB}}w$&
+        $\int_{\ovl{AB}}\ovl{V_1}\left(M\right)dM=
+          \int_{\ovl{AC}}\ovl{V_1}\left(M\right)dM+\int_{\ovl{CB}}\ovl{V_1}
+          \left(M\right)dM$\\
+        \multicolumn{2}{l}{$\int_{\ovl{AB}}w=-\int_{\ovl{BA}}w$ (Hay que cambiar la 
+          parametrización para mostrarlo)}
+      \end{tabular}
+    }
+    \corolario{}{
+      Si $\ovl{AB}$ es una curva cerrada, entonces $A=B$, y si $\ovl{V}$ es un campo
+      de gradiente, entonces $\int_{\ovl{AB}}\ovl{V}\left(M\right)\ovl{dM}=0$
+    }
+    \definicion{Campo conservativo}{
+      Se dice que un campo vectorial es conservativo si la circulación del campo 
+      vectorial es nula en toda curva cerrada.
+    }
+    \teorema{}{
+      Sean $A$ y $B$ dos puntos del plano, la circulación de un campo conservativo no
+      depende del camino para ir de $A$ a $B$.
+    }
+    \teorema{}{
+      Si $\ovl{V}$ es un campo de gradiente, entonces $\ovl{V}$ es un campo conservativo.
+    }
+    \ejercicio{Sea $\ovl{V}\left(M\right)=\frac{3x^2+y^2}{y^2}\hat{x}-\frac{2x^3}{y^3}
+    \hat{y}$\\\begin{itemize}
+      \item Sean $A\left(-1,1\right)$ y $B\left(1,1\right)$ calcular $\gamma_{\ovl{AB}}$
+            con $\ovl{AB}=\left[A\ B\right]$ (segmento).
+      \item Idem con $\ovl{AB}\equiv$ semicírculo de centro $\Omega\left(0,1\right)$
+    \end{itemize}
+    }
+    {
+      Ver TD2
+    }
+    \teorema{}{
+      Si $\ovl{V}$ es un campo conservativo, entonces $\ovl{V}$ es un campo de gradiente.
+    }
+    \comentario{
+      Destacar que ahora tenemos la doble implicación entre campo conservativo y de gradiente.
+    }      
+  \section{Longitud de una curva}
+    \definicion{Longitud de una curva}{
+      Sea $\gamma\colon\left[a,b\right]\longrightarrow\bbR^n$ una curva paramétrica de 
+      clase $\mcC_1$, la \textbf{longitud de $\gamma$} viene dada por la expresión:
+      $$L\left(\gamma\right)=\int_{a}^{b}\norm{\gamma '\left(t\right)}dt$$
+    }
+    \comentario{
+      Si $\gamma\left(t\right)\setlength\extrarowheight{0pt}\begin{pmatrix}x_1(t)\\
+      \vdots\\x_n(t)\end{pmatrix}$ en coordenadas cartesianas, entonces 
+      $L\left(\gamma\right)=\int_{a}^{b}\sqrt{x_1'(t)^2+\hdots x_2'(t)^2}dt$
+    }
+    \ejercicio{Halla la longitud de arco de la siguiente curva: $\gamma\left(t\right)
+    =\left(3t,3t^2,2t^3\right)$ entre los puntos $\left(0,0,0\right)$ y $\left(3,3,2
+    \right)$}{
+      $L\left(\gamma\right)=\int_{\left(0,0,0\right)}^{\left(3,3,2\right)}\sqrt{
+      3^2+36t^2+36t^4}dt=\int_{0}^{1}\sqrt{9+36t^2+36t^4}dt=3\int_{0}^{1}\sqrt{
+      4t^4+4t^2+1}dt=3\int_{0}^{1}\left(2t^2+1\right)dt=\left[2t^3+3t\right]^1_0=5$
+    }
+    \ejercicio{Halla la longitud de arco de la siguiente curva: $\gamma\left(t\right)
+    =\setlength\extrarowheight{0pt}\begin{cases}\left(\cos(t),\sin(t),3t\right)\text{ 
+    si $0\leq t\leq \pi$}\\\left(-1,-t+\pi,3t\right)\text{ \ \ si $\pi\leq t \leq 2\pi$}
+    \end{cases}$}{
+      Tenemos $\gamma_1'\left(t\right)=\setlength\extrarowheight{0pt}\begin{pmatrix}
+      -\sin t\\\cos t\\3\end{pmatrix}\ $ y $\ \gamma_2'\left(t\right)=
+      \setlength\extrarowheight{0pt}\begin{pmatrix}0\\-1\\3\end{pmatrix}$, 
+      $\norm{\gamma_1\left(t\right)}=\sqrt{\sin^2t+\cos^2t+3^2}=\sqrt{10}\ $ y 
+      $\ \norm{\gamma_2\left(t\right)}=\sqrt{10}$, \\$L\left(\gamma_1\left(t\right)
+      \right)=\int_{0}^{\pi}\sqrt[]{10}=\pi\ \sqrt[]{10}\hspace{1cm}
+      L\left(\gamma_2\left(t\right)\right)=\pi\ \sqrt[]{10}\implies
+      L\left(\gamma\left(t\right)\right)=L\left(\gamma_1\left(t\right)\right)+
+      L\left(\gamma_2\left(t\right)\right)=\pi\ \sqrt[]{10}+\pi\ \sqrt[]{10}=
+      2\pi\ \sqrt[]{10}$
+    }
+\chapter{Integrales dobles}
+  \section{Introducción}
+    \noindent Sea $\mcD=\left[a,b\right]\times\left[c,d\right]$ (con $a<b$ y $c<d$)
+    un rectángulo. Como se hizo con la integral simple, vamos a subdividir 
+    los intervalos de los ejes (abcisas y ordenadas). Sean las particiones de
+    $\left[a,b\right]$ y $\left[c,d\right]$\\ \setlength\extrarowheight{0pt}
+    $\begin{cases}a=x_0<x_1<\hdots<x_n=b\\c=y_0<y_1<\hdots<y_m=d\end{cases}$ 
+    Obtenemos así las mallas, o Rectángulos Elementales: 
+    $R_{ij}=\left[x_{i-1},x_i\right]\times\left[y_{j-1},y_j\right]$
+    \begin{wrapfigure}{l}{.4\textwidth}
+      \hspace{-0.3cm}
+      \includegraphics[width=.4\textwidth]{integralesdobles.png}
+    \end{wrapfigure}
+    \clearpage
+  \section{Teoremas de Fubini}
+    \teorema{Fubini en un rectángulo (versión débil)}{
+      Sea $R$ un rectángula de $\bbR^2$, $R=\left[a,b\right]\times\left[c,d\right]$
+      y sea $f$ una función integrable sobre $R$, tenemos: $$ \iint_{R}f\left(
+      x,y\right)dxdy=\int_{a}^{b}\left(\int_{c}^{d}f\left(x,y\right)dy\right)dx=
+      \int_{c}^{d}\left(\int_{a}^{b}f\left(x,y\right)dx\right)dy$$ (las integrales
+      dobles son permutables)
+    }
+    \ejemplo{Calcular $I=\iint_A e^{x+y}dxdy$ con $A=\left[0,1\right]\times\left[0,2
+    \right]$}{
+      $I=\iint_A e^xe^ydxdy=\int_{0}^{1}e^xdx\cdot\int_{0}^{2}e^ydy=\left[e^x
+      \right]^1_0\cdot\left[e^y\right]_0^2=\left(e-1\right)\left(e^2-1\right)$
+    }
+    \ejemplo{Calcular $I=\iint_R f\left(x,y\right)dxdy$ con $R=\left[0,2\right]
+    \times\left[0,2\right]$ y $f$ definida en $R$ por $f\left(x,y\right)=16-x^2-2y^2$}{
+        $I=\iint_R f\left(x,y\right)dxdy=\int_{0}^{2}\int_{0}^{2}16-x^2+2y^2dxdy=
+        \int_{0}^{2}\left[16x-\frac{1}{3}x^3-2y^2x\right]_0^2dy=
+        \int_{0}^{2}32-\frac{8}{3}-4y^2dy=\left[32y-\frac{8}{3}y-\frac{4}{3}y^3
+        \right]_0^2=64-\frac{16}{3}-\frac{32}{3}=48$
+    }
+    \teorema{Fubini versión fuerte}{
       \begin{itemize}
-        \item $\int_{\vec{AB}}\left(w_1+w_2\right)=\int_{\vec{AB}}w_1+\int_{\vec{AB}}w_2$
-        \item $\forall\lambda\in\bbR\int_{\vec{AB}}\lambda w_1=\lambda\int_{\vec{AB}}w_1$
-        \item $\left(\vec{V_1}\left(M\right)+\vec{V_2}\left(M\right)\right)\vec{dM}=
-              \int_{\vec{AB}}\vec{V_1}\left(M\right)dM +\int_{\vec{AB}}\vec{V_2}\left(
-              M\right)dM$
-        \item $\forall\lambda\in\bbR$
+        \item Sean $\varphi_1$ y $\varphi_2$ dos funicones continuas en un rectángulo 
+              compacto de $\left[a,b\right]$ de $\bbR$ (uniformemente continuas) tales
+              que:\\$\forall x\in\left[a,b\right],\varphi_1\left(x\right)\leq\varphi_2
+              \left(x\right)$ y sea $\mcD\subset\bbR^2$ tal que $\mcD=\left\{\left(
+              x,y\right)\in\bbR^2\colon a\leq x\leq b, \varphi_1\left(x\right)\leq y
+              \leq\varphi_2\left(x\right)\right\}$ Si $f\colon\mcD\longrightarrow\bbR$
+              es continua en $\mcD$ (entonces $f$ es integrable en $\mcD$) tenemos:
+              $$\iint_Df\left(x,y\right)dxdy=\int_{a}^{b}\left(\int_{\varphi_1\left(
+              x\right)}^{\varphi_2\left(x\right)}f\left(x,y\right)dy\right)dx$$
+        \item Sean $\psi_1$ y $\psi_2$ dos funicones continuas en un rectángulo 
+              compacto de $\left[c,d\right]$ de $\bbR$ tales que:\\
+              $\forall x\in\left[c,d\right],\psi_1\left(y\right)\leq\psi_2
+              \left(y\right)$ y sea $\mcD'\subset\bbR^2$ tal que $\mcD'=\left\{\left(
+              x,y\right)\in\bbR^2\colon c\leq y\leq d, \psi_1\left(y\right)\leq x
+              \leq\psi_2\left(y\right)\right\}$ Si $f\colon\mcD'\longrightarrow\bbR$
+              es continua en $\mcD'$ tenemos:
+              $$\iint_{D'}f\left(x,y\right)dxdy=\int_{c}^{d}\left(\int_{\psi_1\left(
+              y\right)}^{\psi_2\left(y\right)}f\left(x,y\right)dx\right)dy$$ (la 
+              integral se hace de forma horizontal).
       \end{itemize}
     }
-  \section{Longitud de una curva}
-\chapter{Integrales dobles}
-  \section*{Introducción}
-  \section{Teoremas de Fubini}
+    \ejemplo{Calcular $\iint_\mcD f\left(x,y\right)dxdy$ con $\mcD=\left\{\left(x,y
+    \right)\in\bbR^2\colon 0\leq \leq1, x^2\leq y\leq x\right\}$ (no es un rectángulo),
+    sobre la función $f\left(x,y\right)=x+y$}{
+      \begin{wrapfigure}{r}{.26\textwidth}
+        \vspace{-1.65cm}
+        \includegraphics[width=.26\textwidth]{ejemplo4.1.3.png}
+      \end{wrapfigure}
+      \vspace{0.6cm}
+      $\iint_\mcD f\left(x,y\right)dxdy = \int_{0}^{1}\int_{x^2}^{x}\left(x,y\right)
+      dydx=\int_{0}^{1}\left[xy+\frac{y^2}{2}\right]^x_{x^2}dx=\vspace{0.2cm}\\
+      \int_{0}^{1}\left(x^2+\frac{x^2}{2}-x^3-\frac{x^4}{2}\right)dx=\frac{3}{20}$
+      \vspace{0.6cm}
+    }
+    \ejemplo{Calcular $\iint_\mcD e^xdxdy$ con $\mcD=\left\{\left(x,y\right)\in\bbR^2
+    \colon 0\leq x\leq \log\left(y\right), 1\leq y\leq 2\right\}$}{
+      \begin{wrapfigure}{r}{.26\textwidth}
+        \vspace{-1.25cm}
+        \includegraphics[width=.26\textwidth]{ejemplo4.1.4.png}
+      \end{wrapfigure}
+      \vspace{0.6cm}
+      Como $f\left(x,y\right)\in\mcC_0\left(\bbR^2\right)\Rightarrow\text{Podemos
+      aplicar el \textit{Teorema de Fubini}}$\vspace*{0.2cm}\\\setlength\extrarowheight{0pt}
+      $\begin{cases}
+        \iint_{\mcD}e^xdxdy=\int_1^2\int_0^{\log y}e^xdxdy=\int_{1}^{2}
+          \left(y-1\right)dy=\left[\frac{y^2}{2}-y\right]_1^2=\frac{1}{2}\\
+        \iint_{\mcD}e^xdxdy=\int_0^{\log y}\int_1^2e^xdydx=\int_{0}^{\log 2}
+        e^xdydx=\int_0^{\log 2}e^x\left(2-e^x\right)dx=\frac{1}{2}
+      \end{cases}$
+      \vspace{0.2cm}
+    }
   \section{Teorema de Green-Riemann}
-  \section{Cálculo de Área}
+  \section{Superficies parametrizadas}
+    \subsection{Introducción}
+      \definicion{Plano tangente}{
+        Si una superficie $S$ es suave (i.e. $\ovl{T_u}\times\ovl{T_v}\neq\ovl{0}$)
+        definimos \textbf{el plano tangente de $S$} en $\Phi\left(u_0,v_0\right)$ como el plano 
+        determinado por $\ovl{T_u}$ y $\ovl{T_v}$ y con vector normal $\ovl{n}=\ovl{T_u}\times\ovl{T_v}$\\ 
+        Una ecuación del plano tangente a $S$ en $\left(x_0,y_0,z_0\right)$ es: 
+        \begin{equation}\label{eq:leaf}
+          \left(x-x_0,y-y_0,z-z_0\right)\cdot\ovl{n}=0
+        \end{equation}
+        con $\ovl{n}$ evaluado en $\left(u_0,v_0\right)$\\Si $\ovl{n}=\left(n_1,n_2,n_3\right)$
+        entonces \refeq{eq:leaf} se escribe:
+        \begin{equation*}
+          n_1\left(x-x_0\right)+n_2\left(y-y_0\right)+n_3\left(z-z_0\right)=0
+        \end{equation*}
+      }
+      \ejemplo{Sea $\Phi\colon\bbR^2\rightarrow\bbR^3$ dada por
+        $\begin{cases}
+          x=u\cos v\\
+          y=u\sin v\\
+          z=u^2+v^2
+        \end{cases}$ \\¿Existe un plano tangente? Hallar el plano tangente en $\Phi\left(0,1\right)$
+        }{
+          $\ovl{T_u}=\cos\left(v\right)\ovl{i}+\sin\left(v\right)\ovl{j}+2u\ovl{k}$\\
+          $\ovl{T_v}=-\sin\left(v\right)\ovl{i}+\cos\left(v\right)\ovl{j}+2v\ovl{k}$\\
+          El plano tangente en $\Phi\left(u,v\right)$ es el conjunto de vectores que pasen 
+          por $\Phi\left(u,v\right)$ perpendiculares a $\ovl{T_u}\times\ovl{T_v}$ Tenemos:\\
+          $\ovl{T_u}\times\ovl{T_v}\neq\ovl{0}=\setlength\extrarowheight{0pt}\begin{pmatrix}
+          -2u^2\cos\left(v\right)+2v\sin\left(v\right)\\-2u^2\sin\left(v\right)-2v\cos\left(
+          v\right)\\u\end{pmatrix} \hspace{1.5cm}\ovl{T_u}\times\ovl{T_v}=\ovl{0}\Longleftrightarrow
+          \left(u,v\right) = \left(0,0\right)$\\Entonces el plano tangente en $\Phi\left(0,0\right)$
+          pero sí en los otros puntos. Por ejemplo en $\Phi\left(0,1\right)=\left(1,0,1\right)$
+          tenemos $\ovl{n}=\ovl{T_u}\times\ovl{T_v}=\setlength\extrarowheight{0pt}\begin{pmatrix}
+          -2\\0\\1\end{pmatrix}$ así que una ecuación del plano tangente es: $-2\left(x-1\right)
+          +\left(z-1\right)=0$ es decir, $z=2x-1$
+        }
+      \clearpage
+    \subsection{Área de una superficie}
+      \noindent En esta sección, consideraremos sólo superficies suaves a trozos que sean uniones de imágenes 
+      de superficies parametrizadas $\Phi_i\colon\mcD_i\longrightarrow\bbR^3$ tales que: (Los 'quizás' 
+      son a causa de medidas matemáticas que se definen en \textit{Análisis Funcional})
+      \begin{enumerate}
+        \item $\mcD_i$ es una región elemental del plano.
+        \item $\Phi_i$ es de clase $\mcC_1$ y biyectiva, excepto, quizá, en $\partial\mcD$.
+        \item La imagen de $\Phi_i$ es suave, excepto, quizá, en un número finito de puntos.
+      \end{enumerate}
+      \definicion{Área de una superficie}{
+        Se define el \textbf{área de una superficie $\mcA\left(S\right)$} de una superficie
+        parametrizada por:$$\boxed{\mcA\left(S\right)=\iint_{\mcD}\norm{\ovl{T_u}\times\ovl{T_v}}\ du\ dv}$$
+      }
+      \comentario{
+        En el caso que $S$ fuera unión de superficies $S_i$ su área será la suma de las
+        áreas de las $S_i$.
+      }
+      Entonces tenemos:\\
+      $$\mcA\left(A\right)=\iint_\mcD \sqrt{\left(\frac{\partial\left(x,y\right)}{\partial\left(u,v\right)}\right)^2
+      +\left(\frac{\partial\left(y,z\right)}{\partial\left(u,v\right)}\right)^2+
+      \left(\frac{\partial\left(x,z\right)}{\partial\left(u,v\right)}\right)^2}\ du\ dv
+      \hspace{1cm}\text{donde }\frac{\partial\left(x,y\right)}{\partial\left(u,v\right)}=
+      \begin{vmatrix}
+      \frac{\partial x}{\partial u}& \frac{\partial x}{\partial v}\vspace{2mm}\\
+      \frac{\partial y}{\partial u}& \frac{\partial y}{\partial v}
+      \end{vmatrix}$$
+      \begin{figure}[h]
+        \centering
+        \vspace{-1mm}
+        \includegraphics[width=.8\textwidth]{mireia1.png}
+      \end{figure}\\
+      Hay que considerar una porción de $\mcD$ y sea $R_{ij}$ el ij-ésimo rectángulo 
+      con vértices $\left(u_i,v_j\right),\left(u_{i+1},v_j\right),\left(u_i,v_{j+1}\right)
+      \left(u_{i+1},v_{j+1}\right)$. Los valores de $\ovl{T_u} y \ovl{T_v}$ en $\left(u_i,v_i\right)$
+      serán determinados $\ovl{T_{u_i}} y \ovl{T_{v_j}}$. Podemos pensar los vectores 
+      $\Delta_u\ovl{T_u}$ y $\Delta_v\ovl{T_v}$ como tangentes a la superficie en 
+      $\Phi\left(u_i,v_j\right)=\left(x_{ij},y_{ij},z_{ij}\right)$ donde $\Delta_u=
+      u_{i+1}-u_i$ y $\Delta_v=v_{j+1}-v_j$\\ \\
+      Entonces, estos vectores forman un paralelogramo $P_{ij}$ que está en el plano 
+      tangente a la superficie en $\left(x_{ij},y_{ij},z_{ij}\right)$. Para $n$ grande,
+      (es una subdivisión de $n$ trozos), el área de $P_{ij}$ es una buena aproximación
+      al área de $\Phi\left(R_{ij}\right)$. Como el area del paralelogramo genedrado por
+      dos vectores $\ovl{v_1}$ y $\ovl{v_2}$ es $\norm{\ovl{v_1}\times\ovl{v_2}}$ entonces
+      $\mcA\left(P_{ij}\right)=\norm{\Delta_u\ovl{T_{uj}}\times\Delta_v\ovl{T_{vj}}}=
+      \Delta u\Delta v\cdot\norm{\ovl{T_{ui}}\times\ovl{T_{vj}}}$\\ \\
+      Por lo tanto, el área total es $\mcA_n=\sum_{i=0}^{n-1}\sum_{j=0}^{n-1}\mcA\left(
+      P_{ij}\right)$ y cuando $n\rightarrow\inf$, $\mcA_n\rightarrow\iint_{\mcD}\norm{
+      \ovl{T_u}\times\ovl{T_v}}\ du\ dv$
+      \ejemplo{
+        Sea $\mcD$ la región determinada por $0\leq\theta\leq 2\pi$ y $0\leq r\leq 1$ y
+        sea $\Phi\colon\mcD\longrightarrow\bbR^3$ tal que:\vspace{2mm}\\
+        Sea la parametrización del cono $S$:
+        $\begin{cases}
+          x=r\cos\theta\\
+          y=r\sin\theta\\
+          z=r
+        \end{cases}$ hallar su área de superficie.
+      }{
+        $\frac{\partial\left(x,y\right)}{\partial\left(r,\theta\right)}=
+        \begin{vmatrix}
+          \cos\theta&   -r\sin\theta\\
+          \sin\theta&    r\cos\theta
+        \end{vmatrix}$\hspace{0.5cm}$\frac{\partial\left(y,z\right)}{\partial\left(r,\theta\right)}
+        =-r\cos\theta$ \hspace{0.1cm} y \hspace{0.1cm} $\frac{\partial\left(x,z\right)}{\partial\left(r,\theta\right)}
+        =r\sin\theta \implies$\\ \\$\implies\norm{\ovl{T_r}\times\ovl{T_\theta}}=\sqrt{r^2+r^2\cos^2\theta
+        +sin^2\theta}=\sqrt{2}r$\\ \\$\mcA=\int_0^2\pi\int_0^1\sqrt{2}r\ dr\ d\theta =\sqrt{2}\pi$
+      }
+      \comentario{
+        Para confirmar que es el area de $\Phi\left(\mcD\right)$ debemos comprobar
+        que $\Phi$ es biyectiva para puntos que no están en la frontera de $\Phi$\\
+        Sea $\mcD_0$ el conjunto de $\left(r,\theta\right)$ tales que $0<r<1$ y 
+        $0<\theta <2\pi$ i.e. $\mcD_0 = \mcD\partial\mcD$\\ Para ver que $\Phi$ es 
+        biyectiva, suponemos que $\Phi\left(r,\theta\right)=\Phi\left(r',\theta'\right)$
+        pero $\left(r,\theta\right),\left(r',\theta'\right)\in \mcD_0$\\
+        Tenemos:
+        % \begin{alignat*}{2}
+        %   $\begin{cases}
+        %     r\cos\theta=r'\cos\theta'\\
+        %     r\sin\theta=r'\sin\theta'\\
+        %     r=r'
+        %   \end{cases}$&& $\implies$ $\begin{cases}
+        %     \cos\theta=\cos\theta'\\
+        %     \sin\theta=\sin\theta'
+        %   \end{cases}$
+        % \end{alignat*}$\implies\theta=\theta'$ ó $\theta=\theta'\left(2\pi\right)$
+        % \\En conclusión,
+        % $\begin{cases}
+        %   r=r'\\
+        %   \theta=\theta'
+        % \end{cases}$ y eso nos dice que $\Phi$ es biyectiva.\\
+      }
+      \ejemplo{
+        Una helicoide se define como $\Phi\colon\mcD\rightarrow\bbR^3$ con
+        $\begin{cases}
+          x=r\cos\theta\\
+          y=r\sin\theta\\
+          z=\theta
+        \end{cases}$ y $\mcD$ es la región donde $0\leq\theta\leq 2\pi$ y 
+        $0\leq r\leq 1$. Hallar su área.
+      }{
+        Calculamos $\frac{\partial\left(x,y\right)}{\partial\left(1,0\right)}=r
+        \hspace{0.4cm}\frac{\partial\left(y,z\right)}{\partial\left(1,0\right)}=\sin\theta
+        \hspace{0.4cm}\frac{\partial\left(x,z\right)}{\partial\left(1,0\right)}=\cos\theta$\\ \\
+        $\mcA = \iint_D\norm{\ovl{T_r}\times\ovl{T_\theta}}\ dr\ d\theta=
+        \int_{0}^{2\pi}\int_{\theta}^{1}\sqrt{r^2+1}\ dr\ d\theta=\int_{0}^{2\pi}\ d\theta
+        \int_{0}^{1}\sqrt{r^2+1}\ dr=\pi\left(\sqrt{2}+\log\left(1+\sqrt{2}\right)\right)$
+      }
+      \comentario{
+        Si consideramos una superficie $\mcS$ dada con $z=f\left(x,y\right)$ donde 
+        $\left(x,y\right)\in\mcD$ admite la parametrización 
+        $\begin{cases}
+          x=u\\ y=v\\ z=f\left(u,v\right)            
+        \end{cases}$ con $\left(u,v\right)\in\mcD$. \\ \\
+        Si $f$ es de clase $\mcC_1$, entonces la superficie es suave, y el cálculo del
+        área se reduce a:$$\boxed{\mcA\left(\mcS\right)=\iint_\mcD\sqrt{1+\left(\frac{\partial f}
+        {\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}\ dx\ dy}$$
+      }
+      \ejemplo{
+        Calcular el área de la superficie de la esfera $\mcS$ definida por $x^2+y^2+z^2=1$
+        (Indicación: calcular el área del hemisferio superior $\mcS^+$ (i.e. con $z\geq 0$))
+      }{
+        Tenemos $z=f\left(x,y\right)=\sqrt{1-x^2-y^2}$ con $\left(x^2+y^2\leq 1\right)$
+        Sea $\mcD$ la región de $\left(x,y\right)\in\bbR^2/x^2+y^2\leq 1$\\ \\
+        $\mcA\left(\mcS^+\right)=\iint_\mcD\sqrt{\frac{x^2}{1-x^2+y^2}+\frac{y^2}{1-x^2-y^2}+1}\ dx\ dy=
+        \iint_\mcD\frac{1}{\sqrt{1-x^2-y^2}}\ dx\ dy$\\ \\Aplicamos el 
+        \textit{Teorema de Fubini}:\\
+        $\mcA\left(\mcS^+\right)=\int_{-1}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
+        \frac{1}{\sqrt{1-x^2-y^2}}\ dy\ dx=\int_{-1}^{1}\left[\arcsin\left(
+        \frac{y}{\left(1-x^2\right)^{\frac{1}{2}}}\right)\right]_{\sqrt{1-x^2}}^{
+        \sqrt{1-x^2}}\ dx=\int_{-1}^{1}\left(\frac{\pi}{2}+\frac{\pi}{2}\right)\ dx=
+        2\pi$ \\ \\Por simetría, $\mcA\left(\mcS^-\right)=2\pi$ y finalmente $\mcA\left(
+        \mcS^+\right)+\mcA\left(\mcS^-\right)= 4\pi$
+      }
+  \section{Integrales de funciones escalares sobre superficies}
+    \definicion{}{
+      Sea $f$ una función continua con valores reales definida en $\mcS$, La integral
+      de $f$ sobre $\mcS$ se define: $\iint_{\mcS}f\left(x,y,z\right)\ d\mcS=\iint_\mcS f\ d\mcS$
+      (donde $d\mcS$ es un diferencial de superficie)\\ \\
+      $\iint_\mcS f\ d\mcS=\iint_{\mcD}f\left(\Phi\left(u,v\right)\right)\norm{\ovl{T_u}
+      \times\ovl{T_v}}\ du\ dv$
+    }
+    \comentario{
+      \begin{enumerate}
+        \item Si $f\equiv 1$ volvemos a encontrar la fórmula del área
+        \item La integral de superficie, como el área de superficie, no depende de la 
+              parametrización elegida.
+        \item Si $\mcS$ es una unión de superficies parametrizadas, si $i=1,\hdots ,N$
+              que no se intersecan excepto quizá, a lo largo de curvas que definen sus 
+              fronteras, entonces: $\iint_\mcS f\ d\mcS=\sum_{i=1}^{N}\iint_{\mcS_i}f\ 
+              d\mcS_i$\\
+      \end{enumerate}
+    }
+    \ejemplo{Consideramos el helicoide $\mcS$ anterior. Sea $f\left(x,y,z\right)=\sqrt{x^2+y^2
+    +1}$. Hallar $\iint_\mcS f\ d\mcS$}{
+
+    }
 \end{document}
 
