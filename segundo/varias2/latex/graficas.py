@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from numpy import arctan
 import numpy as np
 
+#color de fondo de los ejercicios
 color = '#F2FBF8'
 
 """
@@ -27,7 +28,7 @@ plt.yticks([],[])
 plt.axis('off')
 plt.xlim(0,7)
 plt.ylim(2,6)
-plt.savefig('latex/integraldelinea.png')
+#plt.savefig('latex/integraldelinea.png')
 
 """
 #############
@@ -60,7 +61,7 @@ ax.spines['top'].set_color('none')
 ax.xaxis.tick_bottom()
 ax.set_xticks([1],['1'],fontsize=14)
 ax.set_yticks([],[])
-plt.savefig('latex/ejemplo4.1.3.png')
+#plt.savefig('latex/ejemplo4.1.3.png')
 
 """
 #############
@@ -95,7 +96,7 @@ ax.tick_params(axis=u'both', which=u'both',length=0)
 ax.set_ylim(ymin=-0.4, ymax=3)
 ax.set_xticks([np.log(2)],['$\log\left(2\\right)$'],fontsize=14)
 ax.set_yticks([1.1,2.1],['1','2'],fontsize=14)
-plt.savefig('latex/ejemplo4.1.4.png')
+#plt.savefig('latex/ejemplo4.1.4.png')
 
 """
 #################
@@ -147,4 +148,6 @@ ax.set_xlim(xmin=-0.4, xmax=5)
 ax.set_ylim(ymin=-0.4, ymax=4)
 ax.set_xticks([1,4],['a','b'],fontsize=12)
 ax.set_yticks([0.98,1.25,1.75,2.98],['c','$y_{j-1}$','$y_j$','d'],fontsize=12)
-plt.savefig('latex/integralesdobles.png')
+#plt.savefig('latex/integralesdobles.png')
+
+plt.show()

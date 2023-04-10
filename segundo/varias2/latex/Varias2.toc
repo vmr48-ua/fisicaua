@@ -19,4 +19,5 @@
 \contentsline {subsection}{\numberline {4.4.1}Introducción}{16}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Área de una superficie}{17}{subsection.4.4.2}%
 \contentsline {section}{\numberline {4.5}Integrales de funciones escalares sobre superficies}{19}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Integrales de superficie de funciones vectoriales}{20}{section.4.6}%
 \contentsfinish 

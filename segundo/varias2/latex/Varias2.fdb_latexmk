@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1680191619 "/home/victor/fisicaua/segundo/varias2/latex/Varias2.tex" "Varias2.pdf" "Varias2" 1680191625
-  "/home/victor/fisicaua/segundo/varias2/latex/Varias2.tex" 1680191619 52270 9de5bcab440fe53a4517daa7cdf0bd14 ""
+["pdflatex"] 1680619001 "/home/victor/fisicaua/segundo/varias2/latex/Varias2.tex" "Varias2.pdf" "Varias2" 1680619008
+  "/home/victor/fisicaua/segundo/varias2/latex/Varias2.tex" 1680619001 57136 a657e9cb4ea2bbeeaf5495d64a4e08c1 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1650183167 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1650183167 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
@@ -286,9 +286,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1679155863 4276115 6c6d5e5a64f798aa2cbf4b9206039cc3 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1679155861 2927665 6ec44868f13b571ec075f264b239b922 ""
-  "Varias2.aux" 1680191625 11343 c5baa068aed494c6b520582649c43cc4 "pdflatex"
-  "Varias2.tex" 1680191619 52270 9de5bcab440fe53a4517daa7cdf0bd14 ""
-  "Varias2.toc" 1680191625 1726 cf18431c4bc59a372b0432a5cd76ba02 "pdflatex"
+  "Varias2.aux" 1680619008 12146 0760eae18890cb68cbc8b2bcf8740258 "pdflatex"
+  "Varias2.tex" 1680619001 57136 a657e9cb4ea2bbeeaf5495d64a4e08c1 ""
+  "Varias2.toc" 1680619008 1836 611a168d1cf543038db975e94be97359 "pdflatex"
   "ejemplo4.1.3.png" 1679675056 26245 61ddd93323a8adf782b2305bb6299727 ""
   "ejemplo4.1.4.png" 1679675056 18285 64e2573c2fc76ac1ccfe55008fcb782a ""
   "integraldelinea.png" 1679675056 16697 8d0f18cd6de46b398f014dd2401c3d90 ""
@@ -296,6 +296,7 @@
   "letterfonts.tex" 1679156923 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "macros.tex" 1679156923 3389 93000260d2aea292d29c76d4ace77a29 ""
   "mireia1.png" 1680012383 96304 05d276d36081277a1ac870b3fc606d05 ""
+  "mireia2.png" 1680275782 104285 4e219fb155b3dfd224eca021def0e231 ""
   "preamble.tex" 1679647729 21469 c1b9a85e5f41fcfe0e967555b2a86ff5 ""
   (generated)
   "Varias2.aux"

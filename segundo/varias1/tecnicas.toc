@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{\textrm {Introducción}}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Descripción del experimento}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Contexto histórico}{5}{0}{1}
+\beamer@sectionintoc {2}{\textrm {Hipótesis Inicial}}{6}{0}{2}
+\beamer@sectionintoc {3}{\textrm {Marco Teórico}}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{\textrm {Materiales Paramagnéticos y Ferromagnéticos}}{9}{0}{3}
+\beamer@subsectionintoc {3}{2}{\textrm {Temperatura de Curie}}{11}{0}{3}
+\beamer@sectionintoc {4}{\textrm {Aplicación}}{12}{0}{4}
+\beamer@subsectionintoc {4}{1}{\textrm {Motor de Tesla}}{13}{0}{4}
+\beamer@subsectionintoc {4}{2}{\textrm {Funcionamiento}}{14}{0}{4}
