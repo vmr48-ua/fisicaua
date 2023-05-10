@@ -218,21 +218,22 @@
       \begin{align*}
         \centering
         \begin{tabular}{c c c}
-          $\begin{cases}
+          $\begin{cases}\begin{aligned}
               x=r\cos{\theta}\\
               y=r\sin\theta
-            \end{cases}$&
+            \end{aligned}\end{cases}$&
           $\implies$&
-          $\begin{cases}
+          $\begin{cases}\begin{aligned}
               dx=\cos\theta\ dr-r\sin\theta\ d\theta\\
               dy=\sin\theta\ dr+r\cos\theta\ d\theta
-            \end{cases}$
+            \end{aligned}\end{cases}$
         \end{tabular}
       \end{align*}
       y por tanto, $w=d\left(\frac{1}{2}\left(x^2+y^2\right)\right)=d\left(
       \frac{r^2}{2}\right)=r\ dr$
       }
 \chapter{Campo de gradiente, divergencia y rotacional}
+  \vspace{-0.5cm}
   \section{Campo escalar, campo vectorial}
     \definicion{Campo de gradiente}{
       Sea $\ovl{V}$ un campo vectorial con componentes $P$ y $Q$ de clase
@@ -247,10 +248,10 @@
         \hspace{1cm}\ovl{V}=\ovl{grad}\ \varphi=\ovl{\nabla}\varphi&
         \text{i.e.}&
         \ovl{V}=
-        \begin{cases}
+        \begin{cases}\begin{aligned}
             P\left(x,y\right)=\frac{\partial\varphi}{\partial x\left(x,y\right)}\\
             Q\left(x,y\right)=\frac{\partial\varphi}{\partial y\left(x,y\right)}
-        \end{cases}
+        \end{aligned}\end{cases}
       \end{align*}
     }
     \teorema{}{
@@ -263,16 +264,17 @@
       \frac{\partial Q}{\partial x}\left(x,y\right)$
     }
     \comentario{
-      Si $\mcD$ es un abierto estrellado, entonces $\frac{\partial P}{\partial y}
-      =\frac{\partial Q}{\partial x}\Longleftrightarrow w \text{ es cerrada }
-      \overset{\text{Poincaré}}{\Longleftrightarrow} w\text{ es exacta }
-      \Longleftrightarrow \ovl{V}=\ovl{\nabla}\varphi$
-    }
-    \comentario{
-      Si $\mcD$ es un abierto 'simplemente conexo' de $\bbR^3$,
-      entonces $dw=0 \Longleftrightarrow \exists\varphi\in\mcC_1\left(\mcD\right)$
-      tal que $d\varphi = w$\\ i.e. $w$ cerrada $\Longleftrightarrow w$ exacta.
-      \hspace{3.3cm} $\mcD$ simplemente conexo $\Longleftrightarrow\mcD$ no tiene huecos
+      \vspace{-0.2cm}
+      \begin{enumerate}
+        \item Si $\mcD$ es un abierto estrellado, entonces $\frac{\partial P}{\partial y}
+              =\frac{\partial Q}{\partial x}\Longleftrightarrow w \text{ es cerrada }
+              \overset{\text{Poincaré}}{\Longleftrightarrow} w\text{ es exacta }
+              \Longleftrightarrow \ovl{V}=\ovl{\nabla}\varphi$
+        \item Si $\mcD$ es un abierto 'simplemente conexo' de $\bbR^3$,
+              entonces $dw=0 \Longleftrightarrow \exists\varphi\in\mcC_1\left(\mcD\right)$
+              tal que $d\varphi = w$\\ i.e. $w$ cerrada $\Longleftrightarrow w$ exacta.
+              \hspace{3.3cm} $\mcD$ simplemente conexo $\Longleftrightarrow\mcD$ no tiene huecos
+      \end{enumerate}
     }
     \teorema{}{
       \begin{itemize}
@@ -282,17 +284,17 @@
               $$\ovl{V}=\ovl{\nabla}\varphi \Longleftrightarrow w=Pdx+Qdy+Rdz
               \text{ es exacta.}$$
         \item \begin{tabular}{c c c}
-                $\begin{cases}
-                  \text{$\mcD$ estrellado}\\[5pt]
-                  \text{\ \ \ \ \ \ \ \ \ \ ó}\\[5pt]
+                $\begin{cases}\begin{aligned}
+                  \text{$\mcD$ estrellado}\\
+                  \text{ó}\\
                   \text{$\mcD$ simplemente conexo}
-                \end{cases}$&
+                \end{aligned}\end{cases}$&
                 $\Longleftrightarrow$&
-                $\begin{cases}
-                  \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\[5pt]
-                  \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\[5pt]
+                $\begin{cases}\begin{aligned}
+                  \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\
+                  \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\
                   \frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}
-                \end{cases}$
+                \end{aligned}\end{cases}$
               \end{tabular}
       \end{itemize}
     }
@@ -310,8 +312,8 @@
       $\ovl{\nabla}\times\ovl{V}=\ovl{0}$
     }
     \comentario{
-      Si $\mcD$ es simplemente conexo (no hay huecos), entonces el recíproco es
-      cierto, i.e. $\ovl{rot}\ovl{V}=\ovl{0}\implies\ovl{V}=\ovl{\nabla}\varphi$
+      Si $\mcD$ es simplemente conexo (sin huecos) entonces el recíproco es
+      cierto, $\ovl{rot}\ovl{V}=\ovl{0}\Rightarrow\ovl{V}=\ovl{\nabla}\varphi$
       donde $\varphi\in\mcC_1\left(\mcD\right)$
     }
     \definicion{Divergencia}{
@@ -341,7 +343,7 @@
       Es decir, si $\ovl{V}=\ovl{\nabla}\times\ovl{A}$, existe $f$ tal que
       $\ovl{V}=\ovl{\nabla}\times\left(\ovl{A}+\ovl{\nabla}f\right)$
     }
-    \definicion{Laplaciano}{
+    \definicion{Laplaciano Cartesiano}{
       Sea $\varphi$ un campo de clase $\mcC_2$ en $\bbR^2$, llamamos \textbf{
       Laplaciano de $\varphi$} al campo escalar $\Delta\varphi=\frac{\partial^2
       \varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y^2}+\frac{\partial^2
@@ -457,6 +459,7 @@
               \ovl{\nabla}\times A$
           \end{tabular}
 \chapter{Integrales de línea}
+  \vspace{-0.5cm}
   \section{Curvas paramétricas}
     \definicion{Curva paramétrica}{
       Sea $I$ un intervalo de $\bbR$, $f$ y $g$ dos funciones defindas en $I$
@@ -469,19 +472,19 @@
       Tenemos $t\subset I\in\bbR\left(a_1,a_2,b_1,b_2\right)\in\bbR^4\times\bbR^3$
       dados
       \setlength\extrarowheight{0pt}
-      $\begin{cases}
+      $\begin{cases}\begin{aligned}
         x=a_1t+b_1\\
         y=a_2t+b_2
-      \end{cases}$ tenemos $t=\frac{x-b_1}{a_1}$ lo que nos da $y=a_2\left(\frac
+      \end{aligned}\end{cases}$ tenemos $t=\frac{x-b_1}{a_1}$ lo que nos da $y=a_2\left(\frac
       {x-b_1}{a_1}\right)+b_2\Longleftrightarrow y=\frac{a_2}{a_1}x+b_2-\frac
       {a_2b_1}{a_1}$ (ecuación de una recta) i.e. $y = F\left(x\right)$
     }
     \ejemplo{}{
       \setlength\extrarowheight{0pt}
-      $\begin{cases}
+      $\begin{cases}\begin{aligned}
         x=\cos t\\
         y=\sin t
-      \end{cases}$ con $t\in\left[0,2\pi\right]$ tenemos $x^2+y^2=1$, la
+      \end{aligned}\end{cases}$ con $t\in\left[0,2\pi\right]$ tenemos $x^2+y^2=1$, la
       parametrización de un círcula en el plano.
     }
     \definicion{Curva paramétrica tangente}{
@@ -489,10 +492,10 @@
       \left(f\left(t\right),g\left(t\right)\right)\right\}$ con $f$,$g$ derivables
       en $I$.\\Entonces, la curva paramétrica con $t_0\in I$\\
       \setlength\extrarowheight{0pt}
-      $$\begin{cases}
+      $$\begin{cases}\begin{aligned}
         x=f'\left(t_0\right)t + f\left(t_0\right)\\
         y=g'\left(t_0\right)t + g\left(t_0\right)
-      \end{cases}$$\\
+      \end{aligned}\end{cases}$$\\
       es la tangente a $C$ en $M\left(t_0\right)=\left(f'\left(t_0\right),
       g'\left(t_0\right)\right)\neq\left(0,0\right)$
     }
@@ -510,20 +513,21 @@
       \hspace{1cm}$g'\left(t_0\right)=F'\left(f\left(t_0\right)\cdot f'\left(
       t_0\right)\right)\Longleftrightarrow F'\left(x_0\right)=\frac{g'\left(t_0
       \right)}{f'\left(t_0\right)}$ y finalmente, $\left[y=F'\left(x_0\right)
-      \left(x-x_0\right)+F\left(x_0\right)\right] \text{ecuación de una tangente}$\\
+      \left(x-x_0\right)+F\left(x_0\right)\right] \text{ ecuación de una tangente [...]}$\\
+      \newpage
       \textbf{Interpretación vectorial:}\\
       Considerando la parametrización de la definición $\left(x_0=f\left(t_0\right),
       y_0=g\left(t_0\right)\right)$ y sean $M\left(x,y\right),M_0\left(x_0,y_0\right)
       \implies \ovl{T}=\left(f'\left(t_0\right),g'\left(t_0\right)\right)$\vspace{0.2cm}\\
       \setlength\extrarowheight{0pt}
-      $\begin{cases}
+      $\begin{cases}\begin{aligned}
         x=f'\left(t_0\right)t+x_0\\
         y=g'\left(t_0\right)t+y_0
-      \end{cases}\Longleftrightarrow
-      \begin{cases}
+      \end{aligned}\end{cases}\Longleftrightarrow\hspace{0.2cm}
+      \begin{cases}\begin{aligned}
         x-x_0=f'\left(t_0\right)t\\
         y-y_0=g'\left(t_0\right)t
-      \end{cases}\Longleftrightarrow M_0\ovl{M}=t\ovl{T}$, entonces $\ovl{T}$ es
+      \end{aligned}\end{cases}\Longleftrightarrow\hspace{0.2cm} M_0\ovl{M}=t\ovl{T}$, entonces $\ovl{T}$ es
       tangente a $C$ en $M_0$.
     }
   \section{Integrales de línea}
@@ -552,10 +556,10 @@
     \ejemplo{Sea $w=\frac{y}{x^2+y^2}dx-\frac{x}{x^2+y^2}dy,\left(x,y\right)=\left(0,0
     \right)$, necesistamos una curva parametrizada.}{
       Sea\setlength\extrarowheight{0pt}
-      $C = \begin{cases}
+      $C = \begin{cases}\begin{aligned}
         x=\cos\theta\\
         y=\sin\theta
-      \end{cases} \text{con $\theta\in\left[0,2\pi\right]$}$, denotamos $C^+$ a la curva
+      \end{aligned}\end{cases} \text{con $\theta\in\left[0,2\pi\right]$}$, denotamos $C^+$ a la curva
       en el sentido trigonométrico.\\Nos piden calcular
       $\gamma_{C^+}=\int_{C^+}w$. \\Volvemos a la definición: $\int_{C^+}w=\int_{0}^{2\pi}
       \left[\sin\theta\left(-\sin\theta\right)-\cos\theta\left(\cos\theta\right)\right]
@@ -662,9 +666,9 @@
       4t^4+4t^2+1}dt=3\int_{0}^{1}\left(2t^2+1\right)dt=\left[2t^3+3t\right]^1_0=5$
     }
     \ejercicio{Halla la longitud de arco de la siguiente curva: $\gamma\left(t\right)
-    =\setlength\extrarowheight{0pt}\begin{cases}\left(\cos(t),\sin(t),3t\right)\text{
+    =\setlength\extrarowheight{0pt}\begin{cases}\begin{aligned}\left(\cos(t),\sin(t),3t\right)\text{
     si $0\leq t\leq \pi$}\\\left(-1,-t+\pi,3t\right)\text{ \ \ si $\pi\leq t \leq 2\pi$}
-    \end{cases}$}{
+    \end{aligned}\end{cases}$}{
       Tenemos $\gamma_1'\left(t\right)=\setlength\extrarowheight{0pt}\begin{pmatrix}
       -\sin t\\\cos t\\3\end{pmatrix}\ $ y $\ \gamma_2'\left(t\right)=
       \setlength\extrarowheight{0pt}\begin{pmatrix}0\\-1\\3\end{pmatrix}$,
@@ -682,7 +686,7 @@
     un rectángulo. Como se hizo con la integral simple, vamos a subdividir
     los intervalos de los ejes (abcisas y ordenadas). Sean las particiones de
     $\left[a,b\right]$ y $\left[c,d\right]$\\ \setlength\extrarowheight{0pt}
-    $\begin{cases}a=x_0<x_1<\hdots<x_n=b\\c=y_0<y_1<\hdots<y_m=d\end{cases}$
+    $\begin{cases}\begin{aligned}a=x_0<x_1<\hdots<x_n=b\\c=y_0<y_1<\hdots<y_m=d\end{aligned}\end{cases}$
     Obtenemos así las mallas, o Rectángulos Elementales:
     $R_{ij}=\left[x_{i-1},x_i\right]\times\left[y_{j-1},y_j\right]$
     \begin{wrapfigure}{l}{.4\textwidth}
@@ -712,7 +716,7 @@
     }
     \teorema{Fubini versión fuerte}{
       \begin{itemize}
-        \item Sean $\varphi_1$ y $\varphi_2$ dos funicones continuas en un rectángulo
+        \item Sean $\varphi_1$ y $\varphi_2$ dos funiciones continuas en un rectángulo
               compacto de $\left[a,b\right]$ de $\bbR$ (uniformemente continuas) tales
               que:\\$\forall x\in\left[a,b\right],\varphi_1\left(x\right)\leq\varphi_2
               \left(x\right)$ y sea $\mcD\subset\bbR^2$ tal que $\mcD=\left\{\left(
@@ -721,7 +725,7 @@
               es continua en $\mcD$ (entonces $f$ es integrable en $\mcD$) tenemos:
               $$\iint_Df\left(x,y\right)dxdy=\int_{a}^{b}\left(\int_{\varphi_1\left(
               x\right)}^{\varphi_2\left(x\right)}f\left(x,y\right)dy\right)dx$$
-        \item Sean $\psi_1$ y $\psi_2$ dos funicones continuas en un rectángulo
+        \item Sean $\psi_1$ y $\psi_2$ dos funciones continuas en un rectángulo
               compacto de $\left[c,d\right]$ de $\bbR$ tales que:\\
               $\forall x\in\left[c,d\right],\psi_1\left(y\right)\leq\psi_2
               \left(y\right)$ y sea $\mcD'\subset\bbR^2$ tal que $\mcD'=\left\{\left(
@@ -734,14 +738,14 @@
       \end{itemize}
     }
     \ejemplo{Calcular $\iint_\mcD f\left(x,y\right)dxdy$ con $\mcD=\left\{\left(x,y
-    \right)\in\bbR^2\colon 0\leq \leq1, x^2\leq y\leq x\right\}$ (no es un rectángulo),
+    \right)\in\bbR^2\colon 0\leq x \leq1, x^2\leq y\leq x\right\}$ (no es un rectángulo),
     sobre la función $f\left(x,y\right)=x+y$}{
       \begin{wrapfigure}{r}{.26\textwidth}
         \vspace{-1.65cm}
         \includegraphics[width=.26\textwidth]{ejemplo4.1.3.png}
       \end{wrapfigure}
       \vspace{0.6cm}
-      $\iint_\mcD f\left(x,y\right)dxdy = \int_{0}^{1}\int_{x^2}^{x}\left(x,y\right)
+      $\iint_\mcD f\left(x,y\right)dxdy = \int_{0}^{1}\int_{x^2}^{x}f\left(x,y\right)
       dydx=\int_{0}^{1}\left[xy+\frac{y^2}{2}\right]^x_{x^2}dx=\vspace{0.2cm}\\
       \int_{0}^{1}\left(x^2+\frac{x^2}{2}-x^3-\frac{x^4}{2}\right)dx=\frac{3}{20}$
       \vspace{0.6cm}
@@ -755,12 +759,12 @@
       \vspace{0.6cm}
       Como $f\left(x,y\right)\in\mcC_0\left(\bbR^2\right)\Rightarrow\text{Podemos
       aplicar el \textit{Teorema de Fubini}}$\vspace*{0.2cm}\\\setlength\extrarowheight{0pt}
-      $\begin{cases}
+      $\begin{cases}\begin{aligned}
         \iint_{\mcD}e^xdxdy=\int_1^2\int_0^{\log y}e^xdxdy=\int_{1}^{2}
           \left(y-1\right)dy=\left[\frac{y^2}{2}-y\right]_1^2=\frac{1}{2}\\
         \iint_{\mcD}e^xdxdy=\int_0^{\log y}\int_1^2e^xdydx=\int_{0}^{\log 2}
         e^xdydx=\int_0^{\log 2}e^x\left(2-e^x\right)dx=\frac{1}{2}
-      \end{cases}$
+      \end{aligned}\end{cases}$
       \vspace{0.2cm}
     }
   \section{Teorema de Green-Riemann}
@@ -781,11 +785,11 @@
         \end{equation*}
       }
       \ejemplo{Sea $\Phi\colon\bbR^2\rightarrow\bbR^3$ dada por
-        $\begin{cases}
+        $\begin{cases}\begin{aligned}
           x=u\cos v\\
           y=u\sin v\\
           z=u^2+v^2
-        \end{cases}$ \\¿Existe un plano tangente? Hallar el plano tangente en $\Phi\left(0,1\right)$
+        \end{aligned}\end{cases}$ ¿Existe un plano tangente? \\Hallar el plano tangente en $\Phi\left(0,1\right)$
         }{
           $\ovl{T_u}=\cos\left(v\right)\ovl{i}+\sin\left(v\right)\ovl{j}+2u\ovl{k}$\\
           $\ovl{T_v}=-\sin\left(v\right)\ovl{i}+\cos\left(v\right)\ovl{j}+2v\ovl{k}$\\
@@ -834,15 +838,15 @@
       \end{figure}\\
       Hay que considerar una porción de $\mcD$ y sea $R_{ij}$ el ij-ésimo rectángulo
       con vértices $\left(u_i,v_j\right),\left(u_{i+1},v_j\right),\left(u_i,v_{j+1}\right)
-      \left(u_{i+1},v_{j+1}\right)$. Los valores de $\ovl{T_u} y \ovl{T_v}$ en $\left(u_i,v_i\right)$
-      serán determinados $\ovl{T_{u_i}} y \ovl{T_{v_j}}$. Podemos pensar los vectores
+      \left(u_{i+1},v_{j+1}\right)$. Los valores de $\ovl{T_u}$ y $\ovl{T_v}$ en $\left(u_i,v_i\right)$
+      serán determinados $\ovl{T_{u_i}}$ y $\ovl{T_{v_j}}$. Podemos pensar los vectores
       $\Delta_u\ovl{T_u}$ y $\Delta_v\ovl{T_v}$ como tangentes a la superficie en
       $\Phi\left(u_i,v_j\right)=\left(x_{ij},y_{ij},z_{ij}\right)$ donde $\Delta_u=
       u_{i+1}-u_i$ y $\Delta_v=v_{j+1}-v_j$\\ \\
       Entonces, estos vectores forman un paralelogramo $P_{ij}$ que está en el plano
       tangente a la superficie en $\left(x_{ij},y_{ij},z_{ij}\right)$. Para $n$ grande,
       (es una subdivisión de $n$ trozos), el área de $P_{ij}$ es una buena aproximación
-      al área de $\Phi\left(R_{ij}\right)$. Como el area del paralelogramo genedrado por
+      al área de $\Phi\left(R_{ij}\right)$. Como el area del paralelogramo generado por
       dos vectores $\ovl{v_1}$ y $\ovl{v_2}$ es $\norm{\ovl{v_1}\times\ovl{v_2}}$ entonces
       $\mcA\left(P_{ij}\right)=\norm{\Delta_u\ovl{T_{uj}}\times\Delta_v\ovl{T_{vj}}}=
       \Delta u\Delta v\cdot\norm{\ovl{T_{ui}}\times\ovl{T_{vj}}}$\\ \\
@@ -853,20 +857,20 @@
         Sea $\mcD$ la región determinada por $0\leq\theta\leq 2\pi$ y $0\leq r\leq 1$ y
         sea $\Phi\colon\mcD\longrightarrow\bbR^3$ tal que:\vspace{2mm}\\
         Sea la parametrización del cono $S$:
-        $\begin{cases}
+        $\begin{cases}\begin{aligned}
           x=r\cos\theta\\
           y=r\sin\theta\\
           z=r
-        \end{cases}$ hallar su área de superficie.
+        \end{aligned}\end{cases}$ hallar su área de superficie.
       }{
         $\frac{\partial\left(x,y\right)}{\partial\left(r,\theta\right)}=
         \begin{vmatrix}
           \cos\theta&   -r\sin\theta\\
           \sin\theta&    r\cos\theta
-        \end{vmatrix}$\hspace{0.5cm}$\frac{\partial\left(y,z\right)}{\partial\left(r,\theta\right)}
+        \end{vmatrix}=r$\hspace{0.5cm}$\frac{\partial\left(y,z\right)}{\partial\left(r,\theta\right)}
         =-r\cos\theta$ \hspace{0.1cm} y \hspace{0.1cm} $\frac{\partial\left(x,z\right)}{\partial\left(r,\theta\right)}
         =r\sin\theta \implies$\\ \\$\implies\norm{\ovl{T_r}\times\ovl{T_\theta}}=\sqrt{r^2+r^2\cos^2\theta
-        +sin^2\theta}=\sqrt{2}r$\\ \\$\mcA=\int_0^2\pi\int_0^1\sqrt{2}r\ dr\ d\theta =\sqrt{2}\pi$
+        +r^2sin^2\theta}=\sqrt{2}r$\\ \\$\mcA=\int_0^2\pi\int_0^1\sqrt{2}r\ dr\ d\theta =\sqrt{2}\pi$
       }
       \comentario{
         Para confirmar que es el area de $\Phi\left(\mcD\right)$ debemos comprobar
@@ -878,36 +882,37 @@
         Tenemos:
         \begin{alignat*}{4}
           & \begin{aligned}
-            & \begin{cases}
+            & \begin{cases}\begin{aligned}
               r\cos\theta=r'\cos\theta'\\
               r\sin\theta=r'\sin\theta'\\
               r=r'\\
-            \end{cases}\\
+            \end{aligned}\end{cases}\\
           \end{aligned}
             && \implies \quad &&
           \begin{aligned}
-            \begin{cases}
+            \begin{cases}\begin{aligned}
               \cos\theta=\cos\theta'\\
               \sin\theta=\sin\theta'\\
-            \end{cases} \\
+            \end{aligned}\end{cases} \\
           \end{aligned}
             \quad && \implies\theta=\theta' \text{ ó } \theta=\theta'\left(2\pi\right)
         \end{alignat*}
         \\En conclusión,
-        $\begin{cases}
+        $\begin{cases}\begin{aligned}
           r=r'\\
           \theta=\theta'
-        \end{cases}$ y eso nos dice que $\Phi$ es biyectiva.\\
+        \end{aligned}\end{cases}$ y eso nos dice que $\Phi$ es biyectiva.\\
       }
       \ejemplo{
         Una helicoide se define como $\Phi\colon\mcD\rightarrow\bbR^3$ con
-        $\begin{cases}
+        $\begin{cases}\begin{aligned}
           x=r\cos\theta\\
           y=r\sin\theta\\
           z=\theta
-        \end{cases}$ y $\mcD$ es la región donde $0\leq\theta\leq 2\pi$ y
+        \end{aligned}\end{cases}$ y $\mcD$ es la región donde\vspace{-0.5cm}\\ $0\leq\theta\leq 2\pi$ y
         $0\leq r\leq 1$. Hallar su área.
       }{
+        \vspace{0.2cm}
         Calculamos $\frac{\partial\left(x,y\right)}{\partial\left(1,0\right)}=r
         \hspace{0.4cm}\frac{\partial\left(y,z\right)}{\partial\left(1,0\right)}=\sin\theta
         \hspace{0.4cm}\frac{\partial\left(x,z\right)}{\partial\left(1,0\right)}=\cos\theta$\\ \\
@@ -918,9 +923,9 @@
       \comentario{
         Si consideramos una superficie $\mcS$ dada con $z=f\left(x,y\right)$ donde
         $\left(x,y\right)\in\mcD$ admite la parametrización
-        $\begin{cases}
+        $\begin{cases}\begin{aligned}
           x=u\\ y=v\\ z=f\left(u,v\right)
-        \end{cases}$ con $\left(u,v\right)\in\mcD$. \\ \\
+        \end{aligned}\end{cases}$ con $\left(u,v\right)\in\mcD$. \\ \\
         Si $f$ es de clase $\mcC_1$, entonces la superficie es suave, y el cálculo del
         área se reduce a:$$\boxed{\mcA\left(\mcS\right)=\iint_\mcD\sqrt{1+\left(\frac{\partial f}
         {\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}\ dx\ dy}$$
@@ -936,7 +941,7 @@
         \textit{Teorema de Fubini}:\\
         $\mcA\left(\mcS^+\right)=\int_{-1}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
         \frac{1}{\sqrt{1-x^2-y^2}}\ dy\ dx=\int_{-1}^{1}\left[\arcsin\left(
-        \frac{y}{\left(1-x^2\right)^{\frac{1}{2}}}\right)\right]_{\sqrt{1-x^2}}^{
+        \frac{y}{\left(1-x^2\right)^{\frac{1}{2}}}\right)\right]_{-\sqrt{1-x^2}}^{
         \sqrt{1-x^2}}\ dx=\int_{-1}^{1}\left(\frac{\pi}{2}+\frac{\pi}{2}\right)\ dx=
         2\pi$ \\ \\Por simetría, $\mcA\left(\mcS^-\right)=2\pi$ y finalmente $\mcA\left(
         \mcS^+\right)+\mcA\left(\mcS^-\right)= 4\pi$
@@ -972,51 +977,52 @@
       \theta=\int_{0}^{2\pi}\frac{4}{3}\ d\theta=\frac{8}{3}\pi$
     }
     \comentario{
-      Si $z=g\left(x,y\right)$ con $g\in\mcC_1$ tenemos:
-      $$\boxed{\iint_\mcS f\ d\mcS=\iint_\mcD f\left(x,y,g\left(x,y\right)\right)\sqrt{1+\left(
+      \vspace{-0.25cm}Si $z=g\left(x,y\right)$ con $g\in\mcC_1$ tenemos:\hspace{0.2cm}
+      $\boxed{\iint_\mcS f\ d\mcS=\iint_\mcD f\left(x,y,g\left(x,y\right)\right)\sqrt{1+\left(
       \frac{\partial g}{\partial x}\right)^2+\left(\frac{\partial g}{\partial y}\right)^2}
-      \ dx\ dy}$$
+      \ dx\ dy}$
     }
-    \ejemplo{Sea $\mcS$ una superficie definida por $z=x^2+y$ donde $\mcD$ es la region
-    caracterizada por $0\leq x\leq 1$ y $-1\leq y\leq 1$. Calcular $\iint_\mcD x\ d\mcS$}{
-      Tenemos $\iint_\mcS x\ d\mcS=\iint_\mcD x\sqrt{1+4x^2+1}\ dx\ dy=\int_{-1}^{1}\left(
-      \int_{0}^{1}x\sqrt{4x^2+2}\ dx\right)\ dy=\frac{1}{8}\int_{-1}^{1}\left(\int_{0}^{1}
-      8x\left(4x^2+2\right)^\frac{1}{2}\ dx\right)\ dy=\frac{2}{3}\frac{1}{8}\int_{-1}^{1}
-      \left[\left(2+4x^2\right)^\frac{3}{2}\right]_0^1\ dy=\frac{1}{12}\int_{-1}^{1}\left(
-      6^\frac{3}{2}-2^\frac{3}{2}\right)\ dy=\sqrt{2}\left(\sqrt{3}-\frac{1}{3}\right)$
+    \ejemplo{Sea $\mcS$ una superficie definida por $z=x^2+y$ donde $\mcD$ es la región
+      caracterizada por $0\leq x\leq 1$ y $-1\leq y\leq 1$. Calcular $\iint_\mcD x\ d\mcS$}{
+      Tenemos $\iint_\mcS xd\mcS=\iint_\mcD x\sqrt{1+4x^2+1}\ dxdy=\int_{-1}^{1}\left(
+      \int_{0}^{1}x\sqrt{4x^2+2}dx\right)dy=\frac{1}{8}\int_{-1}^{1}\left(\int_{0}^{1}
+      8x\left(4x^2+2\right)^\frac{1}{2}dx\right)dy=\frac{2}{3}\frac{1}{8}\int_{-1}^{1}
+      \left[\left(2+4x^2\right)^\frac{3}{2}\right]_0^1dy=\frac{1}{12}\int_{-1}^{1}\left(
+      6^\frac{3}{2}-2^\frac{3}{2}\right)dy=\sqrt{2}\left(\sqrt{3}-\frac{1}{3}\right)$
     }
+    \clearpage
     \comentario{
       Si $z=g\left(x,y\right)$\\
-      \begin{wrapfigure}{l}{.5\textwidth}
-        \vspace{-0.5cm}
+      \begin{wrapfigure}{r}{.3\textwidth}
+        \vspace{-0.7cm}
         \centering
-        \includegraphics[width=.5\textwidth]{mireia2.png}
-      \end{wrapfigure}    
-      $\Phi\left(x,y,z\right)=z-g\left(x,y\right)=0\text{ un vector normal a }
-      \Phi\text{ es }\ovl{n}=\ovl{\nabla}\Phi\text{, es decir, }\boxed{\ovl{n}=
-      -\frac{\partial g}{\partial x}\ovl{i}-\frac{\partial g}{\partial y}\ovl{j}+\ovl{k}}
-      \text{ y tenemos }\ovl{n},\ovl{k}=\norm{\ovl{n}}\cdot\norm{\ovl{k}}\cdot
-      \cos\left(\ovl{n},\ovl{k}\right) \Longleftrightarrow\cos\theta=
-      \frac{\ovl{n}\cdot\ovl{k}}{\norm{\ovl{n}}\cdot\norm{ovl{k}}}=
+        \includegraphics[width=.3\textwidth]{mireia2.png}
+      \end{wrapfigure}
+      $\Phi\left(x,y,z\right)=z-g\left(x,y\right)=0$\\ 
+      Un vector normal a $\Phi\text{ es }\ovl{n}=\ovl{\nabla}\Phi$
+      $\text{es decir, }\boxed{\ovl{n}=-\frac{\partial g}{\partial x}\ovl{i}-\frac{\partial g}{\partial y}\ovl{j}+\ovl{k}}$
+      \vspace{0.2cm}\\$\ovl{n},\ovl{k}=\norm{\ovl{n}}\cdot\norm{\ovl{k}}\cdot
+      \cos(\ovl{n},\ovl{k}) \Leftrightarrow\cos\theta=
+      \frac{\ovl{n}\cdot\ovl{k}}{\norm{\ovl{n}}\cdot\norm{\ovl{k}}}=
       \frac{\ovl{n}\cdot\ovl{k}}{\norm{\ovl{n}}}=\frac{1}{\norm{\ovl{n}}} 
-      \Longleftrightarrow\norm{\ovl{n}}=\frac{1}{\cos\theta}
-      \text{ (sabiendo que }\ovl{k}\text{ es unitario y es }\left(0,0,1\right)\text{)}
-      \text{\\Al final obtenemos,}\boxed{\iint_\mcS f\ d\mcS=\iint_\mcD\frac{f\left(x,y,
-      g\left(x,y\right)\right)}{\cos\theta}}\ dx\ dy$
+      \Leftrightarrow\norm{\ovl{n}}=\frac{1}{\cos\theta}\\
+      \text{(sabiendo que }\ovl{k}\text{ es unitario y es }\left(0,0,1\right)\text{)}\vspace{0.2cm}\\
+      \text{Al final obtenemos, } \boxed{\iint_\mcS f\ d\mcS=\iint_\mcD\frac{f\left(x,y,
+      g\left(x,y\right)\right)}{\cos\theta}}\ dxdy$
     }
     
     \ejemplo{Calcular $\iint_\mcS x\ d\mcS$ donde $\mcS$ es el triángulo con vértices
     $\left(1,0,0\right),\left(0,1,0\right),\left(0,0,1\right)$ (indicación: encontrar un
     vector normal $\ovl{n}$ unitario, tendriámos $\ovl{n}\cdot\ovl{k}=\cos\theta$)}{
       Esta superficie es el plano dado por $x+y+z=1$. Un vector normal $\ovl{n}$ a
-      este plano tine coordenadas $\left(1,1,1\right)$. Tenemos $\norm{\ovl{n}}=\sqrt{3}$
+      este plano tiene coordenadas $\left(1,1,1\right)$. Tenemos $\norm{\ovl{n}}=\sqrt{3}$
       lo que nos da un vector normal unitario a este plano $\ovl{n}=\frac{\ovl{n}}{\norm{\ovl{n}}}
       \left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right) \text{esto va vertical}$.
       Con la fórmula del comentario anterior, tenemos $\iint_\mcS x\ d\mcS=\iint_\mcD \frac
-      {x}{\ovl{n}\cdot\ovl{k}}\ dx\ dy=\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}$ donde 
+      {x}{\ovl{n}\cdot\ovl{k}}\ dxdy=\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}$ donde 
       $\ovl{n}\cdot\ovl{k}=\norm{\ovl{n}}\norm{\ovl{k}}\cos\theta\Leftrightarrow
       \ovl{n}\cdot\ovl{k}=\cos\theta$ porque $\norm{\ovl{n}}\norm{\ovl{k}}=1$ por unitarios.\\
-      $\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}=\sqrt{3}\int_{0}^{1}\int_{0}^{1-x}x\ dy\ dx=
+      $\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}=\sqrt{3}\int_{0}^{1}\int_{0}^{1-x}x\ dydx=
       \frac{\sqrt{3}}{6}$      
     }
   \section{Integrales de superficie de funciones vectoriales}
@@ -1036,6 +1042,168 @@
       Una superficie \textbf{cerrada} se define como la frontera de un sólido finito.
     }
     \ejemplo{}{La superficie de una esfera es una superficie cerrada}
-    
+    \comentario{
+      \begin{enumerate}
+        \item Si una superficie \textbf{suave} $\mcS$ está definida por $f\left(x,y,z\right)=0$
+              entonces la normal es \textbf{unitaria} $\ovl{n}=\frac{\ovl{\nabla}f}
+              {\norm{\ovl{\nabla}f}}$
+        \item Si $f$ está definida de forma explícita. $z=g\left(x,y\right)$ podemos escribir
+      \end{enumerate}
+    }
+\chapter{Integrales Triples}
+    \section{Introducción}
+    \noindent Como lo hicimos con la integral doble, vamos a definir la integral de una función en el
+    paralelepípedo (rectángulo). $V=\left[a_1,b_1\right]\times\left[a_2,b_2\right]\times\left[a_3,b_3\right]$.\\
+    \noindent Sean $N_1,N_2,N_3$ tres enteros dados:
+    $\begin{cases}\begin{aligned}
+      \vspace{2pt}
+      x_i-x_{i-1}=\frac{b_1-a_1}{N_1}\\
+      \vspace{2pt}
+      y_j-y_{j-1}=\frac{b_2-a_2}{N_2}\\
+      \vspace{2pt}
+      z_k-z_{k-1}=\frac{b_3-a_3}{N_3}
+    \end{aligned}\end{cases}$\\
+    lo que nos da \textbf{paralelepípedos elementales} $w_{ijk}=\left[x_{i-1},x_i\right]\times
+    \left[y_{j-1},y_j\right]\times\left[z_{k-1},z_k\right]$
+    \definicion{Integral Triple}{
+      Sea $\mcI_\mcV\left(f\right)=\sum_{i=1}^{N_1}\sum_{j=1}^{N_2}\sum_{k=1}^{N_3}
+      f\left(x_i,y_j,z_k\right)\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\left(z_k-z_{k-1}\right)$
+      si $N_1,N_2$ y $N_3$ se van al infinito, entonces $\mcI_\mcV\left(f\right)$ admite un 
+      límite en $\bbR$. Este límite se llama \textbf{Integral Triple} de $f$ en $\mcV$y se escribe:
+      $$\mcI=\iiint_\mcV f\left(x,y,z,\right)\ dx\ dy\ dz$$
+    }
+    \comentario{
+      Como lo hicimos con la integral doble, la integral triple se puede calcular gracias a
+      tres integrales simples.
+    }
+    \teorema{Cálculo directo}{
+      \begin{enumerate}
+        \item Si $\mcV$ es de la forma siguiente: $$\mcV = \left\{\left(x,y,z\right)
+        \in\bbR^3\colon a\leq x\leq b\colon g­_1(x)\leq y\leq g_2(x)\colon h_1(x,y)\leq z
+        \leq h_2(x,y)\right\}$$
+        $$\text{y entonces, }\iiint_mcV f\left(x,y,z\right)\ dx\ dy\ dz=
+        \int_{a}^{b}\left(\int_{g_1(x)}^{g_2(x)}\left(\int_{h_{1}(x,y)}^{h_2(x,y)}f\left(x,y,z\right)\ dz\right)\ dy\right)\ dx$$
+        
+        \item Si $\mcV$ es de la forma siguiente: $$\mcV = \left\{\left(x,y,z\right)
+        \in\bbR^3\colon a\leq x\leq b\colon g­_1(x)\leq z\leq g_2(x)\colon h_1(x,z)\leq y
+        \leq h_2(x,z)\right\}$$
+        $$\text{entonces, }\iiint_mcV f\left(x,y,z\right)\ dx\ dy\ dz=
+        \int_{a}^{b}\left(\int_{g_1(x)}^{g_2(x)}\left(\int_{h_{1}(x,z)}^{h_2(x,z)}f\left(x,y,z\right)\ dy\right)\ dz\right)\ dx$$     
+      
+        \item \textit{Idem.}
+      \end{enumerate}
+    }
+  \section{Cambio de variables}
+    \noindent Consideramos $\mcI=\iiint_\mcV f\left(x,y,z\right)\ dx\ dy\ dz$ y supongamos que tenemos
+    el cambio de variable siguiente:\\
+    \begin{tabular}{l}
+      \hspace{-1cm}
+      $\begin{cases}\begin{aligned}
+        &x=a\left(u,v,w\right)\\
+        &y=b\left(u,v,w\right)\\
+        &z=c\left(u,v,z\right)
+      \end{aligned}\end{cases}$\\
+    \end{tabular}
+    con $\left(u,v,w\right)\in\Omega\text{ biyección de }\mcV$\\
+    Podemos, entonces, definir una nueva función $g$ tal que: $g\left(u,v,w\right)=
+    f\left(a\left(u,v,w\right),b\left(u,v,w\right),c\left(u,v,w\right)\right)$ lo que nos
+    permite escribir:
+    \teorema{}{
+      $$\iiint_\mcV f\left(x,y,z\right)\ dx\ dy\ dz=\iiint_\Omega g\left(u,v,w\right)
+      \begin{vmatrix}J_g\left(u,v,w\right)\end{vmatrix}\ du\ dv\ dw$$
+    }
+    \ejemplo{Calcular $\mcI=\iiint_\mcV xyz\left(1-x-y-z\right)\ dx\ dy\ dz$ con $\mcV$
+    delimitado por los planos\\ $\begin{cases}\begin{aligned}&x=0\\ &y=0\\ &z=0\\ &x+y+z=1\end{aligned}\end{cases}$ con el cambio de variable propuesto:
+    $\begin{cases}\begin{aligned}&x=u\left(1-u\right)\\ &y=uv\left(1-w\right)\\ &z=uvw\end{aligned}\end{cases}$}{
+      \begin{wrapfigure}[1]{r}{.3\textwidth}
+        \vspace{-1cm}
+        \begin{center}
+            \includegraphics[width=.3\textwidth]{mireia4.png}
+        \end{center}
+      \end{wrapfigure}
+      Tenemos $g\left(u,v,w\right)=\left(u-uv,uv-uvw,uvw\right)$\vspace{0.4cm}\\ 
+      y además:
+      $\begin{cases}\begin{aligned} &u=x+y+z\\ &v=\frac{y+z}{x+y+z}\\ &w=\frac{z}{y+z}\end{aligned}\end{cases}$\vspace{0.4cm}\\
+      $\begin{vmatrix}J_g\left(u,v,w\right)\end{vmatrix}=
+      \begin{vmatrix}
+        1-v&                -u&                 0\\
+        v\left(1-w\right)&  u\left(1-w\right)&  -uv\\
+        vw&                 uw&                 uv
+      \end{vmatrix}=u^2v$\\ 
+
+      \vspace{0.2cm}$g\left(u,v,w\right)=f\left(u\left(1-v\right),uv\left(1-w\right),uvw\right)=u^3v^2w\left(1-u\right)\left(1-v\right)\left(1-w\right)$\\
+
+      \vspace{0.2cm}$\mcI=\iiint u^5v^3w\left(1-u\right)\left(1-v\right)\left(1-w\right)dudvdw=\int_{0}^{1}u^5\left(1-v\right)dv\int_{0}^{1}w\left(1-w\right)dw=$
+      $\left(\frac16-\frac17\right)\left(\frac14-\frac15\right)\left(\frac12-\frac13\right)$
+    }
+    \subsection{Algunos cambios de variable}
+      \subsubsection{Cambio en coordenadas cilíndricas}
+        \vspace{0.2cm}
+        \begin{wrapfigure}[5]{l}{.27\textwidth}
+            \vspace{-1.4cm}
+            \begin{center}
+                \includegraphics[width=.35\textwidth]{mireia3.png}
+            \end{center}
+        \end{wrapfigure}
+        $\begin{cases}\begin{aligned} &x=r\cos\theta\\ &y=r\sin\theta\\ &z=z\end{aligned}\end{cases}$ con $r\geq 0,\ \theta\in\left[0,2\pi\right]$
+        $\hspace{0.5cm}g\left(r,\theta,z\right)=\left(r\cos\theta,r\sin\theta,z\right)$\\
+        
+        \vspace{0.2cm}$\begin{vmatrix}J_g\left(r.\theta,z\right)\end{vmatrix}=
+        \begin{vmatrix}\frac{\partial\left(x,y,z\right)}{\partial\left(r,\theta,z\right)}\end{vmatrix}=
+        \begin{vmatrix}
+        \cos\theta& -r\sin\theta& 0\\
+        \sin\theta& r\sin\theta & 0\\
+        0         & 0           & 1
+        \end{vmatrix}=r$
+        $\iiint_V \left(x,y,z\right)\ dx\ dy\ dz=$\vspace{0.4cm}\\
+        \hspace*{1cm}$=\iiint_\Omega g\left(r\cos\theta,r\sin\theta,z\right)r\ dr\ d\theta\ dz$
+
+        \clearpage
+        \comentario{
+          Si $\mcV=\left\{\left(x,y,z\right)\in\bbR^3/(x,y)\in\mcD,\varphi_1(x,y)\leq z \leq\varphi_2(x,Y)\right\}$
+          la proyección de $\mcV$ sobre ($Oxy$) es el dominino $\mcD$ tal que:
+          $\mcD=\left\{(r,\theta)\in\bbR^2,\alpha<\theta<\beta, h_1(\theta)\leq r \leq h_2(\theta)\right\}$
+          Entonces si $f$ es una función continua en $\mcV$ tenemos:
+          $$\iiint_\mcV f(x,y,z)dxdydz=\iint_\mcD\left(\int_{\varphi_1(x,y)}^{\varphi_2(x,y)}f(x,y,z)dz\right)dxdy=
+          \int_{\alpha}^{\beta}\int_{h_1(\theta)}^{h_1(\theta)}\int_{\varphi_1(x,y)}^{\varphi_2(x,y)}f\left(r\cos\theta,r\sin\theta,z\right)r\ dzdrd\theta$$
+        }
+        \ejemplo{Calcular $\iiint_\mcV \left(x^2+y^2+1\right)\ dxdydz$\\ donde
+        $\mcV=\left\{(x,y,z)\in\bbR^3,x^2+y^2\leq 1\text{ y }0\leq z \leq 2\right\}$}{
+          Vamos a utilizar las coordenadas cilíndricas $\begin{cases}\begin{aligned} &x=r\cos\theta\\ &y=r\sin\theta\\ &z=z\end{aligned}\end{cases}$
+          e integramos en $\Delta = [0,1]\times[0,2\pi]\times[0,2]$.\\
+
+          \vspace{0.4cm}Tenemos $f(r\cos\theta,r\sin\theta,z)=r^2+1$ lo que nos da $\iiint_\mcV f\left(x,y,z\right)\ dxdydz=
+          \iiint_\Delta (1+r^2)r\ drd\theta dz=\int_{0}^{\pi}dz\int_{0}^{2\pi}d\theta\int_{0}^{1}(1+r^2)r\ dr=4\pi\left[\frac{r^2}{2}+\frac{r^4}{4}\right]_0^1
+          =4\pi\left(\frac12+\frac14\right)=3\pi$
+        }
+      \subsection{Coordenadas Esféricas}
+        $\begin{cases}\begin{aligned}
+          &x = \rho\sin\varphi\cos\theta\\
+          &y = \rho\sin\varphi\sin\theta \\ 
+          &z = \rho\cos\varphi\\
+          &\rho^2 = x^2+y^2+z^2
+        \end{aligned}\end{cases}$ con $\rho\geq 0$, $\theta\in[0,2\pi]$, $\varphi\in[0,\pi]$\\
+
+        \vspace{0.4cm}El Jacobiano será $\boxed{\rho^2\sin\varphi}$
+        \comentario{
+          Si ponemos 
+          $\begin{cases}\begin{aligned}
+            &r=\rho\sin\varphi\\
+            &\theta=\theta\\
+            &z=\rho\cos\varphi
+          \end{aligned}\end{cases}$ entonces podemos transformar las coordenadas esféricas en cilíndricas $\left(r,\theta,z\right)$
+        }
+        \ejemplo{Sea $\mcB$ la bola unidad y $a>1$, calcular $\mcI = \iiint_\mcB\frac{dx\ dy\ dz}{\sqrt{x^2+y^2+(z-1)^2}}$}{
+          Pasamos a coordenadas esféricas: $\begin{cases}\begin{aligned}
+            &x = \rho\sin\varphi\cos\theta\\
+            &y = \rho\sin\varphi\sin\theta \\ 
+            &z = \rho\cos\varphi
+          \end{aligned}\end{cases}$ y obtenemos\vspace{0.2cm} \\
+          $\mcI=\int_{0}^{1}\int_{-\pi}^{\pi}\int_{0}^{2\pi}\frac{\rho^2\sin\varphi}{\sqrt{\rho^2+r^2-2a\rho\cos\varphi}}d\varphi d\theta d\rho$
+          \hspace{0.5cm}Hacemos el cambio de variable: 
+          $\begin{cases}\begin{aligned} &t=\rho^2+a^2-2a\rho\cos\varphi\\ &dt=2a\rho\sin\varphi\ d\varphi\end{aligned}\end{cases}$
+          
+          \vspace{0.4cm}y \hspace{0.5cm}$\mcI = 2\pi\int_{0}^{1}\rho^2\left(\int_{(a-\rho)^2}^{(a+\rho)^2}\frac{dt}{2a\rho\sqrt{t}}\right)d\rho = \frac{4\pi}{a}\int_{0}^{1}\rho^2\ d\rho=\frac{4\pi}{3a}$
+        }
 \end{document}
 

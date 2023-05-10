@@ -27,6 +27,7 @@ X,Y = np.meshgrid(y,x)
 charges = []
 charges.append((q,(-0.5,0)))
 charges.append((-q,(0.5,0)))
+charges.append((q,(0,1)))
 
 # Electric field vector, E=(Ex, Ey), as separate components
 Ex, Ey = np.zeros((N, N)), np.zeros((N, N))

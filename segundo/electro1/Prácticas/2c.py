@@ -29,7 +29,7 @@ for carga in Q:
 colorinterpolation = 50
 colourMap = plt.cm.RdGy
 fig = plt.figure()
-plt.contourf(x, y , np.transpose(M), colorinterpolation, cmap=colourMap)
+plt.contourf(x, y, np.transpose(M), colorinterpolation, cmap=colourMap)
 plt.title("M")
 plt.xlabel('$x$')
 plt.ylabel('$y$')

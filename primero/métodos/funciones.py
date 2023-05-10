@@ -531,42 +531,49 @@ plt.plot(xc,fpade(xc),label='Pade')
 def dy_tres(f,x0,h):
     return (f(x0+h)-f(x0-h))/(2.*h)
 def dy_tres_discreto(x,y):
-    h=x[1]-x[0]
+    h=abs(x[1]-x[0])
     return (y[2]-y[0])/(2.*h)
 
 def dy_cinco(f,x0,h):
     return (f(x0-2.*h)-8.*f(x0-h)+8.*f(x0+h)-f(x0+2.*h))/(12.*h)
 def dy_cinco_discreto(x,y):
-    h = (x[4]-x[0])/5
+    h = abs(x[4]-x[0])/5
     return (y[0]-8.*y[1]+8.*y[3]-y[4])/(12.*h)
 
 def simpson_cerrado(f,a,b):
-    h = (b-a)/2
+    h = abs(b-a)/2
     return h*(f(a)+4*f((a+b)/2)+f(b))/3
 def simpson_cerrado_discreto(x,y):
     h = abs(x[0]-x[1])
     return h*(y[0]+4*y[1]+y[2])/3
 
 def simpson_abierto(f,a,b):
-    h = (b-a)/4
+    h = abs(b-a)/4
     return 4*h(2*f(a)-f((a+b)/2)+2*f(b))/3
 def simpson_abierto_discreto(x,y):
     h = abs(x[0]-x[1])
     return 4*h(2*y[0]-y[1]+2*y[2])/3
 
 def simpson38_cerrado(f,a,b):
-    h = (b-a)/3
+    h = abs(b-a)/3
     return 3*h*(f(a)+3*f((a+b)/3)+3*f((2*(a+b))/3)+f(b))/8
 def simpson38_cerrado_discreto(x,y):
     h = abs(x[0]-x[1])
     return 3*h*(y[0]+3*y[1]+3*y[2]+y[3])/8
 
 def simspon38_abierto(f,a,b):
-    h = (b-1)/5
+    h = abs(b-1)/5
     return  5*h*(11*f(a)+f((a+b)/3)+f((2*(a+b))/3)+11*f(b))/24
 def simpson38_abierto_discreto(x,y):
     h = abs(x[0]-x[1])
     return 5*h*(11*y[0]+y[1]+y[2]+11*y[3])/24
+
+def trapecio_compuesto(f,a,b,n):
+    xi = np.linspace(a,b,n+1)
+    suma = 0.
+    for i in range(n):
+        suma += trapecio_cerrado(f,xi[i],xi[i+1])     
+    return suma
 
 def simpson_compuesto_cerrado(f,a,b,n):
     xi = np.linspace(a,b,n+1)
@@ -574,8 +581,7 @@ def simpson_compuesto_cerrado(f,a,b,n):
     for i in range(n):
         suma += simpson_cerrado(f,xi[i],xi[i+1])     
     return suma
-
-def simspon_compuesto_abierto(f,a,b,n):
+def simspon_compuesto_abierto(f,a,b,n): #?
     xi = np.linspace(a,b,n+1)
     suma = 0
     for i in range(n):
