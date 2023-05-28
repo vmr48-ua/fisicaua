@@ -1,10 +1,33 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import numpy.polynomial.polynomial as npol
-from numpy import e,cos,sin
+from numpy import e,cos,sin,pi
 from scipy.integrate import quad
 import scipy.linalg as la
 from scipy.optimize import fmin
+
+"""
+In [1]: from sympy import *
+In [2]: import numpy as np
+In [3]: x = Symbol('x')
+In [4]: y = x**2 + 1
+In [5]: yprime = y.diff(x)
+In [6]: yprime
+Out[6]: 2⋅x
+
+In [7]: f = lambdify(x, yprime, 'numpy')
+In [8]: f(np.ones(5))
+Out[8]: [ 2.  2.  2.  2.  2.]
+"""
+
+from sympy import *
+x = Symbol('x')
+y = sin(x)*cos(x)
+yprime = y.diff(x)
+yprime
+
+f = lambdify(x, yprime, 'numpy')
+plotting.plot(yprime,y)
 
 
 """###########"""
@@ -116,6 +139,8 @@ newton_5ptos(distanciaO, 0, 10**-4, 5)
 secante(distanciaO, 0, 2, 10**-4, 5)
 regula_falsi(distanciaO, 0, 2, 10**-4, 5)
 fmin(distanciaO,0.5) #array([0.58720703])
+
+plt.show()
 
 """###########"""
 """Ejercicio 5"""

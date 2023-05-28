@@ -67,7 +67,6 @@ rho = np.zeros((N,N))
 for carga in cargas:
 	rho[Pos(carga[1])]=carga[0]
 
-#print (rho)
 
 def V(q,r0,x,y):
     den=np.hypot(x-r0[0],y-r0[1])

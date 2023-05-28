@@ -35,7 +35,7 @@ x0 = np.array([0,0,0],dtype=float)
 
 for i in range(3):
     x1 = np.dot(B,x0) + c
-    la.norm(x1-x0,2)
+    la.norm(x1-x0,np.inf) #2,1 etc.
     x0 = x1.copy()
 
 #Gauss-Seindel M = D-L , N = U
@@ -119,6 +119,12 @@ la.solve(A,b)
 #Nos da Singular matrix, ya que A tiene 0 en la diagonal, por lo que no es invertible
 #hay que cambiar las filas para así poder aplicar el método
 
+A = np.array([[1,2,-2],[2,2,1],[1,0,1]])
+b = np.array([1,3,5])
+
+jacobi(A,b,x0,np.inf,10**(-5),100)
+gauss_seindel(A,b,x0,np.inf,10**(-5),100)
+la.solve(A,b)
 
 #Ejercicio 4
 

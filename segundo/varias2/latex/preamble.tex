@@ -6,9 +6,13 @@
 \usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 \usepackage{wrapfig}
+\usepackage{subcaption}
 \usepackage{afterpage}
 \usepackage[varbb]{newpxmath}
 \usepackage{xfrac}
+\usepackage{tabularx}
+\usepackage{floatrow}
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
 \usepackage{amssymb}
 %command for alg-closure that automatically adapts its 'bar' to the arg based on the args length (including '\')
 \newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip} % overline short
@@ -60,7 +64,7 @@
 \usepackage{transparent}
 \usepackage{titlesec}
 \titleformat{\section}{\normalfont\fontsize{17.28pt}{12pt}\selectfont\bfseries}{\thesection}{1em}{}
-\usepackage{mathtools}
+\usepackage{empheq} % boxed align
 
 
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}

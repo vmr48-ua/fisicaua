@@ -84,7 +84,7 @@
     \comentario{
       $\forall H_1\left(h_1,k_1\right),H_1'\left(h_1',k_1'\right),H_2\left(h_2,k_2\right)$ y sea $\lambda \in \bbR \colon$\\
       $dx\wedge dy\left(H_1+\lambda H_1',H_2\right)=dx\wedge dy\left(\left(h_1+\lambda h_1',k_1+\lambda k_1'\right),\left(h_2,k_2\right)\right)=dx\wedge dyk_2\left(h_1+\lambda h_1'\right)-dx\wedge dyh_2\left(k_1+\lambda k_1'\right)=$\\
-      $dx\wedge dy\left(h_1k_2-h_2k_1\right)+\lambda dx\wedge dy\left(h_1'k_2 - h_2k_1'\right)=dx\wedge dy\left(H_1,H_2\right)+\lambda dx\wedge dy \left(H_1',H_2\right) \implies$ \\$dx\wedge dy$ es lineal respecto a la primera variable. Idem con la segunda.\\
+      $dx\wedge dy\left(h_1k_2-h_2k_1\right)+\lambda dx\wedge dy\left(h_1'k_2 - h_2k_1'\right)=dx\wedge dy\left(H_1,H_2\right)+\lambda dx\wedge dy \left(H_1',H_2\right) \implies$ \\$dx\wedge dy$ es lineal respecto a la primera variable. \textit{Idem} con la segunda.\\
       Esto implica que $dx\wedge dy$ es bilineal, y lo es tambien $f\left(x,y\right)dx\wedge dy$.\\ En conclusión, $f\left(x,y\right)dx\wedge dy \in \mathcal{B}_i\left(\bbR^2\times \bbR^2,\bbR\right)$
     }
     \definicion{Derivada exterior}{
@@ -249,8 +249,8 @@
         \text{i.e.}&
         \ovl{V}=
         \begin{cases}\begin{aligned}
-            P\left(x,y\right)=\frac{\partial\varphi}{\partial x\left(x,y\right)}\\
-            Q\left(x,y\right)=\frac{\partial\varphi}{\partial y\left(x,y\right)}
+            &P\left(x,y\right)=\dfrac{\partial\varphi}{\partial x\left(x,y\right)}\\
+            &Q\left(x,y\right)=\dfrac{\partial\varphi}{\partial y\left(x,y\right)}
         \end{aligned}\end{cases}
       \end{align*}
     }
@@ -285,15 +285,15 @@
               \text{ es exacta.}$$
         \item \begin{tabular}{c c c}
                 $\begin{cases}\begin{aligned}
-                  \text{$\mcD$ estrellado}\\
-                  \text{ó}\\
-                  \text{$\mcD$ simplemente conexo}
+                  &\text{$\mcD$ estrellado}\\
+                  &\hspace{1cm}\text{ó}\\
+                  &\text{$\mcD$ simplemente conexo}
                 \end{aligned}\end{cases}$&
                 $\Longleftrightarrow$&
                 $\begin{cases}\begin{aligned}
-                  \frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\
-                  \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\
-                  \frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}
+                  &\frac{\partial R}{\partial y}=\frac{\partial Q}{\partial z}\\
+                  &\frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\\
+                  &\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}
                 \end{aligned}\end{cases}$
               \end{tabular}
       \end{itemize}
@@ -532,11 +532,12 @@
     }
   \section{Integrales de línea}
     \subsection*{Introducción}
-      \vspace{-0.5cm}
-      \begin{wrapfigure}{l}{.5\textwidth}
-        \includegraphics[width=.4\textwidth]{integraldelinea.png}
+      \begin{wrapfigure}[7]{l}{.3\textwidth}
+        \vspace{-1.5cm}
+        \ffigbox[\textwidth]{}{
+          \includegraphics[width=\textwidth]{integraldelinea.png}
+        }
       \end{wrapfigure}
-      \hfill{} \\ \\ \\ \\
       \noindent$C=\{M\in\bbR^2\colon\exists t\in\left[a,b\right],M\left(f\left(t\right),
       g\left(t\right)\right)\}$ con $f$, $g$ derivables en $\left[a,b\right]$, $A\left(f
       \left(a\right),g\left(a\right)\right)$ y $B\left(f\left(b\right),g\left(b\right)
@@ -544,7 +545,7 @@
       \right)$ y sea $w$ la 1-forma diferencial, i.e. $w=P\left(x,y\right)dx + Q\left(x,y
       \right)dy$\\
     \subsection*{}
-    \vspace{-1cm}
+    \vspace{0.5cm}
     \definicion{Integral de línea}{
       $\gamma_{\ovl{AB}}=\int_{\ovl{AB}}\ovl{V}\left(M\right)\cdot\ovl{dM}=\int_{\ovl{AB}}
       \left(P\left(x,y\right)dx+Q\left(x,y\right)dy\right)=\int_{\ovl{AB}}w$ y tenemos
@@ -689,10 +690,121 @@
     $\begin{cases}\begin{aligned}a=x_0<x_1<\hdots<x_n=b\\c=y_0<y_1<\hdots<y_m=d\end{aligned}\end{cases}$
     Obtenemos así las mallas, o Rectángulos Elementales:
     $R_{ij}=\left[x_{i-1},x_i\right]\times\left[y_{j-1},y_j\right]$
-    \begin{wrapfigure}{l}{.4\textwidth}
-      \hspace{-0.3cm}
-      \includegraphics[width=.4\textwidth]{integralesdobles.png}
-    \end{wrapfigure}
+
+    \vspace{0.6cm}
+    \hspace*{5.65cm}\textbf{\large 1. Subdivisión o malla regular}
+    \vspace{-1.4cm}
+    \begin{figure}[h]
+      \begin{floatrow}
+        \ffigbox{\hspace{-6.3cm}\includegraphics[width=.4\textwidth]{integralesdobles.png}}{}
+        \capbtabbox{
+          \hspace{-5cm}
+          \begin{tabularx}{0.56\textwidth}{XXX}
+            \vspace{-1.65cm}
+            $\begin{cases}
+              \begin{aligned}
+                &x_i=x_{i-1}+h, &i=1,\text{...},n\\
+                &y_j=x_{j-1}+k, &j=1,\text{...},m\\
+              \end{aligned}
+            \end{cases}$&\vspace{-1.4cm}\hspace*{1.7cm} con &
+            \vspace{-1.65cm}
+            $\begin{cases}
+              \begin{aligned}
+                &x_i=x_{i-1}+h, &i=1\text{,...,}n\\
+                &y_j=x_{j-1}+k, &j=1\text{,...,}m\\
+              \end{aligned}
+            \end{cases}$\\
+            \multicolumn{3}{l}{\vspace{0.13cm}\textbf{\large 2. Función escalonada en el rectángulo $\mcD$}}\\
+            \multicolumn{3}{l}{
+              \begin{tabular}[c]{@{}l@{}}Sean $\mcD = \left[a,b\right]\times\left[c,d\right]$ un rectángulo
+                y $f\colon\mcD\rightarrow\bbR$ tal que:\\
+                \hspace*{0.5cm}1. $f$ es acotada en $\mcD$\\
+                \hspace*{0.5cm}2. $\forall x\in\left(x_{i-1},x_i\right)\times\left(y_{j-1},y_j\right), f(x)=\mcK_{ij}\in\bbR$\\
+                Se dice que $f$ es escalonada.
+              \end{tabular}
+              }
+          \end{tabularx}
+        }{}
+      \end{floatrow}
+    \end{figure}
+
+    \noindent\textbf{\large 3. Definición de la integral doble de una función}\\
+    \vspace{0.13cm}\noindent Sean $\mcD=\left[a,b\right]\times\left[c,d\right]$ y $f$ una función escalonada a una malla regular de $\mcD$,
+    se define la integral doble con: $\mcI\left(f\right)=\sum\limits_{i=1}^{n}\sum\limits_{j=1}^{m}\mcK_{ij}\left(x_i-x_{i-1}\right)
+    \left(y_j-y_{j-1}\right)$ (la malla más fina posible)\\
+    Se llama $\mcI\left(f\right)$ a la integral doble de $f$ sobre $\mcD$ denotada: $\mcI\left(f\right)=\iint_{\mcD}f\left(x,y\right)\ dxdy$\\
+
+    \vspace{0.4cm}\noindent\textbf{\large 4. Criterio de integrabilidad de funicones }
+    \definicion{Función integrable en $\mcD$}{
+      Sea $f\colon\mcD\rightarrow\bbR$, se dice que $f$ es integrable en $\mcD$ si $\forall\epsilon >0,\exists f_1,f_2$ escalonadas en $\mcD$
+      tales que: \begin{enumerate}
+        \item $f_1\leq f\leq f_2$
+        \item $\left|\iint_{\mcD}f_2\left(x,y\right)\ dxdy - \iint_{\mcD}f_1\left(x,y\right)\ dxdy\right|<\epsilon$
+      \end{enumerate}
+    }
+    \comentario{
+      El segundo punto es equivalente a cuando en una variable hablábamos de la diferencia de la suma superior y la suma inferior debe ser menor a épsilon
+      $\left|\mcS_s-\mcS_i\right|<\epsilon$
+    }
+
+    \teorema{}{
+      Sea $f\colon\mcD\rightarrow\bbR$ integrable en $\mcD$ y sea $\mcM_{ij}\in\left(x_{i-1},x_i\right)\times\left(y_{j-1},y_j\right)$ y sea
+      $\delta_m,n=\sum\limits_{i=1}^{n}\sum\limits_{j=1}^{m} f\left(\mcM_{ij}\right)\left(x_i-x_{i-1}\right)\left(y_j-y_{k-1}\right)$,
+      entonces $\lim\limits_{\left(m,n\right)\to\left(+\infty,+\infty\right)}\delta_{m,n} \in\bbR$ y denotamos $\lim\limits_{m,n}\delta_{m,n}
+      =\iint_{\mcD}f\left(x,y\right)\ dxdy$ llamada integal doble de $f$ en $\mcM$.
+    }
+    \comentario{
+      La condición del teorema anterior es que $f$ tiene que ser integrable, pero no tiene porqué ser escalonada.
+    }
+    \comentario{
+      Al definir la malla regular, definimos $h=\frac{b-a}{n} y k=\frac{d-c}{m}$, que tenderán a cero cuando $n$ y $m$ tiendan a infinito.
+    }
+    \teorema{}{
+      Sea $f\colon\mcD\rightarrow\bbR$ definida y continua en $\mcD=\left[a,b\right]\times\left[c,d\right]$ entonces $f$ es integrable en $\mcD$,
+      siempre que $mcD$ sea un compacto.
+    }
+    \comentario{
+      Es interesante conocer el \textit{Teorema de Pikoliv}, que nos dice que el producto cartesiano de compactos es un compacto.
+    }
+    \teorema{}{
+      Sean $f$ y $g$ dos funciones integrables en $\mcD$, entonces:
+      \begin{enumerate}
+        \item $\iint_\mcD\left(f+g\right)\left(x,y\right)\ dxdy = \iint_\mcD\left(f(x,y)+g(x,y)\right)\ dxdy =
+              \iint_\mcD f(x,y)\ dxdy + \iint_\mcD g(x,y)\ dxdy$\\
+
+              \vspace{-0.3cm}"La integral doble de la suma es la suma de integrales"
+
+        \item $\forall\lambda\in\bbR ,\iint_\mcD\lambda f(x,y)\ dxdy = \lambda\iint_\mcD f(x,y)\ dxdy$
+        \item $\forall (x,y)\in\mcD ,f(x,y)\leq g(x,y)\implies\iint_\mcD f\ dxdy\leq\iint_\mcD g\ dxdy$
+        \item $\abs{f}$ integrable en $\mcD \implies \left|\iint_\mcD f(x,y)\ dxdy\right|\leq\iint_\mcD\left|f(x,y)\right|\ dxdy$
+      \end{enumerate}
+    }
+    \comentario{
+      \begin{wrapfigure}{l}{.17\textwidth}
+        \vspace{-0.5cm}
+        \vspace{-1\intextsep}
+        \ffigbox[\textwidth]{}{
+          \includegraphics[width=\textwidth]{comentario4.1.3.png}
+        }
+      \end{wrapfigure}
+      \vspace{0.3cm}Si $\mcD \subset \bbR^2$ es un dominio 'regular', definimos
+      $\mcD$ rectángulo con $\tilde{f}$ en $\mcD'$ tal que:
+
+      \vspace{0.3cm}$\tilde{f}=
+      \begin{cases}
+        \centering
+        \begin{aligned}
+          &f \text{ en }\mcD\\
+          &f \text{ en }\mcD'\setminus\mcD\\
+        \end{aligned}
+      \end{cases}$ entonces $\ \ \ \ \boxed{\iint_{\mcD'}\tilde{f}\ dxdy = \iint_\mcD f\ dxdy}$
+
+    }
+    \comentario{
+      Cuando $f$ es una función positiva sobre una región rectangular $\mcR$ del plano, podemos interpretar la integral doble
+      de $f$ sobre $\mcR$ como el volumen de la región tridimensional sobre el plano acotada abajo por $\mcR$ y arriba por la
+      superficie $z=f(x,y)$
+    }
     \clearpage
   \section{Teoremas de Fubini}
     \teorema{Fubini en un rectángulo (versión débil)}{
@@ -741,8 +853,10 @@
     \right)\in\bbR^2\colon 0\leq x \leq1, x^2\leq y\leq x\right\}$ (no es un rectángulo),
     sobre la función $f\left(x,y\right)=x+y$}{
       \begin{wrapfigure}{r}{.26\textwidth}
-        \vspace{-1.65cm}
-        \includegraphics[width=.26\textwidth]{ejemplo4.1.3.png}
+        \vspace{-1.5cm}
+        \ffigbox[\textwidth]{}{
+          \includegraphics[width=\textwidth]{ejemplo4.1.3.png}
+        }
       \end{wrapfigure}
       \vspace{0.6cm}
       $\iint_\mcD f\left(x,y\right)dxdy = \int_{0}^{1}\int_{x^2}^{x}f\left(x,y\right)
@@ -753,23 +867,330 @@
     \ejemplo{Calcular $\iint_\mcD e^xdxdy$ con $\mcD=\left\{\left(x,y\right)\in\bbR^2
     \colon 0\leq x\leq \log\left(y\right), 1\leq y\leq 2\right\}$}{
       \begin{wrapfigure}{r}{.26\textwidth}
-        \vspace{-1.25cm}
-        \includegraphics[width=.26\textwidth]{ejemplo4.1.4.png}
+        \vspace{-0.3cm}
+        \vspace{-1\intextsep}
+        \ffigbox[\textwidth]{}{
+          \includegraphics[width=\textwidth]{ejemplo4.1.4.png}
+        }
       \end{wrapfigure}
       \vspace{0.6cm}
       Como $f\left(x,y\right)\in\mcC_0\left(\bbR^2\right)\Rightarrow\text{Podemos
       aplicar el \textit{Teorema de Fubini}}$\vspace*{0.2cm}\\\setlength\extrarowheight{0pt}
       $\begin{cases}\begin{aligned}
-        \iint_{\mcD}e^xdxdy=\int_1^2\int_0^{\log y}e^xdxdy=\int_{1}^{2}
+        &\iint_{\mcD}e^xdxdy=\int_1^2\int_0^{\log y}e^xdxdy=\int_{1}^{2}
           \left(y-1\right)dy=\left[\frac{y^2}{2}-y\right]_1^2=\frac{1}{2}\\
-        \iint_{\mcD}e^xdxdy=\int_0^{\log y}\int_1^2e^xdydx=\int_{0}^{\log 2}
+        &\iint_{\mcD}e^xdxdy=\int_0^{\log y}\int_1^2e^xdydx=\int_{0}^{\log 2}
         e^xdydx=\int_0^{\log 2}e^x\left(2-e^x\right)dx=\frac{1}{2}
       \end{aligned}\end{cases}$
       \vspace{0.2cm}
     }
-  \section{Teorema de Green-Riemann}
+  \section{Teorema de cambio de variable}
+    \noindent Vamos a preparar la base para un teorema considerando un paralelogramo $\mcA_{(CA\ CB)}=\norm{\vec{OA}\wedge\vec{OB}}$
+    Sea $T\colon\bbR^2\longrightarrow\bbR^2$ lineal (rotación, homotecia, ...) $\mcA\left(T\left([0,1]^2\right)\right)=\norm{T\left(\vec{e_1}\right)\wedge\left(\vec{e_2}\right)}$
+    
+    \begin{center}
+      \includegraphics[width=\textwidth]{cambioVar.png}
+    \end{center}
+
+    \noindent Tenemos $T\left(\vec{e}_1\right)=T_{11}\vec{e}_1+T_{21}\vec{e}_2$ (porque tomamos como base $\vec{e}_1,\vec{e}_2$, $T_{ij}$ serán únicos). \textit{idem} con $\vec{e}_2\colon$
+    $\begin{cases}
+      \begin{aligned}
+        &T\left(\vec{e}_1\right) = T_{11}\vec{e}_1+T_{21}\vec{e}_2 \\
+        &T\left(\vec{e}_2\right) = T_{12}\vec{e}_1+T_{22}\vec{e}_2 \\
+      \end{aligned}      
+    \end{cases}$ lo que nos da $\norm{T\left(\vec{e}_1\wedge\vec{e}_2\right)}=\abs{\text{det}(T)}=
+    \begin{vmatrix}
+      T_{11} & T_{12} \\
+      T_{21} & T_{22} \\
+    \end{vmatrix}$ que nos habla de la matriz asociada a la aplicación lineal $T$.
+
+    \noindent Entonces, $\mcA\left(T\left([0,1]^2\right)\right)=\abs{\text{det}(T)}$.\\
+
+    \noindent De forma general, sean $i=1,2$ $L_i>0$: $\mcA\left(T\left([0,L_1]\right)\times T\left([0,L_2]\right)\right)=
+    \norm{T\left(L_1\vec{e}_1\right)\wedge T\left(L_2\vec{e}_2\right)}=L_1L_2\abs{\text{det}(T)}$. 
+    
+    \noindent $L_1\vec{e}_1$ es un vector colineal a $L_1$. Si hacemos un cambio de variable, cambia la geometría y con ello el área.
+
+    \vspace{0.4cm}\noindent Sea 
+    $\begin{aligned}
+      \phi\colon &\Omega\subset\bbR^2\hspace{0.2cm}\longrightarrow\mcD\in\bbR^2\\
+      &U(u_1,u_2)\longmapsto\phi(U)=\left(\phi_1(U),\phi_2(U)\right)\\
+    \end{aligned}$ y sea $(x_1,x_2)\in\bbR^2$ denotamos $\phi(U)=M(x_1,x_2)=\left(\phi_1(u_1,u_2),\phi_2(u_1,u_2)\right)$
+    
+    \vspace{0.4cm}\noindent $\implies \phi\left(\Omega\right)=\mcD$, Como vemos en la siguiente figura, $\phi$ deforma el rectángulo inicial en otra cosa.
+    
+    \begin{center}
+      \includegraphics[width=\textwidth]{cambioVar2.png}
+    \end{center}
+
+    \clearpage
+    \noindent Suponemos que:
+    \begin{enumerate}
+      \item $\phi$ es una biyección
+      \item $\phi$ y $\phi^{-1}$ son de clase $\mcC_1$ en su dominio respectivo.
+    \end{enumerate}
+    Es decir, que $\phi$ sea un $\mcC_1$-difeomorfismo. 
+    
+    \noindent Tenemos entonces $\phi\left(U+h\right)=\phi(U)+D_{\phi}(U)\cdot h +o(h)$
+    \hspace{1cm}con $D_{\phi}(U)=
+    \begin{vmatrix}
+      \frac{\partial\phi_1(U)}{\partial u_1}& \frac{\partial\phi_1(U)}{\partial u_2} \\
+      \frac{\partial\phi_2(U)}{\partial u_1}& \frac{\partial\phi_2(U)}{\partial u_2} \\
+    \end{vmatrix}$ 
+
+    \noindent Si $\Delta u_1$ y $\Delta u_2$ son 'pequeños' entonces $\mcA\left(\phi\left([u_1,u_1+\Delta u_1]\times[u_2,u_2+\Delta u_2]\right)\right)$ es el área 
+    de un paralelogramo, es decir $\norm{D_{\phi}(U)\left(\Delta u_1\vec{e}_1\right)\wedge D_\phi\left(\Delta u_2\vec{e}_2\right)}$, donde $D_\phi(U)$ es la imagen de la parte lineal de $\phi$.
+
+    \vspace{0.2cm}\noindent Tenemos finalmente, 
+    $$\hspace{-16pt}\mcA\left(\phi\left([u_1,u_1+\Delta u_1]\times[u_2,u_2+\Delta u_2]\right)\right)=\Delta u_1\Delta u_2\norm{D_{\phi(U)}\left(\vec{e}_1\right)\wedge D_{\phi(U)}\left(\vec{e}_2\right)}=
+    \Delta u_1\Delta u_2\abs{\text{det}\left(D_\phi\left(u_1,u_2\right)\right)} \leftarrow\text{ ¡El Jacobiano!}$$
+
+    \teorema{Cambio de variable}{
+      Sea $f\in\mcC_0(\ovl{\mcD})$ (donde $\mcD$ es un abierto acotado de $\bbR^2$) entonces para todo $\phi$ $\mcC_1$-difeomorfismo de $\ovl{\Omega}$ en $\ovl{\mcD}$ tenemos:
+      $$\iint_\mcD f(x_1,x_2)\ dx_1dx_2=\iint_\Omega f\left(\phi(u_1,u_2)\right)\abs{\text{det}\left(\mcD_\phi(u1,u2)\right)}\ du_1du_2$$
+    }
+    \comentario{
+      \textbf{Aplicación: Cambio a polares}
+      $\begin{cases}
+        \begin{aligned}
+          &x=r\cos\theta\\
+          &y=r\sin\theta\\
+        \end{aligned}
+      \end{cases}\implies g\left(r,\theta\right)=\left(r\cos\theta,r\sin\theta\right)$\\
+
+      $\abs{J\left(r,\theta\right)}=
+      \begin{vmatrix}
+        \frac{\partial x}{\partial r}& \frac{\partial x}{\partial \theta}\\
+        \frac{\partial y}{\partial r}& \frac{\partial y}{\partial \theta}\\
+      \end{vmatrix}=
+      \begin{vmatrix}
+        \cos\theta& -r\sin\theta\\
+        \sin\theta&  r\cos\theta\\
+      \end{vmatrix}$\\
+      
+      Entonces:
+      $$\iint_\mcD f(x,y)\ dxdy=\iint_\Omega f\left(r\cos\theta,r\sin\theta\right)r\ drd\theta$$
+    }
+    \ejemplo{Calcular $\iint_\mcD \frac{1}{1+x^2+y^2}\ dxdy$ con $\mcD=\left\{(x,y)\in\bbR^2:0\leq y\leq 1,0<x^2+y^2\leq 1\right\}$}{
+      Usamos el cambio de variable de polares 
+      $\begin{cases}
+        \begin{aligned}
+          &x = r\cos\theta\\
+          &y = r\cos\theta\\
+        \end{aligned}
+      \end{cases} (x,y)\in\mcD \Leftrightarrow \begin{cases}
+        \begin{aligned}
+          &r\in[0,1]\\
+          &\theta\in\left[0,\frac{\pi}{2}\right]
+        \end{aligned}
+      \end{cases}$
+
+      Tenemos $1+x^2+y^2=1+r^2$
+
+      $\iint_\mcD f(x,y)\ dxdy=\int_{0}^{1}\int_{0}^{\frac{\pi}{2}}\frac{1}{1+r^2}r\ d\theta dr=\frac{\pi}{2}\int_{0}^{1}\frac12\frac{2r}{1+r^2}\ dr=
+      \frac{\pi}{4}\left[\log(1+r^2)\right]_0^1=\frac{\pi\log(2)}{4}$
+    }
+
+\section{Teorema de Green-Riemann}
+    \noindent Si $f\in\mcC_1\left([a,b]\right)$ entonces $f(b)-f(a)=\int_a^b f'(t)\ dt$. Nos gustaría
+    generalizar este resultado al plano.\\
+    
+    \begin{wrapfigure}[7]{l}{.23\textwidth}
+      \vspace{-1\intextsep}
+      \ffigbox[\textwidth]{}{
+        \includegraphics[width=\textwidth]{green0.png}
+      }
+    \end{wrapfigure}
+
+    \noindent Sea $f$ una función que admita derivadas parciales continuas en $\overline{\mcD}\in\bbR^2\colon$
+
+    \noindent$\iint_\mcD\ dxdy = \int_{y=c}^{y=d}\left(\int_{x=\psi_1(y)}^{x=\psi_2(y)}\frac{\partial f}{\partial x}(x,y)\ dx\right)\ dy=$
+    $\int_{y=c}^{y=d}\left[f\left(\psi_2(y),y\right)-f\left(\psi_2(y),y\right)\right]\ dy$\\
+
+    \noindent$C_2^+ = \left\{(x,y)\in\bbR^2,M_2(t)=\left(\psi_2(t),t\right)\right\}$ con $t\in[c,d]$\\
+    $C_1^+ = \left\{(x,y)\in\bbR^2,M_1(t)=\left(\psi_2(t'),t'\right)\right\}$ con $t'\in[d,c]$\\
+    
+    \noindent Y aplicamos un cambio de variable para pasar de $[d,c]$ a $[c,d]$ en $C_2\colon$\\
+
+    \noindent Sea $t=\alpha t' + \beta$ con $t\in[c,d]\colon$\hspace{0.6cm}
+    $\begin{cases}\begin{aligned}
+      &c=\alpha d + \beta\\
+      &d=\alpha c + \beta\\
+    \end{aligned}\end{cases}\implies c-d=\alpha(d-c)\implies\alpha = -1$\\
+
+    \noindent Entonces, $\beta=c-\alpha d = c+d$. Tenemos, $t=-t'+c+d \Leftrightarrow t'=c+d-t$. Y con este resultado tenemos:\\
+    $C_1^+=\left\{(x,y)\in\bbR^2,M_1(t)=\left(\psi_1(c+d-t),c+d-t\right)\right\}$ con $t\in[c,d]$\\
+
+    \noindent Para estudiar la integral, debemos centrar nuestra atención en $\int_c^d f\left(\psi_2(t),t\right)\ dt$\\
+    $\int_{C_2^+}f\ dy=\int_{C_2^+}0\ dx+ f\ dy=\int_c^d\vec{V}\left(M_2(t)\right)\cdot M_2'(t)\ dt$
+    \hspace{0.3cm}con 
+    $\vec{V}\begin{pmatrix} 0          \\ f \end{pmatrix} \;$,
+    $M_2(t) \begin{pmatrix} \psi_2(t)  \\ t \end{pmatrix} \;$,
+    $M_2'(t)\begin{pmatrix} \psi_2'(t) \\ 1 \end{pmatrix} \;$\\
+
+    \noindent Entonces, $\int_{C_2^+}f\ dy=\int_{c}^{d}f\left(M_2(t)\right)\cdot 1\ dt=\int_{c}^{d}f\left(\psi_2(t),t\right)\ dt$\\
+    
+    \noindent $\int_{C^+}f\ dy=\int_{c}^{d}\vec{V}\left(M_1(t)\right)\cdot M_1'(t)\ dt$
+    $=-\int_{c}^{d}f\left(M_1(t)\right)\ dt=-\int_{c}^{d}f\left(\psi_1(c+d-t),c+d-t\right)\ dt$
+    $=\int_{d}^{c}f\left(\psi_1(s),s\right)\ ds=$\\
+    $=-\int_{c}^{d}f\left(\psi_1(s),s\right)\ ds=\int_{C_1^+}f\ dy$
+    
+    \noindent \vspace{0.3cm}con
+    $\vec{V}\begin{pmatrix} 0             \\ f     \end{pmatrix} \;$,
+    $M_1(t) \begin{pmatrix} \psi_1 (c+d-t)\\ c+d-t \end{pmatrix} \;$,
+    $M_1'(t)\begin{pmatrix} \psi_1'(c+d-t)\\ -1    \end{pmatrix} \;$
+    \hspace{0.4cm}y\hspace{0.4cm}
+    $\begin{cases}
+      \begin{aligned}
+        &s=c+d-t\\
+        &ds=-dt
+      \end{aligned}
+    \end{cases}$
+
+    En conclusión,
+    $$\iint_\mcD\frac{\partial f}{\partial x}(x,y)\ dxdy=\int_{c}^{d}f\left(\psi_2(y),y\right)\ dy-\int_{c}^{d}f\left(\psi_1(y),y\right)\ dy=
+    \int_{C_2^+}f\ dy+\int_{C_1^+}f\ dy=\int_{C^+}f\ dy$$
+
+    \noindent Si repetimos con la derivada parcial respecto a $y$, de la misma manera obtenemos el mismo resultado, pero 
+    cambiando el signo a causa de la orientación de la curva.
+    
+    \begin{empheq}[box=\fbox]{align}
+      \iint_\mcD\frac{\partial f}{\partial x}(x,y)\ dxdy&=\ \ \ \int_{C^+}f\ dy\nonumber\\
+      \iint_\mcD\frac{\partial f}{\partial y}(x,y)\ dydx&=     -\int_{C^+}f\ dy\nonumber
+    \end{empheq}
+
+    \teorema{Green-Riemann}{
+      Sean $f,g\in\mcC_1\left(\overline{\mcD}\right)$ y sea $C^+$ la frontera orientada de $\mcD$, entonces:
+      $$\iint_\mcD\left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}\right)\ dxdy = \int_{C^+}f\ dx+g\ dy$$
+    }
+    \comentario{
+      \textbf{Aplicación del teorema de Green-Riemann}
+      \begin{enumerate}
+        \item Si $w=f\ dx+g\ dy$, entonces $dw=\left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}\right)\ dx\wedge dy$\\
+              En el caso del cálculo integral, denotamos $dx\wedge dy\equiv dxdy$, lo que nos permie escribir $\iint_\mcD dw=\int_{\sigma(\mcD)}w$
+        \item Si $\vec{V}\left(V_1,V_2\right)$, entonces $\iint_\mcD\left(\frac{\partial V_2}{\partial x}-\frac{\partial V_1}{\partial y}\right)\ dxdy=$
+              $\int_{\sigma(\mcD)}V_1\ dx + V_2\ dy=\int_{\sigma(\mcD)\vec{V}(M)\cdot d\vec{M}}$\\
+              Si $\frac{\partial V_2}{\partial x}-\frac{\partial V_1}{\partial y}=0$ en $\mcD$, entonces $w=V_1\ dx+V_2\ dy$ es cerrada, y si $\mcD$
+              es un abierto estrellado de $\bbR^2$, entonces $w$ es exacta $\implies \vec{V}$ es un campo de gradiente.\\
+              Entonces si $\frac{\partial V_2}{\partial x}-\frac{\partial V_1}{\partial y}=0$ en $\mcD\implies$
+              $\int_\mcD\vec{V}(M)\cdot d\vec{M}=0\ \forall$curva cerrada.
+      \end{enumerate}
+    }
+    \comentario{
+      Sea $f$ una función que admite derivadas parciales continuas ($\in\mcC_1$) y además satisface la \textit{Ecuación de Laplace}
+      $\left(\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}=0\right)$, entonces $\int_C\frac{\partial f}{\partial y}\ dx-\frac{\partial f}{\partial x}\ dy=0$\\
+
+      Si aplicamos el \textit{Teorema de Green-Riemann}:
+      $$\int_C\frac{\partial f}{\partial y}\ dx-\frac{\partial f}{\partial x}\ dy=\iint_\mcD\left[\frac{-\partial^2f}{\partial x^2}-\frac{\partial^2f}{\partial y^2}\right]\ dxdy=0$$
+    }
+    \comentario{
+      El \textit{Teorema de Green-Riemann} se cumple también para una región con un número finito de agujeros,
+      siempre que las curvas sean simples, cerradas y regulares. Debemos integrar sobre cada componente 
+      de la frontera en la dirección en la que la región $R$ se mantiene a la izquierda mientras avanzamos.
+      ¿Qué significa esto? Es una forma de elegir el sentido en la frontera.\\ 
+
+      En la figura de la izquierda, hay que dejar la zona azul a nuestra izquierda (valga la redundancia). 
+      \centering
+      \includegraphics[width=.25\textwidth]{comentarioGR1.png}
+      \hspace{2cm}
+      \includegraphics[width=.25\textwidth]{comentarioGR2.png}
+      
+      \begin{flushleft} 
+      En la práctica, se crean dos regiones (arriba y abajo). Así, nos quitamos el hueco y tenemos dos curvas 
+      que cumplen las condiciones.\\
+      \vspace{0.4cm}
+      $\iint_R\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\ dxdy = \iint_{R_1}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\ dxdy
+      +\iint_{R_2}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\ dxdy = \int_{C_1}P\ dx+Q\ dy+\int_{C_2}P\ dx+Q\ dy=$\\
+      $\int_C P\ dx+Q\ dy$
+      \end{flushleft}
+    }
+
+    \subsection{Cálculo de Área}
+      \subsubsection*{Caso particular}
+        \noindent Supongamos que $\frac{\partial V_2}{\partial x}-\frac{\partial V_1}{\partial y}=1$ en $\mcD$
+        $$\mcA\left(\mcD\right)=\iint_{\sigma\mcD}1\ dxdy=\int_{\sigma\mcD}V_1\ dx+V_2\ dy \hspace{1cm} \text{ y podemos elegir }\ \ 
+        \vec{V}\begin{pmatrix} 0 \\ x \end{pmatrix} \text{ ó }\vec{V}\begin{pmatrix} -y \\ 0 \end{pmatrix} \text{ ó }
+        \vec{V}\frac12\begin{pmatrix} -y \\ x \end{pmatrix}\implies$$
+        $$\implies \mcA\left(\mcD\right)=\int_{\sigma\mcD}x\ dy=
+        \int_{\sigma\mcD}y\ dx=\frac12\int_{\sigma\mcD}-y\ dx+x\ dy$$
+        \ejemplo{Cálculo del área de una elpise $\mcD$}{
+          Tomando la parametrización $\begin{cases}\begin{aligned}
+              &x(t)=a\cos(t)\\
+              &y(t)=b\sin(t)\\
+          \end{aligned}\end{cases}$ con $t\in\left[0,2\pi\right]$
+          $$\mcA\left(\mcD\right)=\frac12\int_{\sigma\mcD}-y\ dx+x\ dy=\int_{\sigma\mcD}\vec{V}\left(M\right)\ d\vec{M}=
+          \int_{0}^{2\pi}\vec{V}\left(M(t)\right)\vec{M'}(t)\ dt$$
+          y tenemos, $\vec{V}\frac12\begin{pmatrix} y \\ x \end{pmatrix}\implies \vec{V}\left(M(t)\right)=\frac12\left(-b\sin(t),a\cos(t)\right)$
+          y $M'(t)=\left(-a\sin(t),b\cos(t)\right)$\\
+          $\vec{V}\left(M(t)\right)\cdot\vec{M'}(t)=\frac12\left(ab\sin^2(t)+ab\cos^2(t)\right)=\frac12 ab$\hspace{1cm} 
+          Finalmente, $\mcA\left(\mcD\right)=\int_{0}^{2\pi}\frac12 ab\ dt=\pi ab$
+        }
+
+      \subsubsection*{Flujo y divergencia de un campo vectorial}
+      \vspace{0.2cm}
+        \begin{wrapfigure}[1]{l}{.2\textwidth}
+          \vspace{-1.6cm}
+          \centering
+          \ffigbox[\textwidth]{}{
+            \includegraphics[width=\textwidth]{flujoYdiv.png}
+          }
+        \end{wrapfigure}
+
+        \vspace{0.6cm}
+        \noindent Tenemos $M(t)\left(f(t),g(t)\right)$\hspace{1cm}$\vec{T}(t)=\begin{pmatrix} f'(t) \\ g'(t) \end{pmatrix}$
+        $\vec{n}=\begin{pmatrix} 0 & 1\\ -1 & 0 \end{pmatrix}\begin{pmatrix} f'(t) \\ g'(t) \end{pmatrix}=
+        \begin{pmatrix} g'(t) \\ -f'(t) \end{pmatrix}$
+        \vspace{1cm}
+        
+        \definicion{Flujo}{
+          Sea $\vec{V}$ un campo vectorial, llamamos flujo de $\vec{V}$, denotado $\phi$ a través de 
+          $\sigma\Omega$ a la cantidad
+          $$\phi=\int_{\sigma\Omega}\vec{V}\cdot\ d\vec{n}=\iint_a^b\vec{V}\left(M(t)\right)\cdot\vec{n}\left(M(t)\right)\ dt$$
+        }
+        \teorema{Green-Ostrogradsky o \textbf{Teorema de la divergencia} (en $\bbR^2$)}{
+          $$\phi=\int_{\sigma\Omega}\vec{V}\ d\vec{n}=\int_{a}^{b}\vec{V}\left(M(t)\right)\cdot\vec{n}\left(M(t)\right)\ dt=\iint_\Omega\nabla\cdot\vec{V}\ dxdy$$
+        }
+              
   \section{Superficies parametrizadas}
     \subsection{Introducción}
+      \definicion{Superficie parametrizada}{
+        Una \textbf{superficie parametrizada} es una función $\varphi\colon\mcD\subset\bbR^2\rightarrow\bbR^3$. La superficie denotada $S$ corresponde a 
+        $\varphi(x,y)\forall(x,y)\subset\mcD$ es una imagen $S=\varphi\left(\mcD\right)$ 
+      }
+
+      \comentario{
+        Podemos ver $\varphi(u,v)=\left(x(u,v),y(u,v),z(u,v)\right)$, y si además pedimos a $\varphi$ ser de clase $\mcC_1$ o diferenciable,
+        entonces $S$ se denomina \textbf{Superficie diferienciable o de clase $\mcC_1$}.\\
+        
+        \begin{wrapfigure}[2]{l}{.35\textwidth}
+          \vspace{-1\intextsep}
+          \centering
+          \ffigbox[\textwidth]{}{
+            \includegraphics[width=\textwidth]{comentario4.5.1.png}
+          }
+        \end{wrapfigure}
+        Si suponemos que $\varphi$ es difierenciable en $(u_0,v_0)\in\bbR^2$, fijando un cierto $u_0$
+        obtenemos una función con imagen una curva en $S = \varphi\left(\mcD\right)$.
+        \noindent \begin{align*}
+          \hspace*{-1.1cm}f \colon &\bbR \longrightarrow \bbR^3\\
+          \hspace*{-1.1cm}& t \longmapsto \varphi(v_0,t)
+        \end{align*}
+
+        \noindent Esto nos permite definir un vector tangente: $\vec{T_v}=\frac{\partial x}{\partial v}(u_0,v_0)\hat{x}+
+        \frac{\partial y}{\partial v}(u_0,v_0)\hat{y}+\frac{\partial z}{\partial v}(u_0,v_0)\hat{z}$.\\
+        
+        \noindent Si ahora fijamos $v_0$ en lugar de $u_0$, podemos tener una función $t\longmapsto\varphi(t,v_0)$ y tenemos otra curva
+        sobre $S=\varphi\left(\mcD\right)$ y un vector tangente $\vec{T}_u$ \textit{idem} con $\vec{T}_v$.\\
+        
+        \noindent El hecho de que $\vec{T}_u$ y $\vec{T}_v$ sean tangentes a dos curvas sobre una superficie $S$ en $\phi\left(u_0,v_0\right)$
+        entonces determinan un plano tangente a la superficie $S$ en ese punto. El vector $\vec{T}_u \times \vec{T}_v$ es normal al plano 
+        generado por $\vec{T}_u$ y $\vec{T}_v$, y entonces es normal a $S$.\\
+      }
+
+      \definicion{Superficie suave}{
+        Se dice que una superficie $S$ es \textbf{suave} en $\phi\left(u_0,v_0\right)$ si $\vec{T}_u\times\vec{T}_v\neq\vec{0}$ en 
+        $\left(u_0,v_0\right)$. Se dice que $S$ es \textbf{suave} si lo es para todos los puntos de la superficie $S$.
+      }
       \definicion{Plano tangente}{
         Si una superficie $S$ es suave (i.e. $\ovl{T_u}\times\ovl{T_v}\neq\ovl{0}$)
         definimos \textbf{el plano tangente de $S$} en $\Phi\left(u_0,v_0\right)$ como el plano
@@ -837,21 +1258,23 @@
         \includegraphics[width=.8\textwidth]{mireia1.png}
       \end{figure}\\
       Hay que considerar una porción de $\mcD$ y sea $R_{ij}$ el ij-ésimo rectángulo
-      con vértices $\left(u_i,v_j\right),\left(u_{i+1},v_j\right),\left(u_i,v_{j+1}\right)
-      \left(u_{i+1},v_{j+1}\right)$. Los valores de $\ovl{T_u}$ y $\ovl{T_v}$ en $\left(u_i,v_i\right)$
+      con vértices $\left(u_i,v_j\right),$$\left(u_{i+1},v_j\right),$$\left(u_i,v_{j+1}\right),$
+      $\left(u_{i+1},v_{j+1}\right)$. Los valores de $\ovl{T_u}$ y $\ovl{T_v}$ en $\left(u_i,v_i\right)$
       serán determinados $\ovl{T_{u_i}}$ y $\ovl{T_{v_j}}$. Podemos pensar los vectores
       $\Delta_u\ovl{T_u}$ y $\Delta_v\ovl{T_v}$ como tangentes a la superficie en
       $\Phi\left(u_i,v_j\right)=\left(x_{ij},y_{ij},z_{ij}\right)$ donde $\Delta_u=
-      u_{i+1}-u_i$ y $\Delta_v=v_{j+1}-v_j$\\ \\
-      Entonces, estos vectores forman un paralelogramo $P_{ij}$ que está en el plano
+      u_{i+1}-u_i$ y $\Delta_v=v_{j+1}-v_j$\\ 
+
+      \noindent Entonces, estos vectores forman un paralelogramo $P_{ij}$ que está en el plano
       tangente a la superficie en $\left(x_{ij},y_{ij},z_{ij}\right)$. Para $n$ grande,
       (es una subdivisión de $n$ trozos), el área de $P_{ij}$ es una buena aproximación
       al área de $\Phi\left(R_{ij}\right)$. Como el area del paralelogramo generado por
       dos vectores $\ovl{v_1}$ y $\ovl{v_2}$ es $\norm{\ovl{v_1}\times\ovl{v_2}}$ entonces
       $\mcA\left(P_{ij}\right)=\norm{\Delta_u\ovl{T_{uj}}\times\Delta_v\ovl{T_{vj}}}=
-      \Delta u\Delta v\cdot\norm{\ovl{T_{ui}}\times\ovl{T_{vj}}}$\\ \\
-      Por lo tanto, el área total es $\mcA_n=\sum_{i=0}^{n-1}\sum_{j=0}^{n-1}\mcA\left(
-      P_{ij}\right)$ y cuando $n\rightarrow\inf$, $\mcA_n\rightarrow\iint_{\mcD}\norm{
+      \Delta u\Delta v\cdot\norm{\ovl{T_{ui}}\times\ovl{T_{vj}}}$\\ 
+
+      \noindent Por lo tanto, el área total es $\mcA_n=\sum\limits_{i=0}^{n-1}\sum\limits_{j=0}^{n-1}\mcA\left(
+      P_{ij}\right)$ y cuando $n\rightarrow\infty$, $\mcA_n\rightarrow\iint_{\mcD}\norm{
       \ovl{T_u}\times\ovl{T_v}}\ du\ dv$
       \ejemplo{
         Sea $\mcD$ la región determinada por $0\leq\theta\leq 2\pi$ y $0\leq r\leq 1$ y
@@ -883,24 +1306,24 @@
         \begin{alignat*}{4}
           & \begin{aligned}
             & \begin{cases}\begin{aligned}
-              r\cos\theta=r'\cos\theta'\\
-              r\sin\theta=r'\sin\theta'\\
-              r=r'\\
-            \end{aligned}\end{cases}\\
+              &r\cos\theta=r'\cos\theta'\\
+              &r\sin\theta=r'\sin\theta'\\
+              &r=r'\\
+              \end{aligned}\end{cases}\\
           \end{aligned}
             && \implies \quad &&
           \begin{aligned}
             \begin{cases}\begin{aligned}
-              \cos\theta=\cos\theta'\\
-              \sin\theta=\sin\theta'\\
+              &\cos\theta=\cos\theta'\\
+              &\sin\theta=\sin\theta'\\
             \end{aligned}\end{cases} \\
           \end{aligned}
             \quad && \implies\theta=\theta' \text{ ó } \theta=\theta'\left(2\pi\right)
         \end{alignat*}
         \\En conclusión,
         $\begin{cases}\begin{aligned}
-          r=r'\\
-          \theta=\theta'
+          &r=r'\\
+          &\theta=\theta'\\
         \end{aligned}\end{cases}$ y eso nos dice que $\Phi$ es biyectiva.\\
       }
       \ejemplo{
@@ -924,12 +1347,13 @@
         Si consideramos una superficie $\mcS$ dada con $z=f\left(x,y\right)$ donde
         $\left(x,y\right)\in\mcD$ admite la parametrización
         $\begin{cases}\begin{aligned}
-          x=u\\ y=v\\ z=f\left(u,v\right)
+          &x=u\\ &y=v\\ &z=f\left(u,v\right)
         \end{aligned}\end{cases}$ con $\left(u,v\right)\in\mcD$. \\ \\
         Si $f$ es de clase $\mcC_1$, entonces la superficie es suave, y el cálculo del
         área se reduce a:$$\boxed{\mcA\left(\mcS\right)=\iint_\mcD\sqrt{1+\left(\frac{\partial f}
         {\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}\ dx\ dy}$$
       }
+      \clearpage
       \ejemplo{
         Calcular el área de la superficie de la esfera $\mcS$ definida por $x^2+y^2+z^2=1$
         (Indicación: calcular el área del hemisferio superior $\mcS^+$ (i.e. con $z\geq 0$))
@@ -994,23 +1418,26 @@
     \comentario{
       Si $z=g\left(x,y\right)$\\
       \begin{wrapfigure}{r}{.3\textwidth}
-        \vspace{-0.7cm}
+        \vspace{-0.5cm}
+        \vspace{-1\intextsep}
         \centering
-        \includegraphics[width=.3\textwidth]{mireia2.png}
+        \ffigbox[\textwidth]{}{
+          \includegraphics[width=\textwidth]{mireia2.png}
+        }
       \end{wrapfigure}
-      $\Phi\left(x,y,z\right)=z-g\left(x,y\right)=0$\\ 
+      $\Phi\left(x,y,z\right)=z-g\left(x,y\right)=0$\\
       Un vector normal a $\Phi\text{ es }\ovl{n}=\ovl{\nabla}\Phi$
       $\text{es decir, }\boxed{\ovl{n}=-\frac{\partial g}{\partial x}\ovl{i}-\frac{\partial g}{\partial y}\ovl{j}+\ovl{k}}$
       \vspace{0.2cm}\\$\ovl{n},\ovl{k}=\norm{\ovl{n}}\cdot\norm{\ovl{k}}\cdot
       \cos(\ovl{n},\ovl{k}) \Leftrightarrow\cos\theta=
       \frac{\ovl{n}\cdot\ovl{k}}{\norm{\ovl{n}}\cdot\norm{\ovl{k}}}=
-      \frac{\ovl{n}\cdot\ovl{k}}{\norm{\ovl{n}}}=\frac{1}{\norm{\ovl{n}}} 
+      \frac{\ovl{n}\cdot\ovl{k}}{\norm{\ovl{n}}}=\frac{1}{\norm{\ovl{n}}}
       \Leftrightarrow\norm{\ovl{n}}=\frac{1}{\cos\theta}\\
       \text{(sabiendo que }\ovl{k}\text{ es unitario y es }\left(0,0,1\right)\text{)}\vspace{0.2cm}\\
       \text{Al final obtenemos, } \boxed{\iint_\mcS f\ d\mcS=\iint_\mcD\frac{f\left(x,y,
-      g\left(x,y\right)\right)}{\cos\theta}}\ dxdy$
+      g\left(x,y\right)\right)}{\cos\theta}\ dxdy}$
     }
-    
+
     \ejemplo{Calcular $\iint_\mcS x\ d\mcS$ donde $\mcS$ es el triángulo con vértices
     $\left(1,0,0\right),\left(0,1,0\right),\left(0,0,1\right)$ (indicación: encontrar un
     vector normal $\ovl{n}$ unitario, tendriámos $\ovl{n}\cdot\ovl{k}=\cos\theta$)}{
@@ -1019,37 +1446,96 @@
       lo que nos da un vector normal unitario a este plano $\ovl{n}=\frac{\ovl{n}}{\norm{\ovl{n}}}
       \left(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}}\right) \text{esto va vertical}$.
       Con la fórmula del comentario anterior, tenemos $\iint_\mcS x\ d\mcS=\iint_\mcD \frac
-      {x}{\ovl{n}\cdot\ovl{k}}\ dxdy=\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}$ donde 
+      {x}{\ovl{n}\cdot\ovl{k}}\ dxdy=\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}$ donde
       $\ovl{n}\cdot\ovl{k}=\norm{\ovl{n}}\norm{\ovl{k}}\cos\theta\Leftrightarrow
       \ovl{n}\cdot\ovl{k}=\cos\theta$ porque $\norm{\ovl{n}}\norm{\ovl{k}}=1$ por unitarios.\\
       $\iint_\mcD \frac{x}{\frac{1}{\sqrt{3}}}=\sqrt{3}\int_{0}^{1}\int_{0}^{1-x}x\ dydx=
-      \frac{\sqrt{3}}{6}$      
+      \frac{\sqrt{3}}{6}$
     }
   \section{Integrales de superficie de funciones vectoriales}
     \definicion{Superficie orientada}{
       Una superficie suave $\mcS$ es una \textbf{superficie orientada} si existe una función
       normal unitaria $\ovl{n}$ definida en cada punto $\left(x,y,z\right)$ sobre la superficie.
-      El campo vectorial $\ovl{n}\left(x,y,z\right)$ recibe el nombre de \textbf{orientación} 
+      El campo vectorial $\ovl{n}\left(x,y,z\right)$ recibe el nombre de \textbf{orientación}
       de $\mcS$.\\ \\ Puesto que una normal unitaria a $\mcS$ puede ser $\ovl{n}\left(x,y,z\right)
       $ o $-\ovl{n}\left(x,y,z\right)$, una superficie \textbf{orientada} tiene dos orientaciones.
     }
     \comentario{
       Tenemos $\ovl{n}=\frac{\ovl{T_u}\times\ovl{T_v}}{\norm{\ovl{T_u}\times\ovl{T_v}}}$
-      Una superficie $\mcS$ definida por $z=g\left(x,y\right)$ tiene una orientación 
+      Una superficie $\mcS$ definida por $z=g\left(x,y\right)$ tiene una orientación
       hacia arriba cuando las normales unitarias están dirigidas hacia arriba.
     }
     \definicion{Superficie cerrada}{
       Una superficie \textbf{cerrada} se define como la frontera de un sólido finito.
     }
     \ejemplo{}{La superficie de una esfera es una superficie cerrada}
+    \clearpage
     \comentario{
       \begin{enumerate}
-        \item Si una superficie \textbf{suave} $\mcS$ está definida por $f\left(x,y,z\right)=0$
-              entonces la normal es \textbf{unitaria} $\ovl{n}=\frac{\ovl{\nabla}f}
+        \item Si una superficie \textbf{suave} $\mcS$ está definida por
+              $f\left(x,y,z\right)=0$ entonces la normal es \textbf{unitaria} $\ovl{n}=\frac{\ovl{\nabla}f}
               {\norm{\ovl{\nabla}f}}$
-        \item Si $f$ está definida de forma explícita. $z=g\left(x,y\right)$ podemos escribir
+        \item Si $f$ está definida de forma explícita, $z=g\left(x,y\right)$ podemos escribir\\
+              $f\left(x,y,z\right)=g\left(x,y\right)-z$ o $f\left(x,y,z\right)z-g\left(x,y\right)$
+              en función de la orientación.
+        \item Si S está definida por $z=g\left(x,y\right)$ hay dos vectores unitarios en 
+              $\left(x_0,y_0,g\left(x_0,y_0\right)\right)$.
+              $$\vec{n}=\frac{-\frac{\partial g}{\partial x}\left(x_0,y_0\right)\vec{i}-
+              \frac{\partial g}{\partial y}\left(x_0,y_0\right)\vec{j}+\vec{k}}
+              {\sqrt{\left(\frac{\partial g}{\partial x}\left(x_0,y_0\right)\right)^2+
+              \left(\frac{\partial g}{\partial y}\left(x_0,y_0\right)\right)^2+1}} 
+              \text{ y $\vec{n}$' en el sentido opuesto.}$$
       \end{enumerate}
     }
+    \teorema{}{
+      \begin{enumerate}
+        \item Sea $S$ una superficie parametrizada y sean $\phi_1$ y $\phi_2$ dos parametrizaciones de $S$ suaves
+              y que preserven la orientación (el vector normal que se obtiene va hacia arriba, abajo invierte la orientación).
+              $$\iint_{\phi_1}F\ dS=\iint_{\phi_2}F\ dS$$
+        \item Si $\phi_1$ preserva la orientación y $\phi_2$ la invierte, entonces
+              $$\iint_{\phi_1}F\ dS=-\iint_{\phi_2}F\ dS$$
+      \end{enumerate}
+    }
+    \comentario{
+      \begin{enumerate}
+        \item Si $f$ es un campo escalar, $\iint_{\phi_1}f\ dS=\iint_{\phi_2}f\ dS$\\
+              (la integral no depende de la parametrización).
+        \item $\iint_S\vec{F}\cdot d\vec{S}=\iint_S\vec{F}\cdot\left(\vec{T_u}\times\vec{T_v}\right)\ dudv=\iint_D\vec{F}\cdot\frac{\vec{T_u}\times\vec{T_v}}{\norm{\vec{T_u}\times\vec{T_v}}}
+              \norm{\vec{T_u}\times\vec{T_v}}\ dudv=\iint_D\vec{F}\cdot\vec{u}\cdot dS$\\
+
+              Donde:
+
+              $d\vec{S}=\left(\vec{T_u}\times\vec{T_v}\right)\ dudv$ es el vector diferencial de superficie\\ 
+              $dS = \norm{\vec{T_u}\times\vec{T_v}}\ dudv$ es el diferencial de superficie\\
+              $\vec{n}=\dfrac{\vec{T_u}\times\vec{T_v}}{\norm{\vec{T_u}\times\vec{T_v}}}$ es la normal unitaria\\
+      \end{enumerate}
+    }
+    \clearpage
+    \section*{Algunas Parametrizaciones}
+      \subsection*{Parametrización de una \textbf{elipse}}
+      $$\frac{(x-\alpha)^2}{a^2}+\frac{(y-\beta)^2}{b^2}=1\hspace{1cm}  
+      \begin{cases}\begin{aligned}
+        &x(t)=\alpha+a\cos(t)\\
+        &y(t)=\beta+b\sin(t)\\
+      \end{aligned}\end{cases}$$
+      \subsection*{Parametrización de una \textbf{parábola}}
+      \noindent La ecuación canónica de una parábola con vértice $V\left(\alpha,\beta\right)$ y eje horizontal es $\left(y-\beta\right)^2=4c\left(x-\alpha\right)$.\\
+      Con eje vertical sería $\left(x-\alpha\right)^2=4c\left(y-\beta\right)$
+      $$\begin{cases}
+        \begin{aligned}
+          &x(t)=\frac{1}{4c}t^2+\alpha\\
+          &y(t)=t+\beta
+        \end{aligned}
+      \end{cases} t\in\bbR$$
+      \subsection*{Parametrización de una \textbf{espiral}}
+        $$\begin{cases}
+          \begin{aligned}
+            &x(t)=\cos(t)\\
+            &y(t)=\sin(t)\\
+            &z(t)=t\\
+          \end{aligned}
+        \end{cases} t\in[a,b]$$
+
 \chapter{Integrales Triples}
     \section{Introducción}
     \noindent Como lo hicimos con la integral doble, vamos a definir la integral de una función en el
@@ -1066,11 +1552,11 @@
     lo que nos da \textbf{paralelepípedos elementales} $w_{ijk}=\left[x_{i-1},x_i\right]\times
     \left[y_{j-1},y_j\right]\times\left[z_{k-1},z_k\right]$
     \definicion{Integral Triple}{
-      Sea $\mcI_\mcV\left(f\right)=\sum_{i=1}^{N_1}\sum_{j=1}^{N_2}\sum_{k=1}^{N_3}
+      Sea $\mcI_\mcV\left(f\right)=\sum\limits_{i=1}^{N_1}\sum\limits_{j=1}^{N_2}\sum\limits_{k=1}^{N_3}
       f\left(x_i,y_j,z_k\right)\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\left(z_k-z_{k-1}\right)$
-      si $N_1,N_2$ y $N_3$ se van al infinito, entonces $\mcI_\mcV\left(f\right)$ admite un 
+      si $N_1,N_2$ y $N_3$ se van al infinito, entonces $\mcI_\mcV\left(f\right)$ admite un
       límite en $\bbR$. Este límite se llama \textbf{Integral Triple} de $f$ en $\mcV$y se escribe:
-      $$\mcI=\iiint_\mcV f\left(x,y,z,\right)\ dx\ dy\ dz$$
+      $$\mcI=\iiint_\mcV f\left(x,y,z\right)\ dx\ dy\ dz$$
     }
     \comentario{
       Como lo hicimos con la integral doble, la integral triple se puede calcular gracias a
@@ -1083,13 +1569,13 @@
         \leq h_2(x,y)\right\}$$
         $$\text{y entonces, }\iiint_mcV f\left(x,y,z\right)\ dx\ dy\ dz=
         \int_{a}^{b}\left(\int_{g_1(x)}^{g_2(x)}\left(\int_{h_{1}(x,y)}^{h_2(x,y)}f\left(x,y,z\right)\ dz\right)\ dy\right)\ dx$$
-        
+
         \item Si $\mcV$ es de la forma siguiente: $$\mcV = \left\{\left(x,y,z\right)
         \in\bbR^3\colon a\leq x\leq b\colon g­_1(x)\leq z\leq g_2(x)\colon h_1(x,z)\leq y
         \leq h_2(x,z)\right\}$$
         $$\text{entonces, }\iiint_mcV f\left(x,y,z\right)\ dx\ dy\ dz=
-        \int_{a}^{b}\left(\int_{g_1(x)}^{g_2(x)}\left(\int_{h_{1}(x,z)}^{h_2(x,z)}f\left(x,y,z\right)\ dy\right)\ dz\right)\ dx$$     
-      
+        \int_{a}^{b}\left(\int_{g_1(x)}^{g_2(x)}\left(\int_{h_{1}(x,z)}^{h_2(x,z)}f\left(x,y,z\right)\ dy\right)\ dz\right)\ dx$$
+
         \item \textit{Idem.}
       \end{enumerate}
     }
@@ -1116,12 +1602,14 @@
     delimitado por los planos\\ $\begin{cases}\begin{aligned}&x=0\\ &y=0\\ &z=0\\ &x+y+z=1\end{aligned}\end{cases}$ con el cambio de variable propuesto:
     $\begin{cases}\begin{aligned}&x=u\left(1-u\right)\\ &y=uv\left(1-w\right)\\ &z=uvw\end{aligned}\end{cases}$}{
       \begin{wrapfigure}[1]{r}{.3\textwidth}
-        \vspace{-1cm}
+        \vspace{-1\intextsep}
         \begin{center}
-            \includegraphics[width=.3\textwidth]{mireia4.png}
+          \ffigbox[\textwidth]{}{
+            \includegraphics[width=\textwidth]{mireia4.png}
+          }
         \end{center}
       \end{wrapfigure}
-      Tenemos $g\left(u,v,w\right)=\left(u-uv,uv-uvw,uvw\right)$\vspace{0.4cm}\\ 
+      Tenemos $g\left(u,v,w\right)=\left(u-uv,uv-uvw,uvw\right)$\vspace{0.4cm}\\
       y además:
       $\begin{cases}\begin{aligned} &u=x+y+z\\ &v=\frac{y+z}{x+y+z}\\ &w=\frac{z}{y+z}\end{aligned}\end{cases}$\vspace{0.4cm}\\
       $\begin{vmatrix}J_g\left(u,v,w\right)\end{vmatrix}=
@@ -1129,7 +1617,7 @@
         1-v&                -u&                 0\\
         v\left(1-w\right)&  u\left(1-w\right)&  -uv\\
         vw&                 uw&                 uv
-      \end{vmatrix}=u^2v$\\ 
+      \end{vmatrix}=u^2v$\\
 
       \vspace{0.2cm}$g\left(u,v,w\right)=f\left(u\left(1-v\right),uv\left(1-w\right),uvw\right)=u^3v^2w\left(1-u\right)\left(1-v\right)\left(1-w\right)$\\
 
@@ -1140,14 +1628,17 @@
       \subsubsection{Cambio en coordenadas cilíndricas}
         \vspace{0.2cm}
         \begin{wrapfigure}[5]{l}{.27\textwidth}
-            \vspace{-1.4cm}
+          \vspace{-0.3cm}
+          \vspace{-1\intextsep}
             \begin{center}
-                \includegraphics[width=.35\textwidth]{mireia3.png}
+              \ffigbox[\textwidth]{}{
+                \includegraphics[width=\textwidth]{mireia3.png}
+              }
             \end{center}
         \end{wrapfigure}
         $\begin{cases}\begin{aligned} &x=r\cos\theta\\ &y=r\sin\theta\\ &z=z\end{aligned}\end{cases}$ con $r\geq 0,\ \theta\in\left[0,2\pi\right]$
         $\hspace{0.5cm}g\left(r,\theta,z\right)=\left(r\cos\theta,r\sin\theta,z\right)$\\
-        
+
         \vspace{0.2cm}$\begin{vmatrix}J_g\left(r.\theta,z\right)\end{vmatrix}=
         \begin{vmatrix}\frac{\partial\left(x,y,z\right)}{\partial\left(r,\theta,z\right)}\end{vmatrix}=
         \begin{vmatrix}
@@ -1179,14 +1670,14 @@
       \subsection{Coordenadas Esféricas}
         $\begin{cases}\begin{aligned}
           &x = \rho\sin\varphi\cos\theta\\
-          &y = \rho\sin\varphi\sin\theta \\ 
+          &y = \rho\sin\varphi\sin\theta \\
           &z = \rho\cos\varphi\\
           &\rho^2 = x^2+y^2+z^2
         \end{aligned}\end{cases}$ con $\rho\geq 0$, $\theta\in[0,2\pi]$, $\varphi\in[0,\pi]$\\
 
         \vspace{0.4cm}El Jacobiano será $\boxed{\rho^2\sin\varphi}$
         \comentario{
-          Si ponemos 
+          Si ponemos
           $\begin{cases}\begin{aligned}
             &r=\rho\sin\varphi\\
             &\theta=\theta\\
@@ -1196,14 +1687,105 @@
         \ejemplo{Sea $\mcB$ la bola unidad y $a>1$, calcular $\mcI = \iiint_\mcB\frac{dx\ dy\ dz}{\sqrt{x^2+y^2+(z-1)^2}}$}{
           Pasamos a coordenadas esféricas: $\begin{cases}\begin{aligned}
             &x = \rho\sin\varphi\cos\theta\\
-            &y = \rho\sin\varphi\sin\theta \\ 
+            &y = \rho\sin\varphi\sin\theta \\
             &z = \rho\cos\varphi
           \end{aligned}\end{cases}$ y obtenemos\vspace{0.2cm} \\
           $\mcI=\int_{0}^{1}\int_{-\pi}^{\pi}\int_{0}^{2\pi}\frac{\rho^2\sin\varphi}{\sqrt{\rho^2+r^2-2a\rho\cos\varphi}}d\varphi d\theta d\rho$
-          \hspace{0.5cm}Hacemos el cambio de variable: 
+          \hspace{0.5cm}Hacemos el cambio de variable:
           $\begin{cases}\begin{aligned} &t=\rho^2+a^2-2a\rho\cos\varphi\\ &dt=2a\rho\sin\varphi\ d\varphi\end{aligned}\end{cases}$
-          
+
           \vspace{0.4cm}y \hspace{0.5cm}$\mcI = 2\pi\int_{0}^{1}\rho^2\left(\int_{(a-\rho)^2}^{(a+\rho)^2}\frac{dt}{2a\rho\sqrt{t}}\right)d\rho = \frac{4\pi}{a}\int_{0}^{1}\rho^2\ d\rho=\frac{4\pi}{3a}$
         }
+
+\chapter{Teoremas de Stokes y Gauss}   
+  \vspace{-0.8cm}
+  \section{Teorema de Kelvin-Stokes}
+    \noindent Empezando por algunas aplicaciones en física, la idea en el campo de mecánica de fluidos es la de observar que las rotaciones en una superficie se superponen entre ellas hasta llegar a la frontera,
+    es decir, a partir de lo que ocurre en el interior de la superficie podemos tener una idea de lo que está pasando en la frontera.\\
+
+    \noindent Se trata de gereralizar a $\bbR^3$ el concepto que vimos con el \textit{Teorema de Green-Riemann}. En efecto, si recordamos:\\
+    $\vec{F}(x,y)=P(x,y)\vec{i}+Q(x,y)\vec{j}\implies\nabla\times\vec{F}=\left(\frac{\partial Q}{\partial x}(x,y)\vec{i}-\frac{\partial P}{\partial y}(x,y)\vec{j}\right)k$\\
+    lo que nos daba $\oint F\ dl=\iint\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\ dS=\iint \nabla\times\vec{F}\cdot\vec{k}dS$\\
+
+    \begin{wrapfigure}[7]{l}{.3\textwidth}
+      \vspace{-0.6cm}
+      \ffigbox[\textwidth]{}{
+        \includegraphics[width=\textwidth]{stokes.png}}
+    \end{wrapfigure}
+
+    \noindent El \textit{Teorema de Green-Riemann} en un espacio tridimensional relaciona una integral de línea alrededor de una curva $\mcC$ cerrada, simple, suave (por partes)
+    de forma que la frontera de una superficie $S$ con una integral de superficie sobre $S$, como vemos en la figura.
+      
+    \vspace{0.34cm}\noindent Suponemos que $z=f(x,y)$ es continua cuya representación gráfica es una superficie orientada suave por partes sobre una región $R$ en el plano $OXY$, donde $\mcC$ es la frontera de $S$ y $\mcC_{xy}$ es la frontera de $R$.
+
+    \teorema{\textbf{Kelvin-Stokes}}{
+      Sea $S$ una superficie orientada suave por partes y acotada por una curva $\mcC$ cerrada, simple y suave por partes.\\
+
+      Sea $\vec{F}(x,y,z)=P(x,y,z)\vec{i}+Q(x,y,z)\vec{j}+R(x,y,z)\vec{k}$ un cnampo vectorial cuyas componentes son funciones continuas y que tienen derivadas parciales continuas de primer orden en una región abierta de $\bbR^3$ que contiene a $S$.\\
+
+      Si $\mcC$ se recorre en el sentido positivo:
+      $$\int_{\mcC}\vec{F}\ dl=\iint_S\nabla\times\vec{F}\cdot d\vec{S}$$
+    }
+    \clearpage
+    \ejemplo{Evaluar $\int_{\mcC}\left(z\ dx+x\ dy+y\ dz\right)$ donde $\mcC$ es la traza del cilindro $x^2+y^2=1$ en el plano $y+z=2$. $\mcC$ está orientado en el sentido contrario al de las manecillas del reloj cuando se mira desde arriba.}{
+      Tenemos $\vec{F}(x,y,z)=z\ dx+x\ dy+y\ dz$. Si calculamos $\nabla\times\vec{F}$:\\
+      
+      \begin{wrapfigure}[3]{l}{.26\textwidth}
+        \vspace{-1cm}
+        \ffigbox[\textwidth]{}{
+          \includegraphics[width=\textwidth]{ejemploStokes.png}}
+      \end{wrapfigure}
+      \vspace{0.2cm}$\nabla\times\vec{F}=$
+      $\begin{vmatrix*}[l]
+        \vec{i}                    & \vec{j}                    & \vec{k}\\
+        \frac{\partial}{\partial x}& \frac{\partial}{\partial y}& \frac{\partial}{\partial z}\\
+        z                          & y                          & z
+      \end{vmatrix*} = 1\vec{i}+1\vec{j}+1\vec{k}$
+
+      \vspace{0.4cm}Si $h(x,y,z)=y+z-2$, entonces $h(x,y,z)=0$ es la ecuación del plano cuyo vector normal unitario $\vec{n}=\frac{\nabla h}{\norm{\nabla h}}=\frac{\sqrt{2}}{2}\vec{j}+\frac{\sqrt{2}}{2}\vec{k}$
+      
+      \vspace{0.6cm}Con el \textit{Teorema de Stokes} tenemos:
+      $$\int_{\mcC}\vec{F}d\vec{M}=\iint_{\mcS}\left(\vec{i}+\vec{j}+\vec{k}\right)\cdot\left(\frac{\sqrt{2}}{2}\vec{j}+\frac{\sqrt{2}}{2}\vec{k}\right)\ dS=
+      \sqrt{2}\iint_S dS=\sqrt{2}\iint_S \sqrt{2}\ dxdy=2\pi$$
+    }
+    \comentario{
+      Podemos tener:
+
+      \centering
+      \includegraphics[width=0.5\textwidth]{stokes2.png}
+      
+      \begin{flushleft} 
+      El valor de la integral de superficie está determinado por la integral alrededor de su frontera $\mcC$. Esto significa que la "forma" de la superficie $S$ no tiene importancia:
+      $$\int_\mcC\vec{F}\cdot dM=\iint_{S_1}\nabla\times\vec{F}\cdot dS_1=\iint_{S_2}\nabla\times\vec{F}\cdot dS_2$$
+      \end{flushleft}
+    }
+    \comentario{
+      En el diagrama siguiente resumimos los resultados para campos conservativos definidos en regiones abiertas conexas y simplemente conexas.
+      
+      \setlength{\tabcolsep}{2pt}
+      \begin{table}[H]
+        \begin{tabular}{ccl}
+          $\vec{F}\text{ conservativo en }\mcD$ & $\Longleftrightarrow$             & $\vec{F}=\nabla f \text{ en }\mcD$          \\
+          \multicolumn{1}{c}{$\Updownarrow$}    & \multicolumn{1}{l}{}              & \multicolumn{1}{c}{$\Updownarrow$}          \\
+          $\int_\mcC \vec{F}\cdot d\vec{M}= 0$  & $\xLeftarrow[Stokes]{}$ & $\nabla\cdot\vec{F}=\vec{0}\text{ en }\mcD$
+        \end{tabular}
+      \end{table}
+    }
+  \clearpage
+  \section{Teorema de Gauss-Ostrogradsky / Divergencia}
+    \noindent Si consideramos el punto $(x_0,y_0,z_0)$ como una región infinitesimal de un volumen de control de un gas, entonces podemos entender la divergencia en dicho punto como la medida de cuánto diverge
+    o se escapa el gas en dicho punto. Si $\nabla \cdot F>0$, entonces el gas se expande, si $\nabla\cdot F<0$ entonces se contrae, y si $\nabla \cdot F=0$ se dice que el gas es incompresible.\\
+
+    \noindent Se considera un recipiente con un líquido y una membrana semipermeable en su interior. El \textit{Teorema de Gauss-Ostrogradsky} sugiere que para medir cuánto flujo se escapa a través de la membrana
+    se puede medir el flujo infinitesimal que se escapa a través de cada punto que la membrana encierra y sumar todos esos puntos. La suma de cada uno de estos flujos infinitesimales que escapan representa
+    el flujo total que se escapa de la membrana.
+
+    \teorema{Gauss-Ostrogradsky o \textbf{de la divergencia}}{
+      Sea $\Omega$ una región de $\bbR^3$ y sea $S$ la frontera de $\Omega$ con una parametrización $f\colon\mcD\subset\bbR^2\longrightarrow\bbR^3$ que orienta a la superficie con sus vectores normales apuntando
+      hacia el exterior.\\
+
+      Si $F(\mcU)\subset\bbR^3\longrightarrow\bbR^3$, $F=(P,Q,R)$ campo vectorial de $\bbR^3$ de clase $\mcC_1$ definido en todo punto del abierto $\mcU$ tal que $\Omega\subseteq\mcU$, entonces:
+      $$\iint_S\vec{F}\cdot d\vec{S}=\iiint_\Omega\nabla\cdot\vec{F}\ dV$$
+    }
 \end{document}
 

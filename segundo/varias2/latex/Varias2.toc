@@ -13,17 +13,22 @@
 \contentsline {section}{\numberline {3.3}Longitud de una curva}{13}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Integrales dobles}{14}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introducción}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Teoremas de Fubini}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Teorema de Green-Riemann}{16}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Superficies parametrizadas}{16}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Introducción}{16}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Área de una superficie}{17}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Integrales de funciones escalares sobre superficies}{19}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Integrales de superficie de funciones vectoriales}{20}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Integrales Triples}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introducción}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Cambio de variables}{22}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Algunos cambios de variable}{22}{subsection.5.2.1}%
-\contentsline {subsubsection}{Cambio en coordenadas cilíndricas}{22}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Coordenadas Esféricas}{23}{subsection.5.2.2}%
+\contentsline {section}{\numberline {4.2}Teoremas de Fubini}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Teorema de cambio de variable}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Teorema de Green-Riemann}{18}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Cálculo de Área}{20}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Superficies parametrizadas}{21}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Introducción}{21}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Área de una superficie}{23}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Integrales de funciones escalares sobre superficies}{25}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Integrales de superficie de funciones vectoriales}{26}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Integrales Triples}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Cambio de variables}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Algunos cambios de variable}{30}{subsection.5.2.1}%
+\contentsline {subsubsection}{Cambio en coordenadas cilíndricas}{30}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Coordenadas Esféricas}{31}{subsection.5.2.2}%
+\contentsline {chapter}{\numberline {6}Teoremas de Stokes y Gauss}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Teorema de Kelvin-Stokes}{32}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Teorema de Gauss-Ostrogradsky / Divergencia}{34}{section.6.2}%
 \contentsfinish 
