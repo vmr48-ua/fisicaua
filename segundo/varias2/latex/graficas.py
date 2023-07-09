@@ -172,7 +172,7 @@ def f10(x):
 def f11(x):
     return -0.93*sqrt(log10(x-0.712)+cos(x-2))+2
 
-f6,f7,f8,f9,f10=np.vectorize(f6),np.vectorize(f7),np.vectorize(f8),np.vectorize(f9),np.vectorize(f10)   
+f6,f7,f8,f9,f10,f11=np.vectorize(f6),np.vectorize(f7),np.vectorize(f8),np.vectorize(f9),np.vectorize(f10),np.vectorize(f11)
 
 x = np.linspace(1,4,5000)
 xr = np.linspace(1,4,5000)
@@ -210,6 +210,6 @@ ax.set_yticks([0.98,2.98],['c','d'],fontsize=12)
 
 ax.vlines(x=4, ymin = f11(4), ymax= 3, color='r', linestyle='-')
 
-plt.savefig('latex/comentario4.1.3.png')
+#plt.savefig('latex/comentario4.1.3.png')
 
 plt.show()

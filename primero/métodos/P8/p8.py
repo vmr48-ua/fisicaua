@@ -57,7 +57,6 @@ def prod_fila(A,i,c):
     A[i] = c*subs
     return A
 
-
 def gauss_parcial(A,b):
     Ac = A.copy()
     bc = b.copy()

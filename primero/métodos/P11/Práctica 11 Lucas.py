@@ -23,7 +23,7 @@ def newton_sist(F,JF,p0,tol,maxiter):
         error = la.norm(p0-p1)
         cont += 1
         p0 = p1
-        
+
     return p1, cont
        
 

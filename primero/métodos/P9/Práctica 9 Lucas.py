@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 24 12:07:49 2023
-
-@author: lucas
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 import numpy.polynomial.polynomial as npol

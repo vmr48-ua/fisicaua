@@ -79,7 +79,7 @@ plt.show()
 # =============================================================================
 
 fig = plt.figure()
-ax=fig.gca(projection='3d')
+ax=fig.add_subplot(projection='3d')
 u,v,w=np.meshgrid(x,y,z)
 bx,by,bz=B(I,R,(u,v,w))
 ax.quiver(u,v,w,bx,by,bz,color='b',length=1,normalize=True)

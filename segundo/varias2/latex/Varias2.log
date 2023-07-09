@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.10)  27 MAY 2023 08:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.7.4)  4 JUL 2023 13:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -27,12 +27,22 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 Package: babel 2023/02/13 3.86 The Babel package
 \babel@savecnt=\count194
 \U@D=\dimen141
-\l@unhyphenated=\language87
+\l@unhyphenated=\language3
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count195
  (/usr/share/texmf-dist/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language 'Spanish' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 51.
+
+Package babel Info: Hyphen rules for 'spanish' set to \l@english
+(babel)             (\language0). Reported on input line 52.
 \es@quottoks=\toks16
 \es@quotdepth=\count196
 Package babel Info: Making " an active character on input line 570.
@@ -1355,8 +1365,20 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 20.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23 \tableofcontents
+                      [1
+
+]
+
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 20.
+(Font)              using `OT1/cmr/bx/n' instead on input line 23.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1374,629 +1396,620 @@ Missing character: There is no ; in font nullfont!
 \tf@toc=\write5
 \openout5 = `Varias2.toc'.
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.22 
-      [1
+ [2
 
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Cap\'{\i }tulo 1.
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 33.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
-[2
+[3
 
-] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--185
+Underfull \hbox (badness 10000) in paragraph at lines 175--188
 
  []
 
-[5] [6
+[6] [7
 
 ]
 Cap\'{\i }tulo 2.
-[7
+[8
 
-] [8]
-Overfull \hbox (24.01334pt too wide) in paragraph at lines 445--461
+] [9]
+Overfull \hbox (24.01334pt too wide) in paragraph at lines 448--464
 []  [] 
  []
 
-[9]
+[10]
 Cap\'{\i }tulo 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--501
+Underfull \hbox (badness 10000) in paragraph at lines 504--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
+Underfull \hbox (badness 10000) in paragraph at lines 535--535
 
  []
 
-[10
+[11
 
 ]
-<integraldelinea.png, id=292, 438.6789pt x 324.4923pt>
-File: integraldelinea.png Graphic file (type png)
-<use integraldelinea.png>
-Package pdftex.def Info: integraldelinea.png  used on input line 539.
+<fotos/integraldelinea.png, id=296, 438.6789pt x 324.4923pt>
+File: fotos/integraldelinea.png Graphic file (type png)
+<use fotos/integraldelinea.png>
+Package pdftex.def Info: fotos/integraldelinea.png  used on input line 542.
 (pdftex.def)             Requested size: 147.43204pt x 109.05342pt.
-File: integraldelinea.png Graphic file (type png)
-<use integraldelinea.png>
-Package pdftex.def Info: integraldelinea.png  used on input line 539.
+File: fotos/integraldelinea.png Graphic file (type png)
+<use fotos/integraldelinea.png>
+Package pdftex.def Info: fotos/integraldelinea.png  used on input line 542.
 (pdftex.def)             Requested size: 147.43204pt x 109.05342pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--547
+Underfull \hbox (badness 10000) in paragraph at lines 544--550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--547
+Underfull \hbox (badness 10000) in paragraph at lines 544--550
 
  []
 
-[11 <./integraldelinea.png>]
-Overfull \hbox (21.92253pt too wide) in paragraph at lines 619--619
+[12 <./fotos/integraldelinea.png>]
+Overfull \hbox (21.92253pt too wide) in paragraph at lines 622--622
 []   [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--644
+Underfull \hbox (badness 10000) in paragraph at lines 647--647
 
  []
 
-[12
+[13
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 683.
+(Font)              size <5> substituted on input line 686.
 
-[13]
+[14]
 Cap\'{\i }tulo 4.
-<integralesdobles.png, id=340, 462.528pt x 346.896pt>
-File: integralesdobles.png Graphic file (type png)
-<use integralesdobles.png>
-Package pdftex.def Info: integralesdobles.png  used on input line 699.
+<fotos/integralesdobles.png, id=344, 462.528pt x 346.896pt>
+File: fotos/integralesdobles.png Graphic file (type png)
+<use fotos/integralesdobles.png>
+Package pdftex.def Info: fotos/integralesdobles.png  used on input line 702.
 (pdftex.def)             Requested size: 196.57104pt x 147.43149pt.
-File: integralesdobles.png Graphic file (type png)
-<use integralesdobles.png>
-Package pdftex.def Info: integralesdobles.png  used on input line 699.
+File: fotos/integralesdobles.png Graphic file (type png)
+<use fotos/integralesdobles.png>
+Package pdftex.def Info: fotos/integralesdobles.png  used on input line 702.
 (pdftex.def)             Requested size: 196.57104pt x 147.43149pt.
 
-Overfull \hbox (92.25877pt too wide) in paragraph at lines 727--727
+Overfull \hbox (92.25877pt too wide) in paragraph at lines 730--730
 []|$[]$| 
  []
 
 
-Overfull \hbox (25.07227pt too wide) in paragraph at lines 727--727
+Overfull \hbox (25.07227pt too wide) in paragraph at lines 730--730
 []||  \OT1/cmr/m/n/10 con| 
  []
 
 
-Overfull \hbox (88.4811pt too wide) in paragraph at lines 727--727
+Overfull \hbox (88.4811pt too wide) in paragraph at lines 730--730
 []|$[]$| 
  []
 
 
-Overfull \hbox (36.7862pt too wide) in alignment at lines 727--727
+Overfull \hbox (36.7862pt too wide) in alignment at lines 730--730
 [][][] 
  []
 
 
-Overfull \hbox (92.25877pt too wide) in paragraph at lines 727--727
+Overfull \hbox (92.25877pt too wide) in paragraph at lines 730--730
 []|$[]$| 
  []
 
 
-Overfull \hbox (25.07227pt too wide) in paragraph at lines 727--727
+Overfull \hbox (25.07227pt too wide) in paragraph at lines 730--730
 []||  \OT1/cmr/m/n/10 con| 
  []
 
 
-Overfull \hbox (88.4811pt too wide) in paragraph at lines 727--727
+Overfull \hbox (88.4811pt too wide) in paragraph at lines 730--730
 []|$[]$| 
  []
 
 
-Overfull \hbox (36.7862pt too wide) in alignment at lines 727--727
+Overfull \hbox (36.7862pt too wide) in alignment at lines 730--730
 [][][] 
  []
 
 
-Overfull \hbox (92.25877pt too wide) in paragraph at lines 727--727
+Overfull \hbox (92.25877pt too wide) in paragraph at lines 730--730
 []|$[]$| 
  []
 
 
-Overfull \hbox (25.07227pt too wide) in paragraph at lines 727--727
+Overfull \hbox (25.07227pt too wide) in paragraph at lines 730--730
 []||  \OT1/cmr/m/n/10 con| 
  []
 
 
-Overfull \hbox (88.4811pt too wide) in paragraph at lines 727--727
+Overfull \hbox (88.4811pt too wide) in paragraph at lines 730--730
 []|$[]$| 
  []
 
 
-Overfull \hbox (36.7862pt too wide) in alignment at lines 727--727
+Overfull \hbox (36.7862pt too wide) in alignment at lines 730--730
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--736
+Underfull \hbox (badness 10000) in paragraph at lines 734--739
 
  []
 
 Missing character: There is no Ÿ in font cmr10!
 Missing character: There is no Ÿ in font cmr10!
 
-Underfull \hbox (badness 4242) in paragraph at lines 755--755
-[]\OT1/cmr/m/n/10 Sea $\OML/npxmi/m/it/10 f [] [] \LMS/npxsy/m/n/10 D ! \U/npxmia/m/it/10 •$ \OT1/cmr/m/n/10 in-te-gra-ble en $\LMS/npxsy/m/n/10 D$ \OT1/cmr/m/n/10 y sea $\LMS/npxsy/m/n/10 M[] 2 [] ^^B []$ \OT1/cmr/m/n/10 y sea $\OML/npxmi/m/it/10 ^^N[]; n \U/npxmia/m/it/10 =
+Underfull \hbox (badness 4242) in paragraph at lines 758--758
+[]\OT1/cmr/m/n/10 Sea $\OML/npxmi/m/it/10 f [] [] \LMS/npxsy/m/n/10 D ! \U/npxmia/m/it/10 •$ \OT1/cmr/m/n/10 in-te-grable en $\LMS/npxsy/m/n/10 D$ \OT1/cmr/m/n/10 y sea $\LMS/npxsy/m/n/10 M[] 2 [] ^^B []$ \OT1/cmr/m/n/10 y sea $\OML/npxmi/m/it/10 ^^N[]; n \U/npxmia/m/it/10 =
  []
 
 
-Underfull \hbox (badness 4416) in paragraph at lines 755--755
-[] [] \OML/npxmi/m/it/10 f [] [] []$\OT1/cmr/m/n/10 , en-ton-ces $[] \OML/npxmi/m/it/10 ^^N[] \LMS/npxsy/m/n/10 2 \U/npxmia/m/it/10 •$ \OT1/cmr/m/n/10 y de-no-ta-mos $[] \OML/npxmi/m/it/10 ^^N[] \U/npxmia/m/it/10 =
+Underfull \hbox (badness 4416) in paragraph at lines 758--758
+[] [] \OML/npxmi/m/it/10 f [] [] []$\OT1/cmr/m/n/10 , en-tonces $[] \OML/npxmi/m/it/10 ^^N[] \LMS/npxsy/m/n/10 2 \U/npxmia/m/it/10 •$ \OT1/cmr/m/n/10 y de-no-ta-mos $[] \OML/npxmi/m/it/10 ^^N[] \U/npxmia/m/it/10 =
  []
 
-[14
+[15
 
- <./integralesdobles.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 781--781
+ <./fotos/integralesdobles.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 784--784
 
  []
 
-<comentario4.1.3.png, id=371, 368.577pt x 276.0714pt>
-File: comentario4.1.3.png Graphic file (type png)
-<use comentario4.1.3.png>
-Package pdftex.def Info: comentario4.1.3.png  used on input line 802.
+<fotos/comentario4.1.3.png, id=375, 368.577pt x 276.0714pt>
+File: fotos/comentario4.1.3.png Graphic file (type png)
+<use fotos/comentario4.1.3.png>
+Package pdftex.def Info: fotos/comentario4.1.3.png  used on input line 805.
 (pdftex.def)             Requested size: 81.26831pt x 60.87068pt.
-File: comentario4.1.3.png Graphic file (type png)
-<use comentario4.1.3.png>
-Package pdftex.def Info: comentario4.1.3.png  used on input line 802.
+File: fotos/comentario4.1.3.png Graphic file (type png)
+<use fotos/comentario4.1.3.png>
+Package pdftex.def Info: fotos/comentario4.1.3.png  used on input line 805.
 (pdftex.def)             Requested size: 81.26831pt x 60.87068pt.
-[15 <./comentario4.1.3.png>]
-<ejemplo4.1.3.png, id=389, 462.528pt x 346.896pt>
-File: ejemplo4.1.3.png Graphic file (type png)
-<use ejemplo4.1.3.png>
-Package pdftex.def Info: ejemplo4.1.3.png  used on input line 866.
+[16 <./fotos/comentario4.1.3.png>]
+<fotos/ejemplo4.1.3.png, id=393, 462.528pt x 346.896pt>
+File: fotos/ejemplo4.1.3.png Graphic file (type png)
+<use fotos/ejemplo4.1.3.png>
+Package pdftex.def Info: fotos/ejemplo4.1.3.png  used on input line 869.
 (pdftex.def)             Requested size: 119.85289pt x 89.88911pt.
-File: ejemplo4.1.3.png Graphic file (type png)
-<use ejemplo4.1.3.png>
-Package pdftex.def Info: ejemplo4.1.3.png  used on input line 866.
+File: fotos/ejemplo4.1.3.png Graphic file (type png)
+<use fotos/ejemplo4.1.3.png>
+Package pdftex.def Info: fotos/ejemplo4.1.3.png  used on input line 869.
 (pdftex.def)             Requested size: 119.85289pt x 89.88911pt.
-<ejemplo4.1.4.png, id=390, 462.528pt x 346.896pt>
-File: ejemplo4.1.4.png Graphic file (type png)
-<use ejemplo4.1.4.png>
-Package pdftex.def Info: ejemplo4.1.4.png  used on input line 886.
+<fotos/ejemplo4.1.4.png, id=394, 462.528pt x 346.896pt>
+File: fotos/ejemplo4.1.4.png Graphic file (type png)
+<use fotos/ejemplo4.1.4.png>
+Package pdftex.def Info: fotos/ejemplo4.1.4.png  used on input line 889.
 (pdftex.def)             Requested size: 119.85289pt x 89.88911pt.
-File: ejemplo4.1.4.png Graphic file (type png)
-<use ejemplo4.1.4.png>
-Package pdftex.def Info: ejemplo4.1.4.png  used on input line 886.
+File: fotos/ejemplo4.1.4.png Graphic file (type png)
+<use fotos/ejemplo4.1.4.png>
+Package pdftex.def Info: fotos/ejemplo4.1.4.png  used on input line 889.
 (pdftex.def)             Requested size: 119.85289pt x 89.88911pt.
 
-Overfull \hbox (25.30937pt too wide) in paragraph at lines 886--886
+Overfull \hbox (25.30937pt too wide) in paragraph at lines 889--889
 []$
  []
 
-[16
+[17
 
- <./ejemplo4.1.3.png>]
-<cambioVar.png, id=402, 381.3447pt x 83.8332pt>
-File: cambioVar.png Graphic file (type png)
-<use cambioVar.png>
-Package pdftex.def Info: cambioVar.png  used on input line 892.
+ <./fotos/ejemplo4.1.3.png>]
+<fotos/cambioVar.png, id=406, 381.3447pt x 83.8332pt>
+File: fotos/cambioVar.png Graphic file (type png)
+<use fotos/cambioVar.png>
+Package pdftex.def Info: fotos/cambioVar.png  used on input line 895.
 (pdftex.def)             Requested size: 491.43513pt x 108.03397pt.
 
-Overfull \hbox (33.96873pt too wide) in paragraph at lines 895--906
-\OT1/cmr/m/n/10 Tenemos $\OML/npxmi/m/it/10 T [] \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 T[][] \LMS/npxsy/m/n/10 Ï \OML/npxmi/m/it/10 T[][]$ \OT1/cmr/m/n/10 (por-que to-ma-mos co-mo ba-se $[]\OML/npxmi/m/it/10 ; []$\OT1/cmr/m/n/10 , $\OML/npxmi/m/it/10 T[]$ \OT1/cmr/m/n/10 ser^^San ^^Suni-cos). \OT1/cmr/m/it/10 idem \OT1/cmr/m/n/10 con $[] [] [] $ $[]$
+Overfull \hbox (33.96873pt too wide) in paragraph at lines 898--909
+\OT1/cmr/m/n/10 Tenemos $\OML/npxmi/m/it/10 T [] \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 T[][] \LMS/npxsy/m/n/10 Ï \OML/npxmi/m/it/10 T[][]$ \OT1/cmr/m/n/10 (porque tomamos co-mo base $[]\OML/npxmi/m/it/10 ; []$\OT1/cmr/m/n/10 , $\OML/npxmi/m/it/10 T[]$ \OT1/cmr/m/n/10 ser^^San ^^Sunicos). \OT1/cmr/m/it/10 idem \OT1/cmr/m/n/10 con $[] [] [] $ $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
+Underfull \hbox (badness 10000) in paragraph at lines 910--911
 
  []
 
 
-Overfull \hbox (25.36205pt too wide) in paragraph at lines 914--919
+Overfull \hbox (25.36205pt too wide) in paragraph at lines 917--922
 \OT1/cmr/m/n/10 Sea $[][]$ y sea $\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x[]; x[]\LMS/npxsy/m/n/10 º 2 \U/npxmia/m/it/10 •[]$ \OT1/cmr/m/n/10 de-no-ta-mos $\OML/npxmi/m/it/10 ^^^\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 U\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 M\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x[]; x[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = []$ 
  []
 
-<cambioVar2.png, id=403, 430.2474pt x 112.0185pt>
-File: cambioVar2.png Graphic file (type png)
-<use cambioVar2.png>
-Package pdftex.def Info: cambioVar2.png  used on input line 923.
+<fotos/cambioVar2.png, id=407, 430.2474pt x 112.0185pt>
+File: fotos/cambioVar2.png Graphic file (type png)
+<use fotos/cambioVar2.png>
+Package pdftex.def Info: fotos/cambioVar2.png  used on input line 926.
 (pdftex.def)             Requested size: 491.43513pt x 127.95706pt.
-[17 <./ejemplo4.1.4.png> <./cambioVar.png> <./cambioVar2.png>]
-Overfull \hbox (15.65324pt too wide) detected at line 946
+[18 <./fotos/ejemplo4.1.4.png> <./fotos/cambioVar.png> <./fotos/cambioVar2.png>]
+Overfull \hbox (15.65324pt too wide) detected at line 949
  \LMS/npxsy/m/n/10 A [] \U/npxmia/m/it/10 = ^^A\OML/npxmi/m/it/10 u[]\U/npxmia/m/it/10 ^^A\OML/npxmi/m/it/10 u[]\LMS/npxsy/m/n/10 k\OML/npxmi/m/it/10 D[] [] \LMS/npxsy/m/n/10 ^ \OML/npxmi/m/it/10 D[] []\LMS/npxsy/m/n/10 k \U/npxmia/m/it/10 = ^^A\OML/npxmi/m/it/10 u[]\U/npxmia/m/it/10 ^^A\OML/npxmi/m/it/10 u[]\LMS/npxsy/m/n/10 j[] []j   []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--973
+Underfull \hbox (badness 10000) in paragraph at lines 976--976
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 973--973
+Underfull \hbox (badness 10000) in paragraph at lines 976--976
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 995--997
+Underfull \hbox (badness 10000) in paragraph at lines 998--1000
 
  []
 
-<green0.png, id=417, 176.3388pt x 142.3719pt>
-File: green0.png Graphic file (type png)
-<use green0.png>
-Package pdftex.def Info: green0.png  used on input line 1002.
+<fotos/green0.png, id=422, 176.3388pt x 142.3719pt>
+File: fotos/green0.png Graphic file (type png)
+<use fotos/green0.png>
+Package pdftex.def Info: fotos/green0.png  used on input line 1005.
 (pdftex.def)             Requested size: 113.02797pt x 91.25673pt.
-File: green0.png Graphic file (type png)
-<use green0.png>
-Package pdftex.def Info: green0.png  used on input line 1002.
+File: fotos/green0.png Graphic file (type png)
+<use fotos/green0.png>
+Package pdftex.def Info: fotos/green0.png  used on input line 1005.
 (pdftex.def)             Requested size: 113.02797pt x 91.25673pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1007--1009
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 1010--1012
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1015
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1020
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1021--1023
-
- []
-
-[18
-
- <./green0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1030
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1023
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1031--1032
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1026
+
+ []
+
+[19
+
+ <./fotos/green0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1033
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1085
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1035
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1106--1106
+Underfull \hbox (badness 10000) in paragraph at lines 1088--1088
 
  []
 
-<comentarioGR1.png, id=441, 135.6267pt x 124.3044pt>
-File: comentarioGR1.png Graphic file (type png)
-<use comentarioGR1.png>
-Package pdftex.def Info: comentarioGR1.png  used on input line 1106.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1109--1109
+
+ []
+
+<fotos/comentarioGR1.png, id=445, 135.6267pt x 124.3044pt>
+File: fotos/comentarioGR1.png Graphic file (type png)
+<use fotos/comentarioGR1.png>
+Package pdftex.def Info: fotos/comentarioGR1.png  used on input line 1109.
 (pdftex.def)             Requested size: 119.51352pt x 109.53613pt.
-<comentarioGR2.png, id=442, 135.6267pt x 124.3044pt>
-File: comentarioGR2.png Graphic file (type png)
-<use comentarioGR2.png>
-Package pdftex.def Info: comentarioGR2.png  used on input line 1106.
+<fotos/comentarioGR2.png, id=446, 135.6267pt x 124.3044pt>
+File: fotos/comentarioGR2.png Graphic file (type png)
+<use fotos/comentarioGR2.png>
+Package pdftex.def Info: fotos/comentarioGR2.png  used on input line 1109.
 (pdftex.def)             Requested size: 119.51352pt x 109.53613pt.
-[19]
-<flujoYdiv.png, id=450, 153.2124pt x 120.6909pt>
-File: flujoYdiv.png Graphic file (type png)
-<use flujoYdiv.png>
-Package pdftex.def Info: flujoYdiv.png  used on input line 1136.
+[20]
+<fotos/flujoYdiv.png, id=454, 153.2124pt x 120.6909pt>
+File: fotos/flujoYdiv.png Graphic file (type png)
+<use fotos/flujoYdiv.png>
+Package pdftex.def Info: fotos/flujoYdiv.png  used on input line 1139.
 (pdftex.def)             Requested size: 98.28552pt x 77.42238pt.
-File: flujoYdiv.png Graphic file (type png)
-<use flujoYdiv.png>
-Package pdftex.def Info: flujoYdiv.png  used on input line 1136.
+File: fotos/flujoYdiv.png Graphic file (type png)
+<use fotos/flujoYdiv.png>
+Package pdftex.def Info: fotos/flujoYdiv.png  used on input line 1139.
 (pdftex.def)             Requested size: 98.28552pt x 77.42238pt.
- [20 <./comentarioGR1.png> <./comentarioGR2.png> <./flujoYdiv.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1188
+ [21 <./fotos/comentarioGR1.png> <./fotos/comentarioGR2.png> <./fotos/flujoYdiv.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1191
 
  []
 
-<comentario4.5.1.png, id=464, 339.1872pt x 109.8504pt>
-File: comentario4.5.1.png Graphic file (type png)
-<use comentario4.5.1.png>
-Package pdftex.def Info: comentario4.5.1.png  used on input line 1188.
+<fotos/comentario4.5.1.png, id=468, 339.1872pt x 109.8504pt>
+File: fotos/comentario4.5.1.png Graphic file (type png)
+<use fotos/comentario4.5.1.png>
+Package pdftex.def Info: fotos/comentario4.5.1.png  used on input line 1191.
 (pdftex.def)             Requested size: 167.32184pt x 54.19089pt.
-File: comentario4.5.1.png Graphic file (type png)
-<use comentario4.5.1.png>
-Package pdftex.def Info: comentario4.5.1.png  used on input line 1188.
+File: fotos/comentario4.5.1.png Graphic file (type png)
+<use fotos/comentario4.5.1.png>
+Package pdftex.def Info: fotos/comentario4.5.1.png  used on input line 1191.
 (pdftex.def)             Requested size: 167.32184pt x 54.19089pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1188
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1188
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1188
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1191
 
  []
 
-[21 <./comentario4.5.1.png>] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1246--1247
+[22 <./fotos/comentario4.5.1.png>] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1250
 
  []
 
-<mireia1.png, id=487, 246.6816pt x 118.5228pt>
-File: mireia1.png Graphic file (type png)
-<use mireia1.png>
-Package pdftex.def Info: mireia1.png  used on input line 1258.
+<fotos/mireia1.png, id=491, 246.6816pt x 118.5228pt>
+File: fotos/mireia1.png Graphic file (type png)
+<use fotos/mireia1.png>
+Package pdftex.def Info: fotos/mireia1.png  used on input line 1261.
 (pdftex.def)             Requested size: 393.1496pt x 188.9133pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1254--1267
+Underfull \hbox (badness 10000) in paragraph at lines 1257--1270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1268--1275
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 
  []
 
-[23
+[24
 
- <./mireia1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1328
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1345
+ <./fotos/mireia1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1331--1331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1355--1355
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1372
+Underfull \hbox (badness 10000) in paragraph at lines 1348--1348
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1372
+Underfull \hbox (badness 10000) in paragraph at lines 1358--1358
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1375--1375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1372
+Underfull \hbox (badness 10000) in paragraph at lines 1375--1375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1380--1380
+Underfull \hbox (badness 10000) in paragraph at lines 1375--1375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1391
+Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1402
-
- []
-
-[25
-
-]
-<mireia2.png, id=537, 246.6816pt x 204.0423pt>
-File: mireia2.png Graphic file (type png)
-<use mireia2.png>
-Package pdftex.def Info: mireia2.png  used on input line 1439.
-(pdftex.def)             Requested size: 143.41768pt x 118.63103pt.
-File: mireia2.png Graphic file (type png)
-<use mireia2.png>
-Package pdftex.def Info: mireia2.png  used on input line 1439.
-(pdftex.def)             Requested size: 143.41768pt x 118.63103pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1439--1439
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1462--1462
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
 [26
 
- <./mireia2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1512--1512
+]
+<fotos/mireia2.png, id=541, 246.6816pt x 204.0423pt>
+File: fotos/mireia2.png Graphic file (type png)
+<use fotos/mireia2.png>
+Package pdftex.def Info: fotos/mireia2.png  used on input line 1442.
+(pdftex.def)             Requested size: 143.41768pt x 118.63103pt.
+File: fotos/mireia2.png Graphic file (type png)
+<use fotos/mireia2.png>
+Package pdftex.def Info: fotos/mireia2.png  used on input line 1442.
+(pdftex.def)             Requested size: 143.41768pt x 118.63103pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1442--1442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1512--1512
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1465
 
  []
 
 [27
 
-] [28
+ <./fotos/mireia2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1515
+
+ []
+
+[28
+
+] [29
 
 ]
 Cap\'{\i }tulo 5.
-[29
+[30
 
 ]
-<mireia4.png, id=589, 246.6816pt x 200.1879pt>
-File: mireia4.png Graphic file (type png)
-<use mireia4.png>
-Package pdftex.def Info: mireia4.png  used on input line 1626.
+<fotos/mireia4.png, id=594, 246.6816pt x 200.1879pt>
+File: fotos/mireia4.png Graphic file (type png)
+<use fotos/mireia4.png>
+Package pdftex.def Info: fotos/mireia4.png  used on input line 1629.
 (pdftex.def)             Requested size: 138.29613pt x 112.23274pt.
-File: mireia4.png Graphic file (type png)
-<use mireia4.png>
-Package pdftex.def Info: mireia4.png  used on input line 1626.
+File: fotos/mireia4.png Graphic file (type png)
+<use fotos/mireia4.png>
+Package pdftex.def Info: fotos/mireia4.png  used on input line 1629.
 (pdftex.def)             Requested size: 138.29613pt x 112.23274pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1626--1626
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1629
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1626--1626
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1629
 
  []
 
-<mireia3.png, id=590, 246.6816pt x 186.9384pt>
-File: mireia3.png Graphic file (type png)
-<use mireia3.png>
-Package pdftex.def Info: mireia3.png  used on input line 1636.
+<fotos/mireia3.png, id=595, 246.6816pt x 186.9384pt>
+File: fotos/mireia3.png Graphic file (type png)
+<use fotos/mireia3.png>
+Package pdftex.def Info: fotos/mireia3.png  used on input line 1639.
 (pdftex.def)             Requested size: 132.68958pt x 100.5573pt.
-File: mireia3.png Graphic file (type png)
-<use mireia3.png>
-Package pdftex.def Info: mireia3.png  used on input line 1636.
+File: fotos/mireia3.png Graphic file (type png)
+<use fotos/mireia3.png>
+Package pdftex.def Info: fotos/mireia3.png  used on input line 1639.
 (pdftex.def)             Requested size: 132.68958pt x 100.5573pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1639--1641
+Underfull \hbox (badness 10000) in paragraph at lines 1642--1644
 
  []
 
-[30 <./mireia4.png> <./mireia3.png>]
-Overfull \hbox (2.60608pt too wide) detected at line 1660
+[31 <./fotos/mireia4.png> <./fotos/mireia3.png>]
+Overfull \hbox (2.60608pt too wide) detected at line 1663
 [][] \OML/npxmi/m/it/10 f\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x; y; z\LMS/npxsy/m/n/10 º\OML/npxmi/m/it/10 dxdydz \U/npxmia/m/it/10 = [][] [] \OML/npxmi/m/it/10 dxdy \U/npxmia/m/it/10 = [][] [][] [][] \OML/npxmi/m/it/10 f [] r dzdrd^^R
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1669--1669
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1671--1677
-
- []
-
-[31
-
-]
-Cap\'{\i }tulo 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1703--1705
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1709
-
- []
-
-<stokes.png, id=616, 186.2157pt x 120.2091pt>
-File: stokes.png Graphic file (type png)
-<use stokes.png>
-Package pdftex.def Info: stokes.png  used on input line 1713.
-(pdftex.def)             Requested size: 147.43204pt x 95.17874pt.
-File: stokes.png Graphic file (type png)
-<use stokes.png>
-Package pdftex.def Info: stokes.png  used on input line 1713.
-(pdftex.def)             Requested size: 147.43204pt x 95.17874pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1728--1728
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1728--1728
+Underfull \hbox (badness 10000) in paragraph at lines 1674--1680
 
  []
 
 [32
 
- <./stokes.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1750--1750
+]
+Cap\'{\i }tulo 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1708
 
  []
 
-<ejemploStokes.png, id=624, 143.3355pt x 118.7637pt>
-File: ejemploStokes.png Graphic file (type png)
-<use ejemploStokes.png>
-Package pdftex.def Info: ejemploStokes.png  used on input line 1750.
-(pdftex.def)             Requested size: 119.85289pt x 99.31139pt.
-File: ejemploStokes.png Graphic file (type png)
-<use ejemploStokes.png>
-Package pdftex.def Info: ejemploStokes.png  used on input line 1750.
-(pdftex.def)             Requested size: 119.85289pt x 99.31139pt.
-<stokes2.png, id=629, 313.8927pt x 149.8398pt>
-File: stokes2.png Graphic file (type png)
-<use stokes2.png>
-Package pdftex.def Info: stokes2.png  used on input line 1761.
-(pdftex.def)             Requested size: 239.02704pt x 114.1012pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1709--1712
+
+ []
+
+<fotos/stokes.png, id=620, 186.2157pt x 120.2091pt>
+File: fotos/stokes.png Graphic file (type png)
+<use fotos/stokes.png>
+Package pdftex.def Info: fotos/stokes.png  used on input line 1716.
+(pdftex.def)             Requested size: 147.43204pt x 95.17874pt.
+File: fotos/stokes.png Graphic file (type png)
+<use fotos/stokes.png>
+Package pdftex.def Info: fotos/stokes.png  used on input line 1716.
+(pdftex.def)             Requested size: 147.43204pt x 95.17874pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1731--1731
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1731--1731
+
+ []
+
 [33
 
- <./ejemploStokes.png> <./stokes2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1776--1778
+ <./fotos/stokes.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1753--1753
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1789--1789
-
- []
-
+<fotos/ejemploStokes.png, id=628, 143.3355pt x 118.7637pt>
+File: fotos/ejemploStokes.png Graphic file (type png)
+<use fotos/ejemploStokes.png>
+Package pdftex.def Info: fotos/ejemploStokes.png  used on input line 1753.
+(pdftex.def)             Requested size: 119.85289pt x 99.31139pt.
+File: fotos/ejemploStokes.png Graphic file (type png)
+<use fotos/ejemploStokes.png>
+Package pdftex.def Info: fotos/ejemploStokes.png  used on input line 1753.
+(pdftex.def)             Requested size: 119.85289pt x 99.31139pt.
+<fotos/stokes2.png, id=633, 313.8927pt x 149.8398pt>
+File: fotos/stokes2.png Graphic file (type png)
+<use fotos/stokes2.png>
+Package pdftex.def Info: fotos/stokes2.png  used on input line 1764.
+(pdftex.def)             Requested size: 239.02704pt x 114.1012pt.
 [34
+
+ <./fotos/ejemploStokes.png> <./fotos/stokes2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1779--1781
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1792--1792
+
+ []
+
+[35
 
 ] (./Varias2.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -2011,18 +2024,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 42323 strings out of 476025
- 835596 string characters out of 5796532
+ 42328 strings out of 477985
+ 836329 string characters out of 5840059
  1907388 words of memory out of 5000000
- 61811 multiletter control sequences out of 15000+600000
+ 61561 multiletter control sequences out of 15000+600000
  561129 words of font info for 171 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,33n,102p,767b,1687s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 14 hyphenation exceptions out of 8191
+ 99i,33n,102p,767b,1687s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on Varias2.pdf (35 pages, 1963379 bytes).
+Output written on Varias2.pdf (36 pages, 1963271 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 596 compressed objects within 6 object streams
- 198 named destinations out of 1000 (max. 500000)
+ 860 PDF objects out of 1000 (max. 8388607)
+ 600 compressed objects within 6 object streams
+ 199 named destinations out of 1000 (max. 500000)
  1018 words of extra memory for PDF output out of 10000 (max. 10000000)
 

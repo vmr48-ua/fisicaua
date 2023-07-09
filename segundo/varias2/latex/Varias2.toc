@@ -1,34 +1,34 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1}Formas diferenciales}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Definiciones básicas}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Formas diferenciales cerradas y exactas}{4}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Campo de gradiente, divergencia y rotacional}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Campo escalar, campo vectorial}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Aplicaciones a la física}{9}{section.2.2}%
-\contentsline {subsubsection}{Leyes en física}{9}{section.2.2}%
-\contentsline {subsubsection}{Relaciones fundamentales}{9}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Integrales de línea}{10}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Curvas paramétricas}{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Integrales de línea}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Longitud de una curva}{13}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Integrales dobles}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Teoremas de Fubini}{16}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Teorema de cambio de variable}{17}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Teorema de Green-Riemann}{18}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Cálculo de Área}{20}{subsection.4.4.1}%
-\contentsline {section}{\numberline {4.5}Superficies parametrizadas}{21}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Introducción}{21}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Área de una superficie}{23}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Integrales de funciones escalares sobre superficies}{25}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Integrales de superficie de funciones vectoriales}{26}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Integrales Triples}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introducción}{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Cambio de variables}{30}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Algunos cambios de variable}{30}{subsection.5.2.1}%
-\contentsline {subsubsection}{Cambio en coordenadas cilíndricas}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Coordenadas Esféricas}{31}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}Teoremas de Stokes y Gauss}{32}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Teorema de Kelvin-Stokes}{32}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Teorema de Gauss-Ostrogradsky / Divergencia}{34}{section.6.2}%
+\contentsline {chapter}{\numberline {1}Formas diferenciales}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Definiciones básicas}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Formas diferenciales cerradas y exactas}{5}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Campo de gradiente, divergencia y rotacional}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Campo escalar, campo vectorial}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aplicaciones a la física}{10}{section.2.2}%
+\contentsline {subsubsection}{Leyes en física}{10}{section.2.2}%
+\contentsline {subsubsection}{Relaciones fundamentales}{10}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Integrales de línea}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Curvas paramétricas}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Integrales de línea}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Longitud de una curva}{14}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Integrales dobles}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Teoremas de Fubini}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Teorema de cambio de variable}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Teorema de Green-Riemann}{19}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Cálculo de Área}{21}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Superficies parametrizadas}{22}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Introducción}{22}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Área de una superficie}{24}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Integrales de funciones escalares sobre superficies}{26}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Integrales de superficie de funciones vectoriales}{27}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Integrales Triples}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Cambio de variables}{31}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Algunos cambios de variable}{31}{subsection.5.2.1}%
+\contentsline {subsubsection}{Cambio en coordenadas cilíndricas}{31}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Coordenadas Esféricas}{32}{subsection.5.2.2}%
+\contentsline {chapter}{\numberline {6}Teoremas de Stokes y Gauss}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Teorema de Kelvin-Stokes}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Teorema de Gauss-Ostrogradsky / Divergencia}{35}{section.6.2}%
 \contentsfinish 
