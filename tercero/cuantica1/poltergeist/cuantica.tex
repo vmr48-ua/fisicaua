@@ -1,0 +1,150 @@
+\documentclass{report}
+\usepackage[spanish]{babel}
+\addto\captionsspanish{
+  \renewcommand{\contentsname}%
+    {Índice}%
+}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Apuntes de mecánica\\ cuántica 1}}
+\author{}
+\date{\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+\noindent Apuntes de las clases de \textit{Mecánica Cuántica I} dadas por \textit{María José Caturla} y transcritos a \LaTeX
+\hspace{0cm} por \textit{Víctor Mira Ramírez} durante el curso 2023-2024 del grado en Física de la \textit{Universidad de Alicante}.
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\chapter{Introducción}
+  \section{Radiación de cuerpo negro}
+    \noindent En el siglo XIX se buscaba el lfilamento que más radiación emitía (más luz), lo que propició el desarrollo de la física relacionada.
+    Era posible medir ucar era el espectro de radiación de distintos cuerpos para estudiarlos. Aquí nace el concepto de cuerpo negro, un cuerpo
+    que absorbe todas las radiaciones idílicamente. La emisión de radiación es una gráfica de energía frente a longitud de onda. 
+    Experimentalmente se obtuvieron dos leyes:
+    \definicion{Ley de desplazamiento de Wien}{
+      La longitud de onda emitida depende de la temperatura del cuerpo emisor. A mayor temperatura, la longitud de onda emitida será menor (el pico). 
+      $\boxed{\lambda_m\cdot T=B}$ donde $B$ es la \textit{Constante de Wien} $B=2.898\times 10^{-3}m\cdot k$}
+    \comentario{
+      Si $\lambda_m=500$, ¿Cuál es la temperatura de la superficie del Sol? $T=6000 k$
+      }
+    \definicion{Ley de Stefan-Boltzmann}{
+      $$P\alpha T^4$$
+      Permite calcular la potencia irradiada en función de la temperatura.
+    }
+    \noindent Una manera de teorizar un cuerpo negro es considerando una esfera con un agujero muy pequeño. La luz que entra por un agujero se ve atrapada dentro,
+    simulando un cuerpo negro. Cuando calcularon la densidad energética de este modelo, sucedía un problema: la \textbf{Catástrofe Ultravioleta}. El modelo no podía
+    simular las longitudes de onda más pequeñas, la energía tendía a infinito con una asíntota vertical. Clásicamente se denomina a este modelo el modelo de 
+    Rayleigh-Jeans: $u(\lambda)d\lambda=8\pi\lambda^{-4}KTd\lambda$. 
+
+    \vspace{0.4cm} \noindent Para resolver este problema, Max Planck tuvo un enfoque mucho más pragmático. Buscó una función que se aproximara a los datos experimentales para después deducir
+    una posible teoría física de ahí. Él sabía que era necesario cambiar la constante de Boltzmann por otra que se acomodara mejor. Es en este punto donde introducie
+    el concepto de la energía como cuantos. Nace aquí la famosa ecuación $\epsilon = h\cdot f$. Hoy en día ya le hemos puesto nombre a esta constante, la 
+    \textbf{Constante de Planck}. Como la energía es discreta, no se puede usar una integral, debemos hacer uso de sumatorios, lo cual resuelve la catástrofe.
+
+    \vspace{0.4cm} \noindent El enfoque cuántico de Planck: $u(\lambda)d\lambda=\dfrac{8\pi\lambda^{-5}hc}{\exp\left(\dfrac{hc}{\lambda k T}\right)-1}d\lambda$. 
+    
+    \noindent Planck no se contentó con esta explacación teórica y dedicó su vida a tratar de buscar teorías alternativas.
+    La constante de Planck es: $h=6.626\times10^{-34}J\cdot s$. El hecho de que la constante sea tan pequeña explica porqué a nivel 
+    macroscópico no observamos fenómenos cuánicos.
+  \section{Efecto fotoeléctrico}
+    \noindent El primero en observar este fenómeno fue Hertz, mientras realizaba un experiemento en el que trataba de probar que la luz era una onda. En dicho experimento,
+    encontró un fenómeno que parecía demostrar lo contrario, que la luz se comportaba como una partícula: el efecto fotoeléctrico. Es remarcable el hecho de que Hertz
+    publicara sus resultados a pesar de ser contradictorios.
+
+    \vspace{0.4cm} \noindent El efecto fotoeléctrico se basa en que al irradiar con una onda electromagnética un metal se emiten electrones (o fotoelectrones) en algunas condiciones concretas.
+    Al conectar un ánodo con una diferencia de potencial cercano al metal que irradiamos, observamos una corriente eléctrica generada, positiva si colocamos un 
+    potencial positivo, y al ir reduciendo el potencial llegamos a un potencial límite donde deja de haber corriente eléctrica, el llamado \textbf{Potencial de
+    frenado} ($V_0$). La frecuencia de la luz incidente es directamente proporcional con la intensidad de corriente. 
+    
+    \teorema{Problemas clásicos del \textbf{efecto fotoeléctrico}}{
+    \begin{enumerate}
+      \item No se entendía cómo el potencial de frenado es independiente de la intensidad de la luz. 
+    
+      \item Tampoco podía explicarse clásicamente cómo la emisión de
+      los electrones no sucedía para cualquier longitud de onda, independientemente de la intensidad. Llamamos a la frecuencia por debajo de la cual no se producen
+      fotoelectrones \textbf{frecuencia umbral}.
+
+      \item Por último, la ausenncia de tiempo de retardo entre la llegada de la radiación al metal y la producción de fotoelectrones era inexplicable también.
+    \end{enumerate}
+    }
+
+    \vspace{0.4cm} \noindent Fue Einstein quien resolvió este problema, basándose en la teoría de Planck. Einstein postuló que para poder empezar a arrancar
+    electrones de un metal, debíamos superar una función de trabajo $\Phi$ dependiente del metal y del tratamiento de su superficie.
+    El rigor en los experimentos era impescindible para mantener una coherencia en los resultados.
+
+    \vspace{0.4cm} \noindent La energia incidente era proporcional a la constante de planck multiplicado por la frecuencia, $h f$. La energía cinética que 
+    tendrán los electrones emitidos será $h f$ menos la función de trabajo: $E_c=hf-\Phi$ y como $E_c=e\abs{V_0}$, entonces 
+    $e\abs{V_0}=hf-\Phi$. La frecuencia umbral será cuando la energía incidente sea exactamente igual a la función de trabajo,
+    pudiendo despejar la frecuencia umbral $h f_u=\frac{\Phi}{h}$
+
+  \section{Espectro de rayos X}
+    \noindent Fueron descubiertos también en el siglo XIX de forma accidental mietras estudiaba rayos catódicos. Se dió cuenta que al hacer 
+    incidir electrones sobre un material, aparecía una radiacion que no supo describir, y la bautizó como \textbf{Rayos X}. Se observó
+    como estos rayos atravesaban materiales en mayor o menor grado en función de su densidad.
+
+    \vspace{0.4cm} \noindent No se entendían los picos de la gráfica, así como la aparición de una frecuencia umbral. Fue Einstein quien se dió cuenta de la 
+    similitud de esta gráfica con la del efecto fotoeléctrico. Al acelerar electrones, obtenemos una radiación asociada, siguiendo
+    la ecuación anterior: $e\abs{V_0}=hf-\Phi$. 
+
+    \definicion{Ley de Duane-Hunt}{
+      Longitud de onda mínima a partir de la cuál aparece una radiación X asociada: 
+      $$\lambda_m=\dfrac{1.24\times10^3}{V}m$$ 
+      
+      Suponiendo:\hspace{0.4cm} $e\abs{V_0} \geq \Phi$\hspace{0.4cm} $e\abs{V_0}=hf$ \hspace{0.4cm} $c=\lambda f$
+    }
+  \section{Espectros atómicos}
+    \noindent Se aplicaba a ciertos gases un voltaje para que emitiesen luz. No se veía todo el espectro, sino solo líneas discretas (luz de forma no continua sino discreta). 
+    Estos eran los espectros de emisión, también en espectros de absorción: luz blanca impacta en un material y al reflejarse (según el material) faltaban ciertas 
+    líneas que correspondían a lo que absorbía y reflejaba el material. 
+
+    \vspace{0.4cm} \noindent Para cada material se tienen determinadas longitudes de onda. En el estudio de esta sucesión de longitudes de onda se llega a la siguiente expresión 
+    que puede describir de forma empírica la posición de dichas líneas: (Por ejemplo la serie del hidrógeno sólo tenía 4 líneas).
+
+    \definicion{Ecuación de Balmer}{
+      $$\lambda_m=\frac{m^2}{m^2-4}\cdot 364.6nm$$
+      Donde $m$ es un entero. Sea $m=3,4,5,6...$ esto funcionaba fenomenal. No sólo daba las líneas ya conocidas, sino que predecía las que se descubrieron posteriormente.
+    }
+
+    \vspace{0.4cm} \noindent De forma paralela se consigue otra expresión válida para elementos alcalinos:
+
+    \definicion{Ecuación de Rydberg-Ritz}{
+      $$\frac{1}{\lambda_n}=R\left(\frac{1}{m^2}-\frac{1}{n^2}\right)\hspace{1cm}n>m\hspace{0.4cm}n,m=1,2,3...$$
+      Donde $R$ es la \textbf{Constante de Rydberg}, casi independiente del material. ($R_H=1.096776\cdot10^7 m^{-1}$, $R>\inf =1.097373\cdot10^7 m^{-1}$)
+    }
+
+    \vspace{0.4cm} \noindent Esto funciona con el hidrógeno: el espectro es visible, pero además también puede predecir las líneas espectrales que se hallan en el espectro no visible (infrarrojos, UV). 
+    La ecuación de Balmer se puede deducir a partir de esta.
+    
+    \vspace{0.4cm} \noindent Todo esto lleva a que Bohr desarrolle su teoría atómica, pero había dos problemas: 
+    \begin{itemize}
+      \item El momento angular de los electrones de las órbitas había de estar cuantizado. 
+      \item Al estar el electrón orbitando alrededor de una carga, se pierde energía, cayendo en espiral y chocando contra el núcleo. 
+    \end{itemize}
+
+    \teorema{Postulados del \textbf{Modelo atómico de Bohr}}{
+      \begin{enumerate}
+        \item Los electrones orbitan alrededor del núcleo en estados estacionarios donde no se emite radiación (no siguiendo la mecánica clásica), es decir, son estables.
+        \item La diferencia de energía entre niveles será aquella de la radiación que se emita. 
+        \item El momento angular del electrón está cuantizado. Consecuentemente, la energía de los estados está cuantizada. 
+      \end{enumerate}
+    }
+
+  \noindent A consecuencia de la cuantización de los radios vamos a demostrar la cuantización de la energía de los electrones
+  $E_c=K=\frac12 mv^2=\frac12 m\left(\frac{kze^2}{mr}\right)=\frac12 \frac{kze^2}{r}=-\frac12 u \Longrightarrow E=U+E_c=U-\frac12 U=\frac12 U=-\frac12 \frac{kze^2}{r}$
+  De aquí obtenemos una ecuación para la energía en función de n:
+  $$\boxed{E_n=-\frac12 \frac{kze^2}{r_n}=-\frac12 \frac{mk^2e^4}{\hbar^2}\frac{z^2}{n^2}}$$
+  Si llamamos $E_0$ a $-\frac12 \frac{kze^2}{r_n}=-\frac12 \frac{mk^2e^4}{\hbar^2}$, entonces obtenemos que 
+  $E_n=-E_0\frac{z^2}{n^2}$ y como $h\nu=E_i-E_j \Rightarrow h\nu=-E_0\frac{z^2}{n^2_i}+E_0\frac{z^2}{n^2_f}=E_0z^2\left(\frac{1}{n^2_f}-\frac{1}{n^2_i}\right) \Rightarrow 
+  \frac{1}{\lambda}=\frac{E_0z^2}{hc}\left(\frac{1}{n^2_f}-\frac{1}{n^2_i}\right)$ notando que $R_H=\frac{E_0}{hc}$ es la constante de Raylberg. Esto validó el postulado de Bohr
+\chapter{La ecuación de Schrödinger I}
+\chapter{La ecuación de Schrödinger II}
+
+\end{document}

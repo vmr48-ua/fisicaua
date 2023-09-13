@@ -1,0 +1,108 @@
+\documentclass{report}
+\usepackage[spanish]{babel}
+\addto\captionsspanish{
+  \renewcommand{\contentsname}%
+    {Índice}%
+}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Apuntes de análisis de\\ variable compleja}}
+\author{}
+\date{\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+\noindent Apuntes de las clases de \textit{Análisis de variable compleja} dadas por \textit{Juan Matías Sepulcre Martínez} y transcritos a \LaTeX
+\hspace{0cm} por \textit{Víctor Mira Ramírez} durante el curso 2023-2024 del grado en Física de la \textit{Universidad de Alicante}.
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\chapter{El cuerpo de los números complejos}
+  \section{Definiciones básicas}
+    \definicion{Número complejo}{
+      Un \textbf{número complejo} $z$ es un par ordenado de números reales $a,b$ escrito como
+      $\boxed{z=\left(a,b\right)}$ en coordenadas cartesianas. Existe una notación equivalente,
+      la forma binómica: $\boxed{z=a+ib}$ siendo $i=\left(0,1\right)$. \\
+      
+      El conjunto de los número complejos se denota por: $C:=\left\{(a,b):a,b\in\bbR\right\}$
+    }
+    \comentario{
+      Siempre que $a=0$ sea un número imaginario puro, y $b=0$ sea un número real.
+    }
+    \definicion{Conjugado}{
+      Llamamos conjugado de un número complejo al número denotado $\boxed{\ovl{z}=a-ib}$, siendo
+      $z=a+ib$. Geométricamente, podemos decir que el eje real actúa de 'espejo' del número en el plano.
+    }
+    \comentario{
+      Llamamos $\bbC$ al cuerpo de los numeros complejos. $\bbC$ es un cuerpo conmutativo, pero no totalmente ordenado. En cambio, cualquier ecuación algebraica
+      tiene solución en los complejos. De todas formas, el teorema fundamental del álgebra nos asegura que tendrá n soluciones en los complejos
+    }
+    \comentario{
+      Cuando los coeficientes de una ecuación algebraica son reales, las soluciones complejas vienen por pares.
+    }
+    \teorema{Operaciones elementales}{
+      \renewcommand{\arraystretch}{1.6}
+      \begin{tabular}{lll}
+        \textbf{SUMA}& $\left(a+bi\right)+\left(c+di\right)=\left(a+c\right)+\left(b+d\right)i$\\
+        \textbf{RESTA}& $\left(a+bi\right)-\left(c+di\right)=\left(a-c\right)+\left(b-d\right)i$\\
+        \textbf{PRODUCTO}& $\left(a+bi\right)\cdot\left(c+di\right)=\left(ac-bd\right)+\left(ad+bc\right)i$ &(teniendo en cuenta que $i^2=-1$)\\
+        \rule{0pt}{2.3em}\textbf{DIVISIÓN}& $\cfrac{a+bi}{c+di}\ =\ \cfrac{a+bi}{c+di}\cdot\cfrac{c-di}{c-di}\ =\ \cfrac{ac+bd}{c^2+d^2}+\left(\cfrac{bc-ad}{c^2+d^2}\right)i$ &(multiplicando por el conjugado)\\
+      \end{tabular}
+    }
+    \clearpage
+    \comentario{
+      El elemento unidad es $1+0i$ y el elemento inverso es $\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}i$. Para que un número complejo tenga elemento inverso, debe ser distinto de cero.
+      El producto de un número complejo por su elemento inverso es la unidad.
+    }
+    \definicion{Componentes de los complejos}{
+      Llamamos \textbf{módulo} del número complejo $z=a+bi$ a la cantidad $\boxed{\sqrt{a^2+b^2}}$ denotada $\abs{z}$\\
+
+      \vspace{0.1cm} Llamamos \textbf{argumento} del número complejo $z=a+bi$ al ángulo que forma el semieje positivo de abcisas
+      con la recta que contiene el vector $\left(a,b\right)$. Se denota $\text{Arg }z=\alpha$ y se expresa en radianes.\\
+      $\boxed{\alpha=\arctan{\left(\frac{b}{a}\right)}}$ si $a\neq 0$
+    }
+    \definicion{Módulo}{
+      Llamamos \textbf{módulo} de un número complejo $z=a+bi$, y lo denotamos $\abs{z}$, a la cantidad
+      $$\abs{z}=\sqrt{a^2+b^2}$$
+    }
+    \definicion{Argumento}{
+      Llamamos \textbf{argumento} de un número complejo $z=a+bi$ al ángula que forma el semieje positivo de abcisas con la recta que contiene al vector.
+      El argumento de $z$ se representa por Arg($z$)$=\alpha$, y se expresa normalmente en radianes.
+
+      $$\alpha=\arctan{\frac{b}{a}}, \text{si} a\neq0$$
+      $$\alpha=\frac{\pi}{2}, \text{si} a=0,b>0$$
+      $$\alpha=\frac{3\pi}{2}, \text{si} a=0,b<0$$
+
+      Si el ángulo se encuentra en el intervalo $[-\pi,\pi)$ lo llamaremos argumento principal.
+    }
+    \comentario{lol
+      %Arg z (z/=0) = $\pi/2$ si $a=0$ y $b>0$
+      %Arg z (z/=0) = $-\pi/2$ si $a=0$ y $b<0$
+      %Arg z (z/=0) = $0$ si $a>0$ y $b=0$
+      %Arg z (z/=0) = $-\pi$ si $a<0$ y $b=0$
+      %Arg z (z/=0) = $\arctan(b/a)$ si $a>0$ y $b>0$
+      %Arg z (z/=0) = $-arctan(-b/a)$ si $a>0$ y $b<0$
+      %Arg z (z/=0) = $-arctan(b/-a)+pi$ si $a<0$ y $b>0$
+      %Arg z (z/=0) = $-arctan(b/a)-pi$ si $a<0$ y $b<0$
+      }
+    \comentario{forma exponencial: el desarrollo en serie de la exponencial es: $e^x=\sum_{n=0}\frac{x^n}{n!}=1+x+\frac{x^2}{2}+\frac{x^3}{3}+...$
+    si introducimos un número complejo en la exponencial: $e^{iy}=1+(iy)+\frac{(iy)^2}{2}+\frac{(iy)^3}{3!}+...$
+
+    Si analizamos el valor de $i^n$ en función de n, %i= 1 si n=4k, k en Z
+                                                        %i si n=4k+1
+                                                        %-1 si n=4k+2
+                                                        %-i si n=4k+3
+    entonces vemos como la exponencial compleja queda ahora como:
+    $e^{iy}=1+iy-\frac{y^2}{2}-\frac{iy^3}{3!}+\frac{y^4}{4!}+...=
+    \left(1-\frac{y^2}{2!}+\frac{y^4}{4!}+...\right)+i\left(y-\frac{y^3}{3!}+\frac{y^5}{5!}\right)=
+    \cos(y)+i\sin(y)$
+    
+    $e^z=e^xe^{iy}=e^x\left(\cos(y)+i\sin(y)\right)$ con $z=x+iy$
+    }
+\end{document}
