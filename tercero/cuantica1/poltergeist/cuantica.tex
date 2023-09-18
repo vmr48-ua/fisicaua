@@ -24,6 +24,7 @@
 \pagebreak
 
 \chapter{Introducción}
+  \vspace{-0.8cm}
   \section{Radiación de cuerpo negro}
     \noindent En el siglo XIX se buscaba el lfilamento que más radiación emitía (más luz), lo que propició el desarrollo de la física relacionada.
     Era posible medir ucar era el espectro de radiación de distintos cuerpos para estudiarlos. Aquí nace el concepto de cuerpo negro, un cuerpo
@@ -31,12 +32,19 @@
     Experimentalmente se obtuvieron dos leyes:
     \definicion{Ley de desplazamiento de Wien}{
       La longitud de onda emitida depende de la temperatura del cuerpo emisor. A mayor temperatura, la longitud de onda emitida será menor (el pico). 
-      $\boxed{\lambda_m\cdot T=B}$ donde $B$ es la \textit{Constante de Wien} $B=2.898\times 10^{-3}m\cdot k$}
+      \begin{equation}
+        \lambda_m\cdot T=B
+        \label{eq:LeyDesplazamientoWien}
+      \end{equation}
+      donde $B$ es la \textit{Constante de Wien} $B=2.898\times 10^{-3}m\cdot k$}
     \comentario{
       Si $\lambda_m=500$, ¿Cuál es la temperatura de la superficie del Sol? $T=6000 k$
       }
     \definicion{Ley de Stefan-Boltzmann}{
-      $$P\alpha T^4$$
+      \begin{equation}
+        P\alpha T^4
+        \label{eq:LeyStefan-Boltzmann}
+      \end{equation}
       Permite calcular la potencia irradiada en función de la temperatura.
     }
     \noindent Una manera de teorizar un cuerpo negro es considerando una esfera con un agujero muy pequeño. La luz que entra por un agujero se ve atrapada dentro,
@@ -51,7 +59,7 @@
 
     \vspace{0.4cm} \noindent El enfoque cuántico de Planck: $u(\lambda)d\lambda=\dfrac{8\pi\lambda^{-5}hc}{\exp\left(\dfrac{hc}{\lambda k T}\right)-1}d\lambda$. 
     
-    \noindent Planck no se contentó con esta explacación teórica y dedicó su vida a tratar de buscar teorías alternativas.
+    \vspace{0.1cm}\noindent Planck no se contentó con esta explacación teórica y dedicó su vida a tratar de buscar teorías alternativas.
     La constante de Planck es: $h=6.626\times10^{-34}J\cdot s$. El hecho de que la constante sea tan pequeña explica porqué a nivel 
     macroscópico no observamos fenómenos cuánicos.
   \section{Efecto fotoeléctrico}
@@ -96,7 +104,10 @@
 
     \definicion{Ley de Duane-Hunt}{
       Longitud de onda mínima a partir de la cuál aparece una radiación X asociada: 
-      $$\lambda_m=\dfrac{1.24\times10^3}{V}m$$ 
+      \begin{equation}
+        \lambda_m=\dfrac{1.24\times10^3}{V}m
+        \label{eq:LeyDuane-Hunt}
+      \end{equation}
       
       Suponiendo:\hspace{0.4cm} $e\abs{V_0} \geq \Phi$\hspace{0.4cm} $e\abs{V_0}=hf$ \hspace{0.4cm} $c=\lambda f$
     }
@@ -109,14 +120,20 @@
     que puede describir de forma empírica la posición de dichas líneas: (Por ejemplo la serie del hidrógeno sólo tenía 4 líneas).
 
     \definicion{Ecuación de Balmer}{
-      $$\lambda_m=\frac{m^2}{m^2-4}\cdot 364.6nm$$
+      \begin{equation}
+        \lambda_m=\frac{m^2}{m^2-4}\cdot 364.6nm
+        \label{eq:Balmer}
+      \end{equation}
       Donde $m$ es un entero. Sea $m=3,4,5,6...$ esto funcionaba fenomenal. No sólo daba las líneas ya conocidas, sino que predecía las que se descubrieron posteriormente.
     }
 
     \vspace{0.4cm} \noindent De forma paralela se consigue otra expresión válida para elementos alcalinos:
 
     \definicion{Ecuación de Rydberg-Ritz}{
-      $$\frac{1}{\lambda_n}=R\left(\frac{1}{m^2}-\frac{1}{n^2}\right)\hspace{1cm}n>m\hspace{0.4cm}n,m=1,2,3...$$
+      \begin{equation}
+        \frac{1}{\lambda_n}=R\left(\frac{1}{m^2}-\frac{1}{n^2}\right)\hspace{1cm}n>m\hspace{0.4cm}n,m=1,2,3...
+        \label{eq:Rydberg}
+      \end{equation}
       Donde $R$ es la \textbf{Constante de Rydberg}, casi independiente del material. ($R_H=1.096776\cdot10^7 m^{-1}$, $R>\inf =1.097373\cdot10^7 m^{-1}$)
     }
 
@@ -137,13 +154,333 @@
       \end{enumerate}
     }
 
-  \noindent A consecuencia de la cuantización de los radios vamos a demostrar la cuantización de la energía de los electrones
-  $E_c=K=\frac12 mv^2=\frac12 m\left(\frac{kze^2}{mr}\right)=\frac12 \frac{kze^2}{r}=-\frac12 u \Longrightarrow E=U+E_c=U-\frac12 U=\frac12 U=-\frac12 \frac{kze^2}{r}$
-  De aquí obtenemos una ecuación para la energía en función de n:
-  $$\boxed{E_n=-\frac12 \frac{kze^2}{r_n}=-\frac12 \frac{mk^2e^4}{\hbar^2}\frac{z^2}{n^2}}$$
-  Si llamamos $E_0$ a $-\frac12 \frac{kze^2}{r_n}=-\frac12 \frac{mk^2e^4}{\hbar^2}$, entonces obtenemos que 
-  $E_n=-E_0\frac{z^2}{n^2}$ y como $h\nu=E_i-E_j \Rightarrow h\nu=-E_0\frac{z^2}{n^2_i}+E_0\frac{z^2}{n^2_f}=E_0z^2\left(\frac{1}{n^2_f}-\frac{1}{n^2_i}\right) \Rightarrow 
-  \frac{1}{\lambda}=\frac{E_0z^2}{hc}\left(\frac{1}{n^2_f}-\frac{1}{n^2_i}\right)$ notando que $R_H=\frac{E_0}{hc}$ es la constante de Raylberg. Esto validó el postulado de Bohr
+    \noindent A consecuencia de la cuantización de los radios vamos a demostrar la cuantización de la energía de los electrones
+    $E_c=K=\frac12 mv^2=\frac12 m\left(\frac{kze^2}{mr}\right)=\frac12 \frac{kze^2}{r}=-\frac12 U \Longrightarrow E=U+E_c=U-\frac12 U=\frac12 U=-\frac12 \frac{kze^2}{r}$
+    
+    \noindent De aquí obtenemos una ecuación para la energía en función de n:
+    \begin{equation}
+      \boxed{E_n=-\frac12 \frac{kze^2}{r_n}=-\frac12 \frac{mk^2e^4}{\hbar^2}\frac{z^2}{n^2}}
+      \label{eq:EnergiaOrbitalBohr}
+    \end{equation}
+
+    \clearpage \noindent Si llamamos $E_0$ a $-\dfrac12 \dfrac{kze^2}{r_n}=-\dfrac12 \dfrac{mk^2e^4}{\hbar^2}$, entonces obtenemos que 
+    $E_n=-E_0\dfrac{z^2}{n^2}$ y como $h\nu=E_i-E_j \Rightarrow h\nu=-E_0\dfrac{z^2}{n^2_i}+E_0\dfrac{z^2}{n^2_f}=E_0z^2\left(\dfrac{1}{n^2_f}-\dfrac{1}{n^2_i}\right) \Rightarrow 
+    \dfrac{1}{\lambda}=\dfrac{E_0z^2}{hc}\left(\dfrac{1}{n^2_f}-\dfrac{1}{n^2_i}\right)$ notando que $R_H=\dfrac{E_0}{hc}$ es la constante de Raylberg.\vspace{0.2cm}
+    
+    \noindent Esto validó el postulado de Bohr.\\
+
+    \noindent Hemos llegado a la misma expresión que teníamos antes. Esto 
+    implica que tenemos distintos niveles energéticos estacionarios, es decir, que todas 
+    las transiciones de $n>2$ van a emitir fotones con cierta longitud de onda discreta 
+    (esto ya se veía experimentalmente, espectro de onda visible).\\
+
+    \noindent La teoría de Bohr de nuevo es capaz de predecir el espectro,
+    así como las longitudes de onda en el espectro no visible.
+
+  \section{Experimento de Franck-Hertz}
+    \noindent Cápsula con dos placas: cátodo que se calienta y de donde se desprenden 
+    electrones, se acelera con cierta diferencia de potencial a una red metálica y 
+    detrás otra placa para detectar electrones. Con esto se generaba una corriente 
+    eléctrica que se medía con un amperímetro.\\
+
+    \begin{wrapfigure}[10]{l}{.53\textwidth}
+      \vspace{-0.6cm}
+      \includegraphics[width=\textwidth]{fotos/T1.5.Franck-Hertz.png}
+    \end{wrapfigure}
+
+    \noindent Conforme se aumenta el potencial, más electrones llegan a la placa que 
+    registra y mayor la corriente. Se observa que a cierto valor de voltaje, baja: 
+    tenemos el metal a estudiar en gas, y lo que ocurre esq tenemos T suficiente para 
+    que los e saltasen. 
+
+    \vspace{0.4cm} \noindent Por tanto, la energía que gana la pierde al pasar de un 
+    estado 1 a 2, los electrones salen sin T y por haber potencial que los repele no 
+    llegan a la placa. Con esto se demuestra la cuantización de los estados. 
+
+  \section{Longitud de onda de De Broglie}
+    \noindent Llegado a este punto entra De Broglie, que propone que no solo las ondas 
+    se pueden comportar como corpúsculo, sino corpúsculo como onda.\\
+    
+    
+    \noindent 
+    \begin{equation}
+      \begin{rcases}
+        &\text{ENERGÍA}\\
+        &\text{FOTÓN}
+      \end{rcases}
+      E=pc\hspace{0.3cm}E=h\nu=\dfrac{hc}{\lambda}\hspace{0.2cm}\implies\hspace{0.2cm}
+      \dfrac{hc}{\lambda}=pc\hspace{1cm}\boxed{\lambda=\dfrac{h}{p}}
+      \label{eq:deBroglie}
+    \end{equation}
+
+    \vspace{0.4cm}
+    \noindent Propuso que las partículas se pueden comportar como ondas y que su 
+    longitud de onda viene determinada por su momento lineas (y por ello su velocidad).
+
+    \vspace{0.8cm}
+    \noindent Nos queda ver cómo los postulados de Bohr solucionan el hecho de que las 
+    órbitas de los electrones no irradian.
+
+    \noindent $L_n=n\hbar\hspace{1cm}mrv=n\hbar\hspace{1cm}2\pi r(mv)=nh
+    \xRightarrow{\ref{eq:deBroglie}}2\pi r \cdot \dfrac{h}{\lambda}=nh
+    \hspace{1cm}\boxed{2\pi r =n\lambda}$ 
+    \hspace{0.6cm} \textit{(la $\lambda$ es proporcional a $r$).}
+
+    \vspace{0.8cm}
+    \noindent Podemos decir que la onda que forma el electron es \textbf{estacionaria} 
+    (el origen y final están quietos, si los unimos la onda es circular).
+
+    \noindent \[\text{VECTOR DE ONDA}\hspace{0.2cm} \rightarrow \hspace{1cm} k=
+    \dfrac{2\pi}{\lambda}<   \hspace{1cm}\vec{k}=[\vec{k}]=\dfrac{2\pi}
+    {\lambda}\]
+
+\clearpage
+
+  \section{Ondas Clásicas}
+    \noindent Vamos a trabajar con una onda sinusoidal de longitud de onda $\lambda$, 
+    periodo $T$ y fase inicial en una única dimensión. Las expresiones que describen 
+    este movimiento son las siguientes:
+
+    \begin{equation}
+      y(x,t)=y_0\cos\left(kx\pm \omega t+\varphi_0\right) \hspace{0.4cm} 
+      \text{CONVENIO DE SIGNOS: <\ 0 mueve hacia la derecha}
+    \end{equation}
+
+    \vspace{0.15cm}
+    \teorema{}{
+      \def\arraystretch{2}
+      \begin{tabular}{lll}
+        &Número de onda: &$k=\dfrac{2\pi}{\lambda}$\\
+        &Frecuencia angular: &$\omega=2\pi\nu=\dfrac{2\pi}{T}$\\
+        &Velocidad/fase de propagación: &$v_f=\lambda\nu=\dfrac{\omega}{k}$
+      \end{tabular}
+    }
+
+    \noindent Se puede comprobar que la expresión dada cumple la ecuación de onda, 
+    lo cual una vez aplicado De Broglie implica que el momento $p$ está bien definido:
+
+    \begin{equation}
+      \text{ECUACIÓN DE ONDA}\hspace{1cm} \dfrac{\partial^2y}{\partial x^2}=\dfrac{1}{v_f^2}\cdot
+      \dfrac{\partial y^2}{\partial t^2}
+    \end{equation}
+    
+    \noindent Aquí hallamos el principio de incertidumbre de Heisemberg, puesto que 
+    conocemos su momento lineal $p$ pero no su posición, ergo la onda está 
+    deslocalizada.
+
+    \definicion{Onda plana}{
+      Llamamos onda plana a aquella onda cuyo frente de onda se ve en un plano.
+
+      \begin{wrapfigure}[9]{l}{.23\textwidth}
+        \includegraphics[width=\textwidth]{fotos/ondaPlana.png}
+      \end{wrapfigure}
+      $$y(x,y)=a_0e^{i(kx\pm\omega t)}\hspace{1cm}a_0=y_0e^{il_0}$$
+      Está expresada en forma compleja (notación que usaremos de ahora en adelante,
+      puesto que la parte cqmpleja cobra sentido físico en la mecánica cuántica), y 
+      para obtener la onda clásica nos quedamos solo con la parte real:
+      $$Re\left[y(x,y)\right]=Re\left[y_0 e^{kx\pm\omega t+l_0}\right]=y_0\cos
+      (kx\pm\omega t+l_0)$$
+    }
+    \teorema{Principio de superposición}{
+      Si $y_1$ e $y_2$ son soluciones de la ecuación de onda, una combinación lineal
+      de ellas también lo será.
+    }
+    \definicion{Ondas estacionarias}{
+      \begin{wrapfigure}[5]{l}{.23\textwidth}
+        \vspace{-0.5cm}
+        \includegraphics[width=\textwidth]{fotos/nodos.png}
+      \end{wrapfigure}
+
+      Se llama onnda estacionaria a aquella onda cuyos nodos permanecen inmóviles.
+      Llamamos nodos a los puntos de la onda cruzan el eje de abcisas y son por tanto
+      estáticos en las ondas estacionarias.
+    } 
+    \teorema{Interferencia de una onda consigo misma}{
+      \begin{itemize}
+        \item Hacia la derecha:$\hspace{0.35cm}y_1=y_0\sin(kx-\omega t)$
+        \item Hacia la izquierda: $y_2=y_0\sin(kx+\omega t)$
+      \end{itemize}
+    }
+
+\clearpage
+
+    \noindent Para ver la onda resultante de la interferencia de ambas, las sumamos:
+    $y=y_1+y_2=y_0\left[\sin(kx-\omega t)+\sin(kx+\omega t)\right]=2y_0\sin\left(
+    \dfrac{kx-\omega t+kx+\omega t}{2}\right)\cdot\left(\dfrac{kx-\omega t-kx+\omega 
+    t}{2}\right)\Leftrightarrow \boxed{y=2y_0\sin(kx)\cos(\omega t)}$\\ 
+    \vspace{0.8cm} Sabiendo que $\sin\alpha+\sin\beta=2\sin\left(\dfrac{\alpha+\beta}{2}
+    \right)\cdot\left(\dfrac{\alpha-\beta}{2}\right)$
+
+    \noindent Ahora, aplicamos las condiciones de contorno:
+    $t=0, y(x=L) \Longleftrightarrow \boxed{k\cdot L = n\pi\hspace{0.6cm}n=0,1,2...}$\\
+
+    \noindent Donde cada valor de $n$ se le llama \textbf{armónico}. Esta relación 
+    puede cambiar si se dan condiciones de contorno distintas.\\
+      
+    \noindent Como $k=\dfrac{2\pi}{\lambda}$ y $\dfrac{2\pi}{\lambda}\cdot L=n\pi$
+    entonces, $\boxed{\lambda=\dfrac{2\pi}{n}}$
+    
+    \vspace{0.4cm}
+    \definicion{Paquete de ondas}{
+      Llamamos \textbf{paquete de ondas} a un conjunto de ondas sinusoidales de igual 
+      amplitud pero distinta longitud de onda y frecuencia.
+
+      $$\begin{rcases}
+        &y_1=A\cos(k_1x-\omega_1 t)\\
+        &y_2=A\cos(k_2x-\omega_2 t)
+      \end{rcases}$$
+
+      \begin{align}
+        \begin{split}
+          y(x,y)=y_1+y_2=A\left[\cos(k_1x-\omega_1 t)+\cos(k_2x -\omega_2 t)\right]=\\
+          2A\cos\left(\dfrac{k_1+k_2}{2}x-\dfrac{\omega_1+\omega_2}{2}t\right)\cos\left(
+          \dfrac{k_1-k_2}{2}x-\dfrac{\omega_1-\omega_2}{2}t\right)
+          \label{eq:paqueteDeOndas}
+        \end{split}
+      \end{align}
+
+      \noindent Siendo los \textbf{valores medios}: $\langle k\rangle=\dfrac{k_1+k_2}
+      {2},\hspace{0.6cm}\langle w\rangle=\dfrac{\omega_1+\omega_2}{2}$
+
+      \vspace{0.4cm} \noindent Cada onda se mueve con velocidad $v_1 = \dfrac{\omega_1}{k_1}$ y 
+      $v_2 = \dfrac{\omega_2}{k_2}$ respectivamente. Además, podemos calcular la 
+      velocidad de fase con los valoores medios que acabamos de definir:
+      \[v_f=\dfrac{\langle\omega\rangle}{\langle k\rangle}\]
+
+      \noindent También podemos calcular la velocidad de grupo, que es la velocidad a
+      la que se mueve el paquete de ondas:
+      \[v_g=\dfrac{\Delta\omega}{\Delta k}\]
+
+      \noindent Cuando hacemos una superposición sí que podemos localizar la partícula,
+      pero perdemos información sobre su momento. Esto nos vuelve a llevar otra vez
+      al principio de incertidumbre de Heisemberg.
+    }
+
+\clearpage
+
+    \ejemplo{Consideramos las siguientes tres ondas y calculamos la superposición de su
+    interferencia (sumándolas)}{
+      \begin{equation*}
+        \begin{rcases}
+          \psi_1(x)=\psi_0 e^{ik_0x}\\
+          \psi_2(x)=\frac12\psi_0e^{i\left(k_0-\frac{\Delta k}{2}\right)x}\\
+          \psi_3(x)=\frac12\psi_0e^{i\left(k_0+\frac{\Delta k}{2}\right)x}
+        \end{rcases}
+        \psi(x)=\psi_0e^{ix_0x}\left(1+\frac12 e^{-i\frac{\Delta k}{2}x}+
+        \frac12 e^{i\frac{\Delta k}{2}x}\right) \Rightarrow 
+        \begin{rcases}
+          e^{i\theta}=\cos\theta + i\sin\theta\\
+          e^{-i\theta}=\cos\theta - i\sin\theta
+        \end{rcases}
+        2\cos\theta =e^{i\theta}+e^{-i\theta}
+      \end{equation*}
+
+      \[\boxed{\psi(x)=\psi_0e^{ik_0x}\left(1+\cos\left(\dfrac{\Delta k}{2}x\right)
+      \right)}\]
+
+      \noindent En los extremos tenemos que la función se anula y en el centro, que 
+      tiene un máximo. Se dice que la onda está localizada y tiene anchura $\Delta x$.
+
+      \noindent La representación de una partícula se puede dar como un paquete de
+      ondas, donde se sabe que la partícula está en $\Delta x$ (relación con 
+      Schrödinger porue perdemos informacińo sobre el momento).
+
+      \noindent Podemos construir un paquete de ondas sumando tantas ondas como queramos.
+      Una suma infinita de ondas planas con distintios valores de número de onda o de 
+      momento se denomina \textit{Serie de Fourier}.
+    }
+    \definicion{Series de Fourier}{
+      Cualquier función periódica se puede escribir como suma de senos y cosenos.
+      \begin{equation}
+        \psi(x)=\sum_{n=1}^{\infty}A_ne^{ik_n x}
+        \label{eq:SerieFourier}
+      \end{equation}
+      Donde $A_n$ son las amplitudos de las ondas, el peso que cada onda tiene 
+      en la función.
+    }
+    \noindent Vamos a ver que $k$ puede tomar cualquier valor continuo no discreto:
+    \begin{equation}
+      k\text{ continua}\implies \boxed{\psi(x)=\dfrac{1}{\sqrt{2\pi}}\int g(k)e^
+      {ikx}\ dk}
+      \label{eq:SerieFourierContinuo}
+    \end{equation}
+    \noindent $g(k)$ tiene el mismo papel que los coeficientes $A_n$ en el 
+    caso discreto. $g(k)$ es la \textit{transformada de Fourier} de $\psi(x)$.
+    \teorema{Plancherel}{
+      \begin{equation}
+        g(k)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\psi(x)e^{-ikx}\ dx
+        \label{eq:TeoremaPlancehrel}
+      \end{equation}
+      El valor de k estará relacionado con la energía de la partícula, será continua
+      en el caso de una partícula libre (puesto que no tiene ningún tipo de 
+      restricción). Si quiero hacer un paquete de onda para esa partícula libre, se 
+      ha de hacer una integral.
+    }
+    \noindent Hemos definido dos velocidades distintas para los paquetes de ondas, 
+    una velocidad de fase $v_f$ (ondas dentro del paquete) y una de grupo $v_g$ (de 
+    todo el paquete). ¿Cómo las calculamos si tenemos un caso donde $k$ es continuo?
+
+    \begin{itemize}
+      \item Velocidad de grupo: $v_g=\dfrac{\Delta\omega}{\Delta k}\xrightarrow{k 
+            \text{ continua}}v_g=\dfrac{d\omega}{dk}$\\ 
+            
+            \vspace{-0.2cm}A esta relación entre $\omega$ y $k$ se le llama \textbf{Relación 
+            de dispersión}.
+      \item Relación entre la velocidad de grupo y la velocidad de fase:\\
+            $v_f=\dfrac{\omega}{k},\hspace{0.6cm}\omega=v_f\cdot k\Rightarrow v_g=
+            \dfrac{d\omega}{dk}=\dfrac{d(v_f\cdot k)}{dk}=v_f+k\cdot\dfrac{dv_f}{dk}
+            \Rightarrow\boxed{v_g=v_f+k\cdot\dfrac{dv_f}{dk}}$\\
+
+            \vspace{-0.2cm}Si $v_f$ no varía, la onda no cambia de forma, pero si varía, se le  
+            llamará \textbf{Onda Dispersiva}.
+    \end{itemize}
+  \section{Difriacción, doble rendija de Young}
+    \begin{wrapfigure}[7]{l}{.3\textwidth}
+      \vspace{-0.6cm}
+      \includegraphics[width=\textwidth]{fotos/difracción.png}
+    \end{wrapfigure}
+    \noindent Dos rendijas separadas una distancia $d$ y una pantalla a una distancia $D$ tal
+    que $D\textgreater\textgreater d$. Cuando se llega a la doble rendija, se producen nuevas ondas que interfieren
+    entre ellas. Se espera encontrar un patrón de interferencia. Para que se produzca un 
+    máximo, la diferencia de caminos debe ser un múltiplo de la longitud de onda $\lambda$.
+    \[\Delta x=x_2-x_1=n\lambda\hspace{1cm}n\in\bbZ\]
+
+    \noindent Vamos a ver la distancia entre dos máximos $\Delta y$ en función de algún dato
+    que nos sea conocido.
+
+    \noindent $\Delta x = d\cdot\sin\theta\Rightarrow$ Condición máximo: $\boxed{d\cdot\sin
+    \theta=n\lambda}$ \hspace{1.5cm} $\dfrac{\Delta y}{D}=\tan\theta\simeq\sin\theta,\hspace{1cm}
+    \boxed{\Delta y=\dfrac{n\lambda D}{d}}$\\
+
+    \vspace{0.4cm}\noindent Vamos a estudiar cómo se presenta el patrón de interferencia:
+    \begin{align}
+      \begin{split}
+        \text{Intensidad }\propto \abs{\psi}^2\Rightarrow\\
+        \begin{rcases}
+          \psi_1=\psi_0e^{i(kx_1-\omega t)}\\
+          \psi_2=\psi_0e^{i(kx_2-\omega t)}
+        \end{rcases}
+        \Rightarrow\abs{\psi}^2=(\psi_1+\psi_2)\cdot(\psi_1+\psi_2)=\psi_1\cdot\psi_1+\psi_2\cdot
+        \psi_2+\psi_1\cdot\psi_2+\psi_2\cdot\psi_1=\\ \abs{\psi_0}^2\left(e^{-i(kx_1-\omega t)}\cdot
+        e^{i(kx_1-\omega t)}+e^{-i(kx_2-\omega t)}\cdot e^{i(kx_2-\omega t)}+e^{-i(kx_1-\omega t)}
+        \cdot e^{i(kx_2-\omega t)}+e^{-i(kx_2-\omega t)}\cdot e^{i(kx_1-\omega t)}\right)=\\ \abs{
+        \psi_0}^2e^{-i\omega t}\cdot e^{i\omega t}\left(2+e^{ik}(x_2-x_1)+e^{ik(x_1-x_2)}\right)=\\
+        \abs{\psi_0}^2\left(2+e^{ik\Delta x}+e^{-ik\Delta x}\right)=\\ \abs{\psi_0}^2\left(
+        2+2\cos(k\Delta x)\right)=\\ \abs{\psi_0}^2\cdot 4\cos^2\left(\dfrac{k\Delta x}{2}\right)
+      \end{split}
+    \end{align}
+    \noindent Sabiendo que por Euler $e^{ik\Delta x}+e^{-ik\Delta x}=2\cos(k\Delta x)$ y que 
+    $\cos(2\theta)+1=2\cos^2\theta$
+
+    \noindent En conclusión, la función que se observa en el patrón:
+    \begin{equation}
+      \boxed{\abs{\psi_0}^2\cdot4\cos^2\left(\dfrac{k\Delta x}{2}\right)}
+      \label{eq:PatronInterferencia}
+    \end{equation}
+
+    \noindent ¿Por qué aparece este patrón de interferencia y no solo partículas por donde pasan
+    los electrones? Por los \textbf{términos de interferencia}, que no se cancelan (si lo 
+    hicieran, tendríamos únicamente dos bandas por donde pasan los rayos).
 \chapter{La ecuación de Schrödinger I}
 \chapter{La ecuación de Schrödinger II}
 

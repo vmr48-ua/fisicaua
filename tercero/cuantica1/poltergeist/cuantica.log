@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  13 SEP 2023 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  18 SEP 2023 19:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -389,6 +389,8 @@ Package: xfrac 2023-02-02 L3 Experimental split-level fractions
 Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
 (xtemplate)             line 80.
 
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
  (/usr/share/texmf-dist/tex/latex/tools/array.sty
@@ -570,9 +572,9 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 Package: theoremref 2013/05/22 References with automatic theorem names
 \thmref@num=\count316
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 49.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 49.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 49.
+Package hyperref Info: Option `colorlinks' set `true' on input line 50.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 50.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 50.
  (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
  (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -1353,7 +1355,7 @@ LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 1
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 20.
@@ -1366,10 +1368,6 @@ l.23 \tableofcontents
                       [1
 
 ]
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 23.
-
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 (./cuantica.toc
@@ -1389,15 +1387,114 @@ Missing character: There is no ; in font nullfont!
 Cap\'{\i }tulo 1.
 [3
 
-] [4]
+]
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 85.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+) [4]
 Missing character: There is no ü in font cmr10!
-[5] [6]
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
+
+ []
+
+<fotos/T1.5.Franck-Hertz.png, id=150, 599.23875pt x 277.035pt>
+File: fotos/T1.5.Franck-Hertz.png Graphic file (type png)
+<use fotos/T1.5.Franck-Hertz.png>
+Package pdftex.def Info: fotos/T1.5.Franck-Hertz.png  used on input line 188.
+(pdftex.def)             Requested size: 260.46pt x 120.41624pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+
+ []
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 208.
+
+[6
+
+ <./fotos/T1.5.Franck-Hertz.png>]
+<fotos/ondaPlana.png, id=161, 165.61874pt x 101.62968pt>
+File: fotos/ondaPlana.png Graphic file (type png)
+<use fotos/ondaPlana.png>
+Package pdftex.def Info: fotos/ondaPlana.png  used on input line 283.
+(pdftex.def)             Requested size: 105.82957pt x 64.94041pt.
+<fotos/nodos.png, id=163, 642.4pt x 213.79875pt>
+File: fotos/nodos.png Graphic file (type png)
+<use fotos/nodos.png>
+Package pdftex.def Info: fotos/nodos.png  used on input line 297.
+(pdftex.def)             Requested size: 105.82957pt x 35.2198pt.
+ [7
+
+ <./fotos/ondaPlana.png> <./fotos/nodos.png>]
+Overfull \hbox (11.1948pt too wide) in paragraph at lines 307--313
+\T1/cmr/m/n/10 Para ver la on-da re-sul-tan-te de la in-ter-fe-ren-cia de am-bas, las su-ma-mos: $\OML/npxmi/m/it/10 y \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 y[] \LMS/npxsy/m/n/10 œ \OML/npxmi/m/it/10 y[] \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 y[] [] \U/npxmia/m/it/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
+
+[8
+
+]
+Overfull \hbox (1.50331pt too wide) detected at line 391
+[] \OML/npxmi/m/it/10  \LMS/npxsy/m/n/10 π\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 ∫ \U/npxmia/m/it/10 = \OML/npxmi/m/it/10  []e[] [] \LMS/npxsy/m/n/10 ) [] \OT1/cmr/m/n/10 2 [] \OML/npxmi/m/it/10 ^^R \U/npxmia/m/it/10 = \OML/npxmi/m/it/10 e[] \LMS/npxsy/m/n/10 œ \OML/npxmi/m/it/10 e[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--433
+
+ []
+
+<fotos/difracci√≥n.png, id=185, 181.1568pt x 112.5003pt>
+File: fotos/difracci√≥n.png Graphic file (type png)
+<use fotos/difracci√≥n.png>
+Package pdftex.def Info: fotos/difracci√≥n.png  used on input line 440.
+(pdftex.def)             Requested size: 147.43204pt x 91.5556pt.
+[9
+
+]
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 443.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 443.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--454
+
+ []
+
+[10 <./fotos/difracci√≥n.png>]
 Cap\'{\i }tulo 2.
-[7
+[11
 
 ]
 Cap\'{\i }tulo 3.
-[8
+[12
 
 ] (./cuantica.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -1407,23 +1504,20 @@ LaTeX Info: Redefining \% on input line 25.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
  ) 
 Here is how much of TeX's memory you used:
- 41556 strings out of 477923
- 821601 string characters out of 5838288
- 1878388 words of memory out of 5000000
- 60995 multiletter control sequences out of 15000+600000
- 544744 words of font info for 126 fonts, out of 8000000 for 9000
+ 41903 strings out of 477923
+ 826160 string characters out of 5838288
+ 1877388 words of memory out of 5000000
+ 61276 multiletter control sequences out of 15000+600000
+ 556791 words of font info for 134 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,10n,102p,536b,1684s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on cuantica.pdf (9 pages, 197012 bytes).
+ 99i,20n,102p,614b,1684s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
+Output written on cuantica.pdf (13 pages, 450652 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 251 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 

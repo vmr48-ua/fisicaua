@@ -29,7 +29,7 @@
       Un \textbf{número complejo} $z$ es un par ordenado de números reales $a,b$ escrito como
       $\boxed{z=\left(a,b\right)}$ en coordenadas cartesianas. Existe una notación equivalente,
       la forma binómica: $\boxed{z=a+ib}$ siendo $i=\left(0,1\right)$. \\
-      
+
       El conjunto de los número complejos se denota por: $C:=\left\{(a,b):a,b\in\bbR\right\}$
     }
     \comentario{
@@ -102,7 +102,124 @@
     $e^{iy}=1+iy-\frac{y^2}{2}-\frac{iy^3}{3!}+\frac{y^4}{4!}+...=
     \left(1-\frac{y^2}{2!}+\frac{y^4}{4!}+...\right)+i\left(y-\frac{y^3}{3!}+\frac{y^5}{5!}\right)=
     \cos(y)+i\sin(y)$
-    
+
     $e^z=e^xe^{iy}=e^x\left(\cos(y)+i\sin(y)\right)$ con $z=x+iy$
     }
+    \clearpage
+
+    %
+    %
+    %
+    %
+  \section{Analiticidad}
+    \definicion{Función armónica conjugada}{
+      Sea $u\colon\mcD\subset\bbR^2\rightarrow\bbR$ una función armónica en un abierto
+      de $\mcD\subset\bbR^2$ diremos que $v\colon\mcD\subset\bbR^2\rightarrow\bbR$ es
+      una \textbf{función armónica conjugada} de $u$ en $\mcD$ si $v$ es armónica en
+      $\mcD$ y satisfacen las condiciones de \textit{Cauchy-Riemann}, (o equivalentemente
+      la función $f(x+iy)=u(x,y)+iv(x,y)$ es holomorfa en $\left\{x+iy\in\bbC\colon (x,y)
+      \in\mcD\right\}$)
+    }
+    \comentario{
+      Una función armónica es aquella que satisface la ecuación de Laplace.
+    }
+    \teorema{}{
+      Sea $u(x,y)\colon\mcD\rightarrow\bbR$ es una función armónica de $\mcD$ y
+      consideramos $v$ una región rectangular contenida en $\mcD$. Entonces existe una
+      conjugada armónica de $u(x,y)$ en $v$.
+    }
+  \section{Algunas funciones elementales}
+    \subsection{Función exponencial}
+      \definicion{}{
+      $$f(z)=e^z=e^xe^{iy}=e^x\left(\cos y+i\sin y\right)$$
+      }
+      \teorema{}{
+        \begin{enumerate}
+          \item $e^z\neq 0\hspace{0.6cm}\forall z\in\bbC$
+          \item $\abs{e^z}=e^{Re(z)}\hspace{0.6cm}z\in\bbC$
+          \item $arg\left(e^z\right)=\left\{Im(z)+2\pi k,\hspace{0.2cm}
+                k\in\bbZ\right\}\hspace{0.8cm}\forall z\in\bbC$
+          \item $\ovl{\left(e^z\right)}=e^{\ovl{z}}\hspace{0.8cm}z\in\bbC$
+          \item $e^x=1\Leftrightarrow x=0 \hspace{1cm} x\in\bbR$\\
+                $e^z=1\Leftrightarrow z=2\pi ki \hspace{0.8cm} z\in\bbC$
+          \item $\lim_{x\rightarrow\infty} e^x=\infty\hspace{0.8cm} x\in\bbR$\\
+                $\nexists \lim_{\abs{z}\rightarrow\infty} e^z=\infty\hspace{0.8cm} x\in\bbR$
+          \item $e^x$ es entera (derivable en todo punto de $\bbC$) $\left(e^z
+                \right)^{\prime}=e^z$
+          \item $e^{z+\omega}=e^z\cdot e^\omega, \hspace{0.8cm}z,w\in\bbC$\\
+                $\left(e^z\right)^n=e^{nz}, \hspace{0.58cm}n\in\bbN, z\in\bbC$
+          % (e^iy = cosy + iseny           (e^iy)^n=e^) ... pedir formula de moivre
+
+        \end{enumerate}
+      }
+      \ejemplo{$e^{iz}-e^{-iz}=4i$}{
+        $e^{iz}-e^{-iz}=4i\Longleftrightarrow e^{iz}-e^{-iz}-4i=0\Longleftrightarrow
+        e^{2iz}-4ie^{iz}-1=0$\\
+
+        Si $\omega=e^{iz}\Longrightarrow \boxed{\omega^2-4i\omega-1=0}$\\
+        \vspace{0.2cm}
+        $w=\dfrac{4i\pm\sqrt{-16+4}}{2}=\dfrac{4i\pm\sqrt{-12}}{2}=2i\pm\sqrt{3}=
+        2\pm\sqrt{3}i\Longrightarrow \boxed{e^{iz}=(2\pm\sqrt{3})i}$
+      }
+    \subsection{Función logarítmica}
+      \definicion{}{
+        Se introduce por la necesidad de solucionar ecuaciones como la anterior.
+        $$x=e^y\hspace{0.2cm}\Longleftrightarrow\hspace{0.2cm}y=\log x, \hspace{1cm}
+        x\>0, y\in\bbR$$
+        Sea $z\in\bbC -{0}$, definimos el logaritmo principal de $z$, y lo denotamos
+        por $\log z$, como
+        $$\log z=ln\abs{z}+i\cdot Arg(z)$$
+        Vemos que $e^{\log z}=e^{log\abs{z}+Arg(z)}=e^{ln\abs{z}}e^{Arg(z)}=\abs{z}
+        e^{Arg(z)}=z$\\
+        El conjunto de todos los logaritmos de z será:
+        $$\log z = \left\{ln\abs{z}+i\left(Arg(z)+2\pi k\right), k\in\bbZ\right\}$$
+      }
+      \ejemplo{}{
+        \begin{enumerate}
+          \item Si $z=x>0\Rightarrow \log z = ln\abs{z}+i\cdot Arg(z)= lnx$\\
+                $\log z=\left\{ln x + 2\pi k i, k\in\bbZ\right\}$
+          \item Si $z=-x>0\Rightarrow \log z = ln x-i\cdot (-\pi)$ (argumento de $z$)\\
+                $\log z=\left\{ln x + -(\pi+2\pi k), k\in\bbZ\right\}$
+          \item Si $z=ix, x>0\Rightarrow \log z = ln x+i\dfrac{\pi}{2}$\\
+                $\log z=\left\{ln x + i\left(\dfrac{\pi}{2}+2\pi k\right), k\in\bbZ
+                \right\}$
+        \end{enumerate}
+      }
+      \comentario{
+        Retomando la ecuación del ejemplo anterior,
+
+        $$e^{iz}=(2\pm\sqrt{3})i=
+        \begin{cases}
+          &(2+\sqrt{3}i) \leftrightarrow iz=\log(2+\sqrt{3})i \leftrightarrow 
+            z=\left(\dfrac{\pi}{2}+2\pi k\right) - iln(2+\sqrt{3})\\
+          &(2-\sqrt{3}i) \leftrightarrow iz=\log(2-\sqrt{3})i \leftrightarrow 
+            z=\left(\dfrac{\pi}{2}+2\pi k\right) - iln(2-\sqrt{3})\\
+        \end{cases}, k\in\bbZ$$
+      }
+      \teorema{Propiedades}{
+        \begin{enumerate}
+          \item Log $z$ es holomorfa en $\bbC - \left[-\infty,0\right]\implies$ 
+                de hecho, no es continua en $(-\infty,0]$
+          \item $\log_{\theta_0}=z$ es holomorfa en $\bbC-\left\{z\in\bbC, arg(z)=
+                \theta_0\right\}$
+          \item $e^{\log_{\theta_0}z}=z, \hspace{0.8cm}\forall z\in\bbC, arg(z)=\theta_0$
+                y $\left(log_{\theta_0}\right)^{\prime}=\dfrac{1}{z}$
+          \item $\log_{\theta_0}e^z=z \hspace{0.8cm}\forall z=x+iy, \theta_0 <= 
+                y<\theta_0+2\pi$
+                $z=x+iy, e^z=e^xe^{iy}\implies\log_{\theta_0}e^z=z$\\ cuando 
+                $y\in\left[\theta_0, \theta_0+2\pi\right]$
+        \end{enumerate}
+        % PEDIR DEMOSTRACIÓN
+      }
+      \definicion{}{
+        Sea $\theta_0\in\bbR$, tomamos $z\neq0$, $z=re^{i\theta}$, $r>0$, 
+        $\theta_0<=\theta=\theta_0+2\pi$ y entonces $log_{\theta_0}z=ln\abs{z}+i\theta$\\
+        
+        Si $\theta_0=-\pi \implies \log_{\theta_0}z=Log z$\\
+        Si $\theta_0=0 \implies log_{0}z=ln\abs{z}+i\theta, \hspace{0.8cm} 0<=\theta<2\pi$
+
+      }
+
+
+
 \end{document}
