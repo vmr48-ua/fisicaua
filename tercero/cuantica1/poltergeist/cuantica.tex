@@ -274,11 +274,11 @@
       \begin{wrapfigure}[9]{l}{.23\textwidth}
         \includegraphics[width=\textwidth]{fotos/ondaPlana.png}
       \end{wrapfigure}
-      $$y(x,y)=a_0e^{i(kx\pm\omega t)}\hspace{1cm}a_0=y_0e^{il_0}$$
+      $$y(x,t)=a_0e^{i(kx\pm\omega t)}\hspace{1cm}a_0=y_0e^{il_0}$$
       Está expresada en forma compleja (notación que usaremos de ahora en adelante,
       puesto que la parte cqmpleja cobra sentido físico en la mecánica cuántica), y 
       para obtener la onda clásica nos quedamos solo con la parte real:
-      $$Re\left[y(x,y)\right]=Re\left[y_0 e^{kx\pm\omega t+l_0}\right]=y_0\cos
+      $$Re\left[y(x,t)\right]=Re\left[y_0 e^{kx\pm\omega t+l_0}\right]=y_0\cos
       (kx\pm\omega t+l_0)$$
     }
     \teorema{Principio de superposición}{
@@ -482,6 +482,315 @@
     los electrones? Por los \textbf{términos de interferencia}, que no se cancelan (si lo 
     hicieran, tendríamos únicamente dos bandas por donde pasan los rayos).
 \chapter{La ecuación de Schrödinger I}
-\chapter{La ecuación de Schrödinger II}
+  \section{Mecánica clásica no relativista en una dimensión}
+    \noindent Clásicamente, se han usado las ecuaciones de Newton para describir la dinámica.
+    % \begin{align}
+    %   \begin{split}
+    %     &F=m\cdot a\\
+    %     &\text{Fuerzas conservativas }\rightarrow F=-\dfrac{\partial U}{\partial x}\\
+    %     &m\dfrac{d^2x}{d^t}=-\dfrac{\partial U}{\partial x}\\
+    %   \end{split}
+    % \end{align}
+    En la mecánica cuántica, usaremos una función llamada 'onda de materia' denotada
+    $\Psi(x,t)$, donde nos interesa estudiar la evolución temporal de esta onda. Esta ecuación
+    es un postulado, no se deriva de otras. Schrödinger propuso esta ecuación y la utilizamos
+    porque funciona, los resultados experimentales se corresponden con el artefacto matemático
+    que Schrödinger propuso. Podemos sin embargo tratar de motivar la idea que siguió para definir 
+    la ecuación de una forma concreta.\\
 
+    \definicion{Ecuación de Schrödinger}{
+      \begin{equation}
+        i\hbar \dfrac{\partial\Psi}{\partial t}=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi}
+        {\partial x^2}+U\cdot\Psi
+      \end{equation}
+    }
+
+    \noindent Supongamos una onda de materia del tipo onda plana: $\Psi(x,t)=\Psi_0\cdot e^{i(kx-\omega t)}$.
+    Vamos a reescribir el número de onda y la frecuencia como múltiplos de $\hbar^{-1}$
+
+    \begin{equation}
+      \begin{rcases}
+        &k=\dfrac{2\pi}{\lambda}\\
+        &\lambda= \dfrac{h}{p}
+      \end{rcases} \rightarrow k=\dfrac{2\pi p}{h}=\dfrac{p}{\hbar}
+      \hspace{2cm}
+      \begin{rcases}
+        &\omega=2\pi\nu\\
+        &E=h\nu
+      \end{rcases}\rightarrow\omega=\dfrac{2\pi}{h}E=\dfrac{E}{\hbar}
+    \end{equation}
+
+    \noindent Así, podemos reescribir la ecuación de onda plana como:
+
+    \begin{equation}
+      \Psi(x,t)=\Psi_0\cdot e^{\frac{i}{\hbar}(px-Et)}
+    \end{equation}
+
+    \noindent La energía cinética de una partícula libre en función del momento lineal
+     es $E=\dfrac{p^2}{2m}$
+
+    \noindent Si derivamos esta ecuación en función del tiempo y la posición obnetemos:
+    \[\dfrac{\partial\Psi}{\partial t}= \dfrac{-i}{\hbar}E\cdot\Psi\rightarrow E=-\dfrac{\hbar}{i}
+    \dfrac{1}{\Psi}\dfrac{\partial\Psi}{\partial t}\]
+    \[\dfrac{\partial\Psi}{\partial x}=\dfrac{i}{\hbar}p\Psi\]
+    \[\dfrac{\partial^2\Psi}{\partial x^2}=-\dfrac{p^2}{\hbar^2}\Psi\rightarrow p^2=-\dfrac{\hbar^2}
+    {\Psi}\dfrac{\partial^2 \Psi}{\partial x^2}\]
+
+    \begin{equation}
+      i\hbar\dfrac{1}{\Psi}\dfrac{\partial\Psi}{\partial t}=-\dfrac{-h^2}{2m}\dfrac{1}{\Psi}
+      \dfrac{\partial^2\Psi}{\partial x^2}\Longrightarrow\boxed{i\hbar\dfrac{\partial\Psi}{\partial t}=
+      -\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi}{\partial x^2}}
+      \label{eq:SchrodingerParticulaLibre}
+    \end{equation}
+
+    \noindent Podemos reescribir esta ecuación en términos del hamiltoniano ya que la primera 
+    parte de la ecuación describe la energía total, el primer término de la segunda parte la energía
+    cinética, y el último la potencial. El hamiltoniano en mecánica clásica es 
+    $H(x,t)=\dfrac{p^2}{2m}+U$.
+
+    \definicion{Operadores}{
+      \subsubsection*{Operador momento}
+      \begin{equation}
+        \hat{p} = -i\hbar\dfrac{\partial}{\partial x}
+      \end{equation}
+      \subsubsection*{Operador posición}
+      \begin{equation}
+        \hat{x} = x
+      \end{equation}
+      \subsubsection*{Operador hamiltoniano}
+      \noindent Para el caso del hamiltoniano, vemos como la única diferencia entre el 
+      hamiltoniano clásico y el operador hamiltoniano son los operadores.
+      \begin{equation}
+        \hat{H}(x,t)=\dfrac{\hat{p}^2}{2m}+U(\hat{x})\ \Longrightarrow\ \hat{H} = -\dfrac{\hbar^2}{2m}
+        \dfrac{\partial^2}{\partial x^2} + U(x)
+      \end{equation}
+      \subsubsection*{Operador energía}
+      \begin{equation}
+        \hat{E} = i\hbar\dfrac{\partial}{\partial t}
+      \end{equation}
+    }
+
+    \noindent Si le aplicamos el operador hamiltoniano y energía a la función de onda:\\
+    \[\hat{H}\Psi=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi}{\partial x^2}+U\Psi\]
+    \[\hat{E}\Psi=i\hbar\dfrac{\partial\Psi}{\partial t}\]
+
+    \begin{equation}
+      \boxed{\hat{E}\Psi=\hat{H}\Psi}
+    \end{equation}
+
+    \comentario{Comprobar que una función real no cumple la ecuación de Schrödinger, por ejemplo
+    $\Psi(x,t)=\Psi_0\cos(kx-\omega t)$ (y tampoco una imaginaria pura).}
+
+  \section{Interpretación de la función de onda}
+    \noindent La llamada \textit{interpretación de Copenhague} fue aquella postulada por Max Born, 
+    quien propuso que el significado físico no lo portaba la función de onda, si no su cuadrado: 
+    $\abs{\Psi(x,t)}^2\cdot dx$. Y esto no es más que una probabilidad, la probabilidad de que la 
+    partícula se en cuentre entre $x$, y $x+dx$. Intrínsicamente no podemos conocer con certeza la 
+    posición, a diferencia de en la mecánica estadística, en la que la probabilidad viene de la 
+    imposibilidad de medida de todo el sistema. \\
+
+    \definicion{Densidad de probabilidad}{
+      \begin{equation}
+        \mcP(x,t)=\abs{\Psi(x,t)}^2
+      \end{equation}
+    }
+    \comentario{
+      Unidades de la función de onda: $[\Psi]=\dfrac{1}{[\sqrt{L}]}$
+    }
+    
+\clearpage
+
+    \noindent Para conocer la probabilidad de que una partícula se encuentre entre dos puntos $x=a$ 
+    y $x=b$, no hay más que integrar: 
+    \begin{equation}
+      \mcP_{[a,b]}=\int_a^b\abs{\Psi(x,t)}^2\ dx
+      \label{eq:densidaddeprobabilidad}
+    \end{equation}
+
+    \noindent Vemos como para que esto tenga sentido y la función de onda represente a una partícula, 
+    la integral sobre todo el rango de definición debe ser 1, es decir, que la función de onda debe 
+    estar normalizada: 
+    \begin{equation}
+      \int_{\infty}^\infty\abs{\Psi(x,t)}^2\ dx=1
+    \end{equation}
+
+    \noindent Si hacemos un a medida y encontramos que la partícula se encuentra en $x=A$, Einstein
+    nos diría que la partícula se encontraba ya ahí anteriormente, y Bohr diría que la partícula se
+    encontraba en una superposición de todas las posiciones posibles, y al realizar la medida 
+    definimos su posición. Lo que llamamos el colapso de la función de onda.\\
+
+    \noindent Después de la primera medida la función de onda pasa a ser similar a una delta de Dirac
+    centrada en el punto $x=A$.
+
+    \teorema{Propiedades de la función de onda $\Psi(x,t)$ para que esta represente una partícula}{
+      \begin{itemize}
+        \item Debe ser compleja
+        \item Debe estar normalizada $\int_\infty^\infty\abs{\Psi(x,t)}^2\ dx=1$ (para que 
+              una función sea normalizable, los límites en el infinito deben ser 0).\hspace{0.6cm}
+              $\lim_{(x\rightarrow\infty,t)}\Psi(x,t)=0$\hspace{0.6cm}
+              $\lim_{(x\rightarrow-\infty,t)}\Psi(x,t)=0$
+        \item Debe ser una función continua y unievaluada.
+        \item Si $\Psi_1$ y $\Psi_2$ son soluciones de la \textit{Ecuación de Schrödinger}, 
+              una combinación lineal de ellas tamibén es solución. (Principio de superposición)
+              $\Phi(x,t)=\alpha\Phi_1+\beta\Phi_2$.\\
+              Si conozco la condición inicial de la función de onda, conocemos la evolución temporal,
+              es decir, es una ecuación determinística. $\Psi(x,t=0)\implies\abs{\Psi(x,t)}^2$
+      \end{itemize}
+    }
+    
+  \section{Ecuación de continuidad}
+    \noindent Vamos a ver que se cumple una ecuación de continuidad análoga a la de la conservación 
+    de carga en \textit{Electromagnetismo}, o la que se ve en \textit{Mecánica de fluidos}.
+
+    \definicion{Ecuación de continuidad}{
+      Una vez hemos definido la densidad de probabilidad \ref{eq:densidaddeprobabilidad}, vamos a 
+      estudiar cómo varía esta función en el tiempo, es decir, su derivada temporal.\\
+      
+      $\dfrac{\partial\mcP(x,t)}{\partial t}=\dfrac{\partial}{\partial t}\left(\Psi^*\cdot\Psi\right)=
+      \dfrac{\partial\Psi^*}{\partial t}\cdot\Psi +\Psi *\dfrac{\partial\Psi}{\partial t} \implies
+      \begin{rcases}
+        i\hbar\dfrac{\partial\Psi}{\partial t}=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi}{\partial x^2}+U\Psi\\
+        -i\hbar\dfrac{\partial\Psi^*}{\partial t}=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi^*}{\partial x^2}+U\Psi^*
+      \end{rcases}$
+      \begin{equation}
+        =\left(\dfrac{\hbar}{i2m}\dfrac{\partial^2 \Psi^*}{\partial x^2}-\dfrac{U}{i\hbar}\Psi^*\right)\Psi +
+        \left(-\dfrac{\hbar}{i2m}\dfrac{\partial^2 \Psi}{\partial x^2}+\dfrac{U}{i\hbar}\Psi\right)\Psi =
+        \left(-\dfrac{i\hbar}{2m}\dfrac{\partial^2 \Psi^*}{\partial x^2}\Psi+ \dfrac{i\hbar}{2m}\dfrac{\partial^2 \Psi}{\partial x^2}\Psi^*\right)=
+        \dfrac{i\hbar}{2m}\left(\dfrac{\partial^2}{\partial x^2}\Psi^*-\dfrac{\partial^2\Psi^*}{\partial x^2}\Psi\right)=
+        \dfrac{i\hbar}{2m}\dfrac{\partial}{\partial x}\left(\dfrac{\partial \Psi}{\partial x}\Psi^*-\dfrac{\partial \Psi^*}{\partial x}\Psi\right)
+      \end{equation}
+      ($\dfrac{\partial}{\partial x}\left(\dfrac{\partial\Psi}{\partial x}\Psi^*-\dfrac{\partial\Psi^*}{\partial x}\Psi\right)=
+      \dfrac{\partial^2\Psi}{\partial x^2}\Psi^*+\dfrac{\partial\Psi}{\partial x}\dfrac{\partial\Psi^*}{\partial x}-
+      \dfrac{\partial^2\Psi^*}{\partial x^2}\Psi-\dfrac{\partial\Psi^*}{\partial x}\dfrac{\partial\Psi}{\partial x}$)
+    }
+    \definicion{Corriente de probabilidad}{
+      Una ecuación de continuidad es una ecuación que nos dice que hay una conservación de algún tipo, 
+      en nuestro caso lo que se conserva es la probabilidad.\\
+
+      \begin{equation}
+        \mcJ(x,t)=\dfrac{i\hbar}{2m}\left(\Psi\dfrac{\partial\Psi^*}{\partial x}-\Psi^*\dfrac{\partial \Psi}
+      {\partial x}\right) \implies \boxed{\dfrac{\partial\mcP(x,t)}{\partial t}=-\dfrac{\partial\mcJ(x,t)}{\partial x}}
+      \end{equation}
+
+      \noindent Reescrito:
+      $\dfrac{\partial\mcP(x,t)}{\partial t}+\dfrac{\partial\mcJ(x,t)}{\partial x}=0$
+    }
+
+    \noindent Una vez tenga la función de onda normalizada, lo estará de forma independiente del tiempo:
+    Si integramos sobre todo el espacio: 
+    \[\int_{-\infty}^{\infty}\dfrac{\partial\mcP(x,t)}{\partial t}\ dx+\int_{-\infty}^{\infty}\dfrac{\partial\mcJ(x,t)}{\partial x}\ dx=0\]
+    \[\dfrac{\partial}{\partial t}\int_{-\infty}^{\infty}\mcP(x,t)\ dx+\mcJ_(x=0,t)-\mcJ(x=0,t)=0\] 
+
+    \noindent En conclusión, si $\Psi(x,t)$ es normalizable, lo estará para cualquier tiempo.
+    \begin{equation}
+      \dfrac{\partial}{\partial t}\int_{-\infty}^{\infty}\mcP(x,t)\ dx=0
+    \end{equation}
+  \section{Valores esperados y observables}
+    \noindent Llamamos valor observable a cualquier magnitud susceptible de medida.
+    Todo parámetro observable va a estar relacionado con un operador y viceversa. Nos gugstaría conocer,
+    por ejemplo, cuál sería el valor esperado dela posición de la partícula, que denotaremos por $\langle x\rangle$.\\
+
+    \noindent Esta probabilidad en un caso discreto es $\langle x\rangle=\sum x_n\cdot P_n$.
+    En el caso continuo: $\langle x\rangle=\int x\cdot f(x)\ dx$ donde $f(x)$ es una función de probabilidad.
+    Sabemos que en cuántica esto es el cuadrado de la función de onda:
+    \begin{equation}
+      \int_{-\infty}^{\infty}x\abs{\Psi(x,t)}^2\ dx=\int_{-\infty}^{\infty}\Psi^*\times\Psi\ dx
+    \end{equation}
+
+    \noindent Calcular un valor medio no implica volver a medir la misma posición sobre la misma partícula 
+    (puesto que colapsa y volvería a $x_a$), sino que tendríamos que preparar 
+    varias partículas con la misma función de probabilidad, hacerlas colapsar y tomar el valor 
+    esperado de la posición respecto a la medida que vayamos a tomar de cada una.\\
+
+    \noindent Esta definición es extedible a cualquier valor observable $Q$: $Q\rightarrow\langle Q\rangle=
+    \int_{-\infty}^{\infty}Q\cdot\abs{\Psi(x,t)}^2\ dx$
+
+    \noindent Vamos a ver cómo cambiará el valor eseperado de un valor observable en el tiempo, su derivada temporal:
+    \[\dfrac{d\langle x\rangle}{dt}=\dfrac{d}{dt}\int_{-\infty}^{\infty}x\abs{\Psi(x,t)}^2\ dx=
+    \int_{-\infty}^{\infty}x\dfrac{\partial}{\partial t}\abs{\Psi(x,t)}^2\ dx=\int_{-\infty}^{\infty}
+    x\dfrac{\partial}{\partial t}(\Psi^*\cdot\Psi)\ dx=\dfrac{i\hbar}{2m}\int_{-\infty}^{\infty}
+    x\dfrac{\partial}{\partial x}\left(\Psi^*\dfrac{\partial\Psi}{\partial x}-\dfrac{\partial\Psi^*}{\partial x}\Psi\right)\ dx\]
+
+    \noindent Resolviendo por partes:\\ 
+    \[\int_{-\infty}^{\infty}x\dfrac{\partial}{\partial x}\left(\Psi^*\dfrac{\partial\Psi}{\partial x}\ dx\right)=
+    -\int_{-\infty}^{\infty}\Psi^*\dfrac{\partial\Psi}{\partial x}\ dx+x\Psi^*\dfrac{\partial\Psi}{\partial x}\Big|_{-\infty}^{+\infty}\]
+    \noindent \textit{Idem} con la segunda parte.\\
+
+\clearpage
+    \noindent En conclusión:
+    \begin{equation}
+      \dfrac{d\langle x\rangle}{dt}=\dfrac{i\hbar}{2m}\int_{-\infty}^{\infty}\left(\dfrac{\partial\Psi^*}{\partial x}\Psi-\Psi^*\dfrac{\partial\Psi}{\partial x}\right)\ dx \implies
+      \boxed{\dfrac{d\langle x\rangle}{dt}=-\dfrac{i\hbar}{m}\int_{-\infty}^{\infty}\Psi^*\dfrac{\partial\Psi}{\partial x}\ dx}
+    \end{equation}
+    \[\implies \langle p\rangle=m\dfrac{d\langle x\rangle}{dt}=-i\hbar\int_{-\infty}^{\infty}\Psi^*\dfrac{\partial\Psi}{\partial x}\ dx=
+    \int_{-\infty}^{\infty}\Psi^*\left(-i\hbar\dfrac{\partial}{\partial x}\Psi\ dx\right)\] 
+    \[\implies \langle x\rangle=\int_{-\infty}^{\infty}\Psi^*\hat{x}\Psi\ dx=\int_{-\infty}^{\infty}\Psi^* x\Psi\ dx\]
+    donde $-i\hbar\dfrac{\partial}{\partial x}\Psi$ es el operador momento lineal $\hat{p}$\\
+    
+
+    \noindent Generalizando el valor esperable:
+    \begin{equation}
+      \langle Q \rangle =\int_{-\infty}^{\infty}\Psi^*\hat{Q}\Psi\ dx
+    \end{equation}
+
+    \noindent En este caso necesitamos los operadores en el espacio de posiciones, 
+    pero más adelante trabajaremos en el espacio de momentos y 
+    cambiará la expresión de los operadores que ya hemos definido. A nivel práctico,
+    tendríamos que hacre lo siguiente para cualquier magnitud que podamos 
+    representar en función de $x$ ý $p$.\\
+
+    \ejemplo{}{
+      En mecánica clásica: $T=\dfrac{1}{2m}p^2$\\
+      \[\langle T\rangle=\int_{\infty}^{\infty}\Psi^*\dfrac{1}{2m}\hat{p}^2\Psi\ dx=
+      \int_{\infty}^{\infty}\Psi^*\left(-\dfrac{\hbar^2}{2m}\cdot\dfrac{\partial^2}
+      {\partial x^2}\right)\Psi\ dx\]
+    }
+
+    \definicion{Incertidumbre}{
+    La otra variable que nos interesa conocer a nivel probabilístico es la 
+    desviación estándar, que sería equivalente a conocer la anchura de la Gaussiana. 
+    Nos da la dispersión de los posibles valores. Es decir, la \textbf{incertidumbre}.
+    \begin{equation}
+      \sigma = \sqrt{\langle\Delta x^2\rangle}
+    \end{equation}
+    La dispersión de una variable observable $Q$, de valor esperado $\langle Q\rangle$
+    la daremos de la siguiente forma:
+    \begin{equation}
+      \Delta Q^2=\left(Q-\langle Q\rangle\right)^2\hspace{0.5cm}\implies\hspace{0.5cm}
+      \sigma=\sqrt{\langle\Delta Q^2\rangle}=\sqrt{\langle Q^2\rangle-\langle Q\rangle^2}
+    \end{equation}
+    Ya que: $\langle \Delta Q^2\rangle=\langle\left(Q-\langle Q\rangle\right)^2\rangle=
+    \langle Q^2+\langle Q\rangle^2-2Q\langle Q\rangle\rangle=\langle Q^2\rangle-\langle Q
+    \rangle^2$ (el valor esperado de la suma es la suma de valores esperados).\\
+
+    Para sucesos independientes: $\langle Q\langle Q\rangle\rangle=\langle Q\rangle\cdot
+    \langle Q\rangle$
+    }
+    \ejemplo{Suponemos que la función de onda que representa a una partícula tiene la
+    siguiente forma para $t=0$:\\
+    $\Psi\left(x,t=0\right)=\Psi_0\cdot e^{-\dfrac{(x-x_0)^2}{4\sigma x^2}}$}{
+      Vemos como esta función es equivalente a una gaussiana centrada en $x_0$.
+    }
+\chapter{La ecuación de Schrödinger II}
+  \noindent Hasta ahora hemos visto la ecuación de onda dependiente del tiempo, cuya 
+  resolución es bastante complicada. Vamos a ver que esto se facilita con separación 
+  de variables.\\
+  \section{Estados estacionarios}
+    \noindent Partimos de la siguiente ecuación, la \textit{Ecuación de Schrödinger} 
+    dependiente del tiempo: (donde $\Psi=\Psi(x,t)$)\\
+    \[i\hbar\dfrac{\partial\Psi}{\partial t}=-\dfrac{\hbar^2}{2m}\cdot
+    \dfrac{\partial^2\Psi}{\partial x^2}+U\Psi\]
+
+    \noindent La primera simplificación que haremos será considerar potenciales 
+    independientes del tiempo $U=U(x)$. Puesto que una combinacińo lineal de soluciones
+    también es solución, lo que haremos es proponer una solución y a partir de esta
+    obtener el resto de soluciones (como las EDO de tipo Ricatti que vimos en 
+    \textit{MAEDO}). En este caso, vamos a proponer una solución del siguiente tipo:
+    \[\Psi(x,t)=\Psi(x)\cdot\varphi(t)\]
+
+    \noindent Sustituimos esta expresión en la \textit{Ecuación de Shrödinger} y vemos
+    que obtenemos:
+    \[i\hbar\cdot\dfrac{\partial(\Psi\cdot\varphi)}{\partial t}=-\dfrac{\hbar^2}{2m}
+    \cdot\dfrac{\partial^2(\Psi\cdot\varphi)}{\partial x^2}+U\Psi\varphi\]
+    \[\Psi i\hbar\]
 \end{document}

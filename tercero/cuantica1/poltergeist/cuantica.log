@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  18 SEP 2023 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  21 SEP 2023 18:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1408,7 +1408,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--185
 
  []
 
-<fotos/T1.5.Franck-Hertz.png, id=150, 599.23875pt x 277.035pt>
+<fotos/T1.5.Franck-Hertz.png, id=165, 599.23875pt x 277.035pt>
 File: fotos/T1.5.Franck-Hertz.png Graphic file (type png)
 <use fotos/T1.5.Franck-Hertz.png>
 Package pdftex.def Info: fotos/T1.5.Franck-Hertz.png  used on input line 188.
@@ -1425,12 +1425,12 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <5.5> not available
 [6
 
  <./fotos/T1.5.Franck-Hertz.png>]
-<fotos/ondaPlana.png, id=161, 165.61874pt x 101.62968pt>
+<fotos/ondaPlana.png, id=176, 165.61874pt x 101.62968pt>
 File: fotos/ondaPlana.png Graphic file (type png)
 <use fotos/ondaPlana.png>
 Package pdftex.def Info: fotos/ondaPlana.png  used on input line 283.
 (pdftex.def)             Requested size: 105.82957pt x 64.94041pt.
-<fotos/nodos.png, id=163, 642.4pt x 213.79875pt>
+<fotos/nodos.png, id=178, 642.4pt x 213.79875pt>
 File: fotos/nodos.png Graphic file (type png)
 <use fotos/nodos.png>
 Package pdftex.def Info: fotos/nodos.png  used on input line 297.
@@ -1469,7 +1469,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--433
 
  []
 
-<fotos/difracci√≥n.png, id=185, 181.1568pt x 112.5003pt>
+<fotos/difracci√≥n.png, id=201, 181.1568pt x 112.5003pt>
 File: fotos/difracci√≥n.png Graphic file (type png)
 <use fotos/difracci√≥n.png>
 Package pdftex.def Info: fotos/difracci√≥n.png  used on input line 440.
@@ -1490,11 +1490,107 @@ Underfull \hbox (badness 10000) in paragraph at lines 451--454
 
 [10 <./fotos/difracci√≥n.png>]
 Cap\'{\i }tulo 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--500
+
+ []
+
 [11
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--591
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 617--621
+
+ []
+
+Missing character: There is no ü in font cmr10!
+Missing character: There is no ü in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--665
+
+ []
+
+
+Overfull \hbox (126.70862pt too wide) detected at line 665
+[][][]\U/npxmia/m/it/10 = [] 	 \LMS/npxsy/m/n/10 œ [] \U/npxmia/m/it/10 	 = [] = [] [] = [][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
+
+ []
+
+[13
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 689--692
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 700--704
+
+ []
+
+
+Overfull \hbox (2.2661pt too wide) detected at line 712
+[] \U/npxmia/m/it/10 = [] [][] \OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 j\U/npxmia/m/it/10 	\LMS/npxsy/m/n/10 π\OML/npxmi/m/it/10 x; t\LMS/npxsy/m/n/10 ∫j[] \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [][] \OML/npxmi/m/it/10 x[]\LMS/npxsy/m/n/10 j\U/npxmia/m/it/10 	\LMS/npxsy/m/n/10 π\OML/npxmi/m/it/10 x; t\LMS/npxsy/m/n/10 ∫j[] \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [][] \OML/npxmi/m/it/10 x[]\LMS/npxsy/m/n/10 π\U/npxmia/m/it/10 	[] \LMS/npxsy/m/n/10 ^^A \U/npxmia/m/it/10 	\LMS/npxsy/m/n/10 ∫ \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [] [][] \OML/npxmi/m/it/10 x[] []  dx
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 714--715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 727--729
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--768
+
+ []
+
+[15
+
+]
 Cap\'{\i }tulo 3.
-[12
+
+Underfull \hbox (badness 10000) in paragraph at lines 775--778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--781
+
+ []
+
+[16
 
 ] (./cuantica.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -1506,18 +1602,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 41903 strings out of 477923
- 826160 string characters out of 5838288
- 1877388 words of memory out of 5000000
- 61276 multiletter control sequences out of 15000+600000
+ 41973 strings out of 477923
+ 827290 string characters out of 5838288
+ 1884388 words of memory out of 5000000
+ 61308 multiletter control sequences out of 15000+600000
  556791 words of font info for 134 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,20n,102p,614b,1684s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,102p,769b,1684s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on cuantica.pdf (13 pages, 450652 bytes).
+Output written on cuantica.pdf (17 pages, 486570 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 283 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 

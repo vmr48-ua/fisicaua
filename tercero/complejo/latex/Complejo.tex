@@ -131,7 +131,7 @@
   \section{Algunas funciones elementales}
     \subsection{Función exponencial}
       \definicion{}{
-      $$f(z)=e^z=e^xe^{iy}=e^x\left(\cos y+i\sin y\right)$$
+      \[f(z)=e^z=e^{x} e^{iy}=e^x\left(\cos y+i\sin y\right)\]
       }
       \teorema{}{
         \begin{enumerate}
@@ -164,62 +164,143 @@
     \subsection{Función logarítmica}
       \definicion{}{
         Se introduce por la necesidad de solucionar ecuaciones como la anterior.
-        $$x=e^y\hspace{0.2cm}\Longleftrightarrow\hspace{0.2cm}y=\log x, \hspace{1cm}
-        x\>0, y\in\bbR$$
+        \[x=e^y\hspace{0.2cm}\Longleftrightarrow\hspace{0.2cm}y=\log x, \hspace{1cm}
+        x\>0, y\in\bbR\]
         Sea $z\in\bbC -{0}$, definimos el logaritmo principal de $z$, y lo denotamos
         por $\log z$, como
-        $$\log z=ln\abs{z}+i\cdot Arg(z)$$
-        Vemos que $e^{\log z}=e^{log\abs{z}+Arg(z)}=e^{ln\abs{z}}e^{Arg(z)}=\abs{z}
+        \[\log z=\ln\abs{z}+i\cdot Arg(z)\]
+        Vemos que $e^{\log z}=e^{\log\abs{z}+Arg(z)}=e^{\ln\abs{z}}e^{Arg(z)}=\abs{z}
         e^{Arg(z)}=z$\\
         El conjunto de todos los logaritmos de z será:
-        $$\log z = \left\{ln\abs{z}+i\left(Arg(z)+2\pi k\right), k\in\bbZ\right\}$$
+        \[\log z = \left\{\ln\abs{z}+i\left(Arg(z)+2\pi k\right), k\in\bbZ\right\}\]
       }
       \ejemplo{}{
         \begin{enumerate}
-          \item Si $z=x>0\Rightarrow \log z = ln\abs{z}+i\cdot Arg(z)= lnx$\\
-                $\log z=\left\{ln x + 2\pi k i, k\in\bbZ\right\}$
-          \item Si $z=-x>0\Rightarrow \log z = ln x-i\cdot (-\pi)$ (argumento de $z$)\\
-                $\log z=\left\{ln x + -(\pi+2\pi k), k\in\bbZ\right\}$
-          \item Si $z=ix, x>0\Rightarrow \log z = ln x+i\dfrac{\pi}{2}$\\
-                $\log z=\left\{ln x + i\left(\dfrac{\pi}{2}+2\pi k\right), k\in\bbZ
+          \item Si $z=x>0\Rightarrow \log z = \ln\abs{z}+i\cdot Arg(z)= lnx$\\
+                $\log z=\left\{\ln x + 2\pi k i, k\in\bbZ\right\}$
+          \item Si $z=-x>0\Rightarrow \log z = \ln x-i\cdot (-\pi)$ (argumento de $z$)\\
+                $\log z=\left\{\ln x + -(\pi+2\pi k), k\in\bbZ\right\}$
+          \item Si $z=ix, x>0\Rightarrow \log z = \ln x+i\dfrac{\pi}{2}$\\
+                $\log z=\left\{\ln x + i\left(\dfrac{\pi}{2}+2\pi k\right), k\in\bbZ
                 \right\}$
         \end{enumerate}
       }
       \comentario{
         Retomando la ecuación del ejemplo anterior,
 
-        $$e^{iz}=(2\pm\sqrt{3})i=
+        \[e^{iz}=(2\pm\sqrt{3})i=
         \begin{cases}
           &(2+\sqrt{3}i) \leftrightarrow iz=\log(2+\sqrt{3})i \leftrightarrow 
             z=\left(\dfrac{\pi}{2}+2\pi k\right) - iln(2+\sqrt{3})\\
           &(2-\sqrt{3}i) \leftrightarrow iz=\log(2-\sqrt{3})i \leftrightarrow 
             z=\left(\dfrac{\pi}{2}+2\pi k\right) - iln(2-\sqrt{3})\\
-        \end{cases}, k\in\bbZ$$
+        \end{cases}, k\in\bbZ\]
       }
       \teorema{Propiedades}{
         \begin{enumerate}
           \item Log $z$ es holomorfa en $\bbC - \left[-\infty,0\right]\implies$ 
                 de hecho, no es continua en $(-\infty,0]$
-          \item $\log_{\theta_0}=z$ es holomorfa en $\bbC-\left\{z\in\bbC, arg(z)=
+          \item $\log_{\theta_0}=z$ es holomorfa en $\bbC-\left\{z\in\bbC, \arg(z)=
                 \theta_0\right\}$
-          \item $e^{\log_{\theta_0}z}=z, \hspace{0.8cm}\forall z\in\bbC, arg(z)=\theta_0$
-                y $\left(log_{\theta_0}\right)^{\prime}=\dfrac{1}{z}$
+          \item $e^{\log_{\theta_0}z}=z, \hspace{0.8cm}\forall z\in\bbC, \arg(z)=\theta_0$
+                y $\left(\log_{\theta_0}\right)^{\prime}=\dfrac{1}{z}$
           \item $\log_{\theta_0}e^z=z \hspace{0.8cm}\forall z=x+iy, \theta_0 <= 
                 y<\theta_0+2\pi$
-                $z=x+iy, e^z=e^xe^{iy}\implies\log_{\theta_0}e^z=z$\\ cuando 
+                $z=x+iy, e^z=e^{x} e^{iy}\implies\log_{\theta_0}e^z=z$\\ cuando 
                 $y\in\left[\theta_0, \theta_0+2\pi\right]$
         \end{enumerate}
         % PEDIR DEMOSTRACIÓN
       }
       \definicion{}{
         Sea $\theta_0\in\bbR$, tomamos $z\neq0$, $z=re^{i\theta}$, $r>0$, 
-        $\theta_0<=\theta=\theta_0+2\pi$ y entonces $log_{\theta_0}z=ln\abs{z}+i\theta$\\
+        $\theta_0<=\theta=\theta_0+2\pi$ y entonces $\log_{\theta_0}z=\ln\abs{z}+i\theta$\\
         
         Si $\theta_0=-\pi \implies \log_{\theta_0}z=Log z$\\
-        Si $\theta_0=0 \implies log_{0}z=ln\abs{z}+i\theta, \hspace{0.8cm} 0<=\theta<2\pi$
-
+        Si $\theta_0=0 \implies \log_{0}z=\ln\abs{z}+i\theta, \hspace{0.8cm} 0<=\theta<2\pi$
       }
+    \subsection{Función potencia}
+      \definicion{Potencia de exponente arbitrario}{
+        Sea $z\in\bbC \setminus {0}$ y $\alpha\in\bbC$, tomamos por definición $z^\alpha$, llamada
+        potencia de exponente arbitrario como el conjunto de todos los valores dados por:
+        \begin{equation}
+          z^\alpha = e^{\alpha\log z}
+        \end{equation}
+        Dohde $\log z$ representa el conjunto de todos los logaritmos de $z$.
+      }
+      \definicion{Función exponencial general}{
+        Sea $a\in\bbC\setminus{0}$, tomaremos por definición $a^z$, llamada función 
+        exponencial general como el conjunto de todos los valores dados por:
+        \begin{equation}
+          a^z = \exp\left(z\log a\right)
+        \end{equation}
+        Donde $\log a$ es el conjunto de todos los logaritmos de $a$.
+      }
+      \ejemplo{}{
+        \begin{itemize}
+          \item $(-2)^{\frac12}=e^{\frac12 \log(-2)}=e^{\frac12\left(\ln 2+i(\pi+2\pi k)\right)}$,
+                con $k\in\bbZ$ (tomando la primera definición, $z=-2$ y $\alpha=\frac12$)
+          \item $2^i=e^{i\log(2)}=e^{i(\ln 2+2\pi ki)}=e^{-2\pi k}e^{i\ln 2}=
+                e^{-2\pi k\left(\cos(\ln 2)+i\sin(\ln 2)\right)}$ con $k\in\bbZ$
+          \item $(-1)^{\frac{1}{\pi}}= e^{\frac{1}{\pi}\log(-1)}= e^{\frac{1}{\pi}(\pi+2\pi k)i}
+                =e^i\cdot e^{2ki}=e^{(2k+1)i}$, con $k\in\bbZ$
+        \end{itemize}
+      }
+      \ejemplo{Potencia de exponente entero}{
+        Sea $\alpha\in\bbZ$, entonces $f(z)=z^\alpha=e^{\alpha\log z}=e^{\alpha(\ln\abs{z}+
+        i(Arg(2)+2\pi k))}=e^{\alpha\ln\abs{z}}\cdot e^{i\alpha Arg(z)}\cdot e^{i\alpha 2\pi k}
+        =\abs{z}^\alpha \cdot e^{i\alpha Arg(2)}$ función univaluada
+      }
+      \comentario{
+        Cuando tomemos $k=0$ en la función logarítmica, entonces obtenemos la denominada 
+        \textbf{rama principal}.
+      }
+      \ejemplo{Función multiforme/aplicación multivaluada}{
+        $f(z)=z^{\frac12}$ con $z\in\bbC\setminus{0}$ Tomando $z=re^{i\theta}$ con $r>0$ y 
+        $-\pi\leq\theta <\pi$ La llamada rama principal de $z^\frac12$ es $f_1(z)=
+        e^{\frac12\left(\ln(r)+i\theta\right)}=\sqrt{r}\cdot e^\frac{\theta}{2}i$ Otra rama
+        con el ¿?. $\arg(z)=\pi$ viene dada por $-f_1(z)=f_2(z)=\sqrt{r}\cdot 
+        e^{\frac{\theta +2\pi}{2}i}$\\
 
+        Si $k=2 \rightarrow e^{\frac12\left(\ln r+i(\theta + 4\pi)\right)}=\sqrt{r}\cdot 
+        e^{\frac{i\theta}{2}}\cdot e^{2\pi i}=f_1(z)$
+      }
+    \subsection{Funciones trigonométricas}
+        $\cos    z=\dfrac{e^{iz}+e^{-iz}}{2}$ con $z\in\bbC$\\
+        $\sin    z=\dfrac{e^{iz}-e^{-iZ}}{2i}$ con $z\in\bbC$\\
+        $\tan    z=\dfrac{\sin z}{\cos z}=\dfrac{1}{i}\dfrac{e^{iz}-e^{-iz}}{e^{iz}+e^{-iz}}=
+          \dfrac{1}{i}\dfrac{e^{2iz}-1}{e^{2iz}+1}$ es holomorfa en $\bbC$ excepto en 
+          $\cos  z=0 \Leftrightarrow z=\frac{\pi}{2} + \pi k$ con $k\in\bbZ$
+        $\cot  z=\dfrac{\cos z}{\sin z}=i\dfrac{e^{iz}+e^{-iz}}{e^{iz}-e^{-iz}}=
+          i\dfrac{e^{2iz}+1}{e^{2iz}-1}$
+        $\sec    z=\dfrac{1}{\cos z}$
+        $\cosec  z=\dfrac{1}{\sin z}$
+        
+        Hiperbólicas
 
+        $\cosh z=\dfrac{e^z+e^{-z}}{2}$
+        $\sinh z=\dfrac{e^z-e^{-z}}{2}$
+        $\tanh z=\dfrac{\sinh}{\cosh}=\dfrac{e^z-e^{-z}}{e^z+e^{-z}}=\dfrac{e^{2z}-1}{e^{2z}+1}$
 
+        \teorema{Propiedades}{
+          \begin{enumerate}
+            \item $\ovl{\cos z}=\cos\ovl{z}$
+            \item $\ovl{\sin z}=\sin\ovl{z}$
+            \item $\cos z=0\Leftrightarrow z=(2\pi +1)\frac{\pi}{2},n\in\bbZ$
+            \item $\sin z=0\Leftrightarrow z=n\pi,n\in\bbZ$
+            \item $\sinh z=0\Leftrightarrow z=n\pi i,n\in\bbZ$
+            \item $\cosh z=0\Leftrightarrow z=(2\pi+1)\frac{\pi}{2}i,nºin\bbZ$
+            \item $\sinh(z)=-i\sin(iz)$
+            \item $\cosh(z)=\cos(iz)$
+          \end{enumerate}
+        }
+        \comentario{
+          Comparación con el caso real:
+          \begin{itemize}
+            \item $e^z=\sum_{n=0}\dfrac{z^n}{n!}$
+            \item $\sin z=\sum_{n=0}\dfrac{(-1)^n z^{2n+1}}{(2n+1)!}$
+            \item $\cosh z=\sum_{n=0}\dfrac{(-1)^n z^{2n}}{(2n)!}$
+            \item $\sinh z=\sum_{n=0}\dfrac{z^{2n+1}}{(2n+1)!}$
+            \item $\cosh z=\sum_{n=0}\dfrac{z^{2n}}{(2n)!}$
+          \end{itemize}
+        }
 \end{document}
