@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  21 SEP 2023 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  25 SEP 2023 17:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1503,96 +1503,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 573--574
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--591
+Underfull \hbox (badness 10000) in paragraph at lines 586--592
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 617--621
+Underfull \hbox (badness 10000) in paragraph at lines 618--622
 
  []
 
 Missing character: There is no Ÿ in font cmr10!
 Missing character: There is no Ÿ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--665
+Underfull \hbox (badness 10000) in paragraph at lines 669--669
 
  []
 
 
-Overfull \hbox (126.70862pt too wide) detected at line 665
-[][][]\U/npxmia/m/it/10 = [] 	 \LMS/npxsy/m/n/10 Ï [] \U/npxmia/m/it/10 	 = [] = [] [] = [][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 677--677
+Underfull \hbox (badness 10000) in paragraph at lines 669--669
 
  []
 
 [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 689--692
+Underfull \hbox (badness 10000) in paragraph at lines 693--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--704
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
 
  []
 
 
-Overfull \hbox (2.2661pt too wide) detected at line 712
+Overfull \hbox (2.2661pt too wide) detected at line 716
 [] \U/npxmia/m/it/10 = [] [][] \OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 j\U/npxmia/m/it/10 	\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x; t\LMS/npxsy/m/n/10 ºj[] \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [][] \OML/npxmi/m/it/10 x[]\LMS/npxsy/m/n/10 j\U/npxmia/m/it/10 	\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x; t\LMS/npxsy/m/n/10 ºj[] \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [][] \OML/npxmi/m/it/10 x[]\LMS/npxsy/m/n/10 ¹\U/npxmia/m/it/10 	[] \LMS/npxsy/m/n/10 ^^A \U/npxmia/m/it/10 	\LMS/npxsy/m/n/10 º \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [] [][] \OML/npxmi/m/it/10 x[] []  dx
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--715
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 716--718
+Underfull \hbox (badness 10000) in paragraph at lines 720--722
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 727--729
+Underfull \hbox (badness 10000) in paragraph at lines 731--733
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 736--741
+Underfull \hbox (badness 10000) in paragraph at lines 740--745
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--747
+Underfull \hbox (badness 10000) in paragraph at lines 751--751
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--768
+Underfull \hbox (badness 10000) in paragraph at lines 772--772
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--818
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--818
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--818
 
  []
 
 [15
 
-]
+] [16]
 Cap\'{\i }tulo 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 775--778
+Underfull \hbox (badness 10000) in paragraph at lines 820--823
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--781
+Underfull \hbox (badness 10000) in paragraph at lines 824--826
 
  []
 
-[16
 
-] (./cuantica.aux
+Underfull \hbox (badness 10000) in paragraph at lines 845--849
+
+ []
+
+[17
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 927--927
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 927--927
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 927--927
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--931
+
+ []
+
+[18] [19] (./cuantica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1602,18 +1637,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 41973 strings out of 477923
- 827290 string characters out of 5838288
+ 41998 strings out of 477923
+ 827649 string characters out of 5838288
  1884388 words of memory out of 5000000
- 61308 multiletter control sequences out of 15000+600000
- 556791 words of font info for 134 fonts, out of 8000000 for 9000
+ 61321 multiletter control sequences out of 15000+600000
+ 557358 words of font info for 136 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,20n,102p,769b,1684s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,102p,769b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on cuantica.pdf (17 pages, 486570 bytes).
+Output written on cuantica.pdf (20 pages, 499854 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 104 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 352 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

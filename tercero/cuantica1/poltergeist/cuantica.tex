@@ -576,6 +576,7 @@
 
     \begin{equation}
       \boxed{\hat{E}\Psi=\hat{H}\Psi}
+      \label{eq:autoEnergiaHamiltoniano}
     \end{equation}
 
     \comentario{Comprobar que una función real no cumple la ecuación de Schrödinger, por ejemplo
@@ -644,28 +645,31 @@
 
     \definicion{Ecuación de continuidad}{
       Una vez hemos definido la densidad de probabilidad \ref{eq:densidaddeprobabilidad}, vamos a 
-      estudiar cómo varía esta función en el tiempo, es decir, su derivada temporal.\\
+      estudiar cómo varía esta función en el tiempo, es decir, su derivada temporal.\\ 
       
-      $\dfrac{\partial\mcP(x,t)}{\partial t}=\dfrac{\partial}{\partial t}\left(\Psi^*\cdot\Psi\right)=
-      \dfrac{\partial\Psi^*}{\partial t}\cdot\Psi +\Psi *\dfrac{\partial\Psi}{\partial t} \implies
+      $\text{Conociendo que: }
       \begin{rcases}
         i\hbar\dfrac{\partial\Psi}{\partial t}=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi}{\partial x^2}+U\Psi\\
         -i\hbar\dfrac{\partial\Psi^*}{\partial t}=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2\Psi^*}{\partial x^2}+U\Psi^*
-      \end{rcases}$
-      \begin{equation}
-        =\left(\dfrac{\hbar}{i2m}\dfrac{\partial^2 \Psi^*}{\partial x^2}-\dfrac{U}{i\hbar}\Psi^*\right)\Psi +
-        \left(-\dfrac{\hbar}{i2m}\dfrac{\partial^2 \Psi}{\partial x^2}+\dfrac{U}{i\hbar}\Psi\right)\Psi =
-        \left(-\dfrac{i\hbar}{2m}\dfrac{\partial^2 \Psi^*}{\partial x^2}\Psi+ \dfrac{i\hbar}{2m}\dfrac{\partial^2 \Psi}{\partial x^2}\Psi^*\right)=
-        \dfrac{i\hbar}{2m}\left(\dfrac{\partial^2}{\partial x^2}\Psi^*-\dfrac{\partial^2\Psi^*}{\partial x^2}\Psi\right)=
-        \dfrac{i\hbar}{2m}\dfrac{\partial}{\partial x}\left(\dfrac{\partial \Psi}{\partial x}\Psi^*-\dfrac{\partial \Psi^*}{\partial x}\Psi\right)
-      \end{equation}
+      \end{rcases}$\\
+
+      \vspace{0.4cm}$\dfrac{\partial\mcP(x,t)}{\partial t}=\dfrac{\partial}{\partial t}\left(\Psi^*\cdot\Psi\right)=
+      \dfrac{\partial\Psi^*}{\partial t}\Psi +\dfrac{\partial\Psi}{\partial t}\Psi^*$
+      $=\left(\dfrac{\hbar}{i2m}\dfrac{\partial^2 \Psi^*}{\partial x^2}-\dfrac{U}{i\hbar}\Psi^*\right)\Psi +
+      \left(-\dfrac{\hbar}{i2m}\dfrac{\partial^2 \Psi}{\partial x^2}+\dfrac{U}{i\hbar}\Psi\right)\Psi^* =
+      \left(-\dfrac{i\hbar}{2m}\dfrac{\partial^2 \Psi^*}{\partial x^2}\Psi+ \dfrac{i\hbar}{2m}\dfrac{\partial^2 \Psi}{\partial x^2}\Psi^*\right)=
+      \dfrac{i\hbar}{2m}\left(\dfrac{\partial^2}{\partial x^2}\Psi^*-\dfrac{\partial^2\Psi^*}{\partial x^2}\Psi\right)=
+      $
+      $\dfrac{i\hbar}{2m}\dfrac{\partial}{\partial x}\left(\dfrac{\partial \Psi}{\partial x}\Psi^*-\dfrac{\partial \Psi^*}{\partial x}\Psi\right)$
+      
+      \vspace{0.4cm}
       ($\dfrac{\partial}{\partial x}\left(\dfrac{\partial\Psi}{\partial x}\Psi^*-\dfrac{\partial\Psi^*}{\partial x}\Psi\right)=
       \dfrac{\partial^2\Psi}{\partial x^2}\Psi^*+\dfrac{\partial\Psi}{\partial x}\dfrac{\partial\Psi^*}{\partial x}-
       \dfrac{\partial^2\Psi^*}{\partial x^2}\Psi-\dfrac{\partial\Psi^*}{\partial x}\dfrac{\partial\Psi}{\partial x}$)
     }
     \definicion{Corriente de probabilidad}{
       Una ecuación de continuidad es una ecuación que nos dice que hay una conservación de algún tipo, 
-      en nuestro caso lo que se conserva es la probabilidad.\\
+      en nuestro caso lo que se conserva es la probabilidad.
 
       \begin{equation}
         \mcJ(x,t)=\dfrac{i\hbar}{2m}\left(\Psi\dfrac{\partial\Psi^*}{\partial x}-\Psi^*\dfrac{\partial \Psi}
@@ -767,9 +771,50 @@
     \langle Q\rangle$
     }
     \ejemplo{Suponemos que la función de onda que representa a una partícula tiene la
-    siguiente forma para $t=0$:\\
+    siguiente forma:
     $\Psi\left(x,t=0\right)=\Psi_0\cdot e^{-\dfrac{(x-x_0)^2}{4\sigma x^2}}$}{
       Vemos como esta función es equivalente a una gaussiana centrada en $x_0$.
+
+      \begin{enumerate}
+        \item Normalizamos $\Psi\colon\displaystyle 
+              \int_{-\infty}^{\infty}\abs{\Psi}^2\ dx= 1$\\
+              
+              $\displaystyle\int_{-\infty}^{\infty}\abs{\Psi_0}^2 e^{-
+              \dfrac{2(x-x_0)^2}{4\sigma x^2}}\ dx=\abs{\Psi}^2
+              \int_{-\infty}^{\infty}e^{-\dfrac{(x-x_0)^2}{2\sigma x}}\ dx=
+              \abs{\Psi_0}^2\sqrt{2}\sigma x\int_{-\infty}^{\infty}e^{-y^2}\ dy
+              =\abs{\Psi_0}^2\sqrt{2\pi}\sigma x=1$
+              
+              $\Longrightarrow \abs{\Psi_0}^2=
+              \dfrac{1}{\sqrt{2\pi}\cdot\sigma_x}\Longrightarrow \Psi_0=\dfrac{1}
+              {(2\pi\cdot\sigma_x^2)^{1/4}}$
+
+        \item Tenemos un problema porque este número es real y debe ser complejo. Para
+              solucionar esto, le asignamos una cierta fase:\\
+
+              $\Psi_0=\dfrac{e^{i\varphi}}{(2\pi\cdot\sigma_x^2)^{1/4}}\hspace{0.3cm}\longrightarrow
+              \hspace{0.3cm}\text{JUSTIFICACIÓN: }\abs{\Phi_0}^2=\Phi_0^2\cdot\Phi_0=
+              \dfrac{e^{i\varphi}\cdot e^{-i\varphi}}{(2\pi\cdot\sigma_x^2)^{1/4}}=
+              \dfrac{1}{\sqrt{2\pi}\sigma_x}$
+
+              La probabilidad, que es lo que nos interesa por ser lo que tiene 
+              significado físico, se mantiene igual. Por tanto, dos funciones de onda que 
+              difieren en cierta fase representan el mismo objeto físico.
+
+        \item Nos queda la siguiente función de onda: 
+              $\Phi(x,t=0)=\dfrac{e^{i\varphi}}{(2\pi\cdot\sigma^2_x)^{1/4}}\cdot
+              e^{-\dfrac{(x-x_0^2)}{4\sigma_x^2}}$\\
+              Y calculamos ahora el valor esperado de $x$:\\
+              $\langle x\rangle=\displaystyle\int_{-\infty}^{\infty}\Psi^*x\Psi\ dx=
+              \int_{-\infty}^{\infty}\dfrac{e^{i\varphi}}{(2\pi\cdot\sigma_x^2)^{1/4}}
+              \cdot e^{-\dfrac{(x-x_0)^2}{4\sigma_x^2}}\cdot x\cdot \dfrac{e^{i\varphi}}
+              {(2\pi\cdot\sigma^2_x)^{1/4}}\cdot e^{-\dfrac{(x-x_0)^2}{4\sigma_x^2}}\ dx=
+              \dfrac{1}{(2\pi\sigma_x^2)^{3/2}}\int_{\infty}^{\infty}x\cdot e^{-\dfrac{-(x-x_0)^2}
+              {4\sigma_x}}\ dx=...=x_0$\\
+
+              Esto tiene sentido por ser una gaussiana centrada en ese valor. También
+              es posible comprobar que $\langle \Delta x^2\rangle=\sigma_x^2$. 
+      \end{enumerate}
     }
 \chapter{La ecuación de Schrödinger II}
   \noindent Hasta ahora hemos visto la ecuación de onda dependiente del tiempo, cuya 
@@ -786,11 +831,102 @@
     también es solución, lo que haremos es proponer una solución y a partir de esta
     obtener el resto de soluciones (como las EDO de tipo Ricatti que vimos en 
     \textit{MAEDO}). En este caso, vamos a proponer una solución del siguiente tipo:
-    \[\Psi(x,t)=\Psi(x)\cdot\varphi(t)\]
+    \[\Psi(x,t)=\Psi(x)\cdot\varphi(t)\hspace{0.5cm}\text{con } 
+    \varphi(t)=e^{\dfrac{-iEt}{\hbar}}\]
+
+    
 
     \noindent Sustituimos esta expresión en la \textit{Ecuación de Shrödinger} y vemos
     que obtenemos:
     \[i\hbar\cdot\dfrac{\partial(\Psi\cdot\varphi)}{\partial t}=-\dfrac{\hbar^2}{2m}
     \cdot\dfrac{\partial^2(\Psi\cdot\varphi)}{\partial x^2}+U\Psi\varphi\]
     \[\Psi i\hbar\]
+
+    \noindent Recordando la ecuación (\ref{eq:autoEnergiaHamiltoniano}), vemos como la función por el operador hamiltoniano
+    es igual a un valor constante por la función. Este tipo de funciones las llamaremos
+    \textit{autofunciones} (siempre van asociadas a un operador) y la constante (en este
+    caso $E$) contiene a los \textit{autovalores}\\
+
+    \noindent En los estados estacionarios la densidad de probabilidad es constante
+    en el tiempo. 
+    \[\langle H\rangle=\int_{-\infty}^{\infty}\Psi^*\hat{H}\Psi\ dx=
+    \int_{-\infty}^{\infty}\Psi^*e^{i\frac{E}{\hbar}t}\hat{H}\Psi\ dx=
+    \int_{-\infty}^{\infty}\Psi^*\hat{H}\Psi\ dx=
+    \int_{-\infty}^{\infty}\Psi^* E\Psi\ dx=E\int_{-\infty}^{\infty}\Psi^*\Psi\ dx=E\]
+    \[\boxed{\langle H\rangle=E\hspace{0.5cm}\text{ y }\hspace{0.5cm}
+    \sigma_H=\sqrt{\langle H^2\rangle-\langle H\rangle^2}=0}\]
+
+    \subsubsection{Solución general}
+      \noindent Si conocemos los estados estacionarios (o las autofunciones $\Psi$ y autovalores 
+      $E_n$ para el Hamiltoniano), la solución general será una combinación lineal de ellos:
+      \[\Psi(x,t)=\sum_{n=1}^{\infty}c_n\cdot\Psi_n(x)\cdot e^{\frac{-iE_nt}{\hbar}}\]
+
+      \noindent Definimos $\abs{c_n}^2$ como la probabilidad de que al medir la energía de ese
+      sistema obtenga el valor de $E_n$.
+
+      \ejemplo{Si tenemos dos estados (autofunciones) $\Psi_1(x)$ $\Psi_2(x)$ con energías
+      $E_1$ y $E_2$ vamos a calcular la densidad de probabilidad y la solución general}{
+      
+        $\Psi(x,t)=c_1\Psi_1(x,t)e^{\frac{-iE_1}{\hbar}}t+c_2\Psi_2(x,t)e^{\frac{-iE_2}{\hbar}}t$\\
+        $\abs{\Psi(x,t)}^2=c_1^2\Psi_1^2+c_2^2\Psi_2^2+c_1c_2\Psi_1\Psi_2
+        \left(e^{\frac{-i\left(E_1-E_2\right)t}{\hbar}}+e^{\frac{i\left(E_1-E_2\right)t}
+        {\hbar}}\right)$
+      }
+
+      \ejemplo{Suponemos una partícula de masa $m$ sometida a un potencial fijo: \\
+          $V(x)=$
+          $\begin{cases}
+            0      & 0\leq x\leq a\\
+            \infty &\text{para cualquier valor de } x
+          \end{cases}$ 
+        }{
+          \vspace{-0.2cm}\subsubsection{Pozo de potencial cuadrado infinito}
+
+          $\dfrac{-\hbar^2}{2m}\dfrac{d^2\psi}{dx^2}+U\psi= E\psi \Longleftrightarrow
+          \dfrac{-\hbar^2}{2m}\dfrac{d^2\psi}{dx^2}=E\psi \longrightarrow 
+          \dfrac{d^2\psi}{dx^2}=-\dfrac{2mE}{\hbar}\psi$ y llamamos
+          $k = \dfrac{\sqrt{2mE}}{\hbar}$\\
+
+          \noindent Sabemos que $E>0$ para que la función sea normalizable, lo que nos lleva 
+          a resolver la ecuación:
+          \[\dfrac{d^2\psi}{dx^2}=-k^2\psi\]
+          \noindent Propuestas a solución: 
+          \begin{itemize}
+            \item $\psi(x)=A\sin(kx)+B\cos(kx)$
+            \item $\psi(x)=A^\prime e^{-ikx}+B^\prime e^{ikx}$
+          \end{itemize}
+          Vamos a usar la primera, por lo que hemos de dar las condiciones de contorno.
+          \begin{enumerate}
+            \item $\psi_1(x=0)=\psi_2(x=0) \Longleftrightarrow A\cdot\sin(k0)+B\cos(k0)=0 
+                  \Longrightarrow \boxed{B=0}$ \\
+            \item $\psi_2(x=a)=\psi_3(x=a)$ y como $\psi_2(x)=A\sin(kx) \longrightarrow
+                  A\sin(ka)=0 \Longrightarrow \boxed{ka=n\pi}\text{ con }n=1,2,3...$ 
+                  Sabiendo que $n$ no puede ser 0 porque si lo es entonces $k=0$ y por
+                  tanto $E=0$ y $\psi=0$\\
+  
+                  Despejando ahora la energía sabiendo que $k=\dfrac{\sqrt{2mE}}{\hbar}$ y
+                  $k=n\dfrac{\pi}{a}\Longrightarrow k^2\hbar^2=2mE\longrightarrow
+                  E=\dfrac{k^2\hbar^2}{2m}\Longrightarrow$
+                  \[\boxed{E_n=\dfrac{n^2\pi^2\hbar^2}{2ma^2}}\]
+                  Que es nuestra condición de cuantización de la energía.
+            \item $\int_{-\infty}^{\infty}\abs{\psi(x)}^2\ dx= 1\Longleftrightarrow 
+                  \int_{0}^a\abs{A}^2\sin^2(kx)\ dx=1 \Longleftrightarrow \abs{A}^2=\dfrac{2}{a}
+                  \longrightarrow \boxed{A=\sqrt{\dfrac{2}{a}}}$
+          \end{enumerate}
+          Finalmente, obtenemos nuestras autofunciones para el pozo infinico:
+          $\boxed{\psi_n(x)=\sqrt{\dfrac{2}{a}}\sin\left(\dfrac{n\pi}{a}x\right)}$
+          La solución general para un potencial $U(x)$ dadas unas condiciones
+          iniciales $\Psi(x,0)$ conociendo $\psi_n$ y $E_n$:
+          \[\Psi(x,t)=\sum_{n=1}^{\infty}c_n\psi_n e^{-i\dfrac{E_n}{\hbar}t}\]
+          Donde vemos que solo nos falta conocer $c_n=\int_{-\infty}^{\infty}
+          \psi_n^*\cdot\psi(x,0)\ dx$ para los cuales habremos de resolver la
+          \textit{Ecuación de Schrödinger} independiente del tiempo. Otra forma
+          de obtener los coeficientes es a través de la igualdad $\displaystyle
+          \Psi(x,0)=\sum_{n=1}^{\infty}c_n\psi_n$
+
+        }
+        \comentario{
+          \noindent Las funciones de esta famila son ortonormales, es decir
+          que para $n\neq m$, $\displaystyle\int_{\infty}^{\infty}\psi_m^*\cdot\psi_n=0$\\
+        }
 \end{document}

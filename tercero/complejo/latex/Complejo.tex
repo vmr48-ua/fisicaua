@@ -303,4 +303,89 @@
             \item $\cosh z=\sum_{n=0}\dfrac{z^{2n}}{(2n)!}$
           \end{itemize}
         }
+
+\chapter{Integración compleja}
+  \section{Preliminares topológicos}
+    \definicion{Entorno perforado}{
+      Llamamos \textbf{entorno perforado} de un punto $z_0\in\bbC$ a un abierto de la forma
+      $\left\{z\in\bbC\colon 0<\abs{z-z_0}<\epsilon\right\}$, con $\epsilon >0$
+    }
+    \definicion{Tipos de conjuntos}{
+      \begin{itemize}
+        \item Diremos que dos conjuntos $A$ y $B$ de $\bbC$ están \textbf{espaciados} 
+              si $\ovl{A}\cap B=A\cap\ovl{B}=\varnothing$\\ Siendo $\ovl{A}$ la clausura,
+              la adherencia de $A$.
+        \item Diremos que un conjunto del plano es \textbf{conexo} si no puede ser
+              escrito como unión de dos subconjuntos no vaciós y separados.
+      
+        \item Diremos que un conjunto $P\in\bbC$ es \textbf{poligonalmente conexo} si cada
+              par de puntos de $P $ pueden ser unidos mediante una poligonal contenida en $P$.
+              (una ponigonal es una unión finita de segmentos).
+        \item Un conjunto $E\in\bbC$ es \textbf{estrellado} si existe un punto $a\in E$
+              tal que $\left[a,z\right]\subset E \hspace{0.5cm}\forall z\in E$
+        \item Un conjunto $C\in\bbC$ es \textbf{convexo} si $\left[z,w\right]\subset C 
+              \hspace{0.5cm}\forall z,w\in C$ (cualquier segmento formado por puntos
+              del conjunto está dentro del conjunto).
+
+              \textit{Nota: Sea $U\in\bbC$ un conjunto abierto, entonces $U$ es conexo si y sólo
+              si es poligonalmente conexo.}
+        \item Llamamos \textbf{simplemente conexo} al conjunto $S\subset \bbC$ del cual cada 
+              curva cerrada simple (sin autointersecciones) en $S$ puede contraerse dentro
+              del conjunto hasta ser un punto (no tiene agujeros).
+      \end{itemize}
+    }
+  \section{Integración sobre caminos}
+    \definicion{Curva}{
+      Llamamos \textbf{curva} a una aplicación continua $\gamma\colon\left[a,b\right]
+      \rightarrow\bbC$ con $a<b$, tal que a un número real $t\in\left[a,b\right]$ le
+      corresponde un número complejo $\gamma(t)=x(t)+iy(t)$ donde $x(t)$ e $y(t)$ 
+      son funciones reales y continuas.
+      \begin{itemize}
+        \item La \textbf{traza o trayectoria} de la curva $\gamma(\left[a,b\right])=
+              \left\{\gamma(t)\colon a\leq t\leq b\right\}$ será representado por 
+              $\gamma^*$
+        \item Diremos que la curva es \textbf{cerrada} cuando $\gamma(a)=\gamma(b)$
+      \end{itemize}
+    }
+    \definicion{Camino}{
+      Una curva $\gamma\colon\left[a,b\right]\rightarrow\bbC$ es \textbf{diferenciable}
+      cuando $\gamma$ es derivable en todo punto de $\left[a,b\right]$. 
+      Una curva $\gamma\colon\left[a,b\right]\rightarrow\bbC$ es \textbf{suave} si es
+      diferiencable (o de clase $\mcC^1(\left[a,b\right])$), si $\gamma$ es
+      derivable en $\left[a,b\right]$ y su derivada es continua.
+      Llamamos \textbf{camino} a una curva suave a trozos (diferenciable con continuidad
+      a trozos).
+    }
+    \comentario{
+      Los casos de curvas rectificables (aquellas curvas parametrizadas por $\gamma(t)
+      =x(t)+iy(t)$), con $t\in[a,b]$,  para las que existe:
+      \[\sup\left\{\sum_{j=1}^{n}\sqrt{(x(t_j)-x(t_{j-1}))^2+(y(t_j)-y(t_{j-1}))^2}\right\}\]
+      Con $P$ en el conjunto de posibles particiones de $\left[a,b\right]$. En estos
+      casos, la longitud de la curva se calcula como: \[L(\gamma)=\displaystyle\int_a^b
+      \abs{\gamma^\prime(t)}\ dt=\int_a^b\sqrt{(x^\prime(t)^2+y^\prime(t)^2)}\ dt\]
+    }
+    \definicion{Integral compleja}{
+      Sea $\gamma\colon\left[a,b\right]\rightarrow\bbC$ un camino y $f$ una función 
+      continua en $\gamma^*\in\bbC$, definimos la \textbf{integral conmpleja} de $f$
+      a lo largo $\gamma$ por:
+      \[\int_{\gamma}f(z)\ dz=\int_a^bf\left(\gamma(t)\right)\cdot\gamma^\prime(t)\ dt\]
+      \textit{Nota: Cuando no se diga nada, se supondra que el sentido de recorrido 
+      sobre un camino cerrado será el antihorario.}
+    }
+    \ejemplo{$\int_\gamma \ovl{z}\ dz$, donde $\gamma^*$ es el segmento $[1+i,2+4i]$}{
+      $\gamma(t)=(1-t)(1+i)+t\cdot(2+4i) \Longrightarrow \gamma^\prime(t)=-(1+i)+2+4i=
+      1+3i\hspace{0.3cm}$ con $t\in[0,1]$.\\
+
+      Si separamos en parte real y imaginaria nos queda:\\
+      $\gamma(t)=1+t+i(1+3t)\Longrightarrow\int_\gamma\ovl{z}\ dz=\int_0^1(1+t
+      -i(1+3t))(1+3i)\ dt=\int_0^1(1+t-i(1+3t)+3i+3it+3+9t)\ dt=\int_0^1 (4+10t+2i)\ dt
+      =\left[(4+2i)t+5t^2\right]^1_0=4+2i+5=9+2i$
+    }
+    \ejemplo{$\int_\gamma \ovl{z}\ dz$, donde $\gamma_2$ es el trozo de parábola que
+    une $1+i$ con $2+4i$}{
+      $\gamma(t)=t+it^2 \Longrightarrow \gamma^\prime(t)=1+2it$ con $t\in[1,2]
+      \Longrightarrow$\\
+      $f(\gamma_2(t))=t-it^2\Longrightarrow\int_{\gamma_2}\ovl{z}\ dz=\int_1^2(t-it^2)
+      (1+2it)\ dt=9+\frac73 i$
+    }
 \end{document}

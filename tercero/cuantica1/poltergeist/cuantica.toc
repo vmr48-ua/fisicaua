@@ -13,6 +13,8 @@
 \contentsline {section}{\numberline {2.2}Interpretación de la función de onda}{12}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Ecuación de continuidad}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Valores esperados y observables}{14}{section.2.4}%
-\contentsline {chapter}{\numberline {3}La ecuación de Schrödinger II}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Estados estacionarios}{16}{section.3.1}%
+\contentsline {chapter}{\numberline {3}La ecuación de Schrödinger II}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Estados estacionarios}{17}{section.3.1}%
+\contentsline {subsubsection}{Solución general}{17}{section.3.1}%
+\contentsline {subsubsection}{Pozo de potencial cuadrado infinito}{18}{tcb@cnt@Example.3.1.2}%
 \contentsfinish 
