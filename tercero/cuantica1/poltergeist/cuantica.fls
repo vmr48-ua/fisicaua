@@ -1779,6 +1779,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplsy.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxsys.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0700.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm
 INPUT cuantica.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb

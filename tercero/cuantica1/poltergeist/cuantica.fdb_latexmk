@@ -1,8 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1695657151 "/home/victor/fisicaua/tercero/cuantica1/poltergeist/cuantica.tex" "cuantica.pdf" "cuantica" 1695657154 0
-  "/home/victor/fisicaua/tercero/cuantica1/poltergeist/cuantica.tex" 1695657150 50659 77592804e47bf4d788e0bc42ef07995d ""
+["pdflatex"] 1695816520 "/home/victor/fisicaua/tercero/cuantica1/poltergeist/cuantica.tex" "cuantica.pdf" "cuantica" 1695816524 0
+  "/home/victor/fisicaua/tercero/cuantica1/poltergeist/cuantica.tex" 1695816520 54310 e56fa43f699a9993d92c3353245ae122 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1689853683 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm" 1689853683 3584 0913860e6fa2bdf78ecaf460b391112b ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0700.tfm" 1689853683 3584 ca0c423beaacd28d53ddce5a826cd558 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1689853683 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1689853683 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx2074.tfm" 1689853683 3584 7666d038713b9e38abb5c2e0f6972188 ""
@@ -319,9 +321,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693483020 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693482980 6789704 0b6b6842a96cde863a50a5b0d3663187 ""
-  "cuantica.aux" 1695657154 11642 88224644dd239e1dc7203a8a3fb8ba08 "pdflatex"
-  "cuantica.tex" 1695657150 50659 77592804e47bf4d788e0bc42ef07995d ""
-  "cuantica.toc" 1695657154 1597 28e06977494cabbf13785d9b25813c7b "pdflatex"
+  "cuantica.aux" 1695816523 11914 618e5f48e82f2ed5cf5f9d17b8a37143 "pdflatex"
+  "cuantica.tex" 1695816520 54310 e56fa43f699a9993d92c3353245ae122 ""
+  "cuantica.toc" 1695816523 1787 75acc56aa566e935dad3807f7d298392 "pdflatex"
   "fotos/T1.5.Franck-Hertz.png" 1694620209 18570 db979e6f9c619218037ed3845bedf64f ""
   "fotos/difracción.png" 1695055971 42024 16ab069c5ab79103332f33a497caf4b6 ""
   "fotos/nodos.png" 1695033581 5311 295db5310277062ab638f74191eee42e ""

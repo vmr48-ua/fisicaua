@@ -388,4 +388,111 @@
       $f(\gamma_2(t))=t-it^2\Longrightarrow\int_{\gamma_2}\ovl{z}\ dz=\int_1^2(t-it^2)
       (1+2it)\ dt=9+\frac73 i$
     }
+    \teorema{Propiedades básicas de integrabilidad}{
+      Sea $\gamma\colon[a,b]\rightarrow\bbC$ un camino, y consideremos dos funciones
+      continuas $f$ y $g$ continuas en $\gamma^*$, entonces se cumplen las siguientes
+      propiedades:
+      \begin{enumerate}
+        \item $\int_\gamma \left(f(z)+g(z)\right)\ dz=\int_\gamma f(z)\ dz+\int_\gamma g(z)\ dz$
+        \item $\int_\gamma cf(z)\ dz=c\int_\gamma f(z)\ dz\hspace{0.3cm}\forall c\in\bbC$ 
+        \item $\int_{-\gamma} f(z)\ dz= -\int_\gamma f(z)\ dz$, donde $-\gamma$ es el camino
+              opuesto a $\gamma$: $(-\gamma)(t)=\gamma(b+a-t)$ con $t\in[a,b]$
+        \item Si $\beta$ es otro camino tal que $\gamma+\beta$ está definido (el punto inicial
+              de $\beta$ coincide con el punto final de $\gamma$) y la función $f$ es también 
+              continua en $\beta^*$ y $(\gamma+\beta)^*$, entonces:\\
+              $\int_{\beta+\gamma}f(z)\ dz=\int_\gamma f(z)\ dz+\int_\beta f(z)\ dz$
+        \item La integral sobre un camino es invariante bajo una parametrización.
+      \end{enumerate}
+    }
+    \teorema{Propiedades}{
+      Sea $\gamma\colon[a,b]\rightarrow\bbC$ un camino y $f$ una función continua en $\gamma^*$
+      entonces $\abs{\int_\gamma f(z)\ dz}\leq M_f(\gamma)L(\gamma)$ siendo $M_f(\gamma)=
+      \max \left\{\abs{f(z)}, z\in\gamma^*\right\}$ y $L(\gamma)$ la longitud de $\gamma$.
+    }
+    \subsubsection*{Prueba}
+      $\displaystyle\abs{\int_\gamma f(z)\ dz}=\abs{\int_a^b f(\gamma(t))\cdot\gamma^\prime(t)\ dt}
+      \leq\int_a^b \abs{f(\gamma(t))}\abs{\gamma^\prime(t)}\ dt\leq M_f(\gamma)\int_a^b\abs{\gamma^\prime(t)}\ dt
+      =M_f(\gamma)L(\gamma)$
+    \ejemplo{}{
+      Si $\gamma(t)=2e^{it}$ para $\dfrac{-\pi}{6}\leq t\leq\dfrac{\pi}{6}$ entonces
+      $\abs{\displaystyle\int_\gamma \dfrac{1}{z^3+1}\ dz}\leq\dfrac{2\pi}{21}\Longleftrightarrow
+      \dfrac{1}{\abs{z^3+1}}\leq\dfrac{1}{\abs{z^3}+1}\leq\dfrac{1}{8-1}=\dfrac{1}{7}\hspace{0.4cm}
+      \forall z\in\gamma^*$\\
+      
+      Usando la propiedad $\abs{z^3+1}\geq\abs{z^3}-1$.\\
+
+      Finalmente: $\abs{\int_\gamma\dfrac{1}{z^3+1}\ dz}\leq\dfrac{1}{7}\dfrac{2\pi}{3}=\dfrac{2\pi}{21}$
+    }
+    \definicion{Primitiva compleja de $f$}{
+      Sea $f\colon U\rightarrow\bbC$ una función definida en un conjunto abierto $U$, diremos
+      que $F\colon U\rightarrow\bbC$ es una primitiva de $f$ en $U$ si $F$ es holomorfa en $U$
+      y $F^\prime(z)=f(z)\hspace{0.3cm}\forall z\in U$.
+    }
+    \ejemplo{}{
+      Tomando la función $f\colon U=\bbC\setminus(-\infty,0]\rightarrow\bbC$ tal que
+      $f(z)=\frac{1}{z}$, entonces $F(z)=Log z+ C$ con $c\in\bbC$ es una primitiva de 
+      $f$ en $U$.
+    }
+    \teorema{Extensión del 2º Teorema Fundamental del Cálculo}{
+      Supongamos que $f\colon U\rightarrow\bbC$ es una función continua en un conjunto abierto
+      $U\subset\bbC$ y que $F$ es un aprimitiva de $f$ en $U$. Si $\gamma\colon[a,b]\rightarrow U$
+      es un camino en $U$, entonces:
+      \[\int_\gamma f(z)\ dz=F(z)|^{\gamma(b)}_{\gamma(a)}\]
+      En particular, bajo las hipótesis anteriories tenemos que $\int_\gamma f(z)\ dz=0\hspace{0.4cm}
+      \forall\gamma$ camino cerrado en $U$.
+    }
+    \subsubsection*{Prueba}
+      \noindent Definamos $G(t)=F(\gamma(t))$ con $t\in[a,b]$, que es una función continua en $[a,b]
+      \Longrightarrow G^\prime(t)=F^\prime(\gamma(t))\cdot\gamma^\prime(t)$ (excepto a la suma,
+      una contidad finita de puntos).\\
+
+      \noindent Por el 2º TFC, tenemos que: $\int_\gamma f(z)\ dz=\int_a^b f(\gamma(t))\cdot\gamma^\prime (t)\ dt=
+      \int_a^b G(t)\ dt=G(b)-G(a)=F(\gamma(b))-F(\gamma(a))$\\
+    \corolario{}{
+      Supongamos que $f\colon U\rightarrow\bbC$ es una función holomorfa en un conjunto
+      abierto y conexo $U$ y además $f^\prime(z)=0\hspace{0.3cm}\forall z\in U$, entonces
+      $f$ es constante en $U$.
+    }
+    \subsubsection{Prueba}
+      \noindent Tomamos $F(z)=f(z)$: Como $f^\prime(z)=0$ es continua en $U$, tenemos que
+      $0=\int\gamma f^\prime(z)\ dz=f(z_2)-f(z_1)\hspace{0.3cm}\forall z_1,z_2\in U$.\\
+      $\gamma$ une $z_1$ y $z_2$ $\Rightarrow$ $f$ es constante.
+
+    \vspace{0.3cm}
+    \ejemplo{}{
+      Si $\gamma$ representa cualquier camino que conecte los puntos $0$ y $1+i$, por
+      el teorema anterior:\\
+      $\int_\gamma z^2\ dz=\dfrac{2^3}{3}|^{1+i}_{0}=\dfrac{(1+i)^3}{3}=\dfrac{2}{3}(-1+i)$
+    }
+    \ejemplo{}{
+      $\int_\gamma P(z)\ dz=0$ cuando $\gamma$ es un camino cerrado y $P$ es un polinomio.
+    }
+    \teorema{Independencia del camino}{
+      Supongamos que $f\colon U\rightarrow\bbC$ es una función continua en un conjunto
+      abierto y conexo $U\subset\bbC$, las siguientes propiedades son equivalentes:
+      \begin{itemize}
+        \item $\int_\gamma f(z)\ dz$ es independiente del camino (por dos puntos prefijados).
+        \item $\int_\gamma f(z)\ dz=0$ \hspace{0.3cm}$\forall \gamma$ camino cerrado en $U$.
+        \item $f$ admite una primitiva en $U$.
+      \end{itemize}
+    }
+    
+    \comentario{
+      Una propiedad importante de las integrales de línea para el caso de campos vectoriales
+      es la vinculada con los llamados \textbf{campos conservativos} (los que admiten 
+      función potencial). El   principio físico que hay detrás de estos campos es que el 
+      trabajo realizado cuando una partícula recorre la trayectoria de la curva sometida
+      al campo de fuerzas es igual del potencial de campo entre los extremos de la trayectoria.\\
+
+      \noindent En el caso de la integral compleja, el valor depende generalmente del camino
+      elegido, sin embargo, el teorema anterior afirma que la independencia del camino se 
+      puede caracterizar a través de la existencia de una primitiva del integrando 
+      continuo $f$ en el conjunto $U$, esto es, la existencia de una función $F$ holomorfa
+      en $U$ con $F^\prime=f(z)\hspace{0.2cm}\forall z\in U$. Además, sabemos que
+      $F^\prime(z)=\frac{\partial U}{\partial x}(x,y)-i\frac{\partial U}{\partial y}(x,y)
+      =f(z)$.\\ Por tanto, $\ovl{F^\prime(z)}=\frac{\partial U}{\partial x}(x,y)+i\frac
+      {\partial U}{\partial y}(x,y)=U(x,y)-iU(x,y)$ y deducimos que $\Delta U=\ovl{f}$,
+      $\hspace{0.2cm}$ con $\ovl{f}=(u,-v)$
+
+    }
 \end{document}

@@ -914,8 +914,9 @@
                   \longrightarrow \boxed{A=\sqrt{\dfrac{2}{a}}}$
           \end{enumerate}
           Finalmente, obtenemos nuestras autofunciones para el pozo infinico:
-          $\boxed{\psi_n(x)=\sqrt{\dfrac{2}{a}}\sin\left(\dfrac{n\pi}{a}x\right)}$
-          La solución general para un potencial $U(x)$ dadas unas condiciones
+          $\boxed{\psi_n(x)=\sqrt{\dfrac{2}{a}}\sin\left(\dfrac{n\pi}{a}x\right)}$\\
+
+          \noindent La solución general para un potencial $U(x)$ dadas unas condiciones
           iniciales $\Psi(x,0)$ conociendo $\psi_n$ y $E_n$:
           \[\Psi(x,t)=\sum_{n=1}^{\infty}c_n\psi_n e^{-i\dfrac{E_n}{\hbar}t}\]
           Donde vemos que solo nos falta conocer $c_n=\int_{-\infty}^{\infty}
@@ -925,8 +926,83 @@
           \Psi(x,0)=\sum_{n=1}^{\infty}c_n\psi_n$
 
         }
-        \comentario{
-          \noindent Las funciones de esta famila son ortonormales, es decir
-          que para $n\neq m$, $\displaystyle\int_{\infty}^{\infty}\psi_m^*\cdot\psi_n=0$\\
-        }
+      \comentario{
+        \noindent Las funciones de esta famila son ortonormales, es decir
+        que para $n\neq m$, $\displaystyle\int_{\infty}^{\infty}\psi_m^*\cdot\psi_n=0$\\
+      }
+      \ejemplo{Suponemos una partícula de masa $m$ en un sistema en el que $U=0$
+               \hspace{0.3cm}$\forall x$
+      }{
+        \vspace{-0.2cm}\subsubsection{Pozo de potencial cuadrado finito}
+        La ecuación de una onda $\Psi(x,t)=\psi(x)\varphi(t)$\\
+        \[\Psi(x,t)=\left(Ae^{-ikx}+Be^{ikx}\right)\cdot e^{-i\omega t}
+        \hspace{1cm}\text{con }\omega=\frac{E}{\hbar}\]
+        
+
+        En el caso clásico: $H=\dfrac{p^2}{2m}$\hspace{0.5cm}$E=\dfrac{1}{2}mv^2
+        \longrightarrow v_{\text{clásica}}=\sqrt{\dfrac{2E}{m}}$\\
+
+        En cuántica: $\hspace{0.85cm}\hat{H}=\dfrac{\hat{p}^2}{2m}$\hspace{0.5cm}$\hat{H}\psi=E\psi
+        \ \longrightarrow\  \dfrac{-\hbar^2}{2m}\dfrac{d^2\psi}{dx^2}=E\psi
+        \ \longrightarrow\  \dfrac{d^2\psi}{dx^2}=-\dfrac{2mE}{\hbar^2}\psi
+        \ \longrightarrow\  \dfrac{d^2\psi}{dx^2}=-k^2\psi$\\
+
+        \noindent Propuestas a solución: 
+        \begin{itemize}
+          \item $\psi(x)=A\sin(kx)+B\cos(kx)$
+          \item $\psi(x)=A^\prime e^{-ikx}+B^\prime e^{ikx}$
+        \end{itemize}
+
+        Vamos a buscar una relación entre la energía y la velociad. Sabemos que: 
+        $v=\lambda\nu=\dfrac{\omega}{k}$ y que $k^2=\dfrac{2mE}{\hbar^2}$ y 
+        $E=\hbar\omega$.
+
+        Finalmente: $v=\dfrac{\omega}{k}=\dfrac{E}{\hbar k}=\dfrac{E\hbar}{\hbar\sqrt{2mE}}
+        \Longrightarrow \boxed{v_{\text{cuántica}}=\sqrt{\dfrac{E}{2m}}}$\\
+
+        \vspace{0.6cm}Encontramos dos problemas:
+        \begin{itemize}
+        \item Observamos como $v_{\text{clásica}}=2\cdot v_{\text{cuántica}}$ lo cual es preocupante.\\
+
+        \item La ecuación de una onda que se propaga hacia la derecha con una energía $E=\hbar\omega$
+        es: $\Psi(x,t)=A e^{+ikx-i\omega t}$. Aquí tenemos el otro problema, esta 
+        función no es normalizable.\\
+        \end{itemize}
+
+        Para que $\Psi(x,t)$ represente a una partícula, debe cumplir que 
+        $\int_{-\infty}^{\infty}\abs{\Psi(x,t)}^2\ dx= 1$
+        \[\int_{-\infty}^{\infty}\Psi^*\Psi\ dx=\int_{-\infty}^{\infty}\abs{A}^2\cdot 
+        e^{ikx+i\omega t}\cdot e^{-ikx-i\omega t}\ dt=\abs{A}^2\int_{-\infty}^{\infty}\ dx=
+        \abs{A}^2(\infty)\Longrightarrow\text{\textbf{No es normalizable}}\]
+
+        Es por esto, que para obtener la solución general vamos a usar una integral en vez
+        de un sumatorio: 
+        \[\Psi(x,t)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\tilde{\psi}(k)\psi(x)
+        \cdot e^{\dfrac{-iEt}{\hbar}}\ dk\]
+        Donde $\dfrac{1}{\sqrt{2\pi}}$ sale de la Transformada de Fourier, de
+        las funciones que usamos como coeficientes $\tilde{\psi}(k)$
+
+        Para el problema de las velocidades, vamos a recordar algunas expresiones:
+        $v_f=\frac{\omega}{k}$, $v_\text{grupo}=\frac{d\omega}{dk}=\frac{\hbar k}{m}, 
+        \omega = \frac{\hbar k^2}{2m}, k^2=\frac{2mE}{\hbar^2}$, $E=\hbar\omega$,
+        $k^2=\frac{2m\hbar\omega}{\hbar^2}$ $\implies v_g=2\cdot v_f$\\
+
+        Es decir, que la velocidad que se asemeja a la clásica es la velocidad de grupo.
+        Con esto solucionamos el problema de las velocidades.
+      }
+      \ejemplo{
+        $V(x)=$
+        $\begin{cases}
+          -V_0      & -a\leq x\leq a\\
+            0       &\text{para cualquier otro valor de } x
+        \end{cases}$ }{
+        \vspace{-0.2cm}\subsubsection{Barreras y pozos de potencial finitos}
+        %pedir foto
+        Vamos a resolverlo para dos casos, cuando $E>-V_0$ y $E<0$ con $-V_0<E<0$ y cuando
+        $E>0$.
+
+        Encontraremos dos coeficientes para conocer información acerca de su transmisión $T$ y
+        reflexión $R$. 
+
+      }
 \end{document}

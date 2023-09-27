@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  25 SEP 2023 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  27 SEP 2023 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1608,26 +1608,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 845--849
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 927--927
+Underfull \hbox (badness 10000) in paragraph at lines 928--928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 927--927
+Underfull \hbox (badness 10000) in paragraph at lines 928--928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 927--927
+Underfull \hbox (badness 10000) in paragraph at lines 928--928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 931--931
+Underfull \hbox (badness 10000) in paragraph at lines 928--928
 
  []
 
-[18] [19] (./cuantica.aux
+
+Underfull \hbox (badness 10000) in paragraph at lines 932--932
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 992--992
+
+ []
+
+[19] [20] (./cuantica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1637,18 +1677,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 41998 strings out of 477923
- 827649 string characters out of 5838288
+ 42012 strings out of 477923
+ 827847 string characters out of 5838288
  1884388 words of memory out of 5000000
- 61321 multiletter control sequences out of 15000+600000
- 557358 words of font info for 136 fonts, out of 8000000 for 9000
+ 61330 multiletter control sequences out of 15000+600000
+ 558918 words of font info for 138 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  99i,20n,102p,769b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on cuantica.pdf (20 pages, 499854 bytes).
+Output written on cuantica.pdf (21 pages, 507752 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 352 compressed objects within 4 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 491 PDF objects out of 1000 (max. 8388607)
+ 358 compressed objects within 4 object streams
+ 117 named destinations out of 1000 (max. 500000)
  359 words of extra memory for PDF output out of 10000 (max. 10000000)
 
