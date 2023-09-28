@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  27 SEP 2023 14:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  28 SEP 2023 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -446,6 +446,9 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \LTleft=\skip75
 \LTright=\skip76
 \flrow@types=\toks41
+) (/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks42
 ) (/usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
@@ -564,7 +567,7 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip78
 \enit@outerparindent=\dimen258
-\enit@toks=\toks42
+\enit@toks=\toks43
 \enit@inbox=\box65
 \enit@count@id=\count314
 \enitdp@description=\count315
@@ -572,13 +575,13 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 Package: theoremref 2013/05/22 References with automatic theorem names
 \thmref@num=\count316
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 50.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 50.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 50.
+Package hyperref Info: Option `colorlinks' set `true' on input line 51.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 51.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 51.
  (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
  (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks43
+\pgfutil@everybye=\toks44
 \pgfutil@tempdima=\dimen259
 \pgfutil@tempdimb=\dimen260
 ) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -590,10 +593,10 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks44
-\pgfkeys@temptoks=\toks45
+\pgfkeys@pathtoks=\toks45
+\pgfkeys@temptoks=\toks46
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks46
+\pgfkeys@tmptoks=\toks47
 ))
 \pgf@x=\dimen261
 \pgf@y=\dimen262
@@ -611,9 +614,9 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \c@pgf@countb=\count318
 \c@pgf@countc=\count319
 \c@pgf@countd=\count320
-\t@pgf@toka=\toks47
-\t@pgf@tokb=\toks48
-\t@pgf@tokc=\toks49
+\t@pgf@toka=\toks48
+\t@pgf@tokb=\toks49
+\t@pgf@tokc=\toks50
 \pgf@sys@id@count=\count321
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -651,9 +654,9 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@dimen=\dimen271
 \pgfmath@count=\count324
 \pgfmath@box=\box67
-\pgfmath@toks=\toks50
-\pgfmath@stack@operand=\toks51
-\pgfmath@stack@operation=\toks52
+\pgfmath@toks=\toks51
+\pgfmath@stack@operand=\toks52
+\pgfmath@stack@operation=\toks53
 ) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count325
 )) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -734,8 +737,8 @@ Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks53
-\verbatim@line=\toks54
+\every@verbatim=\toks54
+\verbatim@line=\toks55
 \verbatim@in@stream=\read5
 ) (/usr/share/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
@@ -765,8 +768,8 @@ Library (tcolorbox): 'tcbskins.code.tex' version '6.0.1'
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen298
 \pgffor@skip=\dimen299
-\pgffor@stack=\toks55
-\pgffor@toks=\toks56
+\pgffor@stack=\toks56
+\pgffor@toks=\toks57
 )) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
@@ -834,7 +837,7 @@ Library (tcolorbox): 'tcblistings.code.tex' version '6.0.1'
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count346
 \lst@gtempboxa=\box89
-\lst@token=\toks57
+\lst@token=\toks58
 \lst@length=\count347
 \lst@currlwidth=\dimen312
 \lst@column=\count348
@@ -1037,10 +1040,10 @@ File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count371
 \AM@pagebox=\box145
-\AM@global@opts=\toks58
+\AM@global@opts=\toks59
 \AM@pagecnt=\count372
-\AM@toc@title=\toks59
-\AM@lof@heading=\toks60
+\AM@toc@title=\toks60
+\AM@lof@heading=\toks61
 \c@AM@survey=\count373
 \AM@templatesizebox=\box146
 ) (/usr/share/texmf-dist/tex/latex/transparent/transparent.sty
@@ -1054,7 +1057,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \aftertitleunit=\skip101
 \ttl@plus=\dimen342
 \ttl@minus=\dimen343
-\ttl@toksa=\toks61
+\ttl@toksa=\toks62
 \titlewidth=\dimen344
 \titlewidthlast=\dimen345
 \titlewidthfirst=\dimen346
@@ -1307,12 +1310,12 @@ Package caption Info: End \AtBeginDocument code.
 \scratchbox=\box152
 \nofMPsegments=\count481
 \nofMParguments=\count482
-\everyMPshowfont=\toks62
+\everyMPshowfont=\toks63
 \MPscratchCnt=\count483
 \MPscratchDim=\dimen368
 \MPnumerator=\count484
 \makeMPintoPDFobject=\count485
-\everyMPtoPDFconversion=\toks63
+\everyMPtoPDFconversion=\toks64
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1323,8 +1326,8 @@ Package hyperref Info: Link coloring ON on input line 16.
 \c@lstlisting=\count486
  (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks64
-\inpenc@posthook=\toks65
+\inpenc@prehook=\toks65
+\inpenc@posthook=\toks66
 ) (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (/usr/share/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -1667,7 +1670,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 992--992
 
  []
 
-[19] [20] (./cuantica.aux
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1105
+
+ []
+
+[19] [20{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [21] (./cuantica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1677,18 +1700,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 42012 strings out of 477923
- 827847 string characters out of 5838288
- 1884388 words of memory out of 5000000
- 61330 multiletter control sequences out of 15000+600000
- 558918 words of font info for 138 fonts, out of 8000000 for 9000
+ 42063 strings out of 477923
+ 828756 string characters out of 5838288
+ 1893388 words of memory out of 5000000
+ 61366 multiletter control sequences out of 15000+600000
+ 559954 words of font info for 140 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  99i,20n,102p,769b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on cuantica.pdf (21 pages, 507752 bytes).
+</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
+Output written on cuantica.pdf (22 pages, 533307 bytes).
 PDF statistics:
- 491 PDF objects out of 1000 (max. 8388607)
- 358 compressed objects within 4 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 515 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
  359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

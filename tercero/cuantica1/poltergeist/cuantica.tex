@@ -990,19 +990,117 @@
         Es decir, que la velocidad que se asemeja a la clásica es la velocidad de grupo.
         Con esto solucionamos el problema de las velocidades.
       }
-      \ejemplo{
-        $V(x)=$
-        $\begin{cases}
-          -V_0      & -a\leq x\leq a\\
-            0       &\text{para cualquier otro valor de } x
-        \end{cases}$ }{
-        \vspace{-0.2cm}\subsubsection{Barreras y pozos de potencial finitos}
-        %pedir foto
-        Vamos a resolverlo para dos casos, cuando $E>-V_0$ y $E<0$ con $-V_0<E<0$ y cuando
-        $E>0$.
+      \ejemplo{Barreras y pozos de potencial finitos
+        }{
+        % \vspace{-0.2cm}\subsubsection{Barreras y pozos de potencial finitos}
+        % %pedir foto
+        % Vamos a resolverlo para dos casos, cuando $E>-V_0$ y $E<0$ con $-V_0<E<0$ y cuando
+        % $E>0$.
 
         Encontraremos dos coeficientes para conocer información acerca de su transmisión $T$ y
-        reflexión $R$. 
+        reflexión $R$.
+        
+        \subsubsection*{Estados ligados}
+          \vspace{-0.2cm}Un estado ligado es aquel en el que $-V_0<E<0$
+          $V(x)=$
+          $\begin{cases}
+            -V_0      & -a\leq x\leq a\\
+              0       &\text{para cualquier otro valor de } x
+          \end{cases}$ 
 
+          Para resolverlo, vamos a definir tres regiones $I$, $II$ y $III$, una desde
+          $-\infty$ hasta $-a$, otra desde $-a$ hasta $a$ y la última desde $a$ hasta $\infty$
+          Como es un estado estacionario, sólo tenemos en cuenta el término de la posición:
+          \begin{enumerate}
+            \item $\dfrac{-\hbar^2}{2m}\dfrac{d^2\psi_I}{dx^2}=-\abs{E}\psi_I\Longleftrightarrow$
+                  $\dfrac{d^2\psi_I}{dx^2}=\dfrac{2m\abs{E}}{\hbar^2}\psi_I$ que con $k=
+                  \dfrac{\sqrt{2m\abs{E}}}{\hbar}$, $\Longrightarrow\dfrac{d^2\psi}{dx^2}=k^2\psi_I$\\
+
+                  \[\text{\textbf{Solución: }}\psi_I=Ae^{kx}+Be^{-kx}\]
+                  Y vemos como $B=0$ para que $\psi(x=-\infty)\rightarrow 0$ y por tanto $\psi$ sea
+                  normalizable.
+            \item $-\dfrac{\hbar^2}{2m}\dfrac{d^2\psi_{II}}{dx^2}-V_0\cdot\psi_{II}=-\abs{E}\psi_{II}$
+                  $\Longleftrightarrow\dfrac{d^2\psi_{II}}{dx^2}=-\dfrac{2m(V_0-\abs{E})}{\hbar^2}\psi_{II}$
+                  
+                  Llamando $l^2=\dfrac{2m(V_0-\abs{E})}{\hbar^2}$, entonces nuestra ecuación nos queda:
+                  $\dfrac{d^2\psi_{II}}{dx^2}=-l^2\psi_{II}$
+
+                  \begin{align*}
+                    \begin{split}
+                  \text{\textbf{Soluciones: }}\psi_{II}=C^\prime e^{ilx}+D^\prime e^{-ilx}\\
+                  \psi_{II}=C\cos(lx)+D\sin(lx)
+                    \end{split}
+                  \end{align*}
+
+            \item Este caso es análogo al I: $\dfrac{d^2\psi_{III}}{dx^2}=k^2\psi_{III}$
+            
+                  \[\text{\textbf{Solución: }}\psi_{III}=Fe^{kx}+Ge^{-kx}\]
+                  Con el mismo argumento que en I, sabemos que $F=0$ por la normalización.
+            
+          \end{enumerate}
+          Las soluciones pares o impares alternarán por ser un potencial simétrico.
+          \begin{itemize}
+            \item Solución par:
+                  \begin{enumerate}
+                    \item $\psi_{I}=Ge^{kx}$
+                    \item $\psi_{II}=C\cos(lx)$
+                    \item $\psi_{III}=Ge^{-kx}$
+                  \end{enumerate}
+                  Para obtener $G$, $C$, $l$ y $k$ imponemos que $\psi$, $\psi^\prime$ sean continuas
+                  y $\psi$ esté normalizada. Realmente, como hemos definido a $l$ y $k$ en función de 
+                  $E$, nuestras únicas incógnitas son $E$, $G$ y $C$. Vamos a usar condiciones de contorno:
+                  \begin{itemize}
+                    \item $\psi_{II}(x=a)=\psi_{III}(x=a)\Longleftrightarrow C\cos(la)=Ge^{-ka}$
+                          Despejamos $G$: $G=Ce^{ka}\cos(la)$ y aplicamos que la función debe estar
+                          normalizada:
+
+                          $\int_{-\infty}^{\infty}\abs{\psi}^2\ dx=1\Longleftrightarrow2\int_{0}^{\infty}
+                          \abs{\psi}\ dx$ %por simetría. 
+                          $\Longleftrightarrow 2\int_{0}^{a}\abs{C}^2\cos^2(lx)\ dx+2\int_a^{\infty}\abs{G}^2
+                          \cdot e^{-2kx}\ dx= 1$ ... 
+                          \[\boxed{C=\dfrac{1}{\sqrt{a+\dfrac{1}{k}}}}\hspace{1.5cm}\boxed{G=\dfrac{e^{ka}
+                          \cdot\cos(la)}{\sqrt{a+\dfrac{1}{k}}}}\]
+
+                    \item $\psi^\prime_{II}(x=a)=\psi_{III}^\prime(x=a)\Longleftrightarrow -Cl\sin(la)=-kGe^{-ka}
+                          \Longleftrightarrow\boxed{l\tan(la)=k}$ 
+
+                          La llamada condición de cuantización de la energía, que no tiene solución analítica 
+                          y se debe resolver o numéricamente o gráficamente. Vamos a reescribirla para poder
+                          representarla:\\
+
+                          Definición de variables:\\
+                          $\xi=ka$\hspace{0.5cm}$z=al$\hspace{0.5cm}$\xi^2+z^2=z_0^2\Leftrightarrow\xi=
+                          \sqrt{z_0^2-z^2}$\\
+
+                          Desarrollo:\\
+                          $l\tan(la)=k \Longleftrightarrow al\tan(la)=ka \Longleftrightarrow z\tan(s)=\xi$
+                          $\Longleftrightarrow k^2+l^2=\dfrac{2m\abs{E}}{\hbar^2}+\dfrac{2m(V_0-\abs{E})}{\hbar^2}=
+                          \dfrac{2mV_0}{\hbar^2} \Longleftrightarrow (ak)^2+(al)^2=\dfrac{2mV_0a^2}{\hbar^2}=z_0^2
+                          \Longleftrightarrow \boxed{z_0^2=\dfrac{2mV_0a^2}{\hbar^2}}\Longleftrightarrow z\tan(z)=
+                          \sqrt{z_0^2-z^2}\Longleftrightarrow\boxed{\tan(z)=\sqrt{\left(\dfrac{z_0}{2}\right)^2-1}}$
+                          %Insertar foto de las diapos T3
+
+                  \end{itemize}
+            \item Solución impar:
+                  Se deja como ejercicio para el lector yikes
+                  % se deja como ejercicio
+          \end{itemize}
+
+        \subsubsection*{Estados no ligados, estados de \textit{scattering} o estados de dispersión}
+          Un estado no ligado es aquel en el que $E>0$, y por tanto estamos por encima del pozo de potencial.
+          De igual manera, vamos a dividir el problema en tres regiones $I$, $II$, y $III$.
+          \begin{enumerate}
+            \item $\dfrac{-\hbar^2}{2m}\dfrac{d^2\psi_I}{dx^2}=\abs{E}\psi_I\Longleftrightarrow$
+                  $\dfrac{d^2\psi_I}{dx^2}=-\dfrac{2m\abs{E}}{\hbar^2}\psi_I$ que con $k=
+                  \dfrac{\sqrt{2m\abs{E}}}{\hbar}$, $\Longrightarrow\dfrac{d^2\psi}{dx^2}=-k^2\psi_I$\\
+          
+                  \[\text{\textbf{Solución: }}\psi_I=Ae^{ikx}+Be^{-ikx}\]
+
+                  Donde el término $Ae^{ikx}$ representa a una partícula incidente desde la izquierda,
+                  mientras que el término $Be^{-ikx}$ representa a una partícula reflejada.
+            \item 2
+            \item El caso de la zona $III$ es análogo al $I$:
+                  \[\text{\textbf{Solución: }}\psi_{II}=Fe^{ikx}+Ge^{-ikx}\]
+          \end{enumerate}
       }
 \end{document}
