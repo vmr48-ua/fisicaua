@@ -495,4 +495,142 @@
       $\hspace{0.2cm}$ con $\ovl{f}=(u,-v)$
 
     }
+    \teorema{Teoremas de Cauchy para determinados tipos de regiones}{
+      \subsubsection*{Teorema de Cauchy para triángulos}
+        Sea $f\colon U\longrightarrow\bbC$ una función holomorfa en un conjunto abierto $U\in\bbC$,
+        tenemos que para cualquier triángulo $\Delta (\Delta=\text{int}(\Delta))\cup F_r(\Delta)$ 
+        contenido en $U$:
+        \begin{equation}
+          \int_\gamma f(z)\ dz=0\hspace{1cm}\text{donde }\gamma=F_r(\Delta)
+        \end{equation}\\
+
+      \subsubsection*{Teorema de Cauchy para regiones estrelladas}
+        Consideremos $f\colon U\longrightarrow \bbC$ una función holomorfa en un conjunto
+        estrellado y abierto de $U\subset\bbC$, entonces:
+        \begin{equation}
+          \int_\gamma f(z)\ dz=0
+        \end{equation}
+        para cualquier camino cerrado $\gamma$ contenido en $U$.\vspace{0.3cm}\\
+
+      \subsubsection*{Teorema local de Cauchy}
+        Sea $f\colon\mcD(z_0,r)\longrightarrow\bbC$ una función holomorfa en un disco 
+        abierto $\mcD(z_0,r)$ para algún $z_0\in\bbC$ y $r>0$, entonces:
+        \begin{equation}
+          \int_\gamma f(z)\ dz=0
+        \end{equation}
+        para todo camino $\gamma\text{cerrado en }\mcD(z_0,r)$
+
+        \textit{\textbf{Nota:} No siempre la integral sobre un camino cerrado es cero,
+        por ejemplo: $\int_{(0,1)}\frac{1}{z}\ dz=\int_0^{2\pi}\frac{1}{e^{it}}ie^{it}\ dt=2\pi i\neq 0$ 
+        ya que el disco no es estrellado porque tiene un agujero en el origen (no es 
+        simplemente conexo).}\vspace{0.3cm}\\
+
+      \subsubsection*{Teorema de Cauchy extendido para triánglos}
+        Sea $f\colon U\longrightarrow\bbC$ una función contitua en un conjunto abierto $U\in\bbC$,
+        y holomorfa en $U\setminus\left\{z_0\right\}$ para algún $z_0\in U$.
+        Para cualquier triángulo $\Delta (\Delta=\text{int}(\Delta))\cup F_r(\Delta)$ 
+        contenido en $U$:
+        \begin{equation}
+          \int_\gamma f(z)\ dz=0\hspace{1cm}\text{donde }\gamma=F_r(\Delta)
+        \end{equation}\\
+
+      \subsubsection*{Teorema de Cauchy para conjuntos convexos}
+        Sea $U$ un conjunto convexo y $f\colon U\longrightarrow\bbC$ una función continua
+        en tono $U$ y holomorfa en $U\setminus\left\{z_0\right\}$ para algún $z_0\in U$, 
+        entonces:
+        \[\int_\gamma f(z)\ dz=0\]
+        para cualquier $\gamma$ camino cerrado en $U$.
+        \textit{\textbf{Nota:}Puede ser holomorfa también en $z_0$ de forma más general.}
+    }
+    \corolario{}{
+      Sea $U$ un conjunto convexo y $f\colon U\longrightarrow\bbC$ una función holomorfa
+      en $U$ entonces:\\
+
+      $F(z)=\int_{\gamma_z} f(s)\ ds$ con $z\in U$ es holomorfa en $U$ y $F^\prime(z)=f(z)$ 
+      $\forall z\in U$\\
+      donde $\gamma_z$ es un camino en $U$ que une $z_0$ con $z$, siendo
+      $z_0$ un punto prefijado de $U$.
+    }
+    \teorema{Fórmula integral de Cauchy para el cálculo - \textbf{F.I.C.}}{
+      Sea $f\colon U\longrightarrow\bbC$ una función holomorfa en un conjunto abierto $U$
+      que contiene un disco $\ovl{\mcD}(z_0,r)$ para algún $z_0\in\bbC$ y $r>0$ entonces
+      para cualquier punto $z\in\mcD (z_0,r)$ se tiene que:
+      \begin{equation}
+        \boxed{f(z)=\dfrac{1}{2\pi i}\int_C \dfrac{f(w)}{w-z}\ dw}\hspace{0.5cm}\text{donde}
+        \hspace{0.2cm}C=C(z_0,z)=\left\{z\in\bbC\colon\abs{z-z_0}=r\right\}
+      \end{equation}
+    }
+    \corolario{}{
+      Sea $z_0\in\bbC$, $r>0$ y $C=C(z,r)=\left\{z\in\bbC\colon\abs{z-z_0}=r\right\}$ entonces:\\
+      \[\int_C \dfrac{dw}{w-z}=\begin{cases}
+        2\pi i \hspace{0.6cm}\text{si }z\text{ es interior a }C\ (\abs{z-z_0}<r)\\
+        0      \hspace{0.95cm}\text{si }z\text{ es exterior a }C\ (\abs{z-z_0}>r)
+      \end{cases}\]
+      \textit{\textbf{Nota:} la variable de integración es distinta al punto prefijado: $z\neq w$}
+    }
+    \ejemplo{$\displaystyle\int_{C(0,2)}\dfrac{e^z}{z}\ dz$}{
+      Observamos que $f(z)=e^z$ es entera y holomorfa siempre
+      Empezamos reescribiendo con $w$ como variable y tomamos para el FIC $z=0$, $r=2$ 
+      y $z_0=0$:\\
+
+      $\displaystyle\int_{C(0,2)}\dfrac{e^z}{z}\ dz=\displaystyle\int_{C(0,2)}\dfrac{e^w}{w}\ dw=2\pi if(0)=2\pi i$
+      
+    }
+    \ejemplo{$\displaystyle\int_{C(0,1000000)}\dfrac{e^z}{z}\ dz$}{
+      El radio no importa para nuestra fórmula por lo que podemos asumir el mismo resultado
+      que en el anterior:\\
+
+      $\displaystyle\int_{C(0,1000000)}\dfrac{e^z}{z}\ dz=2\pi i$
+    }
+    \ejemplo{$\displaystyle\int_{(0,2)}\dfrac{e^z}{1-z}\ dz$}{
+      Como $f(w)=e^w$ es entera:
+      $\displaystyle\int_{(0,2)}\dfrac{e^z}{1-z}\ dz=\displaystyle\int_{(0,2)}\dfrac{e^w}{1-w}\ dw
+      =-\displaystyle\int_{C(0,2)}\dfrac{e^w}{w-1}\ dw=-(2\pi if(1))=-2\pi ie$
+    }
+    \ejemplo{Sea $0<a<b$: $\displaystyle\int_{C(a,b)}\dfrac{e^z}{z+ai}\ dz$}{
+      Como $f(w)=e^w$ es entera:
+      $\displaystyle\int_{C(a,b)}\dfrac{e^z}{z+ai}\ dz=\displaystyle\int_{C(a,b)}\dfrac{e^w}{w+ai}\ dw
+      =2\pi if(-ai)=2\pi ie^{-ai}$
+    }
+    \ejemplo{$\displaystyle\int_{C(a,a)}\dfrac{z}{z^4-1}\ dz$ con $a>1$}{
+      $\displaystyle\int_{C(a,a)}\dfrac{z}{z^4-1}\ dz=\displaystyle\int_{C(a,a)}
+      \dfrac{z}{(z^2+1)(z^2-1)}\ dz=\int_{C(a,a)}\dfrac{z}{(z^2+1)(z+1)(z-1)}\ dz=\mcI$\vspace{0.3cm}\\
+
+      Por lo que tomamos $f(z)=\dfrac{z}{(z^2+1)(z+1)}$.
+      
+      Si ploteamos las raíces, vemos como todas ellas quedan fuera del disco, 
+      vamos a tomar a un abierto que no contenga a las raíces pero sí a la función 
+      para poder aplicar el FIC.\\
+
+      Sea $U$ abierto que contiene al disco $D(a,a)$ y deja fuera a los puntos
+      $i$, $-i$, $-1\Rightarrow f(z)$ es holomorfa en $U$.\\
+
+      $\mcI=2\pi if(1)=2\pi i\frac14=\boxed{\frac{\pi}{2}i}$
+    }
+    \ejemplo{$\dfrac{1}{2\pi i}\displaystyle\int_{C(0,b)}\dfrac{e^z}{z^2+a^2}\ dz$ con 
+    $0<a<b$}{
+      $\dfrac{1}{2\pi i}\displaystyle\int_{C(0,b)}\dfrac{e^z}{z^2+a^2}\ dz=
+      \dfrac{1}{2\pi i}\displaystyle\int_{C(0,b)}\dfrac{e^z}{(z+ai)(z-ai)}\ dz=
+      \dfrac{1}{2\pi i}\displaystyle\int_{C(0,b)}e^z\left(\dfrac{A}{z+ai}+
+      \dfrac{B}{z-ai}\right)\ dz=\mcI$\\
+
+      Pero ahora vemos como las raíces sí quedan dentro del círculo por lo que no
+      podemos seguir el mismo razonamiento que en el ejemplo anterior. Vamos a tener
+      que descomponer en fracciones simples para poder trabajar:\\
+
+      $\left(\dfrac{A}{z+ai}+\dfrac{B}{z-ai}\right)=\left(\dfrac{A(z-ai)+B(z+ai)}{(z+ai)(z-ai)}\right)=
+      \left(\dfrac{(A+B)z+(B-A)ai}{(z+ai)(z-ai)}\right)$\\
+
+      Por lo que sabemos que $A+B=0\Longleftrightarrow A=-B$ y $(B-A)ai=1\Longleftrightarrow 2Bai=1
+      \Longleftrightarrow \boxed{B=\dfrac{1}{2ai}\Longleftrightarrow A=-\dfrac{1}{2ai}}$\\
+
+      $\mcI=\dfrac{1}{2ai}\left(\dfrac{1}{2\pi i}\displaystyle\int_{C(0,b)}\dfrac{e^z}{z-ai}\ dz
+      -\dfrac{1}{2\pi i}\displaystyle\int_{C(0,b)}\dfrac{e^z}{z+ai}\ dz\right)=
+      \dfrac{1}{2ai}\left(f(ai)-f(-ai)\right)=\dfrac{1}{2ai}(e^{ai}-e^{-ai})=\dfrac{1}{a}=\sin(a)=
+      \boxed{\dfrac{\sin(a)}{a}}$\\
+
+      Ya que $f(z)=e^z$ entera.
+
+    }
+
 \end{document}

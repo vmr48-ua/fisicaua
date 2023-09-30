@@ -1742,11 +1742,13 @@ INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT Complejo.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb

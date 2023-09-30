@@ -674,6 +674,7 @@
       \begin{equation}
         \mcJ(x,t)=\dfrac{i\hbar}{2m}\left(\Psi\dfrac{\partial\Psi^*}{\partial x}-\Psi^*\dfrac{\partial \Psi}
       {\partial x}\right) \implies \boxed{\dfrac{\partial\mcP(x,t)}{\partial t}=-\dfrac{\partial\mcJ(x,t)}{\partial x}}
+      \label{eq:corrienteProbabilidad}
       \end{equation}
 
       \noindent Reescrito:
@@ -1097,10 +1098,91 @@
                   \[\text{\textbf{Solución: }}\psi_I=Ae^{ikx}+Be^{-ikx}\]
 
                   Donde el término $Ae^{ikx}$ representa a una partícula incidente desde la izquierda,
-                  mientras que el término $Be^{-ikx}$ representa a una partícula reflejada.
-            \item 2
+                  mientras que el término $Be^{-ikx}$ representa a una partícula reflejada. Puesto que
+                  nos encontramos un pozo, la reflexión puede sucederse repetidas veces
+                  dentro del pozo, generando una resonancia.
+            \item $-\dfrac{\hbar^2}{2m}\dfrac{d^2\Psi_{II}}{dx^2}-V_0\Psi_{II}=E\Psi_{II}
+                  \Longleftrightarrow\dfrac{d^2\Psi{II}}{dx^2}=-\dfrac{2m(E+V_0)}{\hbar^2}\Psi_{II}$
+                  con $l=\dfrac{2m(E+V_0)}{\hbar^2}$ tenemos $\dfrac{d^2\Psi_{II}}{dx^2}=-l^2\Psi_{II}$
+
+                  \[\text{\textbf{Solución: }}\psi_{II}=Ce^{ilx}+De^{-ilx}\]
+
             \item El caso de la zona $III$ es análogo al $I$:
-                  \[\text{\textbf{Solución: }}\psi_{II}=Fe^{ikx}+Ge^{-ikx}\]
+                  \[\text{\textbf{Solución: }}\psi_{II}=Fe^{ikx}\]
+
+                  Llamamos onda transmitida a la onda que escapa de la resonancia, que se
+                  transmite a través del pozo hacia la derecha. Sabemos que $Ge^{-ikx}$ es
+                  nulo pues no hay onda reflejada.
           \end{enumerate}
-      }
+          Para calcular $A$, $B$, $C$, $D$, y $F$ inponemos condiciones de frontera:
+          \begin{itemize}
+            \item $\Psi_I(x=-a)=\Psi_{II}(x=-a)$
+            \item $\Psi^\prime_I(x=-a)=\Psi^\prime_{II}(x=-a)$
+            \item $\Psi_{II}(x=a)=\Psi_{III}(x=a)$
+            \item $\Psi^\prime_{II}(x=-a)=\Psi^\prime_{III}(x=a)$
+          \end{itemize}
+          Las soluciones no son normalizables porque no son estados ligados.
+          Puesto que nos falta una ecuación, vamos a definir dos coeficientes,
+          el \textit{Coeficiente de Reflexión} $R$, y el \textit{Coeficiente
+          de Transmisión} $T$ en función de la corriente de probabilidad $\mcJ$.
+          \[R=\dfrac{\abs{\mcJ_{\text{reflejada}}}}{\abs{\mcJ_{\text{incidente}}}}
+          \hspace{1cm}T=\dfrac{\abs{\mcJ_{\text{transmitida}}}}{\abs{\mcJ_{\text{incidente}}}}\]
+      
+          Recordemos la definición de corriente de probabilidad \ref{eq:corrienteProbabilidad}
+          tomando $\Psi(x,t)=\psi(x)\varphi(t)=\psi(x)e^{-i\omega t}$
+          \[\mcJ(x,t)=\dfrac{i\hbar}{2m}\left(\Psi\dfrac{\partial\Psi^*}{\partial x}-\Psi^*\dfrac{\partial \Psi}
+          {\partial x}\right) = \dfrac{i\hbar}{2m}\left(\psi(x)e^{-i\omega t} 
+          \dfrac{\partial}{\partial x}(\psi^*e^{i\omega t})-\psi^*e^{i\omega t}
+          \dfrac{\partial}{\partial x}(\psi e^{-i\omega t})\right)\]
+          Es decir, que $\mcJ$ es independiente del tiempo.\\
+
+          Para el desarrollo de la $\mcJ_{\text{incidente}}$, recordemos
+          que $\psi(x)_{\text{incidente}}=Ae^{ikx}$:
+
+          $\begin{cases}
+            \mcJ_{\text{inc}}=\dfrac{i\hbar}{2m}\left(-\abs{A}^2
+            e^{ikx}ike^{-ikx}-\abs{A}^2e^{-ikx}ike^{ikx}\right)=
+            -\dfrac{i^2\hbar k}{m}\abs{A}^2=\dfrac{\hbar k}{m}\abs{A}^2\vspace{0.3cm}\\
+
+            \mcJ_{\text{ref}}=-\dfrac{\hbar k}{m}\abs{B}^2
+          \end{cases}$
+
+          De forma que los coeficientes nos quedarán ahora como:
+
+          \[\boxed{R=\dfrac{\abs{B}^2}{\abs{A}^2}}\hspace{1cm}
+          \boxed{T=\dfrac{\abs{F}^2}{\abs{A}^2}}\]
+
+          Pero esta definición sólo funciona cuando el potencial es 
+          simétrico, por lo que la definición anterior de los coeficientes
+          es más general.\\
+
+          El coeficiente de transmisión para el pozo cuadrado finito de 
+          anchura $2a$ y profundidad $V_0$ (los cálculos son \textit{densos}):
+          \[\boxed{\dfrac{1}{T}=1+\dfrac{V_0^2}{4E(E+V_0)}\sin^2\left(
+          \dfrac{2a}{\hbar}\sqrt{2m(E+V_0)}\right)}\]
+
+          % ¿Qué tiene que pasar para que la transmisión sea 1? Que todo
+          % el término que acompaña al seno de cero, es decir que el seno
+          % valga cero y el término de dentro sea múltiplo de $\pi$.
+
+          De aquí obtenemos una condición de resonancia:\\ 
+          $\dfrac{2a}{\hbar}\sqrt{2m(E+V_0)}=n\pi\Longleftrightarrow
+          \dfrac{4a^2}{\hbar^2}(2mE+2mV_0)=n^2\pi^2\Longleftrightarrow
+          2mE+2mV_0=\dfrac{n^2\pi^2\hbar^2}{4a^2}\Longrightarrow$
+          \[E+V_0=\dfrac{n^2\pi^2\hbar^2}{2m(2a)^2}\]
+          Que es la misma solución la de estados ligados en un pozo infinito
+          de anchura $2a$ que la de la energía del pozo infinito.
+          Es como si existiera un pozo infinito en nuestro pozo finito, y 
+          solamente cuando estamos en un estado de resonancia tenemos transmisión.
+        }
+        \ejemplo{Obtén los coeficientes de reflexión y de transmisión para:
+          $E>V$ y $0<E<V$\\
+          $V(x)=$
+          $\begin{cases}
+            0      & 0<x\\
+            V>0    & x>0
+          \end{cases}$ 
+        }{
+          
+        }
 \end{document}

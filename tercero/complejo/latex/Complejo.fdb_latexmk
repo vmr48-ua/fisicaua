@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1695813065 "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" "Complejo.pdf" "Complejo" 1695813070 0
-  "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" 1695813065 26273 324c0bad95cd165f01a08a482d749a9b ""
+["pdflatex"] 1695991524 "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" "Complejo.pdf" "Complejo" 1695991529 0
+  "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" 1695991524 33328 0fba681d1b85753305b3623db232ba17 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1689853683 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
@@ -14,6 +14,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1689853683 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1689853683 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1689853683 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm" 1689853683 1532 9162035f4e7176612125649e348e2195 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1689853683 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1689853683 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1689853683 1292 296a67155bdbfc32aa9c636f21e91433 ""
@@ -42,6 +43,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/txfonts/txsyb.tfm" 1689853683 988 098ca7e8cc5647b9ac21b82dbdce1f01 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1689853683 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1689853683 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1689853683 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1689853683 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1689853683 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1689853683 32362 179c33bbf43f19adbb3825bb4e36e57a ""
@@ -302,9 +304,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693483020 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693482980 6789704 0b6b6842a96cde863a50a5b0d3663187 ""
-  "Complejo.aux" 1695813069 6877 85f54f6a169005e5e4c5b4f98385e860 "pdflatex"
-  "Complejo.tex" 1695813065 26273 324c0bad95cd165f01a08a482d749a9b ""
-  "Complejo.toc" 1695813069 1060 d42ccc3abd62097ab8796ef2ec6563d5 "pdflatex"
+  "Complejo.aux" 1695991528 6877 e52b0b656be1d8bbf1c3d408ae745764 "pdflatex"
+  "Complejo.tex" 1695991524 33328 0fba681d1b85753305b3623db232ba17 ""
+  "Complejo.toc" 1695991528 1060 d42ccc3abd62097ab8796ef2ec6563d5 "pdflatex"
   "letterfonts.tex" 1679156923 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "macros.tex" 1681218253 3389 93000260d2aea292d29c76d4ace77a29 ""
   "preamble.tex" 1688467328 21628 a33eccc0632c1659945e27830ca806ff ""
