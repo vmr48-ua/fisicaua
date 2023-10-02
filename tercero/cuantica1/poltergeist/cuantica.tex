@@ -1175,14 +1175,66 @@
           Es como si existiera un pozo infinito en nuestro pozo finito, y 
           solamente cuando estamos en un estado de resonancia tenemos transmisión.
         }
+        \clearpage
         \ejemplo{Obtén los coeficientes de reflexión y de transmisión para:
           $E>V$ y $0<E<V$\\
           $V(x)=$
           $\begin{cases}
-            0      & 0<x\\
+            0      & x<0\\
             V>0    & x>0
           \end{cases}$ 
         }{
-          
+          \begin{itemize}
+            
+
+            \item \textbf{Caso 1:} $E>V_0>0$\\
+
+                  Lo primero que vamos a calcular son los coeficientes de reflexión y refracción
+                  $R$ y $T$. 
+                  \begin{enumerate}
+                    \item $\psi_I=A\cdot e^{ikx}+B\cdot e^{-ikx}$ con $k=\dfrac{\sqrt{2mE}}{\hbar}$
+                    \item $\psi_II=C\cdot e^{ilx}$ con $l=\dfrac{\sqrt{2m(E-V_0)}}{\hbar}$
+                  \end{enumerate}
+                  Donde el término con $A$ corresponde con la onda incidente, el de $B$ con la onda
+                  reflejada y el de $C$ con la onda transmitida.\\
+
+                  Como $R=\dfrac{\abs{B}^2}{\abs{A}^2}$ \hspace{0.3cm}y\hspace{0.3cm} $T=\dfrac{l}{k}\dfrac{\abs{C}^2}{\abs{A}^2}$
+                  Ahora aplicamos las condiciones de contorno: 
+                  \begin{itemize}
+                    \item $\psi_{I}(x=0)=\psi_{II}(x=0) \Longleftrightarrow A+B=C$
+                    \item $\psi_{I}^\prime(x=0)=\psi_{II}^\prime(x=0) \Longleftrightarrow ikA-ikB=ilC
+                          \Longleftrightarrow k(A-C+A)=lC\Longleftrightarrow 2kA-kC=lC \Longleftrightarrow$ 
+
+                          $C=\dfrac{2kA}{l+k}\hspace{1cm}D=\dfrac{2kA-lA-kA}{l+k}=\dfrac{k-l}{k+l}A$
+                  \end{itemize}
+                  
+                  Y de aquí obtenemos finalmente los coeficientes: 
+                  \[\boxed{R=\left(\dfrac{k-l}{k+l}\right)^2}\hspace{1.5cm}
+                  \boxed{T=\dfrac{l}{k}\dfrac{4k^2}{(l+k)^2}=\dfrac{4kl}{(l+k)^2}}\]
+
+                  Sabemos que clásicamente $R=0$ y que $T=1$, pero en el caso cuántico no sucede
+                  así ya que existe cierta probabilidad de que exista reflexión aunque la partícula
+                  tenga una energía superior a la del pozo/pared.
+
+                  R en función de la energía: $R=\dfrac{4mE-2mU-4m\sqrt{E(E-U)}}{4mE-2mU+4m\sqrt{E(E-U)}}$
+
+                  La representación de $R$ con $T$ es interesante: %pedir foto
+            \item \textbf{Caso 2:} $E>V_0>0$
+            
+                  \begin{enumerate}
+                    \item $\psi_I=A\cdot e^{ikx}+B\cdot e^{-ikx}$ con $k=\dfrac{\sqrt{2mE}}{\hbar}$\\
+                    
+                    \item $-\dfrac{\hbar^2}{2m}\dfrac{d^2\psi_{II}}{dx^2}+V_0\psi_{II}=E\Longleftrightarrow
+                          -\dfrac{\hbar^2}{2m}\dfrac{d^2\psi_{II}}{dx^2}=E\psi_{II}-V_0\psi_{II}\Longleftrightarrow
+                          -\dfrac{\hbar^2}{2m}\dfrac{d^2\psi_{II}}{dx^2}=-(V_0-E)\psi_{II}\Longleftrightarrow$ \\
+                          
+                          $\dfrac{d^2\psi_{II}}{dx^2}=\dfrac{2m(v_0-E)}{\hbar^2}\psi_{II}\Longleftrightarrow
+                          \dfrac{d^2\psi_{II}}{dx^2}=k^2\psi_{II}$\\
+
+                          Solucion: $\psi_{II}=Ce^{k^\prime x}+De^{-k^\prime x}$\\
+                          pero como hemos de hacer que sea normalizable: $C=0\Longrightarrow \psi_{II}=De^{-k^\prime x}$
+                          Ya que cuando la función $\psi$ se vaya a infinito debe irse a cero.
+                  \end{enumerate}
+        \end{itemize}
         }
 \end{document}
