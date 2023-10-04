@@ -1193,7 +1193,7 @@
                   $R$ y $T$. 
                   \begin{enumerate}
                     \item $\psi_I=A\cdot e^{ikx}+B\cdot e^{-ikx}$ con $k=\dfrac{\sqrt{2mE}}{\hbar}$
-                    \item $\psi_II=C\cdot e^{ilx}$ con $l=\dfrac{\sqrt{2m(E-V_0)}}{\hbar}$
+                    \item $\psi_{II}=C\cdot e^{ilx}$ con $l=\dfrac{\sqrt{2m(E-V_0)}}{\hbar}$
                   \end{enumerate}
                   Donde el término con $A$ corresponde con la onda incidente, el de $B$ con la onda
                   reflejada y el de $C$ con la onda transmitida.\\
@@ -1231,10 +1231,125 @@
                           $\dfrac{d^2\psi_{II}}{dx^2}=\dfrac{2m(v_0-E)}{\hbar^2}\psi_{II}\Longleftrightarrow
                           \dfrac{d^2\psi_{II}}{dx^2}=k^2\psi_{II}$\\
 
-                          Solucion: $\psi_{II}=Ce^{k^\prime x}+De^{-k^\prime x}$\\
-                          pero como hemos de hacer que sea normalizable: $C=0\Longrightarrow \psi_{II}=De^{-k^\prime x}$
+                          Solucion: $\psi_{II}=Ce^{ilx}+De^{-lx}$ con $l=\dfrac{\sqrt{2m(V_0-E)}}{\hbar}$\\
+                          pero como hemos de hacer que sea normalizable: $C=0\Longrightarrow \psi_{II}=De^{-lx}$
                           Ya que cuando la función $\psi$ se vaya a infinito debe irse a cero.
                   \end{enumerate}
+                  Para calcular el coeficiente de refracción y de transmisión usaremos la misma fórmula que
+                  en el primer caso. Para obtener los coeficientes inponemos condiciones de frontera:
+                  \begin{itemize}
+                    \item $\psi_{I}(x=0)=\psi_{II}(x=0) \Longleftrightarrow A+B=D$
+                    \item $\psi_{I}^\prime(x=0)=\psi_{II}^\prime(x=0) \Longleftrightarrow ikA-ikB=-lD
+                          \Longleftrightarrow B(-ik+l)=A(-l-ik) \Longleftrightarrow$ 
+
+                          $B=\dfrac{ik+l}{ik-l}A\Longleftrightarrow R=\dfrac{\abs{\mcJ_{\text{ref}}}}{\abs{\mcJ_{\text{inc}}}}
+                          =\dfrac{\abs{B}^2}{\abs{A}^2}=\dfrac{(l-ik)(l+ik)}{(-ik-l)(ik-l)}=1\Longleftrightarrow 
+                          \hspace{0.3cm}\boxed{T=0}\hspace{0.5cm}\boxed{R=1}$
+                        
+                  \end{itemize}
+                  Hay cierta probabilidad de que la parrtícula se encuentre ahí abajo (entre $0$ y $E$),
+                  pero no se va a transmitir ya que $T=0$. Si tengo un tipo de potencial como un pozo invertido, 
+                  sí que tenndría cierta prababilida de que se transmitiera, pero en el potencial escalón no.\\
+
+                  Otra forma de calcular $T$ es mediante su definición, pero hemos de tener cuidado
+                  de usar la fórmula con $\mcJ$ y no la genérica. Recordamos:
+
+                  $T=\dfrac{\abs{\mcJ_{\text{trans}}}}{\abs{\mcJ_{\text{inc}}}}\hspace{0.8cm}\mcJ_{\text{trans}}=
+                  \dfrac{i\hbar}{2m}\left(\psi_t\dfrac{d\psi_t^*}{dx}-\psi_t^*\dfrac{d\psi_t}{dx}\right)$
+                  y como $\psi_t=De^{-lx}$ es una real, $\Longrightarrow\mcJ_{trans}=0\Longrightarrow$ 
+                  \vspace{-0.5cm}\begin{flushright}$\Longrightarrow\boxed{T=0}$\end{flushright}
         \end{itemize}
         }
+        \ejemplo{$0<E<V_0$}{
+          \subsubsection*{Barrera finita $\text{(pozo)}^{-1}$}
+          \begin{enumerate}
+            \item $\psi_I(x)=Ae^{ikx}+Be^{-ikx}$ incidente y reflejada
+            \item Si planteamos la ecuación: $-\dfrac{\hbar^2}{2m}\dfrac{d^2\psi_{II}}{dx^2}
+                  +V_0\psi_{II}=E\psi_{II}\longrightarrow \psi_{II}(x)=Ce^{lx}+De^{-lx}$ 
+                  exponenciales reales.
+            \item $\psi_{III}(x)=Fe^{ikx}$ transmitida
+          \end{enumerate}
+          Tras unos cálculos arduos, se obtiene para el coeficiente de transmisión:\\
+          \[\boxed{T=\left(1+\dfrac{\sinh^2(\sqrt{2m(V_0-E)\cdot\nicefrac{a}{t}})}
+          {4\nicefrac{E}{V_0}(1-\nicefrac{E}{V_0})}\right)}\]
+
+        }
+  \section{El potencial función delta}
+    \noindent La definición de la función delta es:
+    \[\begin{cases}
+      \begin{aligned}
+        &\delta(x-x_0)=0                &\hspace{0.6cm}\text{para }x\neq x_0\\
+        &\delta(x-x_0)\rightarrow\infty &\hspace{0.6cm}\text{para }x=x_0
+      \end{aligned}
+    \end{cases}\hspace{1cm}\displaystyle\int_{\infty}^{\infty}\delta(x-x_0)\ dx=1
+    \hspace{1cm}f(x)\delta(x-x_0)=f(x_0)\delta(x-x_0)\]
+    %pedir foto
+    Vamos a considerar un potencial centrado en cero. $U(x)=-\alpha \delta(x)$ para el 
+    caso en el que $E<0$. Vamos a tratar de resolver el problema dividiendolo en dos 
+    trozos $I$ y $II$. 
+    \begin{enumerate}
+      \item $-\dfrac{\hbar^2}{2m}\dfrac{d^2\psi_I}{dx^2}=-\abs{E}\phi_I\Longrightarrow
+            \dfrac{d^2\psi_I}{dx^2}=\dfrac{2m\abs{E}}{\hbar^2}\psi_I$, donde 
+            $k^2=\dfrac{d^2\psi_I}{dx^2}=\dfrac{2m\abs{E}}{\hbar^2}$.
+
+            Vemos cómo debo quitar el término asociado a $B$ para que la función sea 
+            normalizable: $\psi_I=Ae^{kx}+Be^{-kx}$
+
+            \textbf{Solución: }$\psi_{I}=Ae^{kx}$
+      \item De manera análoga, $\psi_{II}=Ce^{kx}+De^{-kx}$, solo que esta vez
+            hemos de igualar a cero la constante $C$:
+
+            \textbf{Solución: }$\psi_{II}=De^{-kx}$
+    \end{enumerate}
+    Ahora, vamos a proponer las condiciones de frontera para obtener las constantes:
+    \begin{itemize}
+      \item Continuidad de la función $\phi_I(x=0)=\phi_{II}(x=0)\Longleftrightarrow
+            A=D\hspace{1cm}\psi_I=Ae^{kx}\hspace{0.4cm}\psi_{II}=Ae^{-kx}$
+      \item Continuidad de la primera derivada: no podemos calcularla directamente,
+            pero podemos obtener la ecuación de la primera derivada $\phi^\prime (x)$
+            a partir de la \textit{Ecuación de Shrödinger}.\\
+            $-\dfrac{\hbar^2}{2m}\dfrac{d^2\psi}{dx^2}-\alpha\delta(x)\psi=E\psi$ e 
+            integramos para obtener $\dfrac{d\psi}{dx}$:
+            $-\dfrac{\hbar^2}{2m}\displaystyle\int_{-\epsilon}^{\epsilon}\dfrac{d^2\psi}{dx^2}\ dx
+            +\displaystyle\int_{-\epsilon}^{\epsilon}(-\alpha\delta(x))\psi\ dx=
+            \displaystyle\int_{-\epsilon}^{\epsilon}E\psi\ dx$
+            
+            $-\dfrac{\hbar^2}{2m}\left[\dfrac{d\psi}{dx}|_\epsilon-\dfrac{d\psi}{dx}|_{-\epsilon}\right]
+            -\alpha\displaystyle\int_{-\epsilon}^{\epsilon}\delta(x)\psi(x)\ dx=
+            \displaystyle\int_{-\epsilon}^{\epsilon}E\psi\ dx$ y ahora vamos a tomar
+            el límite:
+
+            $\displaystyle\lim_{\epsilon\rightarrow 0}\left(-\dfrac{\hbar^2}{2m}\left[\dfrac{d\psi}{dx}|_\epsilon-
+            \dfrac{d\psi}{dx}|_{-\epsilon}\right]-\alpha\displaystyle\int_{-\epsilon}^{\epsilon}
+            \delta(x)\psi(x)\ dx=\right)=0$ ya que $\displaystyle\int_{\infty}^{\infty}\delta(x-x_0)\ dx=1$ y 
+            $\displaystyle\int_{-\epsilon}^{\epsilon}\psi\ dx=0$ 
+
+            Y por tanto ya conocemos el valor de la discontinuidad:
+            $\displaystyle\lim_{\epsilon\rightarrow 0}\left(\dfrac{d\psi}{dx}|_\epsilon-
+            \dfrac{d\psi}{dx}|_{-\epsilon}\right)=-\dfrac{2m}{\hbar^2}\alpha\psi(0)$ \\
+            y evaluamos la función $\psi$ donde hayamos evaluado la función delta.
+    \end{itemize}
+    Como conocemos 
+            $\begin{cases}
+              \begin{aligned}
+                &\psi_{I}=Ae^{kx}\\
+                &\psi_{II}=Ae^{-kx}
+              \end{aligned}
+            \end{cases}$\hspace{-0.3cm}
+            $\begin{cases}
+              \begin{aligned}
+                &\dfrac{d\psi_{II}}{dx}=-Ake^{-kx}\\[10pt]
+                &\dfrac{d\psi_{I}}{dx}=kAe^{kx}
+              \end{aligned}
+            \end{cases}$
+            $\hspace{-0.8cm}\Longleftrightarrow-Ak-kA=-\dfrac{2m}{\hbar^2}\alpha\psi(0)\Longleftrightarrow
+            \begin{cases}
+              \begin{aligned}
+                &k=\dfrac{m}{\hbar^2}\alpha\dfrac{\psi(0)}{A}\\[10pt]
+                &\psi(0)=A
+              \end{aligned}
+            \end{cases}\hspace{-0.5cm}\Longleftrightarrow \boxed{k=\dfrac{m\alpha}{\hbar^2}}$\\
+
+            \noindent Lo cual nos dice que hay una única cuantización posible, un único estado ligado cuya
+            energía viene dada por esta relación.
 \end{document}

@@ -18,4 +18,5 @@
 \contentsline {subsubsection}{Solución general}{17}{section.3.1}%
 \contentsline {subsubsection}{Pozo de potencial cuadrado infinito}{18}{tcb@cnt@Example.3.1.2}%
 \contentsline {subsubsection}{Pozo de potencial cuadrado finito}{19}{tcb@cnt@Example.3.1.3}%
+\contentsline {section}{\numberline {3.2}El potencial función delta}{24}{section.3.2}%
 \contentsfinish 
