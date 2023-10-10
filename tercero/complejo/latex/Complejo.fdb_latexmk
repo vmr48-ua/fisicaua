@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1695991524 "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" "Complejo.pdf" "Complejo" 1695991529 0
-  "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" 1695991524 33328 0fba681d1b85753305b3623db232ba17 ""
+["pdflatex"] 1696416770 "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" "Complejo.pdf" "Complejo" 1696416776 0
+  "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" 1696416770 39569 c6ca107602f270bfa3c2db20d1033f1b ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1689853683 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
@@ -295,6 +295,7 @@
   "/usr/share/texmf-dist/tex/latex/transparent/transparent-nometadata.sty" 1689853683 4212 8da4873548cbd3f1cdb053c708e8aa7e ""
   "/usr/share/texmf-dist/tex/latex/transparent/transparent.sty" 1689853683 1918 c8d1ecb3722721d6f624992cbc042b70 ""
   "/usr/share/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1689853683 1380 971a51b00a14503ddf754cab24c3f209 ""
+  "/usr/share/texmf-dist/tex/latex/units/nicefrac.sty" 1689853683 4029 0462ee5ab265cf59dc15a41a3b883101 ""
   "/usr/share/texmf-dist/tex/latex/url/url.sty" 1689853683 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty" 1689853683 10894 d359a13923460b2a73d4312d613554c8 ""
   "/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty" 1689853683 26220 3701aebf80ccdef248c0c20dd062fea9 ""
@@ -304,12 +305,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693483020 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693482980 6789704 0b6b6842a96cde863a50a5b0d3663187 ""
-  "Complejo.aux" 1695991528 6877 e52b0b656be1d8bbf1c3d408ae745764 "pdflatex"
-  "Complejo.tex" 1695991524 33328 0fba681d1b85753305b3623db232ba17 ""
-  "Complejo.toc" 1695991528 1060 d42ccc3abd62097ab8796ef2ec6563d5 "pdflatex"
+  "Complejo.aux" 1696416775 6877 4afd40d2c3413ba0e872e6f7218ccac1 "pdflatex"
+  "Complejo.tex" 1696416770 39569 c6ca107602f270bfa3c2db20d1033f1b ""
+  "Complejo.toc" 1696416775 1060 d42ccc3abd62097ab8796ef2ec6563d5 "pdflatex"
   "letterfonts.tex" 1679156923 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "macros.tex" 1681218253 3389 93000260d2aea292d29c76d4ace77a29 ""
-  "preamble.tex" 1688467328 21628 a33eccc0632c1659945e27830ca806ff ""
+  "preamble.tex" 1696416390 21650 197ea976be039d696899f987fa6bf3b3 ""
   (generated)
   "Complejo.aux"
   "Complejo.log"

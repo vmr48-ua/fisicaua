@@ -632,5 +632,113 @@
       Ya que $f(z)=e^z$ entera.
 
     }
+    \definicion{Índice de un camino cerrado}{
+      Sea $\gamma$ un camino cerrado y $z_0\in\gamma^*$, se define el \textit{índice de }$z_0$ 
+      respecto del camino $\gamma$ y se denota por $n(\gamma,z_0)$:
+      \[n(\gamma, z_0)=\dfrac{1}{2\pi i}\int_{\gamma}\dfrac{dz}{z-z_0}\]
+      Geométricamente, $n(\gamma,z_0)$ representa el número de vueltas completas en sentido 
+      antihorario que da un camino cerrado $\gamma$ alrededor de $z_0$.
+    }
+    \comentario{
+      Para justificar la afirmación anterior, observemos que si $\gamma_1$ es una circunferencia
+      de centro $z_0$ y radio $r>0$ recorrida $n$ veces en sentido antihorario, entonces
+      \[\gamma(t)=z_0+re^{it}\hspace{0.4cm}\text{ con }0\leq t\leq 2\pi n\]
+      \[\implies n(\gamma_1,z_0)=\dfrac{1}{2\pi i}\displaystyle\int_{\gamma_1}\dfrac{dz}{z-z_0}=
+      \dfrac{1}{2\pi i}\displaystyle\int_{0}^{2\pi n}\dfrac{1}{z_0+re^{it}-z_0}rie^{it}\ dt
+      =\dfrac{1}{2\pi i}\displaystyle\int_{0}^{2\pi n}t\ dt=\dfrac{2\pi n}{2\pi}=n\]\\
 
+      Y además si $z_1\notin \ovl{D}(z_0,r)\implies n(\gamma_1,z_0)=\dfrac{1}{2\pi i}
+      \displaystyle\int_{\gamma_1}\dfrac{dz}{z-z_1}=0$ siempre que $\dfrac{1}{z-z_1}$ sea
+      holomorfa en $D(z_0,r)$
+    }
+    \teorema{Propiedades del índice de un camino cerrado}{
+      Sea $\gamma\colon[a,b]\rightarrow\bbC$ un camino cerrado y $z_0\notin\gamma^*$, si
+      se cumple que:
+      \begin{enumerate}
+        \item El índice $n(\gamma, z_0)$ es un número entero.
+        \item $n(\gamma,z_0)=n(\gamma-z_0,0)$
+        \item $n(-\gamma,z_0)=-n(\gamma,z_0)$
+        \item La funicoń $z\rightarrow n(\gamma,z)$, $z\notin\gamma^*$ es constante en cada
+              componente conexa de $\bbC\setminus\gamma^*$
+        \item $n(\gamma,z)=0$ $\forall z$ en la componente conexa no acotada de $\bbC\setminus\gamma^*$
+      \end{enumerate}
+    }
+    \teorema{}{
+      Sea $f\colon U\rightarrow\bbC$ una función holomorfa en un conjunto abierto $U$
+      y sea $\gamma$ un camino cerrado en $U$ tal que $n(\gamma,z)=0$ $\forall z\in\bbC
+      \notin U$, entonces:
+      \[\int_\gamma f(z)\ dz=0\]
+    }
+    \comentario{
+      \textbf{Prueba:}
+
+      Sea $\gamma$ un camino cerrado en $U$ tal que $n(\gamma, z)\implies \forall z\in\bbC\setminus U$
+      Fijemos un $z_0\in U\setminus\gamma^*$, si tomamos $g(w)=(w-z_0)f(w)$ $\forall w\in U$,
+      entonces $g$ es holomorfa en $U$ y por la \textit{fórmula integral de Cauchy}, tenemos que:
+      \[n(\gamma,z)g(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{g(w)}{w-z}\ dw\]
+      En particular, para $z=z_0$ tenemos que:
+      \[0=\dfrac{1}{2\pi i}\int_\gamma f(w)\ dw\implies\boxed{\int_\gamma f(w)\ dw=0}\]
+    }
+    \teorema{}{
+      Sea $\gamma$ un camino cerrado en un conjunto abierto $U\in\bbC$, se cumple que
+      \[\int_\gamma f(z)\ dz=0\]
+      para cada función $f\colon U\rightarrow\bbC$ holomorfa en $U$. Si y solo si $n(\gamma,z)=0$ $\forall z\in\bbC\setminus U$.
+    }
+    \comentario{
+      \textbf{Prueba:}
+
+      Sea $\gamma$ un camino cerrado en $U$ y supongamos que existe $z_0\in\bbC\setminus U$
+      tal que $n(\gamma,z_0)\neq 0$, entonces
+      \[0\neq n(\gamma,z_0)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{dz}{z-z_0}\]
+      Pero esto es un absurdo ya que la función $g(z)=\dfrac{1}{z-z_0}$, con $z\in U$ es 
+      holomorfa en $U$ y por hipótesis se debería cumplir $\int_\gamma g(z)\ dz=0$
+    }
+    \teorema{Fórmula Integral de Cauchy}{
+      Sea $f\colon U\rightarrow\bbC$ una función holomofa en un abierto $U$ y sea $\gamma$
+      un camino cerrado en $U$ tal que $n(\gamma,z)=0$ $\forall z\in\bbC\setminus U$, entonces:
+      \[n(\gamma,z)f(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{f(w)}{w-z}\ dw\hspace{0.3cm}\forall z\in U\setminus\gamma^*\]
+      \[n(\gamma,z)f^{(n)}(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{f(w)}{w-z}\ dw\hspace{0.3cm}\forall z\in U\setminus\gamma^*\]
+    }
+    \ejemplo{Sea $\gamma$ el camino cerrado que vemos en la figura calcular $\int_\gamma
+    \dfrac{e^{i(z-1)}}{z}\ dz$ con $z_2=0$}{
+      Sabemos que $n(\gamma,0)=1\implies$ y que $f(z)=e^{i(z-1)}$
+      $\int_\gamma\dfrac{e^{i(z-1)}}{z}\ dz=2\pi in(\gamma,0)f(0)=2\pi if(0)=2\pi ie^{-1}$
+    }
+    \teorema{Principio de Reflexión de Schwarz}{
+      Sea $f$ una función holomorfa en el semiplano superior abierto, $\bbC^+=\left\{z\in\bbC,\ Im(z)>0\right\}$
+      y continua en $\bbC^+ U\cup\bbR$. Supongamos que $Im(f(z))=0$ $\forall z\in\bbR$, entonces
+      $f$ puede ser extendedia de forma holomorfa a $\bbC$ a través de
+      \[f^*(z)=\begin{cases}\begin{aligned}
+        f(z)\text{ si }z\in\bbC^+\cap\bbR\\
+        \ovl{f(z)}\text{ si }z\notin\bbC^+\cap\bbR
+      \end{aligned}\end{cases}\]
+      Es decir, si tenemos una función acotada y derivable entonces es constante.
+    }
+    \corolario{Estimación de Cauchy}{
+      Sea $f\colon U\rightarrow\bbC$ una función holomorfa en un conjunto abierto $U\supset D(z_0,R)$
+      para algún $z_0\in\bbC$ y $R>0$. Para cada $0<r<R$, consideremos la notación $M_f(r)=
+      max\left\{\abs{f(z)}\abs{z-z_0}=r\right\}$ entonces
+      \[\abs{f^{(n)}(z_0)}\leq \dfrac{n!}{r^n}M_f(r),\hspace{0.5cm}n\in\bbN\cup\left\{0\right\}\]
+    }
+    \comentario{
+      \textbf{Prueba:}
+
+      Aplicamos la fórmula integral de Cauchy para las derivadas 
+      \[f^{(n)}(z_0)=\dfrac{n!}{2\pi i}\int_{C_r}\dfrac{f(z)}{(z-z_0)^{n+1}}\ dz\hspace{0.3cm}n\in\bbN\cup\left\{0\right\}\]
+      siendo $c_r=\left\{z\in\bbC\colon\abs{z-z_0}=r\right\}$ Ahora, tomamos módulos, llegamos a 
+      \[f^{(n)}(z_0)=\dfrac{n!}{2\pi}\abs{\int_{C_r}\dfrac{f(z)}{(z-z_0)^{n+1}}}\ dz=
+      \dfrac{n!}{2\pi}\dfrac{M_f(r)}{r^{n+1}}2\pi r=\dfrac{n!}{r^n}M_f(r)\]
+    }
+    \teorema{Liouville}{
+      Sea $f\colon\bbC\rightarrow\bbC$ una función entera y acotada, entonces $f$ es constante.
+    }
+    \comentario{
+      \textbf{Prueba:}
+
+      Dado que $f$ es una función acotada en $\bbC\implies\exists M>0$ tal que $\abs{f(z)}
+      <M$ $\forall z\in\bbC$. Así, por la estimación de Cauchy para la primera derivada aplicada a cualquier
+      valor del parámetro $r>0$, se deduce que $\abs{f^\prime(z)}\leq\nicefrac{M}{r}$, $z\in\bbC$
+      Dado que $M$ no depende de $r$, se deduce que $f^\prime(z)=0$ $\forall z\in\bbC\implies
+      f(z)=cte$
+    }
 \end{document}

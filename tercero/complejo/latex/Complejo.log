@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  29 SEP 2023 14:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  4 OCT 2023 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -408,7 +408,14 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@delta=\dimen193
 \TX@cols=\count294
 \TX@ftn=\toks38
-) (/usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
+) (/usr/share/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip63
+\L@UnitsRaiseTextstyle=\skip64
+\L@UnitsRaiseScriptstyle=\skip65
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)) (/usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 \c@float@type=\count295
 \float@exts=\toks39
@@ -421,28 +428,28 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \FB@wd=\dimen194
 \FBo@wd=\dimen195
 \FBc@wd=\dimen196
-\FBo@ht=\skip63
-\FBc@ht=\skip64
-\FBf@ht=\skip65
-\FBo@max=\skip66
-\FBc@max=\skip67
-\FBf@max=\skip68
+\FBo@ht=\skip66
+\FBc@ht=\skip67
+\FBf@ht=\skip68
+\FBo@max=\skip69
+\FBc@max=\skip70
+\FBf@max=\skip71
 \c@FBl@b=\count296
 \floatbox@depth=\count297
 \c@FRobj=\count298
 \c@FRsobj=\count299
-\Xhsize=\skip69
-\sXhsize=\skip70
-\Zhsize=\skip71
-\sZhsize=\skip72
+\Xhsize=\skip72
+\sXhsize=\skip73
+\Zhsize=\skip74
+\sZhsize=\skip75
 \flrow@rowbox=\box64
 \FR@Zunitlength=\dimen197
 \c@FBcnt=\count300
 \FPOScnt=\count301
-\LTleft=\skip73
-\LTright=\skip74
-\LTleft=\skip75
-\LTright=\skip76
+\LTleft=\skip76
+\LTright=\skip77
+\LTleft=\skip78
+\LTright=\skip79
 \flrow@types=\toks41
 ) (/usr/share/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
@@ -554,13 +561,13 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip77
+\Hy@SectionHShift=\skip80
 ) (/usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count313
 )) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip78
+\labelindent=\skip81
 \enit@outerparindent=\dimen258
 \enit@toks=\toks42
 \enit@inbox=\box65
@@ -570,9 +577,9 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 Package: theoremref 2013/05/22 References with automatic theorem names
 \thmref@num=\count316
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 49.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 49.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 49.
+Package hyperref Info: Option `colorlinks' set `true' on input line 50.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 50.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 50.
  (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
  (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -896,8 +903,8 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \page@free=\dimen320
 \premulticols=\dimen321
 \postmulticols=\dimen322
-\multicolsep=\skip79
-\multicolbaselineskip=\skip80
+\multicolsep=\skip82
+\multicolbaselineskip=\skip83
 \partial@page=\box93
 \last@line=\box94
 \maxbalancingoverflow=\dimen323
@@ -965,10 +972,7 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count366
- (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
-\algocf@hangindent=\skip81
+\algocf@hangindent=\skip84
  (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
 \c@checkoddpage=\count367
@@ -977,36 +981,36 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/share/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip82
-\skiplinenumber=\skip83
-\skiprule=\skip84
-\skiphlne=\skip85
-\skiptext=\skip86
-\skiplength=\skip87
-\algomargin=\skip88
-\skipalgocfslide=\skip89
+\skiptotal=\skip85
+\skiplinenumber=\skip86
+\skiprule=\skip87
+\skiphlne=\skip88
+\skiptext=\skip89
+\skiplength=\skip90
+\algomargin=\skip91
+\skipalgocfslide=\skip92
 \algowidth=\dimen331
 \inoutsize=\dimen332
 \inoutindent=\dimen333
 \interspacetitleruled=\dimen334
 \interspacealgoruled=\dimen335
 \interspacetitleboxruled=\dimen336
-\algocf@ruledwidth=\skip90
+\algocf@ruledwidth=\skip93
 \algocf@inoutbox=\box137
 \algocf@inputbox=\box138
-\AlCapSkip=\skip91
-\AlCapHSkip=\skip92
-\algoskipindent=\skip93
+\AlCapSkip=\skip94
+\AlCapHSkip=\skip95
+\algoskipindent=\skip96
 \algocf@nlbox=\box139
 \algocf@hangingbox=\box140
 \algocf@untilbox=\box141
-\algocf@skipuntil=\skip94
+\algocf@skipuntil=\skip97
 \algocf@capbox=\box142
-\algocf@lcaptionbox=\skip95
-\algoheightruledefault=\skip96
-\algoheightrule=\skip97
-\algotitleheightruledefault=\skip98
-\algotitleheightrule=\skip99
+\algocf@lcaptionbox=\skip98
+\algoheightruledefault=\skip99
+\algoheightrule=\skip100
+\algotitleheightruledefault=\skip101
+\algotitleheightrule=\skip102
 \c@algocfline=\count368
 \c@algocfproc=\count369
 \c@algocf=\count370
@@ -1048,8 +1052,8 @@ Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color 
 )) (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box147
-\beforetitleunit=\skip100
-\aftertitleunit=\skip101
+\beforetitleunit=\skip103
+\aftertitleunit=\skip104
 \ttl@plus=\dimen342
 \ttl@minus=\dimen343
 \ttl@toksa=\toks61
@@ -1551,7 +1555,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 634--634
 
  []
 
-[14] [15] (./Complejo.aux
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 653--653
+
+ []
+
+[15] [16] [17] (./Complejo.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1564,18 +1573,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 41801 strings out of 477923
- 826014 string characters out of 5838288
+ 41891 strings out of 477923
+ 827907 string characters out of 5838288
  1890388 words of memory out of 5000000
- 61149 multiletter control sequences out of 15000+600000
+ 61219 multiletter control sequences out of 15000+600000
  546683 words of font info for 132 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,11n,102p,578b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,102p,578b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on Complejo.pdf (16 pages, 308182 bytes).
+Output written on Complejo.pdf (18 pages, 329019 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
- 111 named destinations out of 1000 (max. 500000)
- 395 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 492 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 455 words of extra memory for PDF output out of 10000 (max. 10000000)
 

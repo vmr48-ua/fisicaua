@@ -1,4 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1}El cuerpo de los números complejos}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Definiciones básicas}{3}{section.1.1}%
-\contentsfinish 
