@@ -741,4 +741,29 @@
       Dado que $M$ no depende de $r$, se deduce que $f^\prime(z)=0$ $\forall z\in\bbC\implies
       f(z)=cte$
     }
+    \teorema{Fundamental del Álgebra}{
+      Todo polinomio $p(z)$ no constante tiene al menos una raíz.\\
+      Donde $p(z)=a_n z^n+a_{n-1}z^{n-1}+\dots+a_1 z+a_0$
+    }
+    \comentario{
+      \textbf{Prueba:}
+      Por Reducción al Absurdo, supongamos que $p(z)$ no tiene raíces.\\
+      Entonces $f(z)=\dfrac{1}{p(z)}$ es una función entera (holomorfa en $\bbC$).
+      Además, como $\abs{p(z)}\rightarrow\infty$ cuando $\abs{z}\rightarrow \infty$
+      $\Longrightarrow \exists M>0\colon\abs{p(z)}>1\forall z\colon\abs{z}>M\Longrightarrow
+      \abs{f(z)}=\dfrac{1}{\abs{p(z)}}<1\forall z\colon\abs{z}>M\Longrightarrow 
+      \text{ f acotada en }\bbC$\\
+      Y por el teorema de Liouville, $f\equiv$ cte
+    }
+    \corolario{}{
+      Sea $p(z)$ un polinomio de grado $n\geq 1$, entonces $p(z)$ tiene
+      $n$ raíces complejas.
+    }
+    \teorema{Gauss-Lucas}{
+      Sea $p(z)$ un polinomio no constante con coeficientes complejos,
+      los ceros de $p^\prime (z)$ están en la clausura convexa de los ceros de $p(z)$.\\
+      
+      \textit{(Una clausura convexa de laso raíces es el conjunto convexo más pequeño que incluye
+      a las raíces).}
+    }
 \end{document}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<jnlp 
+  spec="1.0+" 
+  codebase="http://www.ub.es/javaoptics/applets" 
+  href="rayEs.jnlp"> 
+  <information> 
+    <title>Sistemas Opticos</title> 
+    <vendor>Universitat de Barcelona. GID Optica Fisica i Fotonica</vendor> 
+    <homepage href="index_app.html"/> 
+    <description>Sistemas Opticos</description> 
+    <description kind="short">Sistemas Opticos</description> 
+    <icon href="rayIcon.jpg" width="128" height="128" /> 
+    <offline-allowed/> 
+  </information> 
+  <security>
+  <all-permissions/>
+ </security> 
+  <resources> 
+    <j2se version="1.3+"/> 
+    <jar href="ray.jar"/> 
+  </resources> 
+  <applet-desc name="Sistemas Opticos" 
+  main-class="Sistema"
+  width="800" height="520">
+  <param name="llengua" value="1">
+  /applet-desc> 
+</jnlp> 
+
