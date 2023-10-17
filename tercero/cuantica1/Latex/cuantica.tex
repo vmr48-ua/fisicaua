@@ -1560,6 +1560,7 @@
     que aparecen tras imponer la condición de normalización de la función
     de onda.
 \chapter{Formalismo}
+  \vspace{0.3cm}
   \noindent En este apartado no solo nos basamos en el \textit{Griffths}, si no
   también en el \textit{Sakarui y Napolitano (Cambridge)} y el 
   \textit{Binney, Skinner (Oxford)}. 
@@ -1567,11 +1568,14 @@
   la función de onda de \textit{Schrödinger}. Ahora vamos a ver el
   enfoque algebraico de \textit{Heisemberg}, que aunque resulta más abstracto,
   a veces proporciona soluciones más simples.
+  \vspace{0.2cm}
   \section{Introducción}
+    \vspace{0.2cm}
     \definicion{Notación de Dirac}{
       Llamamos ket a $\ket{\alpha}$, que representa un estado físico mediante
       a un vector de un espacio vectorial complejo, el \textit{Espacio de Hilbert}.
     }
+    \vspace{0.2cm}
     \teorema{Propiedades de un Ket}{
       \begin{enumerate}
         \item Suma: $\ket{\alpha}+\ket{\beta}=\ket{\gamma}$
@@ -1584,43 +1588,7 @@
               $\left(c+d\right)\ket{\alpha}=c\ket{\alpha}+d\ket{\alpha}$
       \end{enumerate}
     }
-    \noindent Vamos a definir un operador \textit{hermítico} asociado a un observable: $\hat{Q}$
-    \definicion{Autoestados (autovectores) y autovalores}{
-      Cuando aplicamos el operador $\hat{Q}$ a un estado y el resultado es que
-      un escalar multiplica al estado, llamamos al escalar autovalor y al estado
-      autoestado.
-      \begin{equation}
-        \hat{Q}\ket{q}=q^\prime\ket{q}
-      \end{equation}
-      Donde $\ket{q}$ son los autovectores y $q^\prime$ los autovalores.
-    }
-    \definicion{Espectro de energías}{
-      Cuando tenemos varios autovectores (y autovalores asociados), llamamos
-      \textit{Espectro} al conjunto de todos los autovectores:
-      \begin{equation}
-        \left\{q_1,q_2,\dots,q_N\right\}=\left\{q_i\right\}
-      \end{equation}
-      Estos autovectores deben ser \textbf{ortonormales}, es decir, su norma debe ser uno, y
-      deben ser ortogonales entre si.
-      Cualquier estado $\ket{\alpha}$ se puede escribir como combinación lineal
-      de $\left\{\ket{q_i}\right\}$ formando una base:
-      \begin{equation}
-        \ket{\alpha}=\sum_i^n C_i\ket{q_i}
-      \end{equation}
-    }
-    
-    \noindent Como estamos en un espacio dual, sabemos que cada Ket va a tener un estado
-    conjugado que llamaremos Bra. De esta forma, $\bra{\alpha}\hat{Q}\ket{\alpha}$ 
-    es un Bra-Ket, que representa un valor esperado. Análogamente, si tenemos 
-    $c\ket{\alpha}$ y queremos hacer su conjugado, obtenemos $c^*\bra{\alpha}$.\\
-
-    \noindent Podemos escribir un estado en términos de una base, en términos de $q_i$
-    ya que si pensamos en $\ket{\alpha}$ como en un vector columna $\vec{A}=
-    a_1\vec{i}+a_2\vec{j}$ se mantiene la ortonormalidad y nos damos cuenta
-    de que podemos escribir $\vec{A}=\left(a_1,a_2\right)$ y por 
-    tanto $\ket{\alpha}=\left(a_1,a_2,\dots\right)$. Análogamente 
-    $\bra{\alpha}=(a_1^*,a_2^*,\dots)$
-    
+    \vspace{0.2cm}
     \definicion{Producto interno}{
       El producto interno es el equivalente al producto escalar en nuestro
       espacio dual. Se define como:
@@ -1629,6 +1597,8 @@
       \end{equation}
       Notando que el resultado será un escalar complejo.
     }
+    \vspace{0.2cm}
+    \clearpage
     \teorema{Propiedades del producto interno}{
       \begin{enumerate}
         \item $\braket{\beta}{\alpha}=\braket{\alpha}{\beta}^*$
@@ -1658,4 +1628,159 @@
               \sum_i c_i\braket{q_n}{q_i}=c_n$
       \end{enumerate}
     }
+
+  \vspace{0.3cm}
+  \section{Operadores y observables}
+    \subsection{Autovectores y autovalores}
+      \noindent Vamos a definir un operador \textit{hermítico} asociado a un observable: $\hat{Q}$
+      \definicion{Autoestados (autovectores) y autovalores}{
+        Cuando aplicamos el operador $\hat{Q}$ a un estado y el resultado es que
+        un escalar multiplica al estado, llamamos al escalar autovalor y al estado
+        autoestado.
+        \begin{equation}
+          \hat{Q}\ket{q}=q^\prime\ket{q}
+        \end{equation}
+        Donde $\ket{q}$ son los autovectores y $q^\prime$ los autovalores.
+      }
+      
+      \vspace{0.2cm}
+      \noindent Como estamos en un espacio dual, sabemos que cada Ket va a tener un estado
+      conjugado que llamaremos Bra. De esta forma, $\bra{\alpha}\hat{Q}\ket{\alpha}$ 
+      es un Bra-Ket, que representa un valor esperado. Análogamente, si tenemos 
+      $c\ket{\alpha}$ y queremos hacer su conjugado, obtenemos $c^*\bra{\alpha}$.\\
+
+      \noindent Podemos escribir un estado en términos de una base, en términos de $q_i$
+      ya que si pensamos en $\ket{\alpha}$ como en un vector columna $\vec{A}=
+      a_1\vec{i}+a_2\vec{j}$ se mantiene la ortonormalidad y nos damos cuenta
+      de que podemos escribir $\vec{A}=\left(a_1,a_2\right)$ y por 
+      tanto $\ket{\alpha}=\left(a_1,a_2,\dots\right)$. Análogamente 
+      $\bra{\alpha}=(a_1^*,a_2^*,\dots)$
+
+      \definicion{Espectro de energías}{
+        Cuando tenemos varios autovectores (y autovalores asociados), llamamos
+        \textit{Espectro} al conjunto de todos los autovectores:
+        \begin{equation}
+          \left\{q_1,q_2,\dots,q_N\right\}=\left\{q_i\right\}
+        \end{equation}
+        Estos autovectores deben ser \textbf{ortonormales}, es decir, su norma debe ser uno, y
+        deben ser ortogonales entre si.
+        Cualquier estado $\ket{\alpha}$ se puede escribir como combinación lineal
+        de $\left\{\ket{q_i}\right\}$ formando una base:
+        \begin{equation}
+          \ket{\alpha}=\sum_i^n C_i\ket{q_i}
+        \end{equation}
+      }
+    \subsection{Operadores}
+      \definicion{Construcción de un operador}{
+        Cuando multiplicamos un Ket con un Bra obtenemos un operador:
+        \begin{equation}
+          \hat{X}=\ket{\alpha}\bra{\beta}
+        \end{equation}
+      }
+      \noindent Podemos comprobar que $\hat{X}$ es un operador aplicandolo a un estado
+      $\ \ \hat{X}\ket{\gamma}=\ket{\alpha}\braket{\beta}{\gamma}=c\ket{\alpha}$ con $c\in\bbC$
+      \definicion{Operador hermítico}{
+        Si consideramos el operador conjugado al que hemos definido:
+          \[\hat{X}^\dagger=\ket{\beta}\bra{\alpha}\]
+        Y en general, $\hat{X}\neq\hat{X}^\dagger$, excepto para los \textbf{operadores hermíticos}:
+        \begin{equation}
+          \hat{X}=\hat{X}^\dagger
+        \end{equation}
+      }
+      \definicion{Operadores}{
+        \subsubsection*{Operador Identidad}
+          Tomando la base $\left\{\ket{q_i}\right\}$ definimos como operador identidad:
+          \begin{equation}
+            \hat{I}=\sum_i\ket{q_i}\bra{q_i}
+          \end{equation}
+          \noindent Si aplicamos el operador identidad a un estado $\ket{\alpha}$:
+          \[\hat{I}\ket{\alpha}=\sum_i\ket{q_i}\braket{q_i}{\alpha}=\sum_i\ket{q_i}c_i=\sum_i c_i\ket{q_i}=\ket{\alpha}\]
+        \subsubsection*{Operador Hamiltoniano}
+          Tomando la base $\left\{\ket{E_i}\right\}$ (cuyos autovalores asociados son $\left\{E_i\right\}$) definimos como operador hamiltoniano:
+          \begin{equation}
+            \hat{H}=\sum_i E_i\ket{E_i}\bra{E_i}
+          \end{equation}
+          \noindent Si aplicamos el operador hamiltoniano a un estado cuya energía está definida:
+          \[\hat{H}\ket{E_i}=E_i\ket{E_i}\]
+      }
+      \comentario{
+      Destacar que no podemos aplicar este operador a un estado cuya energía no está
+      definida y sea una superposición de energías. Vamos a ver qué obtenemos cuando calculamos:
+      $\bra{\alpha}\hat{H}\ket{\alpha}$:\\
+      \[\ket{\alpha}\displaystyle\sum_i E_i\ket{E_i}\braket{E_i}{\alpha}
+      =\ket{\alpha}
+      \displaystyle\sum_i E_i\ket{E_i}c_i=\displaystyle\sum_i \braket{\alpha}{E_i}c_i=\displaystyle\sum_i c_i^*c_i=
+      \sum_i E_i\cdot c_i^*c_i=\displaystyle\sum_i E_i\cdot\abs{c_i}^2=\displaystyle\sum_i E_i\cdot P_i=\langle E\rangle\]
+      }
+
+    \subsection{Resultados en cuántica}
+      \definicion{Valor esperado}{
+      Por lo que podemos decir que el valor esperado del observable $Q$
+      para el sistema en el estado $\ket{\alpha}$ es $\bra{\alpha}\hat{Q}\ket{\alpha}=\langle Q\rangle$
+      y vemos que epara que sea real entonces $\bra{\alpha}\hat{Q}\ket{\alpha}=\bra{\alpha}\hat{Q}\ket{\alpha}^*
+      \Longleftrightarrow \hat{Q}=\hat{Q}^\dagger$
+      }
+
+      \noindent En general, \[\bra{\alpha}\hat{Q}\ket{\alpha}=\bra{\alpha}\hat{Q}^\dagger\ket{\alpha}=
+      \left\{\bra{\beta}\hat{Q}^\dagger\ket{\beta}\right\}^*\Longleftrightarrow
+      \begin{aligned}
+        \bra{\alpha}\hat{Q}\ket{\beta}=\bra{\beta}\hat{Q}^\dagger\ket{\alpha}^*\\
+        \bra{\alpha}\hat{Q}\ket{\alpha}=\bra{\alpha}\hat{Q}^\dagger\ket{\beta}^*
+      \end{aligned}\]
+      \noindent Y para que $\bra{\alpha}\hat{Q}\ket{\beta}=\bra{\alpha}\hat{Q}\ket{\beta}^*$ entonces hemos de 
+      imponer que $\hat{Q}=\hat{Q}^\dagger$, que el operador ha de ser hermítico.
+
+      \subsubsection{Colapso de la función de onda}
+        \noindent Si al medir un estado $\ket{\alpha}=\sum_i c_i\ket{q_i}$ obtengo $q_i$, entonces
+        la función de onda colapsa y $\ket{\alpha}\rightarrow\ket{q_i}$
+        
+        \noindent El postulado fundamental de la mecánica cuántica es entonces:
+        \[\boxed{\abs{c_i}^2=\abs{\braket{q_i}{\alpha}}^2\rightarrow\text{ probabilidad si }\braket{\alpha}{\alpha}= 1}\]
+        % \teorema{Propiedades del operador hermítico}{
+        %   ¿?
+        % }
+    \section{Representación matricial}
+    \noindent Consideramos una base $\left\{\ket{q_i}\right\}$ ortonormales, escribimos
+    $\ket{\alpha}$ en función de sus componentes en la base $\left\{\ket{q_i}\right\}$ 
+    de forma que $\braket{\alpha}{\beta}=\begin{matrix}a_1^*b_1+a_2^*b_2+\dots\end{matrix}$
+    \[\ket{\alpha}=\left(\begin{matrix}a_1\\ a_2\\ \vdots\end{matrix}\right)\hspace{1cm}\bra{\alpha}=\left(\begin{matrix}a_1^* &a_2^* &\dots\end{matrix}\right)
+    \hspace{1cm}\ket{\alpha}\bra{\beta}=\left(\begin{matrix}a_1\\a_2\\\vdots\end{matrix}\right)\left(\begin{matrix}b_1^* &b_2^* &\dots\end{matrix}\right)=
+    \left(\begin{matrix}a_1b_1^* &a_1b_2^* &\dots\\ a_2b_1^* &a_2b_2^* &\dots\\ \vdots &\vdots &\vdots \end{matrix}\right)=
+    \left(\begin{matrix}m_{11} &m_{12} & \dots\\m_{21} &m_{22} & \dots\\ \vdots &\vdots &\vdots\end{matrix}\right)\]
+
+    \ejemplo{Supongamos una partícula con dos estados posibles $\ket{0}$ y $\ket{1}$}{
+      De esta forma, cualquier otro estado se podrá escribir como combinación
+      lineal de estos dos estados: $\ket{\alpha}=c_1\ket{0}+c_2\ket{1}$. 
+      Si queremos realizar la representación matricial hemos de usar los datos que
+      conocemos:\\
+
+      \begin{minipage}{.25\linewidth}
+        \begin{itemize}
+          \item $\braket{0}{0}=\braket{1}{1}=1$
+          \item $\braket{0}{1}=\braket{1}{0}=0$
+        \end{itemize}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.66\linewidth}
+        Una posible representación será:
+        \hspace{1cm}$\ket{0}=\left(\begin{matrix}1\\0\end{matrix}\right)\hspace{0.5cm}\ket{1}=\left(\begin{matrix}0\\1\end{matrix}\right)$
+      \end{minipage}\\[5pt]
+
+      Y podemos comprobar que se mantiene la estructura $\ket{\alpha}=c_1\ket{0}+c_2\ket{1}$ y el operador identidad:
+      \[\braket{0}{0}=\left(\begin{matrix}1&0\end{matrix}\right)\left(\begin{matrix}1\\0\end{matrix}\right)=1\Longleftrightarrow
+      \boxed{\ket{\alpha}=\left(\begin{matrix}c_1\\c_2\end{matrix}\right)=c_1\left(\begin{matrix}1\\0\end{matrix}\right)+c_2\left(\begin{matrix}0\\1\end{matrix}\right)}\]
+      \[\hat{I}=\sum_i\ket{q_i}\bra{q_i}=\ket{1}\bra{1}+\ket{0}\bra{0}=
+      \left(\begin{matrix}1\\0\end{matrix}\right)\left(\begin{matrix}1&0\end{matrix}\right)+
+      \left(\begin{matrix}0\\1\end{matrix}\right)\left(\begin{matrix}0&1\end{matrix}\right)=
+      \left(\begin{matrix}1&0\\0&0\end{matrix}\right)+\left(\begin{matrix}0&0\\0&1\end{matrix}\right)=
+      \left(\begin{matrix}1&0\\0&1\end{matrix}\right)=I\]
+      \[\hat{I}=\left(\begin{matrix}i_{11}&i_{12}\\i_{21}&i_{22}\end{matrix}\right)\Longleftrightarrow
+      \begin{aligned}i_{11}=\bra{0}\hat{I}\ket{1}\\
+                    i_{12}=\bra{1}\hat{I}\ket{0}\end{aligned}\]
+    }
+    \subsubsection{Representación en posiciones. Conexión con la función de onda}
+        \noindent $\ket{\Psi}$ nos da el estado de la partícula en general. Queremos escribir este vector en función de estados con energía definida (estados discretos con coeficientes asociados a la probabilidad). \\
+
+        \noindent Ahora los autovectores no serán estados de energía, sino estados de posición, que nos representarán el estado de la partícula en la posición x. Esto ya no es discreto (vs energías), sino que cambia de forma continua (la posición no presenta discontinuidades). En lugar de hacer una suma tendremos que hacer una integral.
+        \[\ket{\psi}=\sum_i c_i\ket{E_i}\ \Longrightarrow \int dx\psi(x)\ket{x}\]
 \end{document}
