@@ -1778,9 +1778,112 @@
       \begin{aligned}i_{11}=\bra{0}\hat{I}\ket{1}\\
                     i_{12}=\bra{1}\hat{I}\ket{0}\end{aligned}\]
     }
-    \subsubsection{Representación en posiciones. Conexión con la función de onda}
-        \noindent $\ket{\Psi}$ nos da el estado de la partícula en general. Queremos escribir este vector en función de estados con energía definida (estados discretos con coeficientes asociados a la probabilidad). \\
+    \subsection{Conexión con la función de onda}
+      \noindent $\ket{\Psi}$ nos da el estado de la partícula en general. Queremos escribir este vector en función de estados con energía definida (estados discretos con coeficientes asociados a la probabilidad). \\
 
-        \noindent Ahora los autovectores no serán estados de energía, sino estados de posición, que nos representarán el estado de la partícula en la posición x. Esto ya no es discreto (vs energías), sino que cambia de forma continua (la posición no presenta discontinuidades). En lugar de hacer una suma tendremos que hacer una integral.
-        \[\ket{\psi}=\sum_i c_i\ket{E_i}\ \Longrightarrow \int dx\psi(x)\ket{x}\]
+      \noindent Ahora los autovectores no serán estados de energía, sino estados de posición, que nos representarán el estado de la partícula en la posición x. Esto ya no es discreto (vs energías), sino que cambia de forma continua (la posición no presenta discontinuidades). En lugar de hacer una suma tendremos que hacer una integral.
+      \[\ket{\psi}=\sum_i c_i\ket{E_i}\ \Longrightarrow \int_{-\infty}^\infty dx\ \psi(x)\ket{x}\]
+      \noindent La función de onda se escribe en esta notación como:
+      \begin{equation}
+        \psi(x)=\braket{x}{\psi}\ \text{ y su conjugado}\ \ \psi^*(x)=\braket{\psi}{x}
+        \label{eq:braketOnda}
+      \end{equation}
+        y vamos a imponer una ortonormalidad de igual forma que antes con $q_i$: $\braket{q_i}{q_j}=\delta_{ij}$:
+      \begin{equation}
+        \braket{x}{x^\prime}=\delta(x,x^\prime)
+      \end{equation}
+      Notamos como para la función de onda aseguramos la continuidad convirtiendo la \textit{Delta de Kröneker} en una \textit{Delta de Dirac}, que por
+      definición es \[\int_{-\infty}^{\infty}\delta(x-x^\prime)\ dx=1\]
+      Vemos entonces la demostración de \ref{eq:braketOnda}:
+      \[\braket{x}{\psi}=\bra{x}\int_{-\infty}^{\infty}dx^\prime\ \psi(x^\prime)\ket{x^\prime}=
+      \int_{-\infty}^{\infty}dx^\prime\ \psi(x^\prime)\braket{x}{x^\prime}=\int_{-\infty}^{\infty}dx^\prime
+      \psi(x)\delta(x-x^\prime)=\psi(x)\]
+      Damos ahora la expresión para el producto interno de dos estados de la función de onda:
+      \begin{equation}
+        \braket{\phi}{\psi}=\int_{-\infty}^{\infty}dx\ \phi^*\psi
+      \end{equation}
+      Lo cual es consistente con que $\braket{\psi}{\psi}=\int_{-\infty}^{\infty} dx\ \psi^*\psi=1$
+      
+      \subsubsection{Construcción de operadores}
+        \noindent Vamos a construir los operadores en esta notación, tanto para el caso discreto como para el continuo:
+        \begin{itemize}
+          \item Operador Identidad\ \ \ $\hat{I}=\displaystyle\sum_i\ket{q_i}\bra{q_i}$\hspace{1cm}$\hat{I}=\displaystyle\int_{-\infty}^{\infty}dx\ \ket{x}\bra{x}$
+          \item Operador Posición \ \ \ \ $\hat{x}=x$\hspace{2cm}$\hat{x}=\displaystyle\int_{-\infty}^\infty dx\ x\ket{x}\bra{x}$
+        \end{itemize}
+        Se deja como ejercicio comprobar que $\hat{x}\psi(x)=x\psi(x)$
+  
+  \clearpage
+  \section{Oscilador Armónico}
+    \noindent Vamos a usar esta nueva descripción a través del álgebra lineal para describir
+    el caso del oscilador armónico en \textit{mecánica cuántica}, introduciendo en el camino 
+    algunas propiedades trascenndentales, como la conmutación de operadores. Sabemos que 
+    las autofunciones serán proporcionales a los polinomios hermíticos $\psi_n\propto \mcH_n$ y que la energía está
+    cuantizada de forma que $E_n=\hbar\omega\left(n+\frac12\right)$\\
+
+    \noindent Sabemos que:
+      \[U(x)=\frac12 m\omega^2x^2\hspace{1cm}\hat{H}=\dfrac{\hat{p}^2}{2m}+\dfrac{1}{2}m\omega^2\hat{x}^2\]
+      \[\hat{H}\psi=E\psi\ \ \text{ siempre que }\ \ \Psi(x,t)=\psi(x)\varphi(t)\]\\
+    \definicion{Operador construcción y destrucción}{
+      Definimos los operadores:
+      \begin{equation}
+        \hat{a}_{\pm}=\dfrac{1}{\sqrt{2\hbar m\omega}\left(\mp i\hat{p}+m\omega\hat{x}\right)}
+      \end{equation}
+      Vamos a ver qué ocurre cuando realizamos el producto de los operadores, llevado cuidado con 
+      el orden a causa de la conmutatividad de los operadores:
+      \[
+        \hat{a}_-\cdot\hat{a}_+ =\dfrac{1}{2\hbar m\omega}\left(+i\hat{p}+m\omega\hat{x}\right)\left(-i\hat{p}+m\omega\hat{x}\right)=
+        \dfrac{1}{2\hbar m\omega}\left(\hat{p}^2+im\omega\hat{p}\hat{i}-im\omega\hat{x}\hat{p}+m^2\omega^2\hat{x}^2\right)=\]
+        \[
+        \dfrac{1}{2\hbar m\omega}\left(\hat{p}^2+m^2\omega^2\hat{x}^2+im\omega(\hat{p}\hat{x}-\hat{x}\hat{p})\right)
+      \]\\
+      Denotamos \textbf{conmutador x,p} al término:
+      \begin{equation}
+        \left[\hat{x},\hat{p}\right]=\hat{p}\hat{x}-\hat{x}\hat{p}
+      \end{equation}
+    }
+    \noindent Vamos a ver qué ocurre cuando aplicamos el conmutador a una función, pues al 
+    estar construido por operadores, no es más que otro operador en sí:
+    \[\left[\hat{x},\hat{p}\right]f(x)=\left(\hat{x}\hat{p}-\hat{p}\hat{x}\right)f(x)=
+    \hat{x}\hat{p}f(x)-\hat{p}\hat{x}f(x)=\left(-i\hbar x\dfrac{df}{dx}+i\hbar\dfrac{d}{dx}\left(xf(x)\right)\right)=
+    -i\hbar\left(x\dfrac{df}{dx}-x\dfrac{df}{dx}-f(x)\right)=i\hbar f(x)\]
+    \definicion{Relación de conmutación canónica}{
+      Esta relación tiene que ver con el principio de incertidumbre: los observables que
+      conmuten sí pueden ser denotados simultáneamente.
+      \begin{equation}
+        \left[\hat{x},\hat{p}\right]=i\hbar
+      \end{equation}
+    }
+    \noindent Vamos a tratar de reescribir el hamiltoniano en término del conmutador:
+    \[\hat{a}_-\cdot\hat{a}_+ = \dfrac{1}{2\hbar m\omega}\left(\hat{p}^2+m^2\omega^2\hat{x}^2+im\omega\left[\hat{x},\hat{p}\right]\right)
+    =\dfrac{1}{2\hbar m\omega}\left(\hat{p}^2+m^2\omega^2\hat{x}^2+\hbar m\omega\right)=
+    \dfrac{1}{2\hbar \omega}\left(\dfrac{\hat{p}^2}{2m}+\dfrac12 m\omega^2\hat{x}^2+\dfrac12 \hbar\omega\right)\]
+    \[\Longleftrightarrow \hat{a}_-\cdot\hat{a}_+=\dfrac{\hat{H}}{\hbar\omega}+\dfrac{1}{2}\]
+    Y despejando el hamiltoniano, obtenemos que:
+    \begin{equation}
+      \hat{H}=\dfrac{\hat{p}^2}{2m}+\dfrac12 m\omega^2\hat{x}^2\Longleftrightarrow\boxed{\hat{H}=\hbar\omega\left(\hat{a}_-\hat{a}_+-\dfrac12\right)=\hbar\omega\left(\hat{a}_+\hat{a}_--\dfrac12\right)}
+    \end{equation}
+    \clearpage
+    \noindent Ahora el Hamiltoniano empieza a parecerse a la energía cuantizada en el oscilador armónico (chuli). A partir de aquí será muy fácil crear estados con mayor o menor energía. Para ello hemos de ver qué hace el Hamiltoniano cuando actúa sobre un estado.
+    \[\hat{H}\psi=E\psi\Longleftrightarrow \hat{H}\hat{a}_+\psi=\hbar\omega\left(\hat{a}_+\cdot\hat{a}_-+\dfrac12\right)\hat{a}_+\psi=
+    \hbar\omega\left(\hat{a}_+\hat{a}_-\hat{a}_+ +\dfrac12\hat{a}_+\right)\psi=\hbar\omega\hat{a}_+\left(\hat{a}_-\hat{a}_++\dfrac12\right)\psi
+    \]
+    \noindent Se deja como ejercicio comprobar que $\left[\hat{a}_-\cdot\hat{a}_+\right]=1$ y que $\left[\hat{a}_+\cdot\hat{a}_-\right]=-1$ y continuando:
+    \[\hat{H}\hat{a}_+\psi=\hbar\omega\hat{a}_+\left(\hat{a}_+\hat{a}_-+1+\dfrac12\right)\psi=\hat{a}_+\left(\hbar\omega\left(\hat{a}_+\hat{a}_-+\dfrac12\right)+\hbar\omega\right)=
+    \hat{a}_+\left(\hat{H}+\hbar\omega\right)=\hat{a}_+\left(E+\hbar\omega\right)\psi\]
+    Es decir:
+    \begin{equation}
+      \boxed{\hat{H}\hat{a}_+\psi=\hat{a}_+\left(E+\hbar\omega\right)\hat{a}_+\psi}\ \text{ y }\ \boxed{\hat{H}\hat{a}_+\psi=\hat{a}_-\left(E-\hbar\omega\right)\hat{a}_-\psi}
+    \end{equation}
+    \noindent La nueva energía de este estado es una energía que está justo un nivel por encima de la energía de $\psi$. \\
+
+    \noindent Es por esto que llamamos a los operadores $\hat{a}$ operador creación y destrucción, porque
+    $\hat{a}_+\psi$ crea un estado con un nivel de energía por encima del estado $\psi$, y análogamente 
+    el operador destrucción por debajo (si $\psi_0$ es el estado fundamental $\hat{a}_-\psi_0=0$).\\
+
+    \noindent De esta forma, sabemos que a partir de la condición $\hat{a}_-\psi_0=0$ podemos obtener $\psi_0$
+    \[\dfrac{1}{\sqrt{2\hbar m\omega}}\left(+i\hat{p}-m\omega\hat{x}\right)\psi_0=0 \Longleftrightarrow \dfrac{1}{\sqrt{2\hbar m\omega}}\left(\hbar\dfrac{d}{dx}+m\omega x\right)\psi_0=0
+    \Longleftrightarrow \hbar\dfrac{d\psi_0}{dx}+m\omega\psi_0=0\Longleftrightarrow 
+    \int\dfrac{1}{\psi_0}d\psi_0=-\int\dfrac{m\omega x}{\hbar}\ dx\]
+    \[\boxed{\psi_0=A\cdot e^{\nicefrac{-m\omega}{2\hbar}x^2}}\]
+
 \end{document}

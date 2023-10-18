@@ -28,5 +28,7 @@
 \contentsline {subsection}{\numberline {4.2.3}Resultados en cuántica}{32}{subsection.4.2.3}%
 \contentsline {subsubsection}{Colapso de la función de onda}{32}{tcb@cnt@Definition.4.2.6}%
 \contentsline {section}{\numberline {4.3}Representación matricial}{32}{section.4.3}%
-\contentsline {subsubsection}{Representación en posiciones. Conexión con la función de onda}{33}{tcb@cnt@Example.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.1}Conexión con la función de onda}{33}{subsection.4.3.1}%
+\contentsline {subsubsection}{Construcción de operadores}{33}{equation.4.3.11}%
+\contentsline {section}{\numberline {4.4}Oscilador Armónico}{34}{section.4.4}%
 \contentsfinish 

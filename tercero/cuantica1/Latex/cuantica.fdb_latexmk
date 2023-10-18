@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697550860 "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" "cuantica.pdf" "cuantica" 1697550865 0
-  "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" 1697550856 99809 4190660021218a1e612d9dbb0fa7c9c3 ""
+["pdflatex"] 1697631467 "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" "cuantica.pdf" "cuantica" 1697631472 0
+  "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" 1697631467 107117 26c9efeab91480786dd43c1cf5808284 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1689853683 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -330,9 +330,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693483020 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693482980 6789704 0b6b6842a96cde863a50a5b0d3663187 ""
-  "cuantica.aux" 1697550865 16687 765f29d349bdf42a6f26ff487cde57fd "pdflatex"
-  "cuantica.tex" 1697550856 99809 4190660021218a1e612d9dbb0fa7c9c3 ""
-  "cuantica.toc" 1697550865 2662 99cc0d46a97d1c1f26e2b2ea3a465bcd "pdflatex"
+  "cuantica.aux" 1697631471 17837 aab2b60c62da44b5b154418e23766560 "pdflatex"
+  "cuantica.tex" 1697631467 107117 26c9efeab91480786dd43c1cf5808284 ""
+  "cuantica.toc" 1697631472 2803 67a16da574b4b2349a71bb329a1f24d4 "pdflatex"
   "fotos/T1.5.Franck-Hertz.png" 1694620209 18570 db979e6f9c619218037ed3845bedf64f ""
   "fotos/difracción.png" 1695055971 42024 16ab069c5ab79103332f33a497caf4b6 ""
   "fotos/nodos.png" 1695033581 5311 295db5310277062ab638f74191eee42e ""
