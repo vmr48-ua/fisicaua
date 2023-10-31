@@ -1885,5 +1885,53 @@
     \Longleftrightarrow \hbar\dfrac{d\psi_0}{dx}+m\omega\psi_0=0\Longleftrightarrow 
     \int\dfrac{1}{\psi_0}d\psi_0=-\int\dfrac{m\omega x}{\hbar}\ dx\]
     \[\boxed{\psi_0=A\cdot e^{\nicefrac{-m\omega}{2\hbar}x^2}}\]
+    \noindent Si ahora normalizamos:
+    \[\int_{-\infty}^{\infty}\abs{A}^2\cdot e^{\frac{-m\omega}{\hbar}x^2}=1\Longleftrightarrow A=\left(\dfrac{m\omega}{\pi\hbar}^{\nicefrac{1}{4}}\right)\]
+    \begin{equation}
+      \boxed{\psi_0(x)=\left(\dfrac{m\omega}{\pi\hbar}\right)^{\nicefrac{1}{4}}e^{-\nicefrac{m\omega x^2}{2\hbar}}}
+    \end{equation}
 
+    \noindent Y si aplicamos esto a la ecuación de Schrodinger independiente del tiempo, entonces
+    $\hat{H}\psi_0=E_0\psi_0\Longleftrightarrow E_0=\dfrac{\hbar\omega}{2}$ es decir,
+    \[\hat{H}\psi_0=\dfrac{\hbar\omega}{2}\psi_0\]
+
+    \noindent Si vamos aplicando el operador creación, vemos que en general, $\psi_n(x)=A_n(a_+)^n\psi_0$
+    \subsubsection{Normalización}
+      \noindent Vamos a ir aplicando los \textit{ladder operators} y llegamos a las siguientes expresiones:
+      \[\hat{a_+}\psi_n=c_n\psi_{n+1}\hspace{3cm}\hat{a_-}\psi_n=c_n\psi_{n-1}\]
+      Para que estas funciones tengan sentido físico, han de estar normalizadas, por lo que:
+      \[\int_{-\infty}^\infty \abs{\psi_n}^2\ dx=1\Longleftrightarrow\int_{-\infty}^\infty \abs{\psi_{n+1}}^2\ dx=1
+      \Longleftrightarrow \abs{c_n}^2\int_{-\infty}^\infty \abs{\psi_{n+1}}^2\ dx
+      = \int_{-\infty}^\infty (c_n\psi_{n+1}^*)(c_n\psi_{n+1})\ dx=\]
+      
+      \[\int_{-\infty}^\infty (\hat{a}_+\psi_n)^*(\hat(a)_+\psi_n)\ dx=\boxed{1}=
+      \int_{-\infty}^\infty (\hat{a}_-\hat{a}_+\psi_n)^*\psi_n\ dx=\boxed{2}=
+      \int_{-\infty}^\infty (n+1)\psi_n^*\psi_n\ dx=(n+1)\int_{-\infty}^\infty \abs{\psi_n}^2\ dx\]
+      \begin{equation}
+        \abs{c_n}^2\int_{-\infty}^\infty \abs{\psi_{n+1}}^2\ dx=(n+1)\int_{-\infty}^{\infty}\abs{\psi_n}^2\ dx \Longleftrightarrow \boxed{\abs{c_n}^2=(n+1)}
+      \end{equation}
+      \comentario{
+        \begin{enumerate}
+          \item Si tenemos dos funciones $f$ y $g$:
+                $\displaystyle\int_{-\infty}^\infty f^*(\hat{a}_\pm g)\ dx=\displaystyle\int_{-\infty}^\infty (\hat{a}_\mp f)^*\ dx$
+          \item $\hat{a}_-\hat{a}_+\psi_n=(n+1)\psi_n$
+          \item $c_n$ es una constante de normalización, no tiene nada que ver con el $c_n$ de la densidad de probabilidad.
+          \item Se deja como ejercicio comprobar que $\abs{b_n}^2=n$ (con el operador destrucción)
+        \end{enumerate}
+      }
+      \noindent A modo de conclusión, obtenemos:
+      \[\hat{a}_+\psi_n=\sqrt{n+1}\cdot\psi_{n+1}\hspace{2cm}\hat{a}_-\psi_n=\sqrt{n}\cdot\psi_{n-1}\]
+      \[\psi_{n+1}=\dfrac{1}{\sqrt{n+1}}\hat{a}_+\psi_n\hspace{2cm}\psi_{n-1}=\dfrac{1}{\sqrt{n}}\hat{a}_-\psi_n\]
+      \noindent Si calculamos varias iteraciones llegamos a la expresión en función de $n$:
+      \begin{itemize}
+        \item $\psi_1=\hat{a}_+\psi_0$
+        \item $\psi_2=\dfrac{1}{\sqrt{2}}\hat{a}_+\psi_1=\dfrac{1}{\sqrt{2}}(\hat{a}_+)^2\psi_0$
+        \item $\dots$
+      \end{itemize}
+      Finalmente:
+      \begin{equation}
+        \boxed{\psi_n=\dfrac{1}{\sqrt{n!}}(\hat{a}_+)^n\psi_0}\hspace{2cm}
+        \boxed{E_n=\hbar\omega\left(n+\dfrac{1}{2}\right)}\hspace{2cm}
+        \boxed{\psi_0=\left(\dfrac{m\omega}{\pi\hbar}\right)^{\nicefrac14} e^{-\nicefrac{m\omega}{2\hbar}x^2}}
+      \end{equation}
 \end{document}
