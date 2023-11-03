@@ -32,4 +32,6 @@
 \contentsline {subsubsection}{Construcción de operadores}{33}{equation.4.3.11}%
 \contentsline {section}{\numberline {4.4}Oscilador Armónico}{34}{section.4.4}%
 \contentsline {subsubsection}{Normalización}{35}{equation.4.4.17}%
+\contentsline {section}{\numberline {4.5}Principio de Incertidumbre Generalizado}{36}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Sistemas compuestos}{39}{chapter.5}%
 \contentsfinish 

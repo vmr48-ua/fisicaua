@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  19 OCT 2023 14:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  3 NOV 2023 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -582,10 +582,19 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 Package: theoremref 2013/05/22 References with automatic theorem names
 \thmref@num=\count316
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 56.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 56.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 56.
- (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package hyperref Info: Option `colorlinks' set `true' on input line 58.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 58.
+
+
+Package hyperref Warning: Unexpected value `true pdfauthor={Víctor Mira} pdfpagemode=FullScreen'
+(hyperref)                of option `bookmarksopen' instead of
+(hyperref)                `true' or 'false' on input line 58.
+
+
+Package bookmark Warning: Value `true pdfauthor={Víctor Mira} pdfpagemode=FullScreen' is not supported by
+(bookmark)                option `open' on input line 58.
+
+(/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
  (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks44
@@ -1385,6 +1394,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 )
 \tf@toc=\write5
 \openout5 = `cuantica.toc'.
@@ -1416,7 +1426,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--185
 
  []
 
-<fotos/T1.5.Franck-Hertz.png, id=199, 599.23875pt x 277.035pt>
+<fotos/T1.5.Franck-Hertz.png, id=205, 599.23875pt x 277.035pt>
 File: fotos/T1.5.Franck-Hertz.png Graphic file (type png)
 <use fotos/T1.5.Franck-Hertz.png>
 Package pdftex.def Info: fotos/T1.5.Franck-Hertz.png  used on input line 188.
@@ -1433,12 +1443,12 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <5.5> not available
 [6
 
  <./fotos/T1.5.Franck-Hertz.png>]
-<fotos/ondaPlana.png, id=210, 165.61874pt x 101.62968pt>
+<fotos/ondaPlana.png, id=216, 165.61874pt x 101.62968pt>
 File: fotos/ondaPlana.png Graphic file (type png)
 <use fotos/ondaPlana.png>
 Package pdftex.def Info: fotos/ondaPlana.png  used on input line 283.
 (pdftex.def)             Requested size: 105.82957pt x 64.94041pt.
-<fotos/nodos.png, id=212, 642.4pt x 213.79875pt>
+<fotos/nodos.png, id=218, 642.4pt x 213.79875pt>
 File: fotos/nodos.png Graphic file (type png)
 <use fotos/nodos.png>
 Package pdftex.def Info: fotos/nodos.png  used on input line 297.
@@ -1477,7 +1487,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--433
 
  []
 
-<fotos/difracción.png, id=235, 181.1568pt x 112.5003pt>
+<fotos/difracción.png, id=241, 181.1568pt x 112.5003pt>
 File: fotos/difracción.png Graphic file (type png)
 <use fotos/difracción.png>
 Package pdftex.def Info: fotos/difracción.png  used on input line 440.
@@ -1875,7 +1885,21 @@ Overfull \hbox (34.37914pt too wide) detected at line 1886
 
 [35
 
-] [36] (./cuantica.aux
+] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 2061--2061
+
+ []
+
+[37] [38]
+Cap\'{\i }tulo 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2063--2066
+
+ []
+
+[39
+
+] (./cuantica.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1885,18 +1909,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 42278 strings out of 477923
- 832271 string characters out of 5838288
- 1902388 words of memory out of 5000000
- 61486 multiletter control sequences out of 15000+600000
+ 42302 strings out of 477923
+ 832666 string characters out of 5838288
+ 1901388 words of memory out of 5000000
+ 61501 multiletter control sequences out of 15000+600000
  561067 words of font info for 142 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,20n,102p,763b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,102p,753b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on cuantica.pdf (37 pages, 644918 bytes).
+Output written on cuantica.pdf (40 pages, 660949 bytes).
 PDF statistics:
- 747 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 216 named destinations out of 1000 (max. 500000)
- 471 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 785 PDF objects out of 1000 (max. 8388607)
+ 605 compressed objects within 7 object streams
+ 225 named destinations out of 1000 (max. 500000)
+ 499 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -54,7 +54,7 @@
 
     \vspace{0.4cm} \noindent Para resolver este problema, Max Planck tuvo un enfoque mucho más pragmático. Buscó una función que se aproximara a los datos experimentales para después deducir
     una posible teoría física de ahí. Él sabía que era necesario cambiar la constante de Boltzmann por otra que se acomodara mejor. Es en este punto donde introducie
-    el concepto de la energía como cuantos. Nace aquí la famosa ecuación $\epsilon = h\cdot f$. Hoy en día ya le hemos puesto nombre a esta constante, la 
+    el concepto de la energía como cuantos. Nace aquí la famosa ecuación $\varepsilon = h\cdot f$. Hoy en día ya le hemos puesto nombre a esta constante, la 
     \textbf{Constante de Planck}. Como la energía es discreta, no se puede usar una integral, debemos hacer uso de sumatorios, lo cual resuelve la catástrofe.
 
     \vspace{0.4cm} \noindent El enfoque cuántico de Planck: $u(\lambda)d\lambda=\dfrac{8\pi\lambda^{-5}hc}{\exp\left(\dfrac{hc}{\lambda k T}\right)-1}d\lambda$. 
@@ -1310,23 +1310,23 @@
             a partir de la \textit{Ecuación de Shrödinger}.\\
             $-\dfrac{\hbar^2}{2m}\dfrac{d^2\psi}{dx^2}-\alpha\delta(x)\psi=E\psi$ e 
             integramos para obtener $\dfrac{d\psi}{dx}$:
-            $-\dfrac{\hbar^2}{2m}\displaystyle\int_{-\epsilon}^{\epsilon}\dfrac{d^2\psi}{dx^2}\ dx
-            +\displaystyle\int_{-\epsilon}^{\epsilon}(-\alpha\delta(x))\psi\ dx=
-            \displaystyle\int_{-\epsilon}^{\epsilon}E\psi\ dx$
+            $-\dfrac{\hbar^2}{2m}\displaystyle\int_{-\varepsilon}^{\varepsilon}\dfrac{d^2\psi}{dx^2}\ dx
+            +\displaystyle\int_{-\varepsilon}^{\varepsilon}(-\alpha\delta(x))\psi\ dx=
+            \displaystyle\int_{-\varepsilon}^{\varepsilon}E\psi\ dx$
             
-            $-\dfrac{\hbar^2}{2m}\left[\dfrac{d\psi}{dx}|_\epsilon-\dfrac{d\psi}{dx}|_{-\epsilon}\right]
-            -\alpha\displaystyle\int_{-\epsilon}^{\epsilon}\delta(x)\psi(x)\ dx=
-            \displaystyle\int_{-\epsilon}^{\epsilon}E\psi\ dx$ y ahora vamos a tomar
+            $-\dfrac{\hbar^2}{2m}\left[\dfrac{d\psi}{dx}|_\varepsilon-\dfrac{d\psi}{dx}|_{-\varepsilon}\right]
+            -\alpha\displaystyle\int_{-\varepsilon}^{\varepsilon}\delta(x)\psi(x)\ dx=
+            \displaystyle\int_{-\varepsilon}^{\varepsilon}E\psi\ dx$ y ahora vamos a tomar
             el límite:
 
-            $\displaystyle\lim_{\epsilon\rightarrow 0}\left(-\dfrac{\hbar^2}{2m}\left[\dfrac{d\psi}{dx}|_\epsilon-
-            \dfrac{d\psi}{dx}|_{-\epsilon}\right]-\alpha\displaystyle\int_{-\epsilon}^{\epsilon}
+            $\displaystyle\lim_{\varepsilon\rightarrow 0}\left(-\dfrac{\hbar^2}{2m}\left[\dfrac{d\psi}{dx}|_\varepsilon-
+            \dfrac{d\psi}{dx}|_{-\varepsilon}\right]-\alpha\displaystyle\int_{-\varepsilon}^{\varepsilon}
             \delta(x)\psi(x)\ dx=\right)=0$ ya que $\displaystyle\int_{\infty}^{\infty}\delta(x-x_0)\ dx=1$ y 
-            $\displaystyle\int_{-\epsilon}^{\epsilon}\psi\ dx=0$ 
+            $\displaystyle\int_{-\varepsilon}^{\varepsilon}\psi\ dx=0$ 
 
             Y por tanto ya conocemos el valor de la discontinuidad:
-            $\displaystyle\lim_{\epsilon\rightarrow 0}\left(\dfrac{d\psi}{dx}|_\epsilon-
-            \dfrac{d\psi}{dx}|_{-\epsilon}\right)=-\dfrac{2m}{\hbar^2}\alpha\psi(0)$ \\
+            $\displaystyle\lim_{\varepsilon\rightarrow 0}\left(\dfrac{d\psi}{dx}|_\varepsilon-
+            \dfrac{d\psi}{dx}|_{-\varepsilon}\right)=-\dfrac{2m}{\hbar^2}\alpha\psi(0)$ \\
             y evaluamos la función $\psi$ donde hayamos evaluado la función delta.
     \end{itemize}
     Como conocemos 
@@ -1458,10 +1458,10 @@
     \Longleftrightarrow -\dfrac{d^2\psi}{dU^2}+U^2\psi=\dfrac{2E}{\hbar\omega}\psi\]
     Donde, si nos fijamos, el término de la derecha que acompaña a la energía
     es adimensional, ya que $\hbar\omega$ tiene unidades de energía. Por tanto,
-    definiremos $\epsilon=\dfrac{2E}{\hbar\omega}$ para simplificar aún más la
+    definiremos $\varepsilon=\dfrac{2E}{\hbar\omega}$ para simplificar aún más la
     expresión.
     \begin{equation}
-      \boxed{\dfrac{d^2\psi}{dU^2}=(U^2-\epsilon)\psi}
+      \boxed{\dfrac{d^2\psi}{dU^2}=(U^2-\varepsilon)\psi}
       \label{eq:potencialArmónicoU}
     \end{equation}
     \noindent En el caso en el que $U\longrightarrow\infty$ para que la función sea
@@ -1492,8 +1492,8 @@
     \]
     Y finalmente sustituyendo en la ecuación:
     \[\left(\dfrac{d^2h}{dU^2}-2U\dfrac{dh}{dU}-h+U^2h\right)e^{-\nicefrac{U^2}{2}}
-    =(U^2-\epsilon)he^{-\nicefrac{U^2}{2}}\Longleftrightarrow\boxed{\dfrac{d^2h}{dU^2}
-    -2U\dfrac{dh}{dU}-h+\epsilon h=0}\]
+    =(U^2-\varepsilon)he^{-\nicefrac{U^2}{2}}\Longleftrightarrow\boxed{\dfrac{d^2h}{dU^2}
+    -2U\dfrac{dh}{dU}-h+\varepsilon h=0}\]
     Proponemos como solución de la EDO un polinomio de la forma:
     \[h(U)=a_0+a_1U+a_2U^2+a_3U^3+a_4U^4\dots\Longleftrightarrow
     h(U)=\sum_{j=0}^{\infty}a_j\cdot U^j\]
@@ -1517,12 +1517,12 @@
       \end{cases}
     \]
     Reescribiendo la ecuación en función de las derivadas de $h$:
-    \[\sum_{j=0}^{\infty}\left[(j+2)(j+1)a_{j+2}U^j-2_ja_jU^j+(\epsilon-1)a_jU^j\right]=0\]
+    \[\sum_{j=0}^{\infty}\left[(j+2)(j+1)a_{j+2}U^j-2_ja_jU^j+(\varepsilon-1)a_jU^j\right]=0\]
     y como podemos sacar $U^j$ factor común, y sabemos que no es cero, entonces
     el resto del término debe de ser cero:
-    \[(j+2)(j+1)a_{j+2}-2_ja_jU^j+(\epsilon-1)a_j=0\]
+    \[(j+2)(j+1)a_{j+2}-2_ja_jU^j+(\varepsilon-1)a_j=0\]
     y despejando $a_{j+2}$
-    \[\boxed{a_{j+2}=\dfrac{2j+1-\epsilon}{(j+2)(j+1)}a_j}\]
+    \[\boxed{a_{j+2}=\dfrac{2j+1-\varepsilon}{(j+2)(j+1)}a_j}\]
     Por lo que tenemos una expresión de recurrencia, que usando el \textit{Método de Frobenius},
     si conocemos $a_0$ y $a_1$ podemos calcular los coeficientes pares y impares:
     $h(U)=h_{\text{impar}}(u)+h_{\text{par}}(U)$.\\
@@ -1530,8 +1530,8 @@
     \noindent Para que la función sea normalizable, hemos de acotar el valor máximo de los coeficientes
     con un valor máximo a partir del cual $a_{j+2}=0$,
     por lo que ya tendríamos nuestros estados de energía. Esto quiere decir
-    que $2j+1-\epsilon=0$, que es nuestra condición de cuantización. Despejando:
-    \[\epsilon=2j+1\Longleftrightarrow \dfrac{2E}{\hbar\omega}=2j+1
+    que $2j+1-\varepsilon=0$, que es nuestra condición de cuantización. Despejando:
+    \[\varepsilon=2j+1\Longleftrightarrow \dfrac{2E}{\hbar\omega}=2j+1
     \longrightarrow\boxed{E_n=\hbar\omega\left(n+\dfrac12\right)}\text{ con }n=0,1\dots\]
     Vemos como si $j\rightarrow\infty\Longrightarrow a_{j+2}~=\dfrac{2}{j}a_j\Longrightarrow
     a_j~=\dfrac{C}{\left(\nicefrac{j}{2}\right)!}$ y por tanto $h(U)=\displaystyle\sum_{j=0}^\infty
@@ -1545,7 +1545,7 @@
       h_{\text{impares}}(U)=a_1+a_3U^3+a_5U^5+\dots
     \end{aligned}\]
     \ejemplo{Supongamos que es de la forma $h(U)=a_0+a_1U+\dots j=1$}{
-      Si dejamos $a_0$ y $a_1$ y como $j=1\Rightarrow \epsilon=2j+1=3$
+      Si dejamos $a_0$ y $a_1$ y como $j=1\Rightarrow \varepsilon=2j+1=3$
       entonces $a_3=0a_1$ y toda la sucesión de impares será cero.\\
 
       Pero para el caso de los pares, $a_2=\dfrac{-2}{2}a_0=-a_0$, 
@@ -1934,4 +1934,147 @@
         \boxed{E_n=\hbar\omega\left(n+\dfrac{1}{2}\right)}\hspace{2cm}
         \boxed{\psi_0=\left(\dfrac{m\omega}{\pi\hbar}\right)^{\nicefrac14} e^{-\nicefrac{m\omega}{2\hbar}x^2}}
       \end{equation}
+
+  \vspace{0.2cm}
+  \section{Principio de Incertidumbre Generalizado}
+    \noindent Vamos a tratar de generalizar el principio de incertidumbre que ya conocemos, 
+    $\sigma_x\sigma_p\geq\dfrac{\hbar}{2}$. Si queremos localizar la partícula, 
+    perdemos información sobre su momento y al revés. Esto se puede 
+    generalizar para cualquier par de observables, teniendo en mente 
+    que cualquier observable se puede asociar a un operador. Tenemos:
+
+    \[\left.
+      \begin{aligned}
+        x\rightarrow \hat{x}\\
+        p\rightarrow \hat{p}
+      \end{aligned}
+      \right\}\hspace{0.2cm}\left[\hat{x},\hat{p}\right]=i\hbar
+    \]
+    Es decir, que los operadores posición y momento lineal no conmutan. 
+    No podemos encontrar una base de autovectores que sirva de base a 
+    ambas magnitudes a la vez precisamente porque no conmutan.
+    Cuando los operadores conmutan, sí podemos encontrar un autovector
+    que lo es a la vez de ambos operadores.
+
+    \[
+      \hat{H}\ket{q_i}=q_i\ket{q_i} \rightarrow \ \text{ autovalor, en 
+      este caso la energía del nivel fundamental}
+    \]
+
+    \noindent Si encontramos una función que es autovector de dos observables a
+    la vez, podemos conocer ambos observables a la vez, sin ningún tipo
+    de incertidumbre asociada.
+
+    \definicion{Principio de Incertidumbre  de Heisemberg Generalizado}{
+      Sean $\hat{A}$ y $\hat{B}$ dos operadores hermíticos y se pueden
+      identificar con observables, se cumple que:
+      \begin{equation}
+        \sigma_A^2 \sigma_B^2\geq\left(\dfrac{1}{2i}\langle\left[\hat{A},\hat{B}\right]\rangle\right)^2
+      \end{equation}
+      Notando que el elevado al cuadrado viene por la relación con $Cauchy-Schwartz$ y con la parte imaginaria.
+    }
+
+    \noindent El principio de incertidumbre generalizado extiende el principio de 
+    incertidumbre, que es solo para posición $x$ y momento lineal $p$, a
+    cualquier par de observables. 
+
+    \noindent Podemos ver como el principio de incertidumbre sale del principio
+    generalizado aplicado para $x$ y $p$: 
+    \[\sigma_x^2\sigma_p^2\geq\left(\dfrac{1}{2i}(i\hbar)\right)^2\Longleftrightarrow
+    \sigma_x\sigma_p\geq\dfrac{\hbar}{2}\]
+
+    \teorema{Condición de Cauchy-Schwartz}{
+      \noindent Sean $\vec{a}$ y $\vec{b}$ dos vectores radiales desde el origen definimos $\vec{c}$ 
+      como el vector que va desde $\vec{a}$ hasta $\vec{b}$. Entonces:
+      \[\abs{\vec{a}}^2\cdot\abs{\vec{b}}^2\geq\abs{\vec{a}\cdot\vec{b}}^2\hspace{1cm}
+      \abs{\vec{a}}+\abs{\vec{b}}\geq\abs{\vec{c}}\]
+      \[\abs{\vec{a}}+\abs{\vec{b}}\geq\abs{\vec{a}+\vec{b}}\Longrightarrow 
+      \abs{\vec{a}}^2+\abs{\vec{b}}^2+2\abs{\vec{a}}\cdot\abs{\vec{b}}\geq\abs{\vec{a}}^2
+      +\abs{\vec{b}}^2+2\abs{\vec{a}\cdot\vec{b}}\Longrightarrow \abs{\vec{a}}\cdot\abs{\vec{b}}
+      \geq\abs{\vec{a}\cdot\vec{b}}\]
+    }
+    \noindent Vamos a ver esta condición en el espacio complejo en el que estamos
+    trabajando. En un espacio de Hilbert:
+    \[\braket{f}{f}\cdot\braket{g}{g}\geq\abs{\braket{f}{g}}^2\ \hspace{1cm}
+    \text{ donde }\ket{f}\text{ y }\ket{g}\text{ son dos vectores del espacio de Hilbert}\]
+    \noindent Partiendo de esta desigualdad vamos a tratar de llegar al principio de
+    incertidumbre. Para ello, cada uno de esos vectores representará un estado de mi 
+    sistema, que modificaremos aplicando un operador. Queremos llegar a:
+    \[\begin{aligned}
+        \braket{f}{f}\rightarrow\sigma_A^2\\
+        \braket{g}{g}\rightarrow\sigma_B^2
+    \end{aligned}\]
+
+    \[\left.\begin{aligned}
+        &\ket{f}=\Delta\hat{A}\ket{\psi}\text{ con }\Delta\hat{A}=\hat{A}-\langle A\rangle\\
+        &\ket{g}=\Delta\hat{B}\ket{\psi}\text{ con }\Delta\hat{B}=\hat{B}-\langle B\rangle\\
+    \end{aligned}\right\}
+    \text{ Donde }\langle A\rangle \text{ y }\langle B\rangle\text{ son números, vienen multiplicados por }\hat{I}\]
+
+    \[\begin{aligned}
+        &\bra{f}=\bra{\psi}\Delta\hat{A}
+        &\bra{g}=\bra{\psi}\Delta\hat{B}
+    \end{aligned}\Longrightarrow 
+    \begin{aligned}
+      &\braket{f}{f}=\bra{\psi}\Delta\hat{A}^2\ket{\psi}=\sigma_A^2
+      &\braket{g}{g}=\bra{\psi}\Delta\hat{B}^2\ket{\psi}=\sigma_B^2
+    \end{aligned}\]
+    
+    \noindent Y ya podemos reescribir la parte de la izquierda:
+    \[\sigma_A^2\sigma_B^2\geq\abs{\braket{f}{g}}^2\]
+    \noindent Vamos a ver qué hacemos con la parte de la derecha.
+
+    \[\braket{f}{g}=z=\text{Re}(z)+i\text{Im}(z)\Longrightarrow \abs{z}^2
+    =\abs{\text{Re}(z)}^2+\abs{Im(z)}^2\]
+    \noindent Y como sabemos que $\abs{\text{Re}(z)}^2\geq 0$ trabajamos solo
+    con la parte imaginaria. ¿Cuál es la parte imaginaria de este producto interno?
+
+    \[\text{Im}(z)=\dfrac{z-z^*}{2i}=\dfrac{\braket{f}{g}-\braket{g}{f}}{2i}
+    \Longrightarrow\sigma_A^2\sigma_B^2\geq\left(\dfrac{1}{2i}\left(\braket{f}{g}-
+    \braket{g}{f}\right)\right)^2\]
+    
+    \begin{itemize}
+      \item $\braket{f}{g}=\bra{\psi}\Delta\hat{A}\Delta\hat{B}\ket{\psi}=
+            \bra{\psi}(\hat{A}-\langle A\rangle)(\hat{B}-
+            \langle B\rangle)\ket{\psi}=\bra{\psi}\hat{A}\hat{B}-
+            \langle A\rangle\hat{B}-\hat{A}\langle B\rangle+\langle A\rangle
+            \langle B\rangle\ket{\psi}$
+      \item $\braket{g}{f}=\bra{\psi}\Delta\hat{B}\Delta\hat{A}\ket{\psi}=
+            \bra{\psi}\hat{B}\hat{A}-\langle B\rangle\hat{A}-\langle A\rangle\hat{B}
+            +\langle A\rangle\langle B\rangle\ket{\psi}$
+      \item $\braket{f}{g}-\braket{g}{f}=\bra{\psi}\hat{A}\hat{B}-\hat{B}\hat{A}\ket{\psi}=
+            \langle\left[\hat{A},\hat{B}\right]\rangle$
+    \end{itemize}
+
+    \noindent Y llegamos a que:
+    \[\boxed{\psi_A^2\psi_B^2\geq\left(\dfrac{\langle\left[\hat{A},\hat{B}\right]\rangle}{2i}\right)^2}\]
+
+    \comentario{
+      Se deja como ejercicio calcular $\abs{\text{Re}(z)}^2$. Solución: 
+      $\text{Re}(z)=\frac{\braket{f}{g}+\braket{g}{f}}{2}=\langle\left\{\Delta\hat{A},\Delta\hat{B}\right\}\rangle$\\
+      Comprobar además que si $\left[\hat{A},\hat{B}\right]=0\rightarrow\left\{\Delta\hat{A},\Delta\hat{B}\right\}=0$\\
+      Los operadores contenidos entre llaves los llamamos anticonmutador. Por esta última propiedad es por lo que
+      cuando dos operadores conmutan, podemos conocerlos sin incertidumbre\\
+
+      Un principio de incertidumbre muy empleado es el de energía-tiempo:
+      \[\Delta E\Delta t\geq\dfrac{\hbar}{2}\]
+    }
+\chapter{Sistemas compuestos}
+  \noindent Hasta ahora hemos hablado de sistemas con una única 
+  partícula. Vamos a ver cómo extrapolarlo a casos donde tenemos 
+  sistemas compuestos, es decir, con más de una partícula.\\
+
+  \noindent Supongamos dos sistemas $a$ y $B$. El sistema $A$ se 
+  encuentra en un estado $\ket{A}$ y el $B$ en el estado $\ket{B}$. 
+  Los autovectores de $A$ y $B$ los escribimos, respectivamente como
+  $\left\{\ket{A_{;_i}}\right\}$ y $\left\{\ket{B_{;_j}}\right\}$
+
+  \ejemplo{}{
+    \[\ket{A}\longrightarrow \left\{\ket{+}\ket{-}\right\}\Longrightarrow
+      A=a_+\ket{+}+a_-\ket{-}\text{ con }\abs{a_+}^2+\abs{a_-}^2=1\]
+    \[\ket{B}\longrightarrow \left\{\ \ket{\uparrow}\ \ket{\downarrow}\ \right\}\Longrightarrow
+      A=b_\uparrow\ \ket{\uparrow}+b_\downarrow\ \ket{\downarrow}\text{ con }\abs{b_\uparrow}^2+\abs{b_\downarrow}^2=1\]
+    ¿Cómo escribimos un estado combinación de $A$ y $B$?
+    \[\ket{AB;_{i,j}}=\ket{A;_i}\ket{B;_j}\]
+  }
 \end{document}
