@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1699012007 "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" "Complejo.pdf" "Complejo" 1699012013 0
-  "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" 1698682583 42547 f7fbff478468c9e15130639ed2465bd0 ""
+["pdflatex"] 1699017223 "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" "Complejo.pdf" "Complejo" 1699017227 0
+  "/home/victor/fisicaua/tercero/complejo/latex/Complejo.tex" 1699017222 48680 f2dc739549cd8afc83c2acd39b266c37 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1689853683 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1689853683 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
@@ -305,9 +305,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1698917972 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693482980 6789704 0b6b6842a96cde863a50a5b0d3663187 ""
-  "Complejo.aux" 1699012013 6822 344d7dfd668dd2e5e06292cd01816500 "pdflatex"
-  "Complejo.tex" 1698682583 42547 f7fbff478468c9e15130639ed2465bd0 ""
-  "Complejo.toc" 1699012013 1060 d42ccc3abd62097ab8796ef2ec6563d5 "pdflatex"
+  "Complejo.aux" 1699017227 7767 0c7e6baddc2704ba18e144df5f5fbfce "pdflatex"
+  "Complejo.tex" 1699017222 48680 f2dc739549cd8afc83c2acd39b266c37 ""
+  "Complejo.toc" 1699017227 1206 f98055c98e6cc7f7b19a0ea8da55a179 "pdflatex"
   "letterfonts.tex" 1679156923 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "macros.tex" 1681218253 3389 93000260d2aea292d29c76d4ace77a29 ""
   "preamble.tex" 1699012007 21687 622749449a1353395f9be5cddabba16d ""

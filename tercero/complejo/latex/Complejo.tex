@@ -803,5 +803,117 @@
       Además, si $u=\text{Re }f$, entonces
       \[u(z)=\dfrac{1}{2\pi}\int_{0}^{2\pi}P_r(\theta-t)u(z_0+Re^{it})\ dt\]
     }
-    
+\chapter{Series de Potencias}
+  \noindent Si $f$ es una función holomorfa, podemos expresar (almenos localmente) como
+  un polinomio de grado infinito. 
+  \[f(z)=\sum_{n=0}^{\inf}a_n(z-z_0)^n\]
+  \section{Notación}
+    \noindent La serie $\displaystyle \sum_n z_n$ es la sucesión
+    %$\left\{\displaystyle\sum_{k=1}^n z_k\right\}=\left\{z_1,z_1+z_2,\dots,z_1+\dots+\z_n,\dots\right\}$
+    %En el caso en que la serie sea convergente, escribimos $\lim_{n\rightarrow\inf}\sum_{n=1}z_n=\displaystyle\sum_{n=1}^\inf z_n$
+    \definicion{Convergencia de Series}{
+      \begin{itemize}
+        \item Una sucesión $\left\{z_n\right\}\in\bbC$ converge a $z\in\bbC$ si 
+              $\forall\varepsilon>0$ $\exists N\in\bbN\colon \in\bbN\Rightarrow\abs{z_n-z}<\varepsilon$
+
+        \item Una serie $\sum_{n=1}z_n$ converge a $z\in\bbC$ si $\forall\varepsilon>0$ 
+              $\exists N\in\bbN\Rightarrow\abs{z_1+\dots+z_n-z}<\varepsilon$\\
+
+              Como $\abs{z_n-z}\in\bbR$, es equivalente la covergencia de sucesiones en números
+              reales que en números complejos.
+
+        \item Una serie $\sum_{n=1}z_n$ converge absolutamente si $\sum_{n=1}^\infty\abs{z_n}<\infty$
+      \end{itemize}
+    }
+    \comentario{
+      Si $z_n=x_n+iy_n$, entonces $\displaystyle\sum_{n=1}z_n$ converge $\Longleftrightarrow\displaystyle\sum_{n=1}x_n$ y $\displaystyle\sum_{n=1}y_n$
+      converge y en ese caso, $\displaystyle\sum_{n=1}^\infty z_n=\displaystyle\sum_{n=1}^\infty x_n+i\displaystyle\sum_{n=1}^\infty y_n$\\
+
+      Convergencia absoluta $\Longrightarrow$ Convergencia.
+    }
+    \comentario{
+      \subsubsection*{Recordatorio: Seriees de números positivos}
+      Sea $\displaystyle \sum_{n=1}\rho_n$, $\rho_n\geq 0$. Sean
+      $A=\text{limsup}\left(\rho_n\right)^{\nicefrac{1}{n}}$ y 
+      $B=\text{limsup}\left(\dfrac{\rho_{n+1}}{\rho_n}\right)^{\nicefrac{1}{n}}$ Entonces:
+      \begin{itemize}
+        \item Si $A<1$ ó $B<1$, $\displaystyle\sum_{n=1}^\infty\rho_n<\infty$
+        \item Si $A>1$ ó $B>1$, $\displaystyle\sum_{n=1}^\infty\rho_n=\infty$
+      \end{itemize}
+      $\text{limsup}(x_n)=\lim\text{sup}\left\{x_k\colon k\geq n\right\}$ Si $\exists\lim x_n$, 
+      $\text{lumsup} x_n=\lim x_n$\hspace{0.5cm}$\text{limsup}(x_n y_n)=\lim x_n \text{limsup} y_n $
+      si $\exists\lim x_n$
+    }
+    \ejemplo{$\displaystyle\sum_{n=1}n(1+i)^n(2i)^{-n}$}{
+      $a_n=n(1+i)^n(2i)^{-n}\Longrightarrow \abs{a_n}=n\abs{1+i}^n\abs{2i}^{-n}
+      =\dfrac{n(\sqrt{2})^n}{2^n}$\\
+      $\sqrt[n]{\abs{a_n}}\sqrt[n]{n}\dfrac{\sqrt{2}}{2}\longrightarrow
+      \dfrac{\sqrt{2}}{2}\Longrightarrow \text{limsup}\sqrt[n]{\abs{a_n}}=\dfrac{\sqrt{2}}{2}<1\Longrightarrow$
+      La serie converge absolutamente.\\
+
+      En general, si la sucesión es convergente, podemos pasar una sucesión de 
+      números naturales a reales para aplicar los criterios de los reales.
+    }
+    \ejemplo{$\displaystyle\sum_{n=1}n^2 2^n(3+i)^{-n}$}{
+      $a_n=n^2 2^n(3+i)^{-n}\Longrightarrow \abs{a_n}=\dfrac{n^2\cdot 2^n}{(\sqrt{10})^n}$\\
+      $\dfrac{a_{n+1}}{\abs{a_n}}=\dfrac{(n+1)^2\cdot 2^{n+1}}{(\sqrt{10})^{n+1}}\cdot
+      \dfrac{(\sqrt{10})^n}{n^2\cdot 2^n}=\left(\dfrac{n+1}{n}\right)^2\dfrac{2}{\sqrt{10}}
+      \longrightarrow \dfrac{2}{\sqrt{10}}<1$
+    }
+    \ejemplo{Serie geométrica: $\displaystyle\sum_{n\geq 0}z^n$}{
+      $a_n=z^n\Longrightarrow\abs{a_n}=\abs{z}^n$\hspace{1cm}$\dfrac{z^{n+1}-1}{z-1}=1+z+\dots+z_n$\\
+      Si $z=1$, la serie no converge, si $z\neq1$:
+      $\displaystyle\sum_{n\geq 0}z^n=\left\{1+\dots+z_n\right\}_{n\in\bbN U \left\{0\right\}}=
+      \left\{\dfrac{z^{n+1}-}{z-1}\right\}$\\
+      \begin{itemize}
+        \item Si $\abs{z}<1, z^{n+1}\longrightarrow 0\Longrightarrow\displaystyle\sum_{n=0}^\infty z^n=\dfrac{1}{1-z}$
+        \item Si $\abs{z}\geq 1, z^{n+1}$ no converge $\Longrightarrow$ La serie no converge.
+      \end{itemize}
+    }
+    \definicion{Series de potencias}{
+      Sean $z_0\in\bbC, \left\{a_n\right\}\in\bbC$. La serie de potencias de coeficientes
+      $\left\{a_n\right\}$ y otro $z_0$ es la serie de funciones $\displaystyle\sum_{n\geq 0}a_n
+      \left(z-z_0\right)^n$\\
+
+      Decimos que la serie converge (puntualmente) en $S\subseteq\bbC$ si:
+      \begin{equation}
+        \sum_{n\geq 1}a_n(w_0-z_0)^n \text{ converge }\forall w_0\in S
+      \end{equation}
+
+      Decimos que la serie converge uniformemente a $S\subseteq\bbC$ si:
+      \begin{equation}
+        \forall z>0 \exists N\in\bbN\colon n\geq N\Longrightarrow
+        \abs{\sum_{k=1}^n a_k(w_0-z_0)^k-\sum_{k=1}^\infty a_k(w_0-z_0)^k}
+        <\varepsilon\hspace{0.4cm}\forall w_0\in S
+      \end{equation}
+    }
+    \definicion{Teorema de Abel}{
+      Sea $\displaystyle\sum_{n\geq 0}a_n(z-z_0)^n$ y sea $z_1\in\bbC$ tal que
+      la serie converge puntualmente en $z_1$. Si $r=\abs{z_0-z_1}$, entonces:
+      \begin{itemize}
+        \item La serie converge \textbf{absolutamente} en cada punto de $D(z_0,r)$
+        \item La serie converge \textbf{uniformemente} en cada compacto de $D(z_0,r)$
+      \end{itemize}
+    }
+    \definicion{Radio de convergencia de una serie de potencias}{
+      Sea $\displaystyle\sum_{n\geq 0}a_n(z-z_0)^n$ una serie de potencias, definimos el radio
+      de convergencia de la serie como:
+
+      \[r=\left(\text{limsup}(\abs{a_n}^{\nicefrac{1}{n}})\right)^{-1}\]
+
+      Estudiando $(+\infty)^{-1}=0,\hspace{0.5cm}0^{-1}=+\infty$
+    }
+    \teorema{Teorema de convergencia de las series de potencias}{
+      Sea $\displaystyle\sum_{n\geq 0}a_n(z-z_0)^n$ y sea $r=\left(\text{limsup}\abs{a_n}^{\nicefrac{1}{n}}\right)^{-1}$, entonces:
+      \begin{itemize}
+        \item La serie converge absolutamente en $D(z_0,r)$
+        \item Converge uniformemente en cada compacto de $D(z_0,r)$, y
+        \item No converge en ningún punto $z\in\bbC\setminus\ovl{D}(z_0,r)$
+      \end{itemize}
+    }
+    \comentario{
+      Sea $\displaystyle\sum_{n\geq0}a_n(z-z_0)^n$ una serie de potencias.\\
+      Si $\exists\lim \dfrac{\abs{a_{n+1}}}{\abs{a_n}}$, entonces el radio de 
+      convergencia de la serie es $r=\left(\lim\dfrac{\abs{a_{n+1}}}{\abs{a_n}}\right)^{-1}$
+    }
 \end{document}

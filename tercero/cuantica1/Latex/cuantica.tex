@@ -2077,4 +2077,121 @@
     ¿Cómo escribimos un estado combinación de $A$ y $B$?
     \[\ket{AB;_{i,j}}=\ket{A;_i}\ket{B;_j}\]
   }
+  \section{Evolución temporal de entrelazamiento (\textit{entanglement})}
+    \noindent Supongamos dos sistemas $A$ y $B$:
+    \[\hat{H}_{AB}=\hat{H}_A+\hat{H}_B+\hat{H}_\text{int}\]
+    \noindent Como hemos hechco anteriormente, los autovectores se denotan como:
+    \[\left\{\ket{A,i}\right\}\hspace{0.5cm}\left\{\ket{B,j}\right\}\hspace{0.2cm}\longrightarrow\hspace{0.2cm}
+    i\hbar \dfrac{\partial\ket{A,i}}{\partial t}=\hat{H}_A\ket{A,i}\hspace{0.5cm}
+    i\hbar \dfrac{\partial\ket{B,j}}{\partial t}=\hat{H}_B\ket{B,j}\]
+    \noindent De forma que el estado compuesto nos quedará como:
+    \[\ket{AB}=\sum_{ij}c_{ij}\ket{A,i}\ket{B,j}\Longrightarrow 
+    i\hbar\dfrac{\partial \ket{AB}}{\partial t}=\hat{H}_{AB}\ket{AB}=
+    \left(\hat{H}_A+\hat{H}_B+\hat{H}_\text{int}\right)\ket{AB}\]
+    
+    \[i\hbar\dfrac{\partial}{\partial t}\sum_{ij}c_{ij}\ket{A,i}\ket{B,j}=\sum_{ij}c_{ij}\hat{H}_A
+    \ket{A,i}\ket{B,j}+\sum_{ij}c_{ij}\hat{H}_B\ket{A,i}\ket{B,j}+\sum_{ij}c_{ij}
+    \hat{H}_\text{int}\ket{A,i}\ket{B,j}=\]
+    
+    \[=i\hbar\left(\sum_{ij}\dfrac{\partial c_{ij}}{\partial t}\ket{A,i}\ket{B,j}+
+    \sum_{ij}c_{ij}\dfrac{\partial\ket{A,i}}{\partial t}\ket{B,j}+\sum_{ij}c_{ij}\ket{A,i}
+    \dfrac{\partial \ket{B,j}}{\partial t}\right)=\]
+    
+    \[\text{Y como sabemos que }\hspace{0.2cm}\begin{cases}
+    \begin{aligned}
+      i\hbar\dfrac{\partial \ket{A,i}}{\partial t}=\hat{H}_A\ket{A,i}\\
+      i\hbar\dfrac{\partial \ket{B,j}}{\partial t}=\hat{H}_B\ket{B,j}
+    \end{aligned}
+    \end{cases}\]
+
+    \[=i\hbar\left(\sum_{ij}\dfrac{\partial c_{ij}}{\partial t}\ket{A,i}\ket{B,j}+
+    \sum_{ij}c_{ij}\dfrac{\hat{H}_A\ket{A,i}}{i\hbar}\ket{B,j}+\sum_{ij}c_{ij}\ket{A,i}
+    \dfrac{\hat{H}_A\ket{B,j}}{i\hbar}\right)=i\hbar\sum_{ij}\dfrac{\partial c_{ij}}{\partial t}
+    \ket{A,i}\ket{B,j}\Longleftrightarrow\]
+
+    \[\text{R\textbf{elación de entrelazamiento }}\hspace{0.2cm}\boxed{i\hbar\sum_{ij}\dfrac{\partial c_{ij}}{\partial t}\ket{A,i}\ket{B,j}=
+    \sum_{ij}c_{ij}\hat{H}_\text{int}\ket{A,i}\ket{B,j}}\]
+  \section{Partículas idénticas}
+    \noindent ¿Qué sucede en la mecánica cuántica cuando queremos construir una función
+    de onda de un sistema compuesto de dos electrones? Podemos elegir como una
+    solución la separable:
+    \[\psi(x_A,x_B)=\psi(x_A)\psi(x_B)\]
+    \noindent Pero nos encontramos con un problema. Mientras que en mecánica clásica las 
+    partículas son distinguibles, podemos 'etiquetar' cada partícula y seguirla 
+    en a través del tiempo. Sin embargo, en cuántica, en el momento en el que hacemos
+    una medida sobre un electrón, colapsamos la función de onda y perdemos la 
+    información buscada. Es por esto que en mecánica cuántica las partículas son 
+    indistinguibles.\\
+
+    \noindent Para evitar este tipo de problemas, se define la función como una 
+    función que será simétrica o anisimétrica en función del estado $i$ o $j$ en 
+    el que se encuentre, siendo $C$ una constante de normalización.
+    \[\psi_\pm(x_A,x_B)=C\left(\psi_i(x_A)\psi_j(x_B)\pm\psi_j(x_A)\psi_i(x_B)\right)\]
+
+    \definicion{Bosones}{
+      A las partículas cuya función de onda compuesta es simétrica se les llama
+      bosones. Esto está relacionado con su espín, en este caso los bosones poseen espín entero.
+      \[\psi(x_A,x_B)=\psi(x_B,x_A)\]
+    }
+    \definicion{Fermiones}{
+      A las partículas cuya función de onda compuesta es antisimétrica se les llama
+      fermiones. Esto está relacionado con su espín, en este caso los fermiones poseen espín semientero.
+      \[\psi(x_A,x_B)=-\psi(x_B,x_A)\]
+    }
+    \ejemplo{¿Qué sucede si dos fermiones se encuentran en el mismo estado? ($i=j$)}{
+      Si $i=j$ y trabajamos con fermiones, la función de onda es la antisimétrica. 
+      \[\psi_-(x_A,x_B)=C\left(\psi_i(x_A)\psi_i(x_B)-\psi_i(x_A)\psi_i(x_B)\right)=0\]
+      Es decir, no puedo tener dos fermiones ocupando el mismo nivel a no ser que cada
+      uno tenga un espín distinto (y por tanto estén en estados distintos). 
+      Análogamente, sí que podemos encontrar los bosones que queramos en un 
+      mismo nivel.
+    }
+\chapter{La Ecuación de Schrödinger en tres dimensiones}
+  \noindent Vamos a ver ejemplos en coordenadas cartesianas que ilustran la facilidad
+  en algunos ejemplos para pasar de problemas en una dimensión a una extensión a tres.
+  
+  \noindent Los estados estacionarios de la Ecuación de Shrödinger se obtienen de la 
+  versión separable:
+  \[\hat{H}\psi=E\psi\hspace{1cm}\Psi(\vec{r},t)=\psi(\vec{r})\varphi(t)\]
+  \noindent Los operadores son:
+  \[\left.\begin{aligned}
+    &\hat{H}=\dfrac{\hat{p}^2}{2m}+U(\vec{r})\\
+    &\hat{\vec{p}}=(\hat{p}_x,\hat{p}_y,\hat{p}_z)=\left(-i\hbar\dfrac{\partial}{\partial x},
+    -i\hbar\dfrac{\partial}{\partial y},-i\hbar\dfrac{\partial}{\partial z}\right)\\
+  \end{aligned}\right\}\Longleftrightarrow
+  \hat{H}=\dfrac{-\hbar^2}{2m}\left(\dfrac{\partial^2}{\partial x}+\dfrac{\partial^2}{\partial y}
+  +\dfrac{\partial^2}{\partial z}\right)+U(\vec{r})\Longleftrightarrow\]
+  \[\text{\textbf{ESI en 3D }}\ \boxed{-\dfrac{\hbar^2}{2m}\nabla^2\psi+U\psi=E\psi}\]
+
+  \noindent Cuya solución general es $\Psi(\vec{r},t)=\sum_j c_j\psi(\vec{r})\ 
+  \text{exp}\left(-\dfrac{iE_i t}{\hbar}\right)$\\
+
+  \vspace{0.3cm}
+  \noindent Si asumimos que $\psi(\vec{r})=\psi(x)\psi(y)\psi(z)$, que se 
+  cumple siempre que $U(\vec{r})=U(x,y,z)=U(x)+U(y)+U(z)$
+
+  \[\hspace{-0.5cm}-\dfrac{\hbar^2}{2m}\left(\dfrac{\partial^2 \psi(x)}{\partial x^2}\psi(y)\psi(z)+
+  \dfrac{\partial^2 \psi(y)}{\partial x^2}\psi(x)\psi(z)+\dfrac{\partial^2 \psi(z)}{\partial z^2}\psi(x)\psi(y)\right)+
+  \left(U(x)+U(y)+U(z)\right)\psi(x)\psi(y)\psi(z)=E\psi(\vec{r})\]
+
+  \[\Longleftrightarrow \left(-\dfrac{\hbar^2}{2m}\dfrac{1}{\psi(x)}\dfrac{\partial^2\psi(x)}{\partial x^2}+U(x)\right)+
+  \left(-\dfrac{\hbar^2}{2m}\dfrac{1}{\psi(y)}\dfrac{\partial^2\psi(y)}{\partial y^2}+U(y)\right)+
+  \left(-\dfrac{\hbar^2}{2m}\dfrac{1}{\psi(z)}\dfrac{\partial^2\psi(z)}{\partial z^2}+U(z)\right)=E\]
+  Y como todo ha de ser igual a una constante, si $U(x)=U(y)=U(z)=0$ entonces
+  \[-k_x^2-k_y^2-k_z^2=\dfrac{2mE}{\hbar^2}\]
+
+  \ejemplo{Pozo infinito cúbico de lado a $\begin{cases}\begin{aligned}&0&x,y,z \text{ entre }0\text{ y }a\\ 
+    &\infty &\text{para el resto}\end{aligned}\end{cases}$}{
+    $-\dfrac{\hbar^2}{2m}\dfrac{1}{\psi(x)}\dfrac{\partial^2\psi(x)}{\partial x^2}
+    -\dfrac{\hbar^2}{2m}\dfrac{1}{\psi(y)}\dfrac{\partial^2\psi(y)}{\partial y^2}
+    -\dfrac{\hbar^2}{2m}\dfrac{1}{\psi(z)}\dfrac{\partial^2\psi(z)}{\partial z^2}=E$\\
+    De forma que $-k_x^2-k_y^2-k_z^2=\dfrac{2mE}{\hbar^2}$\\ 
+    Ahora, aplicamos las condniciones de contorno.
+    \begin{itemize}
+      \item $\psi(x)=A\sin(k_x\cdot x)$
+      \item $\psi(x)=B\sin(k_y\cdot y)$
+      \item $\psi(x)=C\sin(k_z\cdot z)$
+    \end{itemize}
+    Por normalización de la función de onda $A=\sqrt{\dfrac{2}{a}}$
+  }
 \end{document}
