@@ -1,0 +1,16 @@
+CONTRATO DE LICENCIA
+DE LOS PROGRAMAS INFORMÁTICOS 
+TERMOGRAF Y MULTIEVAL
+DE LA UNIVERSIDAD DE ZARAGOZA
+
+Por el presente documento se establecen las condiciones y términos que, en caso de aceptación, le concederán la licencia de uso temporal de los programas informáticos "TermoGraf"  y "MultiEval" en cualquiera de sus versiones.
+
+La presente licencia de software, le autoriza a instalar y almacenar el software en un dispositivo de almacenamiento. Únicamente podrá realizar una copia del software con fines de seguridad exclusivamente, y en ella deberán aparecer los avisos de Copyright y cualquier leyenda sobre derechos de propiedad que figure en la copia original.
+
+Esta es una licencia personal, no exclusiva e intransferible y sólo en lo que sea estrictamente necesario para satisfacer las necesidades del usuario durante todo el tiempo de vigencia de los derechos de propiedad de la Universidad de Zaragoza.
+
+La Universidad de Zaragoza en ningún caso será responsable ante el usuario o terceras personas de daños o pérdidas surgidas como consecuencia de su utilización o modificación, daños o pérdidas surgidas de forma accidental o por uso inadecuado, o por utilización del software con una configuración de hardware distinta a la recomendada.
+
+La presente licencia le otorga únicamente derechos limitados de uso del software. La Universidad de Zaragoza conserva todos los derechos, títulos de propiedad e intereses, incluida propiedad intelectual (Copyright) relativa al software. La Universidad de Zaragoza se reserva todos los derechos no concedidos de forma explícita. En concreto se prohíbe explícitamente el uso del programa informático en temas de carácter bélico.
+
+Las condiciones particulares dependen del tipo de licencia solicitada. La ausencia de licencia, o "licencia gratuita", otorga derecho al uso personal, privado y no lucrativo del programa, directa o indirectamente, quedando explicitamente prohibido su uso en salas de ordenadores compartidos. El resto de licencias otorgan derechos particulares según su modalidad, la cual viene definida por el fichero electrónico personalizado con los datos proporcionados por el usuario a la hora de la adquisión de la licencia.

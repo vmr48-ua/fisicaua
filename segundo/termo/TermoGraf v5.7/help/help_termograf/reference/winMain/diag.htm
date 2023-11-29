@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  <title>TermoGraf: Diagrama termodin&aacute;mico</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body lang="es">
+
+<h1>Diagrama termodin&aacute;mico</h1>
+
+<p>En este panel se representan los elementos termodin&aacute;micos y los elementos 
+  de se&ntilde;alizaci&oacute;n con textos, im&aacute;genes o botones. Tambi&eacute;n 
+  aparecen el nombre y las unidades de las propiedades que est&aacute;n representadas 
+  en los ejes del diagrama, as&iacute; como diversos men&uacute;s desplegables 
+  seg&uacute;n la <a href="../../reference/winMain/bar_tools.htm">herramienta</a> seleccionada en ese 
+  momento.</p>
+
+<p>Pulsando el bot&oacute;n de la derecha del rat&oacute;n sobre el diagrama aparece 
+  un men&uacute; contextual con las distintas posibilidades de representaci&oacute;n, 
+  tambi&eacute;n accesibles desde el <a href="../../reference/menus/menu_diag.htm"> men&uacute; 
+  &quot;Diagrama&quot;</a> y la <a href="../../reference/menus/menu_diag.htm#diag">ventana &quot;Diagrama&quot;</a>.</p>
+
+<table align="center" border="0" cellspacing="10">
+  <tr valign="top">
+ 
+    <td nowrap> 
+      
+      <h2 align="center">Elementos termodin&aacute;micos</h2>
+
+      
+      <ul>
+
+        <li><a href="#est">Elemento &quot;Estado&quot;</a></li>
+
+        <li><a href="#proc">Elemento &quot;Proceso&quot;</a></li>
+
+        <li><a href="#isol">Elemento &quot;Isol&iacute;nea&quot;</a></li>
+
+        <li><a href="#ciclo">Elemento &quot;Ciclo&quot;</a></li>
+
+      
+      </ul>
+
+    </td>
+
+    <td nowrap> 
+      
+      <h2 align="center">Etiquetas de informaci&oacute;n</h2>
+
+      
+      <ul>
+
+        <li><a href="#text">Etiqueta de texto</a></li>
+
+        <li><a href="#image">Etiqueta de imagen</a></li>
+
+        <li><a href="#link">Etiqueta de enlace</a></li>
+
+      
+      </ul>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<br>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+ 
+    <td nowrap> 
+      
+      <div align="center"><img src="../../reference/winMain/img/diag.gif" height="184" width="320"></div>
+
+    </td>
+
+    </tr>
+
+  <tr>
+ 
+    <td class="piefoto" nowrap>Diagrama termodin&aacute;mico</td>
+
+    </tr>
+
+</table>
+
+<p>&nbsp;</p>
+
+<hr width="75%">
+<h1>Elementos termodin&aacute;micos</h1>
+
+<h2><a name="est"></a>Elemento &quot;Estado&quot;</h2>
+
+<blockquote> 
+  
+  <p>Representa un estado termodin&aacute;mico definido por el valor de sus propiedades. 
+    Los estados se crean con la <a href="../../reference/winMain/bar_tools.htm#new_est">herramienta &quot;Nuevo 
+    estado&quot;</a>, o indirectamente con las herramientas <a href="../../reference/winMain/bar_tools.htm#new_proc">&quot;Nuevo 
+    proceso&quot;</a> o <a href="../../reference/winMain/bar_tools.htm#new_cic">&quot;Nuevo ciclo&quot;</a>, y se seleccionan 
+    pulsando con el rat&oacute;n sobre su dibujo. Cuando un estado est&aacute; 
+    seleccionado el color interior de su c&iacute;rculo es amarillo.</p>
+
+  
+  <p>Los estados pueden ser libres -con per&iacute;metro negro- o tener fija alguna 
+    o todas sus propiedades -con per&iacute;metro rojo. Esta cualidad determina 
+    la restricci&oacute;n de movimiento del estado cuando se arrastra con el rat&oacute;n 
+    con la <a href="../../reference/winMain/bar_tools.htm#modify">herramienta &quot;Modificar&quot;</a>.</p>
+
+  
+  <ul>
+
+    <li> Un estado libre permite el cambio de los valores de todas sus propiedades, 
+      movi&eacute;ndose libremente por el diagrama.</li>
+
+    <li>Un estado fijo no permite el cambio de sus propiedades, por lo que no 
+      podr&aacute; moverse por el diagrama.</li>
+
+    <li>Un estado en el que se ha fijado alguna de sus propiedades permitir&aacute; 
+      solamente el cambio de las restantes propiedades movi&eacute;ndose a lo 
+      largo de la isol&iacute;nea correspondiente al tipo de propiedad fijada. </li>
+
+  
+  </ul>
+
+  
+  <p><b>Men&uacute; contextual</b></p>
+
+  
+  <blockquote>
+    
+    <p>Pulsando el bot&oacute;n de la derecha del rat&oacute;n sobre un estado 
+      aparece un men&uacute; contextual con varias acciones disponibles, tambi&eacute;n 
+      accesibles desde el <a href="../../reference/winMain/pan_props.htm#est">bot&oacute;n &quot;Estado&quot;</a> 
+      del panel de propiedades.</p>
+
+  </blockquote>
+
+  
+  <ul>
+
+    <li><b>A&ntilde;adir datos a tabla:</b> A&ntilde;ade las propiedades de todos 
+      los elementos del diagrama a la <a href="../../reference/winAux/win_table.htm"> tabla 
+      de propiedades</a>.</li>
+
+    <li><b>Barrido:</b> Permite calcular los valores que toman las propiedades 
+      del estado seg&uacute;n la variaci&oacute;n de una propiedad dentro de un 
+      rango de valores. Para m&aacute;s informaci&oacute;n ver <a href="../../reference/menus/menu_anal.htm#scan">ventana 
+      &quot;Barrido&quot;</a>.</li>
+
+    <li><b>Libre / Fijo / Fijar Propiedad:</b> La selecci&oacute;n de uno de estos 
+      comandos cambia la restricci&oacute;n de movimiento del estado. Un estado 
+      fijo no podr&aacute; cambiar su propiedades mediante arrastre de rat&oacute;n.<br>
+
+    </li>
+
+  
+  </ul>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="proc"></a>Elemento &quot;Proceso&quot;</h2>
+
+<blockquote> 
+  
+  <p>Representa un proceso termodin&aacute;mico, definido entre los estados inicial 
+    y final a partir de su ecuaci&oacute;n de proceso. Los procesos se crean con 
+    la <a href="../../reference/winMain/bar_tools.htm#new_proc">herramienta &quot;Nuevo proceso&quot;</a>, o indirectamente 
+    con la <a href="../../reference/winMain/bar_tools.htm#new_cic">herramienta &quot;Nuevo ciclo&quot;</a>, y se 
+    seleccionan pulsando con el rat&oacute;n sobre su flecha de direcci&oacute;n. 
+    Cuando un proceso est&aacute; seleccionado el color interior de su flecha 
+    es amarillo.</p>
+
+  
+  <p>El color de un proceso indica si se trata de un proceso endot&eacute;rmico 
+    -rojo-, exot&eacute;rmico -azul- o adiab&aacute;tico -verde.</p>
+
+  
+  <p><b>Men&uacute; contextual</b></p>
+
+  
+  <blockquote>
+    
+    <p>Pulsando el bot&oacute;n de la derecha del rat&oacute;n sobre un proceso 
+      aparece un men&uacute; contextual con varias acciones disponibles, tambi&eacute;n 
+      accesibles desde el <a href="../../reference/winMain/pan_props.htm#est">bot&oacute;n &quot;Reversibilidad&quot;</a> 
+      del panel de propiedades.</p>
+
+  </blockquote>
+
+  
+  <ul>
+
+    <li><b>A&ntilde;adir datos a tabla:</b> A&ntilde;ade las propiedades de todos 
+      los elementos del diagrama a la <a href="../../reference/winAux/win_table.htm"> tabla 
+      de propiedades</a>.</li>
+
+    <li><b>Balances:</b> Abre la <a href="../../reference/menus/win_balan.htm">ventana &quot;Balances&quot;</a> 
+      para realizar los balances de energ&iacute;a, entrop&iacute;a y exerg&iacute;a 
+      sobre este proceso.</li>
+
+    <li><b>Libre / Fijo / Fijar Propiedad:</b> La selecci&oacute;n de uno de estos 
+      comandos cambia la restricci&oacute;n de movimiento del estado. El comando 
+      seleccionado muestra la restricci&oacute;n actual del estado.<br>
+
+    </li>
+
+    <li><b>Tipo de reversibilidad:</b> Permite cambiar la reversibilidad del proceso, 
+      pasando de reversible a irrevervisible y viceversa. &uacute;nicamente est&aacute; 
+      disponible para procesos adiab&aacute;ticos.</li>
+
+  
+  </ul>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="isol"></a>Elemento &quot;Isol&iacute;nea&quot;</h2>
+
+<blockquote>
+  
+  <p>Representa una isol&iacute;nea sobre el diagrama termodin&aacute;mico. Las 
+    isol&iacute;neas se crean mediante la <a href="../../reference/menus/menu_sust.htm#isol"> 
+    ventana &quot;Isol&iacute;neas&quot;</a> o con la opci&oacute;n &quot;Control&quot; de la <a href="../../reference/winMain/bar_tools.htm#new_proc">herramienta 
+    &quot;Nuevo proceso&quot;</a> y se seleccionan pulsando con el rat&oacute;n sobre los 
+    controles rectangulares de sus extremos.</p>
+  <p>El color de una isol&iacute;nea indica de qu&eacute; tipo de isol&iacute;nea 
+    se trata, pudiendose cambiar en la <a href="../../reference/menus/win_prefinit.htm">ventana 
+    &quot;Preferencias iniciales&quot;</a>.</p>
+
+  
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="ciclo"></a>Elemento &quot;Ciclo&quot;</h2>
+
+<blockquote> 
+  
+  <p>Representa un ciclo termodin&aacute;mico definido por sus estados y procesos. 
+    Los ciclos se crean con la <a href="../../reference/winMain/bar_tools.htm#new_cic">herramienta &quot;Nuevo 
+    ciclo&quot;</a>, a&ntilde;adiendo procesos a un estado existente mediante la <a href="../../reference/winMain/bar_tools.htm#add">herramienta 
+    &quot;A&ntilde;adir procesos&quot;</a> o unificando estados de dos procesos distintos 
+    mediante la <a href="../../reference/winMain/bar_tools.htm#modify">heramienta &quot;Modificar&quot;</a>.</p>
+
+  
+</blockquote>
+
+<p>&nbsp;</p>
+
+<hr width="75%">
+<h1><a name="labels"></a>Etiquetas de informaci&oacute;n</h1>
+
+<h2><a name="text"></a>Etiqueta de texto</h2>
+
+<blockquote>
+  
+  <p>Representa un texto de informaci&oacute;n dentro del diagrama. Se crean mediante 
+    la <a href="../../reference/winMain/bar_tools.htm#insert_text">herramienta &quot;Texto&quot;</a> haciendo &quot;doble 
+    clic&quot; sobre el diagrama o con el <a href="../../reference/menus/menu_diag.htm#text">men&uacute; 
+    &quot;Insertar texto&quot;</a> y escribiendo el texto en la etiqueta.</p>
+
+  
+  <p>Pulsando el bot&oacute;n de la derecha del rat&oacute;n sobre la etiqueta 
+    aparece un men&uacute; contextual con varias opciones disponibles. Estas opciones 
+    se pueden configurar tambi&eacute;n en la&nbsp;<a href="../../reference/menus/win_graflabel.htm">ventana 
+    &quot;Etiqueta&quot;</a> que aparece eligiendo la primera acci&oacute;n del men&uacute; 
+    contextual.</p>
+
+  <p>&nbsp;</p>
+</blockquote>
+
+<h2><a name="image"></a>Etiqueta de imagen</h2>
+
+<blockquote> 
+  
+  <p>Representa una imagen dentro del diagrama. Se crean mediante la <a href="../../reference/winMain/bar_tools.htm#insert_image">herramienta 
+    &quot;Imagen&quot;</a> haciendo &quot;doble clic&quot; sobre el diagrama o con el <a href="../../reference/menus/menu_diag.htm#image">men&uacute; 
+    &quot;Insertar imagen&quot;</a>, apareciendo un cuadro de di&aacute;logo donde se puede 
+    seleccionar el fichero de imagen que se desea insertar en el diagrama.</p>
+
+  
+  <p>Pulsando el bot&oacute;n de la derecha del rat&oacute;n sobre la etiqueta 
+    aparece un men&uacute; contextual con varias opciones disponibles. Estas opciones 
+    se pueden configurar tambi&eacute;n en la&nbsp;<a href="../../reference/menus/win_graflabel.htm">ventana 
+    &quot;Etiqueta&quot;</a> que aparece eligiendo la primera acci&oacute;n del men&uacute; 
+    contextual.</p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="link"></a>Etiqueta de enlace</h2>
+
+<blockquote> 
+  
+  <p>Representa un enlace a una acci&oacute;n del sistema operativo del ordenador 
+    dentro del diagrama. Tiene forma de bot&oacute;n y al pulsarlo se ejecuta 
+    la acci&oacute;n que tenga programada, como abrir un documento de otra aplicaci&oacute;n 
+    o ejecutar un comando del sistema operativo.</p>
+
+  
+  <p>Se crean mediante la <a href="../../reference/winMain/bar_tools.htm#insert_link">herramienta &quot;Enlace&quot;</a> 
+    haciendo &quot;doble clic&quot; sobre el diagrama o con el <a href="../../reference/menus/menu_diag.htm#link">men&uacute; 
+    &quot;Insertar enlace&quot;</a>, apareciendo un cuadro de di&aacute;logo donde se puede 
+    configurar la acci&oacute;n a ejecutar por el enlace. Para m&aacute;s informaci&oacute;n 
+    consultar la <a href="../../reference/menus/win_graflabel.htm"> ventana &quot;Etiqueta&quot;</a>.</p>
+
+  
+  <p>Pulsando el bot&oacute;n de la derecha del rat&oacute;n sobre la etiqueta 
+    aparece un men&uacute; contextual con varias opciones disponibles. Estas opciones 
+    se pueden configurar tambi&eacute;n en la&nbsp;<a href="../../reference/menus/win_graflabel.htm">ventana 
+    &quot;Etiqueta&quot;</a> que aparece eligiendo la primera acci&oacute;n del men&uacute; 
+    contextual.</p>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

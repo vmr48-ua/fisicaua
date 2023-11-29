@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><title>Video-tutoriales</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../styles.css" type="text/css">
+<script src="scripts_tut.js" language="JavaScript"> alert('Javascript code not found'); </script>
+</head>
+<body lang="es">
+<script language="JavaScript" type="text/javascript">
+<!-- 
+// numero del flash actual
+var tg_who = tg_arrayGetCurrent(window.location);
+// tutoriales en español
+var auxFolder = "basic/";
+var tg_tutorial = new Array(
+  new Array(700,516,"La ventana principal", auxFolder+"main_win_es.swf"), 
+  new Array(700,516,"Configuraci&oacute;n inicial", auxFolder+"config_basic_es.swf"),
+  new Array(700,516,"Manejo de las escalas del diagrama", auxFolder+"diag_scales_es.swf"), 
+  new Array(700,516,"Calcular estados, procesos y ciclos", auxFolder+"new_state_proc_cicl_es.swf"), 
+  new Array(700,516,"Crear ciclos complejos", auxFolder+"ciclo_advanced_es.swf"),
+  new Array(700,516,"Modificar y ajustar propiedades", auxFolder+"modify_es.swf"),
+  new Array(700,516,"Crear una tabla de propiedades", auxFolder+"table_scan_es.swf")
+);
+//-->
+</script>
+<div align="center">
+<h1>Video-tutoriales</h1>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+      <td><div align="center">
+      <p align="center">
+        
+        <ul>
+          <li><strong>Seleccionar video-tutorial:
+              <select onchange="javascript:tg_arrayGoSelect(tg_tutorial,this)">
+                <script language="JavaScript" type="text/JavaScript">tg_arrayWriteSelectContents(tg_tutorial,tg_who);</script>
+                </select>
+            </strong></li>
+        </ul>
+      </p>
+      <p><script language="JavaScript" type="text/JavaScript">tg_flashWrite(tg_tutorial,tg_who);</script></p>
+      <p>&nbsp;</p>
+      </div></td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

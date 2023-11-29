@@ -1,0 +1,386 @@
+<html>
+<head>
+<title>TermoGraf: Panel de propiedades</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body lang="es">
+<h1>Panel de propiedades</h1>
+<p>En este panel se muestran los valores de los elementos termodin&aacute;micos 
+  seleccionados en el <a href="../../reference/winMain/diag.htm">diagrama</a>: propiedades de los estados 
+  inicial y final de un proceso, balance de energ&iacute;a de ese proceso y el balance 
+  del ciclo del que forma parte. Para el c&aacute;lculo de estos valores interviene 
+  tanto el estado ambiente como el criterio de signos utilizado, los cuales se 
+  pueden definir a voluntad mediante el <a href="../../reference/menus/menu_anal.htm">men&uacute; 
+  &quot;An&aacute;lisis&quot;</a>.</p>
+<p>Este panel se compone de cuatro partes:</p>
+<ul>
+  <li> <a href="#est">Panel de estado:</a> Contiene las propiedades de los estados 
+    seleccionados y del proceso que los une.</li>
+  <li><a href="#sat">Panel de saturaci&oacute;n:</a> Contiene las propiedades 
+    de l&iacute;quido saturado y vapor saturado de los estados seleccionados.</li>
+  <li><a href="#bal">Panel de balances:</a> Contiene los balances del proceso 
+    y del ciclo seleccionados.</li>
+  <li><a href="#buts">Botones de propiedades:</a> Contiene los botones para mostrar 
+    y ocultar las propiedades de los paneles.</li>
+</ul>
+<p>Todos los valores se pueden mostrar y ocultar a voluntad mediante la botonera 
+  de propiedades situada en la parte inferior de este panel, permitiendo evitar 
+  el exceso de informaci&oacute;n mostrada en pantalla y concentrar la atenci&oacute;n 
+  s&oacute;lo en los valores de las propiedades que se vayan a trabajar durante 
+  el ejercicio.</p>
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td> 
+      <div align="center"><img src="../../reference/winMain/img/pan_props.gif" width="198" height="446"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="piefoto" nowrap>Panel de propiedades</td>
+  </tr>
+</table>
+<p>&nbsp;</p><hr width="75%">
+<h1>Contenido</h1>
+<h2><a name="est"></a>Panel de estado</h2>
+<blockquote> 
+  <p>Este panel contiene informaci&oacute;n sobre los estados inicial y final 
+    seleccionados as&iacute; como del proceso que los contiene. En caso de estar 
+    seleccionado un estado libre, los valores de estado final y de proceso permanecen 
+    vac&iacute;os.</p>
+  <table border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr> 
+      <td> 
+        <div align="center"><img src="../../reference/winMain/img/pan_propsest.gif" width="191" height="203" border="1"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td class="piefoto" nowrap>Panel de estado</td>
+    </tr>
+  </table>
+  <p>La informaci&oacute;n de este panel se puede mostrar y ocultar mediante la 
+    <a href="#buts">botonera de propiedades</a> situada en la parte inferior del 
+    panel. El contenido de cada l&iacute;nea de informaci&oacute;n es el siguiente:</p>
+  <ul>
+    <li> 
+      <div align="left"><b>Identificaci&oacute;n de proceso: </b>Muestra el nombre 
+        del proceso, denominado seg&uacute;n sus estados inicial y final. En caso 
+        de ser un proceso con una propiedad constante tambi&eacute;n se muestra 
+        el valor de esa propiedad (por ejemplo, un proceso is&oacute;baro mostrar&aacute; 
+        la presi&oacute;n) pudi&eacute;ndose modificar para ser ajustado a conveniencia. 
+        Los botones situados a la izquierda permiten seleccionar el proceso anterior 
+        o siguiente del ciclo seleccionado.</div>
+    </li>
+  </ul>
+  <table border="0" cellpadding="0" align="center">
+    <tr> 
+      <td class="imgbut"><img src="../../img/_tgraf/tri_up.gif" width="6" height="4"><br>
+        <img src="../../img/_tgraf/tri_down.gif" width="6" height="4"></td>
+      <td nowrap valign="bottom"> Botones de selecci&oacute;n de proceso</td>
+    </tr>
+  </table>
+  <ul>
+    <li><b>Reversibilidad:</b> Muestra el tipo de reversibilidad del proceso y 
+      su &iacute;ndice de irreversibilidad. En caso de ser un proceso irreversible 
+      el &iacute;ndice de irreversibilidad se puede modificar para ser ajustado 
+      a conveniencia. El bot&oacute;n situado a la izquierda muestra un men&uacute; 
+      contextual id&eacute;ntico al del <a href="../../reference/winMain/diag.htm#proc">elemento proceso</a> 
+      seleccionado, permitiendo al igual que &eacute;ste modificar el tipo de 
+      reversibilidad del proceso (solamente operativo para procesos adiab&aacute;ticos).</li>
+  </ul>
+  <table border="0" cellpadding="0" align="center">
+    <tr> 
+      <td class="imgbut"><img src="../../img/_tgraf/but_revBig.gif" width="10" height="11"><br>
+      </td>
+      <td nowrap valign="bottom"> Bot&oacute;n de reversibilidad</td>
+    </tr>
+  </table>
+  <ul>
+    <li> 
+      <p><b>Identificaci&oacute;n del estado:</b> Muestra los nombres de los estados 
+        seleccionados. Los botones de configuraci&oacute;n de estado -botones 
+        superiores- muestran un men&uacute; contextual id&eacute;ntico al del 
+        <a href="../../reference/winMain/diag.htm#est">elemento estado</a> seleccionado, permitiendo al 
+        igual que &eacute;ste fijar las propiedades de los estados y otras acciones. 
+        Los botones de tipo de c&aacute;lculo -botones inferiores- permiten determinar 
+        el tipo de c&aacute;lculo con el que hallar las nuevas propiedades de 
+        estado cuando se est&aacute;n ajustando los valores mediante este panel. 
+        Al final de este apartado se explica detalladamente los tipos de c&aacute;lculo 
+        posibles.</p>
+    </li>
+  </ul>
+  <table border="0" cellpadding="0" align="center">
+    <tr>
+      <td>
+        <table border="0" cellpadding="0">
+          <tr> 
+            <td class="imgbut"><img src="../../img/_tgraf/but_fijar.gif" width="6" height="6"><br>
+            </td>
+            <td nowrap valign="bottom">Bot&oacute;n de configuraci&oacute;n de 
+              estado </td>
+          </tr>
+        </table>
+      </td>
+      <td width="30">&nbsp;</td>
+      <td>
+        <table border="0" cellpadding="0" align="center">
+          <tr> 
+            <td class="imgbut"><img src="../../img/_tgraf/tri_right.gif" width="4" height="6"><br>
+            </td>
+            <td nowrap valign="bottom"> Bot&oacute;n de tipo de c&aacute;lculo</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <ul>
+    <li> 
+      <p><b>Botones de desplazamiento:</b> Mediante estos botones se modifican 
+        las propiedades de cada estado seg&uacute;n el incremento de un pixel 
+        en la posici&oacute;n del estado en el diagrama.</p>
+    </li>
+  </ul>
+  <table border="0" cellpadding="0" align="center">
+    <tr> 
+      <td class="imgbut"><img src="../../img/_tgraf/tri_left.gif" width="4" height="6"><br>
+      </td>
+      <td class="imgbut"><img src="../../img/_tgraf/tri_up.gif" width="6" height="4"><br>
+      </td>
+      <td class="imgbut"><img src="../../img/_tgraf/tri_down.gif" width="6" height="4"><br>
+      </td>
+      <td class="imgbut"><img src="../../img/_tgraf/tri_right.gif" width="4" height="6"><br>
+      </td>
+      <td nowrap valign="bottom"> Botones de desplazamiento</td>
+    </tr>
+  </table>
+  <ul>
+    <li><b>Presi&oacute;n (P):</b> Muestra los valores de la presi&oacute;n y 
+      sus unidades.</li>
+    <li><b>Volumen (v):</b> Muestra los valores del volumen por unidad de masa 
+      y sus unidades.</li>
+    <li><b>Densidad (d):</b> Muestra los valores de la densidad por unidad de 
+      masa y sus unidades.</li>
+    <li><b>Temperatura (T):</b> Muestra los valores de la temperatura y sus unidades.</li>
+    <li><b>Energ&iacute;a interna (u):</b> Muestra los valores de la energ&iacute;a 
+      interna por unidad de masa y sus unidades.</li>
+    <li><b>Entalp&iacute;a (h):</b> Muestra los valores de la entalp&iacute;a 
+      por unidad de masa y sus unidades.</li>
+    <li><b>Entrop&iacute;a (s):</b> Muestra los valores de la entrop&iacute;a 
+      por unidad de masa y sus unidades.</li>
+    <li><b>Exerg&iacute;a de flujo (af):</b> Muestra los valores de la exerg&iacute;a 
+      de flujo por unidad de masa y sus unidades.</li>
+    <li><b>Exerg&iacute;a (a):</b> Muestra los valores de la exerg&iacute;a por 
+      unidad de masa y sus unidades.</li>
+    <li><b>Entrop&iacute;a cero (s<sup>0</sup>):</b> Muestra los valores de la 
+      entrop&iacute;a cero por unidad de masa y sus unidades.</li>
+    <li><b>Calor espec&iacute;fico a presi&oacute;n constante (c<sub>p</sub>):</b> 
+      Muestra los valores del calor espec&iacute;fico a presi&oacute;n constante 
+      por unidad de masa y sus unidades.</li>
+    <li><b>Calor espec&iacute;fico a volumen constante (c<sub>v</sub>):</b> Muestra 
+      los valores del calor espec&iacute;fico a volumen constante por unidad de 
+      masa y sus unidades.</li>
+    <li><b>Energia cin&eacute;tica (ek):</b> Muestra los valores de la energ&iacute;a 
+      cin&eacute;tica por unidad de masa y sus unidades.</li>
+    <li><b>Energ&iacute;a potencial (ep):</b> Muestra los valores de la energ&iacute;a 
+      potencial por unidad de masa y sus unidades.</li>
+  </ul>
+  <p>El color de letra de las etiquetas de las propiedades muestra si la propiedad 
+    est&aacute; fijada -en rojo- o es libre -en negro- para ese estado. Por otra 
+    parte, el color de fondo amarillo claro cambia a naranja cuando la propiedad 
+    coincide con el tipo de proceso seleccionado. Por ejemplo, si est&aacute; 
+    seleccionado un proceso isobaro la l&iacute;nea de la presi&oacute;n, &quot;P&quot;, 
+    tendr&aacute; un color de fondo naranja.</p>
+  <p>Las casillas de edici&oacute;n permiten ajustar las propiedades de un estado 
+    introduciendo el valor deseado en la casilla correspondiente y pulsando la 
+    tecla &quot;Enter&quot;. El c&aacute;lculo de las nuevas propiedades se realiza 
+    seg&uacute;n la seleccion del bot&oacute;n tipo de calculo expuesto anteriormente. 
+    Las posibilidades son:</p>
+  <ul>
+    <li><b>Tipo PT:</b> C&aacute;lculo con presi&oacute;n y temperatura.</li>
+    <li><b>Tipo Pv:</b> C&aacute;lculo con presi&oacute;n y volumen.</li>
+    <li><b>Tipo Ph:</b> C&aacute;lculo con presi&oacute;n y entalp&iacute;a.</li>
+    <li><b>Tipo Ps:</b> C&aacute;lculo con presi&oacute;n y entrop&iacute;a.</li>
+    <li><b>Tipo Tv:</b> C&aacute;lculo con temperatura y volumen.</li>
+    <li><b>Tipo Th:</b> C&aacute;lculo con y entalp&iacute;a.</li>
+    <li><b>Tipo Ts:</b> C&aacute;lculo con temperatura y entrop&iacute;a.</li>
+    <li><b>Tipo Autom&aacute;tico:</b> C&aacute;lculo a partir de la propiedad 
+      introducida -aquella sobre la que se pulsa &quot;Enter&quot;- y otra propiedad 
+      seleccionada de forma autom&aacute;tica seg&uacute;n el tipo de proceso 
+      seleccionado. Si se desea asegurar el tipo de c&aacute;lculo a realizar 
+      existen varias posibildades: <br>
+      <ul>
+        <li>Seleccionar el tipo de c&aacute;lculo: Elegir un tipo de c&aacute;lculo 
+          que no sea el autom&aacute;tico.</li>
+        <li>Cambiar simult&aacute;neamente dos propiedades: Modificar el valor 
+          de una propiedad y pulsar &quot;Enter&quot; sobre otra propiedad -no 
+          es necesario modificarla-, con lo que el programa elige esas dos propiedades 
+          para realizar el c&aacute;lculo.</li>
+        <li>Fijar una propiedad: Si una propiedad est&aacute; fija, el c&aacute;lculo 
+          se realiza a trav&eacute;s de ella y de la propiedad que se modifica.</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+<p>&nbsp;</p>
+<h2><a name="sat"></a>Panel de saturaci&oacute;n</h2>
+<blockquote> 
+  <p>Este panel contiene informaci&oacute;n sobre las propiedades de l&iacute;quido 
+    y vapor saturado de los estados seleccionados, adquiriendo valor num&eacute;rico 
+    solamente cuando el estado se encuentra dentro del domo de saturaci&oacute;n.</p>
+  <table border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr> 
+      <td> 
+        <div align="center"><img src="../../reference/winMain/img/pan_propssat.gif" width="191" height="90" border="1"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td class="piefoto" nowrap>Panel de saturaci&oacute;n</td>
+    </tr>
+  </table>
+  <p>La informaci&oacute;n de este panel se puede mostrar y ocultar mediante la 
+    <a href="#buts">botonera de propiedades</a> situada en la parte inferior del 
+    panel. El contenido de cada l&iacute;nea de informaci&oacute;n es el siguiente:</p>
+  <ul>
+    <li> <b>T&iacute;tulo (X):</b> Muestra los valores del t&iacute;tulo.</li>
+    <li><b>Volumen (v<sub>f</sub>,v<sub>g</sub>):</b> Muestra los valores del 
+      volumen por unidad de masa y sus unidades.</li>
+    <li><b>Densidad (d<sub>f</sub>,d<sub>g</sub>):</b> Muestra los valores de 
+      la densidad por unidad de masa y sus unidades. </li>
+    <li><b>Entalp&iacute;a (h<sub>f</sub>,h<sub>g</sub>):</b> Muestra los valores 
+      de la entalp&iacute;a por unidad de masa y sus unidades.</li>
+    <li><b>Entrop&iacute;a (s<sub>f</sub>,s<sub>g</sub>):</b> Muestra los valores 
+      de la entrop&iacute;a por unidad de masa y sus unidades. </li>
+    <li><b>Energ&iacute;a interna (u<sub>f</sub>,u<sub>g</sub>):</b> Muestra los 
+      valores de la energ&iacute;a interna por unidad de masa y sus unidades.</li>
+  </ul>
+</blockquote>
+<p>&nbsp;</p>
+<h2><a name="bal"></a> Panel de balances</h2>
+<blockquote> 
+  <p>Este panel contiene informaci&oacute;n sobre los balances de energ&iacute;a del 
+    proceso y ciclo seleccionados. La primera columna muestra los balances del 
+    proceso o procesos seleccionados. En caso de estar seleccionados varios procesos 
+    -se seleccionan con la <a href="../../reference/winMain/bar_tools.htm#info">herramienta &quot;Informaci&oacute;n&quot;</a>-, 
+    estos valores ser&aacute;n la suma de los balances de cada uno de ellos. La 
+    segunda columna muestra los balances del ciclo seleccionado, que son la suma 
+    de los balances de cada uno de los procesos del ciclo.<br>
+  </p>
+  <table border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr> 
+      <td> 
+        <div align="center"><img src="../../reference/winMain/img/pan_propsbal.gif" width="191" height="178" border="1"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td class="piefoto" nowrap>Panel de balances</td>
+    </tr>
+  </table>
+  <p>La informaci&oacute;n de este panel se puede mostrar y ocultar mediante la 
+    <a href="#buts">botonera de propiedades</a> situada en la parte inferior del 
+    panel. El contenido de cada l&iacute;nea de informaci&oacute;n es el siguiente:</p>
+  <ul>
+    <li><b>Identificaci&oacute;n de proceso y de ciclo:</b> Muestra el nombre del proceso 
+      o procesos seleccionados, as&iacute; como el tipo de ciclo que puede ser 
+      de Potencia o Refrigeraci&oacute;n si es un ciclo cerrado, o Total si es 
+      un ciclo abierto. El bot&oacute;n situado a la izquierda del nombre del 
+      proceso introduce los valores de todos los ciclos del diagrama termodin&aacute;mico 
+      en la <a href="../../reference/winAux/win_table.htm">tabla de propiedades</a>.</li>
+  </ul>
+  <table border="0" cellpadding="0" align="center">
+    <tr> 
+      <td class="imgbut"><img src="../../img/_tgraf/menu_15/menu_tablaintro.gif" width="15" height="15"><br>
+      </td>
+      <td nowrap valign="bottom"> Bot&oacute;n de introducci&oacute;n de datos 
+        en la tabla</td>
+    </tr>
+  </table>
+  <ul>
+    <li><b>Masa:</b> Muestra los valores de masa del proceso y del ciclo. Si la 
+      masa del ciclo no se encuentra ajustada -cuando existe un estado del ciclo 
+      en el que los valores de entrada y salida de masa son distintos- esta casilla 
+      aparecer&aacute; con interrogantes y el resto de casillas del balance del 
+      ciclo aparecer&aacute;n vac&iacute;as indicando al usuario la necesidad de realizar 
+      el balance de masas del ciclo.</li>
+    <li><b>Trabajo (W):</b> Muestra el balance del trabajo y sus unidades.</li>
+    <li><b>Calor (Q):</b> Muestra el balance del calor y sus unidades.</li>
+    <li><b>Incremento de energ&iacute;a interna (<span class="symbol16">D</span>U):</b> 
+      Muestra el balance de la energ&iacute;a interna y sus unidades.</li>
+    <li><b>Incremento de entalp&iacute;a (<span class="symbol16">D</span>H):</b> Muestra 
+      el balance de la entalp&iacute;a y sus unidades.</li>
+    <li><b>Trabajo de expansi&oacute;n (Wx):</b> Muestra el balance del trabajo 
+      de expansi&oacute;n y sus unidades.</li>
+    <li><b>Trabajo t&eacute;cnico (W<sub>t</sub>):</b> Muestra el balance del 
+      trabajo t&eacute;cnico y sus unidades.</li>
+    <li><b>Trabajo de flujo (Wf):</b> Muestra el balance del trabajo t&eacute;cnico 
+      y sus unidades.</li>
+    <li><b>Trabajo disipativo (Wd):</b> Muestra el balance del trabajo disipativo 
+      y sus unidades.</li>
+    <li><b>Incremento de entrop&iacute;a (<span class="symbol16">D</span>S):</b> 
+      Muestra el balance de la entrop&iacute;a y sus unidades.</li>
+    <li><b>Incremento de exerg&iacute;a de flujo (<span class="symbol16">D</span>Af):</b> 
+      Muestra el balance de exerg&iacute;a de flujo y sus unidades.</li>
+    <li><b>Incremento de energ&iacute;a cin&eacute;tica (<span class="symbol16">D</span>Ek):</b> 
+      Muestra el balance de la energ&iacute;a cin&eacute;tica y sus unidades.</li>
+    <li><b>Incremento de energ&iacute;a potencial (<span class="symbol16">D</span>Ep):</b> 
+      Muestra el balance de la energ&iacute;a potencial y sus unidades.</li>
+    <li><b>Rendimientos (<span class="symbol16">h</span>):</b> Muestra el valor 
+      de los rendimientos del ciclo seleccionado cuando se trate de un ciclo cerrado 
+      y simple, es decir con cuatro estados y cuatro procesos. Si es un ciclo 
+      de potencia se mostrar&aacute;n los rendimientos seg&uacute;n el primer 
+      y segundo principio, rendimiento y eficiencia. Si es un ciclo de refrigeraci&oacute;n 
+      se mostrar&aacute;n los coeficientes de operaci&oacute;n como bomba de calor 
+      y como m&aacute;quina frigor&iacute;fica, COP1 y COP2.</li>
+    <li><b>Rendimientos manuales (<span class="symbol16">h</span>'):</b> Muestra 
+      el valor de los rendimientos calculados por el usuario. Para m&aacute;s 
+      informaci&oacute;n ver la <a href="../../reference/winMain/bar_tools.htm#rend">herramienta &quot;C&aacute;lculo 
+      de rendimientos&quot;</a>.</li>
+  </ul>
+</blockquote>
+<p>&nbsp;</p>
+<h2><a name="buts"></a>Botones de propiedades</h2>
+<blockquote> 
+  <p>En la parte inferior del panel se encuentran los botones para mostrar y ocultar 
+    la informaci&oacute;n del panel de propiedades, permitiendo evitar el exceso 
+    de informaci&oacute;n mostrada en pantalla y concentrar la atenci&oacute;n 
+    s&oacute;lo en los valores de las propiedades que se vayan a trabajar durante 
+    el ejercicio. La selecci&oacute;n de la informaci&oacute;n tambi&eacute;n se puede 
+    realizar en la versi&oacute;n TermoGraf Pro mediante el <a href="../../reference/menus/menu_edit.htm#showprops">men&uacute; 
+    &quot;Mostrar propiedades&quot;</a>, que ofrece un comando r&aacute;pido para 
+    mostrar &uacute;nicamente un grupo determinado de propiedades, aplic&aacute;ndose 
+    simult&aacute;neamente tanto en el <a href="../../reference/winMain/pan_cursor.htm">panel de cursor</a> 
+    como en este panel de propiedades.</p>
+  <table border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr> 
+      <td> 
+        <div align="center"><img src="../../reference/winMain/img/pan_propsbuts.gif" width="191" height="36" border="1"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td class="piefoto" nowrap>Botones de propiedades</td>
+    </tr>
+  </table>
+  <p>Todos los botones se pueden mostar u ocultar para que s&oacute;lo aparezcan 
+    en pantalla los botones que se van a utilizar en el ejercicio. Pulsando el 
+    bot&oacute;n derecho del rat&oacute;n sobre cualquiera de ellos se muestra 
+    un men&uacute; contextual con la acci&oacute;n &quot;Ocultar&quot; que hace 
+    que el bot&oacute;n desaparezca de la pantalla. Pulsando el &uacute;ltimo 
+    bot&oacute;n del grupo, con un peque&ntilde;o tri&aacute;ngulo negro, se muestra 
+    un men&uacute; contextual con los nombres de los botones ocultos de forma 
+    que la elecci&oacute;n de uno de ellos hace que &eacute;ste aparezca en pantalla. 
+    La versi&oacute;n TermoGraf Pro ofrece en el <a href="../../reference/menus/menu_edit.htm#lockprops">men&uacute; 
+    &quot;Presentaci&oacute;n restringida&quot;</a> la posibilidad de ocultar 
+    todos los botones de forma que el usuario no tenga acceso a mostrar determinadas 
+    propiedades durante un ejercicio.</p>
+  <p>Existen tres grupos de botones:</p>
+  <ul>
+    <li><b>Botones de estado y proceso:</b> Muestra y oculta la informaci&oacute;n 
+      sobre el proceso y los estados seleccionados.</li>
+    <li><b>Botones de saturaci&oacute;n:</b> Muestra y oculta la informaci&oacute;n 
+      sobre l&iacute;quido y vapor saturado de los estados seleccionados.</li>
+    <li><b>Botones de balances:</b> Muestra y oculta la informaci&oacute;n sobre 
+      los balances del proceso y del ciclo seleccionado.</li>
+  </ul>
+  <p>&nbsp;</p>
+</blockquote>
+</body>
+</html>

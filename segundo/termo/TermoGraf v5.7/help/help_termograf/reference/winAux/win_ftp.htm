@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  <title>TermoGraf: Ventana &quot;Conexi&oacute;n FTP&quot;</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+
+
+  
+  
+  
+  
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+
+<body lang="es">
+<h1>Ventana &quot;Conexi&oacute;n FTP&quot;</h1>
+<p>Esta ventana permite enviar y recibir documentos mediante el est&aacute;ndar 
+  FTP -File Transfer Protocol-, ampliamente utilizado en la red para el intercambio 
+  de ficheros. Est&aacute; pensada para facilitar la comunicaci&oacute;n entre 
+  alumno y profesor habilitando un espacio com&uacute;n donde el profesor pueda 
+  dejar los ejercicios y que el alumno los tenga disponibles cuando vaya a trabajarlos. 
+  Con esta ventana se evita depender de que el ordenador donde se est&eacute; 
+  trabajando disponga de un programa de FTP con una dif&iacute;cil configuraci&oacute;n 
+  o simplemente no tenerlo instalado.</p>
+<table align="center" border="0">
+  <tr valign="top"> 
+    <td nowrap> 
+      <h2 align="center">Contenido</h2>
+      <ul>
+        <li><a href="#data">Ventana previa &quot;Datos de conexi&oacute;n&quot;</a></li>
+        <li><a href="#local_remote">Paneles &quot;Local&quot; y &quot;Remoto&quot;</a></li>
+        <li><a href="#butts_actions">Botones &quot;Acciones FTP&quot; [TermoGraf Pro]</a></li>
+        <li><a href="#butts_conection">Botones &quot;Conexi&oacute;n&quot; y &quot;Cerrar&quot;</a></li>
+        <li><a href="#messages">Panel &quot;Mensajes&quot;</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+ <br>
+<table align="center" border="0">
+  <tr> 
+    <td nowrap> 
+      <div align="center"> 
+        <p style="text-align: center;"> <img src="../../reference/winAux/img/win_ftp.gif" border="0" height="406" width="675"></p>
+      </div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="piefoto" nowrap>Ventana &quot;Conexi&oacute;n FTP&quot;</td>
+  </tr>
+</table>
+<p></p>
+<hr width="75%">
+<h1>Contenido</h1>
+<h2><a name="data"></a>Ventana previa &quot;Datos de conexi&oacute;n&quot;</h2>
+<blockquote> 
+  <p>Como primer paso a la conexi&oacute;n FTP se pide al usuario que introduzca 
+    los datos requeridos por el servidor FTP para una nueva conexi&oacute;n, apareciendo 
+    una ventana de configuraci&oacute;n con los siguientes campos:</p>
+  <ul>
+    <li><b>Servidor:</b> Direcci&oacute;n del servidor FTP. Puede ser tanto un 
+      IP num&eacute;rico -por ejemplo &quot;123.456.789.123&quot;- como URL -por 
+      ejemplo &quot;termograf.unizar.es&quot;-. El bot&oacute;n &quot;Servidor 
+      central&quot; configura este campo con la direcci&oacute;n del servidor 
+      FTP de TermoGraf.</li>
+    <li><b>Nombre:</b> Nombre de acceso al servidor.</li>
+    <li><b>Contrase&ntilde;a:</b> La contrase&ntilde;a correspondiente al nombre.</li>
+  </ul>
+  <p>Normalmente los estudiantes de un mismo grupo comparten el mismo nombre y 
+    contrase&ntilde;a de acceso, ya que comparten los mismos privilegios de lectura 
+    y escritura en el servidor.</p>
+  
+<p>&nbsp;</p></blockquote>
+<p></p>
+<p></p>
+<h2><a name="local_remote"></a>Paneles &quot;Local&quot; y &quot;Remoto&quot;</h2>
+<blockquote> 
+  <p>Estos paneles muestran la estructura de directorios y ficheros del ordenador 
+    donde se est&aacute; trabajando -&quot;Local&quot;- y del servidor donde se 
+    desea intercambiar los archivos -&quot;Remoto&quot;-. Entre ambos se situan 
+    dos botones que permiten recibir y enviar ficheros:</p>
+  <ul>
+    <li> 
+      <table border="0" cellpadding="0">
+        <tr> 
+          <td class="imgbut">&lt;&lt;</td>
+          <td nowrap valign="bottom"> <b>Bot&oacute;n &quot;Recibir&quot;:</b> 
+            Recibe los archivos seleccionados al ordenador local.</td>
+        </tr>
+      </table>
+      
+    </li>
+    <li>
+      <table border="0" cellpadding="0">
+        <tr> 
+          <td class="imgbut">&gt;&gt;</td>
+          <td nowrap valign="bottom"> <b>Bot&oacute;n &quot;Enviar&quot;:</b> 
+            Envia los archivos seleccionados al servidor remoto.</td>
+        </tr>
+      </table>
+      
+    </li>
+  </ul>
+</blockquote>
+<p>&nbsp;</p>
+<h2><a name="butts_actions"></a>Botones &quot;Acciones FTP&quot; [TermoGraf 
+  Pro]</h2>
+<blockquote> 
+  <p>Estos botones permiten realizar acciones sobre los archivos del servidor 
+    remoto, siempre y cuando el usuario del servidor FTP tenga los privilegios 
+    de lectura y escritura apropiados para realizar cada acci&oacute;n. S&oacute;lo 
+    est&aacute;n disponibles en la versi&oacute;n TermoGraf Pro.</p>
+  <ul>
+    <li><b>Borrar:</b> Elimina el archivo seleccionado.</li>
+    <li><b>Cortar:</b> Corta el archivo seleccionado.</li>
+    <li><b>Pegar:</b> Pegar el archivo anteriormente copiado o cortado.</li>
+    <li><b>Nuevo dir:</b> Crea un nuevo directorio.</li>
+    <li><b>Borrar dir:</b> Elimina el directorio seleccionado.</li>
+    <li><b>Registro:</b> Obtiene informaci&oacute;n acerca de los accesos realizados 
+      al archivo seleccionado.<br>
+    </li>
+  </ul>
+</blockquote>
+<h2>&nbsp;</h2>
+<h2><a name="butts_conection"></a>Botones &quot;Conexi&oacute;n&quot; 
+  y &quot;Cerrar&quot;</h2>
+<blockquote> 
+  <p>El bot&oacute;n &quot;Conexi&oacute;n&quot; muestra la <a href="#data">ventana 
+    previa &quot;Datos de conexi&oacute;n&quot;</a> para volver a realizar la 
+    conexi&oacute;n. El bot&oacute;n &quot;Cerrar&quot; finaliza la sesi&oacute;n 
+    con el servidor.</p>
+</blockquote>
+<p>&nbsp;</p><p></p>
+<h2><a name="messages"></a>Panel &quot;Mensajes&quot;</h2>
+<blockquote>
+  <p>Muestra la lista de mensajes de las acciones demandadas por el usuario al 
+    servidor y el resultado de la mismas. Dado que muchos de ellos son repetidos 
+    se muestra tambi&eacute;n la hora de recepci&oacute;n del mensaje para evitar 
+    confusiones.</p>
+</blockquote>
+<p>&nbsp;</p>
+</body>
+</html>

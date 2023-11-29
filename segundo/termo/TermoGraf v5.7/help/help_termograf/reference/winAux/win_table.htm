@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  <title>TermoGraf: Ventana &quot;Tabla&quot;</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+
+
+  
+  
+  
+  
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+
+<body lang="es">
+<h1>Ventana &quot;Tabla&quot;</h1>
+<p>Esta ventana permite crear tablas de datos&nbsp;con los valores de los <a href="../../reference/winMain/diag.htm#est">elementos 
+  termodin&aacute;micos</a> y de las&nbsp;<a href="../../reference/winAux/win_vars.htm">variables de 
+  usuario</a>. Los datos se pueden manipular para mostrarlos en una tabla de datos, 
+  representarlos en las gr&aacute;ficas inferiores de la ventana o&nbsp;guardarlos 
+  como texto para ser utilizados en otro programa. El contenido de esta ventana 
+  tambi&eacute;n se puede&nbsp;imprimir mediante el&nbsp;<a href="../../reference/menus/menu_file.htm#print">men&uacute; 
+  &quot;Imprimir/Guardar imagen&quot;</a> de la ventana principal.</p>
+<table align="center" border="0">
+  <tr valign="top"> 
+    <td nowrap> 
+      <h2 align="center">Gesti&oacute;n de la tabla</h2>
+      <ul>
+        <li><a href="#data_new">Bot&oacute;n &quot;A&ntilde;adir datos&quot;</a></li>
+        <li><a href="#data_updown">Botones &quot;Subir/bajar datos&quot;</a></li>
+        <li><a href="#data_delete">Bot&oacute;n &quot;Borrar datos&quot;</a></li>
+        <li><a href="#data_save">Bot&oacute;n &quot;Guardar datos&quot;</a></li>
+        <li><a href="#data_sel">Panel &quot;Selector de datos&quot;</a></li>
+        <li><a href="#tabla">Panel &quot;Tablas de datos&quot;</a></li>
+      </ul>
+    </td>
+    <td nowrap> 
+      <h2 align="center">Gr&aacute;ficas de la tabla</h2>
+      <ul>
+        <li><a href="#grafs">Paneles &quot;Gr&aacute;ficas de la tabla&quot;</a></li>
+        <li><a href="#reglas">Controles &quot;Reglas de la gr&aacute;fica&quot;</a></li>
+        <li><a href="#zoom_auto">Bot&oacute;n &quot;Zoom autom&aacute;tico&quot;</a></li>
+        <li><a href="#zoom_manual">Botones &quot;Zoom manual&quot;</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+ <br>
+<table align="center" border="0">
+  <tr> 
+    <td nowrap> 
+      <div align="center"><img src="../../reference/winAux/img/win_table.gif" border="0" height="470" width="513">
+      </div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="piefoto" nowrap>Ventana &quot;Tabla&quot;</td>
+  </tr>
+</table>
+<hr width="75%">
+<h1>Gesti&oacute;n de la tabla</h1>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/menu_15/menu_tablaintro.gif" width="15" height="15"></td>
+    <td nowrap valign="bottom"> 
+      <h2><a name="data_new"></a>Bot&oacute;n &quot;A&ntilde;adir 
+        datos&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote> 
+  <p>Con este bot&oacute;n se introducen nuevos&nbsp;datos en la tabla. Al pulsarlo 
+    aparecen dos opciones de introducci&oacute;n:<br>
+  </p>
+  <ul>
+    <li><span style="font-weight: bold;">A&ntilde;adir datos del diagrama:</span>&nbsp;Los 
+      datos actuales de la gr&aacute;fica se a&ntilde;aden a la tabla existente, 
+      o a una nueva tabla en caso de que todav&iacute;a no se haya creado ninguna.</li>
+    <li><span style="font-weight: bold;">A&ntilde;adir datos del barrido:</span> 
+      Se abre la&nbsp;<a href="../../reference/menus/menu_anal.htm#scan">ventana &quot;Barrido&quot;</a> 
+      y los datos resultantes se a&ntilde;aden a una nueva tabla.</li>
+  </ul>
+  <p>Normalmente los datos se introducen a partir de un barrido mediante la segunda 
+    opci&oacute;n y despues se a&ntilde;ade alg&uacute;n punto caracter&iacute;stico 
+    de la serie -por ejemplo, un m&iacute;nimo o m&aacute;ximo de la curva- mediante 
+    la primera opci&oacute;n.<br>
+    En ambos casos se introducen todos los valores de las propiedades termodin&aacute;micas 
+    de&nbsp;los estados, procesos y ciclos dibujados en el&nbsp;<a href="../../reference/winMain/diag.htm">diagrama 
+    termodin&aacute;mico</a> as&iacute; como el valor de todas las <a href="../../reference/winAux/win_vars.htm">variables</a> 
+    que haya creado el usuario, independientemente de que esos valores est&eacute;n 
+    visisibles o invisibles en ese momento.<br>
+    Las&nbsp;columnas de datos que se desea que aparezcan en la tabla se seleccionan 
+    con el <a href="#data_sel">panel&nbsp;&quot;Selector de propiedades y variables&quot;</a>. 
+    La columna con el n&uacute;mero de orden siempre est&aacute; visible para 
+    indicar cuantos datos hay almacenados en la tabla.</p>
+</blockquote>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/tri_up.gif" width="6" height="4"><br>
+      <img src="../../img/_tgraf/tri_down.gif" width="6" height="4"><br>
+    </td>
+    <td nowrap valign="bottom"> 
+      <p></p>
+      <h2><a name="data_updown"></a>Botones &quot;Subir/bajar&nbsp;datos&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote> 
+  <p>Estos&nbsp;botones incrementan o disminuyen en una posici&oacute;n el orden 
+    de los datos seleccionados en la tabla.</p>
+</blockquote>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/tool_20/tool_goma.gif" width="20" height="20"></td>
+    <td nowrap valign="bottom"> 
+      <p></p>
+      <h2><a name="data_delete"></a>Bot&oacute;n &quot;Borrar datos&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote> 
+  <p>Este bot&oacute;n elimina los datos introducidos en la tabla. Al pulsarlo 
+    aparecen dos opciones:<br>
+  </p>
+  <ul>
+    <li><span style="font-weight: bold;">Borrar selecci&oacute;n:</span> Elimina 
+      los datos seleccionados en la tabla.</li>
+    <li><span style="font-weight: bold;">Borrar serie actual:</span> Elimina la 
+      serie actual de dato.</li>
+  </ul>
+</blockquote>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/doc_savetext.gif" width="18" height="17"></td>
+    <td nowrap valign="bottom"> 
+      <p></p>
+      <h2><a name="data_save"></a>Bot&oacute;n &quot;Guardar datos&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote> 
+  <p>Este bot&oacute;n permite guardar los datos de la tabla en un documento de 
+    texto para despues poder ser utilizados en otro programa. Al pulsarlo aparece 
+    una ventana de edici&oacute;n en la que se puede modificar el texto antes 
+    de guardarlo.<br>
+    El formato utilizado para guardar el texto es el est&aacute;ndar de una hoja 
+    de c&aacute;lculo, con caracteres &quot;tabulador&quot; para separar datos de una misma 
+    fila y caracteres &quot;nueva l&iacute;nea&quot; para separar&nbsp;filas distintas. 
+    Este formato permite importar los datos correctamente desde cualquier programa 
+  de hoja de c&aacute;lculo.</p>
+</blockquote>
+<h2><a name="data_sel"></a>Panel&nbsp;&quot;Selector de propiedades 
+  y variables&quot;</h2>
+<blockquote> 
+  <p>Mediante este panel se seleccionan las propiedades y variables que se desea 
+    que aparezcan en&nbsp;la tabla, agrupados en cuatro solapas seg&uacute;n el 
+  tipo de propiedad o variable:</p>
+  <ul>
+    <li><span style="font-weight: bold;">Estados:</span> Propiedades&nbsp;de estado 
+      (presi&oacute;n, temperatura...)</li>
+    <li><span style="font-weight: bold;">Procesos:</span> Propiedades de&nbsp;proceso 
+      (calor, trabajo...)</li>
+    <li><span style="font-weight: bold;">Ciclos:</span> Propiedades de ciclo (calor&nbsp;total 
+      del ciclo, rendimiento...)</li>
+    <li><span style="font-weight: bold;">Variables:</span> Variables definidas 
+      por el usuario.</li>
+  </ul>
+  <table align="center" border="0">
+    <tr> 
+      <td> 
+        <div align="center"><img src="../../reference/winMain/img/pan_selprops.gif" height="65" width="206"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td class="piefoto" nowrap>Panel &quot;Selector de propiedades y variables&quot;</td>
+    </tr>
+  </table>
+  <p>En cada solapa se encuentra un men&uacute; despleglable y una botonera con 
+    los que realizar la selecci&oacute;n. La selecci&oacute;n de una determinada 
+  propiedad se realiza en tres pasos:</p>
+  <ol>
+    <li>Selecci&oacute;n de la solapa del grupo de esa propiedad.</li>
+    <li>Selecci&oacute;n del men&uacute; desplegable del estado/proceso/ciclo 
+      donde se encuentra esa propiedad.</li>
+    <li>Selecci&oacute;n del bot&oacute;n de dicha propiedad.</li>
+  </ol>
+  <p>Por ejemplo, para mostrar&nbsp;la presi&oacute;n del estado &quot;1&quot; habr&iacute;a 
+    que seleccionar&nbsp;la solapa &quot;Estados&quot;, despu&eacute;s el men&uacute; desplegable 
+  &quot;Estado 1&quot; y por &uacute;ltimo pulsar el bot&oacute;n &quot;P&quot; de la presi&oacute;n.</p>
+</blockquote>
+<h2><a name="tabla"></a>Panel&nbsp;&quot;Tablas de datos&quot;</h2>
+<blockquote> 
+  <p>Este panel muestra las series de datos creadas por el usuario. En caso de 
+    haber varias series aparecen solapas para seleccionar &nbsp;la serie que se 
+    desea mostrar.<br>
+    Los datos de cada serie se pueden <a href="#data_sel">mostrar</a>, <a href="#data_sel">ocultar</a>, 
+    <a href="#data_updown">reordenar</a> o <a href="#data_delete">eliminar</a> 
+    con los botones anteriormente explicados. Las columnas tambi&eacute;n se pueden 
+    reordenar arrastrando con el rat&oacute;n el t&iacute;tulo de la misma. Las 
+    unidades de cada columna aparecen al mover el rat&oacute;n sobre el t&iacute;tulo 
+    de cada columna.<br>
+    En caso de estar representados los datos en las gr&aacute;ficas, los datos 
+    seleccionados en la tabla aparecen tambi&eacute;n seleccionados en la gr&aacute;fica 
+  para mostrar la correspondenc&iacute;a en la gr&aacute;fica de cada dato.</p>
+</blockquote>
+<table align="center" border="0">
+  <tr> 
+    <td> 
+      <div align="center"><img src="../../reference/winMain/img/pan_tabletable.gif" height="207" width="374"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="piefoto">Panel &quot;Tablas de datos&quot;</td>
+  </tr>
+</table>
+<hr width="75%">
+<h1>Gr&aacute;ficas de la tabla</h1>
+<h2><a name="grafs"></a>Paneles &quot;Gr&aacute;ficas de la tabla&quot;</h2>
+<blockquote> 
+  <p>Las gr&aacute;ficas inferiores de la ventana permiten representar los datos 
+    de las tablas en un diagrama XY.<br>
+    Cada gr&aacute;fica&nbsp;permite representar hasta un m&aacute;ximo de tres 
+    variables en el eje Y de ordenadas, con lo que se pueden comparar f&aacute;cilmente 
+    las dependencias entre variables.<br>
+    El movimiento del rat&oacute;n sobre la gr&aacute;fica hace que aparezcan 
+    sobre la misma&nbsp; los valores sobre los que se sit&uacute;a el rat&oacute;n 
+    seg&uacute;n las variables seleccionadas. De la misma forma, los datos que 
+    se seleccionan con el rat&oacute;n en la gr&aacute;fica aparecen tambi&eacute;n 
+    seleccionados en la tabla de datos, lo que permite comprobar sus valores exactos.</p>
+</blockquote>
+<table align="center" border="0">
+  <tr> 
+    <td> 
+      <div align="center"><img src="../../reference/winAux/img/win_tablegrafs.gif" height="138" width="509"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="piefoto">Panel &quot;Gr&aacute;ficas de la Tabla&quot;</td>
+  </tr>
+</table>
+<h2><a name="reglas"></a>Controles &quot;Reglas de la gr&aacute;fica&quot;</h2>
+<blockquote> 
+  <p>Estos controles muestran las escalas de las gr&aacute;ficas y permiten modificar 
+    su rango de representaci&oacute;n. Cada gr&aacute;fica tiene dos reglas, una 
+    horizontal de un s&oacute;lo eje y una vertical&nbsp;dividida en tres ejes 
+    que permite mostrar simult&aacute;neamente hasta tres variables distintas. 
+    La regla vertical muestra las divisiones de s&oacute;lo una de ellas cada 
+    vez, sobre la cual actuar&aacute; el zoom y el arrastre del rat&oacute;n.<br>
+    La selecci&oacute;n de la variable a representar se hace mediante los botones 
+    correspondientes:</p>
+  <table border="0" cellpadding="0">
+    <tr> 
+      <td class="imgbut"><img src="../../reference/winAux/img/but_table_x.gif" width="16" height="16"></td>
+      <td valign="middle"> 
+        <p></p>
+        <b>Bot&oacute;n X:</b> Selecciona la variable independiente de la gr&aacute;fica.</td>
+    </tr>
+  </table>
+  <table border="0" cellpadding="0">
+    <tr> 
+      <td class="imgbut"><img src="../../reference/winAux/img/but_table_y1.gif" width="16" height="16"></td>
+      <td class="imgbut"><img src="../../reference/winAux/img/but_table_y2.gif" width="16" height="16"></td>
+      <td class="imgbut"><img src="../../reference/winAux/img/but_table_y3.gif" width="16" height="16"></td>
+      <td valign="middle"><b>Botones Y:</b> Seleccionan las variables&nbsp;dependientes 
+        de la grafica as&iacute; como el eje Y activo.</td>
+    </tr>
+  </table>
+</blockquote>
+<blockquote>
+<p>Para evitar un exceso de posibilidades s&oacute;lo se permite seleccionar&nbsp;las 
+    variables mostradas en las columnas de la tabla actual.<br>
+    Pulsando el rat&oacute;n sobre cualquiera de las reglas y, sin soltar, arrastr&aacute;ndolo 
+    hasta otra posici&oacute;n, la escala se desliza siguiendo al cursor de forma 
+  que cambia el rango de representaci&oacute;n.</p>
+  <p><b>Opciones</b></p>
+  <ul>
+    <li><b>Doble clic:</b> Muestra la <a href="../../reference/menus/menu_sust.htm#escalas">Ventana 
+      &quot;Escalas&quot;</a>, donde se pueden ajustar los valores m&iacute;nimo y m&aacute;ximo 
+      de visualizaci&oacute;n as&iacute; como el tipo de escala lineal o logar&iacute;tmica.</li>
+    <li><b>Clic derecho:</b> Pulsando el bot&oacute;n&nbsp;derecho del rat&oacute;n 
+      sobre cualquiera de las reglas aparece un men&uacute; contextual donde se 
+      puede elegir entre:<br>
+      <ul>
+        <li><span style="font-weight: bold;">Escalas:</span> Muestra la <a href="../../reference/menus/menu_sust.htm#escalas">Ventana 
+          &quot;Escalas&quot;</a>, donde se pueden ajustar los valores m&iacute;nimo y m&aacute;ximo 
+          de visualizaci&oacute;n as&iacute; como el tipo de escala lineal o logar&iacute;tmica.</li>
+        <li><b>Escala lineal/logar&iacute;tmica:</b> Selecciona entre los tipos 
+          de escala lineal y logar&iacute;tmica. La elecci&oacute;n de escala 
+          logar&iacute;tmica s&oacute;lo podr&aacute; realizarse cuando no existan 
+          valores negativos para esa variable.</li>
+      </ul>
+</li>
+  </ul>
+</blockquote>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/zoom_auto.gif" width="14" height="14"></td>
+    <td valign="middle"> 
+      <p></p>
+      <h2><a name="zoom_auto"></a>Bot&oacute;n &quot;Zoom autom&aacute;tico&quot;</h2></td>
+  </tr>
+</table>
+<blockquote>
+  <p>Este bot&oacute;n, situado en la esquina inferior izquierda del panel, ajusta 
+    las escalas del diagrama de forma que todos los datos se muestren dentro del 
+  diagrama.</p>
+</blockquote>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/zoom_y.gif" width="14" height="14"></td>
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/zoom_x.gif" width="14" height="14"></td>
+    <td valign="middle"> 
+      <p></p>
+      <h2><a name="zoom_manual"></a>Botones &quot;Zoom manual&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote>
+  <p>Estos botones aumentan o reducen la escala de representaci&oacute;n del diagrama. 
+    Pulsando sobre uno de ellos aumenta&nbsp;la escala del eje horizontal o vertical 
+    del diagrama, seg&uacute;n cual se haya pulsado. Este aumento se realiza dejando 
+    fijo el valor m&iacute;nimo de la escala y modificando &uacute;nicamente su 
+    valor m&aacute;ximo, ya que es el que normalmente tiene m&aacute;s variaciones 
+    en el transcurso de un ejercicio.</p>
+  <p><b>Opciones</b></p>
+  <ul>
+    <li><b>Clic + </b><b>Ctrl:</b> La escala correspondiente se reduce dejando 
+      fijo el valor m&iacute;nimo de la escala y modificando &uacute;nicamente 
+    su valor m&aacute;ximo.</li>
+  </ul>
+</blockquote>
+</body>
+</html>

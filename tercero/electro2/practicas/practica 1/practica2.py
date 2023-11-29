@@ -1,6 +1,7 @@
 import numpy as np
 from numpy import sin,pi,cos,log
 import matplotlib.pyplot as plt
+
 """
 EJERCICIO 2
 """

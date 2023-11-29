@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  <title>TermoGraf: Ventana &quot;Variables&quot;</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+
+
+  
+  
+  
+  
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+
+<body lang="es">
+
+
+
+
+<h1>Ventana &quot;Variables&quot;</h1>
+
+
+
+
+<p>Esta ventana gestiona las variables creadas por el usuario. Las variables se 
+  utilizan para escribir ecuaciones no contempladas en el programa y obtener su 
+  resultado, <a href="../../reference/winAux/win_table.htm">tablas de datos</a>, <a href="../../reference/winAux/win_table.htm#grafs">gr&aacute;ficas</a> 
+  o utilizarlas en la elaboraci&oacute;n de <a href="../../debug_link.htm">documentos 
+  multiejercicio</a>.</p>
+<table align="center" border="0">
+  <tr valign="top"> 
+    <td nowrap> 
+      <h2 align="center">Contenido</h2>
+      <ul>
+        <li><a href="#equation">Bot&oacute;n &quot;Editor de ecuaciones&quot;</a></li>
+        <li><a href="#updown">Botones &quot;Subir/bajar variable&quot;</a></li>
+        <li><a href="#delete">Bot&oacute;n &quot;Eliminar variable&quot;</a></li>
+        <li><a href="#pan_vars">Panel &quot;Lista de variables&quot;</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+
+ <br>
+
+
+
+
+<table align="center" border="0">
+
+
+
+
+  <tr>
+
+
+
+
+    <td nowrap>
+      
+      
+      
+      <div align="center">
+      
+      
+      
+        <p style="text-align: center;"> <img src="../../reference/winAux/img/win_vars.gif" border="0" height="171" width="658"></p>
+
+
+
+
+      </div>
+
+
+
+
+    </td>
+
+
+
+
+  </tr>
+
+
+
+
+  <tr>
+
+
+
+
+      
+    <td class="piefoto" nowrap>Ventana &quot;Variables&quot;</td>
+  </tr>
+</table>
+<p></p>
+<hr width="75%">
+<h1>Controles</h1>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/menu_15/menu_calculator.gif" width="15" height="20"></td>
+    <td valign="middle"> 
+      <p></p>
+      <h2><a name="equation"></a>Bot&oacute;n &quot;Editor de ecuaciones&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote>
+  <p>Este bot&oacute;n se utiliza para crear una nueva variable o editar la ecuaci&oacute;n 
+    de una variable ya creada mediante el <a href="../../reference/winAux/win_equations.htm">Editor de 
+    ecuaciones</a>, dependiendo de la opci&oacute;n del men&uacute; emergente 
+    que se seleccione.</p>
+</blockquote>
+<p><br>
+</p>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"> 
+      <p><img src="../../img/_tgraf/tri_up.gif" width="6" height="4"><br>
+        <img src="../../img/_tgraf/tri_down.gif" width="6" height="4"></p>
+    </td>
+    <td valign="middle"> 
+      <p></p>
+      <h2><a name="updown"></a>Botones &quot;Subir/bajar variable&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote>
+  <p>Estos botones incrementan o disminuyen la posici&oacute;n de la variable 
+    seleccionada en la lista de variables.</p>
+</blockquote>
+<p><br>
+</p>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/tool_20/tool_goma.gif" width="20" height="20"></td>
+    <td valign="middle"> 
+      <p></p>
+      <h2><a name="delete"></a>Bot&oacute;n &quot;Eliminar variable&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote>
+  <p>Este bot&oacute;n elimina la variable selecciona en la lista de variables.</p>
+</blockquote>
+<p>&nbsp;</p>
+  <h2><a name="pan_vars"></a>Panel &quot;Lista de variables&quot;</h2>
+ 
+  
+<blockquote> 
+  <p>Este panel muestra todas las variables de usuario disponibles. Todos los 
+    par&aacute;metros que aparecen en la pantalla son editables directamente, 
+    es decir, se pueden modificar pulsando sobre ellos con el rat&oacute;n e introduciendo 
+    los nuevos datos.</p>
+  <p>Los par&aacute;metros de cada variable son:</p>
+  <ul>
+    <li><b>Nombre:</b> Nombre de la variable.</li>
+    <li><b>Ecuaci&oacute;n:</b> Ecuaci&oacute;n definida por la variable. Puede 
+      modificarse directamente o mediante el <a href="../../reference/winAux/win_equations.htm">Editor 
+      de ecuaciones</a> pulsando el bot&oacute;n &quot;Editor de ecuaciones&quot; 
+      y seleccionando el nombre de esta variable.</li>
+    <li><b>Pantalla:</b> &aacute;mbito de definici&oacute;n de la variable. Las 
+      variables definidas en una &uacute;nica pantalla toman los valores de las 
+      propiedades termodin&aacute;micas definidas en dicha pantalla, mientras 
+      que las variables definidas de forma global toman sus valores de la pantalla 
+      activa, es decir, la mostrada en ese momento. Se utiliza para distinguir 
+      los distintos valores que toman id&eacute;nticas propiedades en distintas 
+      pantallas: por ejemplo, &quot;P1&quot; puede ser &quot;10 bar&quot; en la 
+      &quot;Pantalla 1&quot; y &quot;20 bar&quot; en la &quot;Pantalla 2&quot;.</li>
+    <li><b>Valor:</b> Resultado de la ecuaci&oacute;n. Este resultado cambiar&aacute; 
+      seg&uacute;n cual sea la pantalla activa cuando la variable est&eacute; 
+      definida en todas las pantallas.</li>
+    <li><b>Fijar:</b> Fijar el resultado de la variable, ignorando los cambios 
+      que se produzcan en la pantalla.</li>
+    <li><b>Unidad:</b> Unidades de la variable.</li>
+    <li><b>Visible a alumnos [TermoGraf Pro]:</b> Esta opci&oacute;n hace que 
+      la variables sean visibles o invisibles en la versi&oacute;n est&aacute;ndar 
+      de TermoGraf. S&oacute;lo disponible en la versi&oacute;n TermoGraf Pro.</li>
+  </ul>
+  <p>&nbsp;</p>
+</blockquote>
+</body>
+</html>

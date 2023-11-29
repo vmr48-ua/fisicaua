@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+
+
+  
+  <title>TermoGraf: Ventana &quot;Intercambiadores&quot;</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+  
+  
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+
+<body lang="es">
+
+
+<h1>Ventana &quot;Intercambiadores&quot;</h1>
+
+
+<p>Esta ventana ajusta los valores de un ciclo para que sus procesos cumplan las 
+  condiciones de uno o varios intercambiadores.</p>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td> 
+      <div align="center"><img src="../../reference/menus/img/win_interc.gif" width="370" height="450"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td class="piefoto" nowrap>Ventana &quot;Intercambiadores&quot;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<hr width="75%">
+<h2>Bot&oacute;n &quot;Tipo de intercambiador&quot;</h2>
+<blockquote> 
+  <p>Selecciona el tipo de intercambiador que se desea ajustar en el ciclo. Existen 
+    los siguientes tipos:</p>
+  <ul>
+    <li><b>Turbina de gas o regenerativo:</b> Intercambiador cerrado con dos entradas 
+      y dos salidas y con identica masa en sus procesos.</li>
+    <li><b>Turbina de vapor (2+2):</b> Intercambiador cerrado con dos entradas 
+      y dos salidas.</li>
+    <li><b>Mixto (3+2):</b> Intercambiador mixto con tres entradas y dos salidas 
+      en el que dos entradas se unifican en una salida.</li>
+    <li><b>Abierto (2+1):</b> Intercambiador abierto con dos entradas unificadas 
+      en una salida.</li>
+    <li><b>Abierto (3+1):</b> Intercambiador abierto con tres entradas unificadas 
+      en una salida.</li>
+  </ul>
+  <p>Del intercambiador elegido se muestra la siguiente informaci&oacute;n:</p>
+  <ul>
+    <li><b>Dibujo del intercambiador:</b> Dibujo esquem&aacute;tico del intercambiador.</li>
+    <li><b>Tipo:</b> Cerrado para intercambiadores sin mezcla de masas, abierto 
+      para intercambiadores con mezcla de masas o mixto para intercambiadores 
+      en los que s&oacute;lo se mezcla una parte del fluido.</li>
+    <li><b>Entradas:</b> N&uacute;mero de entradas del intercambiador.</li>
+    <li><b>Salidas:</b> N&uacute;mero de salidas del intercambiador.</li>
+    <li><b>Diagrama T-s:</b> Ejemplo de aplicaci&oacute;n del intercambiador en 
+      un diagrama temperatura-entrop&iacute;a. Los nombres de los estados que 
+      aparecen representados se utilizan como referencia para los par&aacute;metros 
+      que tiene que ajustar el usuario.</li>
+    <li><b>Balance de energ&iacute;a:</b> Ecuaci&oacute;n que ha de cumplir el 
+      intercambiador.</li>
+    <li><b>Rendimiento regenerativo [S&oacute;lo para interc. regenerativo]:</b> 
+      Valor del rendimiento del intercambiador regenerativo.</li>
+  </ul>
+  <p>&nbsp;</p>
+</blockquote>
+<h2> 1. &quot;Selecci&oacute;n de procesos e inc&oacute;gnitas&quot;</h2>
+<blockquote> 
+  <p>En este primer paso se seleccionan los procesos que intervienen en el balance 
+    de energ&iacute;a y la nomenclatura utilizada para denominar a las masas de 
+    dichos procesos.</p>
+  <p>Una marca roja a la derecha del t&iacute;tulo indica que los procesos seleccionados 
+    no se corresponden al tipo de intercambiador que se desea ajustar. Cuando 
+    se cumple esta correspondencia aparece una marca verde indicando que se puede 
+    continuar con el siguiente apartado.</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2> 2. &quot;Balance de energ&iacute;a&quot;</h2>
+<blockquote> 
+  <p>En este segundo paso se ajustan los valores de las masas y entalp&iacute;as 
+    de los procesos selecionados para que cumplan el balance de energ&iacute;a 
+    del intercambiador, el cual se muestra en la ecuaci&oacute;n de la primera 
+    l&iacute;nea.</p>
+  <p>Una marca roja a la derecha del t&iacute;tulo indica que los valores no cumplen 
+    la ecuaci&oacute;n que se desea ajustar. Cuando se cumple esta ecuaci&oacute;n 
+    aparece una marca verde indicando que el ciclo ya se puede ajustar. La opci&oacute;n 
+    &quot;Ajustar masas de los procesos adyacentes&quot; hace que las masas introducidas 
+    para los procesos se ajusten tambi&eacute;n en todas las ramas del ciclo a 
+    las que pertenecen dichos procesos.</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2>Panel &quot;Informaci&oacute;n&quot;</h2>
+<blockquote> 
+  <p>Informa al usuario del error que presenta la actual configuraci&oacute;n 
+    del intercambiador. Cuando la configuraci&oacute;n es correcta se muestra 
+    un mensaje de validez y se habilita el bot&oacute;n &quot;Aplicar&quot;.</p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

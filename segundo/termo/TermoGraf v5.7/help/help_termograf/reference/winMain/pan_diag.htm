@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+  
+  
+  <title>TermoGraf: Panel de Diagrama</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+  
+  
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+
+<body lang="es">
+
+
+<h1>Panel de diagrama</h1>
+
+
+<p>Situado en el centro de la ventana principal de TermoGraf, este panel contiene 
+  el <a href="../../reference/winMain/diag.htm">diagrama termodin&aacute;mico</a>. En la parte superior 
+  del diagrama se encuentran unos men&uacute;s desplegables que permiten una configuraci&oacute;n 
+  r&aacute;pida de trabajo. En la parte izquierda e inferior se situan el resto 
+  de controles, los cuales permiten cambiar la escala de representaci&oacute;n 
+  del diagrama.</p>
+
+
+<table align="center" border="0">
+
+  <tr valign="top">
+
+ 
+    <td nowrap> 
+      
+      
+      <h2 align="center">Men&uacute;s de configuraci&oacute;n 
+      r&aacute;pida</h2>
+
+
+      
+      
+      <ul>
+        <li><a href="#tipo">Men&uacute; &quot;Tipo de diagrama&quot;</a></li>
+        <li><a href="#uds">Men&uacute; &quot;Sistema de unidades&quot;</a></li>
+        <li><a href="#analisis">Bot&oacute;n &quot;Configuraci&oacute;n del an&aacute;lisis&quot;</a></li>
+        <li><a href="#modelo">Men&uacute; &quot;Modelo de c&aacute;lculo&quot;</a></li>
+        <li><a href="#sust">Men&uacute; &quot;Sustancia&quot;</a></li>
+        <li><a href="#infosust">Bot&oacute;n &quot;Informaci&oacute;n de sustancia&quot;</a></li>
+      </ul>
+
+
+    </td>
+
+
+    <td nowrap> 
+      
+      
+      <h2 align="center">Controles de escala</h2>
+
+
+      
+      
+      <ul>
+
+
+        <li><a href="#reglas">Controles &quot;Reglas del diagrama&quot;</a></li>
+
+
+        <li><a href="#zoom_auto">Bot&oacute;n &quot;Zoom autom&aacute;tico&quot;</a></li>
+
+
+        <li><a href="#zoom_manual">Botones &quot;Zoom manual&quot;</a></li>
+
+
+      
+      
+      </ul>
+
+
+      
+    </td>
+
+
+  </tr>
+
+
+  
+</table>
+
+
+<table align="center" border="0">
+
+  <tr>
+
+ 
+    <td nowrap> 
+      
+      
+      <div align="center"><img src="../../reference/winMain/img/pan_diag.gif" height="241" width="442"></div>
+
+
+    </td>
+
+
+  </tr>
+
+
+  <tr>
+
+ 
+    <td class="piefoto" nowrap>Panel de diagrama</td>
+
+
+  </tr>
+
+
+  
+</table>
+
+
+<hr width="75%">
+<h1>Men&uacute;s de configuraci&oacute;n r&aacute;pida</h1>
+
+
+<h2><a name="tipo"></a>Men&uacute; &quot;Tipo de Diagrama&quot;</h2>
+
+
+<blockquote>
+  <p>Selecciona el tipo de diagrama, es decir las propiedades termodin&aacute;micas 
+    que se van a representar en los ejes del <a href="../../reference/winMain/diag.htm">diagrama termodin&aacute;mico</a>.</p>
+  <p>Los posibles tipos de diagramas son:</p>
+
+
+  
+  
+  <ul>
+
+
+    <li><b>Tipo Pv:</b> Diagrama &quot;Presi&oacute;n - Volumen&quot;</li>
+
+
+    <li><b>Tipo Ts:</b> Diagrama &quot;Temperatura - Entrop&iacute;a&quot;</li>
+
+
+    <li><b>Tipo Ph:</b> Diagrama &quot;Presi&oacute;n - Entalp&iacute;a&quot;</li>
+
+
+    <li><b>Tipo hs:</b> Diagrama &quot;Entalp&iacute;a - Entrop&iacute;a&quot;</li>
+
+
+    <li><b>Tipo Tv:</b> Diagrama &quot;Temperatura - Volumen&quot;</li>
+
+
+    <li><b>Tipo PT:</b> Diagrama &quot;Presi&oacute;n - Temperatura&quot;</li>
+
+
+    <li><b>Tipo Ps:</b> Diagrama &quot;Presi&oacute;n - Entrop&iacute;a&quot;</li>
+
+
+    <li><b>Tipo Th:</b> Diagrama &quot;Temperatura - Entalp&iacute;a&quot;</li>
+
+
+    <li><b>Tipo vh:</b> Diagrama &quot;Volumen - Entalp&iacute;a&quot;</li>
+
+
+    <li><b>Tipo vs:</b> Diagrama &quot;Volumen - Entrop&iacute;a&quot;</li>
+
+
+  
+  
+  </ul>
+
+
+</blockquote>
+
+
+<h2><a name="uds"></a>Men&uacute; &quot;Sistema de unidades&quot;</h2>
+
+
+<blockquote>
+  <p>Selecciona el <a href="../../vocabulary.htm#uds_sistema" class="vocab_term">sistema 
+    de unidades</a> con el que se desea trabajar, es decir una configuraci&oacute;n 
+    simult&aacute;nea de las unidades de presi&oacute;n, temperatura, volumen, 
+    masa y energ&iacute;a.</p>
+  <p>Cada una de las opciones que se ofrecen est&aacute; basada en un tipo distinto 
+    de unidad de masa, a partir del cual se escoge un sistema coherente que facilite 
+    las operaciones entre unidades: por ejemplo, en el sistema basado en la unidad 
+    de masa &quot;mol&quot; utiliza &quot;Julio&quot; como unidad de energ&iacute;a, mientras que 
+    en el sistema basado en &quot;kilomol&quot; utiliza&quot;kiloJulio&quot;.<br>
+    <br>
+    Los posibles grupos de unidades preseleccionados en el men&uacute; desplegable 
+    son:</p>
+
+
+  
+  
+  <ul>
+    <li><b>Unidades propias:</b> Se selecciona autom&aacute;ticamente cuando el 
+      sistema de unidades utilizado no corresponde a ninguno de los siguientes. 
+    </li>
+    <li><b>Sistema mol (mol-bar-K-ltr-J):</b> Selecci&oacute;n de las unidades 
+      mol, bar, kelvin, litro y julio.</li>
+    <li><b>Sistema kilomol (kmol-bar-K-m<sup>3</sup>-kJ):</b> Selecci&oacute;n 
+      de las unidades kilomol, bar, kelvin, metro c&uacute;bico y kilojulio.</li>
+    <li><b>Sistema kilogramo (kg-bar-K-m<sup>3</sup>-kJ): </b>Selecci&oacute;n 
+      de las unidades kilogramo, bar, kelvin, metro c&uacute;bico y kilojulio.</li>
+    <li><b>Sistema libra (lb-psia-&ordm;F-ft<sup>3</sup>-Btu):</b> Selecci&oacute;n 
+      de las unidades libra, libra-fuerza por pulgada al cuadrado, farenheit, 
+      pi&eacute; c&uacute;bico y Btu (&quot;British technical unit&quot;).</li>
+  </ul>  
+  <p>La configuraci&oacute;n de un tipo de unidades de forma individual se realiza 
+    desde el <a href="../../reference/menus/menu_uds.htm">men&uacute; &quot;Unidades&quot;</a>.</p>
+
+
+</blockquote>
+
+
+<h2><a name="analisis"></a>Bot&oacute;n &quot;Configuraci&oacute;n 
+  del an&aacute;lisis&quot;</h2>
+<blockquote>
+  <p>Muestra la configuraci&oacute;n del an&aacute;lisis realizada por el usuario. 
+    Al pulsarlo se accede a la <a href="../../reference/menus/menu_anal.htm#anal">ventana &quot;Configuraci&oacute;n 
+    del an&aacute;lisis&quot;</a> que permite modificar estos par&aacute;metros. 
+    Los s&iacute;mbolos representados en el bot&oacute;n indican cual es la configuraci&oacute;n 
+    actual del documento:</p>
+  <table border="1" cellpadding="10" align="center" cellspacing="0" width="80%">
+    <tr> 
+      <td nowrap>
+        <div align="center"><b>An&aacute;lisis del sistema</b></div>
+      </td>
+      <td nowrap>
+        <div align="center"><b>An&aacute;lisis de unidades</b></div>
+      </td>
+      <td nowrap>
+        <div align="center"><b>An&aacute;lisis del tiempo</b></div>
+      </td>
+    </tr>
+    <tr> 
+      <td nowrap> 
+        <p><img src="../../reference/menus/img/img_anal/analisis_masa.gif" width="21" height="15" align="bottom"> 
+          Masa de control</p>
+        <p><img src="../../reference/menus/img/img_anal/analisis_vol.gif" width="21" height="15" align="bottom"> 
+          Volumen de control</p>
+      </td>
+      <td nowrap> 
+        <p><img src="../../reference/menus/img/img_anal/analisis_ener.gif" width="15" height="15" align="bottom"> 
+          Unidades de energ&iacute;a</p>
+        <p><img src="../../reference/menus/img/img_anal/analisis_pot.gif" width="15" height="15" align="bottom"> 
+          Unidades de potencia</p>
+      </td>
+      <td nowrap> 
+        <p><img src="../../reference/menus/img/img_anal/analisis_stat.gif" width="15" height="15" align="bottom"> 
+          Tiempo estacionario</p>
+        <p><img src="../../reference/menus/img/img_anal/analisis_tran.gif" width="15" height="15" align="bottom"> 
+          Tiempo transitorio</p>
+      </td>
+    </tr>
+  </table>
+  </blockquote>
+<h2><a name="modelo"></a>Men&uacute; &quot;Modelo de c&aacute;lculo&quot;</h2>
+
+
+<blockquote>
+  <p>Selecciona el modelo de c&aacute;lculo empleado para la resoluci&oacute;n 
+    de las propiedades termodin&aacute;micas de las sustancias. Cada modelo var&iacute;a 
+    en la complejidad de <a href="../../vocabulary.htm#ecuac_estado" class="vocab_term">ecuaci&oacute;n 
+    de estado</a> y, a partir de ella, del resto de ecuaciones de propiedades. 
+  </p>
+
+
+  
+  
+  <p>Los posibles modelos de c&aacute;lculo son:</p>
+
+
+  
+  
+  <ul>
+
+
+    <li><b>Modelo perfecto:</b> Ecuaci&oacute;n de estado de gas ideal con calor 
+      espec&iacute;fico constante.</li>
+
+
+    <li><b>Modelo ideal:</b> Ecuaci&oacute;n de estado de gas ideal.</li>
+
+
+    <li><b>Modelo real:</b> Ecuaci&oacute;n de estado propia para cada sustancia, 
+      la que m&aacute;s ajusta sus resultados al comportamiento real de la sustancia.</li>
+
+
+  
+  
+  </ul>
+
+
+  
+  
+  <p> No todas las sustancias est&aacute;n disponibles para el c&aacute;lculo 
+    seg&uacute;n todos los modelos, por lo que cada modelo dispone de un n&uacute;mero 
+    determinado de sustancias que pueden ser calculadas. En general, con los modelos 
+    perfecto e ideal se pueden calcular las mismas sustancias -ya que sus ecuaciones 
+    son parecidas-, mientras que con el modelo real se calculan otras sustancias 
+    adicionales.</p>
+
+
+  
+  
+  <p>La selecci&oacute;n del modelo de c&aacute;lculo y del tipo de sustancia 
+    se puede realizar de forma simult&aacute;nea mediante el <a href="../../reference/menus/menu_sust.htm">men&uacute; 
+    &quot;Sustancias&quot;</a>.</p>
+
+
+</blockquote>
+
+
+<h2><a name="sust"></a>Men&uacute; &quot;Sustancia&quot;</h2>
+<blockquote>
+  <p>Selecciona el tipo de sustancia con la que se desea trabajar. No todas las 
+    sustancias est&aacute;n disponibles para calcular seg&uacute;n todos los modelos 
+    de c&aacute;lculo, por lo que los tipos de sustancias disponibles var&iacute;an 
+    seg&uacute;n el modelo de c&aacute;lculo elegido. En general, con los modelos 
+    perfecto e ideal se calculan las mismas sustancias -ya que sus ecuaciones 
+    son parecidas-, mientras que con el modelo real se calculan otras sustancias 
+    adicionales. Las sustancias disponibles son:</p>
+
+
+  
+  
+  <ul>
+
+
+    <li><b>Sustancias con modelo de gas perfecto o ideal:</b> Aire, agua, mon&oacute;xido 
+      de carbono, di&oacute;xido de carbono, metano, acetileno, etileno, hidr&oacute;geno 
+      mononuclear, hidr&oacute;geno, nitr&oacute;geno mononuclear, nitr&oacute;geno, 
+      &oacute;xido n&iacute;trico, ox&iacute;geno mononuclear, ox&iacute;geno 
+      e hidr&oacute;xido.</li>
+
+
+    <li><b>Sustancias con modelo real:</b> Est&aacute;n clasificadas seg&uacute;n 
+      las siguientes categor&iacute;as 
+      
+      
+      <ul>
+
+
+        <li><b>Grupo de refrigerantes:</b> R-14, R-22, R-23, R-123, R-134a, R-c138, 
+          R-500 y R-502.</li>
+
+
+        <li><b>Grupo de refrigerantes a extinguir:</b> R-11, R-12, R-13 y R-114.</li>
+
+
+        <li><b>Grupo de alcanos:</b> Butano, etano, heptano, hexano, isopentano, 
+          metano, octano, pentano y propano.</li>
+
+
+        <li><b>Grupo de alquenos:</b> Etileno y propileno.</li>
+
+
+        <li><b>Grupo de otras sustancias:</b> Agua, ire, amoniaco, di&oacute;xido 
+          de carbono, nitr&oacute;geno y ox&iacute;geno.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>La selecci&oacute;n del modelo de c&aacute;lculo y del tipo de sustancia 
+    se puede realizar de forma simult&aacute;nea mediante el <a href="../../reference/menus/menu_sust.htm">men&uacute; 
+    &quot;Sustancias&quot;</a>.</p>
+</blockquote>
+
+
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/menu_15/menu_info.gif" width="15" height="15"></td>
+    <td nowrap valign="bottom">
+      <h2><a name="infosust"></a>Bot&oacute;n &quot;Informaci&oacute;n 
+        de sustancia&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote>
+  
+  
+  <p>Abre la <a href="../../reference/menus/menu_sust.htm#infosust">ventana &quot;Informaci&oacute;n 
+    de sustancia&quot;</a>, al igual que desde el <a href="../../reference/menus/menu_sust.htm#infosust">men&uacute; 
+    &quot;Informaci&oacute;n de sustancia&quot;</a>. En esta ventana aparecen 
+    datos relativos a la sustancia de trabajo tales como su modelo de c&aacute;lculo, 
+    rango de validez de las ecuaciones, valores del punto cr&iacute;tico y del 
+    estado de referencia.</p>
+
+
+</blockquote>
+
+
+<hr width="75%">
+<h1>Controles de escala</h1>
+
+
+<h2><a name="reglas"></a>Controles &quot;Reglas del diagrama&quot;</h2>
+
+
+<table align="center" border="0">
+
+  <tr>
+
+ 
+    <td> 
+      
+      
+      <div align="center"><img src="../../reference/winMain/img/pan_regla.gif" height="19" width="380"></div>
+
+
+    </td>
+
+
+  </tr>
+
+
+  <tr>
+
+ 
+    <td class="piefoto" nowrap>Control &quot;Regla horizontal&quot;</td>
+
+
+  </tr>
+
+
+  
+</table>
+
+
+<blockquote> 
+  
+  
+  <p>Estos controles muestran la escala del diagrama y permiten modificar su rango 
+    de representaci&oacute;n. Pulsando el rat&oacute;n sobre cualquiera de ellos 
+    y, sin soltar, arrastr&aacute;ndolo hasta otra posici&oacute;n, la escala 
+  se desliza siguiendo al cursor de forma que cambia el rango de representaci&oacute;n.</p>
+
+
+  
+  
+  <p><b>Opciones</b></p>
+
+
+  
+  
+
+  
+  
+  <ul>
+
+
+    <li><b>Doble clic:</b> Muestra la <a href="../../reference/menus/menu_sust.htm#escalas">ventana 
+      &quot;Escalas&quot;</a>, donde se pueden ajustar los valores m&iacute;nimo y m&aacute;ximo 
+      de visualizaci&oacute;n as&iacute; como el tipo de escala lineal o logar&iacute;tmica.</li>
+    <li><b>Clic derecho:</b> Pulsando el bot&oacute;n&nbsp;derecho del rat&oacute;n 
+      sobre cualquiera de las reglas aparece un men&uacute; contextual donde se 
+    puede elegir entre:
+      <ul>
+        <li><span style="font-weight: bold;">Escalas:</span> Muestra la <a href="../../reference/menus/menu_sust.htm#escalas">ventana &quot;Escalas&quot;</a>, donde se pueden ajustar los valores m&iacute;nimo y m&aacute;ximo 
+          de visualizaci&oacute;n as&iacute; como el tipo de escala lineal o logar&iacute;tmica.</li>
+        <li><b>Escala lineal/logar&iacute;tmica:</b> Selecciona entre los tipos 
+              de escala lineal y logar&iacute;tmica. La elecci&oacute;n de escala 
+              logar&iacute;tmica s&oacute;lo puede realizarse cuando el tipo 
+              de propiedad y las unidades lo permitan, es decir, cuando no existan 
+              valores negativos para esa propiedad. Por ejemplo, la 
+              temperatura s&iacute; que puede representarse logar&iacute;tmicamente 
+              en unidades kelvin, pero no puede hacerlo en cent&iacute;grados ya 
+              que sus valores negativos no pueden representarse logar&iacute;tmicamente.<br>
+          Esta elecci&oacute;n del tipo de escala se puede realizar tambi&eacute;n 
+        mediante <a href="../../reference/menus/menu_diag.htm#logp">men&uacute; &quot;P logar&iacute;timica&quot;</a>, <a href="../../reference/menus/menu_diag.htm#logt">men&uacute; &quot;T logar&iacute;tmica&quot;</a> y <a href="../../reference/menus/menu_diag.htm#logt">men&uacute; &quot;v logar&iacute;tmica</a>&quot;.&nbsp;</li>
+        <li><b>Ensanchar/estrechar regla:</b> (Solo para la regla vertical) Selecciona 
+              la anchura de la regla vertical.<br>
+          Esta elecci&oacute;n se puede realizar tambi&eacute;n con el <a href="../../reference/menus/menu_edit.htm#narrow_ruler">men&uacute; 
+      &quot;Estrechar regla&quot;</a>.</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/zoom_auto.gif" width="14" height="14"></td>
+    <td nowrap valign="bottom"> 
+      <h2><a name="zoom_auto"></a>Bot&oacute;n &quot;Zoom autom&aacute;tico&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote>
+  
+  
+  <p>Ajusta las escalas del diagrama de forma que todos los elementos termodin&aacute;micos 
+  se muestren dentro del rango de visualizaci&oacute;n.</p>
+
+
+  
+  
+  <p><b>Opciones</b></p>
+
+
+  
+   
+      
+      
+
+    
+      
+      
+  <ul>
+    <li><b> May&uacute;sculas:</b> Las escalas pasan a representar los valores 
+      por defecto de la sustancia.</li>
+    <li><b> Ctrl:</b> Las&nbsp;escalas&nbsp;se ajustan de forma que el estado 
+      ambiente&nbsp;aparezca representado dentro del diagrama.</li>
+  </ul>
+
+
+    
+
+</blockquote>
+
+
+<table border="0" cellpadding="0">
+  <tr> 
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/zoom_y.gif" width="14" height="14"></td>
+    <td class="imgbut"><img src="../../img/_tgraf/misc_14/zoom_x.gif" width="14" height="14"></td>
+    <td nowrap valign="bottom"> 
+      <h2><a name="zoom_manual"></a>Botones &quot;Zoom manual&quot;</h2>
+    </td>
+  </tr>
+</table>
+<blockquote> 
+  
+  
+  <p>Aumentan o reducen la escala de representaci&oacute;n del diagrama. Pulsando 
+    sobre uno de ellos aumenta la escala del eje horizontal o vertical del diagrama, 
+    seg&uacute;n cual se haya pulsado. Este aumento se realiza dejando fijo el 
+    valor m&iacute;nimo de la escala y modificando &uacute;nicamente su valor 
+    m&aacute;ximo, ya que es el que normalmente tiene m&aacute;s variaciones en 
+    el transcurso de un ejercicio. Por ejemplo, trabajando con un ciclo Rankine 
+    su presi&oacute;n o temperatura m&aacute;ximas pueden cambiar mucho de valor, 
+    mientras que los valores m&iacute;nimos van a permanecer dentro de un mismo 
+    rango de valores.</p>
+
+
+  
+  
+  <p><b>Opciones</b></p>
+
+
+  
+  
+
+  
+  
+  <ul>
+
+
+    <li><b>May&uacute;sculas:</b> La escala correspondiente pasa a representar 
+      los valores por defecto de la sustancia.</li>
+    <li><b>Ctrl:</b> La escala correspondiente se reduce dejando fijo el valor 
+      m&iacute;nimo de la escala y modificando &uacute;nicamente su valor m&aacute;ximo.</li>
+
+
+  
+  
+  </ul>
+
+
+</blockquote>
+
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>

@@ -916,4 +916,122 @@
       Si $\exists\lim \dfrac{\abs{a_{n+1}}}{\abs{a_n}}$, entonces el radio de 
       convergencia de la serie es $r=\left(\lim\dfrac{\abs{a_{n+1}}}{\abs{a_n}}\right)^{-1}$
     }
+
+    [...]
+
+    \clearpage
+
+\chapter{Teoría de Residuos}
+  \section{Introducción}
+    \noindent Objetivo: 
+      \[\int_\gamma f(z)\ dz \text{ con }\gamma\text{ camino cerrado}\]
+      \[\int_\gamma \dfrac{f(w_0)}{(z-w)^n}\ dw=2\pi i\dfrac{f^{(n)}(z)}{(n+1)!}\]
+    Si $f(z)=\displaystyle \sum_{n=\infty}^{+\infty}a_n(z-z_0)^n\ $ $\ \forall z\in A(z_0,0,R)
+    \Longleftrightarrow a_n=\dfrac{1}{2\pi i}\displaystyle\int_{C(w_0,r)}\dfrac{f(w)}{(w-z_0)^{n+1}}\ dz$
+    $\Longrightarrow a_{-1}=\dfrac{1}{2\pi i}\displaystyle\int_{C(w_0,r)}f(w_0)\ dw$
+
+    \ejemplo{$\displaystyle\int_{C(1,1)}\left(\dfrac{1}{(z-1)^2}+\dfrac{3}{z-1}\right)\ dz$}{
+      $\displaystyle\int_{C(1,1)}\left(\dfrac{1}{(z-1)^2}+\dfrac{3}{z-1}\right)\ dz = a_{-1}\cdot 2\pi i=6\pi i$
+    }
+    \ejemplo{$\displaystyle\int_{C(w,r)}\dfrac{f(w)}{(w-z)}\ dw$}{
+      $=2\pi i a_{-2}$ (de f)\\
+      $=\displaystyle\int_{C(z,r)}g(w)\ dw=2\pi i b_{-1}$ (de g)
+    }
+    \definicion{Residuo}{
+      Sea $z_0\in\bbC$ una singularidad aislada (para poder tener desarrollo de Laurent) de $f$,
+      y sea $\displaystyle\sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$ la serie de Laurent de $f$ centrada
+      en $z_0$, entonces el residuo de $f$ en $z_0$ es:
+
+      \begin{equation}
+        \text{Res}(f,z_0)=a_{-1}
+      \end{equation}
+    }
+
+    \noindent Lo interesante es que para calcular integrales, sólo necesitamos el residuo, no nos hace falta toda la serie de Laurent.
+    
+    \comentario{
+      Si $c$ es un camino cerrado en el anillo de convergencia de la serie de Laurent
+      y es homóloga a $C(z_0,r)$, entonces:
+
+      \begin{equation}
+        \int_{\gamma}f(w)\ dw=2\pi i \text{Res}(f,z_0)
+      \end{equation}
+    }
+    \teorema{Cálculo de residuos}{
+      Clasificamos la singularidad de $f$ en $z_0$:
+      \begin{itemize}
+        \item Si no hay singularidad o la singularidad es evitable, la serie de Laurent 
+              coincide con la serie de Taylor $\sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n=\sum_{n=0}^{+\infty}a_n(z-z0)^n
+              \Longrightarrow a_{-1}=0\Longrightarrow \text{Res}(f,z_0)=0$
+        \item Si $z_0$ es un polo de oden $m$, $\sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n=\sum_{n=-m}^{+\infty}a_n(z-z_0)^n$
+              si $g(z)=(z-z_0)^n f(z)$, entonces $g(z)=\sum_{n=0}^{\infty}a_{n-m}(z-z_0)^n$ es un desarrollo de Taylor.\\
+              $\Longrightarrow a_{-1}=\dfrac{g^{m-1}(z_0)}{(m-1)!}=\dfrac{\lim_{z\rightarrow z_0}g^{(m-1)}(z)}{(m-1)!}$
+        \item Si $z_0$ es una singularidad esencial, calcelamos el desarrollo de Laurent.
+      \end{itemize}
+    }
+    \ejemplo{Calcula el residuo en 1 y en 0 de esta función $f(z)=\dfrac{e^z}{z(z-9)^2}$}{
+      $\text{Res}(f,z)=0\ \forall z\in\bbC\setminus\left\{0,9\right\}$\\
+
+      $z=0$ es un polo de orden 1 $\Longrightarrow \lim_{z\rightarrow 0} (z-0)f(z)=
+      \lim_{z\rightarrow 0}\dfrac{e^z}{(z-9)^2}=\dfrac{1}{81}\in\bbC\setminus\left\{0\right\}$
+
+      Sea $g(z)=(z-0)f(z)=\dfrac{e^z}{(z-9)^2}$\\
+
+      $\text{Res}(f,0)=\dfrac{g(0)}{0!}=\dfrac{1}{81}$\\
+
+      $z=9$ es un polo de orden 2 $\Longrightarrow \lim_{z\rightarrow 9} (z-9)f(z)=
+      \lim_{z\rightarrow 9}\dfrac{e^z}{z}=\dfrac{e^z}{z}=\dfrac{l^9}{9}\in\bbC\setminus\left\{0\right\}$
+
+      Sea $g(z)=(z-9)^2f(z)=\dfrac{e^z}{z}$\\
+
+      $\text{Res}(f,9)=\dfrac{g^\prime(9)}{1!}=\dfrac{9e^9-e^9}{9^2}=\dfrac{8e^9}{81}$
+    }
+    \ejemplo{Calcula esta integral $I=\displaystyle\int_{C(0,1)}\dfrac{e^{\nicefrac{1}{z}}}{z^2}\ dz$}{
+      Sea $f(z)=\dfrac{e^{\nicefrac{1}{e}}}{z^2}$\ \ $\displaystyle\int_{C(0,1)}
+      \dfrac{e^{\nicefrac{1}{z}}}{z^2}\ dz=2\pi i\ \text{Res(f,0)}$
+
+      La singularidad $z=0$ es esencial.\\
+      $f(z)=z^{-2}e^{\nicefrac{1}{z}}=z^{-2}\displaystyle\sum_{n=0}^\infty \dfrac{(\nicefrac{1}{z})^n}{n!}
+      =z^{-2}\displaystyle\sum_{n=-\infty}^{0}\dfrac{z^n}{(-n)!}=\displaystyle\sum_{n=-\infty}^{0}\dfrac{z^{n-2}}{(-n)!}=
+      \displaystyle\sum_{n=-\infty}^{-2}\dfrac{z^n}{-(n+2)!}\Longrightarrow \text{Res}(f,0)=a_{-1}=0$
+      $\Longrightarrow I=0$
+    }
+    \ejemplo{$f(z)=\dfrac{1}{z(e^z-1)}\ \ \text{Res}(f,z)=0\ \forall z\neq 0$}{
+      $z=0$ es un polo de orden 2 $\Longrightarrow \lim_{z\rightarrow 0}(z-0)^n f(n)=
+      \lim_{z\rightarrow 0}\dfrac{z}{e^z-1}=1 \ (L'H)\in\bbC\setminus\left\{0\right\}$
+
+      Sea $g(z)=(z-0)^2f(z)=\dfrac{z}{e^z-1}$\ Res$(f,0)=\dfrac{g^\prime(0)}{1!}$\\
+
+      $g^\prime(z)=\dfrac{e^z-1-ze^z}{(e^z-1)^2}\Longrightarrow g^\prime(0)=
+      \lim_{z\rightarrow 0}\dfrac{e^z-1-ze^z}{(e^z-1)^2}=\lim_{z\rightarrow 0}
+      \dfrac{e^z-e^z-ze^z}{2(e^z-1)e^z}=-\lim_{z\rightarrow 0}\dfrac{z}{2(e^z-1)}=-\dfrac{1}{2}$
+
+      $\Longrightarrow \text{Res}(f,0)=-\dfrac{1}{2}$
+    }
+    \teorema{DE LOS RESIDUOS}{
+       Sea $U\subseteq \bbC$ un abierto, $S\subseteq U$ sin acumulación, y $f\colon U\setminus S\to\bbC$ analítica.
+       Sea $\gamma$ un camino cerrado con $\gamma^* \subseteq U\setminus S$ homólogo a $0$ en $U$. Entonces:
+
+       \begin{equation}
+          \int_\gamma f(w)\ dw=\sum_{w\in S} n(\gamma,w)\cdot 2\pi i\cdot \text{Res}(f,w)
+       \end{equation}
+    }
+    \ejemplo{Calcular $\displaystyle\int_{C(0,3)}\dfrac{e^z-1}{z^3+4z^2+4z}\ dz$}{
+      Factorizamos el polinomio $z^3+4z^2+4z=z(z+2)^2\Longleftrightarrow 
+      \displaystyle\int_{C(0,3)}\dfrac{e^z-1}{z^3+4z^2+4z}\ dz = \displaystyle
+      \int_{C(0,3)\dfrac{e^z-1}{z(z+2)^2}}$
+
+      $\text{Res}(f,z)=0\ \forall z \in\bbC\setminus\left\{0,-2\right\}$
+
+      $z=0$ es un polo de orden 0 $\Longrightarrow \lim_{z\to 0}(z-0)f(z)=\lim_{z\to 0}
+      (z-0)(e^z-1)=0\Longrightarrow \text{ nos hemos pasado }$ estamos en una singularidad
+      evitable. $\lim_{z\to 0}f(z)=\frac{1}{4}\Longrightarrow \text{Res}(f,0)=0$\\
+
+      $z=-2$ es un polo de orden $2$ $\Longrightarrow \lim_{z\to -2}(z-2)^2f(z)=\dfrac{e^-1}{-2}\in\bbC\setminus\{0\}$
+
+      Sea $g(z)=(z+2)^2f(z)=\dfrac{e^z-1}{z}\Rightarrow g^\prime(z)=\dfrac{e^z z-e^z +1}{z^2}
+      \Longrightarrow \text{Res}(f,-2)=\dfrac{g^\prime(-2)}{1!}=\dfrac{1-3e^{-2}}{4}$
+
+      $\Longrightarrow \displaystyle\int_{C(0,3)}f(z)\ dz=2\pi i \dfrac{1-3e^{-2}}{4}=\dfrac{\pi(1-3e^{-2})}{2}i$
+    }
 \end{document}
