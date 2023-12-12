@@ -50,8 +50,8 @@ prácticas y que resuelva las siguientes tareas:
 k=-10 # meV / Å
 m= 1  # masa del electrón
 
-xmax=70  # rango razonable (16-100)
-N=500    # rango razonable (100-500)
+xmax=35  # rango razonable (16-100)
+N=200    # rango razonable (100-500)
 
 # Si ponemos N más pequeño corremos el riesgo de que 
 # la resolución nos haga perder soluciones
@@ -60,7 +60,7 @@ precisionGlobal = redondea_primeros2_nonzero(1/(xmax+1.2*N))
 # precisionGlobal = 0.001
 print('Precisión = {} unidades'.format(precisionGlobal))
 
-dni = 754
+dni = 937
 
 """
 Apartado A 

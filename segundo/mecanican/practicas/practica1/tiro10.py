@@ -228,12 +228,12 @@ line3, = ax61[0, 1].plot( t[0:nfinal], ez[0:nfinal] , color='g')
 #
 
 fig= plt.figure()
-ax= fig.gca(projection='3d')
+ax= fig.add_subplot(projection='3d')
 ax.view_init(20,-40)
 ax.plot3D(ex[0:nfinal],ey[0:nfinal],ez[0:nfinal])
 
 fig= plt.figure()
-ax= fig.gca(projection='3d')
+ax= fig.add_subplot(projection='3d')
 ax.view_init(20,-40)
 ax.plot3D(aex[0:nafinal],aey[0:nafinal],aez[0:nafinal])
 ax.plot3D(ex[0:nfinal],ey[0:nfinal],ez[0:nfinal])

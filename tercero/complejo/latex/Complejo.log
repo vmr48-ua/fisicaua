@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  24 NOV 2023 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  4 DEC 2023 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1670,7 +1670,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 1036--1036
  []
 
 Missing character: There is no Ÿ in font cmr10!
-[25] (./Complejo.aux
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\displaystyle' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cos' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sin' on input line 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1037.
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 1075--1075
+[]$[][] [] \OML/npxmi/m/it/10 dx \U/npxmia/m/it/10 = [][] [] \LMS/npxsy/m/n/10 ^^A [] ^^A [] \U/npxmia/m/it/10 = [] [] [] \LMS/npxsy/m/n/10 ^^A [] \OML/npxmi/m/it/10 dz \U/npxmia/m/it/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+Missing character: There is no Ÿ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+Missing character: There is no Ÿ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1075
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1079
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1083
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1085
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1130
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1159
+
+ []
+
+[27] (./Complejo.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1683,18 +1815,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 42016 strings out of 477923
- 830138 string characters out of 5838288
+ 42067 strings out of 477923
+ 830768 string characters out of 5838288
  1890388 words of memory out of 5000000
- 61298 multiletter control sequences out of 15000+600000
- 547494 words of font info for 135 fonts, out of 8000000 for 9000
+ 61320 multiletter control sequences out of 15000+600000
+ 556202 words of font info for 161 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,16n,102p,568b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,102p,649b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txsya.pfb>
-Output written on Complejo.pdf (26 pages, 374009 bytes).
+Output written on Complejo.pdf (28 pages, 389212 bytes).
 PDF statistics:
- 610 PDF objects out of 1000 (max. 8388607)
- 451 compressed objects within 5 object streams
- 170 named destinations out of 1000 (max. 500000)
- 547 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 482 compressed objects within 5 object streams
+ 182 named destinations out of 1000 (max. 500000)
+ 571 words of extra memory for PDF output out of 10000 (max. 10000000)
 

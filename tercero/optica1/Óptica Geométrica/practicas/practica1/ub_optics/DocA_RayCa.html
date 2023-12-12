@@ -1,0 +1,149 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Documentación programa Trazado de rayos</TITLE>
+<META NAME="description" CONTENT="hypertext">
+<META NAME="keywords" CONTENT="hypertext">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<LINK REL="STYLESHEET" HREF="entradaA.css">
+
+<h1 class="h1joc">Traçat de raigs</h1>
+<p>Aquest aplicaci&oacute; permet estudiar el comportament de sistemes &ograve;ptics, com ara lents, projectors, telescopis, etc. Inclou tant el c&agrave;lcul de les seves caracter&iacute;stiques (elements cardinals) com la formaci&oacute; d'imatges, sigui amb les aproximacions de l'&ograve;ptica paraxial o amb f&oacute;rmules exactes. Aix&ograve; permet visualitzar i analitzar les aberracions &ograve;ptiques del sistema.</p>
+  
+  <h2 class="h2joc">Avantprojecte (aproximaci&oacute; paraxial)</h2>
+  <p>En aquesta finestra es pot definir l'avantprojecte del sistema &ograve;ptic que volem estudiar, i es mostra el seu comportament per mitj&agrave; de l'aproximaci&oacute; de l'&ograve;ptica paraxial. En la part superior es mostra el tra&ccedil;at de raigs en l'esmentada aproximaci&oacute; per als objectes seleccionats (fins a un m&agrave;xim de dos) en travessar les lents i diafragmes que s' hagin afegit al sistema (fins a 6).
+    
+  <h3 class="h3joc">Objectes</h3>
+  <p>El programa permet estudiar el tra&ccedil;at de raigs d'un o dos objectes en eix i/o formant un cert angle amb l'eix &ograve;ptic (en camp). Si es prem el bot&oacute; "Objecte 1" o "Objecte 2" apareixen una s&egrave;rie de barres de despla&ccedil;ament que permeten canviar les caracter&iacute;stiques de l'objecte seleccionat: aquest pot ser real o virtual, i es pot escollir la seva posici&oacute; horitzontal respecte a l'origen del sistema de coordenades (en situar la barra de despla&ccedil;ament a l'esquerra de tot, l'objecte desapareix). Mentre la barra de despla&ccedil;ament "Semicamp" tingui un valor nul, el programa mostra &uacute;nicament el tra&ccedil;at de raigs de l'objecte en eix (en color verd o groc segons si &eacute;s l'objecte 1 o el 2, respectivament). En canviar el valor del &quot;Semicamp&quot;, s'afegeix un objecte amb el semicamp escollit (en blau per a l'objecte 1 i en taronja per al 2). 
+  <h3 class="h3joc">Lents i diafragmes</h3>
+  <p>El programa permet afegir al sistema fins a sis elements, que poden ser lents o diafragmes. Prement un dels botons numerats de l'1 al 6, s'escullen les caracter&iacute;stiques de l'element en q&uuml;esti&oacute;:</p>
+  <ul>
+    <li><b>Lents</b>: quan el bot&oacute; &quot;Lent&quot; est&agrave; activat, el programa permet definir la posici&oacute; horitzontal de la lent respecte a l'origen i la seva pot&egrave;ncia &#966;' o focal (f'), que estan relacionades segons:</li>
+    <p align="center"> <img src="formules/Ray_Ec1.gif"></p>
+    <p>Quan la focal f' s'expressa en metres, la pot&egrave;ncia &#966;' ve donada en di&ograve;ptries. Per a lents convergents, f' i &#966;' s&oacute;n positives, i negatives per a lents divergents. D'altra banda, totes les lents tenen un di&agrave;metre per defecte de 70 mm i estan centrades respecte a l'eix &ograve;ptic.</p>
+    <li><b>Diafragmes</b>: quan el bot&oacute; &quot;Diafragma&quot; est&agrave; activat, el programa permet afegir un diafragma centrat en eix al sistema, que limiti la marxa de raigs. Se'n pot definir tant la  posici&oacute; horitzontal com el  di&agrave;metre. Sempre que la barra de despla&ccedil;ament del darrer estigui a la dreta de tot, el diafragma desapareix.</li>
+  </ul>
+  <h3 class="h3joc">&nbsp;</h3>
+  <p>Un cop dissenyat el sistema (s'han afegit lents, diafragmes i objectes), la semifinestra superior mostra el tra&ccedil;at de raigs corresponent. Cal recordar que, en &ograve;ptica paraxial, la llei per a la formaci&oacute; d'imatges &eacute;s la llei de Gauss: donat un objecte que es troba a una dist&agrave;ncia s (<b>dist&agrave;ncia objecte</b>) d'una lent de focal f', la seva imatge es formar&agrave; a una dist&agrave;ncia s' (<b>dist&agrave;ncia imatge</b>) de la lent, on:</p>
+  <p align="center"> <img src="formules/Ray_Ec2.gif"></p>
+  <p>En aquesta f&oacute;rmula (i en les seg&uuml;ents) se suposa que la lent es troba en un medi d'&iacute;ndex de refracci&oacute; igual a la unitat. Les lents es consideren primes, de manera que les dist&agrave;ncies es mesuren des de la seva superf&iacute;cie. A m&eacute;s, el conveni de signes utilitzat indica que les dist&agrave;ncies s&oacute;n positives per a objectes/imatges a la dreta de la lent, i negatives en cas contrari.</p>
+  <p>Per exemple, la imatge d'un objecte a l'origen a trav&eacute;s d'una lent de focal f'=200 mm, situada a 600 mm de l'origen, &eacute;s:</p>
+  <p align="center"> <img src="formules/Ray_Ec3.gif"></p>
+  <p>&Eacute;s a dir, es forma 300 mm a la dreta de la lent, cosa que correspon a una posici&oacute; absoluta de 900 mm respecte a l'origen.</p>
+  <p>Si ara considerem un objecte fora d'eix, l'<b>augment lateral</b> del sistema (&#946;'), que &eacute;s la relaci&oacute; entre la mida de la imatge (y') i de l'objecte (y), ve donada per: 
+  <p align="center"> <img src="formules/Ray_Ec4.gif"></p>
+  <p>En l'exemple anterior:</p>
+  <p align="center"> <img src="formules/Ray_Ec5.gif"></p>
+  <p>&Eacute;s a dir, si es considera un objecte amb un semicamp de 4&ordm;, amb una mida </p>
+  <p align="center"> <img src="formules/Ray_Ec6.gif"></p>
+  <p>per sobre l'eix (positiu), la seva imatge tindr&agrave; una mida:</p>
+  <p align="center"> <img src="formules/Ray_Ec7.gif"></p>
+  <p>&Eacute;s a dir, estar&agrave; invertida i ser&agrave; la meitat de petita que l'objecte.</p>
+  <p>En el cas que el sistema estigui constitu&iuml;t per m&eacute;s d'una lent (<b>sistema compost</b>), cal considerar la formaci&oacute; d' imatge a trav&eacute;s de cadascuna de les lents, l'una darrere l'altra: 
+  <p align="center"> <img src="formules/Ray_Ec8.gif"></p>
+  <p>Els sub&iacute;ndexs fan refer&egrave;ncia a la formaci&oacute; d'imatge a trav&eacute;s de la lent i de focal f'<sub>i</sub> (se suposa que hi ha N lents), per a un objecte situat a una dist&agrave;ncia objecte s<sub>i</sub>. La relaci&oacute; entre la dist&agrave;ncia imatge respecte a la lent i, s'<sub>i</sub> i la dist&agrave;ncia objecte respecte a la lent seg&uuml;ent, s<sub>i+1</sub>, &eacute;s: 
+  <p align="center"> <img src="formules/Ray_Ec9.gif"></p>
+  <p>on d<sub>i,i+1</sub> &eacute;s la dist&agrave;ncia entre les dues lents (posici&oacute; de la lent i+1 respecte a la lent i), que ser&agrave; positiva si la lent i+1 &eacute;s a la dreta de la lent i.
+  <p>Els augments del sistema compost poden obtenir-se com el producte dels augments laterals de cadascuna de les lents: 
+  <p align="center"> <img src="formules/Ray_Ec10.gif"></p>
+  <p> El programa mostra, en tots els casos, la posici&oacute; i mida del <b>diafragma d'obertura (D.A.)</b>, de la <b>pupil&middot;la d'entrada (P.E.)</b> i de la <b>pupil&middot;la de sortida (P.S.)</b> del sistema. El diafragma d'obertura d'un sistema &ograve;ptic &eacute;s l'element (forat) que limita l'extensi&oacute; del feix que hi incideix procedent de l'objecte, situat en l'eix &ograve;ptic. La imatge del diafragma d'obertura en l'espai objecte i en l'espai imatge s'anomena pupil&middot;la d'entrada i pupil&middot;la de sortida, respectivament.</p>
+  <p>D'altra banda , tant els objectes en estudi com les seves corresponents imatges a trav&eacute;s del sistema poden ser reals (els raigs de llum convergeixen i es tallen realment en un punt) o virtuals (els perllongaments dels raigs es tallen en un punt). En aquest darrer cas, els raigs convergeixen cap a un punt o divergeixen des d'un punt. Per con&egrave;ixer-ne la  posici&oacute; exacta, cal pr&eacute;mer el bot&oacute; &quot;Veure objecte virtual&quot; o &quot;Veure imatge virtual&quot;, i el tra&ccedil;at de raigs mostra el perllongament dels raigs amb una l&iacute;nea de punts, fins al punt en q&uuml;esti&oacute; (posici&oacute; de l'objecte o de la imatge virtual, segons el cas).</p>
+  <h3 class="h3joc">Elements cardinals</h3>
+  <p>Si es prem el bot&oacute; &quot;Elements cardinals&quot;, apareix a la part inferior el tra&ccedil;at de raigs necessari per trobar els elements cardinals del sistema, que s&oacute;n els focus i plans focals (en vermell) i els plans i punts principals (en magenta).</p>
+  <ul>
+    <li><b>Focus i plans focals</b>: la imatge a trav&eacute;s d'un sistema &ograve;ptic d'un punt objecte situat a l'infinit en eix es coneix amb el nom de focus imatge (F'). El pla perpendicular a l'eix que passa per F' &eacute;s el pla focal imatge. An&agrave;logament, el focus objecte (F) d'un sistema &ograve;ptic &eacute;s el punt pel qual tots els raigs surten paral&middot;lels a l'eix (imatge a l'infinit), i el pla focal objecte es el que el cont&eacute; i &eacute;s perpendicular a l'eix. La posici&oacute; de F es pot trobar gr&agrave;ficamente fent incidir al sistema un raig paral&middot;lel a l'eix des de l'espai imatge (des de la dreta), i buscant la seva intersecci&oacute; amb l'eix despr&eacute;s de travessar el sistema (de dreta a esquerra). El focus imatge F' es troba de manera semblant.</li>
+    <li><b>Plans i punts principals</b>: els plans principals (objecte i imatge, un conjugat de l'altre) s&oacute;n els plans normals a l'eix pels quals l'augment lateral &#946;' &eacute;s la unitat. Els seus punts d'intersecci&oacute; amb l'eix s&oacute;n els punts principals H i H', respectivament. Per obtenir el pla principal imatge gr&agrave;ficament cal tra&ccedil;ar un raig paral&middot;lel a l'eix (la intersecci&oacute; a la sortida del qual passar&agrave; per F') i estudiar el punt on es tallin els perllongaments del raig incident i emergent. El pla que cont&eacute; a aquest punt, perpendicular a l'eix, ser&agrave; el pla principal imatge. El pla principal objecte es troba d'una manera similar, per&ograve; ara el raig paral&middot;lel a l'eix es tra&ccedil;a de dreta a esquerra, de la mateixa manera que per trobar F.</li>
+  </ul>
+  <p>Si es t&eacute; una <b>&uacute;nica lent</b>, que se suposa <b>prima</b>, els plans principals objecte i imatge coincideixen amb la pr&ograve;pia superf&iacute;cie de la lent, i la posici&oacute; de F i F' es determina f&agrave;cilment a partir de les seves focals objecte i imatge:</p>
+  <p align="center"> <img src="formules/Ray_Ec11.gif"></p>
+  <p>Les dist&agrave;ncies focals objecte i imatge s&oacute;n iguals i de signe contrari perqu&egrave; estem suposant que els &iacute;ndexs de refracci&oacute; abans i despr&eacute;s de la lent coincideixen.</p>
+  <p>Per a un <b>sistema compost</b> per dues lents de focals f'<sub>1</sub> i f'<sub>2</sub> immerses en el mateix medi, les focals i posicions dels plans principals del sistema es calculen segons:</p>
+  <p align="center"> <img src="formules/Ray_Ec12.gif"></p>
+  <p>on d<sub>1,2</sub> &eacute;s, en l'aproximaci&oacute; de lents primes, la dist&agrave;ncia entre la lent 1 i la 2 (positiva si 2 &eacute;s a la dreta de 1). H<sub>1</sub> i H'<sub>2</sub> s&oacute;n el pla principal objecte de la primera lent i imatge de la segona lent, respectivament, i coincideixen amb les seves superf&iacute;cies.</p>
+  <h2 class="h2joc">C&agrave;lcul exacte</h2>
+  <p>En aquest apartat s'estudia la formaci&oacute; d'imatges a trav&eacute;s d'un sistema &ograve;ptic sense considerar les aproximacions de l'&ograve;ptica paraxial, que deixen de ser v&agrave;lides quan els camps i les obertures del sistema no s&oacute;n petits. En aquest cas, les imatges presenten una s&egrave;rie de defectes, coneguts amb el nom d'<b>aberracions</b> (la imatge d'un punt ja no &eacute;s un punt).</p>
+  <p>El programa mostra l'aspecte de la imatge real a trav&eacute;s del sistema, tant en eix como en camp. Prement el bot&oacute; &quot;Imatge&quot; se'n poden canviar les  caracter&iacute;stiques: la dist&agrave;ncia des del pla paraxial fins al pla imatge que es vulgui estudiar i l'escala de la finestra de visualitzaci&oacute;. El programa mostra la posici&oacute; del pla paraxial, on es formaria la imatge segons les aproximacions de l'&ograve;ptica paraxial.</p>
+  <p>Per defecte (imatge &quot;monocrom&agrave;tica&quot;), la imatge es calcula per una &uacute;nica longitud d'ona,</p>
+  <p align="center"> <img src="formules/Ray_Ec13.gif"></p>
+  <p>(verd). En aquest cas es poden estudiar les aberracions de punt (<b>esf&egrave;rica</b>, <b>coma</b> i <b>astigmatisme</b>). El programa calcula una funci&oacute; de m&egrave;rit tant en eix com en camp, que est&agrave; relacionada amb la &quot;qualitat&quot; de la imatge. Si s'activa el bot&oacute; &quot;Color&quot;, apareixen tamb&eacute; les imatges per</p>
+  <p align="center"> <img src="formules/Ray_Ec14.gif"></p>
+  <p>en els corresponents colors (blau i vermell, respectivament), cosa que permet estudiar l'aberraci&oacute; <b>crom&agrave;tica</b>.</p>
+  <p>En aquest apartat, el programa permet retocar les caracter&iacute;stiques de l'objecte (posici&oacute; i camp), de les lents i dels diafragmes (posici&oacute; i di&agrave;metre). El cas de les lents requereix especial atenci&oacute;: com que el c&agrave;lcul &eacute;s exacte, a m&eacute;s de la posici&oacute; i la pot&egrave;ncia de les lents, &eacute;s possible canviar els radis de les seves superf&iacute;cies externes i el seu &iacute;ndex de refracci&oacute;. Per a una focal o pot&egrave;ncia fixa, es pot veure com les aberracions canvien amb els radis. A m&eacute;s, per a imatges en color, es pot modificar l'&iacute;ndex de refracci&oacute;n n<sub>d</sub> (per la longitud d'ona &#955;<sub>d</sub>) de les lents i el nombre d'Abbe, definit com:</p>
+  <p align="center"> <img src="formules/Ray_Ec15.gif"></p>
+  <p>on n<sub>F</sub> i n<sub>C</sub> s&oacute;n els &iacute;ndexs de refracci&oacute; per &#955;<sub>F</sub> i &#955;<sub>C</sub>, respectivament. El nombre d'Abbe caracteritza la dispersi&oacute; crom&agrave;tica de la lent.</p>
+  <h2 class="h2joc">Llegir un fitxer</h2>
+  <p>El programa recupera les dades de l'Avantprojecte enregistrades pr&egrave;viament en un fitxer (vegeu apartat seg&uuml;ent).</p>
+  <h2 class="h2joc">Enregistrar</h2>
+  <p>En pr&eacute;mer aquest bot&oacute;, el programa grava en un fitxer les caracter&iacute;stiques del sistema &ograve;ptic dissenyat en l'Avantprojecte (objectes, lents i diafragmes), de manera que es puguin recuperar posteriorment.</p>
+  <br>
+<h2 class="h2joc">Glossari</h2>
+
+<table width="455" border="0" align="left" cellpadding="5" cellspacing="0">
+  <tr> 
+    <td class="glostit" width="168">Avantprojecte</td>
+    <td width="55">&nbsp;</td>
+    <td class="glostit" width="161">C&agrave;lculo exacte (lent) </td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="168">Pot&egrave;ncia</td>
+    <td width="55">&#966;'</td>
+    <td class="glost" width="161">&Iacute;ndex</td>
+    <td width="31">n<sub>d</sub></td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Focal</td>
+    <td width="55">f'</td> 
+    <td class="glost" width="161">Abbe (nombre d'Abbe) </td>
+    <td width="31">&#957;<sub>d</sub></td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Diafragma d'obertura</td>
+    <td width="55">D.A.</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Pupil&middot;la d'entrada </td>
+    <td width="55">P.E.</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Pupil&middot;la de sortida </td>
+    <td width="55">P.S.</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Pla principal objecte</td>
+    <td width="55">H</td> 
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost">Pla principal imatge</td>
+    <td>H'</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="168">Focus objecte</td>
+    <td width="55">F</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="168">Focus imatge</td>
+    <td width="55">F'</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+</table>
+</BODY>
+</HTML>

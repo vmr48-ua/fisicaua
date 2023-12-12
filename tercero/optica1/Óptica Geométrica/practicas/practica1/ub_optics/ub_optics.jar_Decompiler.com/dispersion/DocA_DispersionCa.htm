@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+
+<TITLE>Documentació programa Dispersió de la llum</TITLE>
+<META NAME="description" CONTENT="hypertext">
+<META NAME="keywords" CONTENT="dispersion, light">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<META NAME="Generator" CONTENT="">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<LINK REL="STYLESHEET" HREF="entradaA.css">
+</HEAD>
+
+<h1 class="h1joc">Dispersió de la llum</h1>
+
+<p>En aquesta aplicaci&oacute; es mostren els fenòmens de dispersió cromàtica de la llum. En primer lloc es presenta la dispersió de la llum en travessar un prisma. També es mostra el fenomen dels arcs de Sant Martí com a exemple de dispersió de la llum.</p>
+
+<h2 class="h2joc">Finestra "Dispersió en un prisma"</h2>
+
+<p>En aquesta primera finestra del programa es presenta la dispersió de la llum en travessar un prisma triangular isòsceles. Per simplificar l'estudi en el fenomen de la dispersió solament es consideren les transmissions en les superfícies laterals, menyspreant les reflexions o la transmissió a la base del prisma.</p>
+<p>Així, un feix de llum incideix en la primera superfície del prisma, de forma que és refractat per el seu material, i finalment la llum surt refractada a través de la segona superfície, donant lloc a una descomposició espectral de la llum, ja que el índex de refracció del prisma depèn de la longitud d'ona. Aquest fenomen es coneix com dispersió de la llum.</p>
+<p>Els paràmetres que es poden variar són:
+<ul>
+<li><b>"Angle del prisma"</b>. Correspon a l'angle del vèrtex del prisma entre les superfícies d'entrada i de sortida.<br>
+<li><b>"Angle d'incidència"</b>. És l'angle entre el raig incident i la normal a la superfície d'incidència del prisma.<br>
+</ul>
+<p>L'altre aspecte que es pot variar és la naturalesa del material del prisma mitjançant la variació de l'índex de refracció. Per fer això el programa presenta unes barres de desplaçament per modificar els valors de <b>n0, A</b> i <b>B</b>. Aquests valors corresponen als termes de l'aproximació de Cauchy per representar l'índex de refracció d'un material:</p>
+<p align="center">n = n0 + A / &#955<sup>2</sup> + B / &#955<sup>4</sup></p>
+<p>Altra opció és seleccionar un material determinat entre la llista que s'ofereix sobre aquestes barres de desplaçament, de forma que els paràmetres <b>n0, A</b> i <b>B</b> resten fixats per el tipus de vidre que s'hagi seleccionat entre els que es poden escollir: silici fos, BK 7, Bak 1, F 2 o LaK 10.</p>
+<p>En quant a la llum incident en el prisma, el programa permet una descomposició espectral de fins a set longituds d'ona diferents, que es poden seleccionar amb les barres de desplaçament de la part dreta de la finestra. També existeix l'opció de seleccionar una distribució espectral predeterminada per a les 7 longituds d'ona en comptes d'utilitzar l'opció de lliure elecció. Així en la llista que es pot seleccionar sobre les barres de desplaçament apareixen les opcions de <b>llum blanca</b>, que presenta set longituds d'ona equiespaiades en l'interval visible; <b>Hg</b>, que presenta les longituds d'ona principals de l'espectre de emissió d'una font de mercuri; <b>Cd</b>, per les línies principals d'una font de cadmi; i <b>Zn</b>, per les línies principals d'una font de zinc.</p>
+<p>Amb aquests paràmetres els resultats que es presenten són en primer lloc una finestra on es pot veure una representació de la dispersió de la llum a través del prisma. Sota aquesta representació es pot veure la distribució angular per a les diferents longituds d'ona refractades respecte a l'angle de desviació. Aquest angle correspon a la desviació entre el raig emergent i l'incident. Si s'acciona el botó <b>zoom</b> aquesta representació queda augmentada entre els valors extrems dels angles de desviació. Aquests angles de desviació també es calculen per cada longitud d'ona utilitzada.<p>
+<p> El programa també presenta els índexs de refracció per dues línies principals d'emissió de l'hidrogen i una de l'heli, que usualment s'utilitzen per calibrar els índexs de refracció de diferents materials. <b>nd</b> correspon a la línia de 587.6 nm de l'heli, i <b>nF</b> a la línia de 486.1 nm i <b>nC</b> a la de 656.3 nm de l'hidrogen.</p>
+<p>Amb aquests valors es pot calcular el número d'Abbe:</p>
+<p align="center">&#957;<sub>d</sub> = (nd-1) / (nF-nC)</p>
+<p>que dona una idea de la dispersió cromàtica del vidre. Així, &#957;<sub>d</sub>>50 el vidre és poc dispersiu i s'anomena tipus <b><i>crown</i></b>, en canvi si &#957;<sub>d</sub><50 el vidre és molt dispersiu i s'anomena tipus <i><b>flint</b></i>.</p>
+<p>A la dreta de la representació del prisma es presenten a més dos gràfics. El primer, <b>"Índex de refracció"</b>, presenta l'índex de refracció del vidre en funció de la longitud d'ona, marcant les posicions de las línies d'emissió de l'hidrogen. El segon gràfic, <b>"Angle de desviació"</b>, presenta l'angle de desviació en funció de l'angle de incidència per a les diferents longituds d'ona. En aquest gràfio es pot observar com hi ha un angle d'incidència per el que l'angle de desviació és mínim. Aquest angle de mínima desviació és diferent per cada longitud d'ona, en aquest cas es marca l'angle de incidència per la mínima desviació de la línia taronja de l'espectre de l'heli, &#955;<sub>d</sub>=587.6 nm. També es pot veure com fina a cert angle d'incidència no hi ha dispersió, ja que es produeix reflexió total a la segona superfície al superar-se l'angle límit de refracció.</p> 
+
+<h2 class="h2joc">Finestra "Arc de Sant Martí"</h2>
+
+<p>En aquesta segona finestra es presenta l'estudi de la formació de l'arc de Sant Martí, conseqüència de la dispersió de la llum a través de les gotes d'aigua presents a l'atmosfera.</p>
+<p>Quan un raig de llum arriba a una gota d'aigua es produeix la dispersió cromàtica de la llum. El programa permet variar la <b>longitud d'ona, &#955;</b>, del raig incident i el <b>paràmetre d'impacte, b</b>, (alçada a la que el raig impacta en relació al radi) sobre dues gotes d'aigua. A la part superior esquerra podem veure la representació de las dues gotes d'aigua, la primera representa una gota a la que el raig incideix per sobre del diàmetre horitzontal y pateix solament una reflexió interior abans de sortir, en aquest cas s'obté l'arc primari. La segona gota representa el cas en el que l'impacte es produeix per sota del diàmetre horitzontal i, després de dues reflexions internes la llum surt transmesa donant lloc a l'arc secundari. Degut a que l'índex de refracció de l'aigua depèn de la longitud d'ona, l'angle de sortida, <b>&#946;</b> per a cada color és diferent encara que la llum tingui el mateix angle d'entrada <b>&#945;</b>. Aquests angles es poden calcular a partir del paràmetre d'impacte, així, <i>sin</i> &#945;=b i <i>sin</i> &#946;= b/n.</p>
+<p>Amb aquests angles també es poden calcular els angles de desviació, &#948;, que sofreixen els raigs dels arcs primari i secundari:
+<p align="center">&#948;<sub>p</sub> = &#960; + 2&#945; - 4&#946;</p>
+<p align="center">&#948;<sub>s</sub> = 6&#946; - 2&#945;</p>
+<p>A la part inferior dreta es presenta un gràfic dels angles de desviació en funció del paràmetre d'impacte. La corba superior correspon a l'arc primari i la corba inferior al secundari. Com es pot apreciar aquestes dues corbes no es creuen fent que hi hagi una zona obscura entre els arcs primari i secundari denominada banda d'Alexandre.</p>
+<p>L'arc de Sant Martí solament és visible quan l'angle de visió es correspon a la situació en que la llum surt reflectida en les condicions de mínima desviació, és a dir un mínim o un màxim en les corbes del gràfic anterior. Aquestes seran diferents per l'arc primari i l'arc secundari. En la part superior dreta podem observar un esquema de la formació dels dos arcs de Sant Martí, el primari i el secundari on es mostra l'angle de visió per cada arc respecte la horitzontal per cada longitud d'ona. Aquest angle de visió es correspon al complementari a l'angle de mínima desviació. La amplada angular de l'arc primari és de 1.84º, la de l'arc secundari de 3.21º i la separació entre els dos arcs de 8º.</p>
+<p>El que la llum surti amb un angle de mínima desviació solament depèn del paràmetre d'impacte, que en aquesta posició es pot expressar com una funció de l'índex de refracció, per tant lleugerament diferent per cada longitud d'ona, el que provoca la dispersió cromàtica. Per l'arc primari tenim:</p>
+<p align="center"><img src="formules/Disper_Ec1.gif"></p>
+<p>I per l'arc secundari:</p>
+<p align="center"><img src="formules/Disper_Ec2.gif"></p>
+</BODY>
+</HTML>

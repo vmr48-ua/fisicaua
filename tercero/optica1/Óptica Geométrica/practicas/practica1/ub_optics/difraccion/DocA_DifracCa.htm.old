@@ -1,0 +1,120 @@
+<html><head><title>Documentació programa difracció de Fresnel i Fraunhofer</title>
+
+<meta name="description" content="hypertext">
+<meta name="keywords" content="hypertext">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html&gt;
+&lt;META NAME=" generator="">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="STYLESHEET" href="entradaA.css">
+</head>
+
+<body>
+
+<h1 class="h1joc">Difracció de Fresnel i Fraunhofer</h1>
+<p>Aquesta aplicaci&oacute; permet veure la intensitat del camp difractat en condicions 
+  de Fresnel o Fraunhofer en travessar algunes obertures notables. El programa 
+  suposa que la il&middot;luminaci&oacute; incident &eacute;s una ona plana que 
+  viatja en la direcci&oacute; normal al pla que cont&eacute; la obertura. En 
+  condicions de Fresnel, el programa pot calcular la difracci&oacute; per obertures 
+  rectangulars, circulars, l'escletxa o el semipl&agrave;, mentre que en condicions 
+  de Fraunhofer, el c&agrave;lcul es realitza per a rectangles, cercles o escletxes. 
+</p>
+<h2 class="h2joc">Difracci&oacute; de Fresnel</h2>
+<p>Sigui U(x,y,z) el camp difractat a una dist&agrave;ncia z del pla que cont&eacute; 
+  l'obertura &#931;&nbsp;(que considerarem situada a z=0). U(x<sub>0</sub>,y<sub>0</sub>,0) 
+  &eacute;s el camp en el pla z=0 i (x<sub>0</sub>,y<sub>0</sub>) s&oacute;n 
+  les coordenades en el pla de &#931;. k &eacute;s el n&uacute;mero d'ona i &#955;&nbsp; 
+  &eacute;s la longitud d'ona. </p>
+<p>El c&agrave;lcul en condicions de Fresnel es realitza quan les difer&egrave;ncies 
+  x-x<sub>0</sub> o y-y<sub>0</sub> s&oacute;n molt m&eacute;s petites que z. 
+  En aquest cas, l'equaci&oacute; que relaciona el camp difractat U(x,y,z) amb 
+  el camp en l'obertura U(x<sub>0</sub>,y<sub>0</sub>,0) &eacute;s:</p>
+<p align="center"><img src="formules/Difrac_Ec1.gif"></p>
+<p>on la intensitat es calcula com el m&ograve;dul al quadrat del camp difractat,</p>
+<p align="center"><img src="formules/Difrac_Ec3.gif"></p>
+<p>El programa calcula aquesta integral en diferents situacions. L'usuari ha d'introduir 
+  les seg&uuml;ents dades:</p>
+<ol>
+  <li>la longitud d'ona, en el rang de 400 a 700 nm.</li>
+  <li>la dist&agrave;ncia de propagaci&oacute; z, entre 100 i 1000 mm.</li>
+  <li>l'obertura a trav&eacute;s de la qual passa la llum: 
+    <ul>
+      <li> rectangle: han d'introduir-se els valors dels dos costats. Aquests 
+        poden variar entre 0.5 i 3 mm.</li>
+      <li>cercle: el di&agrave;metre varia entre 0.5 i 3 mm.</li>
+      <li> escletxa: l'amplada de la mateixa pot variar entre 0.5 i 3 mm.</li>
+      <li>semipl&agrave;.</li>
+    </ul>
+  </li>
+</ol>
+<p>A continuaci&oacute; s'ha de polsar el bot&oacute; 'Calcular difracci&oacute;'. 
+  Passats uns instants, en la imatge de la dreta es mostra la intensitat de la 
+  difracci&oacute;. La imatge de la difracci&oacute; pot ser analitzada de manera 
+  que s'apreci&iuml;n millor les zones de la imatge amb menor energia. Per aix&ograve; 
+  pot escollir-se entre la visualitzaci&oacute;</p>
+<ol>
+  <li>en intensitat (opci&oacute; per defecte), </li>
+  <li>el logaritme de la intensitat, o b&eacute;</li>
+  <li>en amplitud (l'arrel quadrada de la intensitat). En seleccionar aquesta 
+    darrera opci&oacute; s'activa el lliscador 'Llindar'. El valor m&agrave;xim 
+    de l'amplitud de la difracci&oacute; es normalitza inicialment a 100. En seleccionar 
+    un cert valor del llindar, tots els valors per sobre d'aquest s'ajusten a 
+    100 i els valors per sota del llindar es renormalitzen de nou de 0 a 100. 
+  </li>
+</ol>
+<p>Tamb&eacute; es pot obtenir el perfil de la intensitat de l'eix y=0 en polsar 
+  sobre el bot&oacute; 'Perfil de la fila central'. La distribuci&oacute; mostrada 
+  correspon a la intensitat de la difracci&oacute; sense modificacions de visualitzaci&oacute;.</p>
+<h2 class="h2joc">Difracci&oacute; de Fraunhofer</h2>
+<p>El c&agrave;lcul en condicions de Fraunhofer es realitza quan la dist&agrave;ncia 
+  de propagaci&oacute; z tendeix a infinit. En aquest cas, l'equaci&oacute; que 
+  relaciona el camp difractat U(x,y,z) amb el camp en l'obertura U(x<sub>0</sub>,y<sub>0</sub>,0) 
+  &eacute;s:</p>
+<p align="center"><img src="formules/Difrac_Ec2-bis.gif"></p>
+<p>En la pr&agrave;ctica, per observar la intensitat de la difracci&oacute; de 
+  Fraunhofer es pot utilitzar una lent convergent de focal f' i observar la distribuci&oacute; 
+  en el pla focal de la mateixa. L'obertura s'il&middot;lumina amb una ona plana 
+  i el camp difractat es fa passar per la lent. Es pot demostrar que en el pla 
+  focal imatge de la mateixa s'obt&eacute; el mateix camp el&egrave;ctric escalar 
+  que si la propagaci&oacute; del camp es fes a una dist&agrave;ncia z que tendeix 
+  a l'infinit:</p>
+<p align="center"><img src="formules/Difrac_Ec2.gif"></p>
+<p align="left">Finalment, la intensitat es calcula com el m&ograve;dul al quadrat 
+  del camp difractat. </p>
+<p align="center"><img src="formules/Difrac_Ec4.gif"></p>
+<p align="left">El programa calcula aquesta integral en diferents situacions. 
+  L'usuari ha d'introduir les seg&uuml;ents dades: </p>
+<ol>
+  <li>la longitud d'ona, en el rang 400 a 700 nm.</li>
+  <li>la focal imatge de la lent entre 500 i 1000 mm.</li>
+  <li>l'obertura a trav&eacute;s de la qual passa la llum: 
+    <ul>
+      <li> rectangle: han d'introduir-se els valors dels dos costats. Aquests 
+        poden variar entre 0.5 i 3 mm.</li>
+      <li>cercle: el di&agrave;metre, que pot variar entre 0.5 i 3 mm.</li>
+      <li> escletxa, l'amplada pot variar entre 0.5 i 3 mm.</li>
+    </ul>
+    <p>Els tres objectes poden replicar-se fins a deu vegades. La dist&agrave;ncia 
+      entre ells &eacute;s constant.</p>
+  </li>
+</ol>
+<p>La imatge de la difracci&oacute; pot ser analitzada de manera que s'apreci&iuml;n 
+  millor les zones de la imatge amb menor energia. Per aix&ograve; pot escollir-se 
+  entre la visualitzaci&oacute;</p>
+<ol>
+  <li>en intensitat (opci&oacute; per defecte), </li>
+  <li>el logaritme de la intensitat, o b&eacute;</li>
+  <li>en amplitud (l'arrel quadrada de la intensitat). En seleccionar aquesta 
+    darrera opci&oacute; s'activa el lliscador 'Llindar'. El valor m&agrave;xim 
+    de l'amplitud de la difracci&oacute; es normalitza inicialment a 100. En seleccionar 
+    un cert valor del llindar, tots els valors per sobre d'aquest s'ajusten a 
+    100 i els valors per sota del llindar es renormalitzen de nou de 0 a 100. 
+  </li>
+</ol>
+<p>Tamb&eacute; es pot obtenir el perfil de la intensitat de l'eix y=0 en polsar 
+  sobre el bot&oacute; 'Perfil de la fila central'. La distribuci&oacute; mostrada 
+  correspon a la intensitat de la difracci&oacute; sense modificacions de visualitzaci&oacute; 
+  de cap tipus.</p>
+</body></html>

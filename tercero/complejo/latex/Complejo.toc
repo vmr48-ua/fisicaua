@@ -15,4 +15,7 @@
 \contentsline {section}{\numberline {3.1}Notación}{20}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Teoría de Residuos}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introducción}{23}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Integrales de la forma $\displaystyle \DOTSI \intop \ilimits@ _0^{2\pi }F(\cos x,\sin x)\ dx$}{25}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Aplicaciones del Teorema de los Residuos}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Teorema de Rouché}{26}{subsection.4.2.1}%
 \contentsfinish 

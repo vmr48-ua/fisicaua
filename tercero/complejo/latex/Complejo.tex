@@ -1034,4 +1034,127 @@
 
       $\Longrightarrow \displaystyle\int_{C(0,3)}f(z)\ dz=2\pi i \dfrac{1-3e^{-2}}{4}=\dfrac{\pi(1-3e^{-2})}{2}i$
     }
+      \subsection{Integrales de la  forma $\displaystyle \int_0^{2\pi}F(\cos x,\sin x)\ dx$}
+        \noindent La idea es pasar la forma de la función a números complejos. Para ello, hacemos el cambio de variable:
+        \[z=e^{ix}\Longrightarrow \int_0^{2\pi}F\ dx=\int_{C(0,1)}\]
+        \[dz=ie^{ix}\ dx=iz\ dx\Longrightarrow dx=\dfrac{dz}{iz}\Longrightarrow
+        \left\{\begin{aligned}
+          &z=e^{ix}=\cos x+i\sin x\\
+          &\dfrac{1}{z}=e^{-ix}=\cos (-x)+i\sin (-x)=\cos (x)-i\sin (x)
+        \end{aligned}\right.\Longrightarrow 
+        \left\{\begin{aligned}
+          &\cos x=\dfrac{z+\nicefrac{1}{z}}{2}\\
+          &\sin x=\dfrac{z-\nicefrac{1}{z}}{2i}
+        \end{aligned}\right.\]
+        \ejemplo{$\displaystyle\int_0^{2\pi}\dfrac{\sin^2 x}{\sqrt{5}+\cos x}\ dx$}{
+          $\displaystyle\int_0^{2\pi}\dfrac{\sin^2 x}{\sqrt{5}+\cos x}\ dx=\displaystyle\int_{C(0,1)}
+          \dfrac{(z-\nicefrac{1}{z})^2}{-4}\cdot\dfrac{1}{\sqrt{5}+\frac{z+\nicefrac{1}{z}}{2}}\cdot\dfrac{dz}{iz}
+          =\dfrac{i}{4}\displaystyle\int\dfrac{(z^2-1)^2}{z^2}\cdot \dfrac{2}{2\sqrt{5}z+z^2+1}\ dz=
+          \displaystyle\int\dfrac{(z^2-1)^2}{z^2(z^2+2\sqrt{5}z+1)}\ dz$\\\hspace{0cm}\\
+
+          Sea $f(z)=\dfrac{(z^2-1)^2}{z^2(z^2+2\sqrt{5}z+1)}$ entonces $z^2+2\sqrt{5}z+1=0\Longrightarrow
+          z=\dfrac{-2\sqrt{5}\pm\sqrt{20-4}}{2}=-\sqrt{5}\pm 2$\\\hspace{0cm}\\
+
+          Singularidades de $f\colon\left\{0,2-\sqrt{5},-2-\sqrt{5}\right\}$\\
+
+          \begin{itemize}
+            \item Res($f,0$):\\\hspace{0cm}\\
+                  $z=0$ es polo de orden $2\ \left(\lim_{z\to 0}z^2 f(z)=1\neq 0\right)$\\
+                  Si $g(z)=z^2f(z)$, Res($f,0)=\dfrac{g^\prime(0)}{1!}$\\
+                  $g^\prime(z)=\left(\dfrac{(z^2-1)^2}{z^2+2\sqrt{5}z+1}\right)^\prime= 
+                  \dfrac{2z(z^2-1)(z^2+2\sqrt{5}z+1)-(z^2-1)^2(2z+2\sqrt{5})}{(z^2+2\sqrt{5}z+1)^2}$\\
+                  $\Longrightarrow \text{Res}(f,0)=g^\prime (0)=-2\sqrt{5}$
+            \item Res($f,2-\sqrt{5}$):\\\hspace{0cm}\\
+                  $z= 2-\sqrt{5}$ es un polo simple \\
+                  $\Longrightarrow \text{\ Res}(f,2-\sqrt{5})=
+                  \lim_{z\to 2-\sqrt{5}}(z-(2-\sqrt{5}))f(z)=\dfrac{((2-\sqrt{5})^2-1)^2}{(2-\sqrt{5})^2(2\sqrt{5}-(-2-\sqrt{5}))}=4$
+          \end{itemize}
+
+          $\Longrightarrow\displaystyle\int_{0}^{2\pi}\dfrac{\sin^2 x}{\sqrt{5}+\cos x}\ dx=
+          \dfrac{i}{2}\left(2\pi i\left(\text{Res}(f,0)+\text{Res}(f,2-\sqrt{5})\right)\right)=\pi(2\sqrt{5}-4)$
+        }
+    \section{Aplicaciones del Teorema de los Residuos}
+      \subsection{Teorema de Rouché}
+        Nuestro objetivo es contar los ceros de una función\\
+        
+        Si $w\in Z(f)$ (es decir, $f(w)=0$), escribimos $m(f,w)$ (orden del cero de $f$ en $w$, es decir, 
+
+        $f(w)=\displaystyle\sum_{n=m}^{+\infty}a_n(z-z_0)^n=(z-z_0)^m h(z)$\hspace{0.6cm} con $h$ analítica, $h(w)\neq 0$ y $a_n\neq 0$)\\
+
+        Contamos ceros con su multiplicidad:\\
+        \[f\ \text{tiene}\ n\ \text{ceros }\ \Longleftrightarrow \sum_{w\in Z(f)}m(f,w)=n\]
+        
+        \ejemplo{}{
+          \begin{itemize}
+            \item $f(z)=z^3$ tiene $3$ ceros.
+            \item $f(z)=z(z-1)^2$ tiene $3$ ceros.
+          \end{itemize}
+        }
+        \teorema{Relación entre residuos y ceros}{
+          Sea $f$ analítica en $z_0$ con $f(z_0)=0$ y sea $m=m(f,z_0)$, entonces
+          \[\text{Res}\left(\dfrac{f^\prime}{f},z_0\right)=m\]
+        }
+        \definicion{Teorema de Rouché}{
+          Sean $f,g$ analíticas en un abierto $U\subset\bbC$ no idénticamente nulas en ninguna
+          componente conexa de $U$. Sea $\gamma$ un camino cerrado homólogo a $0$ en $U$ ($f$ y $g$
+          no tienen singularidades en el interior de $\gamma$). Si $\abs{f(z)-g(z)}<\abs{g(z)}$\ 
+          $\forall z\in\gamma^*$, entonces:
+
+          \begin{equation}
+              \sum_{w\in Z(f)} m(f,w)\cdot n(\gamma,w)=\sum_{w\in Z(g)}m(g,w)\cdot n(\gamma,w)
+          \end{equation}
+
+          Si $n(\gamma,w)\in\left\{0,1\right\}\ \forall w$ entonces $f$ y $g$ tienen el mismo 
+          número de ceros en el interior de $\gamma$. Además, $f$ y $g$ no tienen ceros en $\gamma^*$.
+        }
+        \ejemplo{¿Cuántas soluciones tiene la ecuación $z^6+z^2+3=z$ en $D(0,2)$}{
+          Sabemos por el TFA que hay 6 soluciones a la ecuación, pero no sabemos cuantas
+          están dentro del disco que nos dan.\\
+
+          Lo primero que hacemos es definir $f(z)=z^6+z^2-z+3\ $ y $\ \gamma=C(0,2)$.
+          Ahora hemos de definir a la función $g$, que ya no resulta tan fácil. Para ello quitamos
+          el sumando más grande de $f$ para que cumpla la condición del teorema dentro de $\gamma$.
+          $g(z)=z^6$.\\
+
+          Si $z\in\gamma^*$, $\abs{z}= 2\Longrightarrow
+          \left\{\begin{aligned}
+            &\abs{f(z)-g(z)}=\abs{z^2-z+3}\leq 4+2+3=9\\
+            &\abs{g(z)}=64>9        
+          \end{aligned}\right.$\\
+
+          Por el \textit{Teorema de Rouché}, $f$ y $g$ tienen los mismos ceros en $D(0,2) 
+          \Longrightarrow$ $f$ tiene $6$ ceros en $D(0,2)$.\\
+
+          Podemos ver que la ecuación no tendrá ningun cero en $\abs{z}\geq2$ ya que si tiene $6$ ceros
+          y todos están en el disco $D(0,2)$, fuera de él no habrá ninguno.
+        }
+        \ejemplo{Calcular el número de ceros de $P(z)=-z^5+z^2-6$ en $A(0; 1,2)=
+        \left\{z\in\bbC\colon 1<\abs{z}<2\right\}$}{
+          Nuestro conjunto es $D(0,2)\setminus\ovl{D}(0,1)$
+          \begin{itemize}
+            \item Calculamos los ceros en $D(0,2)$\\
+                  Sean $\gamma=C(0,2)$, $g(z)=-z^5$, si $z\in\gamma^*$, $\abs{z}=2\Longrightarrow
+                  \left\{\begin{aligned}
+                    &\abs{P(z)-g(z)}=\abs{z^2-6}\leq 10\\
+                    &\abs{g(z)}=32>10
+                  \end{aligned}\right.$\\
+
+                  Por el \textit{Teorema de Rouché}, $P$ y $g$ tienen los mismos ceros en 
+                  $D(0,2)\Longrightarrow$ $P$ tiene 5 ceros en $D(0,2)$
+            \item Calculamos los ceros en $\ovl{D}(0,1)$:\\
+                  Sean $\gamma=C(0,1)$, $g(z)=-6$, si $z\in\gamma^*$, $\abs{z}=1\Longrightarrow
+                  \left\{\begin{aligned}
+                    &\abs{P(z)-g(z)}=\abs{-z^5+z^2}\leq1+1<6
+                    &\abs{g(z)}=6
+                  \end{aligned}\right.$\\
+
+                  Por el \textit{Teorema de Rouché} $f$ y $g$ tienen el mismo número de ceros
+                  en $D(0,1)$ y ninguno en $C(0,1)\Longrightarrow$ $P$ no tiene ceros en $\ovl{D}(0,1)$.\\
+
+                  Siempre que podamos aplicar el teorema, sabremos que no hay ceros en la frontera.
+            \item Como tenemos el número de ceros en el disco de dentro y de fuera, podemos decir que
+                  $P$ tiene $5-0=5$ ceros en $A(0;1,2)$.
+          \end{itemize}
+
+        }
 \end{document}

@@ -1,8 +1,12 @@
+"""PRÁCTICA II ELECTROMAGNETISMO II"""
+"""Víctor Mira Ramírez - 74528754Z"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
 def E(q, r0, y,z):
+    # Calcula el campo de una carga q en r0
     den = np.hypot(y-r0[0], z-r0[1])**3
     return q * (y - r0[0]) / den, q * (z - r0[1]) / den
 
@@ -39,9 +43,9 @@ def plotCampo(Cxx,Cyy,title='',type='puntual',campo='electrico'):
 
     return None
 
+# Definimos constantes 
 ny, nz = 64, 64
-y = np.linspace(-2,2,ny)
-z = np.linspace(-2,2,nz)
+y, z = np.linspace(-2,2,ny), np.linspace(-2,2,nz)
 Y, Z = np.meshgrid(y,z)
 
 q = 1 
@@ -50,8 +54,8 @@ v = 1/10
 beta = v/c
 gamma = (1)/np.sqrt(1-beta**2)
 
-""" PARTE 1 """
 
+""" PARTE 1 """
 Ey, Ez = np.zeros((ny, nz)), np.zeros((ny, nz))
 r0 = np.array([0,0])
 
@@ -62,7 +66,6 @@ plotCampo(Ez, Ey,  title='Líneas de campo magnético: carga puntual', campo='ma
 
 
 """ PARTE 2 """
-
 Ey1, Ez1, Ey2, Ez2 = np.zeros((ny, nz)), np.zeros((ny, nz)), np.zeros((ny, nz)), np.zeros((ny, nz))
 r0 = np.array([0.5,0.5])
 

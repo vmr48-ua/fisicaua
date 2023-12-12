@@ -1,0 +1,264 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Documentación programa Trazado de rayos</TITLE>
+<META NAME="description" CONTENT="hypertext">
+<META NAME="keywords" CONTENT="hypertext">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<LINK REL="STYLESHEET" HREF="entradaA.css">
+  
+<h1 class="h1joc">Trazado de rayos</h1>
+
+<p>Esta aplicaci&oacute;n permite estudiar el comportamiento de sistemas &oacute;pticos, 
+  como lentes, proyectores, telescopios, etc. Esto incluye tanto el c&aacute;lculo 
+  de sus características (elementos cardinales) como la formación de im&aacute;genes, 
+  bien usando las aproximaciones de la &Oacute;ptica paraxial o mediante f&oacute;rmulas exactas. En este &uacute;ltimo caso se pueden visualizar y analizar las aberraciones 
+  &oacute;pticas del sistema.</p>
+<p>La ventana inicial est&aacute; dividida en dos pesta&ntilde;as, una pensada para dise&ntilde;ar &quot;Sistemas de focal corta&quot; y otra para &quot;Sistemas de focal larga&quot;: en ambas se reproducen las mismas ventanas, y &uacute;nicamente cambian la distancia m&aacute;xima en el gr&aacute;fico de trazado de rayos y el rango de focales de las lentes.</p>
+<h2 class="h2joc">Anteproyecto (aproximación paraxial)</h2>
+
+<p>En esta ventana se puede definir el anteproyecto del sistema óptico que queremos 
+  estudiar, y se muestra su comportamiento en la aproximaci&oacute;n de la &Oacute;ptica 
+  paraxial. En la parte superior se muestra el trazado de rayos en dicha aproximación 
+  para los objetos seleccionados (hasta un m&aacute;ximo de dos) al atravesar 
+  las lentes y diafragmas que se hayan a&ntilde;adido al sistema (hasta seis).
+  
+<h3 class="h3joc">Objetos</h3>
+
+<p>El programa permite estudiar el trazado de rayos de uno o dos objetos en eje 
+  o/y formando un cierto &aacute;ngulo con el eje &oacute;ptico (en campo). Al 
+  pulsar el botón "Objeto 1" u "Objeto 2" aparecen una serie de barras de desplazamiento 
+  con las que se pueden variar las características del objeto seleccionado: &eacute;ste 
+  puede ser real o virtual, y se puede escoger su posici&oacute;n horizontal respecto 
+  al origen del sistema de coordenadas (al situar la barra de desplazamiento a 
+  la izquierda del todo, el objeto desaparece). Mientras la barra de desplazamiento 
+  "Semicampo" se mantenga a un valor nulo, el programa muestra &uacute;nicamente 
+  el trazado de rayos del objeto en eje (en color verde o amarillo seg&uacute;n 
+  sea el Objeto 1 o el 2, respectivamente). Al variar el valor del &quot;Semicampo&quot;, 
+  se a&ntilde;ade un objeto con el semicampo escogido (en azul para el Objeto 
+  1 y en naranja para el 2).
+  
+<h3 class="h3joc">Lentes y diafragmas</h3>
+
+<p>El programa permite añadir al sistema hasta seis elementos, que pueden ser 
+  lentes o diafragmas. Pulsando uno de los botones numerados del 1 al 6, se escogen 
+  las caracter&iacute;sticas del elemento en cuesti&oacute;n:</p>
+<ul>
+  <li><b>Lentes</b>: cuando el bot&oacute;n &quot;Lente&quot; est&aacute; activado, 
+    el programa permite definir la posici&oacute;n horizontal de la lente respecto 
+    al origen y su potencia &#966;' 
+    o focal (f'), que est&aacute;n relacionadas seg&uacute;n:</li>
+  <p align="center"> <img src="formules/Ray_Ec1.gif"></p>
+  <p>Cuando la focal f' se expresa en metros, la potencia &#966;' 
+    viene dada en dioptrías. Para lentes convergentes, f' y &#966;' son positivas, y negativas para lentes divergentes.Por otra parte, todas las lentes tienen un diafragma 
+    por defecto de 70 mm y est&aacute;n centradas respecto al eje &oacute;ptico.</p>
+  <li><b>Diafragmas</b>: cuando el bot&oacute;n &quot;Diafragma&quot; est&aacute; 
+    activado, el programa permite a&ntilde;adir un diafragma centrado en eje al 
+    sistema, que limite la marcha de rayos. Se puede definir tanto su posici&oacute;n 
+    horizontal como su di&aacute;metro. Siempre que la barra de desplazamiento 
+    de este &uacute;ltimo est&eacute; a la derecha del todo, el diafragma desaparece.</li>
+</ul>
+
+<p>Una vez que se ha diseñado el sistema (se han añadido lentes, diafragmas y 
+  objetos), la semiventana superior muestra el trazado de rayos correspondiente. 
+  Cabe recordar que, en Óptica paraxial, la ley que rige para la formación de 
+  imágenes es la ley de Gauss: dado un objeto que se encuentra a una distancia 
+  s (<b>distancia objeto</b>) de una lente de focal f', su imagen se formar&aacute; 
+  a una distancia s' (<b>distancia imagen</b>) de la lente, donde:</p>
+  <p align="center"> <img src="formules/Ray_Ec2.gif"></p>
+<p>En esta f&oacute;rmula (y en las que siguen) se supone que la lente se encuentra en un medio de &iacute;ndice de refracci&oacute;n igual a la unidad. Las lentes se consideran delgadas, por 
+  lo que las distancias se toman desde la superficie de las mismas. Adem&aacute;s, 
+  el convenio de signos utilizado indica que las distancias son positivas para 
+  objetos/im&aacute;genes a la derecha de la lente, y negativas en caso contrario.</p>
+<p>Por ejemplo, la imagen de un objeto en el origen a través de una lente de focal f'=200 mm, 
+  situada a 600 mm del origen viene dada por:</p>
+  <p align="center"> <img src="formules/Ray_Ec3.gif"></p>
+<p>Es decir, se forma 300 mm a la derecha de la lente, que corresponde a una posición 
+  absoluta de 900 mm respecto al origen.</p>
+<p>Si ahora se considera un objeto fuera de eje, el <b>aumento lateral</b> del 
+  sistema (&#946;'), 
+  que es la relaci&oacute;n entre el tama&ntilde;o de la imagen (y') y el 
+  del objeto (y), viene dado por: 
+<p align="center"> <img src="formules/Ray_Ec4.gif"></p>
+<p>En el ejemplo anterior:</p>
+  <p align="center"> <img src="formules/Ray_Ec5.gif"></p>
+<p>Es decir, si se considera un objeto con un semicampo de 4º, con un tama&ntilde;o</p>
+  <p align="center"> <img src="formules/Ray_Ec6.gif"></p>
+<p>por encima del eje (positivo), su imagen tendrá un tamaño:</p>
+  <p align="center"> <img src="formules/Ray_Ec7.gif"></p>
+<p>Es decir, estará invertida y será la mitad de pequeña que el objeto.</p>
+
+<p>En el caso de que el sistema esté compuesto por más de una lente (<b>sistema 
+  compuesto</b>), se debe considerar la formaci&oacute;n de imagen a trav&eacute;s 
+  de cada una de las lentes, una detr&aacute;s de otra: 
+<p align="center"> <img src="formules/Ray_Ec8.gif"></p>
+<p>Los subíndices hacen referencia a la formación de imagen a través de la lente 
+  i de focal f'<sub>i</sub> (se supone que hay N lentes), para un objeto situado 
+  a una distancia objeto s<sub>i</sub>. La relación entre la distancia imagen 
+  respecto a la lente i, s'<sub>i</sub> y la distancia objeto respecto a la lente 
+  siguiente, s<sub>i+1</sub>, es: 
+<p align="center"> <img src="formules/Ray_Ec9.gif"></p>
+<p>donde d<sub>i,i+1</sub> es la distancia entre las dos lentes (posición de la 
+  lente i+1 respecto a la lente i), que será positiva si la lente i+1 se encuentra 
+  a la derecha de la lente i.
+<p>Los aumentos del sistema compuesto pueden obtenerse como el producto de los 
+  aumentos laterales de cada una de las lentes: 
+<p align="center"> <img src="formules/Ray_Ec10.gif"></p>
+  
+<p> El programa muestra, en todos los casos, la posición y tama&ntilde;o del <b>diafragma 
+  de apertura (D.A.)</b>, de la <b>pupila de entrada (P.E.)</b> y de la <b>pupila 
+  de salida (P.S.)</b> del sistema. El diafragma de apertura de un sistema &oacute;ptico 
+  es el elemento (orificio) que limita la extensi&oacute;n del haz que entra en 
+  el mismo procedente del objeto, situado en el eje &oacute;ptico. La imagen del 
+  diafragma de apertura en el espacio objeto o imagen se denomina pupila de entrada 
+  y pupila de salida, respectivamente.</p>
+<p>Por otra parte, tanto los objetos en estudio como sus correspondientes im&aacute;genes 
+  a trav&eacute;s del sistema pueden ser reales (los rayos de luz convergen y 
+  se cortan realmente en un punto) o virtuales (las prolongaciones de los rayos 
+  se cortan en un punto). En &eacute;ste &uacute;ltimo caso, los rayos convergen 
+  hacia o divergen desde un punto. Para conocer su posici&oacute;n exacta, es 
+  necesario pulsar el bot&oacute;n &quot;Ver objeto virtual&quot; o &quot;Ver 
+  imagen virtual&quot;, en cuyo caso el trazado de rayos muestra la prolongaci&oacute;n 
+  de los rayos con una l&iacute;nea punteada, hasta el punto en cuesti&oacute;n 
+  (posici&oacute;n del objeto o de la imagen virtual, seg&uacute;n el caso).</p>
+  
+<h3 class="h3joc">Elementos cardinales</h3>
+<p>Si se pulsa el bot&oacute;n &quot;Elementos cardinales&quot;, aparece en la 
+  parte inferior el trazado de rayos necesario para encontrar los elementos cardinales 
+  del sistema, que son los focos y planos focales (en rojo) y los planos y puntos 
+  principales (en magenta).</p>
+  
+<ul>
+  <li><b>Focos y planos focales</b>: la imagen a través de un sistema &oacute;ptico 
+    de un punto objeto situado en el infinito en eje se conoce con el nombre de 
+    foco imagen (F'). El plano perpendicular al eje que pasa por F' es el plano 
+    focal imagen. An&aacute;logamente, el foco objeto (F) de un sistema &oacute;ptico 
+    es aquel punto para el cual todos los rayos emergen paralelos al eje (imagen 
+    en el infinito), y el plano focal objeto es aqu&eacute;l que lo contiene y 
+    es perpendicular al eje. La posici&oacute;n de F se puede encontrar gr&aacute;ficamente 
+    haciendo incidir al sistema un rayo paralelo al eje desde el espacio imagen 
+    (desde la derecha), y buscando su intersecci&oacute;n con el eje despu&eacute;s 
+    de atravesar el sistema (de derecha a izquierda). El foco imagen F' se halla 
+    de manera parecida.</li>
+  <li><b>Planos y puntos principales</b>: los planos principales (objeto e imagen, 
+    uno conjugado del otro) son aquellos planos normales al eje para los cuales 
+    el aumento lateral &#946;' 
+    es la unidad. Sus puntos de intersecci&oacute;n con el eje son los puntos 
+    principales H y H', respectivamente. Para obtener el plano principal imagen 
+    gr&aacute;ficamente es necesario trazar un rayo paralelo al eje (cuya intersecci&oacute;n 
+    a la salida pasar&aacute; por F') y estudiar el punto donde se corten las 
+    prolongaciones del rayo incidente y emergente. El plano que contiene a dicho 
+    punto y es perpendicular al eje ser&aacute; el plano principal imagen. El plano 
+    principal objeto se halla de manera similar, pero ahora el rayo paralelo al 
+    eje se traza de derecha a izquierda, de la misma manera que para encontrar 
+    F.</li>
+</ul>
+
+<p>En el caso de tener una <b>única lente</b>, que se supone <b>delgada</b>, 
+  los planos principales objeto e imagen coinciden con la propia superficie de 
+  la lente, y la posici&oacute;n de F y F' viene determinada f&aacute;cilmente 
+  a partir de sus focales objeto e imagen:</p>
+  <p align="center"> <img src="formules/Ray_Ec11.gif"></p>
+<p>Las distancias focales objeto e imagen son iguales y de signo contrario porque estamos suponiendo que los &iacute;ndices antes y despu&eacute;s de la lente coinciden.</p>
+<p>Para un <b>sistema compuesto</b> por dos lentes de focales f'<sub>1</sub> y 
+  f'<sub>2</sub> inmersas en el mismo medio, las focales y posiciones de los planos 
+  principales del sistema se calculan seg&uacute;n:</p>
+  <p align="center"> <img src="formules/Ray_Ec12.gif"></p>
+<p>donde d<sub>1,2</sub> es, en la aproximación de lentes delgadas, la distancia 
+  entre la lente 1 y la 2 (positiva si 2 se encuentra a la derecha de 1). H<sub>1</sub> 
+  y H'<sub>2</sub> son el plano principal objeto de la primera lente e imagen de 
+  la segunda lente, respectivamente, y coinciden con las superficies de las mismas.</p>
+
+<h2 class="h2joc">Cálculo exacto</h2>  
+
+<p>En este apartado se estudia la formaci&oacute;n de im&aacute;genes a trav&eacute;s de un sistema &oacute;ptico sin tener en cuenta las aproximaciones de la &Oacute;ptica paraxial, que dejan de ser v&aacute;lidas cuando los campos y aberturas del sistema no son peque&ntilde;os. En este caso, las im&aacute;genes presentan una serie de defectos, conocidos con el nombre de <b>aberraciones</b> (la imagen de un punto ya no es un punto).</p>
+<p>El programa muestra el aspecto de la imagen real a trav&eacute;s del sistema, tanto en eje como en campo. Pulsando el bot&oacute;n &quot;Imagen&quot; se pueden cambiar sus caracter&iacute;sticas: la distancia desde el plano paraxial hasta el plano imagen que se quiera estudiar, y la escala de la ventana de visualizaci&oacute;n. El programa muestra la posici&oacute;n del plano paraxial, en el que se formar&iacute;a la imagen seg&uacute;n las aproximaciones de la &Oacute;ptica paraxial.</p>
+<p>Por defecto (imagen &quot;monocrom&aacute;tica&quot;), la imagen se calcula para una &uacute;nica longitud de onda,</p>
+<p align="center"> <img src="formules/Ray_Ec13.gif"></p>
+<p>(verde). En este caso se pueden estudiar las aberraciones de punto (<b>esf&eacute;rica</b>, <b>coma</b> y <b>astigmatismo</b>). El programa calcula una funci&oacute;n de m&eacute;rito tanto en eje como en campo, que da cuenta de la &quot;calidad&quot; de la imagen. Si se activa el bot&oacute;n &quot;Color&quot;, aparecen tambi&eacute;n las im&aacute;genes para</p>
+<p align="center"> <img src="formules/Ray_Ec14.gif"></p>
+<p>en los correspondientes colores (azul y rojo, respectivamente), lo que permite estudiar la aberraci&oacute;n <b>crom&aacute;tica</b>.</p>
+<p>En este apartado, el programa permite retocar las caracter&iacute;sticas del objeto (posici&oacute;n y campo), de las lentes y de los diafragmas (posici&oacute;n y di&aacute;metro). El caso de las lentes requiere especial atenci&oacute;n: puesto que en este caso el c&aacute;lculo es exacto, adem&aacute;s de la posici&oacute;n y la potencia de las lentes, es posible cambiar los radios de sus superficies externas y su &iacute;ndice de refracci&oacute;n. Para una focal o potencia fija, se puede ver c&oacute;mo las aberraciones cambian seg&uacute;n sean los radios escogidos. Adem&aacute;s, en el caso de estudiar im&aacute;genes en color, se puede modificar el &iacute;ndice de refracci&oacute;n n<sub>d</sub> (para la longitud de onda &#955;<sub>d</sub>) de las lentes y el n&uacute;mero de Abbe, definido como</p>
+<p align="center"> <img src="formules/Ray_Ec15.gif"></p>
+<p>donde n<sub>F</sub> y n<sub>C</sub> son los &iacute;ndices de refracci&oacute;n para &#955;<sub>F</sub> y &#955;<sub>C</sub>, respectivamente. El n&uacute;mero de Abbe caracteriza la dispersi&oacute;n crom&aacute;tica de la lente.</p>
+<h2 class="h2joc">Leer un fichero</h2>
+  <p>El programa recupera los datos del Anteproyecto guardados previamente en un 
+  fichero (ver apartado siguiente).</p>
+  
+<h2 class="h2joc">Grabar un fichero</h2>
+
+<p>Al pulsar este bot&oacute;n, el programa graba en un fichero las caracter&iacute;sticas 
+  del sistema &oacute;ptico dise&ntilde;ado en el Anteproyecto (objetos, lentes 
+  y diafragmas), de forma que puedan ser recuperadas posteriormente.</p>
+ <br>
+<h2 class="h2joc">Glosario</h2>
+
+<table width="455" border="0" align="left" cellpadding="5" cellspacing="0">
+  <tr> 
+    <td class="glostit" width="168">Anteproyecto</td>
+    <td width="55">&nbsp;</td>
+    <td class="glostit" width="161">C&aacute;lculo exacto (lente) </td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="168">Potencia</td>
+    <td width="55">&#966;'</td>
+    <td class="glost" width="161">&Iacute;ndice</td>
+    <td width="31">n<sub>d</sub></td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Focal</td>
+    <td width="55">f'</td> 
+    <td class="glost" width="161">Abbe (n&uacute;mero de Abbe) </td>
+    <td width="31">&#957;<sub>d</sub></td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Diafragma de apertura</td>
+    <td width="55">D.A.</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Pupila de entrada </td>
+    <td width="55">P.E.</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Pupila de salida </td>
+    <td width="55">P.S.</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost" width="168">Plano principal objeto </td>
+    <td width="55">H</td> 
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="glost">Plano principal imagen </td>
+    <td>H'</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="168">Foco objeto </td>
+    <td width="55">F</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="168">Foco imagen </td>
+    <td width="55">F'</td>
+    <td class="glost" width="161">&nbsp;</td>
+    <td width="31">&nbsp;</td>
+  </tr>
+</table>
+</BODY>
+</HTML>

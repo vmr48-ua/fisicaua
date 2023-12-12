@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+
+<TITLE>Documentació programa interferòmetre de Michelson</TITLE>
+
+<META NAME="description" CONTENT="hypertext">
+<META NAME="keywords" CONTENT="hypertext">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html>
+<META NAME="Generator>
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<LINK REL="STYLESHEET" HREF="entradaA.css">
+</HEAD>
+
+<h1 class="h1joc">Interferòmetre de Michelson</h1>
+<p>Aquest aplicaci&oacute; permet estudiar l'interferòmetre de Michelson i veure 
+  l'evoluci&oacute; dels anells quan es varien els par&agrave;metres del sistema. 
+  Tamb&eacute; s'analitza el cas de font puntual, corresponent a l'interfer&ograve;metre 
+  de Twyman.</p>
+
+<h2 class="h2joc">Interferòmetre de Michelson</h2>
+  
+<p>L'interfer&ograve;metre de Michelson es composa d'una font extensa situada 
+  en el pla focal d'una lent (de manera que els raigs surtin paral&middot;lels), 
+  una l&agrave;mina semiemmirallada posteriorment que separa el feix en dos i 
+  dos miralls. Els feixos, despr&eacute;s de reflectir-se als miralls, es tornen 
+  a reunir a la sortida de la l&agrave;mina i donen lloc a interfer&egrave;ncies. 
+  Aquestes s'observen en el pla focal d'una lent col&middot;limadora. Per tal 
+  de compensar la difer&egrave;ncia de camins &ograve;ptics que recorren els feixos 
+  en el bra&ccedil; horitzontal i vertical en travessar una i tres vegades la 
+  l&agrave;mina, respectivament, s'afegeix en el bra&ccedil; horitzontal una l&agrave;mina 
+  compensadora de gruix igual al de la l&agrave;mina separadora.</p>
+<p>Si la intensitat que passa per cadascun dels dos bra&ccedil;os &eacute;s igual, 
+  el resultat de les interfer&egrave;ncies ser&agrave;:</p>
+
+<p align="center"> <img src="formules/Michel_Ec1.gif"></p>
+
+<p>on <font face=Symbol size=+1>&#955;</font> &nbsp és la 
+  longitud d'ona de la llum (en el buit) i <font face=Symbol size=+1>&#916;</font> &nbsp
+  &eacute;s la difer&egrave;ncia de cam&iacute; &ograve;ptic entre els dos feixos 
+  de llum, que &eacute;s conseq&uuml;&egrave;ncia de la difer&egrave;ncia de longitud 
+  entre els bra&ccedil;os de l'interfer&ograve;metre (d). Si considerem el feix 
+  que entra i surt del sistema formant un angle <font face=Symbol size=+1>&#952;</font> &nbsp 
+  amb l'eix, es pot veure com:</p>
+  
+<p align="center"> <img src="formules/Michel_Ec2.gif"></p>
+
+<p>on n &eacute;s l'&iacute;ndex de refracci&oacute; del medi on es troba l'interfer&ograve;metre. 
+  La condici&oacute; d'interfer&egrave;ncia constructiva o destructiva es donar&agrave; 
+  quan aquesta difer&egrave;ncia de cam&iacute; &ograve;ptic sigui un m&uacute;ltiple 
+  sencer de la longitud d'ona o un m&uacute;ltiple senar de mitja longitud d'ona, 
+  respectivament:</p>  
+  
+<p align="center"> <img src="formules/Michel_Ec3.gif"></p>
+
+<p> Per tant, tots els raigs que formin el mateix angle amb l'eix estaran en el 
+  mateix estat interferencial. En observar-los en el pla focal d'una lent de focal 
+  f', es veuran anells d'interfer&egrave;ncia de radis:</p>
+
+<p align="center"> <img src="formules/Michel_Ec4.gif"></p>
+
+<p>Cal observar com els radis (angles) m&eacute;s grans corresponen als ordres 
+  interferencials m&eacute;s petits. D'altra banda, en el centre de la imatge 
+  (<font face=Symbol size=+1>&#952;</font>=0), la 
+  difer&egrave;ncia de cam&iacute; &ograve;ptic ser&agrave; 2nd i per tant nom&eacute;s 
+  hi haur&agrave; un m&iacute;nim o un m&agrave;xim en el cas que aquesta quantitat 
+  sigui un m&uacute;ltiple sencer de mitja o d'una longitud d'ona. 
+<p>El programa permet modificar els par&agrave;metres del sistema (longitud d'ona 
+  <font face=Symbol size=+1>&#955;</font> &nbsp de la llum 
+  en el buit, dist&agrave;ncia d entre miralls, &iacute;ndex de refracci&oacute; 
+  n del medi) i mostra els anells d'interfer&egrave;ncia en el color corresponent 
+  a la longitud d'ona seleccionada. L'amplada de la zona de visi&oacute; varia 
+  amb la focal de la lent, ja que els radis dels anells s&oacute;n directament 
+  proporcionals a aquesta. Prement el bot&oacute; &quot;Gr&agrave;fic&quot; es 
+  veu el perfil d'intensitats, i prement el bot&oacute; &quot;Imatge&quot; es 
+  torna a la imatge de la figura d'interfer&egrave;ncia, que &eacute;s la que 
+  es mostra per defecte quan s'entra al programa. Cal observar com la separaci&oacute; 
+  entre els m&agrave;xims disminueix amb la dist&agrave;ncia al centre, &eacute;s 
+  a dir, els anells estan cada vegada m&eacute;s junts anant cap a l'exterior 
+  de la imatge. 
+<p>A m&eacute;s, prement el bot&oacute; &quot;Esquema&quot; el programa mostra 
+  un esquema per calcular la difer&egrave;ncia de cam&iacute; &ograve;ptic entre 
+  els dos feixos de llum. Prement el mateix bot&oacute;, ara dit &quot;Muntatge&quot;, 
+  es torna a veure el diagrama de l'interfer&ograve;metre de Michelson, que apareix 
+  per defecte en entrar al programa. 
+<p>Una aplicaci&oacute; d'aquest programa consisteix en mesurar la longitud d'ona 
+  de la llum comptant quants anells clars o foscos apareixen o desapareixen pel 
+  centre de la imatge (<font face=Symbol size=+1>&#952;</font>=0) 
+  quan es varia la dist&agrave;ncia entre els miralls entre dos punts que donin 
+  interfer&egrave;ncia constructiva o destructiva, respectivament. Si el nombre 
+  d'anells que apareixen o desapareixen &eacute;s N i d<sub>1</sub> i d<sub>2</sub> 
+  s&oacute;n la dist&agrave;ncia entre miralls inicial i final, la longitud d'ona 
+  &eacute;s:</p> 
+<p align="center"> <img src="formules/Michel_Ec5.gif"></p>
+
+<p>A mida que augmentem la dist&agrave;ncia entre miralls, apareixen anells pel 
+  centre, mentre que si apropem els miralls en desapareixen.</p>
+
+<h2 class="h2joc">Interferòmetre de Twyman</h2>
+
+<p>L'interferòmetre de Twyman és idèntic al de Michelson excepte que en aquest 
+  cas la font &eacute;s puntual. Per tant, tots els raigs estaran en el mateix 
+  estat interferencial i la intensitat de la figura d'interfer&egrave;ncia ser&agrave; 
+  constant. El seu valor dependr&agrave; de la difer&egrave;ncia de cam&iacute; 
+  &ograve;ptic 2nd, per tant perqu&egrave; vari&iuml; de m&agrave;xim a m&iacute;nim 
+  la dist&agrave;ncia entre els miralls ha de canviar <font face=Symbol size=+1>&#955;</font>/4n.</p>
+
+<br>
+<h2 class="h2joc">Glossari</h2>
+
+<table width="250" border="0" align="left" cellpadding="5" cellspacing="0">
+  <tr> 
+    <td class="glost" width="155">Longitud d'ona</td>
+    <td width="75"><font face=Symbol size=+1>&#955;</font></td>
+  </tr>
+  <tr> 
+    <td class="glost" width="155">Dist&agrave;ncia miralls</td>
+    <td width="75">d</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="155">&Iacute;ndex de refracci&oacute;</td>
+    <td width="75">n</td>
+  </tr>
+  <tr> 
+    <td class="glost" width="155">Focal lent</td>
+    <td width="75">f'</td>
+  </tr>
+</table>
+
+</BODY>
+</HTML>

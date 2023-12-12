@@ -1,0 +1,393 @@
+<HTML>
+<HEAD>
+
+<TITLE>Documentació programa Interferències en làmines planoparal·leles</TITLE> 
+<META NAME="description" CONTENT="hypertext">
+<META NAME="keywords" CONTENT="hypertext">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html>
+<META NAME="Generator>
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<LINK REL="STYLESHEET" HREF="entradaA.css">
+</HEAD>
+  
+<h1 class="h1joc">Làmina de cares planoparal·leles</h1> 
+<p>L’aplicació permet estudiar els factors que intervenen en un experiment amb 
+  una làmina de cares planoparal·leles. L'experiment té dues possibles configuracions. 
+  En la primera configuració la llum d’una determinada longitud d’ona &#955; incideix 
+  sobre una mostra consistent en un substrat amb un recobriment de capa prima 
+  a la seva cara superior. En una segona configuració s'estudien les interferències 
+  per múltiples reflexions d'una làmina de cares paral·leles envoltada d'aire. 
+  La miniaplicaci&oacute; permet veure la influència del gruix, l’índex 
+  de refracció i del coeficient d’extinció de la làmina sobre les propietats de 
+  reflexió i transmissió de la llum de la mostra. A més, permet visualitzar aquesta 
+  influència en funció de la longitud d’ona a través d’una representació gràfica 
+  (espectre).</p> 
+
+<p>Finalment, la miniaplicaci&oacute; té la possibilitat de fer un experiment 
+  virtual on, a partir d’un espectre mesurat, es dedueixen els valors de l’índex 
+  de refracció i del gruix de la làmina.</p> 
+
+<p>L’element més important que permet calcular la miniaplicaci&oacute; és l’espectre 
+  de reflectància (R(&#955;)) i de transmitància (T(&#955;)) de 
+  la mostra. Per calcular els valors de R i T a partir de l'índex de refracció 
+  n, i del coeficient d'extinció k i el gruix de la làmina d 
+  cal aplicar el model de la figura 1. 
+<p  align=center> 
+<img  src="formules/Lamines_Fig1.gif"> 
+</p> 
+
+<p align=center> Figura 1. Esquema de les múltiples reflexions a dintre de la 
+  làmina de cares planoparal·leles</p> 
+
+<p> Sigui una ona plana que incideix des del medi (d'índex de refracció 1) sobre 
+  la làmina amb un angle &#949; i que té una amplitud E<sub>0</sub>. 
+  L’amplitud de l’ona transmesa a l’interior de la làmina serà E<sub>0</sub>t<sub>1</sub> 
+  on t<sub>1</sub> pot ser el coeficient de Fresnel corresponent a una 
+  de les dues possibles polaritzacions 's' o 'p'. A dintre de la 
+  làmina aquesta ona plana es propaga en una direcció que forma un angle &#949;' 
+  respecte a la perpendicular i hi experimenta múltiples reflexions. L’amplitud 
+  de l’ona després de la primera reflexió a la interfície làmina-substrat és E<sub>0</sub>t<sub>1</sub>r<sub>2</sub> 
+ 
+  on r<sub>2</sub> 
+ és el coeficient de Fresnel de reflexió de la làmina 
+  cap al substrat. Per altra banda, l’amplitud de la primera ona transmesa és 
+  E<sub>0</sub>t<sub>1</sub>t<sub>2</sub> 
+ on t<sub>2</sub> 
+ és 
+  el coeficient de Fresnel de transmissió de la làmina cap al substrat. Després 
+  de la segona reflexió a l’interior de la làmina, l’amplitud de l’ona és E<sub>0</sub>t<sub>1</sub>r<sub>2</sub>r<sub>1</sub> 
+
+  on r<sub>1</sub> 
+  és el coeficient de Fresnel de reflexió des de la làmina 
+  cap al medi. Aquesta llum es transmet al substrat amb una amplitud proporcional 
+  a E<sub>0</sub>t<sub>1</sub>r<sub>2</sub>r<sub>1</sub>t<sub>2</sub>. 
+  Així, la m-èsima ona transmesa té una amplitud de:</p> 
+
+<p  align=center> 
+<img  src="formules/Lamines_Eq1.gif"> 
+</p> 
+
+
+<p  align=center> 
+<img  src="formules/Lamines_Fig2.gif"> 
+</p> 
+<p  align=center> 
+Figura 2. Càlcul de la diferència de camí òptic entre dues ones transmeses 
+consecutives</p> 
+
+<p> El següent pas consisteix a estudiar la fase relativa de cadascuna de les 
+  ones transmeses. Per calcular la fase relativa cal prendre dos punts de referència 
+  en dues ones consecutives i que estiguin en un mateix pla perpendicular a la 
+  direcció de propagació de l’ona, tal com s’indica en la figura 2. Es pot demostrar 
+  que la diferència de camí òptic entre dues ones transmeses consecutives és:</p> 
+
+
+<p  align=center> 
+<img 
+src="formules/Lamines_Eq2.gif"> 
+</p> 
+
+<p>La fase corresponent a aquest camí òptic és:</p>
+<p  align=center><img src="formules/Lamines_Eq3.gif"></p> 
+  <!--El terme s&#960; 
+s’afegeix per tenir en compte el canvi de 
+fase &#960; que es produeix en la reflexió interna entre la làmina i el 
+substrat. En el cas que l’índex de refracció de la làmina sigui més petit 
+que el del substrat, el valor de s és 1 i 0 en el cas contrari.--> 
+<p>Així, l’amplitud complexa de la m-èsima ona transmesa es pot escriure com:</p> 
+
+<p  align=center> 
+<img 
+src="formules/Lamines_Eq4.gif"> 
+</p> 
+
+<p>En l'expressió anterior s'ha separat el mòdul i la fase dels factors r<sub>1</sub> 
+ 
+  i r<sub>2</sub>. Les fases arg(r<sub>1</sub>) i arg(r<sub>2</sub>) 
+  poden ser diferents de 0 en casos com quan l'índex del substrat és més gran 
+  que l'índex de la làmina (arg(r<sub>2</sub>)=&#960;) o quan
+  l'índex de la làmina és complex (k&#8800;0, arg(r<sub>1</sub>)&#8800;0 i
+  arg(r<sub>2</sub>)&#8800;0).</p> 
+
+<p>L’amplitud total és el resultat de la suma de totes aquestes amplituds complexes per un
+nombre molt gran d’ones transmeses:</p> 
+
+<p  align=center> 
+<img 
+src="formules/Lamines_Eq5.gif"> 
+</p> 
+
+<p>La intensitat
+de l’ona és proporcional al mòdul al quadrat de l’amplitud complexa:</p> 
+
+<p  align=center> 
+<img
+src="formules/Lamines_Eq6.gif"> 
+</p> 
+
+<p>on s’ha fet servir la relaci&oacute; cos(&#966;)=2cos<sup>2</sup>(&#966;/2)-1. 
+  Examinant l’expressió anterior es poden trobar les condicions que ha de complir 
+  la diferència de fase &#966; per tal que la llum transmesa sigui màxima 
+  o mínima. Per exemple, per a una làmina dielèctrica (amb k=0) aquestes 
+  condicions es resumeixen en la taula següent:</p> 
+<p>
+<div align="center"> 
+<table border=1 cellspacing=0 cellpadding=0> 
+ <tr> 
+  <td width=210 valign="center" align="center">(m=0,1,2,...)</td> 
+  <td width=190 valign="center" align="center">n&lt;n'</td> 
+  <td width=190 valign="center" align="center">n&gt;n'</td> 
+ </tr> 
+ <tr> 
+  <td width=210 valign="center" align="center">Màxima intensitat transmesa</td>  
+  <td width=190 valign="center" align="center">2ndcos(&#949;')=m&#955;</td> 
+  <td width=190 valign="center" align="center">2ndcos(&#949;')=(2m+1)&#955;/2</td> 
+ </tr> 
+ <tr> 
+  <td width=210 valign="center" align="center">Mínima intensitat transmesa</td> 
+  <td width=190 valign="center" align="center">2ndcos(&#949;')=(2m + 1) &#955;/2</td> 
+  <td width=190 valign="center" align="center">2ndcos(&#949;')=m&#955;</td> 
+ </tr> 
+</table> 
+</div> 
+</p>
+<p> Pel que fa a la reflectància, el comportament és l’oposat al de la transmitància: 
+  allí on una és mínima l’altra és màxima i viceversa. En el cas que la làmina 
+  no sigui dielèctrica (i per tant tingui un coeficient d'absorció no nul) les 
+  condicions de màxim o mínim d'interferència són més complexes perquè han de 
+  tenir en compte la fase &#948;.</p> 
+
+<p>La reflectància i transmitància final de la mostra depenen també de la reflectància 
+  i la transmitància de la segona cara del substrat. Com que aquestes no depenen 
+  de les característiques de la làmina, la segona cara del substrat no té efecte 
+  en la distribució dels màxims i dels mínims de R i T.</p> 
+
+<h2 class="h2joc">Finestra &quot;Transmissió i reflexió&quot; 
+</h2> 
+
+<p>Aquesta finestra presenta un esquema de la mostra amb el substrat (en blau) 
+  i la làmina dipositada a la cara superior del substrat (en groc). La llum incident 
+  està representada per uns feixos verds, mentre que la llum reflectida està representada 
+  per un conjunt de feixos magenta i la llum transmesa per uns feixos cian. L’esquema 
+  de la mostra inclou també els valors de transmitància (T) i reflectància 
+  (R). Cal fer notar que se suposa que la llum és monocromàtica i amb 
+  polarització natural (superposició uniforme de tots els estats de polarització 
+  possibles).</p> 
+
+<p>A la finestra &quot;Transmissió i reflexió&quot; es pot canviar el gruix de la làmina 
+  (d), la longitud d’ona de la llum incident (&#955;), i l’angle 
+  d’incidència de la llum (&#952;). A més, es poden canviar els valors 
+  de l’índex de refracció (n) i del coeficient d’extinció (k) 
+  mitjan&ccedil;ant els botons &quot;<b>Canviar n</b>&quot; i &quot;<b>Canviar k</b>&quot;. Aquests botons obren unes finestres amb el nom &quot;Paràmetres de l’índex 
+  de refracció&quot; i &quot;Paràmetres del coeficient d’extinció&quot; respectivament. 
+  Aquests paràmetres corresponen a un model matemàtic de l’índex de refracció 
+  i del coeficient d’extinció amb l’expressió:</p> 
+
+<p  align=center> 
+<img 
+src="formules/Lamines_Eq7.gif"> 
+</p> 
+
+<p>Aquestes finestres permeten canviar els valors de A, B, C, 
+  k<sub>0</sub> 
+ i D i a més mostren una representació gràfica del 
+  valor d’aquests índexs en funció de la longitud d’ona.</p> 
+
+<h2 class="h2joc">Finestra &quot;Diferència de fase&quot; 
+</h2> 
+
+<p>Aquesta finestra mostra un esquema del recorregut que efectua una ona dintre 
+  de la làmina de cares planoparal·leles. Per la longitud d’ona seleccionada mostra 
+  l’índex de refracció i el coeficient d’extinció de la làmina (n_l i k_l 
+  al diagrama), així com l’índex de refracció del substrat. La finestra permet 
+  variar el gruix de la làmina d, la longitud d’ona &#955;, i 
+  l’angle d’incidència &#949;. A més, també es poden canviar els valors 
+  de l’índex de refracció i del coeficient d’extinció amb els botons &quot;<b>Canviar 
+  n</b>&quot; i &quot;<b>Canviar k</b>&quot;.</p> 
+
+<h2 class="h2joc">Finestra &quot;Espectre&quot; 
+</h2> 
+
+<p>Aquesta finestra presenta els espectres de reflectància i transmitància de 
+  la mostra. Cal tenir en compte que aquests valors s&oacute;n el resultat de 
+  la transmissió i la reflexió a la làmina de cares planoparal·leles i a la cara 
+  posterior del substrat. Situant el cursor a sobre del gràfic es poden llegir, 
+  a la part inferior de la finestra, els valors corresponents a la seva posició 
+  respecte dels eixos de coordenades . El botó &quot;<b>Configurar gràfica</b>&quot; 
+permet definir la manera com es presenta el gràfic. 
+  Es poden definir els valors inicial i final de la longitud d’ona que es representa, 
+  i el valor mínim i màxim de reflectància i transmitància. Aquests dos darrers 
+  valors es poden assignar automàticament amb els botons de la part inferior de 
+  la finestra. Així, el botó &quot;<b>Rang de R/T 0-1</b>&quot; assigna el valor 0 al &quot;Valor de T i R inicial&quot; i 1 al &quot;Valor de T i R final&quot;. 
+  El botó &quot;<b>Rang automàtic</b>&quot; assigna automàticament 
+  el mínim rang de R/T que permet representar simultàniament els dos espectres. 
+  Els botons &quot;<b>Rang automàtic R</b>&quot; i &quot;<b>Rang automàtic T</b>&quot; assignen automàticament el rang que permet visualitzar competament l'espectre de R o de T respectivament.</p> 
+
+<h2 class="h2joc">Finestra &quot;Màxims i mínims de T&quot; 
+</h2> 
+
+<p>Per l’opció &quot;<b>Variable: longitud d’ona</b>&quot; aquesta finestra mostra una 
+  llista dels màxims i els mínims de T que es poden veure a la finestra 
+  &quot;Espectre&quot;. Aquesta llista de màxims i mínims es calcula pels valors de n(&#955;) 
+  i k(&#955;), gruix de la làmina i angle d’incidència escollits. 
+  Per l’opció &quot;<b>Variable: angle</b>&quot; aquesta finestra mostra una llista de 
+  màxims i mínims de la transmitància en funció de l’angle per la longitud d’ona 
+  seleccionada a la finestra de l’esquerra.</p> 
+
+<h2 class="h2joc">L’experimentació virtual: el botó &quot;Experimenta&quot; 
+</h2> 
+
+<p> El botó &quot;<b>Experimenta</b>&quot; simula una situació experimental en què es té una mostra composta d’un substrat recobert d’una làmina prima de cares planoparal·leles transparent (k=0) de gruix 
+  i índex desconeguts. A la finestra &quot;<b>Espectre</b>&quot; es presenten dos espectres 
+  (en blau i en groc, R exp i T exp) que corresponen a la mostra 
+  desconeguda i dos espectres corresponents al model amb els valors escollits 
+  de les variables del programa. L’experiment virtual consisteix a trobar el valors 
+  del gruix d i de les variables A i B que caracteritzen 
+  el comportament espectral de l’índex de refracció. Per canviar els valors de 
+  A i B cal fer-ho amb el botó &quot;<b>Canviar n</b>&quot; de la meitat esquerra de la finestra del programa. El procediment per trobar 
+  aquestes variables és el de prova i error: cal anar provant de variar cada valor 
+  i veure si els espectres calculats s’ajusten millor o pitjor i decidir si s’accepta 
+  o no el canvi.</p> 
+
+
+
+<h2 class="h2joc">Glossari</h2> 
+
+
+
+<table width=650 border="0" align="center" cellpadding="5" cellspacing="0"> 
+  <tr> 
+    <td class="glostit" width="152">Transmissió i Reflexió</td> 
+    <td width="22">&nbsp;</td> 
+    <td class="glostit" width="155">Diferència de fase</td> 
+    <td width="34">&nbsp;</td> 
+    <td class="glostit" width="175">Experimenta</td> 
+    <td width="52">&nbsp;</td> 
+  </tr> 
+  <tr> 
+    <td class="glost" width="152">Reflectància</td> 
+    <td width="22"> 
+R 
+</td> 
+    <td class="glost" width="155">Índex de refracció de la làmina</td> 
+    <td width="34"> 
+n_l 
+</td> 
+    <td class="glost" width="175">Reflectància de la mostra desconeguda</td> 
+    <td width="52"> 
+R exp 
+</td> 
+  </tr> 
+
+
+  <tr> 
+    <td class="glost" width="152">Transmitància</td> 
+    <td width="22"> 
+T 
+</td> 
+    <td class="glost" width="155">Coeficient d'extinció de la làmina</td> 
+    <td width="34"> 
+k_l 
+</td> 
+    <td class="glost" width="175">Transmitància de la mostra desconeguda</td> 
+    <td width="52"> 
+T exp 
+</td> 
+  </tr> 
+
+  <tr> 
+    <td class="glost" width="152">Índex de refracció de la làmina</td> 
+    <td width="22"> 
+n 
+</td> 
+    <td class="glost" width="155">Índex de refracció del substrat</td> 
+    <td width="34"> 
+n_s 
+</td> 
+    <td class="glost" width="175"> 
+</td> 
+    <td width="52"> 
+</td> 
+  </tr> 
+
+  <tr> 
+    <td class="glost" width="152">Coeficient d'extinció de la làmina</td> 
+    <td width="22"> 
+k 
+</td> 
+    <td class="glost" width="155">Longitud d'ona</td> 
+    <td width="34">&#955;</td> 
+    <td class="glost" width="175"> 
+</td> 
+    <td width="52"> 
+</td> 
+  </tr> 
+
+  <tr> 
+    <td class="glost" width="152"> 
+</td> 
+    <td width="22"> 
+</td> 
+    <td class="glost" width="155">Angle dels feixos a l'interior de la làmina</td> 
+    <td width="34">&#952;</td> 
+    <td class="glost" width="175"> 
+</td> 
+    <td width="52"> 
+</td> 
+  </tr> 
+
+  <tr> 
+    <td class="glost" width="152"> 
+</td> 
+    <td width="22"> 
+</td> 
+    <td class="glost" width="155"> 
+</td> 
+    <td width="34"> 
+</td> 
+    <td class="glost" width="175"> 
+</td> 
+    <td width="52"> 
+</td> 
+  </tr> 
+</table> 
+
+<hr> 
+
+<table width=650 border="0" align="center" cellpadding="5" cellspacing="0"> 
+  <tr> 
+    <td class="glostit" width="225">Canviar n 
+</td> 
+    <td width="57"> 
+</td> 
+    <td class="glostit" width="226">Canviar k 
+</td> 
+    <td width="52"> 
+</td> 
+  </tr> 
+
+  <tr> 
+    <td class="glost" width="225">Coeficients caracerístics de l'&iacute;ndex 
+      de refracció</td> 
+    <td width="57"> 
+A, B, C 
+</td> 
+    <td class="glost" width="226">Coeficients caracerístics del coeficient d'extinció </td> 
+    <td width="52"> 
+k0, D 
+</td> 
+  </tr> 
+</table> 
+
+
+<p  align=center> 
+<img 
+src="formules/Lamines_Eq7.gif"> 
+</p> 
+
+
+</body> 
+
+</html> 
