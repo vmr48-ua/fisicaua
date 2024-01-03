@@ -5,16 +5,9 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.mlab as mlab
 from scipy.integrate import odeint
-from scipy import signal
-import matplotlib.animation as animation
-from matplotlib.pylab import *
-from mpl_toolkits.axes_grid1 import host_subplot
-from mpl_toolkits.mplot3d import Axes3D
 
 
-#fig=plt.figure()
-#fig.set_dpi(100)
-#fig.set_size_inches(7,6.5)
+
 
 
 # Datos a modificar en la simulacion 
@@ -127,3 +120,4 @@ ax1.set_ylabel('error', color='b', fontsize=15)
 ax1.tick_params('y', colors='b')
 line1, = ax1.plot(rapla[:], dist[:], linewidth=2, color='b')
 
+plt.show()

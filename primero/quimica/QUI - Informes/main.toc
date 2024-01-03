@@ -1,0 +1,46 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Práctica 1}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducción}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Inventario}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Procedimiento}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Preparación de disoluciones}{6}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Determinación de la concentración de ácido cítrico}{7}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Cuestiones}{8}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Práctica 2}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introducción}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Inventario}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Procedimiento}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Cuestiones}{15}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Práctica 3}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introducción}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Inventario}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Procedimiento}{18}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Cuestiones}{19}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Práctica 4}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Inventario}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Procedimiento}{25}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Cuestiones}{26}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Práctica 5}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Inventario}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Procedimiento}{30}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Medición de la diferencia de potencial de una pila}{30}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Medida de los potenciales de diferentes pares frente a un electrodo de referencia}{31}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Ensayos redox cualitativos}{31}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Cuestiones}{32}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Práctica 6}{34}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introducción}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Inventario}{36}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Procedimiento}{37}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Cuestiones}{39}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Práctica 7}{40}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introducción}{41}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Inventario}{41}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Procedimiento}{42}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Cuestiones}{43}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Práctica 8}{45}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Introducción}{46}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Inventario}{46}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Procedimiento}{47}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Cuestiones}{53}{section.8.4}%

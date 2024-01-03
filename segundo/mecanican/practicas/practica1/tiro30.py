@@ -29,13 +29,17 @@ velin =700.0              # velocidad de disparo
 rz= 0.000023                  # rozamiento
 
 lat= 40.0  #latitud
-alz=15.0 # angulo de alzada del tiro
+alz=15 # angulo de alzada del tiro
 pla= 90.0  # angulo sobre el  plano 0º Sur eje X, 90º Este eje y, 180º Sur 270º Oeste
 
 
 # Variables de corrección de los ángulos iniciales.
-correalz=  0
-correpla=  0
+
+angcorrealz = 0
+angcorrepla = 0
+
+correalz = angcorrealz*np.pi/180.0
+correpla=  angcorrepla*np.pi/180.0
 
 ralat= lat*np.pi/180.0
 raalz= alz*np.pi/180.0
@@ -53,7 +57,6 @@ ome2radz= omega**2*radi*np.cos(ralat)**2
 #ome2radz= 0.0
 
 par=[g,omex,omez,ome2radx,ome2radz,rz]
-
 
 
 # Definiendo tiro 
@@ -139,7 +142,6 @@ dist =np.sqrt(  (z[nfinal,0] -az[nafinal,0])**2  +(z[nfinal,1] -az[nafinal,1])**
 
 print ('Error en el tiro =', dist)
 
-
 # Definicion del grafico
 
 # Posicion
@@ -184,7 +186,7 @@ line3, = ax41[0, 1].plot( at[0:nafinal],az[0:nafinal,2] , color='g')
 ax41[1,1].set_xlabel('x (s)')
 ax41[1,1].set_ylabel('y( ', color='b', fontsize=12)
 line4, = ax41[1, 1].plot( az[0:nafinal,0], az[0:nafinal,1]**2, color='y')
-plt.show()
+#plt.show()
 
 
 # Diferencias
@@ -202,7 +204,7 @@ line3, = ax81[0, 1].plot( at[0:nfinal],z[0:nfinal,2]-az[0:nfinal,2] , color='g')
 ax81[1,1].set_xlabel('x (s)')
 ax81[1,1].set_ylabel('y( ', color='b', fontsize=12)
 line4, = ax81[1, 1].plot( az[0:nfinal,0], az[0:nfinal,1]**2, color='y')
-plt.show()
+#plt.show()
 
 
 
@@ -241,10 +243,10 @@ line3, = ax61[0, 1].plot( t[0:nfinal], ez[0:nfinal] , color='g')
 
 
 #
-fig= plt.figure()
-ax= fig.add_subplot(projection='3d')
-ax.view_init(20,-40)
-ax.plot3D(ex[0:nfinal],ey[0:nfinal],ez[0:nfinal])
+# fig= plt.figure()
+# ax= fig.add_subplot(projection='3d')
+# ax.view_init(20,-40)
+# ax.plot3D(ex[0:nfinal],ey[0:nfinal],ez[0:nfinal])
 
 fig= plt.figure()
 ax= fig.add_subplot(projection='3d')

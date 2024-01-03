@@ -30,7 +30,7 @@ rz= 0.000023                  # rozamiento
 
 lat= 40.0  #latitud
 alz=15.0 # angulo de alzada del tiro
-pla= 91.0  # angulo sobre el  plano 0º Sur eje X, 90º Este eje y, 180º norte 270º Oeste
+pla= 90.0  # angulo sobre el  plano 0º Sur eje X, 90º Este eje y, 180º norte 270º Oeste
 
 
 # Variables de corrección de los ángulos iniciales.

@@ -63,7 +63,7 @@ dt=tf/nt
 z1_0= radi+300000                 # x punto  inicial
 z2_0=0.0                         # y punto  inicial
 z3_0= 0                          # Velocidad x 
-z4_0= np.sqrt(gr*mati/z1_0)*1.1      # Velocidad y
+z4_0= np.sqrt(gr*mati/(z1_0))*1.1     # Velocidad y
 
 z0=[z1_0,z2_0,z3_0,z4_0] #Valores iniciales   
  

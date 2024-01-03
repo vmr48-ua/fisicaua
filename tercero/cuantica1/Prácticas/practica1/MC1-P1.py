@@ -1,6 +1,9 @@
 import numpy as np
 import scipy.linalg as spy
 import matplotlib.pyplot as plt
+import warnings
+
+warnings.filterwarnings("ignore")
 
 """
 #######################################################################
@@ -44,13 +47,13 @@ m= 1  # masa del electrón
 
 xmax=50  # rango razonable (20-100)
 N=150    # rango razonable (20-150)
-# Si ponemos N pequeño, lo sensato es poner xmax pequeño también 
+# Si ponemos N pequeño, lo adecuado es poner xmax pequeño también 
 # para no bajar mucho la resolución y no colgar el programa
 
 precisionGlobal = redondea_primeros2_nonzero(2/(xmax+1.2*N))
-# Se puede poner la precision a mano también
-# precisionGlobal = 0.01
-print('Precisión = {} unidades'.format(precisionGlobal))
+# Se puede poner la precision manualmente también para mayor rapidez
+# precisionGlobal = 0.1
+# print('Precisión = {} unidades'.format(precisionGlobal))
 
 dni = 754
 
@@ -170,7 +173,7 @@ Puntos=1000
 def potencial2(x,par):
     return doublebarrier(x,par)
 
-def buscaE(E,precision,tol=10e-4):
+def buscaE(T,precision):
     x,xl,aux,result=[],[],[],[]
     last_y = -1
     # El siguiente bucle puede dar más de un valor de E para un mismo 
@@ -182,7 +185,7 @@ def buscaE(E,precision,tol=10e-4):
         if y != last_y:
             print('Buscando las energías: ',y,'%',end='\r',sep='')
             last_y = y
-        if np.abs(np.round(trans(xmax,N,potencial2,par,m,i),3)-E) <tol:
+        if np.abs(np.round(trans(xmax,N,potencial2,par,m,i),3)-T) < 0.1*precision:
             x.append(round(i,len(str(precision).split(".")[-1])))
     print('                           ',end='\r')
 
@@ -202,8 +205,8 @@ def buscaE(E,precision,tol=10e-4):
     for lista in xl:
         final = lista[0]
         for i in lista:
-            valor = np.abs(trans(xmax,N,potencial2,par,m,final)-E)
-            if np.abs(trans(xmax,N,potencial2,par,m,i)-E) < valor:
+            valor = np.abs(trans(xmax,N,potencial2,par,m,final)-T)
+            if np.abs(trans(xmax,N,potencial2,par,m,i)-T) < valor:
                 final = i
         result.append(final)
     return result

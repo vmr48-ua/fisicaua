@@ -1,0 +1,152 @@
+\documentclass[12pt,letterpaper,oneside,openany,spanish]{book}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{newtxtext,newtxmath}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath} 
+\usepackage{hyperref}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage{courier}
+\usepackage{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage[version=4]{mhchem}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{epigraph}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{array}
+\usepackage[shortlabels]{enumitem}
+\usepackage{animate}
+\usepackage{minitoc}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{codepurple},
+        keywords=[2]{pow},
+        keywordstyle=[2]{\color{orange}},
+}
+
+\lstset{style=mystyle}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\begin{document}
+   
+
+\newcommand{\titulo}{Informes sobre prácticas demostrativas}
+\newcommand{\nombreestudiante}{Víctor Mira Ramírez}
+\newcommand{\nombredirector}{Ángel Ávila Freire}
+\newcommand{\fecha}{\date{Febrero 2023}}  % Definir solo el año de presentación
+
+
+\pagebreak
+
+\renewcommand{\listtablename}{Índice de tablas} 
+\renewcommand{\tablename}{Tabla} 
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=65mm]{Fotos/logoUA.png}\par
+	\vspace{1cm}
+	{\LARGE\bfseries \titulo \par}
+	\vfill
+	{\large Breves informes de laboratorio acerca de \\ 
+	dos prácticas demostrativas propuestas\par
+	\vfill
+	Estudiante:\par\vspace{2mm}
+	\nombreestudiante\par
+	\vfill
+	Profesor:\par\vspace{2mm}
+    \nombredirector
+    \vfill
+    Universidad de Alicante\par
+    Facultad de Ciencias: Departamento de Física Aplicada\par
+    Técnicas experimentales I\par
+	\fecha\par}
+\end{titlepage}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+% PRÁCTICA 1
+\pagenumbering{arabic}
+\setcounter{page}{4}
+    \chapter[TD4. Variación de la presión]{TD4. Variación de la presión}
+    \thispagestyle{empty}
+    \vspace{1cm}
+    \begin{figure}[h]
+        \centering
+        \hspace*{-0.2cm}
+        \includegraphics[angle=270,origin=c,width=.48\textwidth]{Fotos/Vacío/portada 2.jpg}\hfill
+        \includegraphics[angle=270,origin=c,width=.48\textwidth]{Fotos/Vacío/portada.jpg}
+        \hspace*{-0.4cm}
+    \end{figure}
+\include{vacío}
+
+% PRÁCTICA 2
+\chapter[TD2. Pajarillo bebedor]{TD2. Pajarillo bebedor}
+\thispagestyle{empty}
+\vspace{1cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=.8\textwidth,angle=270]{Fotos/Pajarillo/Portada.jpg}
+    \hspace*{-0.4cm}
+    \end{figure}                                      
+\include{pajarillo}
+
+\end{document}
