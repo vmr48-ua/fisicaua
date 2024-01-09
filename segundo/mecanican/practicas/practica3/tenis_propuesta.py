@@ -113,16 +113,22 @@ lz=I3*ez
 l22= np.sqrt(lx**2+ly**2+lz**2)
 
 plt.figure()
+# plt.ylim((0,5))
 plt.xlabel('t')
-plt.ylabel('/L/')
+plt.ylabel('|L|')
 plt.plot(t[:],l22[:] )
+plt.grid()
+plt.title('Momento Angular')
 
 enecine=0.5*(I1*z[:,0]**2+I2*z[:,1]**2+ I3*z[:,2]**2)
 
 plt.figure()
+# plt.ylim((0,5))
 plt.xlabel('t')
 plt.ylabel('E')
-plt.plot(t[:],enecine[:] )
+plt.plot(t[:],enecine[:],c='r')
+plt.grid()
+plt.title('Energia Cinética')
 
 
 ############## Recorrido de la velocidad angular y el momento angular
@@ -132,6 +138,7 @@ wxy=np.linspace(0,z2_0,10)
 wxz=np.linspace(0,z3_0,10)
 
 fig= plt.figure()
+plt.title('Velocidad Angular')
 ax= fig.add_subplot(projection='3d')
 ax.view_init(10,-40)
 ax.plot3D(ex,ey,ez)
@@ -142,6 +149,7 @@ loxy=np.linspace(0,I2*z2_0,10)
 loxz=np.linspace(0,I3*z3_0,10)
 
 fig= plt.figure()
+plt.title('Momento Angular')
 ax= fig.add_subplot(projection='3d')
 ax.view_init(10,-40)
 ax.plot3D(lx,ly,lz)
