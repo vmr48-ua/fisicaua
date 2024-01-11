@@ -1,0 +1,119 @@
+\documentclass{report}
+\usepackage[english]{babel}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Stochastic Models\\Lecture notes}}
+\author{}
+\date{\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+\noindent Apuntes de las clases de \textit{Stochastic Models} dadas por \textit{Dave Kaplan} y transcritos a \LaTeX
+\hspace{0cm} por \textit{Víctor Mira Ramírez} durante el curso 2023-2024 del grado en Física de la \textit{Southern Illinois University}.
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\chapter{Introduction}
+  \noindent What is Operations Research? A way to use existing resources more efficiently. Efficience is the key of this lectures. We are going to talk about mathematical, technical and everyday models, but what is a model? A model is a selective representation of reality. We are going to talk from models ranging from simulation ones (aerodynamics) to economical models or industrial ones. \\
+
+  \noindent The reasons why we use models may seem obvious, some of them may be time efficiency, safety... In the end the objective is to predict outcomes and optimize how we act.
+
+  \section{Types of models}
+    According to the type of data we have, we talk about two types of models
+        \begin{itemize}
+            \item \textbf{Deterministic}: All relevant data is assumed to be known with certainty.
+            \item \textbf{Stochastic}: Some of the data are uncertaint
+        \end{itemize}
+    Models could be considered as deterministic and stochastic according to the variables that you are considering.
+  \section{Modeling approach}
+    \begin{enumerate}
+        \item Formulate the problem
+        \item Construct a mathematical model
+        \item Derive a solution from the model
+        \item Estsablish control over the solution
+        \item Implement the solution
+    \end{enumerate}
+    \vspace{-1cm}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{fotos/models.png}
+    \end{figure}
+
+\chapter{Decision Making Under Uncertainty}
+    \section{News Vendor Problem}
+        How much production should you allocate in advance before knowing how much demand there's going to be? We should make a model.
+        \subsection{Introduction}
+            Nature is not against you, the outcome is indifferent. The problem structure will be:
+            \begin{enumerate}
+                \item Decision: You select an action $a_i$ from the set of possible actions $A=\left\{a_1,a_2,\dots,a_k\right\}$.
+                \item A state of nature $s_j$ occurs from a set of possible states $S=\left\{s_1,s_2,\dots,s_n\right\}$.
+                \item $p_j=$ probability that state $s_j$ is observed.
+                \item You recieve a reward $r_{ij}$ based on $a_i$ and $s_j$.
+            \end{enumerate}
+            Well our next step should  be to build a Reward Table for the problem, in which in return you recieve for each possible combination of decission and states of nature.
+            
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{ccccccc}
+                \rowcolor[HTML]{00009B} 
+                \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} } &
+                \multicolumn{4}{c}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} State of Nature}} &
+                \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Minumum} &
+                \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Maximum} \\
+                \rowcolor[HTML]{CBCEFB} 
+                \multirow{-2}{*}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Decision}} &
+                0 &
+                1 &
+                2 &
+                3 &
+                \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Return} &
+                \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Return} \\
+                \cellcolor[HTML]{CBCEFB}0 & 0   & 0  & 0  & 0  & 0   & 0  \\
+                \rowcolor[HTML]{EFEFEF} 
+                \cellcolor[HTML]{CBCEFB}1 & -10 & 15 & 15 & 15 & -10 & 15 \\
+                \cellcolor[HTML]{CBCEFB}2 & -20 & 5  & 30 & 30 & -20 & 30 \\
+                \rowcolor[HTML]{EFEFEF} 
+                \cellcolor[HTML]{CBCEFB}3 & -30 & -5 & 20 & 45 & -30 & 45
+            \end{tabular}
+            \caption{Reward Table}
+            \label{tab:news_vendor_problem}
+        \end{table}
+        \subsection{The Maximin Criterion}
+            This criterion chooses the action that minimizes the worst outcome. We see that the minimum risk option is buying no newspapers, as the minimum return for all the others is negative (if you can't sell a single newspaper). This is extremely risk averse.
+        \subsection{The Maximax Criterion}
+            On the other hand, this criterion maximizes the best outcome. In this case we see that the maximum outcome would come from buying three newspapers (and selling all of them). This is extremelly optimistic.
+        \clearpage
+        \subsection{The Minimax Regret Criterion}
+            This criterion minimizes the maximum regret, being regre the extra amount you could have obtained if you had known the state of nature beforehand.
+           \begin{table}[h]
+                \centering
+                \begin{tabular}{cccccc}
+                    \rowcolor[HTML]{00009B} 
+                    \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} } &
+                    \multicolumn{4}{c}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} State of Nature}} &
+                    \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Maximum} \\
+                    \rowcolor[HTML]{CBCEFB} 
+                    \multirow{-2}{*}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Decision}} &
+                    0 &
+                    1 &
+                    2 &
+                    3 &
+                    \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Regret} \\
+                    \cellcolor[HTML]{CBCEFB}0 & 0  & 15 & 30 & 45 & 45 \\
+                    \rowcolor[HTML]{EFEFEF} 
+                    \cellcolor[HTML]{CBCEFB}1 & 10 & 0  & 15 & 30 & 30 \\
+                    \cellcolor[HTML]{CBCEFB}2 & 20 & 10 & 0  & 15 & 20 \\
+                    \rowcolor[HTML]{EFEFEF} 
+                    \cellcolor[HTML]{CBCEFB}3 & 30 & 20 & 10 & 0  & 30
+                \end{tabular}
+                \caption{Regret Table}
+                \label{tab:regret_table}
+            \end{table}
+            In this case we see that the minimum regret would be obtained if you bought 2 newspapers. This criterion is way more reasonable and approaches a more sensitive solution.
+\end{document}
