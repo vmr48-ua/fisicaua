@@ -1,0 +1,11 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}A Basic Review of Simple Harmonic Motion}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Spring}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}What is the Physical meaning of $\omega $?}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}General Sinusoidal Oscillation}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Energy in Simple Harmonic Motion}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Time averages}{8}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Governing ODE}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Simple Pendulum}{8}{section.1.5}%
+\contentsfinish 

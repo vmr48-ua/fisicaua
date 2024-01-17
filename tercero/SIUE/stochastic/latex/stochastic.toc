@@ -8,4 +8,6 @@
 \contentsline {subsection}{\numberline {2.1.2}The Maximin Criterion}{4}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}The Maximax Criterion}{4}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}The Minimax Regret Criterion}{5}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}The Expected Value Criterion}{5}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Decision Trees}{6}{section.2.2}%
 \contentsfinish 

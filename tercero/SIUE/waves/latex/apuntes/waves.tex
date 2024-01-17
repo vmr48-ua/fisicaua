@@ -1,0 +1,218 @@
+\documentclass{report}
+\usepackage[english]{babel}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Waves\\Lecture notes}}
+\author{}
+\date{\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+\noindent Apuntes de las clases de \textit{Waves} dadas por \textit{Dave Kaplan} y transcritos a \LaTeX
+\hspace{0cm} por \textit{Víctor Mira Ramírez} durante el curso 2023-2024 del grado en Física de la \textit{Southern Illinois University}.
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\chapter{Introduction}
+  \noindent Waves is a broad topic in Physics. Info in the universe propagates through waves of all kinds: sound, electromagnetic, hydrodynamic, shock, gravity... etc. The purpose of the course is to discuss the universe:
+  \begin{enumerate}
+    \item What is in it?
+    \item What is it itself made of?
+  \end{enumerate}
+  \noindent The classical view to view it is to consider the universe as an arena in which objects exits. Although not very accurate with the actual phiysics beliefs.
+  \noindent What's left in the universe if we empty it from everything? Space-time, filled with charges, mass.\\
+
+  \noindent Mass is an attribute of matter that is able to interact with the universe and penetrate into the Spacetime, pictorically like a \textit{fabric} that can be curved or bent. So we are stepping into gravity territory. 
+  What keeps thte Earth orbiting the Sun? Gravity is not a \textit{force}. The Sun's mass curves the Spacetime, this kind of fabric we are talking about. Cataclysims on the universe may generate changes
+  in the Spacetime that propagate to us as gravitational waves.\\
+
+  \noindent Attending the topic of charges, all acceleration in Spacetime generates radiation in the form of electromagnetic waves. That is the source of electromagnetic radiation, all light an hence everything we see are electromagnetic waves.
+  We are only able to see a limited slice of the electromagnetic spectrum, which may not represent the whole picture. We can only see accelerating charges perpendicular to the line of sight.\\
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fotos/visible_spectrum.png}
+  \end{figure}
+
+  \noindent According to Maxwell equations we know that time-changing electric fields generate magnetic fields in the vacuum and viceversa. The speed of this oscilating wave in vacuum is what we call $c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}$
+  \clearpage
+
+  \section{A Basic Review of Simple Harmonic Motion}
+    \subsection{Spring}
+      \noindent Figure a massless spring. We know that springs exert a force contrary to a movement out of equilibrium. That force will be proportional to $kx$ being $k$ the spring constant. Depending on wether you push or pull on a spring you'll get a positive or a negative force. According to Newton's Second Law:
+      \begin{equation}
+        \vec{a}(t)=\dfrac{\vec{F}(t)}{m}
+      \end{equation}
+      \noindent If an object moves at a constant velocity through vacuum, it has no acceleration, but if velocity is not constant, what would that non-zero acceleration be? This question raises Newton's Second Law.\\
+
+      \noindent When we pull from a spring with a mass attached and we leave it free, the mass will accelerate with less and less force until it arrives to the equilibrium point of the spring. At that point the force will be zero, but the mass will continue its trajectory according to the Laws of Conservation of Momentum and Energy,
+      but this time the force exerted by the spring will be negative, opposing to the movement and stopping the mass at some point (The same as the start one but from the other side). This movement will continue in an oscillatory manner infinitelly. We have our Harmonic Oscillator.
+      \begin{equation}
+        \vec{a}(t)=\dfrac{-k}{m}\vec{x}(t)
+      \end{equation}
+      \noindent In our problem, we are describing a cosine function. A sinusoidal function that has some amplitude equal to the separation we initially took from the spring's equillibrium point. Velocity is the slope of position, then it is it's derivative. We can say the same about the acceleration as we can see:
+      \begin{equation}
+        x(t)=\cos(t)\hspace{1cm}v(t)=\dfrac{d}{dt}(\cos(t))=-\sin(t)\hspace{1cm}a(t)=\dfrac{d}{dt}(-\sin(t))=-\cos(t)
+      \end{equation}
+      \noindent But how do we know that is the only possible position funciton? It is not, this one only works for $k=m$ for example:
+      \begin{equation}
+        x(t)=\cos(2t)\hspace{1cm}v(t)=-2\sin(2t)\hspace{1cm}a(t)=-2^2\cos(2t)
+      \end{equation}
+      Which only works for $\dfrac{k}{m}=2^2$
+      \begin{equation}
+        x(t)=\cos(3t)\hspace{1cm}v(t)=-3\sin(3t)\hspace{1cm}a(t)=-3^2\cos(3t)
+      \end{equation}
+      Which only works for $\dfrac{k}{m}=3^2=9$\\
+
+      \noindent We can derive by innduction that $a(t)=\dfrac{-k}{m}x(t)$ with $\omega=\sqrt{\dfrac{k}{m}}$. Then the solution would be:
+      \begin{equation}
+        x(t)=\cos(\omega t)
+      \end{equation}
+
+      \noindent Now we are going to think about what we call amplitude, a factor that will multiply our position function so that it "survives" the derivative and stays on our velocity and acceleration formulas.
+      \begin{equation}
+        x(t)=A\cos(\omega t)\hspace{1cm}v(t)=-A\omega\sin(\omega t)\hspace{1cm}a(t)=-A\omega^2\cos(\omega t)=-\omega^2 x(t)
+      \end{equation}
+      \noindent Which indeed satisfies the problem. We have existence, but unicity? We'll return to it in a few sections.
+      \clearpage
+
+    \subsection{What is the Physical meaning of $\omega$?}
+      We claim that if $T$ is the period, then
+      \begin{equation}
+        T=\dfrac{2\pi}{\omega}\Longleftrightarrow\omega=\dfrac{2\pi}{T}
+      \end{equation}
+      But why did we assume the formula of the period to start off.
+      \begin{equation}
+        \cos(\omega(t+T))=\cos(\omega t)\Longleftrightarrow\cos(\omega t+\omega T)=\cos(\omega t)\Longleftrightarrow \omega T=2\pi\Longleftrightarrow T=\dfrac{2\pi}{\omega}
+      \end{equation}
+      \noindent In the consideration that no other force interfies to the mass, if acceleration is negatively proportional to the displacement, we have a simple harmonic movement. This is our governing, "paradigm" equation:
+      \begin{equation}
+        a(t)=\dfrac{d^2 x(t)}{dt^2}=-\dfrac{k}{m}x(t)=-\omega^2 x(t)\hspace{1cm}\text{with }\omega^2=\dfrac{k}{m}
+        \label{eq:paradigm}
+      \end{equation}
+      Thus we have a set of solutions associated to the "paradigm" equation (\ref{eq:paradigm}):
+      \begin{equation}
+        x(t)=A\cos\left(\omega t\right)+B % Lo del B no le mola por la cara
+      \end{equation}
+    \section{General Sinusoidal Oscillation}
+      Consider the solution of the form
+      \begin{equation}
+        x(t)=A\cos(\omega t +\phi)
+        \label{eq:general_sinusoidal}
+      \end{equation}
+      For any angle $\omega$, phase constant $\phi$ and amplitude $A$, this solution satisfies the "paradigm" equation (\ref{eq:paradigm}). We know our maximum amplitude is $A$, so whenever $\cos(\omega t+\phi)=1$ we get a maximum. This happens whenever $\omega t+\phi=2\pi n$ with $n=0,1,2,\dots$ \textit{Idem.} with the minimum.\\
+
+      \noindent We know that $\sin$ and $\cos$ are delayed by $\frac{\pi}{2}$. Then adding this phase difference to the cosine will output sinus wave. In mathematical words:
+      \begin{equation}
+        A\cos\left(\omega t +\phi\right)=A\sin\left(\omega t+\phi+\dfrac{\pi}{2}\right)
+      \end{equation}
+      Changing $\phi$ can be thought as a change in the initial conditions of our problem, on initial position and velocity at $t=0$.
+      \ejemplo{Suppose that we have two identical mass-spring systems that are set into oscilaltion. Both of them oscillate at the same anglar frequency $\omega$}{
+        The first mass-spring system is released at position $x+A$ at time $t=\dfrac{\pi}{2\omega}$. Then, its subsequent $x(t)$ is given by $x(t)=A\cos\left[\omega\left(t+\dfrac{\pi}{2\omega}\right)\right]$
+      }
+      \noindent Acceleration is not a free condition, as by equation (\ref{eq:paradigm}) if you set an initial position and velocity, then acceleration is already specified. Accordingly, if you choose an initial acceleration and velocity, your presentation is already set. Thus only two of the variables are free at the same time.
+      \teorema{}{If you specify the position and the velocity of a given simple harmonic oscillator system at any time $t=t_0$, then the subsequent motion is completely and uniquely specified. (Unless an external agent later interfies with the motion).}
+      \noindent Returning to the formula (\ref{eq:general_sinusoidal}) we can derive the theorem:
+
+      \teorema{}{If you specify the position and velocity of an ideal oscillator system at the time $t=0$ then the subsequent motion is uniquely specified by the formula $x(t)=A\cos(\omega t+\phi)$ for some unique pair of constants $A$ and $\phi$.}
+
+      \corolario{}{If $x(t=t_0)$ and $v(t=t_0)$ are specified (where $t_0\neq 0$) then $x(t)=A\cos\left[\omega(t-t_0)+\phi\right]$ for unique $\left\{A\text{ and }\phi\right\}$}
+      \ejemplo{Consider, say, a mass-spring system for which, say, $k=15\frac{N}{m}$ and $m=5\ kg$. Suppose that, at $t=0$ the mass is thrown from possition $x_0=1.7\ m$ from equilibrium with velocity $v_0=+4.2\frac{m}{s}$. What is the subsequent motion?}{
+        Since this is a general sinusoidal simple harmonic motion, we're going to use the formula (\ref{eq:general_sinusoidal}). WE know that we can find unique constants $A$ and $\phi$ because of the previous theorems and corollary. By definition, $\omega=\sqrt{\frac{k}{m}}=\sqrt{\frac{15}{6}}=\sqrt{3}$. Then we have $x(t)=A\cos(\sqrt{3}t+\phi)$. Now we apply our initial conditions:
+        \begin{enumerate}
+          \item $x(t=0)=x_0=1.7=A\cos(\sqrt{3}\cdot 0+\phi)\Longrightarrow {1.7=A\cos{\phi}}$
+          \item $v(t=0)=v_0=4.2=-\sqrt{3}A\sin(\phi)\Longrightarrow{4.2=-\sqrt{3}A\sin(\phi)}$
+        \end{enumerate}
+        We have two equations and two unknowns, then we know algebraically that we have a existence and unicity of a solution. Dividing the second equation by the first.
+        \[\dfrac{4.2}{1.7}=-\sqrt{3}\tan(\phi)\Longleftrightarrow \boxed{\phi=\arctan\left(-\dfrac{2.47}{\sqrt{3}}\right)=-0.959\ rad}\]
+        Now substituting in the first equation
+        \[1.7=A\cos(\phi)\Longleftrightarrow \boxed{A=\dfrac{1.7}{\cos(0.959)}=2.96}\]
+        Therefore our final equation will be:
+        \[\boxed{x(t)=2.96\cos(\sqrt{3}t-0.959\ rad)}\]
+      }
+    \clearpage
+    \section{Energy in Simple Harmonic Motion}
+        Imagine an electron oscilating due to a combination of fields. As we know, a moving charge will loose energy by radiation, making the amplitude decay with time. If we ignore it, the amplitude should be constant and thus the kinetic energy. 
+        \begin{equation}
+          K=\dfrac{1}{2}mv^2(t)
+        \end{equation}
+        But how does it depend on time? As we know
+        \[
+          x(t)=A\cos(\omega t+\varphi)\hspace{1cm}v(t)=-\omega A\sin(\omega t+\varphi)\hspace{0.5cm}\Longrightarrow\hspace{0.5cm}v^2(t)\omega^2 A^2\sin^2(\omega t+\varphi)
+        \]
+        \begin{equation}
+          K=\dfrac{1}{2}m\omega^2 A^2\sin^2(\omega t+\varphi)\Longleftrightarrow\boxed{K=\dfrac{1}{2}\dfrac{k}{m}A^2\sin^2(\omega t+\varphi)}
+        \end{equation}\hspace{0cm}\\
+         
+        \begin{wrapfigure}[14]{l}{0.5\textwidth}
+          \vspace{-1.4cm}
+          \centering
+          \includegraphics[width=\textwidth]{fotos/cos2.png}
+        \end{wrapfigure}
+
+        \noindent If we look at the graph of the kinetic energy, we'll observe that the period of the energy is half of what the oscillation had. So the kinetic energy is not constant. Where is the energy when the kinetic energy is zero? It must be potential.\\
+
+        \noindent We know that the equation for the potential energy of a spring is $W=\frac{1}{2}k\Delta x$. But where does it come from?
+        \begin{equation}
+          stuff
+        \end{equation}
+        \hspace{0cm}\\\hspace{0cm}\\
+
+        \begin{wrapfigure}[14]{l}{0.5\textwidth}
+          \vspace{-1.4cm}
+          \centering
+          \includegraphics[width=\textwidth]{fotos/energies.png}
+        \end{wrapfigure}
+
+        \noindent If we then plot both potential and kinetic energy, we can see how they have a phase of $\nicefrac{\pi}{2}$, so that when we add up both of them, we get a constant value, and thus satisfy the conservation of energy law.
+        
+        \begin{equation}
+          \begin{aligned}
+          &K+U=\dfrac{1}{2}kA^2\sin^2(\omega t+\varphi)+\dfrac{1}{2}kA^2\cos^2(\omega t+\varphi)\\
+          &K+U=\dfrac{1}{2}kA^2\left(\sin^2(\omega t+\varphi)+\cos^2(\omega t+\varphi)\right)\\
+          &\boxed{E = \dfrac{1}{2}kA^2}
+          \end{aligned}
+        \end{equation}
+        If we want to get our max possible velocity, we know that then $K$ must be at a max, so $K=E=\dfrac{1}{2}kA^2$ and solve for $v$:
+        \begin{equation}
+          \dfrac{1}{2}mv^2=\dfrac{1}{2}kA^2\Longleftrightarrow v_\text{max}=\sqrt{\dfrac{k}{m}}A=\omega A
+        \end{equation}
+        
+        \clearpage
+        \subsection{Time averages}
+          \noindent We are usually interested on the time average of the function. 
+          \definicion{Time average}{
+            The time function of any function $f(t)$ is denotef by $\langle f(t)\rangle_T$ 
+            \[\langle f(t)\rangle_T=\dfrac{1}{T}\int_{t_0}^{t_0+T}f(t^\prime)dt^\prime\]
+          }
+          \noindent So in our case we want $\langle\cos^2(\omega t+\varphi)\rangle_T$ where $T$ is one period. We'll claim that this value is $\nicefrac{1}{2}$ We can proof this by plotting $\cos^2(\omega t)$ and seeing that the oscillation is symmetrical around the value $\nicefrac{1}{2}$. Moreover you can also deduce this from the next trigonometric identity.
+          \[\cos^2\theta=\dfrac{1}{2}+\dfrac{1}{2}\cos(2\theta)\Longleftrightarrow\langle\cos^2\theta\rangle_T=\langle\dfrac{1}{2}\rangle_T=\dfrac{1}{2}\]
+      \section{Governing ODE}
+        The mass-spring system ODE is $m x^{\prime\prime}=-k\cdot x(t)$. This is obtained from the conservation of energy's law.
+        \[U(x)=\int_0^x F(x^\prime)\ dx^\prime=\int_0^x kx^\prime\ dx^\prime=\dfrac{1}{2}kx^2\]
+        \[K=\dfrac{1}{2}m{x^{\prime}}^2\]
+        \noindent By the previous development, we got that $K+U$ is constant, so it's time derivative should be $0$.
+        \[\dfrac{d}{dt}\left(\dfrac{1}{2}m{x^\prime}^2+\dfrac{1}{2}kx^2\right)=0\Longleftrightarrow\dfrac12 m\dfrac{d}{dt}\left({x^\prime}^2\right)+\dfrac12 k\dfrac{d}{dt}(x^2)=0\Longleftrightarrow m x^\prime x^{\prime\prime}+kxx^\prime=0\Longleftrightarrow x^\prime\left(mx^{\prime\prime}+kx\right)=0\]
+        So as velocity isn't zero ($x^\prime\neq0$), then the other term must be zero $\left(mx^{\prime\prime}+kx\right)=0 \Longrightarrow mx^{\prime\prime}+kx=0$
+        \begin{equation}
+          x^{\prime\prime}=-\dfrac{k}{m}x
+        \end{equation}
+      \section{Simple Pendulum}
+        \begin{figure}[h!]
+          pendulum
+        \end{figure}
+        We've got two forces, the Tension (radial force) and the Earth's force on the mass, weight (radial force). Then the mass moves tangentially, so that weight oposes tension on one component, and imposes a tangential force with the other component, introducing an oscillatory movement.
+        \[F_t=-mg\sin\theta\Longleftrightarrow ms^{\prime\prime}(t)=-mg\sin(\theta(t))\]
+        We'll work only on terms of theta so we convert $s=l\theta_{t_0}$ so that:
+        \[\theta^{\prime\prime}(t)=-\dfrac{g}{l}\sin{\theta}(t)\]
+        If we approximate the ODE for small angles, then we have a simple harmonic oscillation, from which we know the solution is
+        \begin{equation}
+          \theta(t)=A\cos\left(\sqrt{\dfrac{g}{l}}t+\phi\right)
+        \end{equation}
+\end{document}

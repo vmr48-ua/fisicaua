@@ -58,7 +58,7 @@
             \end{enumerate}
             Well our next step should  be to build a Reward Table for the problem, in which in return you recieve for each possible combination of decission and states of nature.
             
-        \begin{table}[h]
+        \begin{table}[h!]
             \centering
             \begin{tabular}{ccccccc}
                 \rowcolor[HTML]{00009B} 
@@ -90,8 +90,9 @@
             On the other hand, this criterion maximizes the best outcome. In this case we see that the maximum outcome would come from buying three newspapers (and selling all of them). This is extremelly optimistic.
         \clearpage
         \subsection{The Minimax Regret Criterion}
-            This criterion minimizes the maximum regret, being regre the extra amount you could have obtained if you had known the state of nature beforehand.
-           \begin{table}[h]
+            This criterion minimizes the maximum regret, being regre the extra amount you could have obtained if you had known the state of nature beforehand. The table is computed by substracting actual returns from best returns.\\
+           
+            \begin{table}[h!]
                 \centering
                 \begin{tabular}{cccccc}
                     \rowcolor[HTML]{00009B} 
@@ -115,5 +116,107 @@
                 \caption{Regret Table}
                 \label{tab:regret_table}
             \end{table}
-            In this case we see that the minimum regret would be obtained if you bought 2 newspapers. This criterion is way more reasonable and approaches a more sensitive solution.
+
+            \noindent In this case we see that the minimum regret would be obtained if you bought 2 newspapers. This criterion is way more reasonable and approaches a more sensitive solution.
+        \subsection{The Expected Value Criterion}
+            This criterion chooses the action that maximizes the expected return. Expected return if we choose action $a_i$ is:
+            \[ER_i=\sum_{j=1}^p r_{ij}p_j=r_{i1}p_1+r_{i2}p_2+\dots+r_{in}p_n\]
+            For our case:\\
+            
+            $\hspace{1.5cm}\begin{aligned}
+                &ER_0=0(0.1)+0(0.3)+0(0.4)+0(0.2)=0\\
+                &ER_1=-10(0.1)+15(0.3)+15(0.4)+15(0.2)=12.5\\
+                &ER_2=-20(0.1)+5(0.3)+30(0.4)+30(0.2)=17.5\\
+                &ER_3=-30(0.1)-5(0.3)+20(0.4)+45(0.2)=12.5\\
+            \end{aligned}$
+
+            \begin{table}[h!]
+                \centering
+                \begin{tabular}{cccccc}
+                    \rowcolor[HTML]{00009B} 
+                    \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} } &
+                    \multicolumn{4}{c}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} State of Nature}} &
+                    \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Expected} \\
+                    \rowcolor[HTML]{CBCEFB} 
+                    \multirow{-2}{*}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Decision}} &
+                    0 &
+                    1 &
+                    2 &
+                    3 &
+                    \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Return} \\
+                    \cellcolor[HTML]{CBCEFB}0 & 0   & 0  & 0  & 0  & 0   \\
+                    \rowcolor[HTML]{EFEFEF} 
+                    \cellcolor[HTML]{CBCEFB}1 & -10 & 15 & 15 & 15 & 12.5 \\
+                    \cellcolor[HTML]{CBCEFB}2 & -20 & 5  & 30 & 30 & 17.5 \\
+                    \rowcolor[HTML]{EFEFEF} 
+                    \cellcolor[HTML]{CBCEFB}3 & -30 & -5 & 20 & 45 & 12.6
+                \end{tabular}
+                \caption{Expected Return Table}
+                \label{tab:expected_return}
+            \end{table}
+    \ejemplo{Real Estate Developement}{
+        \centering
+        \begin{tabular}{cccccccc}
+            \rowcolor[HTML]{00009B} 
+            \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} } &
+              \multicolumn{3}{c}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} State of Nature}} &
+              \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Minimum} &
+              \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Maximum} &
+              \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Expected} &
+              \cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Minimum} \\
+            \rowcolor[HTML]{00009B} 
+            \multirow{-2}{*}{\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Decision}} &
+              \cellcolor[HTML]{CBCEFB}None &
+              \cellcolor[HTML]{CBCEFB}Med &
+              \cellcolor[HTML]{CBCEFB}Large &
+              {\color[HTML]{FFFFFF} Return} &
+              {\color[HTML]{FFFFFF} Return} &
+              {\color[HTML]{FFFFFF} Return} &
+              {\color[HTML]{FFFFFF} Regret} \\
+            \cellcolor[HTML]{CBCEFB}Residential &
+              4 &
+              16 &
+              12 &
+              4 &
+              \boxed{16} &
+              \boxed{12.4} &
+              \boxed{3} \\
+            \rowcolor[HTML]{EFEFEF} 
+            \cellcolor[HTML]{CBCEFB}Comertial 1 &
+              5 &
+              6 &
+              10 &
+              \boxed{5} &
+              \cellcolor[HTML]{EFEFEF}10 &
+              \cellcolor[HTML]{EFEFEF}7 &
+              \cellcolor[HTML]{EFEFEF}10 \\
+            \cellcolor[HTML]{CBCEFB}Comertial 2 &
+              -1 &
+              4 &
+              15 &
+              -1 &
+              15 &
+              6.3 &
+              12 \\
+            \cellcolor[HTML]{CBCEFB}Probability &
+              \cellcolor[HTML]{EFEFEF}0.2 &
+              \cellcolor[HTML]{EFEFEF}0.5 &
+              \cellcolor[HTML]{EFEFEF}0.3 &
+               &
+               &
+               &
+              
+        \end{tabular}
+    }
+    \clearpage
+    \section{Decision Trees}
+        Decision Trees are a graphical representation of a decision problem. They are useful for a sequence of decisions. Legend:
+        \begin{itemize}
+            \item \textbf{Decision Fork} Decision point (square nodes) 
+            \item \textbf{Event Fork} Uncertain outcomes (circle nodes)
+            \item \textbf{Square Lines} Possible decisions
+            \item \textbf{Circle Lines} Possible outcomes
+        \end{itemize}
+        \ejemplo{Decision Tree fo the News Vendor Problem}{*tree*}
+        But trees are not giving us more information than tables. Then why use them? well let's see. We'll use a 
 \end{document}
