@@ -1,0 +1,149 @@
+\documentclass{report}
+\usepackage[english]{babel}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Waves\\Homework Set 1}}
+\author{Víctor Mira Ramírez}
+\date{\number\month -\number\day -\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+\pregunta{Consider the function 
+\begin{equation}
+  x(t)=A\cos(bt)
+  \label{eq:solution}
+\end{equation}
+Where $A$ and $b$ are both arbitrary positive constants.\\
+
+By direct substitution, show that, for any constant $A$, $x(t)=A\cos(bt)$ is a solution which "satisfies" the differential equation: 
+\begin{equation}
+  \dfrac{d^2 x(t)}{dt^2}=-\omega^2 x(t)
+  \label{eq:ode}
+\end{equation}
+if and only if $b=\sqrt{\dfrac{k}{m}}$. Show all steps of the logic.}
+  \noindent The question is asking us to show that
+  \begin{center}
+    \centering(\ref{eq:solution}) is a solution of (\ref{eq:ode}) \ $\Longleftrightarrow\ b=\sqrt{\dfrac{k}{m}}$ \hspace{1cm}assuming that $\omega=\sqrt{\dfrac{k}{m}}$\\
+  \end{center}
+
+  \noindent We are essentially going to proof that $\omega=b$, so $b$ will be equal to whatever $\omega$ we set for our harmonic oscillator.\\
+
+  \noindent ($\Longrightarrow$)
+  \begin{addmargin}{1cm}
+    \noindent If we calculate the derivatives of (\ref{eq:solution}) we get:\\
+    
+    \vspace{-0.2cm}$\begin{aligned}
+      &x(t)=A\cos(bt)\\
+      &x^\prime(t)=-Ab\sin(bt)\\
+      &x^{\prime\prime}(t)=-Ab^2\cos(bt)
+    \end{aligned}$\\
+
+    \noindent Then, as we are assuming that (\ref{eq:solution}) is a solution of (\ref{eq:ode}), we can substitute the second derivative that we have just calculated into (\ref{eq:ode}), then substitute our solution for $x(t)$ (\ref{eq:solution}) too.
+    \[-Ab^2\cos(bt)=-\omega^2x(t)\Longleftrightarrow -Ab^2\cos(bt)=-\omega^2A\cos(bt)\]
+    If we then divide both sides of our equality by $\nicefrac{-1}{A\cos(bt)}$ we get 
+    \[b^2=\omega^2\Longleftrightarrow b=\omega =\sqrt{\dfrac{k}{m}}\]
+  \end{addmargin}
+
+  \noindent ($\Longleftarrow$)
+  \begin{addmargin}{1cm}
+    \noindent Now, we will assume that $b=\sqrt{\frac{k}{m}}$ and check if (\ref{eq:solution}) is still a solution of (\ref{eq:ode}).\\
+    \noindent Firstly, we will substitute $b$ into our solution candidate and calculate its derivatives:\\
+
+    \vspace{-0.2cm}$\begin{aligned}
+      &x(t)=A\cos\left(t\sqrt{\nicefrac{k}{m}}\right)\\
+      &x^\prime(t)=-A\sqrt{\frac{k}{m}}\sin\left(t\sqrt{\nicefrac{k}{m}}\right)\\
+      &x^{\prime\prime}(t)=-A\frac{k}{m}\cos\left(t\sqrt{\nicefrac{k}{m}}\right)
+    \end{aligned}$\\
+
+    \noindent Finally, we will check if this is a still a solution to the ODE by substituting the derivative and the solution candidate into the ODE:
+    \[\dfrac{d^2 x(t)}{dt^2}=-\omega^2 x(t)\Longleftrightarrow -A\dfrac{k}{m}\cos\left(\sqrt{\dfrac{k}{m}}t\right)=-A\omega^2\cos\left(\sqrt{\dfrac{k}{m}}t\right)\Longleftrightarrow \omega^2=\dfrac{k}{m}\Longleftrightarrow \omega=\sqrt{\dfrac{k}{m}}\]
+    \noindent Which we can see is true for our assumptions.\\
+  \end{addmargin}
+
+  \noindent We have proof of both implications, and thus the logic of the exercise has ended.
+\clearpage
+\pregunta{Let's return to one of the questions I raised at the beginning of this chapter: Suppose you drop a rubber ball from rest at altitude $1m$ and let it fall vertically straight down. Suppose it bounces perfectly elastically off a smooth hard surface at altitude zero and suppose that we ignore air resistance. Then the ball will repeatedly oscillate in altitude between extremes of zero and $1m$. Is the motion shm? Explain how you know showing all steps of the logic. }
+  \noindent No, a bouncing ball would not be a simple harmonic oscillator. Although it is definitelly a periodic movement, the position changes abruptly whenever the ball reaches the floor. This movement can't be represented with a sinusoidal function.\\
+  
+  \noindent If we plot of the position over the timespan it takes the ball to return to the original point we can see that abrupt change. Velocity has an infinite slope around the bounce time but is constant otherwise. Because of that acceleration is constant besides a delta at the bounce time.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{fotos/position.png}
+    \includegraphics[width=0.3\textwidth]{fotos/velocity.png}
+    \includegraphics[width=0.3\textwidth]{fotos/acceleration.png}
+  \end{figure}
+
+  \noindent The plots have been calculated using the Uniformly Accelerated Rectilinear Motion equations into a python code that is included as an addenda at the end of the document. An animation was made too, but it couldn't be included in a printed format.
+  \begin{equation}
+    \left\{\begin{aligned}
+      &x(t)=x_0+v_0t+\frac{1}{2}at^2\\
+      &v(t)=v_0+at\\
+    \end{aligned}\right.
+  \end{equation}
+  \noindent To calculate the time it takes the ball to achieve the soil, we set $x(t)=0$ and solve for $t$:
+  \[x(t)=0\Longleftrightarrow 1-\frac{g}{2}t^2=0 \Longleftrightarrow t=\sqrt{\frac{2}{g}}=0.452\ s\]
+  \noindent Another way to proof this is to note that $x(t)=x_0+v_0t+\dfrac12 at^2$ does not satisfy the governing equation (ODE) of Simple Harmonic Oscillators.
+  
+  % \noindent However a point could be made that taking the position after bouncing as negative values would ressemble a sinusoidal funciton. This may be useful knowledge for some calculations.
+  % \begin{figure}[h]
+  %   \centering
+  %   \includegraphics[width=0.5\textwidth]{fotos/cosenoidal.png}
+  % \end{figure}
+
+\clearpage
+\pregunta{A mass $m$ that carries positive charge $Q$ is released at time $t=0$, with initial velocity $v_0=0$ from position $(x_0,0,0)$ in an externally imposed electric field $\vec{E}=-Cx\hat{x}$, where $C$ and $x_0$ are both positive constants with proper units. The charge $Q$ has no measurable effect on the external field. Ignoring gravity and any effects other than those caused by the applied field.
+\begin{enumerate}
+  \item Derive the governing differential equation for the motion of the charge $Q$. Clearly show all steps of the derivation.
+  \item Will the position of the charge oscillate? If no, state exactly why not and describe the motion that occurs after release. If yes: Will the oscillation be simple harmonic motion? Exactly why or why not? If yes, what is the angular frequency of the oscillation? 
+  \item Suppose that the initial velocity v0 is in the plus or minus x-direction, not zero, but otherwise arbitrary. Will the position of the charge oscillate? Why or why not? If yes, is the oscillation shm? Exactly why or why not?
+\end{enumerate}}
+  \noindent Let's start by stating Newton's second law and the electric force exerted on a charge.
+  \[F=ma \hspace{1cm} F=QE\]
+  \noindent As we know the value of $E_x$, we can be sure that:
+  \[F_x=QE_x=-CQx\hat{x}=ma_x=mx^{\prime\prime}\Longleftrightarrow\boxed{\dfrac{d^2x}{dt^2}=-QCx}\]
+  \noindent The position of the charge will oscillate around the origin, as when it goes far from it, the electric force appears and pulls it back to the origin, where it overshoots and starts the cycle again. As this differential equation has the same form as the governing equation for simple harmonic motion, we can state that it will be a SMH. Moreover, it is easy to verify that the ODE has a solution of the form
+  \[x(t)=A\cos(\omega t+\phi)\]
+  \noindent Which is the one of a simple harmonic oscillator. From the ODE itself we can extract the value of the frequency:
+  \[\omega^2=\dfrac{QC}{m}\Longleftrightarrow \boxed{\omega=\sqrt{\dfrac{QC}{m}}}\]
+  \noindent If we add an initial velocity to the problem, the position of the charge will still describe simple harmonic oscillation, as we are only fixing one initial condition to the governing ODE. In this case this condition is that $v(0)=v_0$ which is the same as saying that $x^\prime(0)=v_0$. The other possible initial condition is the one we are already given: the initial position of the mass, $x_0$.
+  
+
+\pregunta{Suppose a particle that can move only along the $x$-axis is subject to a return force that varies in proportional to the \textit{cube} of the distance from the origin $(x=0)$, \textit{i.e.}, $F(x)=-Cx^3$, where $C$ is a positive constant. The particle is released from rest at a point with coordinate $x_0>0$. Will the position of the charge oscillate? How do you know? If yes: Will the oscillation be simple harmonic motion? Exactly why or why not?}
+  \noindent This question is analogous to the previous one. If we define the particle's mass as $m$, then equal Newton's Second Law to the return force given by the question, we get:
+  \[F=ma=-Cx^3\Longleftrightarrow \boxed{\dfrac{d^2x}{dt^2}=-\dfrac{C}{m}x^3}\]
+  \noindent Although the particle will still oscillate, this time the governing equation does not ressemble SHM, and thus the movement will not be SHM. A solution of the form $x(t)=A\cos(\omega t+\phi)$ does not solve the ODE.
+  \[\begin{aligned}
+    &x^\prime(t)=-A\omega\sin(\omega t+\phi)\\
+    &x^{\prime\prime}(t)=-A\omega^2\cos(\omega t+\phi)\\
+    &\boxed{-A\omega^2\cos(\omega t+\phi)\neq \dfrac{C}{m}A^3\cos^3(\omega t+\phi)}
+  \end{aligned}\]
+\pregunta{Hanging a $2 kg$ mass from a vertical spring lengthens the spring by $25 cm$. While still attached to the spring, the mass is then pulled down an additional $20 cm$ and released from rest. How long will it take to reach its maximum vertical height above the starting point?\\
+\textit{Note that there's a new feature included in this exercise - the force of gravity. Thus, the governing differential equation would appear to be not of the form $x^{\prime\prime}=-\omega^2 x$. (What is the governing differential equation?) Experiments tell us that simple harmonic motion around a new (or “displaced”) equilibrium point results, but that the frequency is the same as it is with gravity “turned off.” For this exercise, assume that that's correct.}}
+  \noindent We'll start doing a forces analysis and deriving from there the differential equation.
+  \[F=-kx-mg=ma\Longleftrightarrow\boxed{x^{\prime\prime}(t)=-\dfrac{k}{m}x(t)-g}\]
+  \noindent The solution to this edo is not the one of simple harmonic motion, but one very simillar, as we need to cancel that $g$ dampening with a factor, giving us the solution:
+  \[x(t)=A\cos\left(\sqrt{\dfrac{k}{m}} t\right)-\dfrac{gm}{k}\hspace{1cm}
+    x^\prime(t)=-\sqrt{\dfrac{k}{m}}A\sin\left(\sqrt{\dfrac{k}{m}} t\right)\hspace{1cm}
+    x^{\prime\prime}(t)=-\dfrac{k}{m}A\cos\left(\sqrt{\dfrac{k}{m}} t\right)\]
+  \noindent Which satisfies the ode:
+  \[x^{\prime\prime}(t)=-\dfrac{k}{m}x(t)-g\Longleftrightarrow -\dfrac{k}{m}A\cos\left(\sqrt{\dfrac{k}{m}} t\right)=-\dfrac{k}{m}\left(A\cos\left(\sqrt{\dfrac{k}{m}} t\right)-\dfrac{gm}{k}\right)-g=-\dfrac{k}{m}A\cos\left(\sqrt{\dfrac{k}{m}}t\right)\]
+  \noindent We can obtain the $k$ constant of the spring by using the elongation given to us:
+  \[F_g=F_k\Longleftrightarrow mg=k\Delta x\Longleftrightarrow k=\dfrac{mg}{\Delta x}=8g\]
+  \noindent If we now substitute $A=0.45m$, $k=8g$, $m=2kg$ into the velocity equation ($x^\prime(t)$) and we equal to $0$, we will obtain the times at which the position achieves its peak.
+  \[x^\prime(t)=0\Longleftrightarrow-\sqrt{\dfrac{k}{m}}A\sin\left(\sqrt{\dfrac{k}{m}} t\right)=0\Longleftrightarrow-0.45\sqrt{4g}\sin\left(2\sqrt{g}t\right)=0\Longleftrightarrow \sin(2\sqrt{g}t)=0 \Longleftrightarrow \]
+  \[\Longleftrightarrow 2\sqrt{g}t=\pi n \Longleftrightarrow \boxed{t=\dfrac{\pi}{2\sqrt{g}}n, n\in\bbN\cup 0}\]
+  \noindent As we know that the maximum vertical height will be gained the first time it oscilates upwards, the value of $n$ that interests us is $n=1$ and thus $t=\frac{\pi}{2\sqrt{g}}=0.766\ s$
+\clearpage
+\begin{figure}
+  \centering
+  \includegraphics[width=0.49\textwidth]{fotos/code1.png}
+  \includegraphics[width=0.49\textwidth]{fotos/code2.png}
+\end{figure}
+\end{document}

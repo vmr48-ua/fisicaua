@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1705448190 "/home/victor/fisicaua/tercero/SIUE/waves/latex/waves.tex" "waves.pdf" "waves" 1705448191 0
-  "/home/victor/fisicaua/tercero/SIUE/waves/latex/waves.tex" 1705448188 15904 3d0a5ae9e9f85baa458b56dd176a61a6 ""
+["pdflatex"] 1705613750 "/home/victor/fisicaua/tercero/SIUE/waves/latex/apuntes/waves.tex" "waves.pdf" "waves" 1705613752 0
+  "/home/victor/fisicaua/tercero/SIUE/waves/latex/apuntes/waves.tex" 1705613750 20266 a2fc98b8c61f02187a80205e1b579634 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1704400182 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1704400182 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1704400182 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -27,6 +27,7 @@
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecxc1440.tfm" 1704400182 3072 3782a462db38356cbdd8c75f493aa82f ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecxc2488.tfm" 1704400182 3072 bed226f97a32eeca8e840082e205c6ac ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1704400182 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1704400182 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1704400182 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1704400182 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1704400182 928 2dc8d444221b7a635bb58038579b861a ""
@@ -323,9 +324,9 @@
   "letterfonts.tex" 1704830030 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "macros.tex" 1704830030 3389 93000260d2aea292d29c76d4ace77a29 ""
   "preamble.tex" 1704830030 21940 da26227b3c6489364e07eaf854717df2 ""
-  "waves.aux" 1705448191 5583 5b6f69c503ede36f0dacf5e3b65f7366 "pdflatex"
-  "waves.tex" 1705448188 15904 3d0a5ae9e9f85baa458b56dd176a61a6 ""
-  "waves.toc" 1705448191 816 569dd950b08c89aeb4e595f2d9e6688a "pdflatex"
+  "waves.aux" 1705613752 7002 a59304e4fbfe735d3bb5855ff345bbac "pdflatex"
+  "waves.tex" 1705613750 20266 a2fc98b8c61f02187a80205e1b579634 ""
+  "waves.toc" 1705613752 1073 744c6dcf4a88061d84e382edf8ff7897 "pdflatex"
   (generated)
   "waves.aux"
   "waves.log"

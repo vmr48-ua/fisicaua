@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.7)  16 JAN 2024 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.7)  18 JAN 2024 15:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/victor/fisicaua/tercero/SIUE/waves/latex/waves.tex
-(/home/victor/fisicaua/tercero/SIUE/waves/latex/waves.tex
+**/home/victor/fisicaua/tercero/SIUE/waves/latex/apuntes/waves.tex
+(/home/victor/fisicaua/tercero/SIUE/waves/latex/apuntes/waves.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -1410,7 +1410,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-<fotos/visible_spectrum.png, id=94, 770.88pt x 275.0275pt>
+<fotos/visible_spectrum.png, id=103, 770.88pt x 275.0275pt>
 File: fotos/visible_spectrum.png Graphic file (type png)
 <use fotos/visible_spectrum.png>
 Package pdftex.def Info: fotos/visible_spectrum.png  used on input line 40.
@@ -1461,7 +1461,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-<fotos/cos2.png, id=155, 462.528pt x 346.896pt>
+<fotos/cos2.png, id=164, 462.528pt x 346.896pt>
 File: fotos/cos2.png Graphic file (type png)
 <use fotos/cos2.png>
 Package pdftex.def Info: fotos/cos2.png  used on input line 156.
@@ -1491,7 +1491,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--166
 
  []
 
-<fotos/energies.png, id=156, 462.528pt x 346.896pt>
+<fotos/energies.png, id=165, 462.528pt x 346.896pt>
 File: fotos/energies.png Graphic file (type png)
 <use fotos/energies.png>
 Package pdftex.def Info: fotos/energies.png  used on input line 170.
@@ -1500,25 +1500,52 @@ Package pdftex.def Info: fotos/energies.png  used on input line 170.
 
  <./fotos/cos2.png> <./fotos/energies.png>] [8
 
-] (./waves.aux)
+]
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--242
+
+ []
+
+[9
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+[10] (./waves.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 41408 strings out of 477923
- 819039 string characters out of 5838289
+ 41421 strings out of 477923
+ 819212 string characters out of 5838289
  1870388 words of memory out of 5000000
- 60791 multiletter control sequences out of 15000+600000
- 559358 words of font info for 140 fonts, out of 8000000 for 9000
+ 60796 multiletter control sequences out of 15000+600000
+ 559693 words of font info for 141 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 99i,12n,102p,651b,1399s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,102p,659b,1399s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb>
-Output written on waves.pdf (9 pages, 514738 bytes).
+Output written on waves.pdf (11 pages, 526462 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 274 words of extra memory for PDF output out of 10000 (max. 10000000)
 

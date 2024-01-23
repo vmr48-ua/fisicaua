@@ -207,7 +207,7 @@
         \begin{figure}[h!]
           pendulum
         \end{figure}
-        We've got two forces, the Tension (radial force) and the Earth's force on the mass, weight (radial force). Then the mass moves tangentially, so that weight oposes tension on one component, and imposes a tangential force with the other component, introducing an oscillatory movement.
+        \noindent We've got two forces, the Tension (radial force) and the Earth's force on the mass, weight (radial force). Then the mass moves tangentially, so that weight oposes tension on one component, and imposes a tangential force with the other component, introducing an oscillatory movement.
         \[F_t=-mg\sin\theta\Longleftrightarrow ms^{\prime\prime}(t)=-mg\sin(\theta(t))\]
         We'll work only on terms of theta so we convert $s=l\theta_{t_0}$ so that:
         \[\theta^{\prime\prime}(t)=-\dfrac{g}{l}\sin{\theta}(t)\]
@@ -215,4 +215,44 @@
         \begin{equation}
           \theta(t)=A\cos\left(\sqrt{\dfrac{g}{l}}t+\phi\right)
         \end{equation}
+      \clearpage
+      \section{The LC circuits}
+        \begin{itemize}
+          \item The law of capacitors states that $V=\nicefrac{Q}{C}$ being C a constant for each capacitor.
+          \item The law of inductors states that $\varepsilon = -L\frac{dI}{dt}$, the minus sign reflects Lenz's Law. The IEMF induced oposes the rate of change of the current intensity.
+        \end{itemize}
+
+        \noindent Capacitors and Inductors oppose in some way, because the capacitor wants to empty its charge as fast as possible, meanwhile the inductor opposes the change of intensity. Is this a shm?\\
+
+        \noindent As the capacitor starts to discharge, the inductor starts to lessen the slope.
+        \[\left|\dfrac{dI}{dt}\right|=\dfrac{V_c}{L}=\dfrac{Q}{LC}\]
+        \noindent As $Q$ decreases, the slope of the intensity lessens and lessens until we reach a time where there isn't excess charge on any plate of the capacitor. At that time, the current is at it's maximum value, and it is not changing at that instant.\\
+
+        \noindent Charges in movement are the current itself. And as moving as they are, they have momemtum that they can't dump, so the current won't stop, it will keep going, charging the capacitor with the opposite charge, overshooting. Firstly the current decreases slowly, accelerating with time.\\
+
+        \noindent When the current achieves zero, the capacitor is fully charged with the opposite sign charge. Then it is going to keep oscillating the equilibrium. We don't know yet if this oscillating movement is shm. Let's approach it with the governing equation.
+          \subsection{Governing Equation Approach}
+            \noindent The behaviour is analogous to the mass spring system.
+            \[\dfrac{Q}{C}=-L\dfrac{dI}{dt}\hspace{1cm}I\equiv\dfrac{dQ}{dt}\ \Longrightarrow\ \dfrac{d^2Q}{dt^2}=-\dfrac{1}{LC}Q(t)\ \text{\ which is a smh governing equation} \]
+            \noindent The motion of the charghe is thus simple harmonic. The solution will be $Q=Q_0\cos\left(\nicefrac{t}{\sqrt{LC}}+\phi\right)$. As $Q(t)$ is a \textit{smh}, then $I(t)$ is one too, as $I(t)=Q^\prime(t)$. If you take the derivative of the governing equation, you end up with another \text{smh} governing equation concerning $I(t)$ instead of $Q(t)$. 
+            \begin{equation}
+              \boxed{\dfrac{d^2Q}{dt^2}=-\dfrac{1}{LC}Q(t)}\hspace{1cm}\boxed{\dfrac{d^2I}{dt^2}=-\dfrac{1}{LC}I(t)}
+            \end{equation}
+            \noindent But we know that they are not in phase with each other. That happens because $I(t)=Q^\prime (t)$, and thus if one is sinusoidal, the other will be cosenoidal and viceversa. Same happens with the amplitude, you take the $Q_\text{max}$ out of the equation when you derive, making the intensity amplitude different. $I_\text{max}=\omega Q_\text{max}$ with $\omega=\nicefrac{1}{\sqrt{LC}}$\\
+
+            \noindent If we see the mass as the resistance to changes in acceleration, we can see the simillarity with the inductance, which resists changes in current intensity. With the same logic, we can see how $Q$ is analogous to $x$ and $I$ is analogous to $v$.
+          \subsection{Energy Approach}
+            \noindent We can recall the enenrgy between the plates of a capacitor:
+            \[U_E=\dfrac{1}{2}\dfrac{Q^2}{C}=\dfrac12\varepsilon_0 E^2\cdot \text{ volume between the capacitor plates}\]
+            \[Q(t)=Q_\text{max}\cos(\omega t+\phi)\Longrightarrow U_E=\dfrac{1}{2C}Q^2_\text{max}\cos^2(\omega t+\phi)\]
+            \noindent It is analogous too in the potential energy on the mass spring system. If we take a look at the energy stored at the inductor:
+            \[U_B=\dfrac{1}{2}LI^2=\dfrac{B^2}{2\mu_0}\cdot \text{ volume enclosed by the inductor}\]
+            \[Q(t)=Q_\text{max}\cos(\omega t+\phi)\Longrightarrow U_B=\dfrac{1}{2}LI^2_\text{max}\sin^2(\omega t+\phi)\]
+            \noindent Which is now analogous to the kinetic energy.\\
+
+            \noindent Both energies oscilates in time. But they don't do it in phase as one is a sinus and the other a cosinus. There is a phase shift. The total energy is
+            \begin{equation}
+             \boxed{ U=\dfrac{Q_\text{max}^2}{2C}=cte}
+            \end{equation}
+            \noindent The system produces radiation, which resistance is analogous to the air resistance in the mass-spring system.
 \end{document}
