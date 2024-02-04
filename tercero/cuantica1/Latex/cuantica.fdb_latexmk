@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1705620503 "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" "cuantica.pdf" "cuantica" 1705620508 0
-  "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" 1705620503 124716 c21d92951c2996d3a32076610fb927f2 ""
+["pdflatex"] 1707069221 "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" "cuantica.pdf" "cuantica" 1707069224 0
+  "/home/victor/fisicaua/tercero/cuantica1/Latex/cuantica.tex" 1707069221 124717 449f446c197d3ebbd9c1b4e5acbe6900 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1704400182 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1704400182 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1704400182 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -330,11 +330,11 @@
   "/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty" 1704400182 5689 1bfa68243e89a54479e7d0580773c57e ""
   "/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1704400182 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1704400182 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1704643402 4480252 045e2e847a54793644911375b39d1f66 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1706672241 4480252 045e2e847a54793644911375b39d1f66 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1704643366 6789674 2f4a62fc365b933e129ef50f24ae9509 ""
-  "cuantica.aux" 1705620508 21391 bc1e8f025bdb8eefd41bc90b23cf82f5 "pdflatex"
-  "cuantica.tex" 1705620503 124716 c21d92951c2996d3a32076610fb927f2 ""
-  "cuantica.toc" 1705620508 3359 30c0b24eab29f2c9435a15ff53858121 "pdflatex"
+  "cuantica.aux" 1707069224 21391 bc1e8f025bdb8eefd41bc90b23cf82f5 "pdflatex"
+  "cuantica.tex" 1707069221 124717 449f446c197d3ebbd9c1b4e5acbe6900 ""
+  "cuantica.toc" 1707069224 3359 30c0b24eab29f2c9435a15ff53858121 "pdflatex"
   "fotos/T1.5.Franck-Hertz.png" 1694620209 18570 db979e6f9c619218037ed3845bedf64f ""
   "fotos/difracción.png" 1695055971 42024 16ab069c5ab79103332f33a497caf4b6 ""
   "fotos/nodos.png" 1695033581 5311 295db5310277062ab638f74191eee42e ""

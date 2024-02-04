@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1705688649 "/home/victor/fisicaua/tercero/SIUE/waves/latex/entregas/set1/set1.tex" "set1.pdf" "set1" 1705688651 0
-  "/home/victor/fisicaua/tercero/SIUE/waves/latex/entregas/set1/set1.tex" 1705688646 11841 299a06e19e002d122c82e7cd033fb001 ""
+["pdflatex"] 1706040745 "/home/victor/fisicaua/tercero/SIUE/waves/latex/entregas/set1/set1.tex" "set1.pdf" "set1" 1706040747 0
+  "/home/victor/fisicaua/tercero/SIUE/waves/latex/entregas/set1/set1.tex" 1706040744 11842 ff62ef3889d8e008c6afaa6d166d4fb3 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1704400182 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1704400182 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1704400182 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -302,8 +302,8 @@
   "letterfonts.tex" 1705536192 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "macros.tex" 1705536192 3389 93000260d2aea292d29c76d4ace77a29 ""
   "preamble.tex" 1705539192 21683 656d1f9c6952795b171ca9201efd68ab ""
-  "set1.aux" 1705688651 889 690ff7b37cdcfabaadbcb6f8ed5bd0c7 "pdflatex"
-  "set1.tex" 1705688646 11841 299a06e19e002d122c82e7cd033fb001 ""
+  "set1.aux" 1706040747 889 690ff7b37cdcfabaadbcb6f8ed5bd0c7 "pdflatex"
+  "set1.tex" 1706040744 11842 ff62ef3889d8e008c6afaa6d166d4fb3 ""
   (generated)
   "set1.aux"
   "set1.log"

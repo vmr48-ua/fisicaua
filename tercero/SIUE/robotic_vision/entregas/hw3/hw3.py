@@ -1,0 +1,129 @@
+import cv2 as cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import imutils
+
+"""
+Robotic Vision
+Homework Set II
+
+Víctor Mira Ramírez
+800803577
+vmirara@siue.edu
+"""
+
+            ##############
+            # EXERCISE 1 #
+            ##############
+
+"""
+How do you separate the traffic cone from the background? 
+The image “traffic_cone.jpg” can be download in the attachment. 
+Use the “Color Threshold” apps include in the MATLAB, 
+choose the appropriate color space, show all the threshold conditions 
+and your result.
+"""
+path=r'/home/victor/fisicaua/tercero/SIUE/robotic_vision/entregas/hw3/traffic_cone.jpg'
+
+img = cv2.imread(path, cv2.IMREAD_COLOR)
+RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # translate to rgb
+
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # gray image
+backtorgb = cv2.cvtColor(gray_img,cv2.COLOR_GRAY2RGB) # gray image with vectorsize = 3
+
+denoised_img = cv2.fastNlMeansDenoisingColored(RGB_img, None, 10, 10, 20, 45) # helps with masking
+
+# plt.figure()
+# plt.imshow(RGB_img)
+
+# plt.figure()
+# plt.imshow(denoised_img)
+
+#_______________________________________________________________
+
+# # HISTOGRAMS
+
+# plt.figure()
+# plt.hist(RGB_img.ravel(),256,[0,256]) #grayscale
+
+# plt.figure()
+# plt.title('blue histogram')
+# plt.plot(cv2.calcHist(RGB_img, [0], None, [256], [0,256])) #blue
+
+# plt.figure()
+# plt.title('green histogram')
+# plt.plot(cv2.calcHist(RGB_img, [1], None, [256], [0,256])) #green
+
+# plt.figure()
+# plt.title('red histogram')
+# plt.plot(cv2.calcHist(RGB_img, [2], None, [256], [0,256])) #red
+#_______________________________________________________________
+
+# MASKING
+
+lower_red = np.array([175, 15, 15]) 
+higher_red = np.array([255, 150, 170]) 
+
+mask = cv2.inRange(denoised_img, lower_red, higher_red) 
+inv_mask = cv2.bitwise_not(mask) # inverse mask to use in grayscale img
+
+# Calculates the masked rgb image
+masked_img = cv2.bitwise_and(denoised_img, denoised_img, mask = mask)
+# Calculates the masked grayscale image
+masked_gry = cv2.bitwise_and(backtorgb, backtorgb, mask = inv_mask)
+
+# Adds the two masked images
+result = cv2.addWeighted(masked_img, 1, masked_gry, 1, 0)
+
+plt.figure()
+plt.imshow(result) 
+
+
+            ##############
+            # EXERCISE 2 #
+            ##############
+
+"""
+At the end of the lecture slides, we show an example of how to use HSV filter 
+to highlight the girls red dress. The link in problem 1 also provide an 
+example of very powerful MATLAB tool – createMask. Write your own creteMask 
+function that can separate the woman in the red dress 
+(shown below, ‘red_dress.jpg’ file can be download from the attachment)
+from the background using HSV filter, include all the code and plot the 
+original image, mask and filtered image.
+"""
+
+def createMask(img):
+    HSV_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV) # translate to rgb
+
+    gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # gray image
+    backtorgb = cv2.cvtColor(gray_img,cv2.COLOR_GRAY2RGB) # gray image with vectorsize = 3
+
+    """
+    # WORK ON THIS
+    """
+
+    lower_mask = cv2.inRange(HSV_img, (0,0,0), (7,255,255)) 
+    upper_mask = cv2.inRange(HSV_img, (172,0,0), (180,255,255))
+    mask = lower_mask + upper_mask
+
+    inv_mask = cv2.bitwise_not(mask) # inverse mask to use in grayscale img
+
+    masked_img = cv2.bitwise_and(HSV_img, HSV_img, mask = mask)
+    rgb_masked_img = cv2.cvtColor(masked_img,cv2.COLOR_HSV2RGB)
+    # Calculates the masked grayscale image
+    masked_gry = cv2.bitwise_and(backtorgb, backtorgb, mask = inv_mask)
+
+    # Adds the two masked images
+    result = cv2.addWeighted(rgb_masked_img, 1, masked_gry, 1, 0)
+
+    plt.figure()
+    plt.imshow(result) 
+
+    plt.figure()
+    plt.imshow(rgb_masked_img)
+
+path=r'/home/victor/fisicaua/tercero/SIUE/robotic_vision/entregas/hw3/red_dress.jpg'
+createMask(cv2.imread(path, cv2.IMREAD_COLOR))
+
+plt.show()

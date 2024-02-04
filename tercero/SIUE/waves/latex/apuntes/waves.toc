@@ -11,4 +11,8 @@
 \contentsline {section}{\numberline {1.6}The LC circuits}{9}{section.1.6}%
 \contentsline {subsection}{\numberline {1.6.1}Governing Equation Approach}{9}{subsection.1.6.1}%
 \contentsline {subsection}{\numberline {1.6.2}Energy Approach}{9}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Plasma Oscillations (K.2.22-K.2.23)}{10}{section.1.7}%
+\contentsline {section}{\numberline {1.8}The "Quick Energy Method"}{11}{section.1.8}%
+\contentsline {section}{\numberline {1.9}The Energy Method}{11}{section.1.9}%
+\contentsline {section}{\numberline {1.10}One mass two spring system K3.2-Kexample3.6}{12}{section.1.10}%
 \contentsfinish 
