@@ -1,7 +1,6 @@
 import cv2 as cv2
 import numpy as np
 import matplotlib.pyplot as plt
-import imutils
 
 """
 Robotic Vision
@@ -31,14 +30,6 @@ RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # translate to rgb
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # gray image
 backtorgb = cv2.cvtColor(gray_img,cv2.COLOR_GRAY2RGB) # gray image with vectorsize = 3
 
-denoised_img = cv2.fastNlMeansDenoisingColored(RGB_img, None, 10, 10, 20, 45) # helps with masking
-
-# plt.figure()
-# plt.imshow(RGB_img)
-
-# plt.figure()
-# plt.imshow(denoised_img)
-
 #_______________________________________________________________
 
 # # HISTOGRAMS
@@ -60,24 +51,30 @@ denoised_img = cv2.fastNlMeansDenoisingColored(RGB_img, None, 10, 10, 20, 45) # 
 #_______________________________________________________________
 
 # MASKING
+HSV_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV) # translate to hsv
 
-lower_red = np.array([175, 15, 15]) 
-higher_red = np.array([255, 150, 170]) 
+# Trying RGB masking
+# lower_red = np.array([170, 15, 15]) 
+# higher_red = np.array([255, 150, 170]) 
 
-mask = cv2.inRange(denoised_img, lower_red, higher_red) 
+mask1 = cv2.inRange(HSV_img, (0,70,150), (8,255,255))
+mask2 = cv2.inRange(HSV_img, (9,60,240), (12,255,255)) 
+mask3 = cv2.inRange(HSV_img, (175,30,140), (180,255,255))
+
+mask = mask1 + mask2 + mask3
 inv_mask = cv2.bitwise_not(mask) # inverse mask to use in grayscale img
 
 # Calculates the masked rgb image
-masked_img = cv2.bitwise_and(denoised_img, denoised_img, mask = mask)
+masked_img = cv2.bitwise_and(HSV_img, HSV_img, mask = mask)
+rgb_masked_img = cv2.cvtColor(masked_img,cv2.COLOR_HSV2RGB)
 # Calculates the masked grayscale image
 masked_gry = cv2.bitwise_and(backtorgb, backtorgb, mask = inv_mask)
 
 # Adds the two masked images
-result = cv2.addWeighted(masked_img, 1, masked_gry, 1, 0)
+result = cv2.addWeighted(rgb_masked_img, 1, masked_gry, 1, 0)
 
 plt.figure()
 plt.imshow(result) 
-
 
             ##############
             # EXERCISE 2 #
@@ -94,18 +91,12 @@ original image, mask and filtered image.
 """
 
 def createMask(img):
-    HSV_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV) # translate to rgb
+    HSV_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV) # translate to hsv
 
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # gray image
     backtorgb = cv2.cvtColor(gray_img,cv2.COLOR_GRAY2RGB) # gray image with vectorsize = 3
 
-    """
-    # WORK ON THIS
-    """
-
-    lower_mask = cv2.inRange(HSV_img, (0,0,0), (7,255,255)) 
-    upper_mask = cv2.inRange(HSV_img, (172,0,0), (180,255,255))
-    mask = lower_mask + upper_mask
+    mask = cv2.inRange(HSV_img, (168,120,0), (180,255,255))
 
     inv_mask = cv2.bitwise_not(mask) # inverse mask to use in grayscale img
 
@@ -121,9 +112,12 @@ def createMask(img):
     plt.imshow(result) 
 
     plt.figure()
-    plt.imshow(rgb_masked_img)
+    plt.imshow(mask)
 
 path=r'/home/victor/fisicaua/tercero/SIUE/robotic_vision/entregas/hw3/red_dress.jpg'
 createMask(cv2.imread(path, cv2.IMREAD_COLOR))
+
+plt.figure()
+plt.imshow(cv2.cvtColor(cv2.imread(path, cv2.IMREAD_COLOR),cv2.COLOR_BGR2RGB))
 
 plt.show()
