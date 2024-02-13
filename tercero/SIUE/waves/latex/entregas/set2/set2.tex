@@ -1,0 +1,154 @@
+\documentclass{report}
+\usepackage[english]{babel}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Waves\\Homework Set 2}}
+\author{Víctor Mira Ramírez}
+\date{\number\month -\number\day -\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{As algebraic expressions, for arbitrary $A$ and $\phi$, derive the physical initial conditions for the SHO as represented by the equation:
+\[x(t)=A\cos(\omega t+\phi)\]The physical initial conditions are $x(0)=x_0$ and $v(0)=v_0$.}
+  
+  \noindent We are going to derive the expression with respect to time to get the velocity equation, then substitute for $t=0$ and get our known initial conditions.
+  \[v(t)=\dfrac{dx}{dt}(t)=-A\omega\sin(\omega t+\phi)\Longleftrightarrow v(0)=\boxed{v_0=-A\omega\sin(\phi)}\]
+  \[x(0)=\boxed{x_0=A\cos(\phi)}\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{Consider a mass-spring oscillator system for which: The ideal 'massless' spring stretches by $0.5\ m$ when an excess force of $2\ N$ is applied, the mass is $0.8\ kg$. At time $t=0$ the mass is released from position $+4\ m$ from equilibrium with velocity $3\ \nicefrac{m}{s}$ directed back toward equilibrium. Ignore all forces acting on the mass other than that of the spring. Find a formula for the position of the mass relative to equilibrium for all times $t > 0$. Do this without using equations
+\[A=\sqrt{x_0^2+\dfrac{v_0^2}{\omega^2}}\hspace{1cm}\phi=\tan^{-1}\left(-\dfrac{v_0}{\omega x_0}\right)\]
+Show all steps of logic. Check that your result correctly reproduces the initial conditions.}
+
+  \noindent The first thing that we are going to do is substitute the given values into Hooke's Law to obtain the spring constant of our system:
+  \[F=k\Delta x\Longleftrightarrow k = \dfrac{F}{\Delta x}\Longleftrightarrow k = 4 \left[\dfrac{N}{m}\right]\]
+  \noindent Then, we will take use of the given initial conditions, $v_0=-3 \nicefrac{m}{s}$ and $x_0=4 m$. Moreover, we know the solution to the governing ODE of a mass-spring oscillator is:
+  \[\dfrac{d^2x(t)}{dt^2}=-\omega^2x(t)\Longleftrightarrow x(t)=A\cos(\omega t+\phi)\]
+  \noindent And thus we need to obtain the value of the constants $A$ and $\phi$ to solve the exercise. To do so, we will recall the expression of the velocity of shm from the previous exercise:
+  \[v(t)=-A\omega\sin(\omega t + \phi)\]
+  \noindent Now, we will substitute our initial conditions ($t=0$):
+  \[x(0)=4=A\cos(\phi)\hspace{1cm}v(0)=-3=-A\omega\sin(\phi)=-A\sqrt{\dfrac{k}{m}}\sin(\phi)\]
+  \noindent We have two equations and two unknowns, we can proceed to solving by dividing the velocity related equation with the position and get $\phi$. Then substitute the value on either one of the equations and obtain $A$.
+  \[-\dfrac{3}{4}=-\sqrt{\dfrac{k}{m}}\tan(\phi)\Longleftrightarrow \phi=\arctan\left(\dfrac34 \sqrt{\dfrac{m}{k}}\right) \Longleftrightarrow \phi=\arctan\left(\dfrac34 \sqrt{\dfrac{0.8}{4}}\right)\Longleftrightarrow \boxed{\phi=0.324\ rad}\]
+  \[A=\nicefrac{4}{\cos(\phi)}\Longleftrightarrow \boxed{A = 4.22\ m}\]
+  \noindent Then the answer will be: (if we substitute for $t=0$, $x(0)=4$ and $v(0)=-3$ which are our initial conditions).
+  \[\boxed{x(t)=4.22\cos(\sqrt{5}t+0.324)\hspace{1cm} v(t)=-4.22\sqrt{5}\sin(\sqrt{5}t+0.324)}\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{A simple harmonic oscillator is oscillating. Suddenly, its total energy is increased to be five times what it was originally. What is the ratio of the new amplitude of oscillation to the old? (Your answer is a pure number). }
+
+  \noindent We'll start by recalling the expression for the energy in a simple harmonic oscillator.
+  \[E(t)=U(t)+K(t)=\dfrac{1}{2}k{x(t)}^2+\dfrac12 m{v(t)}^2=\dfrac12 kA^2\cos^2(\omega t+\phi)+\dfrac12 mA^2\omega^2\sin^2(\omega t+\phi)\]
+  \noindent And since $\omega=\sqrt{\nicefrac{k}{m}}$ and the trigonometrical identity $\sin^2(\theta)+\cos^2(\theta)=1$ holds:
+  \[E(t)=\dfrac12 kA^2\cos^2(\omega t+\phi)+\dfrac12 mA^2\dfrac{k}{m}\sin^2(\omega t+\phi)=\dfrac12 kA^2(\sin^2(\omega t+\phi)+\cos^2(\omega t+\phi))\Longleftrightarrow \boxed{E=\dfrac{1}{2}kA^2}\]
+  \noindent Which is not a function of time and thus it is constant, obeying the laws of conservation of energy (on ideal conditions).\\
+
+  \noindent Knowing this, we can now call the original energy $E_0$ and the new energy $E_1$, with the given relation $E_1=5E_0$. We'll isolate $A$ from the energy expression and get $A=\sqrt{\frac{2E}{k}}$. Then:
+  \[\dfrac{A_1}{A_0}=\sqrt{\dfrac{\nicefrac{10E_0}{k}}{\nicefrac{2E_0}{k}}}=\sqrt{\dfrac{10}{2}}\Longleftrightarrow \boxed{\dfrac{A_1}{A_0}=\sqrt{5}}\]
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{
+\begin{wrapfigure}[9]{r}{0.3\textwidth}
+  \vspace{-0.9cm}
+  \centering
+  \includegraphics[width=0.8\textwidth]{fotos/dumbell.png}
+\end{wrapfigure}
+A dumbbell is hung from a thin wire of ignorable mass attached at the midpoint. If the wire twists by angle $\theta$ from equilibrium, it accrues potential energy $U(\theta)=\frac12 C\theta^2$, where $C$ is a positive constant. From equilibrium, the dumbbell is rotated through angle $\theta_0$ and then released. Use the energy method to find the differential equation governing the oscillations of the dumbbell and from it, find the frequency of oscillations. Ignore friction. Ignore the mass of the rod that connects the two spherical masses; take each as a point mass. Show all steps of the logic.\\
+
+\noindent Specifically use the (full) energy method (not the “quick energy method”). Clearly show all steps of the logic, including (where needed) English sentence justification. The masses are each $M$, their center-to-center separation is $2r$. The kinetic energy involves the moment of inertia of the two masses with their given (unchanging) separation.}
+
+  \noindent For this exercise, I will denotate $\omega=\dot{\theta}$ as the angular velocity and $f$ as the frequency of the oscilation so as not to confuse them. The full energy method involves obtaining an expression for the energy and then derivating with respect to time. Then the energy of the system is:
+  \[E=K+U=\dfrac12 I\omega^2+\dfrac12 C\theta^2 = \dfrac12 I\dot{\theta}^2+\dfrac12 C\theta^2\]
+  \[\dfrac{dE}{dt}=0\Longleftrightarrow I\dot{\theta}\ddot{\theta}+C\theta\dot{\theta}=0\Longleftrightarrow I\ddot{\theta}+C\theta=0 \Longleftrightarrow \ddot{\theta}+\dfrac{C}{I}\theta=0\]
+  \[f=\sqrt{\dfrac{C}{I}}=\sqrt{\dfrac{C}{2Mr^2}}\]
+  \noindent Assuming that that $I=2Mr^2$
+  \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{Derive the governing differential equation for the charge oscillations of an LC circuit by the energy method. Ignore resistance. Use the “full energy method.” Show all necessary steps of the derivation.}
+
+  \noindent As on the last exercise, we will write the energy of the system, then derive respect to the time and get the ode.
+  \[E=U_C+U_L=\dfrac12 CV^2+\dfrac12 LI^2=\dfrac12 C\left(\dfrac{Q}{C}\right)^2+\dfrac12 L\left(\dfrac{dQ}{dt}\right)^2\Longleftrightarrow E=\dfrac12 \dfrac{Q^2}{C}+\dfrac12 L\left(\dfrac{dQ}{dt}\right)^2\]
+  \[\dfrac{dE}{dt}=0\Longleftrightarrow \dfrac{1}{C}\dot{Q}Q + L\dot{Q}\ddot{Q}=0\Longleftrightarrow \dfrac{Q}{C} +L\ddot{Q}=0\Longleftrightarrow \boxed{\dfrac{1}{LC}Q+\ddot{Q}=0}\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{
+\begin{wrapfigure}[7]{r}{0.18\textwidth}
+  \vspace{-0.65cm}
+  \centering
+  \includegraphics[width=0.95\textwidth]{fotos/charges.png}
+\end{wrapfigure}
+
+Two identical positive charges $Q$ are held in place at distance $2D$ apart. A small mass $m$ carrying negative charge $-q$ is released from rest at distance $x_0$ from the point midway between the positive charges as shown. $x_0 << D$.
+
+\vspace{0.5cm}Ignoring $x_0$ compared to $D$, find the appropiate frequency of the resulting oscillations of $q$. "Zero" is not a good enough answer. The exercise is to show all steps of the correct derivation of the result. You need not rederive basic results from first year physics.\\
+
+\vspace{0.3cm}\textit{\underline{Hints}: Use Newton's second law to derive the governing differential equation (“g.d.e.”). Remember that a return (to equilibrium) force has a minus sign. In the resulting g.d.e., express $\sin(\theta)$ in terms of $x$ and $D$.\\
+\underline{Answer}: $\omega^2\approx \dfrac{qQ}{2\pi\varepsilon_0 m D^3}$}}
+
+  \noindent The electric force between two charges is defined by Coulomb's Law, in modulus:
+  \[F_e = \dfrac{kqQ}{r^2}\]
+  \noindent The electric force in our system will be doubled because of the two charges. We can decompose the forces into the axis and discard the vertical component thanks to the symmetry of the problem. Since $v(0)=0$ and $x(0)=x_0<<D$ we can use the small angle approximation in this problem. Moreover, from the figure we can see that $sin(\theta)=\theta=\nicefrac{x}{D}$. Then:
+  \[F = -\dfrac{2kqQ}{\sqrt{x_0^2+D^2}}\sin(\theta) = -\dfrac{qQ}{2\pi\varepsilon_0}\dfrac{x}{D\sqrt{x_0^2+D^2}}=m\ddot{x} \]
+  \noindent As $x_0 << D$, then:
+  \[\sqrt{x_0^2+D^2}\approx D^2 \Longleftrightarrow \ddot{x}=-\dfrac{qQ}{2\pi\varepsilon_0 mD^2} x \Longleftrightarrow \boxed{\omega^2\approx\dfrac{qQ}{2\pi\varepsilon_0 mD^2}}\]
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{Complete the analysis of the worked example shown below. Use either version of the energy method to find the frequency of oscillations. Assume that the center of mass is stationary.\\
+\begin{center}
+  \textbf{Partially Worked Example:}\\
+  \textbf{Oscillation Model For Diatomic Molecule With Unequal Ion Masses: }
+\end{center}
+\begin{wrapfigure}[4]{r}{0.42\textwidth}
+  \vspace{-0.7cm}
+  \centering
+  \includegraphics[width=0.93\textwidth]{fotos/example.png}
+\end{wrapfigure}
+
+Suppose the ion masses are $m$ and $2m$. Find the frequency of the "breathing mode".\vspace{0.6cm}\\
+\textit{\underline{Solution}: The figure shows the equilibrium and arbitrary configurations for the breathing mode.}\\
+
+\noindent Let's first use the method of 'physical meaning of $\omega^2$'. We work in the CM frame, so the CM itself is stationary. I'll outline ome steps for you:
+\begin{enumerate}[label=\alph*.]
+  \item If $\psi$ represents the displacement of $2m$ from equilibrium, what must the simultaneous displacement of $m$ (labeled '?' in figure) be?
+  \item Based on your anwser to part \textit{a}, what do you expect the frequency of 'breathing oscillation' of the molecule to be?
+\end{enumerate}
+\underline{\textit{Answers}}:
+\begin{enumerate}[label=\alph*.]
+  \item \textit{To keep the center of mass stationary, if mass $2m$ moves a distance $\psi$ from equilibrium, then mass $m$ muss move a distance $2\psi$ (in the opposite direction).}
+  \item \textit{Note that a stretched spring exerts an equal force at each of its ends. Now, in the 'arbitrary configuration' shown, the total stretch of the spring is $3\psi$ (compared to the equilibrium configuration). Thus, the force on mass $2m$ is $-3k\psi$; hence the equation of motion of $2m$ is $2m\ddot{\psi}=-3k\psi$, which means thatm mass $2m$ should oscillate in simple harmonic motion with frequency $\omega^2=\nicefrac{3k}{2m}$.}
+\end{enumerate}
+\noindent Now consider mass $m$. It must oscillate in simple harmonic motion at the same frequency as does mass $2m$; otherwise, the CM would accelerate. The force on it is also $-3k\psi$ and its displacement is $2\psi$, so its equation of m otion is $m(2\ddot{\psi})=-3k\psi$, which confirms that $m$ oscillates in simple harmonic motion. This oscillation is $180^\circ$ out of phase with that of $2m$.\\
+
+\noindent Use the energy method to find the frequency of the breathing mode for the 'molecule'.\\
+\noindent \textit{\underline{Solution}: The first step is to write the total energy in the arbitrary configuration:
+\[E=\dfrac12 m(2\dot{\psi})^2+\dfrac12(2m)(\dot{\psi})^2+\dfrac12 k(3\psi)^2\]} }
+
+  \noindent To continue on the worked example, we will derivate the energy function with respect to time. As this function is a constant, then its temporal derivative will be zero:
+  \[\dfrac{dE}{dt}=0\Longleftrightarrow \dfrac{d}{dt}\left(2m\dot{\psi}^2+m\dot{\psi}^2+\dfrac92 k\psi^2\right)=\dfrac{d}{dt}\left(3m\dot{\psi}^2+\dfrac92 k\psi^2\right)=0\Longleftrightarrow\]
+  \[\Longleftrightarrow 6m\dot{\psi}\ddot{\psi}+9k\psi\dot{\psi}=0\Longleftrightarrow 6m\ddot{\psi}+9k\psi = \ddot{\psi}+\dfrac{9k}{6m}\psi=0\Longleftrightarrow \boxed{\omega^2=\dfrac{3k}{2m}}\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{Using the spring model we've been working with, find the oscillation frequency for a 'diatomic molecule' in which the ions have unequal masses $m$ and $M$ respectively:
+\begin{enumerate}[label=\alph*.]
+  \item First use the “method of physical meaning of $\omega^2$ we used in Worked Example. Make sure you obtain the same frequency applying the method to each of the masses.
+  \item Then use the formalism of the energy method.
+\end{enumerate}
+\textit{\underline{Answer}: $M\ddot{\psi}=-\left(1+\frac{M}{m}\right)k\psi$}}
+\subsubsection*{Physical meaning of $\omega^2$ method}
+  \noindent As on the previous example, the displacement from equilibrium must mantain the center of mass equal. Then, if the displacement from mass $M$ is called $\psi$, the displacement of mass $m$ that mantains the center of mass stationary is a distance $\psi\nicefrac{M}{m}$ in the opposite direction. Then, the total stretch is $\psi(1+\nicefrac{M}{m})$.
+  \noindent Because of that, the force on both of the masses will be equal (so as not to accelerate the CM), but the equation for each one will be: $M\ddot{\psi}=-\psi k(1+\nicefrac{M}{m})\ \ $ and $\ \ m(\frac{M}{m}\ddot{\psi})=-\psi k(1+\nicefrac{M}{m})$ which will result in the same ode (and thus the same frequency but at $180^\circ$ out of phase from each other): 
+  \[\boxed{M\ddot{\psi}=-(1+\nicefrac{M}{m})k\psi} \Longleftrightarrow \omega=\sqrt{\left(\dfrac{1}{M}+\dfrac{1}{m}\right)k}\Longleftrightarrow\boxed{\omega=\sqrt{\mu k}}\]
+\subsubsection*{Energy method}
+  \noindent As on the example, first of all we have to work out an expression for the total energy:
+  \[E=K_m+K_M+U_s=\dfrac12 m\left(\dfrac{M}{m}\dot{\psi}\right)^2 + \dfrac12 M(\dot{\psi})^2 + \dfrac12 k \left(\left(1+\dfrac{M}{m}\right)\psi\right)^2\]
+  \noindent Now we derivate with respect to time and equal it to zero, because the energy is constant.
+  \[\dfrac{dE}{dt}=0\Longleftrightarrow \dfrac{d}{dt}\left(\dfrac12 \dfrac{M^2}{m}\dot{\psi}^2+\dfrac12 M\dot{\psi}^2+\dfrac{k}{2}\left(1+\dfrac{M}{m}\right)^2\psi^2\right)=\dfrac{M^2}{m}\dot{\psi}\ddot{\psi}+M\dot{\psi}\ddot{\psi}+k\left(1+\dfrac{M}{m}\right)^2\psi\dot{\psi}=0\Longleftrightarrow\]
+  \[\Longleftrightarrow M\left(1+\dfrac{M}{m}\right)\ddot{\psi}+k\left(1+\dfrac{M}{m}\right)^2\psi\Longleftrightarrow \boxed{M\ddot{\psi}+k\left(1+\dfrac{M}{m}\right)\psi=0} \Longleftrightarrow \boxed{\omega=\sqrt{\mu k}}\]
+  \noindent Which is the same result we got with the previous method.
+
+\end{document}

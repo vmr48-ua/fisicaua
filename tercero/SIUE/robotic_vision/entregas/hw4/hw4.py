@@ -41,17 +41,3 @@ plt.figure()
 plt.imshow(RGB_img)
 
 plt.show()
-
-            ##############
-            # EXERCISE 2 #
-            ##############
-
-"""
-Repeat the homogeneous camera calibration exercise of Sect. 11.2.1. 
-Investigate the effect of the number of calibration points, and noise
-on the calibration residual.
-
-This part is a repeat of MATLAB code in textbook, there is no easy
-replacement for Python, I would recommend you use MATLAB for this
-problem
-"""
