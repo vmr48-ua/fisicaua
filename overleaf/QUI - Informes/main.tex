@@ -1,0 +1,260 @@
+\documentclass[12pt,letterpaper,oneside,openany,spanish]{book}
+\usepackage{newtxtext,newtxmath}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath} 
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage{courier}
+\usepackage{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage[version=4]{mhchem}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{epigraph}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{array}
+\usepackage[shortlabels]{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%      importante     %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hay que darle a menú, y escoger el compilador "LuaLaTeX"
+
+\renewcommand\epigraphflush{flushright}
+\renewcommand\epigraphsize{\normalsize}
+\setlength\epigraphwidth{0.7\textwidth}
+
+\pagenumbering{arabic}
+
+%cosas para los margenes
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+
+% Quita el título 'Capítulo N' a cada capítulo
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+% Quita el header con 'capítulo n: blablabla'
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+
+% Cosas de la portada fancy
+\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+
+\DeclareFixedFont{\titlefont}{T1}{ppl}{b}{it}{0.6in}
+
+\makeatletter                       
+\def\printauthor{                  
+    {\large \@author}}              
+\makeatother
+% Autores
+\author{
+    Lucía Selena Sarasty Bolaños \\
+    \texttt{48775044W}\vspace{20pt} \\
+    Víctor Mira Ramírez \\
+    \texttt{74528754Z}
+    }
+
+\newcommand\titlepagedecoration{
+    \begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
+    
+    \coordinate (aux1) at ([yshift=-15pt]current page.north east);
+    \coordinate (aux2) at ([yshift=-410pt]current page.north east);
+    \coordinate (aux3) at ([xshift=-4.5cm]current page.north east);
+    \coordinate (aux4) at ([yshift=-150pt]current page.north east);
+    
+    \begin{scope}[titlepagecolor!40,line width=12pt,rounded corners=12pt]
+    \draw
+      (aux1) -- coordinate (a)
+      ++(225:5) --
+      ++(-45:5.1) coordinate (b);
+    \draw[shorten <= -10pt]
+      (aux3) --
+      (a) --
+      (aux1);
+    \draw[opacity=0.6,titlepagecolor,shorten <= -10pt]
+      (b) --
+      ++(225:2.2) --
+      ++(-45:2.2);
+    \end{scope}
+    \draw[titlepagecolor,line width=8pt,rounded corners=8pt,shorten <= -10pt]
+      (aux4) --
+      ++(225:0.8) --
+      ++(-45:0.8);
+    \begin{scope}[titlepagecolor!70,line width=6pt,rounded corners=8pt]
+    \draw[shorten <= -10pt]
+      (aux2) --
+      ++(225:3) coordinate[pos=0.45] (c) --
+      ++(-45:3.1);
+    \draw
+      (aux2) --
+      (c) --
+      ++(135:2.5) --
+      ++(45:2.5) --
+      ++(-45:2.5) coordinate[pos=0.3] (d);   
+    \draw 
+      (d) -- +(45:1);
+    \end{scope}
+    \end{tikzpicture}
+}
+
+
+
+\begin{document}
+\begin{titlepage}
+
+% Texto de la portada
+\noindent
+\titlefont Informes Química I\par
+
+\epigraph{\vspace{1cm} \justify Síntesis de todas las prácticas de laboratorio realizadas en el curso 2021-22 en la asignatura Química I del grado en Física de la Universidad de Alicante.}
+{\textit{Profesor: Jesús Iniesta Valcárcel} \\ \textit{Alicante, 2022}}
+\null\vfill
+\vspace*{1cm}
+\noindent
+\hfill
+\begin{minipage}{0.4\linewidth}
+    \begin{flushright}
+        \printauthor
+    \end{flushright}
+\end{minipage}
+\hspace*{-0.2cm}
+\begin{minipage}{-0.2\linewidth}
+    \rule{1pt}{100pt}
+\end{minipage}
+\titlepagedecoration
+\end{titlepage}
+
+\clearpage
+\pagenumbering{gobble}
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%     PRÁCTICAS     %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Recordatorio: solo hay q escribir en los archivos prN.tex, en el main no hay que cambiar nada a menos q queramos poner fotos en la portada
+
+
+% PRÁCTICA 1
+\pagenumbering{arabic}
+\setcounter{page}{4}
+    \chapter[Práctica 1]{1. Preparación de disoluciones y de la concentración de ácido cítrico, \ce{C8H8O7}}
+    \thispagestyle{empty}
+    \vspace{1cm}
+    \begin{figure}[h]
+        \centering
+        \hspace*{-0.2cm}
+        \includegraphics[width=.48\textwidth]{fotos/citrico.png}\hfill
+        \includegraphics[width=.48\textwidth]{fotos/disolucion.png}
+        \hspace*{-0.4cm}
+    \end{figure}
+\include{pr1.tex}
+
+% PRÁCTICA 2
+\chapter[Práctica 2]{2. Termoquímica}
+\thispagestyle{empty}
+\vspace{1cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=.8\textwidth]{fotos/portada.jpg}
+    \hspace*{-0.4cm}
+    \end{figure}
+\include{pr2.tex}
+
+% PRÁCTICA 3
+\chapter[Práctica 3]{3. Ph y disoluciones reguladoras}
+\thispagestyle{empty}
+\vspace{1cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=1\textwidth]{prac3/portada.jpg}
+    \hspace*{-0.4cm}
+\end{figure}
+\include{pr3.tex}
+
+% PRÁCTICA 4
+\chapter[Práctica 4]{4. Determinación de la dureza del agua}
+\thispagestyle{empty}
+\vspace{1cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=1\textwidth]{fotos/dureza.jpg}
+    \hspace*{-0.4cm}
+\end{figure}
+\include{pr4.tex}
+
+% PRÁCTICA 5
+\chapter[Práctica 5]{5. Equilibrios redox}
+\thispagestyle{empty}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{prac5/Aesthetic.jpeg}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{prac5/Inventario 5 todo.jpeg}
+\end{figure}
+\include{pr5.tex}
+
+% PRÁCTICA 6
+\chapter[Práctica 6]{6. Síntesis del ácido acetilsalicílico}
+\thispagestyle{empty}
+\vspace{1cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=1\textwidth]{fotos/fórmula-química-del-ácido-acetilsalicílico-con-la-pluma-114646429.jpg}
+    \hspace*{-0.4cm}
+\end{figure}
+\include{pr6.tex}
+
+% PRÁCTICA 7
+\chapter[Práctica 7]{7. Estudio de la descomposición del \ce{H2S2O3}}
+\thispagestyle{empty}
+\vspace{1cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=0.8\textwidth]{prac7/Portada.png}
+    \hspace*{-0.4cm}
+\end{figure}
+\include{pr7.tex}
+
+% PRÁCTICA 8
+\chapter[Práctica 8]{8. Espectroscopia y modelos moleculares}
+\thispagestyle{empty}
+\vspace{1.5cm}
+\begin{figure}[h]
+    \centering
+    \hspace*{-0.2cm}
+    \includegraphics[width=1.1\textwidth]{fotos/espectrofotometro_uv_vis.png}
+    \hspace*{-0.4cm}
+\end{figure}
+\include{pr8.tex}
+
+\end{document}

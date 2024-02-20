@@ -1,0 +1,20 @@
+\babel@toc {catalan}{}\relax 
+\contentsline {section}{\numberline {1}Introducció i motivació}{2}{section.1}%
+\contentsline {section}{\numberline {2}Marc teòric}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Fonaments de Dinàmica}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Conservació de l'energia mecànica}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Procediment experimental}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Material}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Metodologia}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Resultats i discussió}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Estudi de l'acceleració}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Estudi energètic}{11}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Possibilitats de millora}{13}{section.5}%
+\contentsline {section}{\numberline {6}Conclusions}{13}{section.6}%
+\contentsline {section}{\numberline {7}Apèndixs}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}James Clerk Maxwell}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Roda de Maxwell}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Balança granetària}{15}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Càlcul d'errors}{15}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Creació de les gràfiques i de l'informe}{16}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Referències}{16}{section.8}%

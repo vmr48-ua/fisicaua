@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Marco teórico}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Campo Magnético}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Corriente eléctrica}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Dipolo magnético}{2}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Campo magnético debido a una espira}{3}{section.2}%
+\contentsline {section}{\numberline {3}Campo magnético debido a un momento dipolar magnético}{4}{section.3}%
+\contentsline {section}{\numberline {4}Campo magnético causado por una distribución reticular de momentos magnéticos}{5}{section.4}%
+\contentsline {section}{\numberline {5}Anexos}{5}{section.5}%

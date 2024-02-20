@@ -1,0 +1,19 @@
+\babel@toc {catalan}{}\relax 
+\contentsline {section}{\numberline {1}Introducció i motivació}{2}{section.1}%
+\contentsline {section}{\numberline {2}Marc teòric}{2}{section.2}%
+\contentsline {section}{\numberline {3}Procediment experimental}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Material}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Metodologia}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Resultats i discussió}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Camp magnètic desalineat}{6}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Possibilitats de millora}{7}{section.5}%
+\contentsline {section}{\numberline {6}Conclusions}{7}{section.6}%
+\contentsline {section}{\numberline {7}Apèndixs}{8}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Bobina de Helmholtz}{8}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Raigs X}{9}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Efecte Termoiònic}{10}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Unitats per al camp magnètic}{11}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Dades experimentals}{12}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Càlcul d'errors}{12}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Càlcul de les gràfiques i de l'informe}{12}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Referències}{13}{section.8}%

@@ -1,0 +1,1089 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.7)  15 FEB 2024 10:01
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/home/victor/fisicaua/overleaf/TEC1 - Determinació de l'entalpia de vaporització de l'aigua (TD4)/agua.tex"
+(/home/victor/fisicaua/overleaf/TEC1 - Determinació de l'entalpia de vaporització de l'aigua (TD4)/agua.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2023/02/13 3.86 The Babel package
+\babel@savecnt=\count193
+\U@D=\dimen141
+\l@unhyphenated=\language6
+ (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count194
+ (/usr/share/texmf-dist/tex/generic/babel-catalan/catalan.ldf
+Language: catalan 2005/03/29 v2.2p Catalan support from the babel system
+Package babel Info: Making " an active character on input line 91.
+Warning: You are using encoding OT1 instead of T1.
+Some word breaks will not be found.
+\leftllkern=\dimen142
+\rightllkern=\dimen143
+\raiselldim=\dimen144
+)) (/usr/share/texmf-dist/tex/generic/babel/locale/ca/babel-catalan.tex
+Package babel Info: Importing font and identification data for catalan
+(babel)             from babel-ca.ini. Reported on input line 11.
+) (/usr/share/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count195
+) (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip50
+\cftbeforetoctitleskip=\skip51
+\cftaftertoctitleskip=\skip52
+\cftbeforepartskip=\skip53
+\cftpartnumwidth=\skip54
+\cftpartindent=\skip55
+\cftbeforesecskip=\skip56
+\cftsecindent=\skip57
+\cftsecnumwidth=\skip58
+\cftbeforesubsecskip=\skip59
+\cftsubsecindent=\skip60
+\cftsubsecnumwidth=\skip61
+\cftbeforesubsubsecskip=\skip62
+\cftsubsubsecindent=\skip63
+\cftsubsubsecnumwidth=\skip64
+\cftbeforeparaskip=\skip65
+\cftparaindent=\skip66
+\cftparanumwidth=\skip67
+\cftbeforesubparaskip=\skip68
+\cftsubparaindent=\skip69
+\cftsubparanumwidth=\skip70
+\cftbeforeloftitleskip=\skip71
+\cftafterloftitleskip=\skip72
+\cftbeforefigskip=\skip73
+\cftfigindent=\skip74
+\cftfignumwidth=\skip75
+\c@lofdepth=\count196
+\c@lotdepth=\count197
+\cftbeforelottitleskip=\skip76
+\cftafterlottitleskip=\skip77
+\cftbeforetabskip=\skip78
+\cfttabindent=\skip79
+\cfttabnumwidth=\skip80
+) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count198
+\mult@box=\box51
+\multicol@leftmargin=\dimen145
+\c@unbalance=\count199
+\c@collectmore=\count266
+\doublecol@number=\count267
+\multicoltolerance=\count268
+\multicolpretolerance=\count269
+\full@width=\dimen146
+\page@free=\dimen147
+\premulticols=\dimen148
+\postmulticols=\dimen149
+\multicolsep=\skip81
+\multicolbaselineskip=\skip82
+\partial@page=\box52
+\last@line=\box53
+\maxbalancingoverflow=\dimen150
+\mult@rightbox=\box54
+\mult@grightbox=\box55
+\mult@firstbox=\box56
+\mult@gfirstbox=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\c@minrows=\count270
+\c@columnbadness=\count271
+\c@finalcolumnbadness=\count272
+\last@try=\dimen151
+\multicolovershoot=\dimen152
+\multicolundershoot=\dimen153
+\mult@nat@firstbox=\box94
+\colbreak@box=\box95
+\mc@col@check@num=\count273
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip83
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen156
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen157
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count274
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count275
+\leftroot@=\count276
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count277
+\DOTSCASE@=\count278
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box96
+\strutbox@=\box97
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen158
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count279
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count280
+\dotsspace@=\muskip16
+\c@parentequation=\count281
+\dspbrk@lvl=\count282
+\tag@help=\toks18
+\row@=\count283
+\column@=\count284
+\maxfields@=\count285
+\andhelp@=\toks19
+\eqnshift@=\dimen159
+\alignsep@=\dimen160
+\tagshift@=\dimen161
+\tagwidth@=\dimen162
+\totwidth@=\dimen163
+\lineht@=\dimen164
+\@envbody=\toks20
+\multlinegap=\skip84
+\multlinetaggap=\skip85
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+ (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+ (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count286
+)
+\@linkdim=\dimen165
+\Hy@linkcounter=\count287
+\Hy@pagecounter=\count288
+ (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count289
+ (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count290
+ (/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen166
+ (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count291
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count292
+\c@Item=\count293
+\c@Hfootnote=\count294
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+ (/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count295
+\c@bookmark@seq@number=\count296
+ (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip86
+) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count297
+\lst@gtempboxa=\box98
+\lst@token=\toks22
+\lst@length=\count298
+\lst@currlwidth=\dimen169
+\lst@column=\count299
+\lst@pos=\count300
+\lst@lostspace=\dimen170
+\lst@width=\dimen171
+\lst@newlines=\count301
+\lst@lineno=\count302
+\lst@maxwidth=\dimen172
+ (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count303
+\lst@skipnumbers=\count304
+\lst@framebox=\box99
+) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count305
+\Gm@cntv=\count306
+\c@Gm@tempcnt=\count307
+\Gm@bindingoffset=\dimen173
+\Gm@wd@mp=\dimen174
+\Gm@odd@mp=\dimen175
+\Gm@even@mp=\dimen176
+\Gm@layoutwidth=\dimen177
+\Gm@layoutheight=\dimen178
+\Gm@layouthoffset=\dimen179
+\Gm@layoutvoffset=\dimen180
+\Gm@dimlist=\toks23
+) (/usr/share/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count308
+\cp@tempcnt=\count309
+) (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box100
+\beforetitleunit=\skip87
+\aftertitleunit=\skip88
+\ttl@plus=\dimen181
+\ttl@minus=\dimen182
+\ttl@toksa=\toks24
+\titlewidth=\dimen183
+\titlewidthlast=\dimen184
+\titlewidthfirst=\dimen185
+) (/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen186
+\WF@size=\dimen187
+\c@WF@wrappedlines=\count310
+\WF@box=\box101
+\WF@everypar=\toks25
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/share/texmf-dist/tex/latex/mhchem/mhchem.sty
+Package: mhchem 2021/12/31 v4.09 for typesetting chemical formulae
+ (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-02-22 L3 programming layer (loader) 
+ (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count311
+\l__pdf_internal_box=\box102
+)) (/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2023-02-02 LaTeX2e option processing using LaTeX3 keys
+) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count312
+\calc@Bcount=\count313
+\calc@Adimen=\dimen188
+\calc@Bdimen=\dimen189
+\calc@Askip=\skip89
+\calc@Bskip=\skip90
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count314
+\calc@Cskip=\skip91
+) (/usr/share/texmf-dist/tex/latex/chemgreek/chemgreek.sty (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count315
+\g__chemgreek_tmpa_int=\count316
+)
+\l__mhchem_ce_distanceFromLastComma_int=\count317
+\__mhchem_arrow_extPgfLength_skip=\skip92
+\mhchem@minispace@tmp=\skip93
+\mhchem@minibackspace@tmp=\skip94
+\mhchem@bondwidth=\skip95
+\mhchem@bondheight=\skip96
+\mhchem@smallbondwidth@tmpA=\skip97
+\mhchem@smallbondwidth@tmpB=\skip98
+\mhchem@smallbondwidth=\skip99
+\mhchem@bondtmp@minussidebearingleft=\skip100
+\mhchem@bondtmp@minussidebearingright=\skip101
+\l__mhchem_option_version_int=\count318
+\mhchem@option@minusmathsidebearingleft=\dimen190
+\mhchem@option@minusmathsidebearingright=\dimen191
+\mhchem@option@minustextsidebearingleft=\dimen192
+\mhchem@option@minustextsidebearingright=\dimen193
+) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip102
+\multirow@cntb=\count319
+\multirow@dima=\skip103
+\bigstrutjot=\dimen194
+) (/usr/share/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2023-03-04 v3.2.2 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen195
+\l__siunitx_angle_marker_box=\box103
+\l__siunitx_angle_unit_box=\box104
+\l__siunitx_compound_count_int=\count320
+\l__siunitx_number_exponent_fixed_int=\count321
+\l__siunitx_number_min_decimal_int=\count322
+\l__siunitx_number_min_integer_int=\count323
+\l__siunitx_number_round_precision_int=\count324
+\l__siunitx_number_lower_threshold_int=\count325
+\l__siunitx_number_upper_threshold_int=\count326
+\l__siunitx_number_group_first_int=\count327
+\l__siunitx_number_group_size_int=\count328
+\l__siunitx_number_group_minimum_int=\count329
+\l__siunitx_table_tmp_box=\box105
+\l__siunitx_table_tmp_dim=\dimen196
+\l__siunitx_table_column_width_dim=\dimen197
+\l__siunitx_table_integer_box=\box106
+\l__siunitx_table_decimal_box=\box107
+\l__siunitx_table_uncert_box=\box108
+\l__siunitx_table_before_box=\box109
+\l__siunitx_table_after_box=\box110
+\l__siunitx_table_before_dim=\dimen198
+\l__siunitx_table_carry_dim=\dimen199
+\l__siunitx_unit_tmp_int=\count330
+\l__siunitx_unit_position_int=\count331
+\l__siunitx_unit_total_int=\count332
+ (/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen256
+\ar@mcellbox=\box111
+\extrarowheight=\dimen257
+\NC@list=\toks26
+\extratabsurround=\skip104
+\backup@length=\skip105
+\ar@cellbox=\box112
+)) (/usr/share/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/02/25 v3.4 ragged2e Package
+\CenteringLeftskip=\skip106
+\RaggedLeftLeftskip=\skip107
+\RaggedRightLeftskip=\skip108
+\CenteringRightskip=\skip109
+\RaggedLeftRightskip=\skip110
+\RaggedRightRightskip=\skip111
+\CenteringParfillskip=\skip112
+\RaggedLeftParfillskip=\skip113
+\RaggedRightParfillskip=\skip114
+\JustifyingParfillskip=\skip115
+\CenteringParindent=\skip116
+\RaggedLeftParindent=\skip117
+\RaggedRightParindent=\skip118
+\JustifyingParindent=\skip119
+) (/usr/share/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+ (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
+)
+\XKV@depth=\count333
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (/usr/share/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+ (/usr/share/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box113
+)
+\tc@llx=\dimen258
+\tc@lly=\dimen259
+\tc@urx=\dimen260
+\tc@ury=\dimen261
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (/usr/share/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen262
+\adjbox@Height=\dimen263
+\adjbox@Depth=\dimen264
+\adjbox@Totalheight=\dimen265
+\adjbox@pwidth=\dimen266
+\adjbox@pheight=\dimen267
+\adjbox@pdepth=\dimen268
+\adjbox@ptotalheight=\dimen269
+ (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count334
+LaTeX Info: Redefining \checkoddpage on input line 45.
+) (/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box114
+\sift@deathcycles=\count335
+\@vwid@loff=\dimen270
+\@vwid@roff=\dimen271
+)) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen272
+\captionmargin=\dimen273
+\caption@leftmargin=\dimen274
+\caption@rightmargin=\dimen275
+\caption@width=\dimen276
+\caption@indent=\dimen277
+\caption@parindent=\dimen278
+\caption@hangindent=\dimen279
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count336
+\c@continuedfloat=\count337
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen280
+\caption@adjustwidth@linewidth=\dimen281
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
+) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+ (/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks29
+\minrowclearance=\skip120
+\rownum=\count338
+) (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (./agua.aux)
+\openout1 = `agua.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Info: Redefining \l on input line 87.
+LaTeX Info: Redefining \L on input line 87.
+ (/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-catalan.trsl
+File: translations-basic-dictionary-spanish.trsl (spanish translation file `translations-basic-dictionary')
+)
+
+Package translations Warning: file `translations-basic-dictionary-catalan.trsl' does not appear to be a dictionary on input line 87.
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count339
+\scratchdimen=\dimen282
+\scratchbox=\box115
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen283
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package hyperref Info: Link coloring OFF on input line 87.
+ (./agua.out) (./agua.out)
+\@outlinefile=\write3
+\openout3 = `agua.out'.
+
+\c@lstlisting=\count345
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package chemgreek Info: Activating mapping `default' on line 87.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+<fotos/logoUA.png, id=76, 590.205pt x 678.535pt>
+File: fotos/logoUA.png Graphic file (type png)
+<use fotos/logoUA.png>
+Package pdftex.def Info: fotos/logoUA.png  used on input line 91.
+(pdftex.def)             Requested size: 184.9429pt x 212.62146pt.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fotos/logoUA.png>] (./agua.toc
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 2.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+))
+\tf@toc=\write4
+\openout4 = `agua.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.117 \newpage
+               [1{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+<fotos/portada.jpeg, id=112, 196.8153pt x 403.2666pt>
+File: fotos/portada.jpeg Graphic file (type jpg)
+<use fotos/portada.jpeg>
+Package pdftex.def Info: fotos/portada.jpeg  used on input line 122.
+(pdftex.def)             Requested size: 122.13371pt x 250.24422pt.
+
+Underfull \hbox (badness 3503) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 Els ob-jec-tius d'a-quest in-for-me es-tan de-fi-nits a el \OT1/cmr/m/it/10 abs-tract\OT1/cmr/m/n/10 , es-
+ []
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 tu-di-a-rem la re-la-ci^^So de la pres-si^^So de va-por amb la tem-pe-ra-tu-
+ []
+
+
+Underfull \hbox (badness 2486) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 ra per a ve-ri-fi-car l'e-qua-ci^^So de Clausius-Clapeyron. Es-ta equa-
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 ci^^So fa-ci-li-tar^^Ra el c^^Ralcul de tant l'en-tal-pia de va-po-rit-za-ci^^So com
+ []
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 de la tem-pe-ra-tu-ra d'e-bu-lli-ci^^So de l'ai-gua. A m^^Ses, fi-nal-ment
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 com-pa-ra-rem les da-des ex-pe-ri-men-tals amb l'a-pro-xi-ma-ci^^So de An-toi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
+
+ []
+
+
+Underfull \hbox (badness 2326) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 dant al nos-tre pla-ne-ta, l'ai-gua. I es que da-des com el punt
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 d'e-bu-lli-ci^^So de l'ai-gua, que a pri-me-ra vis-ta pu-guen sem-blar ob-vi-
+ []
+
+
+Underfull \hbox (badness 1867) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 es o d'es-cas-sa uti-li-tat, han si-gut molt im-por-tants per al desen-
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 vo-lu-pa-ment in-dus-tri-al de la hu-ma-ni-tat. Per ei-xem-ple, la cer-
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 te-sa de la me-su-ra en re-la-ci^^So a la pres-si^^So es clau per a es-
+ []
+
+
+Underfull \hbox (badness 4913) in paragraph at lines 125--128
+\OT1/cmr/m/n/10 tal-vi-ar ener-gia es-te-ri-lit-zant pro-duc-tes mit-jan^^Xcant l'e-bu-lli-ci^^So d'ai-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+[2 <./fotos/portada.jpeg>]
+<fotos/fase.png, id=131, 822.07124pt x 687.56876pt>
+File: fotos/fase.png Graphic file (type png)
+<use fotos/fase.png>
+Package pdftex.def Info: fotos/fase.png  used on input line 146.
+(pdftex.def)             Requested size: 234.8775pt x 196.44173pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--151
+
+ []
+
+[3
+
+ <./fotos/fase.png (PNG copy)>]
+<fotos/setup.png, id=137, 640.3925pt x 733.74126pt>
+File: fotos/setup.png Graphic file (type png)
+<use fotos/setup.png>
+Package pdftex.def Info: fotos/setup.png  used on input line 175.
+(pdftex.def)             Requested size: 211.37903pt x 270.30444pt.
+
+Underfull \hbox (badness 1931) in paragraph at lines 180--182
+\OT1/cmr/m/n/10 A la fi-gu-ra []2[] es mos-tra la dis-po-si-ci^^So del ma-te-ri-
+ []
+
+
+Underfull \hbox (badness 1742) in paragraph at lines 180--182
+\OT1/cmr/m/n/10 sis-teix en una quan-ti-tat fi-xa d'ai-re i una va-ri-a-ble
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 180--182
+\OT1/cmr/m/n/10 tot el sis-te-ma. Se-gui-da-ment, es des-criu com me-
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 180--182
+\OT1/cmr/m/n/10 su-rar el vo-lum de la fa-se ga-so-sa en fun-ci^^So de la
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 180--182
+\OT1/cmr/m/n/10 tem-pe-ra-tu-ra, que ens per-metr^^Ra ob-tin-dre la pres-si^^So
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+[4
+
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./fotos/setup.png>]
+<fotos/esquemaSetup.png, id=147, 1172.38pt x 528.97626pt>
+File: fotos/esquemaSetup.png Graphic file (type png)
+<use fotos/esquemaSetup.png>
+Package pdftex.def Info: fotos/esquemaSetup.png  used on input line 187.
+(pdftex.def)             Requested size: 211.38832pt x 95.37305pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--199
+
+ []
+
+<fotos/presionvapor.png, id=152, 650.43pt x 433.62pt>
+File: fotos/presionvapor.png Graphic file (type png)
+<use fotos/presionvapor.png>
+Package pdftex.def Info: fotos/presionvapor.png  used on input line 202.
+(pdftex.def)             Requested size: 281.85587pt x 187.90858pt.
+[5 <./fotos/esquemaSetup.png> <./fotos/presionvapor.png>]
+<fotos/presionvapor2.png, id=162, 650.43pt x 433.62pt>
+File: fotos/presionvapor2.png Graphic file (type png)
+<use fotos/presionvapor2.png>
+Package pdftex.def Info: fotos/presionvapor2.png  used on input line 210.
+(pdftex.def)             Requested size: 352.31625pt x 234.87912pt.
+ [6
+
+ <./fotos/presionvapor2.png>]
+<fotos/Clausius-Claperyon.png, id=170, 650.43pt x 433.62pt>
+File: fotos/Clausius-Claperyon.png Graphic file (type png)
+<use fotos/Clausius-Claperyon.png>
+Package pdftex.def Info: fotos/Clausius-Claperyon.png  used on input line 221.
+(pdftex.def)             Requested size: 352.31625pt x 234.87912pt.
+ [7
+
+ <./fotos/Clausius-Claperyon.png>]
+<fotos/antoine.png, id=180, 650.43pt x 433.62pt>
+File: fotos/antoine.png Graphic file (type png)
+<use fotos/antoine.png>
+Package pdftex.def Info: fotos/antoine.png  used on input line 233.
+(pdftex.def)             Requested size: 258.36668pt x 172.24733pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--236
+
+ []
+
+<fotos/entalpies.png, id=181, 462.528pt x 346.896pt>
+File: fotos/entalpies.png Graphic file (type png)
+<use fotos/entalpies.png>
+Package pdftex.def Info: fotos/entalpies.png  used on input line 238.
+(pdftex.def)             Requested size: 187.89914pt x 140.92615pt.
+<fotos/temperatures.png, id=182, 462.528pt x 346.896pt>
+File: fotos/temperatures.png Graphic file (type png)
+<use fotos/temperatures.png>
+Package pdftex.def Info: fotos/temperatures.png  used on input line 238.
+(pdftex.def)             Requested size: 187.89914pt x 140.92615pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+[8 <./fotos/antoine.png> <./fotos/entalpies.png> <./fotos/temperatures.png>] [9]
+<fotos/torricelli.png, id=197, 105.2733pt x 228.855pt>
+File: fotos/torricelli.png Graphic file (type png)
+<use fotos/torricelli.png>
+Package pdftex.def Info: fotos/torricelli.png  used on input line 250.
+(pdftex.def)             Requested size: 211.40225pt x 256.08536pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
+
+ []
+
+
+Underfull \hbox (badness 4156) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 li^^Ra que va in-ven-tar el bar^^Rometre de mer-cu-ri, a
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 m^^Ses de de-mos-trar que era pos-si-ble tin-dre un re-
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 ci-pi-ent sen-se con-tin-gut al ex-trau-re l'ai-re del re-ci-
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 pi-ent. A la fi-gu-ra []8[] po-dem veu-re aquest ti-
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 pus de bar^^Rometre, que es el uti-lit-zat al la-bo-ra-to-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
+
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 Per a fer les me-su-res, en pri-mer lloc s'-ha de
+ []
+
+
+Underfull \hbox (badness 4479) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 com-pro-var que la pun-ta de la part in-fe-ri-or del
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 bar^^Rometre to-ca lleu-ge-ra-ment el mer-cu-ri. A con-ti-
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 nu-a-ci^^So, s'-ha d'en-ra-sar el me-nisc su-pe-ri-or del mer-
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 cu-ri amb el ca-ra-gol su-pe-ri-or , la pres-si^^So (en $[]$
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 de $[]$) es lle-gir^^Ra en l'es-ca-la de la dre-ta cor-res-po-
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 li la cor-rec-ci^^So cor-res-po-nent a la tem-pe-ra-tu-ra que
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 255--258
+\OT1/cmr/m/n/10 el fa-bri-cant ens fa-ci-li-ta amb la tau-la de la fi-gu-ra
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
+
+ []
+
+<fotos/tablaBarometro.png, id=200, 265.7127pt x 189.3474pt>
+File: fotos/tablaBarometro.png Graphic file (type png)
+<use fotos/tablaBarometro.png>
+Package pdftex.def Info: fotos/tablaBarometro.png  used on input line 262.
+(pdftex.def)             Requested size: 371.1033pt x 264.47202pt.
+[10 <./fotos/torricelli.png> <./fotos/tablaBarometro.png>]
+
+Package caption Warning: \label without proper reference on input line 269.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:dades' on page 11 undefined on input line 268.
+
+
+Overfull \hbox (1.88234pt too wide) detected at line 297
+\OML/cmm/m/it/10 ^^V [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^V [] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 K ^^V [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^V [] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 10[]m[] \OML/cmm/m/it/10 ^^V [] \OT1/cmr/m/n/10 = [][]
+ []
+
+[11
+
+]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 348.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 348.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) (./graficas4.py
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 41.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+) [12
+
+]
+Overfull \hbox (231.05211pt too wide) in paragraph at lines 79--80
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[13])
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
+
+ []
+
+[14] (./agua.aux)
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `agua.out' has not changed.
+(rerunfilecheck)             Checksum: 095080EB9110A7473188C094CEECF571;3082.
+ ) 
+Here is how much of TeX's memory you used:
+ 21601 strings out of 477923
+ 404566 string characters out of 5838289
+ 1967388 words of memory out of 5000000
+ 41331 multiletter control sequences out of 15000+600000
+ 519729 words of font info for 54 fonts, out of 8000000 for 9000
+ 40 hyphenation exceptions out of 8191
+ 75i,13n,117p,2162b,2738s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{https://www.liceoagb.es/quimigen/liqu7.html} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{https://webbook.nist.gov/chemistry/} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
+Output written on agua.pdf (15 pages, 3300650 bytes).
+PDF statistics:
+ 496 PDF objects out of 1000 (max. 8388607)
+ 413 compressed objects within 5 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+
