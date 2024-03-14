@@ -21,13 +21,85 @@
     \item In the potential energy function $U(\theta)=mgL(1-\cos\theta)$, make a Maclaurin expansion of $\cos\theta$ out to second order in $\theta$ so that the total energy function has one term quadratic in $\dot{\theta}$ and one term quadratic in $\theta$. Then write the new approximate expression for the total energy.
     \item Use the full energy method to derive the approximate governing differential equation $\ddot{\theta}=-\dfrac{g}{L}\theta$. As you know, that approximate governing differential equation has exact simple harmonic motion as its general solution.
   \end{enumerate}}
+
+  \vspace{0.4cm}
+  \noindent The full energy method uses the fact that the energy is known to remain constant in the system as time progresses to obtain the governing equation. This means that the temporal derivative of the energy function will be zero.
+  \[E=U+K=mgL(1-\cos\theta)+\dfrac{1}{2}mL\dot{\theta}=Lm\left(g-g\cos\theta+\dfrac{1}{2}\dot{\theta}\right)\]
+  \[\dfrac{dE}{dt}=0\Longleftrightarrow Lm\left(g\dot{\theta}\sin\theta+\dfrac{1}{2}\dot{\theta}\ddot{\theta}\right)=0\Longleftrightarrow \dfrac12\ddot{\theta}+g\sin\theta=0\Longleftrightarrow\boxed{\ddot{\theta}+2g\sin\theta=0}\]
+  Now, we will recall the expression for the series expansion of the cosine function centered at zero for all $x\in\bbR$:
+  \[\cos x=\sum_{k=0}^\infty (-1)^k\dfrac{x^{2k}}{(2k)!}=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\dots\]
+  If we know expand the cosine function using the expression:
+  \[U(\theta)=mgL(1-\cos\theta)\approx mgL(\dfrac{\theta^2}{2})\Longleftrightarrow E\approx mgL\dfrac{\theta^2}{2}+\dfrac{1}{2}mL\ddot{\theta}=\dfrac{Lm}{2}\left(g\theta^2+\ddot{\theta}\right)\]
+  \[\dfrac{dE}{dt}=0\Longleftrightarrow\dfrac{Lm}{2}(2g\theta\dot{\theta}+\dot{\theta}\ddot{\theta})=0\Longleftrightarrow\boxed{\ddot{\theta}+2g\theta=0}\]
+  We see that we get an expression which is very close to the first one we obtained. This expressions differ on the term that is not $\ddot{\theta}$. The approximation of the cosine expansion up to the second order effectively made the 'small angle approximation', because we obtained $\sin\theta\approx\theta$.
+
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pregunta{Consider the funciton $f(x)=(a+x)^2$, where $a$ is a constant, where $x<a$ and where $x$ and $a$ have the same units.\\
 
-\textbf{Make a binomial expansion of $f(x)=(a+x)^2$}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pregunta{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pregunta{}
+\textbf{Make a binomial expansion of $f(x)=(a+x)^2$ out to second order in $x$ (i.e., so that the highest power of $x$ that appears in the expansion $x^2$.)}\\
 
+Express the final form of your result as a series of three terms - the first should be a constant, the second should be proportional to ($\nicefrac{x}{a}$), and the third should be proportional to $x^2$.\\
+
+\textit{\underline{Hint:} To get $f(x)=(x+a)^2$ in a form that is ready for binomial expansion, rewrite it as $a^2$ times another function that is of the standard form that is on the left-hand side of the binomial expansion primary formula for the quiz we recently had.}}
+
+  \noindent The binomial series where $\alpha\in\bbC$ and $\abs{x}<1$ is:
+  \[(1+x)^\alpha=\sum_{k=0}^{\infty} \binom{\alpha}{k} = 1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^2+\dfrac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3+\dots\]
+  If we then rewrite $f$ such that:
+  \[f(x)=(a+x)^2=(a(1+\dfrac{x}{a}))^2=a^2(1+\dfrac{x}{a})^2\]
+  We can now expand the term $(1+\nicefrac{x}{a})^2$.
+  \[f(x)\approx a^2\left(1+\dfrac{2}{a}x+\dfrac{2(2-1)}{a^2\ 2!}x^2\right)\Longleftrightarrow\boxed{f(x)\approx a^2+2ax+x^2}\]
+  
+  \noindent Which is directly the expansion of the square of the function ($(x+a)^2=(x+a)(x+a)=a^2+2ax+x^2$). This happens because the expansion converges to that expression, if we try to calculate more terms, the expression $(\alpha-2)$ will appear in the numerator, nulling all the terms which have it, all the next ones. The series has converged to the function itself, it is no longer an approximation it is the funciton.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{Consider the function $f(x)=\dfrac{1}{\sqrt{1+x}}$, where $x<1$. Write out the first three terms of its binomias expansion.\\
+
+\textit{\underline{Advice:} Do not attempt to make a binomial series expansion in a denominator. Rather, write the given function $f(x)=(1+x)^{-\nicefrac{1}{2}}$ as a function to a negative power.}}
+  \begin{wrapfigure}[12]{r}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{fotos/Screenshot from 2024-02-20 11-20-39.png}
+  \end{wrapfigure}
+
+  \hspace{0cm}\\
+  \noindent The binomial series where $\alpha\in\bbC$ and $\abs{x}<1$ is:
+  \[(1+x)^\alpha=\sum_{k=0}^{\infty} \binom{\alpha}{k} = 1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^2+\dfrac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3+\dots\]
+  If we then rewrite $f$ such that:
+  \[f(x)=(1+x)^{-\nicefrac{1}{2}}\]
+  Then we can apply the expanison and get the first three terms:
+  \[f(x)\approx 1-\dfrac{x}{2}+\dfrac{-\nicefrac{1}{2}(-\nicefrac{1}{2}-1)}{2!}x^2\Longleftrightarrow\boxed{f(x)\approx 1-\dfrac{x}{2}+\dfrac{3}{8}x^2}\]
+  The red line is the approximation and the blue line the function $f$.
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{The potential energy profile in a hypotetical 'molecule' in which one 'atom' is infinitely heavy and the other has mass $m$ is given by $U(r)=\nicefrac{C}{r^5}-\nicefrac{D}{r^2}$ with $U$ in $eV$, $C=D=1$ ($C$ in $eV\cdot nm^5$ and $D$ in $eV\cdot nm^3$), where $r$ is the 'interatomic' separation in $nm$.
+\begin{enumerate}[label=\alph*.]
+  \item Without yet actually making a quantitative plot: Qualitatively, what do you expect that a plot of this $U(r)$ vs. $r$ would look like if sketched? Justify by explaining your logic.
+  \item Using a computer plotting routine, plot $U(r)$ vs. $r$ in the range $r=0.5 nm$ to $r=2.5 nm$, and $U(r)=-0.4 eV$ to $U(r)=+0.5 eV$, and compare to your answer to part \textit{a}.
+  \item Without refering to your plot, find the equilibrium interatomic separation.
+  \item In the small amplitude limit, find an approximate time for the lighter 'atom' to complete one full cycle of oscillation.
+\end{enumerate}}
+  \vspace{0.4cm}
+  \noindent The function $\nicefrac{1}{x^5}$ is an odd function of relatively high order which will have a steep asintote around $x=0$ and $y=0$, being its image positive on the interval $x\in[0,+\infty]$ and negative in the interval $x\in[-\infty,0]$.\\
+  
+  \noindent On the other side, the function $-\nicefrac{1}{x^2}$ will be even with the same asimptotes around $x=0$ and $y=0$, but less steep than before as the order is lower. Moreover the images will be always negative, as being the function even and having a asimptote around $y=0$ forces the function images to stay either always positive or always negative, evaluating any point will give a negative number and show that the function is always negative.\\
+
+  \noindent When both functions are added, they will have mostly the same form on the interval $x\in[-\infty,0]$ and then the addition will have a in between form. But on the interval $x\in[0,+\infty]$ the functions have different sign. However, as the first one has a higher order, it 'runs faster', it has a greater slope, forcing the final function to start positive, the sign of the first function. However, the first function is steeper, so then it will run faster to zero, making the function suddenly negative, and as $x$ approache infinity both functions will be closer and closer, creating a asimptote around $y=0$. 
+
+  \begin{wrapfigure}[12]{l}{0.4\textwidth}
+    \vspace{-0.2cm}
+    \centering
+    \includegraphics[width=\textwidth]{fotos/Screenshot from 2024-02-20 11-46-43.png}
+  \end{wrapfigure}
+
+  \hspace{0cm}\\
+  \noindent The plot behaves as expected. The limits of the plot are the discontinous box made of discontinous lines. We can see how in this range the function $\nicefrac{1}{x^5}$ goes faster to zero than $\nicefrac{1}{x^2}$. Since the first function has a greater slope, it goes faster to infinity, meaning that it will start from $+\infty$.
+  
+  \vspace{0.4cm}\noindent However, as expected, the latter function going slower also makes that the values it takes are higher in absolute value, making the function suddenly negative, which will approach zero as $x$ goes to infinity because both functions converge to zero.
+
+  \[\dfrac{dU}{dr}(r)=\dfrac{2r^3-5}{r^6}\Longleftrightarrow\dfrac{d^2U}{dr^2}(r)=-\dfrac{6r^3-30}{r^7}\hspace{1cm}\dfrac{dU}{dr}(r)=0\Longleftrightarrow r=\dfrac{\sqrt[3]{5}}{\sqrt[3]{2}}\approx 1.357\]
+  \[\dfrac{d^2U}{dr^2}(1.357)\approx1.771>0\Longrightarrow r=1.356\text{ is a minimum, and thus it is the equilibrium interatomic separation.}\]
+
+  \vspace{0.4cm}
+  \noindent In the small amplitude approximation, the frequency of the oscillation is: 
+  \[\dfrac{1}{T}=f=\dfrac{1}{2\pi}\omega=\dfrac{1}{2\pi}\sqrt{\nicefrac{U^{\prime\prime}(R)}{\mu}}=\dfrac{1}{2\pi}\sqrt{1.771\cdot\left(\dfrac{1}{+\infty}+\dfrac{1}{m}\right)}=\dfrac{1.331}{2\pi\sqrt{m}}\Longleftrightarrow \boxed{T=\dfrac{2\pi\sqrt{m}}{1.331}\approx 4.72\sqrt{m}\ s}\]
 \end{document}

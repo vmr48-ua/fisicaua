@@ -1,0 +1,78 @@
+\documentclass{report}
+\usepackage[english]{babel}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Waves\\Homework Set 4}}
+\author{Víctor Mira Ramírez}
+\date{\number\month -\number\day -\number\year}
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{Text, exercise 6.4, pages 6.23 and 6.24
+
+    \begin{enumerate}[label=\alph*.]
+        \item \textit{Derive} the governing differential equations for the “arbitrary configuration” (i.e., not for a normal mode). Show all steps of your reasoning.\\
+
+            \underline{\textit{Hint}}: Do that by finding, in the arbitrary configuration, the total force exerted by the springs on each mass.
+            Note, e.g., that only the left and center springs exert forces on the left mass
+        \item Use the “method of searching for normal coordinates” to derive:
+            \begin{enumerate}[label=\roman*.]
+                \item The normal coordinates. As part of this, be sure to prove that the coordinates that you so identify are indeed normal coordinates. Show all steps of your reasoning.
+                \item The mode frequencies. Show all steps of your reasoning.
+            \end{enumerate}
+        \item Derive the mode configurations: Using your results from part b, in particular, from the general solution for each of the two normal coordinates as a function of time, derive final results for each of $\psi_a(t)$ and $\psi_b(t)$ as explicit functions of time assuming unspecified initial conditions. Show all steps oof your reasoning.
+    \end{enumerate}
+    
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{
+    \begin{center}
+    \textbf{Normal Modes of Diatomic Molecule - Equal mass case}
+    \end{center}
+
+    As we saw in class some time ago, it is possible to predict the frequency for vibrational radiation from
+    diatomic molecules by mentally replacing the chemical bond by a spring whose equivalent spring constant
+    can, at least roughly, be deduced from only simple considerations. In this problem we will reconsider that
+    situation from the point of view of normal modes.\\
+
+    As a first step, we recall our model for the system. For this, refer to the figure below.\\
+
+    Let $\psi_a(t)$ and $\psi_b(t)$ be displacements from equilibrium. Note that both are measured positive to the right,
+    though either or both can be displaced to the left of its equilibrium position. Take $m_1 = m_2$.
+
+    \begin{enumerate} [label=\alph*.]
+        \item Before getting involved in math: Based on work we did a few weeks ago, what do you expect the
+        (nonzero) mode frequency to be? Justify your answer in a few or so, English sentences.
+        \item Derive the governing differential equations for the “arbitrary” configuration (\textit{i.e.}, not a normal mode) for
+        the system in the ($\psi_a,\psi_b$) coordinate system defined above. Show all steps of your derivation.\\
+
+        If you have doubts that you have arrived at the correct governing differential equations for the “arbitrary”
+        configuration, see me.
+        \item Now find the mode frequencies using the “method of finding normal coordinates.” \underline{Show all steps of the
+        work}. As part of your work/answers, the following must be included:
+            \begin{enumerate}[label=\roman*.]
+                \item Derive the normal coordinates (in terms of $\psi_a(t)$ and $\psi_b(t)$). Clearly identify them and prove that
+                they are indeed normal coordinates.
+                \item Show that the method of finding normal coordinates implies that one of the normal modes has “zero
+                frequency.” What sort of motion of the molecule does that imply? Why?
+                \item From the method of normal coordinates, is the other mode frequency what you expected?
+                What is the physical meaning of the higher frequency normal coordinate? (I.e., what kind of motion
+                internal to the molecule does it represent?)
+            \end{enumerate}
+    \end{enumerate}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{\textbf{Normal Modes of Diatomic Molecule via method of normal coordinates - Unequal mass case}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pregunta{}
+\end{document}
