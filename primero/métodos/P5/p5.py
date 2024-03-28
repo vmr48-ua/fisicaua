@@ -53,17 +53,21 @@ def fourier(fun,x,l,n): #(funcion,x,periodo(=2l),orden)
 # plt.legend(loc='best')
 
 def f3b(x):
-    if 0 <= x < np.pi:
-        return 1
-    elif -np.pi <= x < 0:
+    if -np.pi <= x < 0:
         return -1
+    elif 0 <= x < np.pi:
+        return 1
+    elif np.pi <= x < 2*np.pi:
+        return -1
+    elif 2*np.pi <= x < 3*np.pi:
+        return 1
     else:
         return 0
 
 f3b = np.vectorize(f3b)
-xa = np.linspace(-np.pi,np.pi,2000)
+xa = np.linspace(-np.pi,3*np.pi,20000)
 
-grado = 10
+grado = 127
 L = np.pi
 
 plt.figure()
