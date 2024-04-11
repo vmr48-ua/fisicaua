@@ -21,7 +21,7 @@ def main() -> None:
 
 
     part2 = np.array([7.6, 9.6, 11.1, 13.2]) -0.41#-0.41cm
-    diameter2 = [2.0, 3.0, 4.0, 5.0] #cm
+    diameter = np.array([2.0, 3.0, 4.0, 5.0]) #cm
     plt.scatter(2*part2,diameter/2)
     ...
     

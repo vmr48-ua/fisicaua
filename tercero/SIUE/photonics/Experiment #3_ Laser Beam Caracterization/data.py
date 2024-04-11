@@ -1,16 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as scis
-from statistics import linear_regression
 from scipy.integrate import quad
-import math as mth
+from statistics import linear_regression
 
 wavelength = 632.8e-9
 
 ##########
 # TASK 1 #
 ##########
-diameter = np.array([17.5,  16.5,  15.5,  14.5,  13.5,  12.5,  11.5,  10.5,  9.5,   8.5,   7.5,   6.5,   5.5,   4.5,   3.5,   2.5,   1.5]) #mm
+""" diameter = np.array([17.5,  16.5,  15.5,  14.5,  13.5,  12.5,  11.5,  10.5,  9.5,   8.5,   7.5,   6.5,   5.5,   4.5,   3.5,   2.5,   1.5]) #mm
 power =    np.array([4.036, 4.019, 3.997, 3.948, 3.843, 3.721, 3.561, 3.367, 3.103, 2.757, 2.395, 2.042, 1.570, 1.162, 0.780, 0.468, 0.221]) #mW
 
 diameter = 10**(-3)*diameter
@@ -21,7 +20,7 @@ def log(x):
 log=np.vectorize(log)
 
 # x=np.linspace(0,diameter[0]/2,1000)
-linearization=np.sqrt(-0.5*log(1-power/(power[0]+3e-5)))
+linearization=np.sqrt(-0.5*log(1-power/(power[0]+3e-5))) """
 
 # plt.figure(figsize=(10,8))
 # plt.title('Linearization')
@@ -32,10 +31,10 @@ linearization=np.sqrt(-0.5*log(1-power/(power[0]+3e-5)))
 # plt.plot(x,np.polyval(P,x),c='r',label='$y=178.55x \ \ R^2=0.99879$')
 # plt.legend(loc='best')
 
-result = scis.linregress(diameter/2,linearization)
-print(result.slope, (result.rvalue)**2)
-w = 1/result.slope
-print("w=",round(w,5))
+# result = scis.linregress(diameter/2,linearization)
+# print(result.slope, (result.rvalue)**2)
+# w = 1/result.slope
+# print("w=",round(w,5))
 
 # def power_trans(a):  
 #     return power[0]*(1-np.exp(-2*(a/w)**2)) 
@@ -97,37 +96,35 @@ print("w=",round(w,5))
 ##########
 # TASK 3 #
 ##########
+""" 
+plt.figure(figsize=(10,8))
+plt.title('Beam radius vs Distance')
+plt.xlabel('Distance (m)')
+plt.ylabel('Radii (m)')
 
-# plt.figure(figsize=(10,8))
-# plt.title('Beam radius vs Distance')
-# plt.xlabel('Distance (m)')
-# plt.ylabel('Radii (m)')
+P_0 = 4.06 #mW      # we check the diameter for intensity =4.06*(1-np.exp(-2))=3.51 mW
+iris_diameter = 0.425 #cm
+distance_0 = 23. #cm
+d_0_i = 23./2.54 #inch
 
-# P_0 = 4.06 #mW      # we check the diameter for intensity =4.06*(1-np.exp(-2))=3.51 mW
-# iris_diameter = 0.425 #cm
-# distance_0 = 23. #cm
-# d_0_i = 23./2.54 #inch
+distance = np.arange(d_0_i,d_0_i+9,1)#inch relative to the lens frame increments of 1 inch
+distance = distance * 2.54 # to cm
+distance = distance - 5.2 + 0.7 # - distance from frame to razorblade + distance from irisframe to iris
 
-# distance = np.arange(d_0_i,d_0_i+9,1)#inch relative to the lens frame increments of 1 inch
-# distance = distance * 2.54 # to cm
-# distance = distance - 5.2 + 0.7 # - distance from frame to razorblade + distance from irisframe to iris
+iris_diam = np.array([0.425, 0.5, 0.525, 0.585, 0.6, 0.67, 0.701, 0.75, 0.805, 0.855]) # cm
+radii = (iris_diam/2)*10**(-2)
+distance = distance*10**(-2)
 
-# iris_diam = np.array([0.425, 0.5, 0.525, 0.585, 0.6, 0.67, 0.701, 0.75, 0.805, 0.855]) # cm
-# radii = (iris_diam/2)*10**(-2)
-# distance = distance*10**(-2)
+P = np.polyfit(distance,radii,1)
+plt.plot(distance,np.polyval(P,distance),c='r',label='$y=0.009x\ \ \ R^2=0.99323$')
+plt.scatter(distance,radii,marker='x',label='data')
+plt.legend(loc='best')
 
-# print(distance)
-# print(radii)
-
-# P = np.polyfit(distance,radii,1)
-# plt.plot(distance,np.polyval(P,distance),c='r',label='$y=0.0009x\ \ \ R^2=0.99323$')
-# plt.scatter(distance,radii,marker='x',label='data')
-# plt.legend(loc='best')
-
-# result = scis.linregress(distance,radii)
-# print(result.slope, (result.rvalue)**2)
-# theta = wavelength / (np.pi * result.slope) # 0.0002368321704047417
-
+result = scis.linregress(distance,radii)
+print(result.slope, (result.rvalue)**2)
+theta = wavelength / (np.pi * result.slope) # 0.0002368321704047417
+print(theta)
+plt.show() """
 
 ##########
 # TASK 5 #
@@ -155,6 +152,7 @@ dy = dy/(0.25*np.max(dy))
 
 
 def P_normalized(u):
+    # import math as mth
     # def erf(s):
     #     return mth.erf(s)
     def erf(s):
@@ -229,14 +227,14 @@ plt.show()
 #    TASK 7
 ###
 
-# DeltaZ = 0.0254
-# w_1 = 0.003750
-# w_2 = 0.004025
+""" DeltaZ = 0.0254
+w_1 = 0.003750
+w_2 = 0.004025
 
-# num = wavelength * DeltaZ**2 * (w_1**2 +w_2**2 + 2*np.sqrt(w_1**2*w_2**2-((wavelength*DeltaZ)/np.pi)**2))
-# den = np.pi * (w_1**4 + w_2**4 - 2*w_1**2*w_2**2 + 4*((wavelength*DeltaZ)/np.pi)**2)
+num = wavelength * DeltaZ**2 * (w_1**2 +w_2**2 + 2*np.sqrt(w_1**2*w_2**2-((wavelength*DeltaZ)/np.pi)**2))
+den = np.pi * (w_1**4 + w_2**4 - 2*w_1**2*w_2**2 + 4*((wavelength*DeltaZ)/np.pi)**2)
 
-# z_0 = num/den
-# w_0 = np.sqrt(z_0*wavelength/np.pi)
+z_0 = num/den
+w_0 = np.sqrt(z_0*wavelength/np.pi)
 
-# print(z_0,w_0)
+print(z_0,w_0)  """
