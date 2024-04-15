@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import scipy.stats as scis
 from scipy.integrate import quad
 from statistics import linear_regression
+from scipy.special import erfinv
 
 wavelength = 632.8e-9
 
@@ -179,7 +180,7 @@ y = np.delete(y,-1)
 xo = np.linspace(x[0],x[-1],1000)
 
 plt.scatter(x,y,marker='x',label='data')
-plt.scatter([15.5e-5,16.3e-5,17.1e-5],[0.8*P_0,0.5*P_0,0.2*P_0],c='r',label='20,50,80% total power')
+plt.scatter([15.5e-5,16.3e-5,17.1e-5],np.array([0.8*P_0,0.5*P_0,0.2*P_0]),c='r',label='20,50,80% total power')
 
 plt.plot(xo,P_0*P_normalized(xo),label='data fit: erf-approximation')
 plt.plot(xo,P_0*P_normalized_func(xo),label='data fit: formula-approximation')
@@ -195,8 +196,21 @@ plt.axvline(17.1e-5,linestyle='--',alpha=0.5)
 plt.legend(loc='best')
 
 plt.figure(figsize=(10,8))
+plt.scatter(x,-erfinv(2*P_normalized(x)-1),marker='x')
+P = np.polyfit(x,-erfinv(2*P_normalized(x)-1),1)
+plt.plot(xo,np.polyval(P,xo),label=np.poly1d(P),c='orange')
+plt.legend(loc='best')
+
+plt.figure(figsize=(10,8))
+plt.scatter(x,np.log(1/P_normalized(x)-1),marker='x')
+P = np.polyfit(x,np.log(1/P_normalized(x)-1),5)
+plt.plot(xo,np.polyval(P,xo),label=np.poly1d(P),c='orange')
+plt.legend(loc='best')
+print(np.poly1d(P))
+
+plt.figure(figsize=(10,8))
 def deriv_fit(u):
-    return 1/(w*np.sqrt(2))*(np.exp(-(((u-x_0)/w))**2))
+    return 1/(w*np.sqrt(2))*(np.exp(-((u-x_0)/w)**2))
 plt.scatter(x[2:14],dy,marker='x',label='data derivative')
 plt.plot(xo,deriv_fit(xo),label='data derivative fit')
 plt.legend(loc='best')
