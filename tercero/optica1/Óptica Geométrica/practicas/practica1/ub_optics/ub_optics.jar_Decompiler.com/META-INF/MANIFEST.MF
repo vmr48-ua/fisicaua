@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Built-By: Artur Carnicer
-Built-On: 2006-11-08T18:45:00
-Main-Class: org.opensourcephysics.tools.Launcher
-
