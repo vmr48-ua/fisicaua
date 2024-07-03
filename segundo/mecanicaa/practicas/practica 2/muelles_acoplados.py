@@ -13,7 +13,7 @@ from mpl_toolkits.axes_grid1 import host_subplot
 
 
 fig=plt.figure()
-fig.set_dpi(100)
+fig.set_dpi(400)
 #fig.set_size_inches(7,6.5)
 
 
@@ -21,11 +21,11 @@ fig.set_dpi(100)
 # Muelles acoplados
 
 m=1.0      # Valor de las masas
-k=1.0      # Constante elástica de los muelles externos
-kp=0.05    # Constante elástica del muelle que une ambas masas
-tf=400.0    #tiempo de simulacion
+k=100.     # Constante elástica de los muelles externos
+kp=0.1  # Constante elástica del muelle que une ambas masas
+tf=200.0    #tiempo de simulacion
 mi=1.0/m   # Inversa de la masa
-
+g=9.81
 # Posiciones de equilibrio de las dos masa
 d1=1.0
 d2=2.0
@@ -48,7 +48,7 @@ nt=10000  #numero de intervalos de tiempo
 dt=tf/nt
 
 # Valores iniciales
-z1_0=0.2  # Desplazamiento inicial masa 1
+z1_0=0.5  # Desplazamiento inicial masa 1
 z2_0=-0.0  # Desplazamiento inicila masa 2
 z3_0=0.0  # Velocidad inicial masa 1
 z4_0=0.0  # Velocidad inicial masa 2
@@ -66,6 +66,46 @@ z=odeint(double_pendulum,z0,t,args=(par,),atol=abserr, rtol=relerr)
 
 plt.close('all')
 
+Eg1 = m * g * z[:, 0]  
+Eg2 = m * g * z[:, 1] 
+Eg1,Eg2=0,0
+
+
+T_1 = 1/2*m*z[:,2]**2 
+T_2 = 1/2*m*z[:,3]**2 
+T = T_1 + T_2
+U_1 = 1/2*k*z[:,0]**2
+U_2 = 1/2*k*z[:,1]**2
+U_c = 1/2*kp*(z[:,1] - z[:,0])**2
+U = U_1 + U_2 + U_c
+E_1 = T_1 + U_1 - Eg1
+E_2 = T_2 + U_2 - Eg2
+Eg = - Eg1 - Eg2
+E = T + U - Eg
+
+plt.figure()
+plt.plot(t, E_1, label='Energía total $m_1$')
+plt.plot(t, E_2, label='Energía total $m_2$')
+plt.plot(t, U_c, label='Energía potencial entre masas')
+plt.plot(t, E,   label='Energía mecánica')
+#plt.plot(t, Eg, c='black', label='Energía gravitatoria')
+plt.legend(loc='best')
+plt.xlabel('t(s)', fontsize=12)
+plt.ylabel('E(J)', fontsize=12)
+plt.xlim(0,tf)
+plt.title('Energía en función del tiempo')
+plt.show()
+
+plt.figure()
+plt.plot(t, T_1 + T_2 , c='orange', label='Energía cinética')
+plt.plot(t, U_1 + U_2 , c='green', label='Energía potencial')
+plt.plot(t, E, c='blue', label='Energía mecánica')
+plt.legend(loc='best')
+plt.xlabel('t(s)', fontsize=12)
+plt.ylabel('E(J)', fontsize=12)
+plt.xlim(0,tf)
+plt.title('Energía en función del tiempo')
+plt.show()
 
 #######################
 #Generate sine wave
@@ -104,7 +144,7 @@ ax1.set_ylabel('x1(m)', color='b', fontsize=15)
 ax2.set_ylabel('x2(m)', color='r', fontsize=15)
 ax1.tick_params('y', colors='b')
 ax2.tick_params('y', colors='r')
-ax1.set_xlim(xmin=0.,xmax=260.0) #limites del eje x
+ax1.set_xlim(xmin=0., xmax=tf) #limites del eje x
 line1, = ax1.plot(t[:],z[:,0], linewidth=2, color='b')
 line2, = ax2.plot(t[:],z[:,1], linewidth=2, color='r')
 

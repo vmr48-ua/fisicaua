@@ -15,10 +15,13 @@ L1=0.1      #longitud del péndulo 1 en m
 L2=0.1      #longitud del pendulo 2 en m
 m1=1.0      #masa del pendulo 1 en kg
 m2=1.0      #masa del pendulo 2 en kg
-g=9.81      #aceleracion de la gravedad en m/s^2
-tf=10.0     #tiempo de simulacion en s
+g=9.8      #aceleracion de la gravedad en m/s^2
+tf=100.0     #tiempo de simulacion en s
 m12=m1+m2
 
+# Valores iniciales del péndulo doble
+z0=[0.0, 0.0, 120.*np.pi/180., 120.*np.pi/180] #Valores iniciales [theta._1.0,theta._2.0,theta_1.0, theta_2.0]
+Z0=[0.0, 0.0, 120.00001*np.pi/180., 120.00001*np.pi/180] #Valores iniciales [theta._1.0,theta._2.0,theta_1.0, theta_2.0]
 
 par=[L1,L2,m1,m2,m12,g]
 
@@ -43,13 +46,8 @@ def double_pendulum(z,t,par):
 
 # Llamada a odeint que resuelve las ecuaciones de movimiento
 
-nt=5000  #numero de intervalos de tiempo
+nt=20000  #numero de intervalos de tiempo
 dt=tf/nt
-
-# Valores iniciales del péndulo doble
-
-z0=[120.*np.pi/180., 120.*np.pi/180, 0.0, 0.0] #Valores iniciales [theta._1.0,theta._2.0,theta_1.0, theta_2.0]
-Z0=[120.00001*np.pi/180., 120.00001*np.pi/180, 0.0, 0.0] #Valores iniciales [theta._1.0,theta._2.0,theta_1.0, theta_2.0]
  
 t=np.linspace(0,tf,nt)
 abserr = 1.0e-8
@@ -98,6 +96,22 @@ Line2, = ax4.plot(Z[:,1],Z[:,3], linewidth=2, color='m')
 
 # Aqui se hace una animacion del movimiento del péndulo doble en
 # el espacio real (x,y)
+
+x41 = L1*np.sin(z[:,0])
+y41 = -L1*np.cos(z[:,0])
+x42 = x41 + L2*np.sin(z[:,1])
+y42 = y41 - L2*np.cos(z[:,1])
+Llong=(L1+L2)*1.1
+
+plt.figure()
+plt.axes(xlim=(-Llong,Llong), ylim=(-Llong,Llong))
+plt.plot(x41,y41,c='c',label='Péndulo 1',antialiased=True,lw=1)
+plt.plot(x42,y42,c='m',label='Péndulo 2',antialiased=True,lw=1)
+plt.xlabel('x(m)')
+plt.ylabel('y(m)')
+plt.title('Trayectoria del péndulo en el espacio real (x,y)')
+plt.legend(loc='best')
+plt.show()
 
 Llong=(L1+L2)*1.1
 
@@ -177,7 +191,7 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, 
                                init_func=init, 
                                frames=nt,
-                               interval=1, #blit=True
+                               interval=0, blit=True
                                )
 #writervideo = animation.FFMpegWriter(fps=60) 
 #anim.save('increasingStraightLine.mp4', writer=writervideo) 
