@@ -59,4 +59,5 @@ for i in range(0,len(z[:,0])):
 
 plt.figure()
 plt.plot(t[:],Ec)
+plt.show()
    
