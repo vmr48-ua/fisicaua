@@ -6,7 +6,9 @@ import time
 import random
 import matplotlib.pyplot as plt
 from scipy import sparse
+from mpl_toolkits.mplot3d import Axes3D
 
+# Funciones Auxiliares de los ejercicios
 def TridiagonalSolver(d, o, u, r) -> np.ndarray:
     n = len(d)
     D = np.min(np.abs(d))
@@ -48,7 +50,230 @@ def TridiagonalRandom_NonSingular(n, m=-10, M=10) -> np.ndarray:
         # if np.linalg.det(A) != 0:
         #     return d,o,u,r,A # sólo si es no singular (det != 0)
         return d,o,u,r,A 
+
+def EulerForward(x0,v0,t,dt) -> np.ndarray:
+    '''
+    \\begin{cases}
+        x_{n+1} = x_n + h y_n
+        y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
+    \end{cases}
+    '''
+
+    x,v = np.zeros(len(t)),np.zeros(len(t))
+    x[0],v[0] = x0,v0
+    x[1] = v0*dt + x0
     
+    for i in range(1,len(t)-1): # desde 1 porque hago x[i-1]
+        x[i+1] = x[i]*(2-alpha*dt - (omega**2)*(dt**2)) + x[i-1]*(alpha*dt-1)
+        v[i] = v[i-1] - dt*(omega**2*x[i-1] + alpha*v[i-1])
+    
+    plt.subplot(2,1,1)
+    plt.plot(t, x, label='Posición (x)')
+    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+    plt.title('Euler Forward')
+    plt.xlabel('t')
+    plt.ylabel('x, v')
+    plt.grid()
+    
+    return x,v
+
+def EulerForwardMatrix(x0, v0, t, dt) -> np.ndarray:
+    """ 
+    -   z_{n+1} = \mathcal{A} z_n
+    
+    -   \\begin{cases}
+            x_{n+1} = x_n + h y_n
+            y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
+        \end{cases}
+        
+    \implies
+    A = ((1,dt),(-dt \omega^2, 1 - dt \alpha))
+    """
+    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+    z[0, 0], z[1, 0] = x0, v0 
+
+    # Manual funciona mejor (hay que cambiar z en el for)
+    # A = np.array([[0         , 1     ],
+    #               [-omega**2 , -alpha]])
+    A = np.array([[1, dt], [-omega**2 * dt, 1 - alpha * dt]])
+
+    for i in range(1, len(t)):
+        # Manual
+        # z[:, i] = np.dot(np.eye(len(A)) + dt*A, z[:, i - 1])
+        z[:, i] = np.dot(A, z[:, i - 1])
+
+    x, v = z[0, :], z[1, :]
+
+    plt.subplot(2,1,2)
+    plt.plot(t, x, label='Posición (x)')
+    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+    plt.title('Euler Forward - Matricial')
+    plt.xlabel('t')
+    plt.ylabel('x, v')
+    plt.legend()
+    plt.grid()
+    
+    return x, v
+
+def EulerBackward(x0,v0,t,dt) -> np.ndarray:
+    '''
+    Despejamos y_{n+1} de la segunda ecuación y sustituimos en la primera
+    \begin{cases}
+        x_{n+1} = x_n + h y_{n+1}
+        y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1})
+    \end{cases}    
+    
+    Despejando
+    y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1}) \Longleftrightarrow
+    y_{n+1} = y_n + h (- \omega^2 x_{n+1} - \alpha y_{n+1}) \Longleftrightarrow
+    y_{n+1} (1 + h \alpha) = y_n - h \omega^2 x_{n+1} \Longleftrightarrow
+    y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+    
+    Sustituyendo
+    x_{n+1} = x_n + h y_{n+1} \Longleftrightarrow
+    x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+    
+    Finalmente
+    \begin{cases}
+        x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+        y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+    \end{cases}
+    '''
+    
+    x,v = np.zeros(len(t)),np.zeros(len(t))
+    x[0],v[0] = x0,v0
+    
+    for i in range(1,len(t)):
+        v[i] = (v[i-1] - dt*omega**2 *x[i-1])/(1 + dt*alpha)
+        x[i] = x[i-1] + dt*v[i] # (v[i-1] + dt*alpha*x[i-1])/(1 + dt*alpha)
+        
+    plt.subplot(2,1,1)
+    plt.plot(t, x, label='Posición (x)')
+    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+    plt.title('Euler Backward')
+    plt.xlabel('t')
+    plt.ylabel('x, v')
+    plt.grid()
+    
+    return x,v
+
+def EulerBackwardMatrix(x0, v0, t, dt) -> np.ndarray:
+    """ 
+    -   z_{n+1} = \mathcal{A} z_n
+    
+    -   \begin{cases}
+            x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+            y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+        \end{cases}
+        
+    \implies
+    A = ((1 - \frac{h^2 \omega^2}{1+h \alpha}, \frac{h}{1+h\alpha}),
+         (   -\frac{h   \omega^2}{1+h \alpha}, \frac{1}{1+h \alpha}))
+    """
+    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+    z[0, 0], z[1, 0] = x0, v0
+
+    # A = np.array([[1-(dt**2 * omega**2)/(1 + dt*alpha),   dt/(1 + dt*alpha)],
+    #              [-1 * (dt * omega**2)/(1 + dt*alpha),    1/(1 + dt*alpha)]])
+    A = la.inv(np.eye(2)-dt*np.array([[0,1],[-omega**2,-alpha]]))
+
+    for i in range(1, len(t)):
+        z[:, i] = np.dot(A, z[:, i - 1])
+
+    x, v = z[0, :], z[1, :]
+
+    plt.subplot(2,1,2)
+    plt.plot(t, x, label='Posición (x)')
+    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+    plt.title('Euler Backward - Matricial')
+    plt.xlabel('t')
+    plt.ylabel('x, v')
+    plt.legend()
+    plt.grid()
+    
+    return x, v
+
+def CrankNicholson(x0,v0,t,dt) -> np.ndarray:
+    '''
+    Hace la media entre las derivadas en el punto n y n+1
+    \begin{cases}
+        x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1})
+        y_{n+1} = y_n - \frac{h}{2} ( (\omega^2 x_n + \alpha y_n) + (\omega^2 x_{n+1} + \alpha y_{n+1}) )
+    \end{cases}
+    
+    Despejamos y_{n+1}
+    y_{n+1} = y_n - \frac{h}{2} ( \omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} + \alpha y_{n+1} ) \Longleftrightarrow
+    y_{n+1} (1 + \frac{h}{2} \alpha) = y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} \Longleftrightarrow
+    y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+    
+    Sustituimos y_{n+1} en x_{n+1} y despejamos x_{n+1}
+    x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1}) \Longleftrightarrow
+    x_{n+1} = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
+    x_{n+1} (1 + (\frac{h}{2} \omega)^2) = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
+    x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
+
+    Finalmente
+    \begin{cases}
+        x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
+        y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+    \end{cases}
+    '''
+    
+    x,v = np.zeros(len(t)),np.zeros(len(t))
+    x[0],v[0] = x0,v0
+    
+    for i in range(1,len(t)):
+        x[i] = (x[i-1] + dt/2 * (v[i-1] + (v[i-1] - dt/2*(omega**2*x[i-1] + alpha*v[i-1]))/(1 + alpha*dt/2))) / (1 + (dt*omega/2)**2)
+        v[i] = (v[i-1] - dt/2 * (omega**2*(x[i-1] + x[i]) + alpha*v[i-1])) / (1 + dt*alpha/2)
+        
+    plt.subplot(2,1,1)
+    plt.plot(t, x, label='Posición (x)')
+    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+    plt.title('Crank-Nicholson')
+    plt.xlabel('t')
+    plt.ylabel('x, v')
+    plt.grid()
+    
+    return x,v
+
+def CrankNicholsonMatrix(x0, v0, t, dt) -> np.ndarray:
+    """ 
+    -   z_{n+1} = \mathcal{A} z_n
+    
+    -   \begin{cases}
+            x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
+            y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+        \end{cases}
+    """
+    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+    z[0, 0], z[1, 0] = x0, v0
+
+    # A = np.array([[1              , -dt/2           ],
+    #               [dt/2 * omega**2, 1 + dt/2 * alpha]])
+    
+    # B = np.array([[1               , dt/2            ],
+    #               [-dt/2 * omega**2, 1 - dt/2 * alpha]])
+    # A_inv = la.inv(A)
+    A = np.dot(la.inv(np.eye(2)-(dt/2)*np.array([[0,1],[-omega**2,-alpha]])),np.eye(2)+(dt/2)*np.array([[0,1],[-omega**2,-alpha]]))
+
+    for i in range(1, len(t)):
+        z[:, i] = np.dot(A,z[:,i-1])
+        #z[:, i] = np.dot(A_inv, np.dot(B, z[:, i - 1]))  
+
+    x, v = z[0, :], z[1, :]
+
+    plt.subplot(2,1,2)
+    plt.plot(t, x, label='Posición (x)')
+    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+    plt.title('Crank-Nicholson - Matricial')
+    plt.xlabel('t')
+    plt.ylabel('x, v')
+    plt.legend()
+    plt.grid()
+    
+    return x, v
+
+# Ejercicios
 def ejercicioI() -> None:    
     """
     EJEMPLO DE MATRIZ Y CÁLCULO TEMPORAL
@@ -208,7 +433,7 @@ def ejercicioI() -> None:
 
 def ejercicioII() -> None:
 
-    """
+    '''
     Notación Matricial
       i →
     j  ________
@@ -218,41 +443,43 @@ def ejercicioII() -> None:
        ________
 
     POISSON  
-        Resolución de la Ecuación de Poisson en el intervalo [0,\pi] con f(0)=0 y f'(\pi)=-\pi^2
+        Resolución de la Ecuación de Poisson en el intervalo [0,\\pi] con f(0)=0 y f'(\\pi)=-\\pi^2
                                 f''(x) = (2 - x^2) * sin(x) + 4x cos(x) = g(x)
-    """
+    '''
     def g(x):
-        return 2-x**2 * sin(x) + 4*x*cos(x)
+        return (2-x**2) * sin(x) + 4*x*cos(x)
+    def solution(x):             # solución analítica que cumple las condiciones de contorno
+        return x**2 * sin(x)
     
-    N = 100                      # N representa el número de puntos interiores de la malla
+    N = 100000                   # N representa el número de puntos de la malla
     h = pi/(N+1)                 # N+1 es el número de subintervalos
-    xo = np.linspace(0,pi,N+2)   # Dimensión N+2 porque N + las 2 condiciones de frontera
+    xo = np.linspace(0,pi,N)     # Dimensión N+2 porque N + las 2 condiciones de frontera
 
     d = [-2 for _ in range(N)]                # Diagonal principal
     u = [1  for _ in range(N-1)]              # Diagonal inferior
     o = [1  for _ in range(N-1)]              # Diagonal superior
-    r = [h**2 * g(xi) for xi in xo[1:N+1]]    # h^2 * f''(x) vector de términos independientes
-
+    r = [h**2 * g(xi) for xi in xo]           # h^2 * f''(x) vector de términos independientes, 
+                                              # (h^2*g(xo) sin los extremos)
     # Condiciones de contorno
-    r[-1] = h * -pi**2 # h sin ir al cuadrado porque es la primera derivada
-    
-    # A = sparse.diags([d,o,u],[0,1,-1],shape=(N,N)).toarray() # [0,1,-1] indica [diagonal, d. inferior, d. superior]
-    
-    f_interior = TridiagonalSolver(d, o, u, r)
-    f = np.zeros(N+2)
-    f[1:N+1] = f_interior
-    f[0] = 0                    # Redundante porque f ya está llena de ceros
-    f[-1] = f[-2] - h * pi**2   # f'(pi)= -pi^2 =(f(pi)-f(x_N))/h ==> f(pi) = f(x_N) - h*pi^2 
+    d[0] = 1
+    o[0] = 0
+    r[0] = 0
+
+    d[-1] = 1
+    u[-1] = 1
+    r[-1] = -pi**2 * h
+
+    f = TridiagonalSolver(d, o, u, r)
 
     #f''(x) = (2 - x^2) * sin(x) + 4x cos(x)
     plt.figure()
-    plt.title('Gráfica de $\\frac{d^2f}{dx^2} = (2-x^2)\cdot \sin x + 4x\cdot\cos x$')
+    plt.title('Gráfica de $\\frac{d^2f}{dx^2} = (2-x^2)\\cdot \\sin x + 4x\\cdot\\cos x$')
     plt.grid()
     plt.plot(xo,f,label='$f(x)$')
+    plt.plot(xo,solution(xo),label='$g(x)=x^2\\cdot\\sin x$',linestyle='--')
     plt.legend(loc='best')
-    plt.show()
-
-    """
+    
+    '''
     LAPLACE
         Resolución de la Ecuación de Laplace en 2D en un cuadrado de lado L=1 con 
         \phi(x=0) = \phi(x=1) = \phi(y=0) = 0   y   \phi(y=1) = x(1-x) (Dirichlet)
@@ -261,13 +488,155 @@ def ejercicioII() -> None:
         - scipy.sparse.linalg
         - Gauss-Seidel
         - Sobrerelajación
-    """
+    '''
+
+    L = 1
+    N = 100
+    x = np.linspace(0, L, N+2)  # Coordenadas en x (incluyendo las fronteras)
+    y = np.linspace(0, L, N+2)  # Coordenadas en y (incluyendo las fronteras)
+
+    d = [-2 for _ in range(N)]     # Diagonal principal
+    u = [1  for _ in range(N-1)]   # Diagonal inferior
+    o = [1  for _ in range(N-1)]   # Diagonal superior
+    r = np.zeros(N * N)
+    I = np.eye(N)
+
+    laplaciano1D = sparse.diags([d,u,o],[0,-1,1])
+    laplaciano2D = sparse.kron(I, laplaciano1D) + sparse.kron(laplaciano1D, I)
+
+    phi = np.zeros((N+2, N+2)) # se cumple \phi(x=0) = \phi(x=1) = \phi(y=0) = 0
+    phi[-1, :] = x * (1 - x)
+
+    # Contorno en y=1 (phi(y=1) = x(1-x))
+    # for i in range(N):
+    #     r[i + N*(N-1)] = -phi[-1,i+1]  # Fila a y=1
+    r[N * (N - 1):N * (N - 1) + N] = -phi[-1, 1:N + 1]
+
+    phi_interior = sparse.linalg.spsolve(laplaciano2D, r)
+    phi[1:N+1, 1:N+1] = phi_interior.reshape((N, N))
+
+    plt.figure()
+    plt.imshow(phi, origin='lower', cmap='inferno')
+    plt.colorbar(label="$\\phi(x, y)$")
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title("Solución de la ecuación de Laplace en 2D")
+
+    # X, Y = np.meshgrid(x, y)
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, projection='3d')
+    # ax.plot_surface(X, Y, phi, cmap='inferno')
+    # ax.set_xlabel('$x$')
+    # ax.set_ylabel('$y$')
+    # ax.set_zlabel('$\\phi(x, y)$')
+    # ax.set_title('Solución de la ecuación de Laplace en 2D - Representación 3D')
+
+    tol = 10e-6
+    
+    plt.show()
 
     return None
 
+def ejercicioIII() -> None: 
+    '''
+    Oscilador Armónico Amortiguado: 
+    \ddot{x} = -\omega^2 x - \alpha \dot{x} \implies
+    \begin{cases}
+        \dot{x} = y \\
+        \dot{y} = -\omega^2 x - \alpha y
+    \end{cases}
+    '''
+    def solucion_analitica(t, x0, v0, omega, alpha) -> np.ndarray:
+        if alpha**2 < 4*omega**2: # Subamortiguado
+            omega_prima = np.sqrt(omega**2 - (alpha**2) / 4)
+            C1 = x0
+            C2 = (v0 + alpha * x0 / 2) / omega_prima
+            x_analitico = np.exp(-alpha * t / 2) * (C1 * np.cos(omega_prima * t) + C2 * np.sin(omega_prima * t))
+            
+        elif alpha**2 == 4*omega**2: # Críticamente amortiguado
+            C1 = x0
+            C2 = v0 + alpha/2 * x0
+            x_analitico = (C1 + C2 * t) * np.exp(-alpha * t / 2)
+            
+        elif alpha**2 > 4*omega**2: # Sobreamortiguado
+            gamma = np.sqrt((alpha**2) / 4 - omega**2)
+            C1 = (x0 / 2) + (v0 + (alpha / 2) * x0) / (2 * gamma)
+            C2 = (x0 / 2) - (v0 + (alpha / 2) * x0) / (2 * gamma)
+            x_analitico = np.exp(-alpha * t / 2) * (C1 * np.exp(gamma * t) + C2 * np.exp(-gamma * t))
+        
+        return x_analitico
+    def error(x_numerico, x_analitico) -> float:
+        return np.sqrt(np.mean((x_numerico - x_analitico)**2))
+    
+    global omega 
+    global alpha 
+    omega = 1.
+    alpha = 0.2    
+    dt = 0.1     # h
+    
+    x0 = 1.
+    v0 = 0.4      # y0
+    t_max = 50
+    t = np.arange(0,t_max,dt)
+    
+    x_analitica = solucion_analitica(t, x0, v0, omega, alpha)
+    
+    # Comparación con la solución analítica
+    plt.figure(figsize=(12, 12))
+    plt.suptitle('   ${\\bf OSCILADOR\\ ARMÓNICO\\ AMORTIGUADO}$')
+    x_forward, _ = EulerForward(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+    x_forward_matrix, _ = EulerForwardMatrix(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+    
+    plt.figure(figsize=(12, 12))
+    plt.suptitle('   ${\\bf OSCILADOR\\ ARMÓNICO\\ AMORTIGUADO}$')   
+    x_backward, _ = EulerBackward(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+    x_backward_matrix, _ = EulerBackwardMatrix(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+    
+    plt.figure(figsize=(12, 12))
+    plt.suptitle('   ${\\bf OSCILADOR\\ ARMÓNICO\\ AMORTIGUADO}$')
+    x_CrankNich, _ = CrankNicholson(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+    x_CrankNich_matrix, _ = CrankNicholsonMatrix(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+
+    # Gráfica de los errores
+    err_EuFw = error(x_forward, x_analitica)
+    err_EuFw_M = error(x_forward_matrix, x_analitica)
+    err_EuBw = error(x_backward, x_analitica)
+    err_EuBw_M = error(x_backward_matrix, x_analitica)
+    err_CrNi = error(x_CrankNich, x_analitica)
+    err_CrNi_M = error(x_CrankNich_matrix, x_analitica)
+    
+    plt.figure(figsize=(12, 6))
+    plt.title('Distancia a la solución analítica')
+    plt.xlabel('t')
+    plt.grid()
+    
+    plt.plot(t, np.abs(x_analitica-x_forward), label='Euler Forwards, Error medio = {}'.format(np.round(err_EuFw,5)))
+    plt.plot(t, np.abs(x_analitica-x_forward_matrix), label='Euler Forwards Matricial, Error medio = {}'.format(np.round(err_EuFw_M,5)))
+    plt.plot(t, np.abs(x_analitica-x_backward), label='Euler Backwards, Error medio = {}'.format(np.round(err_EuBw,5)))
+    plt.plot(t, np.abs(x_analitica-x_backward_matrix), label='Euler Backwards Matricial, Error medio = {}'.format(np.round(err_EuBw_M,5)))
+    plt.plot(t, np.abs(x_analitica-x_CrankNich), label='Crank Nicholson, Error medio = {}'.format(np.round(err_CrNi,5)))
+    plt.plot(t, np.abs(x_analitica-x_CrankNich_matrix), label='Crank Nicholson Matricial, Error medio = {}'.format(np.round(err_CrNi_M,5)))
+        
+    plt.legend()
+    plt.show()
+    
+# Main
 def main() -> None:
     #ejercicioI()
-    ejercicioII()
+    #ejercicioII()
+    ejercicioIII()
 
 if __name__ == '__main__':
     main()
