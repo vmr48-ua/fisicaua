@@ -1,12 +1,23 @@
 import numpy as np
 import numpy.linalg as la
-from numpy import sin, cos, pi
+from numpy import sin, cos, pi, exp
 
 import time
 import random
 import matplotlib.pyplot as plt
-from scipy import sparse
+from matplotlib.animation import FuncAnimation
+from matplotlib.patches import FancyArrowPatch
 from mpl_toolkits.mplot3d import Axes3D
+from scipy import sparse
+
+'''
+EJERCICIOS FÍSICA COMPUTACIONAL - BLOQUE I
+INTRODUCCIÓN A LA MODELIZACIÓN EN FÍSICA
+
+Víctor Mira Ramírez
+74528754Z
+vmr48@alu.ua.es
+'''
 
 # Funciones Auxiliares de los ejercicios
 def TridiagonalSolver(d, o, u, r) -> np.ndarray:
@@ -77,7 +88,7 @@ def EulerForward(x0,v0,t,dt) -> np.ndarray:
     
     return x,v
 
-def EulerForwardMatrix(x0, v0, t, dt) -> np.ndarray:
+def EulerForwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
     """ 
     -   z_{n+1} = \mathcal{A} z_n
     
@@ -92,26 +103,27 @@ def EulerForwardMatrix(x0, v0, t, dt) -> np.ndarray:
     z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
     z[0, 0], z[1, 0] = x0, v0 
 
-    # Manual funciona mejor (hay que cambiar z en el for)
-    # A = np.array([[0         , 1     ],
-    #               [-omega**2 , -alpha]])
-    A = np.array([[1, dt], [-omega**2 * dt, 1 - alpha * dt]])
+    # Funciona mejor (hay que cambiar z en el for)
+    # A = np.array([[1, dt], [-omega**2 * dt, 1 - alpha * dt]])
+
+    A = np.array([[0         , 1     ],
+                  [-omega**2 , -alpha]])
 
     for i in range(1, len(t)):
-        # Manual
-        # z[:, i] = np.dot(np.eye(len(A)) + dt*A, z[:, i - 1])
-        z[:, i] = np.dot(A, z[:, i - 1])
+        z[:, i] = np.dot(np.eye(len(A)) + dt*A, z[:, i - 1])
+        # z[:, i] = np.dot(A, z[:, i - 1])
 
     x, v = z[0, :], z[1, :]
 
-    plt.subplot(2,1,2)
-    plt.plot(t, x, label='Posición (x)')
-    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-    plt.title('Euler Forward - Matricial')
-    plt.xlabel('t')
-    plt.ylabel('x, v')
-    plt.legend()
-    plt.grid()
+    if plot:
+        plt.subplot(2,1,2)
+        plt.plot(t, x, label='Posición (x)')
+        plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+        plt.title('Euler Forward - Matricial')
+        plt.xlabel('t')
+        plt.ylabel('x, v')
+        plt.legend()
+        plt.grid()
     
     return x, v
 
@@ -157,7 +169,7 @@ def EulerBackward(x0,v0,t,dt) -> np.ndarray:
     
     return x,v
 
-def EulerBackwardMatrix(x0, v0, t, dt) -> np.ndarray:
+def EulerBackwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
     """ 
     -   z_{n+1} = \mathcal{A} z_n
     
@@ -173,23 +185,25 @@ def EulerBackwardMatrix(x0, v0, t, dt) -> np.ndarray:
     z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
     z[0, 0], z[1, 0] = x0, v0
 
-    # A = np.array([[1-(dt**2 * omega**2)/(1 + dt*alpha),   dt/(1 + dt*alpha)],
+    # B = np.array([[1-(dt**2 * omega**2)/(1 + dt*alpha),   dt/(1 + dt*alpha)],
     #              [-1 * (dt * omega**2)/(1 + dt*alpha),    1/(1 + dt*alpha)]])
-    A = la.inv(np.eye(2)-dt*np.array([[0,1],[-omega**2,-alpha]]))
+    A = [[0,1],[-omega**2,-alpha]]
+    B = la.inv(np.eye(2)-dt*np.array(A))
 
     for i in range(1, len(t)):
-        z[:, i] = np.dot(A, z[:, i - 1])
+        z[:, i] = np.dot(B, z[:, i - 1])
 
     x, v = z[0, :], z[1, :]
-
-    plt.subplot(2,1,2)
-    plt.plot(t, x, label='Posición (x)')
-    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-    plt.title('Euler Backward - Matricial')
-    plt.xlabel('t')
-    plt.ylabel('x, v')
-    plt.legend()
-    plt.grid()
+    
+    if plot:
+        plt.subplot(2,1,2)
+        plt.plot(t, x, label='Posición (x)')
+        plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+        plt.title('Euler Backward - Matricial')
+        plt.xlabel('t')
+        plt.ylabel('x, v')
+        plt.legend()
+        plt.grid()
     
     return x, v
 
@@ -236,41 +250,59 @@ def CrankNicholson(x0,v0,t,dt) -> np.ndarray:
     
     return x,v
 
-def CrankNicholsonMatrix(x0, v0, t, dt) -> np.ndarray:
+def CrankNicholsonMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
     """ 
     -   z_{n+1} = \mathcal{A} z_n
     
-    -   \begin{cases}
-            x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
-            y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+    -   \\begin{cases}
+            x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \omega)^2}
+            y_{n+1} = \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n + \omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
         \end{cases}
     """
-    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+    z = np.zeros((2, len(t))) # 2 filas (x, v), columnas = len(t)
     z[0, 0], z[1, 0] = x0, v0
-
-    # A = np.array([[1              , -dt/2           ],
-    #               [dt/2 * omega**2, 1 + dt/2 * alpha]])
     
-    # B = np.array([[1               , dt/2            ],
-    #               [-dt/2 * omega**2, 1 - dt/2 * alpha]])
-    # A_inv = la.inv(A)
-    A = np.dot(la.inv(np.eye(2)-(dt/2)*np.array([[0,1],[-omega**2,-alpha]])),np.eye(2)+(dt/2)*np.array([[0,1],[-omega**2,-alpha]]))
+    A = np.array([[0,1],[-omega**2,-alpha]])
+    B = np.dot(la.inv(np.eye(2)-(dt/2)*A),np.eye(2)+(dt/2)*A)
 
     for i in range(1, len(t)):
-        z[:, i] = np.dot(A,z[:,i-1])
-        #z[:, i] = np.dot(A_inv, np.dot(B, z[:, i - 1]))  
+        z[:, i] = np.dot(B,z[:,i-1])
 
     x, v = z[0, :], z[1, :]
 
-    plt.subplot(2,1,2)
-    plt.plot(t, x, label='Posición (x)')
-    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-    plt.title('Crank-Nicholson - Matricial')
-    plt.xlabel('t')
-    plt.ylabel('x, v')
-    plt.legend()
-    plt.grid()
+    if plot:
+        plt.subplot(2,1,2)
+        plt.plot(t, x, label='Posición (x)')
+        plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+        plt.title('Crank-Nicholson - Matricial')
+        plt.xlabel('t')
+        plt.ylabel('x, v')
+        plt.legend()
+        plt.grid()
     
+    return x, v
+
+def RungeKuttaIVMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+    z[0, 0], z[1, 0] = x0, v0
+    A = np.array([[0,1],[-omega**2,-alpha]])
+
+    for i in range(1, len(t)):
+        k1 = np.dot(A, z[:, i - 1])
+        k2 = np.dot(A, z[:, i - 1] + dt / 2 * k1)
+        k3 = np.dot(A, z[:, i - 1] + dt / 2 * k2)
+        k4 = np.dot(A, z[:, i - 1] + dt * k3)
+        z[:, i] = z[:, i - 1] + dt / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+
+    x, v = z[0, :], z[1, :]
+    
+    if plot:
+        plt.plot(t, x, label='Posición (x)')
+        plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+        plt.xlabel('t')
+        plt.ylabel('x, v')
+        plt.legend()
+        plt.grid()
     return x, v
 
 # Ejercicios
@@ -569,13 +601,13 @@ def ejercicioIII() -> None:
         return np.sqrt(np.mean((x_numerico - x_analitico)**2))
     
     global omega 
-    global alpha 
-    omega = 1.
-    alpha = 0.2    
-    dt = 0.1     # h
+    global alpha
+    omega = 1.5
+    alpha = 0.15    
+    dt = 0.01     # h
     
     x0 = 1.
-    v0 = 0.4      # y0
+    v0 = 0.2      # y0
     t_max = 50
     t = np.arange(0,t_max,dt)
     
@@ -608,7 +640,13 @@ def ejercicioIII() -> None:
     x_CrankNich_matrix, _ = CrankNicholsonMatrix(x0,v0,t,dt)
     plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
     plt.legend(loc='best')
-
+    
+    plt.figure(figsize=(12, 6))
+    plt.title('   ${\\bf OSCILADOR\\ ARMÓNICO\\ AMORTIGUADO}$ \n RungeKutta IV - Matricial')
+    x_RungeKuttaIV, _ = RungeKuttaIVMatrix(x0,v0,t,dt)
+    plt.plot(t, x_analitica, label='Solución analítica', linestyle='--')
+    plt.legend(loc='best')
+    
     # Gráfica de los errores
     err_EuFw = error(x_forward, x_analitica)
     err_EuFw_M = error(x_forward_matrix, x_analitica)
@@ -616,6 +654,7 @@ def ejercicioIII() -> None:
     err_EuBw_M = error(x_backward_matrix, x_analitica)
     err_CrNi = error(x_CrankNich, x_analitica)
     err_CrNi_M = error(x_CrankNich_matrix, x_analitica)
+    err_RuKIV = error(x_RungeKuttaIV, x_analitica)
     
     plt.figure(figsize=(12, 6))
     plt.title('Distancia a la solución analítica')
@@ -628,15 +667,451 @@ def ejercicioIII() -> None:
     plt.plot(t, np.abs(x_analitica-x_backward_matrix), label='Euler Backwards Matricial, Error medio = {}'.format(np.round(err_EuBw_M,5)))
     plt.plot(t, np.abs(x_analitica-x_CrankNich), label='Crank Nicholson, Error medio = {}'.format(np.round(err_CrNi,5)))
     plt.plot(t, np.abs(x_analitica-x_CrankNich_matrix), label='Crank Nicholson Matricial, Error medio = {}'.format(np.round(err_CrNi_M,5)))
-        
+    plt.plot(t, np.abs(x_analitica-x_CrankNich_matrix), label='Runge Kutta Matricial, Error medio = {}'.format(np.round(err_RuKIV,5)))
+    plt.plot(t, np.abs(x_analitica-x_RungeKuttaIV), label='Runge Kutta IV, Error medio = {}'.format(np.round(err_RuKIV,5)))
+    
     plt.legend()
     plt.show()
     
+    plt.figure()
+    # Comparación del error con dt
+    err_EuFw_M_list, err_EuBw_M_list, err_CrNi_M_list, err_RuKIV_list = [], [], [], []
+    dt_list = np.logspace(0, -3.5, num=20)
+    for dt in dt_list:
+        print(f"dt: {dt}")
+        t = np.arange(0,t_max,dt)
+    
+        x_analitica = solucion_analitica(t, x0, v0, omega, alpha)
+        
+        x_forward_matrix, _ = EulerForwardMatrix(x0,v0,t,dt,plot=False)
+        x_backward_matrix, _ = EulerBackwardMatrix(x0,v0,t,dt,plot=False)
+        x_CrankNich_matrix, _ = CrankNicholsonMatrix(x0,v0,t,dt,plot=False)
+        x_RungeKuttaIV, _ = RungeKuttaIVMatrix(x0,v0,t,dt,plot=False)
+        
+        err_EuFw_M_list.append(error(x_forward_matrix, x_analitica))
+        err_EuBw_M_list.append(error(x_backward_matrix, x_analitica))
+        err_CrNi_M_list.append(error(x_CrankNich_matrix, x_analitica))
+        err_RuKIV_list.append(error(x_RungeKuttaIV, x_analitica))
+        
+    plt.scatter(dt_list,err_EuFw_M_list,label='Euler Forwards Matricial', marker='x')
+    plt.scatter(dt_list,err_EuBw_M_list,label='Euler Backwards Matricial', marker='x')
+    plt.scatter(dt_list,err_CrNi_M_list,label='Crank Nicholson Matricial', marker='x')
+    plt.scatter(dt_list,err_RuKIV_list,label='Runge Kutta IV Matricial', marker='x')
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.xlabel('dt')
+    plt.ylabel('Error medio')   
+    plt.legend()
+    plt.grid()
+    
+    plt.show()
+  
+def ejercicioIV() -> None:
+    '''
+    \\frac{\partial T}{\partial t}(x,t) = D \\frac{\partial^2 T}{\partial x^2}(x,t)
+    en [-1,1] con T(x,0)=100e^{-20x^2} y condiciones de contorno de Dirichlet
+    
+    Usamos diferencias finitas
+    Derivada espacial: $\\frac{\partial^2 T}{\partial x^2} = \\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}$
+                        \partial^2 T/ \partial x^2 = (T[i+1,j] - 2T[i,j] + T[i-1,j])/dx^2
+    Derivada temporal: \\frac{\partial T}{\partial t} = \\frac{T(x,t+dt) - T(x,t)}{dt}
+                        \partial T/ \partial t = (T[i,j+1] - T[i,j])/dt
+    \implies T[i,j+1] = T[i,j] + D dt/dx^2 (T[i+1,j] - 2T[i,j] + T[i-1,j])
+    
+    Condición de estabilidad de Fourier:
+            D dt/dx^2 <= 1/2
+    '''
+    
+    D = 0.1      # coeficiente de difusión
+    L = 1.       # longitud del dominio
+    dx = 0.01    # diferencial espacial
+    dt = 0.0001  # diferencial temporal
+    cte = D*dt/dx**2
+    t_max = 2. * L # para que el plot sea cuadrado    
+    
+    x = np.arange(-L, L, dx)
+    t = np.arange(0, t_max, dt)
+    
+    ###########
+    # PARTE I #
+    ###########
+    
+    T = np.zeros((len(x),len(t)))
+    
+    if cte >= 0.5: # condición de estabilidad
+        raise Exception('Condición de estabilidad no satisfecha, prueba a bajar dt')
+    
+    T[:,0] = 100*exp(-20*x**2)     # condición inicial
+    T[0,:], T[-1,:] = 0, 0         # condiciones de frontera
+    
+    for j in range(len(t)-1):
+        for i in range(1,len(x)-1): # sin los extremos
+            T[i,j+1] = T[i,j] + cte*(T[i+1,j] - 2*T[i,j] + T[i-1,j])
+        
+    # Plot espacio/tiempo/magnitud
+    plt.figure()
+    plt.title('Evolución temporal de T(x) con difusión')
+    plt.imshow(T, extent=[0,len(t)*dt,-L,L] ,cmap='inferno', origin='lower')
+    plt.colorbar(label='Magnitud de T')
+    plt.xlabel('Tiempo (t)')
+    plt.ylabel('Espacio (x)')
+    
+    # Animación
+    fig1, ax1 = plt.subplots()
+    plt.title('Evolución temporal de T(x) con difusión')
+    ax1.set_xlim(-L, L)            # Límite en el espacio  (x)
+    ax1.set_ylim(0, np.max(T)*1.1) # Límite en la magnitud (T) (0,+10% del max)
+    
+    line1, = ax1.plot(x, T[:, 0], label='T(x,t)')
+    time_text = ax1.text(0.82, 0.85, '', transform=ax1.transAxes, fontsize=10)
+
+    def animate1(j):
+        line1.set_ydata(T[:, j])
+        time_text.set_text('t = {}s'.format(np.round(j*dt, 2)))
+        ax1.legend()
+        return line1, ax1
+    
+    anim1 = FuncAnimation(fig1, animate1, frames=range(0,len(t),80), interval=1)
+    plt.xlabel('Espacio (x)')
+    plt.ylabel('Magnitud (T)')
+    
+    plt.show()
+        
+    ############
+    # PARTE II #
+    ############
+    '''
+        \\frac{\partial T}{\partial t}(x,t) = D \\frac{\partial^2 T}{\partial x^2}(x,t)
+        en [-1,1] con T(x,0)=100e^{-20x^2} y condiciones de contorno de Dirichlet excepto
+        en x=1 donde se impone \\frac{dT}{dx} = -T
+        
+        \\frac{\partial T}{\partial t} \equiv \\frac{T(x,t+dt) - T(x,t)}{dt}
+        \\frac{\partial^2 T}{\partial x^2} \equiv \\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}
+        
+        La EDO queda entonces como
+        \\frac{T(x,t+dt) - T(x,t)}{dt} = \\frac12 D ((\\frac{T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt)}{dx^2}) +
+                                                    + (\\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}))          \impiies
+        T(x,t+dt) - T(x,t) = \\frac{D dt}{2 dx^2} (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt) + T(x+dx,t) - 2T(x,t) + T(x-dx,t)) \implies
+        T(x,t+dt) - T(x,t) =              \\alpha (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt) + T(x+dx,t) - 2T(x,t) + T(x-dx,t)) 
+        
+        Agrupamos T(x,t+dt) y T(x+dx,t+dt) a la izquierda y T(x,t) y T(x+dx,t) a la derecha
+        T(x,t+dt) - \\alpha (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt)) = T(x,t) + \\alpha (T(x+dx,t) - 2T(x,t) + T(x-dx,t)) \implies
+        -\\alpha T(x-dx,t+dt) + (1+2\\alpha )T(x,t+dt) - \\alpha T(x+dx,t+dt) = \\alpha T(x-dx,t) + (1-2\\alpha )T(x,t) + \\alpha T(x+dx,t)
+    '''
+    
+    T = np.zeros((len(x),len(t)))
+    T[:,0] = 100*exp(-20*x**2)     # condición inicial
+    T[0,:] = 0                     # condición de frontera x=-1
+    
+    d = [1+2*cte for _ in range(len(x))]
+    u = [-cte    for _ in range(len(x))]
+    o = [-cte    for _ in range(len(x))]
+    A = sparse.diags([d,u,o],[0,-1,1]).toarray()
+
+    A[0, 0] = 1                     # T(0,t) = 0
+    A[-1, -2] = -1                # dT/dx = -T en x=1
+    A[-1, -1] = 1+dx    
+
+    A_inv = la.inv(A)
+    b = np.zeros(len(T))
+
+    for j in range(len(t)-1):
+        b[1:-1] = T[1:-1,j] + cte / 2 * (T[2:,j] - 2*T[1:-1,j] + T[:-2,j]) # punto + cte/2 (siguiente - punto + anterior)
+        T[:,j+1] = np.dot(A_inv, b)
+    
+    # Plot espacio/tiempo/magnitud
+    plt.figure()
+    plt.title('Evolución temporal de T(x) con difusión, \n Método de Crank-Nicholson')
+    plt.imshow(T, extent=[0,len(t)*dt,-L,L] ,cmap='inferno', origin='lower')
+    plt.colorbar(label='Magnitud de T')
+    plt.xlabel('Tiempo (t)')
+    plt.ylabel('Espacio (x)')
+    
+    # Animación
+    fig2, ax2 = plt.subplots()
+    plt.title('Evolución temporal de T(x) con difusión, \n Método de Crank-Nicholson')
+    ax2.set_xlim(-L, L)            # Límite en el espacio  (x)
+    ax2.set_ylim(0, np.max(T)*1.1) # Límite en la magnitud (T) (0,+10% del max)
+    
+    #print(T[:,34])
+    
+    line2, = ax2.plot(x, T[:, 0], label='T(x,t)')
+    time_text = ax2.text(0.82, 0.85, '', transform=ax2.transAxes, fontsize=10)
+    
+    def animate2(j):
+        line2.set_ydata(T[:, j])
+        time_text.set_text('t = {}s'.format(np.round(j*dt, 2)))
+        ax2.legend()
+        return line2, ax2
+    
+    anim2 = FuncAnimation(fig2, animate2, frames=range(0,len(t),80), interval=1)
+    plt.xlabel('Espacio (x)')
+    plt.ylabel('Magnitud (T)')
+    
+    plt.show()
+    
+    #####################################################################################
+    # Apartado B                                                                        #
+    #####################################################################################
+    D = 0.1      # coeficiente de difusión
+    L = 1.       # longitud del dominio
+    dx = 0.03    # diferenciales espaciales
+    dy = 0.03  
+    dt = 0.002   # diferencial temporal
+    cte = D*dt/dx**2
+    t_max = 1. * L  
+    
+    if cte >= 0.5: # condición de estabilidad
+        raise Exception('Condición de estabilidad no satisfecha, prueba a bajar dt')
+    
+    x, y = np.arange(-L, L, dx), np.arange(-L, L, dy)
+    t = np.arange(0, t_max, dt)
+    
+    X, Y = np.meshgrid(x, y)               # para poder operar en la condición inicial
+    T = np.zeros((len(x),len(y),len(t)))  
+    T[:,:,0] = 100*exp(-20 * (X**2 + Y**2))
+    
+    d = [-4 for _ in range(len(x)**2)]
+    u = [1  for _ in range(len(x)**2-1)]
+    o = [1  for _ in range(len(x)**2-1)]
+    v = [1  for _ in range(len(x)**2-len(x))]
+    
+    Laplaciano2D = sparse.diags([d,u,o,v,v],[0,-1,1,-len(x),len(x)],shape=(len(x)**2,len(x)**2))
+    A1 = np.eye(len(x)**2)-cte*Laplaciano2D.toarray()
+    A2 = np.eye(len(x)**2)+cte*Laplaciano2D.toarray()
+    
+    # CONTORNO
+    for i in range(len(x)):
+        zeros = np.zeros(len(x)**2)
+        n = len(x)
+        
+        A1[i,:], A2[i,:] = zeros.copy(), zeros.copy()
+        A1[i,i] = 1
+        
+        A1[i*len(x),:], A2[i*len(x),:] = zeros.copy(), zeros.copy()
+        A1[i*len(x),i*len(x)] = 1
+        
+        A1[-i-1,:], A2[-i-1,:] = zeros.copy(), zeros.copy()
+        A1[-i-1,-i-1] = 1
+        
+        # Condición \frac{\partial T}{\partial x}(x=1) = 0
+        A1[i*n + n-1, :], A2[i*n + n-1, :] = zeros.copy(), zeros.copy()
+        A1[i*n + n-1, i*n + n-1] = 1
+        A1[i*n + n-1, i*n + n-2] = -1
+    
+    A = np.dot(la.inv(A1),A2) # A2/A1
+    for k in range(len(t)-1):
+        print(np.round(k/(len(t)-1)*100,1),'%',end='\r')
+        T[:,:,k+1] = np.dot(A,T[:,:,k].reshape(len(x)**2)).reshape(len(x),len(x))
+
+    fig3, ax3 = plt.subplots()
+    plt.title('Evolución temporal de T(x,y) con difusión, \n Método de Crank-Nicholson')
+    ax3.set_xlim(-L, L)            # Límite en el espacio  (x)
+    ax3.set_ylim(-L, L)            # Límite en el espacio  (y)
+    
+    # Hay que transponer para que los ejes estén bien
+    line3 = ax3.imshow(T[:, :, 0].T, extent=[-L, L, -L, L], cmap='inferno', origin='lower')
+    time_text = ax3.text(0.8, 0.93, '', transform=ax3.transAxes, color='white', fontsize=10)
+    fig3.colorbar(line3, label='Magnitud de T')
+    
+    def animate3(j):
+        line3.set_data(T[:, :, j].T) # Hay que transponer para que los ejes coincidan
+        time_text.set_text('t = {}s'.format(np.round(j*dt,2)))
+        return line3, ax3
+    
+    anim3 = FuncAnimation(fig3, animate3, frames=range(0,len(t),10), interval=1)
+    plt.xlabel('Espacio (x)')
+    plt.ylabel('Espacio (y)')
+    plt.show()
+    
+                    ##############################
+    ################# EXTRA: Advección constante #####################
+                    ##############################
+                    
+    D = 0.1       # Coeficiente de difusión
+    L = 1.        # Longitud del dominio
+    dx = 0.03     # Diferenciales espaciales
+    dy = 0.03  
+    dt = 0.002    # Diferencial temporal
+    vx = 0.4     # Velocidad de advección en x
+    vy = -0.8     # Velocidad de advección en y
+    cte = D * dt / dx**2
+    t_max = 1. * L  
+
+    if cte >= 0.5:
+        raise Exception('Condición de estabilidad no satisfecha, prueba a bajar dt')
+
+    x, y = np.arange(-L, L, dx), np.arange(-L, L, dy)
+    t = np.arange(0, t_max, dt)
+
+    X, Y = np.meshgrid(x, y)
+    T = np.zeros((len(x), len(y), len(t)))
+    # T[:,:,0] = 100*np.exp(-20*(X**2+Y**2))
+    T[:,:,0] = 100*np.exp(-10*(X**2+Y**2)) # si le bajamos la "fuerza" a la exponencial se ve mejor
+
+    d = [-4 for _ in range(len(x)**2)]
+    u = [1  for _ in range(len(x)**2-1)]
+    o = [1  for _ in range(len(x)**2-1)]
+    v = [1  for _ in range(len(x)**2-len(x))]
+
+    Laplaciano2D = sparse.diags([d, u, o, v, v], [0, -1, 1, -n, n], shape=(n**2, n**2))
+    A1 = np.eye(len(x)**2)-cte*Laplaciano2D.toarray()
+    A2 = np.eye(len(x)**2)+cte*Laplaciano2D.toarray()
+
+    adveccion_x = vx*dt / (2*dx)
+    adveccion_y = vy*dt / (2*dy)
+
+    # T = 0 en los bordes
+    for i in range(len(x)):
+        n = len(x)
+        zeros = np.zeros(n**2)
+        
+        A1[i, :], A2[i, :] = zeros.copy(), zeros.copy()  # x = -L
+        A1[i, i] = 1
+
+        A1[i*n, :], A2[i*n, :] = zeros.copy(), zeros.copy() # x = L
+        A1[i*n, i*n] = 1
+
+        A1[-i -1, :], A2[-i -1, :] = zeros.copy(), zeros.copy() # y = -L
+        A1[-i -1, -i -1] = 1
+
+        A1[i*n + n-1, :], A2[i*n + n-1, :] = zeros.copy(), zeros.copy() # y = L
+        A1[i*n + n-1, i*n + n-1] = 1
+
+    A = np.dot(la.inv(A1), A2)
+
+    for k in range(len(t) - 1):
+        print(np.round(k/(len(t)-1)*100,1),'%',end='\r')
+        T_next = np.dot(A, T[:,:,k].reshape(n**2)).reshape(n, n)
+        T_next[1:-1, 1:-1] -= adveccion_x * (T[2:, 1:-1, k] - T[:-2, 1:-1, k])
+        T_next[1:-1, 1:-1] -= adveccion_y * (T[1:-1, 2:, k] - T[1:-1, :-2, k])
+        
+        T[:,:,k+1] = T_next
+
+    fig4, ax4 = plt.subplots()
+    plt.title('Evolución temporal de T(x,y) con advección y difusión, \n Método de Crank-Nicholson')
+    ax4.set_xlim(-L, L)
+    ax4.set_ylim(-L, L)  
+    
+    flecha = FancyArrowPatch((0, 0), (vx, vy), color='white', lw=0.6, arrowstyle='-|>', mutation_scale=20)
+    ax4.add_patch(flecha)
+    ax4.legend([flecha], ['Vector de Advección: {}$\\hat{{x}}$ + {}$\\hat{{y}}$'.format(np.round(vx, 2), np.round(vy, 2))], loc='upper right')
+
+    line4 = ax4.imshow(T[:,:,0].T, extent=[-L, L, -L, L], cmap='inferno', origin='lower')
+    time_text = ax4.text(0.8, 0.85, '', transform=ax4.transAxes, color='white', fontsize=10)
+    fig4.colorbar(line4, label='Magnitud de T')
+
+    def animate4(j):
+        line4.set_data(T[:,:,j].T)
+        time_text.set_text('t = {}s'.format(np.round(j*dt, 2)))
+        return line4, ax4
+
+    anim4 = FuncAnimation(fig4, animate4, frames=range(0, len(t), 10), interval=1)
+    plt.xlabel('Espacio (x)')
+    plt.ylabel('Espacio (y)')
+
+    plt.show()
+    
+                    ############################################
+    ################# EXTRA: Advección dependiente del espacio #####################
+                    ############################################
+    
+    def vx(x, y):
+        return sin(pi*x)*cos(pi*y)
+    def vy(x, y):
+        return -cos(pi*x)*sin(pi*y)
+
+    D = 0.1       # Coeficiente de difusión
+    L = 1.        # Longitud del dominio
+    dx = 0.03     # Diferenciales espaciales
+    dy = 0.03  
+    dt = 0.002    # Diferencial temporal
+    cte = D * dt / dx**2
+    t_max = 1. * L  
+
+    if cte >= 0.5:
+        raise Exception('Condición de estabilidad no satisfecha, prueba a bajar dt')
+
+    x, y = np.arange(-L, L, dx), np.arange(-L, L, dy)
+    t = np.arange(0, t_max, dt)
+
+    X, Y = np.meshgrid(x, y)
+    T = np.zeros((len(x), len(y), len(t)))
+    T[:,:,0] = 100 * np.exp(-10 * (X**2 + Y**2)) # Gaussiana más "floja"
+
+    n = len(x)
+    d = [-4 for _ in range(len(x)**2)]
+    u = [1  for _ in range(len(x)**2-1)]
+    o = [1  for _ in range(len(x)**2-1)]
+    v = [1  for _ in range(len(x)**2-len(x))]
+
+    Laplaciano2D = sparse.diags([d, u, o, v, v], [0, -1, 1, -n, n], shape=(n**2, n**2))
+    A1 = np.eye(len(x)**2) - cte * Laplaciano2D.toarray()
+    A2 = np.eye(len(x)**2) + cte * Laplaciano2D.toarray()
+
+    for i in range(len(x)):
+        n = len(x)
+        zeros = np.zeros(n**2)
+        
+        A1[i, :], A2[i, :] = zeros.copy(), zeros.copy()  # x = -L
+        A1[i, i] = 1
+
+        A1[i*n, :], A2[i*n, :] = zeros.copy(), zeros.copy()  # x = L
+        A1[i*n, i*n] = 1
+
+        A1[-i -1, :], A2[-i -1, :] = zeros.copy(), zeros.copy()  # y = -L
+        A1[-i -1, -i -1] = 1
+
+        A1[i*n + n-1, :], A2[i*n + n-1, :] = zeros.copy(), zeros.copy()  # y = L
+        A1[i*n + n-1, i*n + n-1] = 1
+
+    A = np.dot(la.inv(A1), A2)
+
+    for k in range(len(t) - 1):
+        print(np.round(k / (len(t) - 1) * 100, 1), '%', end='\r')
+        T_next = np.dot(A, T[:,:,k].reshape(n**2)).reshape(n, n)
+        
+        adveccion_x_local = np.array([[vx(x[i], y[j]) for j in range(1, n-1)] for i in range(1, n-1)])
+        T_next[1:-1, 1:-1] -= (adveccion_x_local * dt / (2 * dx)) * (T[2:, 1:-1, k] - T[:-2, 1:-1, k])
+        
+        adveccion_y_local = np.array([[vy(x[i], y[j]) for j in range(1, n-1)] for i in range(1, n-1)])
+        T_next[1:-1, 1:-1] -= (adveccion_y_local * dt / (2 * dy)) * (T[1:-1, 2:, k] - T[1:-1, :-2, k])
+
+        T[:,:,k+1] = T_next
+
+    fig5, ax5 = plt.subplots()
+    plt.title('Evolución temporal de T(x,y) con advección variable y difusión, \n Método de Crank-Nicholson')
+    ax5.set_xlim(-L, L)
+    ax5.set_ylim(-L, L)
+
+    line5 = ax5.imshow(T[:,:,0].T, extent=[-L, L, -L, L], cmap='inferno', origin='lower')
+    time_text = ax5.text(0.8, 0.85, '', transform=ax4.transAxes, color='white', fontsize=10)
+    fig5.colorbar(line5, label='Magnitud de T')
+
+    def animate5(j):
+        line5.set_data(T[:,:,j].T)
+        time_text.set_text('t = {}s'.format(np.round(j * dt, 2)))
+        return line5, ax5
+
+    anim5 = FuncAnimation(fig5, animate5, frames=range(0, len(t), 10), interval=1)
+    plt.xlabel('Espacio (x)')
+    plt.ylabel('Espacio (y)')
+
+    plt.show()
+
+    return None
+
+def ejercicioV() -> None:
+    ...
+    return None
+
 # Main
 def main() -> None:
     #ejercicioI()
     #ejercicioII()
-    ejercicioIII()
+    #ejercicioIII()
+    #ejercicioIV()
+    ejercicioV()
 
 if __name__ == '__main__':
     main()
