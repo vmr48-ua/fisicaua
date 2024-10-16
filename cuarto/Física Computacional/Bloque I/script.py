@@ -1,95 +1,111 @@
 import numpy as np
-import numpy.linalg as la
-from numpy import sin, cos, pi, exp
-
-import time
-import random
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from matplotlib.patches import FancyArrowPatch
-from mpl_toolkits.mplot3d import Axes3D
-from scipy import sparse
 
-def v_x(x, y):
-    return 0.4 * sin(pi*x)
-def v_y(x, y):
-    return 0.4 * cos(pi*y)
+# Función inicial
+def uf(x):
+    if 1 <= x <= 2:
+        return 1
+    else:
+        return 0
 
-D = 0.1       # Coeficiente de difusión
-L = 1.        # Longitud del dominio
-dx = 0.03     # Diferenciales espaciales
-dy = 0.03  
-dt = 0.002    # Diferencial temporal
-cte = D * dt / dx**2
-t_max = 1. * L  
+uf = np.vectorize(uf)
 
-if cte >= 0.5:
-    raise Exception('Condición de estabilidad no satisfecha, prueba a bajar dt')
+# Función para aplicar las condiciones de contorno periódicas
+def contornoPeriódico(a):
+    a[0] = a[-2]
+    a[-1] = a[1]
+    return a
 
-x, y = np.arange(-L, L, dx), np.arange(-L, L, dy)
+# Función para calcular la energía
+def energia(a):
+    a = np.array(a)
+    return np.sum(0.5 * a**2)
+
+# Método de diferencias centrales
+def diferencias_centrales(u, dx, dt):
+    for i in range(len(t)-1):
+        u[1:-1, i+1, 0] = u[1:-1, i, 0] - (c * dt) / (2 * dx) * (u[2:, i, 0] - u[:-2, i, 0])
+        u[:, i+1, 0] = contornoPeriódico(u[:, i+1, 0])
+        u[:, i+1, 2] = energia(u[:, i+1, 0])  # Calculamos la energía y la guardamos en la tercera componente
+    return u
+
+# Método Upwind
+def upwind(u, dx, dt):
+    for i in range(len(t)-1):
+        u[1:-1, i+1, 0] = u[1:-1, i, 0] - (c * dt) / dx * (u[1:-1, i, 0] - u[:-2, i, 0])
+        u[:, i+1, 0] = contornoPeriódico(u[:, i+1, 0])
+        u[:, i+1, 2] = energia(u[:, i+1, 0])  # Calculamos la energía
+    return u
+
+# Método Downwind
+def downwind(u, dx, dt):
+    for i in range(len(t)-1):
+        u[1:-1, i+1, 0] = u[1:-1, i, 0] - (c * dt) / dx * (u[2:, i, 0] - u[1:-1, i, 0])
+        u[:, i+1, 0] = contornoPeriódico(u[:, i+1, 0])
+        u[:, i+1, 2] = energia(u[:, i+1, 0])  # Calculamos la energía
+    return contornoPeriódico(u)
+
+# Parámetros
+L = 5.        # Longitud del dominio
+dx = 0.05     # Diferencial espacial
+dt = 0.004    # Diferencial temporal
+global c
+c = 2.        # cte
+t_max = 5.    # Tiempo de simulación
+
+if c > 0 and c * dt > dx:
+    raise Exception('Condición de estabilidad no satisfecha')
+
+# Dominio
+x = np.arange(0, L, dx)
 t = np.arange(0, t_max, dt)
 
-X, Y = np.meshgrid(x, y)
-T = np.zeros((len(x), len(y), len(t)))
-T[:,:,0] = 100 * np.exp(-10 * (X**2 + Y**2))
+# Inicializamos U con tres componentes: posición, tiempo y energía
+U = np.zeros((len(x), len(t), 3))
+U[:, 0, 0] = uf(x)  # Condiciones iniciales para u(x, t)
 
-n = len(x)
-d = [-4 for _ in range(len(x)**2)]
-u = [1  for _ in range(len(x)**2-1)]
-o = [1  for _ in range(len(x)**2-1)]
-v = [1  for _ in range(len(x)**2-len(x))]
+# Configuración de la figura con dos subplots
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
+ax1.set_xlim(0, L)
+ax1.set_ylim(-0.1, 1.1)
+ax2.set_xlim(0, t_max)
+#ax2.set_ylim(0, 1.5)  # Ajusta según el rango esperado de la energía
 
-Laplaciano2D = sparse.diags([d, u, o, v, v], [0, -1, 1, -n, n], shape=(n**2, n**2))
-A1 = np.eye(len(x)**2) - cte * Laplaciano2D.toarray()
-A2 = np.eye(len(x)**2) + cte * Laplaciano2D.toarray()
+# Gráficas
+line_central, = ax1.plot([], [], label='Diferencias Centrales', color='blue')
+line_upwind, = ax1.plot([], [], label='Upwind', color='green')
+line_downwind, = ax1.plot([], [], label='Downwind', color='red')
+line_energy, = ax2.plot([], [], label='Energía', color='black')
 
-for i in range(len(x)):
-    n = len(x)
-    zeros = np.zeros(n**2)
-    
-    A1[i, :], A2[i, :] = zeros.copy(), zeros.copy()  # x = -L
-    A1[i, i] = 1
+# Texto del tiempo
+time_text = ax1.text(0.8, 0.85, '', transform=ax1.transAxes, fontsize=12)
 
-    A1[i*n, :], A2[i*n, :] = zeros.copy(), zeros.copy()  # x = L
-    A1[i*n, i*n] = 1
+# Etiquetas
+ax1.set_xlabel('x')
+ax1.set_ylabel('u(x, t)')
+ax1.legend(loc='upper right')
 
-    A1[-i -1, :], A2[-i -1, :] = zeros.copy(), zeros.copy()  # y = -L
-    A1[-i -1, -i -1] = 1
+ax2.set_xlabel('Tiempo (s)')
+ax2.set_ylabel('Energía total')
 
-    A1[i*n + n-1, :], A2[i*n + n-1, :] = zeros.copy(), zeros.copy()  # y = L
-    A1[i*n + n-1, i*n + n-1] = 1
+# Función para actualizar la animación
+def update(j):
+    # Actualización de u(x, t)
+    line_central.set_data(x, diferencias_centrales(U, dx, dt)[:, j, 0])
+    line_upwind.set_data(x, upwind(U, dx, dt)[:, j, 0])
+    line_downwind.set_data(x, downwind(U, dx, dt)[:, j, 0])
 
-A = np.dot(la.inv(A1), A2)
+    # Actualización de la energía
+    energia_total = U[:, j, 2]
+    line_energy.set_data(t[:j+1], U[0, :j+1, 2])  # Usamos el valor en la posición U[0,:,2] para la energía
 
-for k in range(len(t) - 1):
-    print(np.round(k / (len(t) - 1) * 100, 1), '%', end='\r')
-    T_next = np.dot(A, T[:,:,k].reshape(n**2)).reshape(n, n)
-    
-    adveccion_x_local = np.array([[v_x(x[i], y[j]) for j in range(1, n-1)] for i in range(1, n-1)])
-    T_next[1:-1, 1:-1] -= (adveccion_x_local * dt / (2 * dx)) * (T[2:, 1:-1, k] - T[:-2, 1:-1, k])
-    
-    adveccion_y_local = np.array([[v_y(x[i], y[j]) for j in range(1, n-1)] for i in range(1, n-1)])
-    T_next[1:-1, 1:-1] -= (adveccion_y_local * dt / (2 * dy)) * (T[1:-1, 2:, k] - T[1:-1, :-2, k])
-
-    T[:,:,k+1] = T_next
-
-# Gráfica final
-fig4, ax4 = plt.subplots()
-plt.title('Evolución temporal de T(x,y) con advección variable y difusión, \n Método de Crank-Nicholson')
-ax4.set_xlim(-L, L)
-ax4.set_ylim(-L, L)
-
-line4 = ax4.imshow(T[:,:,0].T, extent=[-L, L, -L, L], cmap='inferno', origin='lower')
-time_text = ax4.text(0.8, 0.85, '', transform=ax4.transAxes, color='white', fontsize=10)
-fig4.colorbar(line4, label='Magnitud de T')
-
-def animate4(j):
-    line4.set_data(T[:,:,j].T)
+    # Actualización del texto del tiempo
     time_text.set_text('t = {}s'.format(np.round(j * dt, 2)))
-    return line4, ax4
+    
+    return line_central, line_upwind, line_downwind, line_energy, time_text
 
-anim4 = FuncAnimation(fig4, animate4, frames=range(0, len(t), 10), interval=1)
-plt.xlabel('Espacio (x)')
-plt.ylabel('Espacio (y)')
-
+# Animación
+ani = FuncAnimation(fig, update, frames=range(0, len(t), 12), interval=1)
+plt.tight_layout()
 plt.show()

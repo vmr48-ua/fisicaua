@@ -19,294 +19,293 @@ Víctor Mira Ramírez
 vmr48@alu.ua.es
 '''
 
-# Funciones Auxiliares de los ejercicios
-def TridiagonalSolver(d, o, u, r) -> np.ndarray:
-    n = len(d)
-    D = np.min(np.abs(d))
-    x = np.zeros(n)
+# Ejercicios
+def ejercicioI() -> None:    
+    def TridiagonalSolver(d, o, u, r) -> np.ndarray:
+        n = len(d)
+        D = np.min(np.abs(d))
+        x = np.zeros(n)
 
-    if n - 1 == len(o) == len(u) and D != 0:
-        for i in range(n-1):
-            o[i],r[i] = o[i]/d[i],r[i]/d[i]
-            d[i] = 1
-            d[i+1],r[i+1] = d[i+1] - o[i]*u[i],r[i+1] - r[i]*u[i]   
-        x[-1] = r[-1]/d[-1] # el último
-        for i in range(2,n+1):
-            x[-i] = r[-i] - o[-i+1] * x[-i+1]
-        return x
-    if D == 0:
-        print('Error: 0 en la diagonal')
-    else:
-        print('Error: dimensión matricial')
+        if n - 1 == len(o) == len(u) and D != 0:
+            for i in range(n-1):
+                o[i],r[i] = o[i]/d[i],r[i]/d[i]
+                d[i] = 1
+                d[i+1],r[i+1] = d[i+1] - o[i]*u[i],r[i+1] - r[i]*u[i]   
+            x[-1] = r[-1]/d[-1] # el último
+            for i in range(2,n+1):
+                x[-i] = r[-i] - o[-i+1] * x[-i+1]
+            return x
+        if D == 0:
+            print('Error: 0 en la diagonal')
+        else:
+            print('Error: dimensión matricial')
 
-def TridiagonalRandom_NonSingular(n, m=-10, M=10) -> np.ndarray:
-    """
-    Genera una matriz tridiagonal no singular aleatoria para ser usada 
-    en TridiagonalSolver(), linalg.solve() y linalg.inv()
-    """
-    while True:
-        d = [random.uniform(m, M) for _ in range(n)]
-        u = [random.uniform(m, M) for _ in range(n-1)]
-        o = [random.uniform(m, M) for _ in range(n-1)]
-        r = [random.uniform(m, M) for _ in range(n)]
+    def TridiagonalRandom_NonSingular(n, m=-10, M=10) -> np.ndarray:
+        """
+        Genera una matriz tridiagonal no singular aleatoria para ser usada 
+        en TridiagonalSolver(), linalg.solve() y linalg.inv()
+        """
+        while True:
+            d = [random.uniform(m, M) for _ in range(n)]
+            u = [random.uniform(m, M) for _ in range(n-1)]
+            o = [random.uniform(m, M) for _ in range(n-1)]
+            r = [random.uniform(m, M) for _ in range(n)]
 
-        A = np.zeros((n, n))
-        for i in range(n):
-            A[i, i] = d[i]        # diagonal
-            if i < n-1:
-                A[i, i+1] = o[i]  # over
-                A[i+1, i] = u[i]  # under
+            A = np.zeros((n, n))
+            for i in range(n):
+                A[i, i] = d[i]        # diagonal
+                if i < n-1:
+                    A[i, i+1] = o[i]  # over
+                    A[i+1, i] = u[i]  # under
 
-            # Lo retrasa mucho
-        # if np.linalg.det(A) != 0:
-        #     return d,o,u,r,A # sólo si es no singular (det != 0)
-        return d,o,u,r,A 
+                # Lo retrasa mucho
+            # if np.linalg.det(A) != 0:
+            #     return d,o,u,r,A # sólo si es no singular (det != 0)
+            return d,o,u,r,A 
 
-def EulerForward(x0,v0,t,dt) -> np.ndarray:
-    '''
-    \\begin{cases}
-        x_{n+1} = x_n + h y_n
-        y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
-    \end{cases}
-    '''
-
-    x,v = np.zeros(len(t)),np.zeros(len(t))
-    x[0],v[0] = x0,v0
-    x[1] = v0*dt + x0
-    
-    for i in range(1,len(t)-1): # desde 1 porque hago x[i-1]
-        x[i+1] = x[i]*(2-alpha*dt - (omega**2)*(dt**2)) + x[i-1]*(alpha*dt-1)
-        v[i] = v[i-1] - dt*(omega**2*x[i-1] + alpha*v[i-1])
-    
-    plt.subplot(2,1,1)
-    plt.plot(t, x, label='Posición (x)')
-    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-    plt.title('Euler Forward')
-    plt.xlabel('t')
-    plt.ylabel('x, v')
-    plt.grid()
-    
-    return x,v
-
-def EulerForwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
-    """ 
-    -   z_{n+1} = \mathcal{A} z_n
-    
-    -   \\begin{cases}
+    def EulerForward(x0,v0,t,dt) -> np.ndarray:
+        '''
+        \\begin{cases}
             x_{n+1} = x_n + h y_n
             y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
         \end{cases}
+        '''
+
+        x,v = np.zeros(len(t)),np.zeros(len(t))
+        x[0],v[0] = x0,v0
+        x[1] = v0*dt + x0
         
-    \implies
-    A = ((1,dt),(-dt \omega^2, 1 - dt \alpha))
-    """
-    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
-    z[0, 0], z[1, 0] = x0, v0 
-
-    # Funciona mejor (hay que cambiar z en el for)
-    # A = np.array([[1, dt], [-omega**2 * dt, 1 - alpha * dt]])
-
-    A = np.array([[0         , 1     ],
-                  [-omega**2 , -alpha]])
-
-    for i in range(1, len(t)):
-        z[:, i] = np.dot(np.eye(len(A)) + dt*A, z[:, i - 1])
-        # z[:, i] = np.dot(A, z[:, i - 1])
-
-    x, v = z[0, :], z[1, :]
-
-    if plot:
-        plt.subplot(2,1,2)
+        for i in range(1,len(t)-1): # desde 1 porque hago x[i-1]
+            x[i+1] = x[i]*(2-alpha*dt - (omega**2)*(dt**2)) + x[i-1]*(alpha*dt-1)
+            v[i] = v[i-1] - dt*(omega**2*x[i-1] + alpha*v[i-1])
+        
+        plt.subplot(2,1,1)
         plt.plot(t, x, label='Posición (x)')
         plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-        plt.title('Euler Forward - Matricial')
+        plt.title('Euler Forward')
         plt.xlabel('t')
         plt.ylabel('x, v')
-        plt.legend()
         plt.grid()
-    
-    return x, v
-
-def EulerBackward(x0,v0,t,dt) -> np.ndarray:
-    '''
-    Despejamos y_{n+1} de la segunda ecuación y sustituimos en la primera
-    \begin{cases}
-        x_{n+1} = x_n + h y_{n+1}
-        y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1})
-    \end{cases}    
-    
-    Despejando
-    y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1}) \Longleftrightarrow
-    y_{n+1} = y_n + h (- \omega^2 x_{n+1} - \alpha y_{n+1}) \Longleftrightarrow
-    y_{n+1} (1 + h \alpha) = y_n - h \omega^2 x_{n+1} \Longleftrightarrow
-    y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-    
-    Sustituyendo
-    x_{n+1} = x_n + h y_{n+1} \Longleftrightarrow
-    x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-    
-    Finalmente
-    \begin{cases}
-        x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-        y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-    \end{cases}
-    '''
-    
-    x,v = np.zeros(len(t)),np.zeros(len(t))
-    x[0],v[0] = x0,v0
-    
-    for i in range(1,len(t)):
-        v[i] = (v[i-1] - dt*omega**2 *x[i-1])/(1 + dt*alpha)
-        x[i] = x[i-1] + dt*v[i] # (v[i-1] + dt*alpha*x[i-1])/(1 + dt*alpha)
         
-    plt.subplot(2,1,1)
-    plt.plot(t, x, label='Posición (x)')
-    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-    plt.title('Euler Backward')
-    plt.xlabel('t')
-    plt.ylabel('x, v')
-    plt.grid()
-    
-    return x,v
+        return x,v
 
-def EulerBackwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
-    """ 
-    -   z_{n+1} = \mathcal{A} z_n
-    
-    -   \begin{cases}
+    def EulerForwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+        """ 
+        -   z_{n+1} = \mathcal{A} z_n
+        
+        -   \\begin{cases}
+                x_{n+1} = x_n + h y_n
+                y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
+            \end{cases}
+            
+        \implies
+        A = ((1,dt),(-dt \omega^2, 1 - dt \alpha))
+        """
+        z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+        z[0, 0], z[1, 0] = x0, v0 
+
+        # Funciona mejor (hay que cambiar z en el for)
+        # A = np.array([[1, dt], [-omega**2 * dt, 1 - alpha * dt]])
+
+        A = np.array([[0         , 1     ],
+                    [-omega**2 , -alpha]])
+
+        for i in range(1, len(t)):
+            z[:, i] = np.dot(np.eye(len(A)) + dt*A, z[:, i - 1])
+            # z[:, i] = np.dot(A, z[:, i - 1])
+
+        x, v = z[0, :], z[1, :]
+
+        if plot:
+            plt.subplot(2,1,2)
+            plt.plot(t, x, label='Posición (x)')
+            plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+            plt.title('Euler Forward - Matricial')
+            plt.xlabel('t')
+            plt.ylabel('x, v')
+            plt.legend()
+            plt.grid()
+        
+        return x, v
+
+    def EulerBackward(x0,v0,t,dt) -> np.ndarray:
+        '''
+        Despejamos y_{n+1} de la segunda ecuación y sustituimos en la primera
+        \begin{cases}
+            x_{n+1} = x_n + h y_{n+1}
+            y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1})
+        \end{cases}    
+        
+        Despejando
+        y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1}) \Longleftrightarrow
+        y_{n+1} = y_n + h (- \omega^2 x_{n+1} - \alpha y_{n+1}) \Longleftrightarrow
+        y_{n+1} (1 + h \alpha) = y_n - h \omega^2 x_{n+1} \Longleftrightarrow
+        y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+        
+        Sustituyendo
+        x_{n+1} = x_n + h y_{n+1} \Longleftrightarrow
+        x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+        
+        Finalmente
+        \begin{cases}
             x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
             y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
         \end{cases}
+        '''
         
-    \implies
-    A = ((1 - \frac{h^2 \omega^2}{1+h \alpha}, \frac{h}{1+h\alpha}),
-         (   -\frac{h   \omega^2}{1+h \alpha}, \frac{1}{1+h \alpha}))
-    """
-    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
-    z[0, 0], z[1, 0] = x0, v0
-
-    # B = np.array([[1-(dt**2 * omega**2)/(1 + dt*alpha),   dt/(1 + dt*alpha)],
-    #              [-1 * (dt * omega**2)/(1 + dt*alpha),    1/(1 + dt*alpha)]])
-    A = [[0,1],[-omega**2,-alpha]]
-    B = la.inv(np.eye(2)-dt*np.array(A))
-
-    for i in range(1, len(t)):
-        z[:, i] = np.dot(B, z[:, i - 1])
-
-    x, v = z[0, :], z[1, :]
-    
-    if plot:
-        plt.subplot(2,1,2)
+        x,v = np.zeros(len(t)),np.zeros(len(t))
+        x[0],v[0] = x0,v0
+        
+        for i in range(1,len(t)):
+            v[i] = (v[i-1] - dt*omega**2 *x[i-1])/(1 + dt*alpha)
+            x[i] = x[i-1] + dt*v[i] # (v[i-1] + dt*alpha*x[i-1])/(1 + dt*alpha)
+            
+        plt.subplot(2,1,1)
         plt.plot(t, x, label='Posición (x)')
         plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-        plt.title('Euler Backward - Matricial')
+        plt.title('Euler Backward')
         plt.xlabel('t')
         plt.ylabel('x, v')
-        plt.legend()
         plt.grid()
-    
-    return x, v
-
-def CrankNicholson(x0,v0,t,dt) -> np.ndarray:
-    '''
-    Hace la media entre las derivadas en el punto n y n+1
-    \begin{cases}
-        x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1})
-        y_{n+1} = y_n - \frac{h}{2} ( (\omega^2 x_n + \alpha y_n) + (\omega^2 x_{n+1} + \alpha y_{n+1}) )
-    \end{cases}
-    
-    Despejamos y_{n+1}
-    y_{n+1} = y_n - \frac{h}{2} ( \omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} + \alpha y_{n+1} ) \Longleftrightarrow
-    y_{n+1} (1 + \frac{h}{2} \alpha) = y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} \Longleftrightarrow
-    y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
-    
-    Sustituimos y_{n+1} en x_{n+1} y despejamos x_{n+1}
-    x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1}) \Longleftrightarrow
-    x_{n+1} = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
-    x_{n+1} (1 + (\frac{h}{2} \omega)^2) = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
-    x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
-
-    Finalmente
-    \begin{cases}
-        x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
-        y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
-    \end{cases}
-    '''
-    
-    x,v = np.zeros(len(t)),np.zeros(len(t))
-    x[0],v[0] = x0,v0
-    
-    for i in range(1,len(t)):
-        x[i] = (x[i-1] + dt/2 * (v[i-1] + (v[i-1] - dt/2*(omega**2*x[i-1] + alpha*v[i-1]))/(1 + alpha*dt/2))) / (1 + (dt*omega/2)**2)
-        v[i] = (v[i-1] - dt/2 * (omega**2*(x[i-1] + x[i]) + alpha*v[i-1])) / (1 + dt*alpha/2)
         
-    plt.subplot(2,1,1)
-    plt.plot(t, x, label='Posición (x)')
-    plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-    plt.title('Crank-Nicholson')
-    plt.xlabel('t')
-    plt.ylabel('x, v')
-    plt.grid()
-    
-    return x,v
+        return x,v
 
-def CrankNicholsonMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
-    """ 
-    -   z_{n+1} = \mathcal{A} z_n
-    
-    -   \\begin{cases}
-            x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \omega)^2}
-            y_{n+1} = \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n + \omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
+    def EulerBackwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+        """ 
+        -   z_{n+1} = \mathcal{A} z_n
+        
+        -   \begin{cases}
+                x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+                y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+            \end{cases}
+            
+        \implies
+        A = ((1 - \frac{h^2 \omega^2}{1+h \alpha}, \frac{h}{1+h\alpha}),
+            (   -\frac{h   \omega^2}{1+h \alpha}, \frac{1}{1+h \alpha}))
+        """
+        z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+        z[0, 0], z[1, 0] = x0, v0
+
+        # B = np.array([[1-(dt**2 * omega**2)/(1 + dt*alpha),   dt/(1 + dt*alpha)],
+        #              [-1 * (dt * omega**2)/(1 + dt*alpha),    1/(1 + dt*alpha)]])
+        A = [[0,1],[-omega**2,-alpha]]
+        B = la.inv(np.eye(2)-dt*np.array(A))
+
+        for i in range(1, len(t)):
+            z[:, i] = np.dot(B, z[:, i - 1])
+
+        x, v = z[0, :], z[1, :]
+        
+        if plot:
+            plt.subplot(2,1,2)
+            plt.plot(t, x, label='Posición (x)')
+            plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+            plt.title('Euler Backward - Matricial')
+            plt.xlabel('t')
+            plt.ylabel('x, v')
+            plt.legend()
+            plt.grid()
+        
+        return x, v
+
+    def CrankNicholson(x0,v0,t,dt) -> np.ndarray:
+        '''
+        Hace la media entre las derivadas en el punto n y n+1
+        \begin{cases}
+            x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1})
+            y_{n+1} = y_n - \frac{h}{2} ( (\omega^2 x_n + \alpha y_n) + (\omega^2 x_{n+1} + \alpha y_{n+1}) )
         \end{cases}
-    """
-    z = np.zeros((2, len(t))) # 2 filas (x, v), columnas = len(t)
-    z[0, 0], z[1, 0] = x0, v0
-    
-    A = np.array([[0,1],[-omega**2,-alpha]])
-    B = np.dot(la.inv(np.eye(2)-(dt/2)*A),np.eye(2)+(dt/2)*A)
+        
+        Despejamos y_{n+1}
+        y_{n+1} = y_n - \frac{h}{2} ( \omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} + \alpha y_{n+1} ) \Longleftrightarrow
+        y_{n+1} (1 + \frac{h}{2} \alpha) = y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} \Longleftrightarrow
+        y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+        
+        Sustituimos y_{n+1} en x_{n+1} y despejamos x_{n+1}
+        x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1}) \Longleftrightarrow
+        x_{n+1} = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
+        x_{n+1} (1 + (\frac{h}{2} \omega)^2) = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
+        x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
 
-    for i in range(1, len(t)):
-        z[:, i] = np.dot(B,z[:,i-1])
-
-    x, v = z[0, :], z[1, :]
-
-    if plot:
-        plt.subplot(2,1,2)
+        Finalmente
+        \begin{cases}
+            x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
+            y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+        \end{cases}
+        '''
+        
+        x,v = np.zeros(len(t)),np.zeros(len(t))
+        x[0],v[0] = x0,v0
+        
+        for i in range(1,len(t)):
+            x[i] = (x[i-1] + dt/2 * (v[i-1] + (v[i-1] - dt/2*(omega**2*x[i-1] + alpha*v[i-1]))/(1 + alpha*dt/2))) / (1 + (dt*omega/2)**2)
+            v[i] = (v[i-1] - dt/2 * (omega**2*(x[i-1] + x[i]) + alpha*v[i-1])) / (1 + dt*alpha/2)
+            
+        plt.subplot(2,1,1)
         plt.plot(t, x, label='Posición (x)')
         plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-        plt.title('Crank-Nicholson - Matricial')
+        plt.title('Crank-Nicholson')
         plt.xlabel('t')
         plt.ylabel('x, v')
-        plt.legend()
         plt.grid()
-    
-    return x, v
+        
+        return x,v
 
-def RungeKuttaIVMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
-    z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
-    z[0, 0], z[1, 0] = x0, v0
-    A = np.array([[0,1],[-omega**2,-alpha]])
+    def CrankNicholsonMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+        """ 
+        -   z_{n+1} = \mathcal{A} z_n
+        
+        -   \\begin{cases}
+                x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \omega)^2}
+                y_{n+1} = \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n + \omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
+            \end{cases}
+        """
+        z = np.zeros((2, len(t))) # 2 filas (x, v), columnas = len(t)
+        z[0, 0], z[1, 0] = x0, v0
+        
+        A = np.array([[0,1],[-omega**2,-alpha]])
+        B = np.dot(la.inv(np.eye(2)-(dt/2)*A),np.eye(2)+(dt/2)*A)
 
-    for i in range(1, len(t)):
-        k1 = np.dot(A, z[:, i - 1])
-        k2 = np.dot(A, z[:, i - 1] + dt / 2 * k1)
-        k3 = np.dot(A, z[:, i - 1] + dt / 2 * k2)
-        k4 = np.dot(A, z[:, i - 1] + dt * k3)
-        z[:, i] = z[:, i - 1] + dt / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+        for i in range(1, len(t)):
+            z[:, i] = np.dot(B,z[:,i-1])
 
-    x, v = z[0, :], z[1, :]
-    
-    if plot:
-        plt.plot(t, x, label='Posición (x)')
-        plt.plot(t, v, label='Velocidad (v)', linestyle='--')
-        plt.xlabel('t')
-        plt.ylabel('x, v')
-        plt.legend()
-        plt.grid()
-    return x, v
+        x, v = z[0, :], z[1, :]
 
-# Ejercicios
-def ejercicioI() -> None:    
+        if plot:
+            plt.subplot(2,1,2)
+            plt.plot(t, x, label='Posición (x)')
+            plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+            plt.title('Crank-Nicholson - Matricial')
+            plt.xlabel('t')
+            plt.ylabel('x, v')
+            plt.legend()
+            plt.grid()
+        
+        return x, v
+
+    def RungeKuttaIVMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+        z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
+        z[0, 0], z[1, 0] = x0, v0
+        A = np.array([[0,1],[-omega**2,-alpha]])
+
+        for i in range(1, len(t)):
+            k1 = np.dot(A, z[:, i - 1])
+            k2 = np.dot(A, z[:, i - 1] + dt / 2 * k1)
+            k3 = np.dot(A, z[:, i - 1] + dt / 2 * k2)
+            k4 = np.dot(A, z[:, i - 1] + dt * k3)
+            z[:, i] = z[:, i - 1] + dt / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+
+        x, v = z[0, :], z[1, :]
+        
+        if plot:
+            plt.plot(t, x, label='Posición (x)')
+            plt.plot(t, v, label='Velocidad (v)', linestyle='--')
+            plt.xlabel('t')
+            plt.ylabel('x, v')
+            plt.legend()
+            plt.grid()
+        return x, v
+
     """
     EJEMPLO DE MATRIZ Y CÁLCULO TEMPORAL
     
@@ -705,7 +704,7 @@ def ejercicioIII() -> None:
     plt.grid()
     
     plt.show()
-  
+
 def ejercicioIV() -> None:
     '''
     \\frac{\partial T}{\partial t}(x,t) = D \\frac{\partial^2 T}{\partial x^2}(x,t)
@@ -803,9 +802,9 @@ def ejercicioIV() -> None:
     T[:,0] = 100*exp(-20*x**2)     # condición inicial
     T[0,:] = 0                     # condición de frontera x=-1
     
-    d = [1+2*cte for _ in range(len(x))]
-    u = [-cte    for _ in range(len(x))]
-    o = [-cte    for _ in range(len(x))]
+    d: list[float] = [1+2*cte for _ in range(len(x))]
+    u: list[float] = [-cte    for _ in range(len(x))]
+    o: list[float] = [-cte    for _ in range(len(x))]
     A = sparse.diags([d,u,o],[0,-1,1]).toarray()
 
     A[0, 0] = 1                     # T(0,t) = 0
@@ -833,7 +832,7 @@ def ejercicioIV() -> None:
     ax2.set_xlim(-L, L)            # Límite en el espacio  (x)
     ax2.set_ylim(0, np.max(T)*1.1) # Límite en la magnitud (T) (0,+10% del max)
     
-    #print(T[:,34])
+    #print(T[:,340])
     
     line2, = ax2.plot(x, T[:, 0], label='T(x,t)')
     time_text = ax2.text(0.82, 0.85, '', transform=ax2.transAxes, fontsize=10)
@@ -1085,7 +1084,7 @@ def ejercicioIV() -> None:
     ax5.set_ylim(-L, L)
 
     line5 = ax5.imshow(T[:,:,0].T, extent=[-L, L, -L, L], cmap='inferno', origin='lower')
-    time_text = ax5.text(0.8, 0.85, '', transform=ax4.transAxes, color='white', fontsize=10)
+    time_text = ax5.text(0.8, 0.85, '', transform=ax5.transAxes, color='white', fontsize=10)
     fig5.colorbar(line5, label='Magnitud de T')
 
     def animate5(j):
@@ -1102,7 +1101,301 @@ def ejercicioIV() -> None:
     return None
 
 def ejercicioV() -> None:
-    ...
+    ###########
+    # PARTE I #
+    ###########
+    
+    def uf(x):
+        if 1 <= x <= 2:
+            return 1
+        else:
+            return 0
+    uf = np.vectorize(uf)
+    
+    def contornoPeriódico(a):
+        a[0] = a[-2]
+        a[-1] = a[1]
+        return a
+    def energia(a):
+        a = np.array(a)
+        return np.sum(0.5*a**2)
+
+    def diferencias_centrales(u,dx,dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            u[1:-1,i+1] = u[1:-1,i] - (c * dt) / (2 * dx) * (u[2:,i] - u[:-2,i])
+            u[:,i+1] = contornoPeriódico(u[:,i+1])
+            E[i] = energia(u[:,i])
+        return u,E
+    
+    def upwind(u,dx,dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            u[1:-1,i+1] = u[1:-1,i] - (c * dt) / dx * (u[1:-1,i] - u[:-2,i])
+            u[:,i+1] = contornoPeriódico(u[:,i+1])
+            E[i] = energia(u[:,i])
+        return u,E
+    
+    def downwind(u,dx,dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            u[1:-1,i+1] = u[1:-1,i] - (c * dt) / dx * (u[2:,i] - u[1:-1,i])
+            u[:,i+1] = contornoPeriódico(u[:,i+1])
+            E[i] = energia(u[:,i])
+        return u,E
+    
+    
+    # ¿ Qué método es estable y bajo qué condiciones es no difusivo ? Upwind
+    L = 5.        # Longitud del dominio
+    dx = 0.01     # Diferencial espacial
+    dt = 0.005    # Diferencial temporal
+    global c
+    c = 2.        # cte
+    t_max = 5.    # Tiempo de simulación
+
+    if c*dt > dx:
+        raise Exception('Condición de estabilidad no satisfecha')
+
+    x = np.arange(0, L, dx)
+    t = np.arange(0, t_max, dt)
+    
+    U = np.zeros((len(x),len(t)))
+    U[:,0] = uf(x)
+
+    fig, ax = plt.subplots()
+    plt.suptitle('Método Upwind')
+    ax.set_xlim(0, L)
+    ax.set_ylim(-0.1, 1.1)
+    line_upwind, = ax.plot([],[], label='u', color='blue')
+    ax.set_xlabel('x')
+    ax.set_ylabel('u(x, t)')
+    ax.legend(loc = 'upper right')
+    time_text = ax.text(0.8, 0.8, '', transform=ax.transAxes, fontsize=11)
+    
+    Uu, _ = upwind(U.copy(), dx, dt)
+    def update(j):
+        line_upwind.set_data(x, Uu[:, j])
+
+        time_string = 't = {}s'.format(np.round(j * dt, 2))
+        time_text.set_text(time_string)
+        
+        return line_upwind, time_text, ax
+    
+    ani = FuncAnimation(fig, update, frames=range(0,len(t)), interval=10)
+    plt.show()
+    
+    
+
+    
+    ############################################3
+    L = 5.        # Longitud del dominio
+    dx = 0.05     # Diferencial espacial
+    dt = 0.005    # Diferencial temporal
+    t_max = 5.    # Tiempo de simulación
+
+    if c*dt > dx:
+        raise Exception('Condición de estabilidad no satisfecha')
+
+    x = np.arange(0, L, dx)
+    t = np.arange(0, t_max, dt)
+    
+    U = np.zeros((len(x),len(t)))
+    U[:,0] = uf(x)
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
+    plt.suptitle('Comparación de los 3 métodos')
+    ax1.set_xlim(0, L)
+    ax1.set_ylim(-0.1, 1.1)
+    line_central, = ax1.plot([],[], label='Diferencias Centrales (Inestable)', color='blue')
+    line_upwind, = ax1.plot([], [], label='Upwind (Difusivo)', color='green')
+    line_downwind, = ax1.plot([], [], label='Downwind (Inestable)', color='red')
+    time_text1 = ax1.text(0.86, 0.84, '', transform=ax1.transAxes, fontsize=11)
+    time_text2 = ax2.text(0.86, 0.84, '', transform=ax1.transAxes, fontsize=11)
+    ax1.set_xlabel('x')
+    ax1.set_ylabel('u(x, t)')
+    ax1.legend(loc = 'upper right')
+    
+    ax2.set_xlim(0, t_max)
+    ax2.set_ylim(1, 1e5)  # Ajustar los límites iniciales para la escala logarítmica
+    ax2.set_yscale('log')     # Escala logarítmica en el eje y
+    line_energy_central, = ax2.plot([], [], label='Energía Diferencias Centrales', color='blue')
+    line_energy_upwind, = ax2.plot([], [], label='Energía Upwind', color='green')
+    line_energy_downwind, = ax2.plot([], [], label='Energía Downwind', color='red')
+    ax2.set_xlabel('Tiempo (s)')
+    ax2.set_ylabel('Energía total')
+    ax2.legend(loc = 'upper right')
+
+    Uc, Ec = diferencias_centrales(U.copy(), dx, dt)
+    Uu, Eu = upwind(U.copy(), dx, dt)
+    Ud, Ed = downwind(U.copy(), dx, dt)
+    def update(j):
+        line_central.set_data(x, Uc[:, j])
+        line_upwind.set_data(x, Uu[:, j])
+        line_downwind.set_data(x, Ud[:, j])
+
+        line_energy_central.set_data(t[:j+1], Ec[:j+1])
+        line_energy_upwind.set_data(t[:j+1], Eu[:j+1])
+        line_energy_downwind.set_data(t[:j+1], Ed[:j+1])
+
+        time_string = 't = {}s'.format(np.round(j * dt, 2))
+        time_text1.set_text(time_string)
+        time_text2.set_text(time_string)
+        
+        return line_central, line_upwind, line_downwind, line_energy_central, line_energy_upwind, line_energy_downwind, time_text1, time_text2
+
+    ani = FuncAnimation(fig, update, frames=range(0,len(t),20), interval=1)
+    plt.show()
+        
+    ############
+    # PARTE II #
+    ############         
+    def diferencias_centrales_burguers(u, dx, dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            u[1:-1,i+1] = u[1:-1,i] * (1 - dt / (2 * dx) * (u[2:,i] - u[:-2,i]))
+            u[:,i+1] = contornoPeriódico(u[:,i+1])
+            
+            E[i] = energia(u[:,i])
+            umax= max(u[:,i+1])
+            
+            if dt*umax/dx >1:
+                print('¡Estabilidad!')
+        return u, E
+
+    def upwind_conservativo(u, dx, dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            u[1:-1,i+1] = u[1:-1,i] - 0.5* dt / dx * (u[1:-1, i]**2 - u[:-2, i]**2)
+            u[:,i+1] = contornoPeriódico(u[:,i+1])
+            
+            E[i] = energia(u[:,i])
+        return u, E
+        
+    L = 1.        # Longitud del dominio
+    dx = 0.01     # Diferencial espacial
+    dt = 0.001    # Diferencial temporal
+    t_max = 1.    # Tiempo de simulación
+
+    if dt/dx > 1:
+        raise Exception('Condición de estabilidad no satisfecha')
+
+    x = np.arange(0, L, dx)
+    t = np.arange(0, t_max, dt)
+    
+    U = np.zeros((len(x),len(t)))
+    U[:,0] = 2+0.5*sin(2*pi*x.copy())
+    
+        
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
+    plt.suptitle('Burguers vs Upwind para $u(x,0)=2 + \\frac{1}{2}\sin(2\pi x)$')
+    ax1.set_xlim(0, L)
+    ax1.set_ylim(1, 3)
+    line_central, = ax1.plot([], [], label='Diferencias Centrales Burguers', color='blue')
+    line_upwind, = ax1.plot([], [], label='Upwind Conservativo', color='green')
+    time_text = ax1.text(0.8, 0.85, '', transform=ax1.transAxes, fontsize=10)
+    ax1.set_xlabel('x')
+    ax1.set_ylabel('u(x, t)')
+    ax1.legend()
+
+    ax2.set_xlim(0, t_max)
+    ax2.set_ylim(1e2, 1e5)  # Ajustar límites para la escala logarítmica
+    ax2.set_yscale('log')  # Escala logarítmica en el eje y
+    line_energy_central, = ax2.plot([], [], label='Energía Diferencias Centrales Burguers', color='blue')
+    line_energy_upwind, = ax2.plot([], [], label='Energía Upwind Conservativo', color='green')
+    ax2.set_xlabel('Tiempo (s)')
+    ax2.set_ylabel('Energía total')
+    ax2.legend()
+
+    Uc, Ec = diferencias_centrales_burguers(U.copy(), dx, dt)
+    Uu, Eu = upwind_conservativo(U.copy(), dx, dt)
+    def update(j):
+        line_central.set_data(x, Uc[:, j])
+        line_upwind.set_data(x, Uu[:, j])
+
+        line_energy_central.set_data(t[:j+1], Ec[:j+1])
+        line_energy_upwind.set_data(t[:j+1], Eu[:j+1])
+
+        time_text.set_text('t = {}s'.format(np.round(j * dt, 2)))
+
+        return line_central, line_upwind, line_energy_central, line_energy_upwind, time_text
+
+    ani = FuncAnimation(fig, update, frames=range(0, len(t), 10), interval=1)
+    plt.show()
+    
+    
+    #########################################
+    # Extra
+    #########################################
+    L = 1.        # Longitud del dominio
+    dx = 0.01     # Diferencial espacial
+    dt = 0.001    # Diferencial temporal
+    t_max = 3.    # Tiempo de simulación
+    
+    x = np.arange(0, L, dx)
+    t = np.arange(0, t_max, dt)
+    
+    def downwind_conservativo(u, dx, dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            u[1:-1,i+1] = u[1:-1,i] - 0.5* dt / dx * (u[2:, i]**2 - u[1:-1, i]**2)
+            u[:,i+1] = contornoPeriódico(u[:,i+1])
+            
+            E[i] = energia(u[:,i])
+        return u, E
+
+    def funcion_metodo(u, dx, dt):
+        E = np.zeros(len(t))
+        for i in range(len(t)-1):
+            for j in range(1,len(x)-1):
+                if u[j,i] >0:     
+                    u[j,i+1] = u[j,i] - 0.5* dt / dx * (u[j, i]**2 - u[j-1, i]**2)
+                else:
+                    u[j,i+1] = u[j,i] - 0.5* dt / dx * (u[j+1, i]**2 - u[j, i]**2)
+                E[i] = energia(u[:,i])
+                
+                #u[:,i+1] = contornoPeriódico(u[:,i+1])
+        return u, E
+
+    if dt/dx > 1:
+        raise Exception('Condición de estabilidad no satisfecha')
+
+    x = np.arange(0, L, dx)
+    t = np.arange(0, t_max, dt)
+    
+    U = np.zeros((len(x),len(t)))
+    U[:,0] = sin(2*pi*x.copy())
+    
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
+    plt.suptitle('Método Combinado $u(x,0)=\sin(2\pi x)$')
+    ax1.set_xlim(0, L)
+    ax1.set_ylim(-1.5, 1.5)
+    line_upwind, = ax1.plot([], [], label='Upwind/Downwind Conservativo', color='green')
+    time_text = ax1.text(0.8, 0.85, '', transform=ax1.transAxes, fontsize=10)
+    ax1.set_xlabel('x')
+    ax1.set_ylabel('u(x, t)')
+    ax1.legend()
+
+    ax2.set_xlim(0, t_max)
+    ax2.set_ylim(0, 30)  # Ajustar límites para la escala logarítmica
+    line_energy_upwind, = ax2.plot([], [], label='Energía Método Combinado', color='green')
+    ax2.set_xlabel('Tiempo (s)')
+    ax2.set_ylabel('Energía total')
+    ax2.legend()
+
+    Uu, Eu = upwind_conservativo(U.copy(), dx, dt)
+    Ud, Ed = downwind_conservativo(U.copy(), dx, dt)
+    
+    metodo = funcion_metodo(U.copy(), dx, dt)
+    
+    def update(j):
+        line_upwind.set_data(x, metodo[0][:,j])
+        line_energy_upwind.set_data(t[:j+1], metodo[1][:j+1])
+        time_text.set_text('t = {}s'.format(np.round(j * dt, 2)))
+        return line_upwind, line_energy_upwind, time_text
+
+    ani = FuncAnimation(fig, update, frames=range(0, len(t), 10), interval=1)
+    plt.show()
+    
     return None
 
 # Main
