@@ -1,111 +1,79 @@
 import numpy as np
+from numpy import pi
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+from scipy import sparse
+import numpy.linalg as la
 
-# Función inicial
-def uf(x):
-    if 1 <= x <= 2:
-        return 1
-    else:
-        return 0
+L = 2.
+T = 40.  # t_max
+Nx = 100
+Nt = 3000
+dx = L/Nx
+dt = T/Nt
 
-uf = np.vectorize(uf)
+c = 1.
+k_rho = 0.1
+a = -2.0
 
-# Función para aplicar las condiciones de contorno periódicas
-def contornoPeriódico(a):
-    a[0] = a[-2]
-    a[-1] = a[1]
-    return a
+x = np.linspace(0, L, Nx)
+t = np.linspace(0, T, Nt)
 
-# Función para calcular la energía
-def energia(a):
-    a = np.array(a)
-    return np.sum(0.5 * a**2)
+modos = [1, 2, 3, 4]
+u = np.zeros((len(modos), Nx, Nt))  # modo, espacio y tiempo
 
-# Método de diferencias centrales
-def diferencias_centrales(u, dx, dt):
-    for i in range(len(t)-1):
-        u[1:-1, i+1, 0] = u[1:-1, i, 0] - (c * dt) / (2 * dx) * (u[2:, i, 0] - u[:-2, i, 0])
-        u[:, i+1, 0] = contornoPeriódico(u[:, i+1, 0])
-        u[:, i+1, 2] = energia(u[:, i+1, 0])  # Calculamos la energía y la guardamos en la tercera componente
-    return u
+for idx, n in enumerate(modos):
+    u[idx, :, 0] = np.sin(n*pi*x/L)  # cada modo con sin(n*pi*0/L)
 
-# Método Upwind
-def upwind(u, dx, dt):
-    for i in range(len(t)-1):
-        u[1:-1, i+1, 0] = u[1:-1, i, 0] - (c * dt) / dx * (u[1:-1, i, 0] - u[:-2, i, 0])
-        u[:, i+1, 0] = contornoPeriódico(u[:, i+1, 0])
-        u[:, i+1, 2] = energia(u[:, i+1, 0])  # Calculamos la energía
-    return u
+# Contorno
+u[:, 0, :] = 0 # extremos fijos
+u[:, -1, :] = 0
 
-# Método Downwind
-def downwind(u, dx, dt):
-    for i in range(len(t)-1):
-        u[1:-1, i+1, 0] = u[1:-1, i, 0] - (c * dt) / dx * (u[2:, i, 0] - u[1:-1, i, 0])
-        u[:, i+1, 0] = contornoPeriódico(u[:, i+1, 0])
-        u[:, i+1, 2] = energia(u[:, i+1, 0])  # Calculamos la energía
-    return contornoPeriódico(u)
+for idx in range(len(modos)):
+    u[idx, :, 1] = u[idx, :, 0]  # du/dt(0) = 0
 
-# Parámetros
-L = 5.        # Longitud del dominio
-dx = 0.05     # Diferencial espacial
-dt = 0.004    # Diferencial temporal
-global c
-c = 2.        # cte
-t_max = 5.    # Tiempo de simulación
+for j in range(1, Nt-1):
+    for idx in range(len(modos)):           
+        u[idx,1:-1,j+1] = (2*u[idx,1:-1,j] - u[idx,1:-1,j-1] + (c**2*dt**2/dx**2) * (u[idx,2:,j] 
+                           - 2*u[idx,1:-1,j] + u[idx,:-2,j]) - (2*k_rho*dt * u[idx,1:-1,j] 
+                           + a*dt**2*u[idx,1:-1,j]))
 
-if c > 0 and c * dt > dx:
-    raise Exception('Condición de estabilidad no satisfecha')
+# Crank-Nicholson
+# cte = (c*dt/dx)**2 * 2
 
-# Dominio
-x = np.arange(0, L, dx)
-t = np.arange(0, t_max, dt)
+# d = np.array([1 - 2*cte for _ in range(Nx)])
+# ud = np.array([cte for _ in range(Nx - 1)])
+# o = np.array(ud.copy())
 
-# Inicializamos U con tres componentes: posición, tiempo y energía
-U = np.zeros((len(x), len(t), 3))
-U[:, 0, 0] = uf(x)  # Condiciones iniciales para u(x, t)
+# A = sparse.diags([d,ud,o],[0,-1,1]).toarray()
+# B = sparse.diags([2-d,ud,o],[0,-1,1]).toarray()
 
-# Configuración de la figura con dos subplots
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
-ax1.set_xlim(0, L)
-ax1.set_ylim(-0.1, 1.1)
-ax2.set_xlim(0, t_max)
-#ax2.set_ylim(0, 1.5)  # Ajusta según el rango esperado de la energía
+# A_inv = la.inv(A)
+# # A u^{j+1} = B u^j
+# for j in range(1, Nt - 1):
+#     for idx in range(len(modos)):
+#         b = np.dot(B, u[idx, :, j]) - (2*k_rho*dt - a*dt**2)*u[idx, :, j]
+#         b[0],b[-1] = 0,0
+#         u[idx, :, j+1] = np.dot(A_inv, b)
+        
+#         u[idx,0,j+1],u[idx,-1,j+1] = 0,0
 
-# Gráficas
-line_central, = ax1.plot([], [], label='Diferencias Centrales', color='blue')
-line_upwind, = ax1.plot([], [], label='Upwind', color='green')
-line_downwind, = ax1.plot([], [], label='Downwind', color='red')
-line_energy, = ax2.plot([], [], label='Energía', color='black')
+fig, ax = plt.subplots()
+ax.set_xlim(-0.05, L+0.05)
+ax.set_ylim(-1.05, 1.05)
 
-# Texto del tiempo
-time_text = ax1.text(0.8, 0.85, '', transform=ax1.transAxes, fontsize=12)
+lines = []
+for idx, n in enumerate(modos):
+    line, = ax.plot(x, u[idx, :, 0], label='Modo {}'.format(n))
+    lines.append(line)
+time_text = ax.text(0.85, 0.65, '', transform=ax.transAxes, fontsize=10)
 
-# Etiquetas
-ax1.set_xlabel('x')
-ax1.set_ylabel('u(x, t)')
-ax1.legend(loc='upper right')
+def animate(j):
+    for idx, line in enumerate(lines):
+        line.set_ydata(u[idx, :, j])
+    time_text.set_text('t = {}s'.format(np.round(j*dt, 2)))
+    return *lines, time_text
 
-ax2.set_xlabel('Tiempo (s)')
-ax2.set_ylabel('Energía total')
-
-# Función para actualizar la animación
-def update(j):
-    # Actualización de u(x, t)
-    line_central.set_data(x, diferencias_centrales(U, dx, dt)[:, j, 0])
-    line_upwind.set_data(x, upwind(U, dx, dt)[:, j, 0])
-    line_downwind.set_data(x, downwind(U, dx, dt)[:, j, 0])
-
-    # Actualización de la energía
-    energia_total = U[:, j, 2]
-    line_energy.set_data(t[:j+1], U[0, :j+1, 2])  # Usamos el valor en la posición U[0,:,2] para la energía
-
-    # Actualización del texto del tiempo
-    time_text.set_text('t = {}s'.format(np.round(j * dt, 2)))
-    
-    return line_central, line_upwind, line_downwind, line_energy, time_text
-
-# Animación
-ani = FuncAnimation(fig, update, frames=range(0, len(t), 12), interval=1)
-plt.tight_layout()
+anim = FuncAnimation(fig, animate, frames=range(Nt), interval=20, blit=True)
+ax.legend(loc="upper right")
 plt.show()

@@ -1,11 +1,11 @@
 import numpy as np
 import numpy.linalg as la
-from numpy import sin, cos, pi, exp
+from numpy import sin, cos, pi, exp, sqrt
 
 import time
 import random
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, FFMpegFileWriter
 from matplotlib.patches import FancyArrowPatch
 from mpl_toolkits.mplot3d import Axes3D
 from scipy import sparse
@@ -36,11 +36,11 @@ def ejercicioI() -> None:
                 x[-i] = r[-i] - o[-i+1] * x[-i+1]
             return x
         if D == 0:
-            print('Error: 0 en la diagonal')
+            raise Exception('Error: 0 en la diagonal')
         else:
-            print('Error: dimensión matricial')
+            raise Exception('Error: dimensión matricial')
 
-    def TridiagonalRandom_NonSingular(n, m=-10, M=10) -> np.ndarray:
+    def TridiagonalRandom_NonSingular(n, m=-10, M=10):
         """
         Genera una matriz tridiagonal no singular aleatoria para ser usada 
         en TridiagonalSolver(), linalg.solve() y linalg.inv()
@@ -63,12 +63,12 @@ def ejercicioI() -> None:
             #     return d,o,u,r,A # sólo si es no singular (det != 0)
             return d,o,u,r,A 
 
-    def EulerForward(x0,v0,t,dt) -> np.ndarray:
+    def EulerForward(x0,v0,t,dt) -> tuple[np.ndarray, np.ndarray]:
         '''
         \\begin{cases}
             x_{n+1} = x_n + h y_n
-            y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
-        \end{cases}
+            y_{n+1} = y_n - h (\\omega^2 x_n + \\alpha y_n)
+        \\end{cases}
         '''
 
         x,v = np.zeros(len(t)),np.zeros(len(t))
@@ -89,17 +89,17 @@ def ejercicioI() -> None:
         
         return x,v
 
-    def EulerForwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+    def EulerForwardMatrix(x0, v0, t, dt, plot=True) -> tuple[np.ndarray, np.ndarray]:
         """ 
-        -   z_{n+1} = \mathcal{A} z_n
+        -   z_{n+1} = \\mathcal{A} z_n
         
         -   \\begin{cases}
                 x_{n+1} = x_n + h y_n
-                y_{n+1} = y_n - h (\omega^2 x_n + \alpha y_n)
-            \end{cases}
+                y_{n+1} = y_n - h (\\omega^2 x_n + \\alpha y_n)
+            \\end{cases}
             
-        \implies
-        A = ((1,dt),(-dt \omega^2, 1 - dt \alpha))
+        \\implies
+        A = ((1,dt),(-dt \\omega^2, 1 - dt \\alpha))
         """
         z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
         z[0, 0], z[1, 0] = x0, v0 
@@ -128,29 +128,29 @@ def ejercicioI() -> None:
         
         return x, v
 
-    def EulerBackward(x0,v0,t,dt) -> np.ndarray:
+    def EulerBackward(x0,v0,t,dt) -> tuple[np.ndarray, np.ndarray]:
         '''
         Despejamos y_{n+1} de la segunda ecuación y sustituimos en la primera
-        \begin{cases}
+        \\begin{cases}
             x_{n+1} = x_n + h y_{n+1}
-            y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1})
-        \end{cases}    
+            y_{n+1} = y_n - h (\\omega^2 x_{n+1} + \\alpha y_{n+1})
+        \\end{cases}    
         
         Despejando
-        y_{n+1} = y_n - h (\omega^2 x_{n+1} + \alpha y_{n+1}) \Longleftrightarrow
-        y_{n+1} = y_n + h (- \omega^2 x_{n+1} - \alpha y_{n+1}) \Longleftrightarrow
-        y_{n+1} (1 + h \alpha) = y_n - h \omega^2 x_{n+1} \Longleftrightarrow
-        y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+        y_{n+1} = y_n - h (\\omega^2 x_{n+1} + \\alpha y_{n+1}) \\Longleftrightarrow
+        y_{n+1} = y_n + h (- \\omega^2 x_{n+1} - \\alpha y_{n+1}) \\Longleftrightarrow
+        y_{n+1} (1 + h \\alpha) = y_n - h \\omega^2 x_{n+1} \\Longleftrightarrow
+        y_{n+1} = \\frac{y_n - h \\omega^2 x_{n+1}}{1 + h \\alpha}
         
         Sustituyendo
-        x_{n+1} = x_n + h y_{n+1} \Longleftrightarrow
-        x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
+        x_{n+1} = x_n + h y_{n+1} \\Longleftrightarrow
+        x_{n+1} = x_n + h \\frac{y_n - h \\omega^2 x_{n+1}}{1 + h \\alpha}
         
         Finalmente
-        \begin{cases}
-            x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-            y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-        \end{cases}
+        \\begin{cases}
+            x_{n+1} = x_n + h \\frac{y_n - h \\omega^2 x_{n+1}}{1 + h \\alpha}
+            y_{n+1} = \\frac{y_n - h \\omega^2 x_{n+1}}{1 + h \\alpha}
+        \\end{cases}
         '''
         
         x,v = np.zeros(len(t)),np.zeros(len(t))
@@ -170,18 +170,18 @@ def ejercicioI() -> None:
         
         return x,v
 
-    def EulerBackwardMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+    def EulerBackwardMatrix(x0, v0, t, dt, plot=True) -> tuple[np.ndarray, np.ndarray]:
         """ 
-        -   z_{n+1} = \mathcal{A} z_n
+        -   z_{n+1} = \\mathcal{A} z_n
         
-        -   \begin{cases}
-                x_{n+1} = x_n + h \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-                y_{n+1} = \frac{y_n - h \omega^2 x_{n+1}}{1 + h \alpha}
-            \end{cases}
+        -   \\begin{cases}
+                x_{n+1} = x_n + h \\frac{y_n - h \\omega^2 x_{n+1}}{1 + h \\alpha}
+                y_{n+1} = \\frac{y_n - h \\omega^2 x_{n+1}}{1 + h \\alpha}
+            \\end{cases}
             
-        \implies
-        A = ((1 - \frac{h^2 \omega^2}{1+h \alpha}, \frac{h}{1+h\alpha}),
-            (   -\frac{h   \omega^2}{1+h \alpha}, \frac{1}{1+h \alpha}))
+        \\implies
+        A = ((1 - \\frac{h^2 \\omega^2}{1+h \\alpha}, \\frac{h}{1+h\\alpha}),
+            (   -\\frac{h   \\omega^2}{1+h \\alpha}, \\frac{1}{1+h \\alpha}))
         """
         z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
         z[0, 0], z[1, 0] = x0, v0
@@ -208,30 +208,30 @@ def ejercicioI() -> None:
         
         return x, v
 
-    def CrankNicholson(x0,v0,t,dt) -> np.ndarray:
+    def CrankNicholson(x0,v0,t,dt) -> tuple[np.ndarray, np.ndarray]:
         '''
         Hace la media entre las derivadas en el punto n y n+1
-        \begin{cases}
-            x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1})
-            y_{n+1} = y_n - \frac{h}{2} ( (\omega^2 x_n + \alpha y_n) + (\omega^2 x_{n+1} + \alpha y_{n+1}) )
-        \end{cases}
+        \\begin{cases}
+            x_{n+1} = x_n + \\frac{h}{2} (y_n + y_{n+1})
+            y_{n+1} = y_n - \\frac{h}{2} ( (\\omega^2 x_n + \\alpha y_n) + (\\omega^2 x_{n+1} + \\alpha y_{n+1}) )
+        \\end{cases}
         
         Despejamos y_{n+1}
-        y_{n+1} = y_n - \frac{h}{2} ( \omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} + \alpha y_{n+1} ) \Longleftrightarrow
-        y_{n+1} (1 + \frac{h}{2} \alpha) = y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1} \Longleftrightarrow
-        y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
+        y_{n+1} = y_n - \\frac{h}{2} ( \\omega^2 x_n + \\alpha y_n + \\omega^2 x_{n+1} + \\alpha y_{n+1} ) \\Longleftrightarrow
+        y_{n+1} (1 + \\frac{h}{2} \\alpha) = y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n + \\omega^2 x_{n+1} \\Longleftrightarrow
+        y_{n+1} = \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n + \\omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
         
         Sustituimos y_{n+1} en x_{n+1} y despejamos x_{n+1}
-        x_{n+1} = x_n + \frac{h}{2} (y_n + y_{n+1}) \Longleftrightarrow
-        x_{n+1} = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
-        x_{n+1} (1 + (\frac{h}{2} \omega)^2) = x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha}) \Longleftrightarrow
-        x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
+        x_{n+1} = x_n + \\frac{h}{2} (y_n + y_{n+1}) \\Longleftrightarrow
+        x_{n+1} = x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n + \\omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}) \\Longleftrightarrow
+        x_{n+1} (1 + (\\frac{h}{2} \\omega)^2) = x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha}) \\Longleftrightarrow
+        x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \\omega)^2}
 
         Finalmente
-        \begin{cases}
-            x_{n+1} = \frac{x_n + \frac{h}{2} (y_n + \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n}{1 + \frac{h}{2} \alpha})}{1 + (\frac{h}{2} \omega)^2}
-            y_{n+1} = \frac{y_n - \frac{h}{2} (\omega^2 x_n + \alpha y_n + \omega^2 x_{n+1}}{1 + \frac{h}{2} \alpha}
-        \end{cases}
+        \\begin{cases}
+            x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \\omega)^2}
+            y_{n+1} = \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n + \\omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
+        \\end{cases}
         '''
         
         x,v = np.zeros(len(t)),np.zeros(len(t))
@@ -251,14 +251,14 @@ def ejercicioI() -> None:
         
         return x,v
 
-    def CrankNicholsonMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+    def CrankNicholsonMatrix(x0, v0, t, dt, plot=True) -> tuple[np.ndarray, np.ndarray]:
         """ 
-        -   z_{n+1} = \mathcal{A} z_n
+        -   z_{n+1} = \\mathcal{A} z_n
         
         -   \\begin{cases}
-                x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \omega)^2}
-                y_{n+1} = \\frac{y_n - \\frac{h}{2} (\omega^2 x_n + \\alpha y_n + \omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
-            \end{cases}
+                x_{n+1} = \\frac{x_n + \\frac{h}{2} (y_n + \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n}{1 + \\frac{h}{2} \\alpha})}{1 + (\\frac{h}{2} \\omega)^2}
+                y_{n+1} = \\frac{y_n - \\frac{h}{2} (\\omega^2 x_n + \\alpha y_n + \\omega^2 x_{n+1}}{1 + \\frac{h}{2} \\alpha}
+            \\end{cases}
         """
         z = np.zeros((2, len(t))) # 2 filas (x, v), columnas = len(t)
         z[0, 0], z[1, 0] = x0, v0
@@ -283,7 +283,7 @@ def ejercicioI() -> None:
         
         return x, v
 
-    def RungeKuttaIVMatrix(x0, v0, t, dt, plot=True) -> np.ndarray:
+    def RungeKuttaIVMatrix(x0, v0, t, dt, plot=True) -> tuple[np.ndarray, np.ndarray]:
         z = np.zeros((2, len(t)))  # 2 filas (x, v), columnas = len(t)
         z[0, 0], z[1, 0] = x0, v0
         A = np.array([[0,1],[-omega**2,-alpha]])
@@ -442,13 +442,13 @@ def ejercicioI() -> None:
               ' de sistemas de ecuaciones con matrices asociadas {}x{}'.format(n,n))
     
     plt.scatter(*zip(*tiempo_tridiagonal), label='Tiempo TridiagonalSolver()', marker='x',c='orange')
-    plt.axhline(np.mean(np.array(tiempo_tridiagonal)[:,1]),alpha=0.4,c='orange')
+    plt.axhline(np.mean(np.array(tiempo_tridiagonal)[:,1], dtype=float),alpha=0.4,c='orange')
 
     plt.scatter(*zip(*tiempo_linalg), label='Tiempo linalg.solve()', marker='x',c='blue')
-    plt.axhline(np.mean(np.array(tiempo_linalg)[:,1]),alpha=0.4,c='blue')
+    plt.axhline(np.mean(np.array(tiempo_linalg)[:,1], dtype=float),alpha=0.4,c='blue')
     
     plt.scatter(*zip(*tiempo_inv), label='Tiempo Inversa (A^-1 * b)', marker='x',c='green')
-    plt.axhline(np.mean(np.array(tiempo_inv)[:,1]),alpha=0.4,c='green')
+    plt.axhline(np.mean(np.array(tiempo_inv)[:,1], dtype=float),alpha=0.4,c='green')
 
     plt.xlabel('Número de ejecución')
     plt.ylabel('Tiempo de ejecución (s)')
@@ -513,7 +513,7 @@ def ejercicioII() -> None:
     '''
     LAPLACE
         Resolución de la Ecuación de Laplace en 2D en un cuadrado de lado L=1 con 
-        \phi(x=0) = \phi(x=1) = \phi(y=0) = 0   y   \phi(y=1) = x(1-x) (Dirichlet)
+        \\phi(x=0) = \\phi(x=1) = \\phi(y=0) = 0   y   \\phi(y=1) = x(1-x) (Dirichlet)
 
         - Jacobi
         - scipy.sparse.linalg
@@ -535,7 +535,7 @@ def ejercicioII() -> None:
     laplaciano1D = sparse.diags([d,u,o],[0,-1,1])
     laplaciano2D = sparse.kron(I, laplaciano1D) + sparse.kron(laplaciano1D, I)
 
-    phi = np.zeros((N+2, N+2)) # se cumple \phi(x=0) = \phi(x=1) = \phi(y=0) = 0
+    phi = np.zeros((N+2, N+2)) # se cumple \\phi(x=0) = \\phi(x=1) = \\phi(y=0) = 0
     phi[-1, :] = x * (1 - x)
 
     # Contorno en y=1 (phi(y=1) = x(1-x))
@@ -571,11 +571,11 @@ def ejercicioII() -> None:
 def ejercicioIII() -> None: 
     '''
     Oscilador Armónico Amortiguado: 
-    \ddot{x} = -\omega^2 x - \alpha \dot{x} \implies
-    \begin{cases}
-        \dot{x} = y \\
-        \dot{y} = -\omega^2 x - \alpha y
-    \end{cases}
+    \\ddot{x} = -\\omega^2 x - \\alpha \\dot{x} \\implies
+    \\begin{cases}
+        \\dot{x} = y \\
+        \\dot{y} = -\\omega^2 x - \\alpha y
+    \\end{cases}
     '''
     def solucion_analitica(t, x0, v0, omega, alpha) -> np.ndarray:
         if alpha**2 < 4*omega**2: # Subamortiguado
@@ -707,15 +707,15 @@ def ejercicioIII() -> None:
 
 def ejercicioIV() -> None:
     '''
-    \\frac{\partial T}{\partial t}(x,t) = D \\frac{\partial^2 T}{\partial x^2}(x,t)
+    \\frac{\\partial T}{\\partial t}(x,t) = D \\frac{\\partial^2 T}{\\partial x^2}(x,t)
     en [-1,1] con T(x,0)=100e^{-20x^2} y condiciones de contorno de Dirichlet
     
     Usamos diferencias finitas
-    Derivada espacial: $\\frac{\partial^2 T}{\partial x^2} = \\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}$
-                        \partial^2 T/ \partial x^2 = (T[i+1,j] - 2T[i,j] + T[i-1,j])/dx^2
-    Derivada temporal: \\frac{\partial T}{\partial t} = \\frac{T(x,t+dt) - T(x,t)}{dt}
-                        \partial T/ \partial t = (T[i,j+1] - T[i,j])/dt
-    \implies T[i,j+1] = T[i,j] + D dt/dx^2 (T[i+1,j] - 2T[i,j] + T[i-1,j])
+    Derivada espacial: $\\frac{\\partial^2 T}{\\partial x^2} = \\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}$
+                        \\partial^2 T/ \\partial x^2 = (T[i+1,j] - 2T[i,j] + T[i-1,j])/dx^2
+    Derivada temporal: \\frac{\\partial T}{\\partial t} = \\frac{T(x,t+dt) - T(x,t)}{dt}
+                        \\partial T/ \\partial t = (T[i,j+1] - T[i,j])/dt
+    \\implies T[i,j+1] = T[i,j] + D dt/dx^2 (T[i+1,j] - 2T[i,j] + T[i-1,j])
     
     Condición de estabilidad de Fourier:
             D dt/dx^2 <= 1/2
@@ -780,21 +780,21 @@ def ejercicioIV() -> None:
     # PARTE II #
     ############
     '''
-        \\frac{\partial T}{\partial t}(x,t) = D \\frac{\partial^2 T}{\partial x^2}(x,t)
+        \\frac{\\partial T}{\\partial t}(x,t) = D \\frac{\\partial^2 T}{\\partial x^2}(x,t)
         en [-1,1] con T(x,0)=100e^{-20x^2} y condiciones de contorno de Dirichlet excepto
         en x=1 donde se impone \\frac{dT}{dx} = -T
         
-        \\frac{\partial T}{\partial t} \equiv \\frac{T(x,t+dt) - T(x,t)}{dt}
-        \\frac{\partial^2 T}{\partial x^2} \equiv \\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}
+        \\frac{\\partial T}{\\partial t} \\equiv \\frac{T(x,t+dt) - T(x,t)}{dt}
+        \\frac{\\partial^2 T}{\\partial x^2} \\equiv \\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}
         
         La EDO queda entonces como
         \\frac{T(x,t+dt) - T(x,t)}{dt} = \\frac12 D ((\\frac{T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt)}{dx^2}) +
-                                                    + (\\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}))          \impiies
-        T(x,t+dt) - T(x,t) = \\frac{D dt}{2 dx^2} (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt) + T(x+dx,t) - 2T(x,t) + T(x-dx,t)) \implies
+                                                    + (\\frac{T(x+dx,t) - 2T(x,t) + T(x-dx,t)}{dx^2}))          \\impiies
+        T(x,t+dt) - T(x,t) = \\frac{D dt}{2 dx^2} (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt) + T(x+dx,t) - 2T(x,t) + T(x-dx,t)) \\implies
         T(x,t+dt) - T(x,t) =              \\alpha (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt) + T(x+dx,t) - 2T(x,t) + T(x-dx,t)) 
         
         Agrupamos T(x,t+dt) y T(x+dx,t+dt) a la izquierda y T(x,t) y T(x+dx,t) a la derecha
-        T(x,t+dt) - \\alpha (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt)) = T(x,t) + \\alpha (T(x+dx,t) - 2T(x,t) + T(x-dx,t)) \implies
+        T(x,t+dt) - \\alpha (T(x+dx,t+dt) - 2T(x,t+dt) + T(x-dx,t+dt)) = T(x,t) + \\alpha (T(x+dx,t) - 2T(x,t) + T(x-dx,t)) \\implies
         -\\alpha T(x-dx,t+dt) + (1+2\\alpha )T(x,t+dt) - \\alpha T(x+dx,t+dt) = \\alpha T(x-dx,t) + (1-2\\alpha )T(x,t) + \\alpha T(x+dx,t)
     '''
     
@@ -893,7 +893,7 @@ def ejercicioIV() -> None:
         A1[-i-1,:], A2[-i-1,:] = zeros.copy(), zeros.copy()
         A1[-i-1,-i-1] = 1
         
-        # Condición \frac{\partial T}{\partial x}(x=1) = 0
+        # Condición \\frac{\\partial T}{\\partial x}(x=1) = 0
         A1[i*n + n-1, :], A2[i*n + n-1, :] = zeros.copy(), zeros.copy()
         A1[i*n + n-1, i*n + n-1] = 1
         A1[i*n + n-1, i*n + n-2] = -1
@@ -1183,10 +1183,7 @@ def ejercicioV() -> None:
     
     ani = FuncAnimation(fig, update, frames=range(0,len(t)), interval=10)
     plt.show()
-    
-    
-
-    
+        
     ############################################3
     L = 5.        # Longitud del dominio
     dx = 0.05     # Diferencial espacial
@@ -1287,7 +1284,7 @@ def ejercicioV() -> None:
     
         
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
-    plt.suptitle('Burguers vs Upwind para $u(x,0)=2 + \\frac{1}{2}\sin(2\pi x)$')
+    plt.suptitle('Burguers vs Upwind para $u(x,0)=2 + \\frac{1}{2}\\sin(2\\pi x)$')
     ax1.set_xlim(0, L)
     ax1.set_ylim(1, 3)
     line_central, = ax1.plot([], [], label='Diferencias Centrales Burguers', color='blue')
@@ -1366,7 +1363,7 @@ def ejercicioV() -> None:
     U[:,0] = sin(2*pi*x.copy())
     
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
-    plt.suptitle('Método Combinado $u(x,0)=\sin(2\pi x)$')
+    plt.suptitle('Método Combinado $u(x,0)=\\sin(2\\pi x)$')
     ax1.set_xlim(0, L)
     ax1.set_ylim(-1.5, 1.5)
     line_upwind, = ax1.plot([], [], label='Upwind/Downwind Conservativo', color='green')
@@ -1398,13 +1395,287 @@ def ejercicioV() -> None:
     
     return None
 
+def ejercicioVI() -> None:
+    #####################################################################################
+    #                                     OPCIÓN A)                                     #
+    ##################################################################################### 
+    global Laplaciano, dt, x, cte, Nx, Nt, L
+    
+    ##############
+    # CONSTANTES #
+    ##############
+    # Espacio
+    L = 1.
+    Nx = 100
+    dx = L / Nx
+    x = np.linspace(0, L, Nx)
+    
+    # Tiempo
+    tmax = 1.
+    Nt = int(2e4)
+    dt = tmax / Nt
+    t = np.linspace(0, tmax, Nt)
+    
+    # Otros
+    cte = 1j * dt / (2 * dx**2)
+    if dt > dx**2 / 2:
+        raise Exception('Condición de estabilidad no satisfecha')
+    
+    # Laplaciano
+    d = np.array([-2 for _ in range(Nx)])
+    u = np.array([1 for _ in range(Nx - 1)])
+    o = np.array(u.copy())
+    Laplaciano = sparse.diags([d,u,o], [0,-1,1], shape=(len(x), len(x))).toarray()
+    
+    ###################
+    # FUNCIÓN INICIAL #
+    ###################
+    def psi_0(x):
+        sigma = 1e-2
+        psi = exp(-(x-L/2)**2/(2*sigma)) # * exp(-5j*(x-L/2)) # Término con momento
+        norm = np.sqrt(np.trapz(np.abs(psi)**2, x))
+        return psi / norm   # para que se cumpla la normalización en psi0
+
+    ##########################
+    # FUNCIÓN SHRODINGER C-N #
+    ##########################
+    def schrodinger(V, index, total):
+        A = np.eye(len(x)) + cte * Laplaciano
+        B = np.eye(len(x)) - cte * Laplaciano
+        
+        for i in range(len(x)):
+            A[i, i] += 1j * dt * V[i] * 0.5
+            B[i, i] -= 1j * dt * V[i] * 0.5
+        
+        psi = np.zeros((Nx, Nt), dtype=complex)
+        psi[:, 0] = psi_0(x) # función inicial
+        
+        psi[0, 0] = 0 # Dirichlet
+        psi[-1, 0] = 0
+        
+        alpha = 0.999
+        A_inv = la.inv(A)
+        for i in range(len(t) - 1):
+            print(f'Progreso en el cálculo para el Potencial [{index}/{total}]: {int(i / (len(t)-1) * 100)}%', end='\r')
+            psi[:, i+1] = np.dot(A_inv, np.dot(B, psi[:, i]))
+                        
+            # psi[0, i+1], psi[-1, i+1] = 0, 0 # Dirichlet
+            psi[0, i+1] *= alpha
+            psi[-1, i+1] *= alpha
+            
+        norm = np.array([np.sqrt(np.trapz(np.abs(psi[:,i])**2, x)) for i in range(0, Nt, 30)])
+        esperado_pos = np.array([np.trapz(x * np.abs(psi[:,i])**2, x) for i in range(0, Nt, 5)])
+        
+        return psi, norm, esperado_pos
+    
+    ###############
+    # POTENCIALES #
+    ###############
+    potenciales, p_name = [], []
+    
+    # Armónico
+    omega = 10.
+    m = 1.
+    V1 = 1/2*m*omega**2* (x - L/2)**2
+    potenciales.append(V1)
+    p_name.append('Armónico')
+    
+    # Pozo Infinito
+    V2 = np.array([1e6 if x[i] <= 0 or x[i] >= L else 0 for i in range(Nx)])
+    potenciales.append(V2)
+    p_name.append('Pozo Infinito')
+    
+    # Delta Dirac    
+    delta_max = 1e6
+    centro = int(Nx/4)
+    ancho = 0
+
+    V3 = np.zeros(Nx)
+    if ancho != 0:
+        V3[centro-ancho:centro+ancho] = delta_max
+    else:
+        V3[centro] = delta_max
+    potenciales.append(V3)
+    p_name.append('Delta de Dirac')
+    
+    # Pozo Dirac    
+    delta_max = -1e6
+    centro = int(Nx/4)
+    ancho = 0
+
+    V4 = np.zeros(Nx)
+    if ancho != 0:
+        V4[centro-ancho:centro+ancho] = delta_max
+    else:
+        V4[centro] = delta_max
+    potenciales.append(V4)
+    p_name.append('Pozo de Dirac')
+    
+    # Escalón de potencial
+    V5 = np.array([80 if x[i] < L/5 else 0 for i in range(Nx)])
+    potenciales.append(V5)
+    p_name.append('Escalón')
+
+    resultados = [schrodinger(V, i+1, len(potenciales)) for i, V in enumerate(potenciales)]
+    
+    ####################################
+    # FUNCIÓN PARA GENERAR ANIMACIONES #
+    ####################################
+    def generar_animaciones(resultados):
+        fig, axes = plt.subplots(len(resultados), 4, figsize=(20, 4*len(resultados)), tight_layout=True)
+        if len(resultados) == 1:
+            axes = [axes]  # problemas caso un solo potencial
+        
+        lines, imshows, time_texts = [], [], []
+        psi_max = np.max([np.abs(psi)**2 for psi,_,_ in resultados])
+        
+        for idx, (psi, norm, esperado_pos) in enumerate(resultados):
+            # Animación de la función de onda
+            line_psi, = axes[idx, 0].plot([], [], color='blue')
+            lines.append(line_psi)
+            axes[idx, 0].set_xlim(0, L)
+            axes[idx, 0].set_ylim(0, psi_max)
+            axes[idx, 0].set_title(f'Potencial {p_name[idx]}: Evolución de $\\left|\\psi(x,t)\\right|^2$')
+            axes[idx, 0].set_xlabel('Posición (x)')
+            axes[idx, 0].set_ylabel('$\\left|\\psi(x,t)\\right|^2$')
+            time_text = axes[idx, 0].text(0.8, 0.5, '', transform=axes[idx, 0].transAxes, fontsize=10)
+            time_texts.append(time_text)
+
+            # Potencial
+            axes[idx, 1].plot(x, potenciales[idx], color='red')
+            axes[idx, 1].set_xlim(0, L)
+            axes[idx, 1].set_ylim(min(potenciales[idx]) * 1.1, max(potenciales[idx]) * 1.1)
+            axes[idx, 1].set_xlim(0-0.05, L+0.05)
+            axes[idx, 1].set_title(f'Potencial {p_name[idx]}')
+            axes[idx, 1].set_xlabel('Posición (x)')
+            axes[idx, 1].set_ylabel('V(x)')
+            
+            # Imshow del espacio-tiempo
+            imshow = axes[idx, 2].imshow(np.abs(psi[:, ::30].T)**2, aspect='auto', extent=[0, L, 0, tmax], cmap='inferno')
+            imshows.append(imshow)
+            axes[idx, 2].set_title(f'Potencial {p_name[idx]}: Espacio-Tiempo')
+            axes[idx, 2].set_xlabel('Posición (x)')
+            axes[idx, 2].set_ylabel('Tiempo (t)')
+            axes[idx, 2].set_ylim(0, 0.12)
+            fig.colorbar(imshow, ax=axes[idx, 2])
+
+            # Norma y Valor Esperado de x
+            ax_norm = axes[idx, 3].twinx()
+            axes[idx, 3].plot(np.linspace(0, tmax, len(norm)), norm, color='blue', label='Norma $\\|\\psi(x,t)\\|$', linestyle='dotted')
+            ax_norm.plot(np.linspace(0, tmax, len(esperado_pos)), esperado_pos, color='green', label='$\\langle x(t) \\rangle$', linestyle='solid')
+            axes[idx, 3].set_ylim(0, 1.05) # norma
+            ax_norm.set_ylim(0, L) # <x>
+            axes[idx, 3].set_title(f'Potencial {p_name[idx]}: Norma y Valor Esperado $\\langle x(t) \\rangle$')
+            axes[idx, 3].set_xlabel('Tiempo (t)')
+            axes[idx, 3].set_ylabel('Norma $\\|\\psi(x,t)\\|$', color='blue')
+            ax_norm.set_ylabel('$\\langle x(t) \\rangle$', color='green')
+            axes[idx, 3].legend(loc='lower left')
+            ax_norm.legend(loc='lower right')
+
+        def init():
+            for line in lines:
+                line.set_data([], [])
+            for time_text in time_texts:
+                time_text.set_text('')
+            return lines + time_texts
+
+        def animate(i):
+            for idx, (psi, _, _) in enumerate(resultados):
+                lines[idx].set_data(x, np.abs(psi[:, i])**2)
+                time_texts[idx].set_text(f't = {i*dt:.2f}s')
+            return lines + time_texts
+        
+        anim = FuncAnimation(fig, animate, init_func=init, frames=range(0,Nt,10), interval=1, blit=True)
+        # gif_writer = FFMpegFileWriter(fps=60)
+        # anim.save("/home/victor/fisicaua/cuarto/definitivo.gif",writer=gif_writer)
+        plt.show()
+
+    generar_animaciones(resultados)
+    
+#     #####################################################################################
+#     #                                     OPCIÓN B)                                     #
+#     #####################################################################################
+#     L = 2.
+#     T = 40.  # t_max
+#     Nx = 100
+#     Nt = 3000
+#     dx = L/Nx
+#     dt = T/Nt
+
+#     c = 1.
+#     k_rho = 0.1
+#     a = -2.0
+
+#     x = np.linspace(0, L, Nx)
+#     t = np.linspace(0, T, Nt)
+
+#     modos = [1, 2, 3, 4]
+#     u = np.zeros((len(modos), Nx, Nt))  # modo, espacio y tiempo
+
+#     for idx, n in enumerate(modos):
+#         u[idx, :, 0] = np.sin(n*pi*x/L)  # cada modo con sin(n*pi*0/L)
+
+#     # Contorno
+#     u[:, 0, :] = 0 # extremos fijos
+#     u[:, -1, :] = 0
+
+#     for idx in range(len(modos)):
+#         u[idx, :, 1] = u[idx, :, 0]  # du/dt(0) = 0
+
+#     for j in range(1, Nt-1):
+#         for idx in range(len(modos)):           
+#             u[idx,1:-1,j+1] = (2*u[idx,1:-1,j] - u[idx,1:-1,j-1] + (c**2*dt**2/dx**2) * (u[idx,2:,j] 
+#                             - 2*u[idx,1:-1,j] + u[idx,:-2,j]) - (2*k_rho*dt * u[idx,1:-1,j] 
+#                             + a*dt**2*u[idx,1:-1,j]))
+
+#     # Crank-Nicholson
+#     # cte = (c*dt/dx)**2 * 2
+
+#     # d = np.array([1 - 2*cte for _ in range(Nx)])
+#     # ud = np.array([cte for _ in range(Nx - 1)])
+#     # o = np.array(ud.copy())
+
+#     # A = sparse.diags([d,ud,o],[0,-1,1]).toarray()
+#     # B = sparse.diags([2-d,ud,o],[0,-1,1]).toarray()
+
+#     # A_inv = la.inv(A)
+#     # # A u^{j+1} = B u^j
+#     # for j in range(1, Nt - 1):
+#     #     for idx in range(len(modos)):
+#     #         b = np.dot(B, u[idx, :, j]) - (2*k_rho*dt - a*dt**2)*u[idx, :, j]
+#     #         b[0],b[-1] = 0,0
+#     #         u[idx, :, j+1] = np.dot(A_inv, b)
+            
+#     #         u[idx,0,j+1],u[idx,-1,j+1] = 0,0
+
+#     fig, ax = plt.subplots()
+#     ax.set_xlim(-0.05, L+0.05)
+#     ax.set_ylim(-1.05, 1.05)
+
+#     lines = []
+#     for idx, n in enumerate(modos):
+#         line, = ax.plot(x, u[idx, :, 0], label='Modo {}'.format(n))
+#         lines.append(line)
+#     time_text = ax.text(0.85, 0.65, '', transform=ax.transAxes, fontsize=10)
+
+#     def animate(j):
+#         for idx, line in enumerate(lines):
+#             line.set_ydata(u[idx, :, j])
+#         time_text.set_text('t = {}s'.format(np.round(j*dt, 2)))
+#         return *lines, time_text
+
+#     anim = FuncAnimation(fig, animate, frames=range(Nt), interval=20, blit=True)
+#     ax.legend(loc="upper right")
+#     #plt.show()
+
 # Main
 def main() -> None:
     #ejercicioI()
     #ejercicioII()
     #ejercicioIII()
     #ejercicioIV()
-    ejercicioV()
+    #ejercicioV()
+    ejercicioVI()
 
 if __name__ == '__main__':
     main()
