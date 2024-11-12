@@ -1,0 +1,53 @@
+PRIMERO (2 personas)
+    - Ferrán 1
+    - Alejandro 1
+SEGUNDO (10 personas)
+    - Luis 1
+    - Álvaro 1
+    - Víctor 1
+    - Fran 1
+    - Adri 1
+    - Óscar 1
+    - Iker 1
+    - Moha 1
+    - Rodrigo 1
+    - Javier 1
+TERCERO (25 personas)
+    - Pablo Micó 1
+    - Marc Orts 1
+    - Celia Bañón 1
+    - Mario Carrión 1
+    - Fco. García 1
+    - David González 1
+    - Jorge Serrano 1
+    - Daniel Jordán 1
+    - Simón 1
+    - Manuel 1
+    - Gema Piedacusa 1
+    - Oscar Notario 1
+    - Miguel Núñez 1
+    - Jesús Moreno 2
+    - Ángel Manchón 1
+    - Carmen 1
+    - Inés 1
+    - Francisco 1
+    - María 1
+    - Antonio 1
+    - Gael 1
+    - Gonzalo Badías 1
+    - Pablo Sánchez 1
+CUARTO (9 personas)
+    - Yeray 2
+    - Josema 2
+    - Marco 2
+    - Jorge 2
+    - Nacho 2
+    - Rocío 2
+    - Lucas 2
+    - Víctor 2
+    - Vera 2
+    - Aroa 2
+GENTE QUE NO DICE EL CURSO (3 personas)
+    - Alexandre Salom 1
+    - Eric Lucas 1
+    - J. Luis Rodriguez 1

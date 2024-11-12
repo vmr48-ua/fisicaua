@@ -18,29 +18,23 @@ def landa(a):
     return log(2)/a
 
 def convertir_a_segundos(t12, unidad):
-    if unidad == 'y':    # Años a segundos
-        t12 *= 365.25 * 24 * 3600
-    elif unidad == 'd':  # Días a segundos
-        t12 *= 24 * 3600
-    elif unidad == 'h':  # Horas a segundos
-        t12 *= 3600
-    return t12
+    factor = {'y':365*24*3600, 'd':24*3600, 'h':3600, 's':1}
+    return t12 * factor[unidad]
 
 def Decay(N0,T12,t):
     λ = landa(T12)
     return N0 * exp(-λ*t)
 
 def Activity(T12,N):
-    λ = log(2)/T12
-    return λ * N
+    return landa(T12) * N
 
 # Tasks
 def task1(N0, T12_U235, T12_U238):
-    t = 1e9 # years
+    t = 1e10 # years
     
     print('Given a sample of Uranium isotopes of N0 = {} nuclei:'.format('%.E' % Decimal(N0)))
-    print('Remaining quantity of Uranium-235 after {} years: {} nuclei'.format('%.E' % Decimal(t),'%.2E' % Decimal(Decay(N0,T12_U235,t))))
-    print('Remaining quantity of Uranium-238 after {} years: {} nuclei'.format('%.E' % Decimal(t),'%.2E' % Decimal(Decay(N0,T12_U238,t))))
+    print('  Remaining quantity of Uranium-235 after {} years: {} nuclei'.format('%.E' % Decimal(t),'%.3E' % Decimal(Decay(N0,T12_U235,t))))
+    print('  Remaining quantity of Uranium-238 after {} years: {} nuclei'.format('%.E' % Decimal(t),'%.3E' % Decimal(Decay(N0,T12_U238,t))))
     
     return None
 
@@ -55,23 +49,30 @@ def task2(N0, T12_U235, T12_U238):
     decayU238     = np.array(Decay(N0,T12_U238,t))
     decayU235     = np.array(Decay(N0,T12_U235,t))
     
-    plt.figure(figsize=(10,5),tight_layout=True)
-    plt.suptitle('Uranium Isotopes Decay Curves\nfor $N_0=10^6$ nuclei')
+    plt.figure(figsize=(10,5), tight_layout=True)
+    plt.suptitle('Uranium Isotopes Decay Curves for $N_0=10^6$ nuclei')
     
     plt.subplot(1,2,1)
     plt.title('Logaritmic')
-    plt.plot(t_log,decayU238_log, label='$U^{238}$')
-    plt.plot(t_log,decayU235_log, label='$U^{235}$')
+    plt.plot(t_log,decayU238_log, alpha=0.5, linestyle='--', color='#01C0CC')
+    plt.plot(t_log,decayU235_log, alpha=0.5, linestyle='--', color='#FF7F0E')
+    plt.scatter(t_log,decayU238_log, label='$U^{238}$', marker='x', color='#01C0CC')
+    plt.scatter(t_log,decayU235_log, label='$U^{235}$', marker='x', color='#FF7F0E')
     plt.yscale("log")
     plt.xlabel('Years')
     plt.ylabel('Remaining Nuclei')
     plt.grid()
     plt.legend(loc='upper right')
     
-    plt.subplot(1,2,2)
+    ax = plt.subplot(1,2,2)
     plt.title('Exponential')
-    plt.plot(t,decayU238, label='$U^{238}$')
-    plt.plot(t,decayU235, label='$U^{235}$')
+    ax.yaxis.tick_right()
+    ax.yaxis.set_ticks_position('right')
+    ax.yaxis.set_label_position("right")
+    plt.plot(t,decayU238, alpha=0.5, linestyle='--', color='#01C0CC')
+    plt.plot(t,decayU235, alpha=0.5, linestyle='--', color='#FF7F0E')
+    plt.scatter(t,decayU238, label='$U^{238}$', marker='x', color='#01C0CC')
+    plt.scatter(t,decayU235, label='$U^{235}$', marker='x', color='#FF7F0E')
     plt.xlabel('Years')
     plt.ylabel('Remaining Nuclei')
     plt.grid()
@@ -84,29 +85,36 @@ def task3(N0, T12_U235, T12_U238):
     t = np.linspace(0,10**tmax,Nt)
     t_log = np.logspace(0,tmax,Nt)
     
-    activityU235 = Activity(T12_U235, Decay(N0, T12_U235, t))*365*24*60*60/1e3
+    activityU235 = Activity(T12_U235, Decay(N0, T12_U235, t))*365*24*60*60/1e3 # kiloBecquerels
     activityU238 = Activity(T12_U238, Decay(N0, T12_U238, t))*365*24*60*60/1e3
     activityU235_log = Activity(T12_U235, Decay(N0, T12_U235, t_log))*365*24*60*60
     activityU238_log = Activity(T12_U238, Decay(N0, T12_U238, t_log))*365*24*60*60
     
     
     plt.figure(figsize=(10,5),tight_layout=True)
-    plt.suptitle('Uranium Activity Curves\nfor $N_0=10^6$ nuclei')
+    plt.suptitle('Uranium Activity Curves for $N_0=10^6$ nuclei')
 
     plt.subplot(1,2,1)
     plt.title('Logaritmic')
-    plt.plot(t_log,activityU238_log, label='$U^{238}$')
-    plt.plot(t_log,activityU235_log, label='$U^{235}$')
+    plt.plot(t_log,activityU238_log, linestyle='--', alpha=0.5, color = '#01C0CC')
+    plt.plot(t_log,activityU235_log, linestyle='--', alpha=0.5, color = '#FF7F0E')
+    plt.scatter(t_log,activityU238_log, label='$U^{238}$', color = '#01C0CC', marker='x')
+    plt.scatter(t_log,activityU235_log, label='$U^{235}$', color = '#FF7F0E', marker='x')
     plt.xlabel('Years')
     plt.ylabel('Activity ($Bq$)')
     plt.yscale("log")
     plt.grid()
     plt.legend(loc='upper right')
     
-    plt.subplot(1,2,2)
+    ax = plt.subplot(1,2,2)
     plt.title('Exponential')
-    plt.plot(t,activityU238, label='$U^{238}$')
-    plt.plot(t,activityU235, label='$U^{235}$')
+    ax.yaxis.tick_right()
+    ax.yaxis.set_ticks_position('right')
+    ax.yaxis.set_label_position("right")
+    plt.plot(t,activityU238, linestyle='--', alpha=0.5, color = '#01C0CC')
+    plt.plot(t,activityU235, linestyle='--', alpha=0.5, color = '#FF7F0E')
+    plt.scatter(t,activityU238, label='$U^{238}$', color = '#01C0CC', marker='x')
+    plt.scatter(t,activityU235, label='$U^{235}$', color = '#FF7F0E', marker='x')
     plt.xlabel('Years')
     plt.ylabel('Activity ($kBq$)')
     plt.grid()
@@ -119,101 +127,60 @@ def task4(N0, T):
     T: [float], [(str, T12U, str), (str, T12Th, str), 
                 (str, T12U, str), (str, T12Th, str)]
     '''
-    lamda = [landa(convertir_a_segundos(isotopo[1], isotopo[2])) for isotopo in T]
+    lambdas = [landa(convertir_a_segundos(isotopo[1], isotopo[2])) for isotopo in T]
 
-    def sistema238(N, t):
-        N_U238, N_Th234 = N
-        dN_U238_dt = -lamda[0] * N_U238
-        dN_Th234_dt = lamda[0] * N_U238 - lamda[1] * N_Th234
-        return [dN_U238_dt, dN_Th234_dt]
+    def crear_sistema(lambdas):
+        def system(N, t):
+            dNdt = np.zeros(len(N))
+            for i in range(len(N)):                   # for isotope in chain
+                dNdt[i] = -lambdas[i] * N[i]          # decay of isotope i
+                if i + 1 < len(N):
+                    dNdt[i+1] += lambdas[i] * N[i]    # production of next isotope
+            return dNdt
+        return system
 
-    def sistema235(N, t):
-        N_U235, N_Th231 = N
-        dN_U235_dt = -lamda[2] * N_U235
-        dN_Th231_dt = lamda[2] * N_U235 - lamda[3] * N_Th231
-        return [dN_U235_dt, dN_Th231_dt]
+    def plot_nuclei_and_activity(isotopos, resultados, lambdas, t):
+        # Crear gráficas para el número de núcleos y la actividad de cada isótopo
+        for i, (name, _, _) in enumerate(isotopos):
+            fig, ax1 = plt.subplots(figsize=(10, 8))
 
-    t1 = np.linspace(0, 1.3e18, 100)
-    t2 = np.linspace(0, 1.3e17, 100)
+            # Plot del número de núcleos
+            ax1.plot(t, resultados[:, i], label=f"Número de núcleos de {name}", color=f"C{i}")
+            ax1.set_xlabel('Tiempo (s)')
+            ax1.set_ylabel('Número de núcleos')
+            ax1.grid()
 
-    solucion238 = odeint(sistema238, [N0, 0], t1) # U238 -> Th234
-    solucion235 = odeint(sistema235, [N0, 0], t2) # U235 -> Th231
+            # Plot de la actividad
+            ax2 = ax1.twinx()
+            actividad = lambdas[i] * resultados[:, i]
+            ax2.plot(t, actividad, label=f"Actividad de {name}", linestyle='--', color=f"C{i+1}")
+            ax2.set_ylabel('Actividad (desintegraciones por segundo)')
 
-    fig1, ax1 = plt.subplots(figsize=(10, 8))
-    line_U238, = ax1.plot([], [], label='N_U238', lw=2)
-    line_Th234, = ax1.plot([], [], label='N_Th234', lw=2)
+            # Leyendas y título
+            fig.legend(loc="upper right")
+            plt.title(f"Evolución del Número de Núcleos y Actividad de {name}")
 
-    ax1.set_xlim(0, t1[-1])
-    ax1.set_ylim(0, N0)
-    ax1.set_xlabel('Tiempo (s)')
-    ax1.set_ylabel('Número de núcleos')
-    ax1.legend(loc='upper right')
-    ax1.grid()
-
-    def init1():
-        line_U238.set_data([], [])
-        line_Th234.set_data([], [])
-        return line_U238, line_Th234
-
-    def animate1(i):
-        line_U238.set_data(t1[:i], solucion238[:i, 0])
-        line_Th234.set_data(t1[:i], solucion238[:i, 1])
-        return line_U238, line_Th234
-
-    anim1 = FuncAnimation(fig1, animate1, init_func=init1, frames=len(t1), interval=50, blit=True)
-    plt.show()
-    
-    fig2, ax2 = plt.subplots(figsize=(10, 8))
-    line_U235, = ax2.plot([], [], label='N_U235', lw=2)
-    line_Th231, = ax2.plot([], [], label='N_Th231', lw=2)
-
-    ax2.set_xlim(0, t2[-1])
-    ax2.set_ylim(0, N0)
-    ax2.set_xlabel('Tiempo (s)')
-    ax2.set_ylabel('Número de núcleos')
-    ax2.legend(loc='upper right')
-    ax2.grid()
-    
-    def init2():
-        line_U235.set_data([], [])
-        line_Th231.set_data([], [])
-        return line_U235, line_Th231
-
-    def animate2(i):
-        line_U235.set_data(t2[:i], solucion235[:i, 0])
-        line_Th231.set_data(t2[:i], solucion235[:i, 1])
-        return line_U235, line_Th231
-
-    anim2 = FuncAnimation(fig2, animate2, init_func=init2, frames=len(t2), interval=50, blit=True)
-    plt.show()
+    t_max = 1e10
+    sistema = crear_sistema(lambdas)
+    c_iniciales = [N0] + [0]*(len(T)-1)
+    t = np.linspace(0, t_max, 1000)
+    resultados = odeint(sistema, c_iniciales, t)
+    plot_nuclei_and_activity(T, resultados, lambdas, t)
 
     return None
 
 def task5(N0, T):
     percentages = [0.9, 0.5, 0.1]
-    T12_isotopes = T.copy()
+    unidades = {'y':'años', 'h':'horas', 'd':'días', 's':'segundos'}
     
-    for T12_isotope in T12_isotopes:
-        print()
+    for nombre, T12, unidad in T:
+        print(f"\nDecaimiento del {nombre}")
         for p in percentages:
-            t = 1
-            N_new = N0 * p + 1
-            while N_new > N0 * p:
-                N_new = Decay(N0, T12_isotope[1], t)
-                t *= 1.00006
-            
-            isotope_name = T12_isotope[0]
-            unit = T12_isotope[2]
-            
-            if unit == 'y':  # Años
-                print('Decaimiento del {} al {}%: {} años'.format(
-                    isotope_name, p * 100, '%.2E' % Decimal(t)))
-            elif unit == 'h':  # Horas
-                print('Decaimiento del {} al {}%: {} horas'.format(
-                    isotope_name, p * 100, '%.2E' % Decimal(t)))
-            elif unit == 'd':  # Días
-                print('Decaimiento del {} al {}%: {} días'.format(
-                    isotope_name, p * 100, '%.2E' % Decimal(t)))
+            t, N_new = 1, N0*p + 1 # +1 para que entre en el while
+            while N_new > N0*p:
+                N_new = Decay(N0, T12, t)
+                t *= 1.00006 # de esta forma sea la unidad que sea el rango es razonable
+            print(f"  al {p*100}%: {Decimal(t):.3E} {unidades[unidad]}")
 
 def main() -> None:  
     N0 = 1e6                    # nuclii
@@ -226,11 +193,11 @@ def main() -> None:
     isotopos = [('Uranio 238', T12_U238, 'y'), ('Torio 234', T12_Th234, 'd'),
                 ('Uranio 235', T12_U235, 'y'), ('Torio 231', T12_Th231, 'h')]
 
-    #task1(N0, T12_U235, T12_U238)
-    #task2(N0, T12_U235, T12_U238)
-    #task3(N0, T12_U235, T12_U238)
-    task4(N0, isotopos)
-    #task5(N0, isotopos)
+    # task1(N0, T12_U235, T12_U238)
+    task2(N0, T12_U235, T12_U238)
+    task3(N0, T12_U235, T12_U238)
+    # task4(N0, (isotopos[0],isotopos[2])) # revisar
+    # task5(N0, isotopos)
 
     plt.show()
 

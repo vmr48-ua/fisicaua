@@ -18,15 +18,17 @@ def SemiEmpirical_MassFormula(Z,A) -> float:
     a_s = 18.3
     a_c = 0.714
     a_a = 23.2
-    if A%2 == 0:
-        if Z % 2 == 0:
-            a_p = 11.2/sqrt(A)
+    if A % 2 == 0:
+        if Z % 2 == 0 and (A - Z) % 2 == 0:  # Z, N even
+            a_p = 11.2 / sqrt(A)
+        elif Z % 2 == 1 and (A - Z) % 2 == 1:  # Z, N odd
+            a_p = -11.2 / sqrt(A)
         else:
-            a_p = -11.2/sqrt(A)
+            a_p = 0
     else:
         a_p = 0
         
-    B = ( a_v*A
+    B =  (a_v*A
         - a_s*A**(2/3)
         - a_c*Z**2/A**(1/3)
         - a_a*(A-2*Z)**2/A 
@@ -161,16 +163,12 @@ def main() -> None:
     
     # Final Question
     '''
-    We calculated that the total binding energy of U238 was 1798.898 MeV and that
-    the energy releassed when it undergoes fission was 140.553 MeV. This energy 
-    release represents a 7.81% of its total binding energy.
-    
     In nuclear reactors, this energy is released in a controlled manner to heat water, 
     produce steam which move turbines which then generate electricity. The fission process
-    keeps going thanks to chain reactions, where neutrons emmited from a fission event
-    start new fissions on other fuel atoms. 
+    keeps going thanks to neutrons emmited from a fission event that start new fissions 
+    on other fuel atoms. 
 
-    In atomic bombs, the essential process is the same but the controlled part is lost.
+    In atomic bombs, the process is the same but the controlled part is lost.
     Uncontrolled chain reactions release a large amount of energy in a short time, provoking
     an explosion.
 
@@ -182,4 +180,4 @@ def main() -> None:
     plt.show()
 
 if __name__ == '__main__':
-    main()
+    main() 

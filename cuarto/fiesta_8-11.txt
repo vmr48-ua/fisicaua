@@ -1,0 +1,59 @@
+PRIMERO (2 personas)
+    - Ferrán            1.Vi
+    - Alejandro         1.A
+SEGUNDO (10 personas)
+    - Luis              1.Vi
+    - Álvaro            1.Vi
+    - Víctor            1.Vi
+    - Fran              1.Vi
+    - Adri              1.Vi
+    - Óscar             1.Vi
+    - Iker              1.A
+    - Moha              1.A
+    - Rodrigo           1.A
+    - Javier            1.A
+TERCERO (25 personas)
+    - Pablo Micó        1.Ve
+    - Marc Orts         1.Ve
+    - Celia Bañón       1.Ve
+    - Mario Carrión     1.Ve
+    - Fco. García       1.Ve
+    - David González    1.Ve
+    - Jorge Serrano     1.Ve
+    - Daniel Jordán     1.Ve
+    - Simón             1.Ve
+    - Manuel            1.Ve
+    - Gema Piedacusa    1.Ve
+    - Oscar Notario     1.Ve
+    - Miguel Núñez      1.Ve
+    - Jesús Moreno      2.Ve
+    - Ángel Manchón     1.Ve
+    - Carmen            1.Vi
+    - Inés              1.Vi
+    - Francisco         1.Vi
+    - María             1.Vi
+    - Antonio           1.Vi
+    - Gael              1.A
+    - Gonzalo Badías    1.Vi
+    - Pablo Sánchez     1.Vi
+CUARTO (9 personas)
+    - Yeray             2.A
+    - Josema            2.A
+    - Marco             2.A
+    - Jorge             2.A
+    - Nacho             2.A
+    - Rocío             2.A
+    - Lucas             2.A
+    - Víctor            2.Vi
+    - Vera              2.Ve
+    - Aroa              2.A
+GENTE QUE NO DICE EL CURSO (3 personas)
+    - Alexandre Salom   1.Ve
+    - Eric Lucas        1.Ve
+    - J. Luis Rodriguez 1.Ve
+
+Vi = 14*8 + 1*14 = 126€
+Ve = 14*8 + 2*14 = 140€
+A  = 6*8  + 8*14 = 160€
+
+Total = 426€
