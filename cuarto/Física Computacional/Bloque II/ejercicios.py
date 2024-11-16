@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 from numpy import sqrt, sin, cos
+from scipy.integrate import odeint, solve_ivp
 
 '''
 EJERCICIOS FÍSICA COMPUTACIONAL - BLOQUE II
@@ -158,13 +159,170 @@ def ejercicioI() -> None:
     mostrar_red_3d(posiciones_mejor, tipo_red)
 
 def ejercicioII() -> None:
+    # Calcular aceleración
     def aceleración(r):
         x, y = r
         R = sqrt(x**2 + y**2)
-        ax = -GM*x / R**3
-        ay = -GM*y / R**3
+        ax = -GM * x / R**3
+        ay = -GM * y / R**3
         return ax, ay
+
+    # Función de derivadas para odeint y solve_ivp
+    def derivadas(r, t, *args):
+        x, y, vx, vy = r
+        R = sqrt(x**2 + y**2)
+        ax = -GM * x / R**3
+        ay = -GM * y / R**3
+        return [vx, vy, ax, ay]
     
+    def simular_odeint():
+        condiciones_iniciales = [x0, y0, vx0, vy0]
+        sol = odeint(derivadas, condiciones_iniciales, t_array)
+        x_odeint, y_odeint, vx_odeint, vy_odeint = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3]
+        energia_odeint = 0.5 * m * (vx_odeint**2 + vy_odeint**2) - GM * m / np.sqrt(x_odeint**2 + y_odeint**2)
+        return x_odeint, y_odeint, energia_odeint
+
+    def simular_solve_ivp():
+        condiciones_iniciales = [x0, y0, vx0, vy0]
+        sol = solve_ivp(lambda t, r: derivadas(r, t), (0, t_max), condiciones_iniciales, t_eval=t_array)
+        return sol.y[0], sol.y[1]
+
+    def simular(metodo, plot=True):
+        x, y, vx, vy = x0, y0, vx0, vy0
+        ax, ay = aceleración([x, y])
+        x_array, y_array, r_array = [],[],[]
+        T_array, U_array, E_array = [],[],[]
+
+        for _ in t_array:
+            T = 0.5*m*(vx**2 + vy**2)
+            U = -GM*m/sqrt(x**2 + y**2)
+            T_array.append(T)
+            U_array.append(U)
+            E_array.append(T+U)
+            
+            x_array.append(x)
+            y_array.append(y)
+            r_array.append(sqrt(x**2 + y**2))
+            
+            if metodo == 'euler':
+                ax, ay = aceleración([x, y])
+                x  += vx*dt
+                y  += vy*dt
+                vx += ax*dt
+                vy += ay*dt
+
+            elif metodo == 'verlet':
+                x_nuevo = x + vx*dt + 0.5*ax*dt**2
+                y_nuevo = y + vy*dt + 0.5*ay*dt**2
+                ax_nueva, ay_nueva = aceleración([x_nuevo, y_nuevo])
+                vx += 0.5*(ax + ax_nueva)*dt
+                vy += 0.5*(ay + ay_nueva)*dt
+                x, y   = x_nuevo,  y_nuevo
+                ax, ay = ax_nueva, ay_nueva
+
+            elif metodo == 'rk2':
+                ax, ay = aceleración([x, y])
+                k1x  = vx*dt
+                k1y  = vy*dt
+                k1vx = ax*dt
+                k1vy = ay*dt
+                
+                k2x  = (vx + 0.5*k1vx)*dt
+                k2y  = (vy + 0.5*k1vy)*dt
+                ax2, ay2 = aceleración([x + 0.5*k1x, y + 0.5*k1y])
+                k2vx = ax2*dt
+                k2vy = ay2*dt
+
+                x  += k2x
+                y  += k2y
+                vx += k2vx
+                vy += k2vy
+
+            elif metodo == 'rk4':
+                ax, ay = aceleración([x, y])
+                
+                # Paso 1
+                k1x =  vx*dt
+                k1y =  vy*dt
+                k1vx = ax*dt
+                k1vy = ay*dt
+                
+                # Paso 2
+                k2x  = (vx + 0.5*k1vx)*dt
+                k2y  = (vy + 0.5*k1vy)*dt
+                ax2, ay2 = aceleración([x + 0.5*k1x, y + 0.5*k1y])
+                k2vx = ax2*dt
+                k2vy = ay2*dt
+                
+                # Paso 3
+                k3x  = (vx + 0.5*k2vx)*dt
+                k3y  = (vy + 0.5*k2vy)*dt
+                ax3, ay3 = aceleración([x + 0.5*k2x, y + 0.5*k2y])
+                k3vx = ax3*dt
+                k3vy = ay3*dt
+                
+                # Paso 4
+                k4x = (vx + k3vx)*dt
+                k4y = (vy + k3vy)*dt
+                ax4, ay4 = aceleración([x + k3x, y + k3y])
+                k4vx = ax4*dt
+                k4vy = ay4*dt
+                
+                x  += (k1x  + 2*k2x  + 2*k3x  + k4x) /6
+                y  += (k1y  + 2*k2y  + 2*k3y  + k4y) /6
+                vx += (k1vx + 2*k2vx + 2*k3vx + k4vx)/6
+                vy += (k1vy + 2*k2vy + 2*k3vy + k4vy)/6
+        
+        # Gráficas
+        if plot:
+            fig, axs = plt.subplots(2, 3, figsize=(11, 8))
+            plt.suptitle(f'Método {metodo}',fontsize=20,weight='bold')
+            plt.tight_layout(pad=2.)
+            fig.subplots_adjust(hspace=0.3, wspace=-.1)
+
+            # órbita
+            h, k = np.mean(x_array), np.mean(y_array)  # centro de la elipse
+            theta = np.linspace(0, 2 * np.pi, 100)
+
+            ax_orbita = fig.add_subplot(1, 2, 1)
+            ax_orbita.set_aspect('equal')
+            ax_orbita.plot(x_array, y_array, label='Órbita Terrestre', c='blue')
+            ax_orbita.plot(x_array[0] * np.cos(theta), x_array[0] * np.sin(theta), label='Círculo de radio = perihelio', c='orange')
+            ax_orbita.scatter(0, 0, marker='x', c='orange', label='Centro del círculo')
+            ax_orbita.scatter(h, k, marker='x', c='blue', label='Centro de la elipse')
+            ax_orbita.set_xlabel("x (m)")
+            ax_orbita.set_ylabel("y (m)")
+            ax_orbita.set_title(f"Trayectoria de la Tierra alrededor del Sol")
+            ax_orbita.legend(loc=(0.28,0.65))
+            ax_orbita.grid()
+
+            # trayectoria
+            axs[0, 2].plot(t_array, r_array, label="Radio orbital")
+            axs[0, 2].set_xlabel("Tiempo (s)")
+            axs[0, 2].set_ylabel("Radio (m)")
+            axs[0, 2].set_title("Radio en función del tiempo")
+            axs[0, 2].legend(loc='upper right')
+            axs[0, 2].grid()
+
+            # energías
+            axs[1, 2].plot(t_array, T_array, label="Energía cinética")
+            axs[1, 2].plot(t_array, U_array, label="Energía potencial")
+            axs[1, 2].plot(t_array, E_array, label="Energía total")
+            axs[1, 2].set_xlabel("Tiempo (s)")
+            axs[1, 2].set_ylabel("Energía (J)")
+            axs[1, 2].set_title("Energía en función del tiempo")
+            axs[1, 2].legend(loc='best')
+            axs[1, 2].grid()
+
+            axs[0, 0].remove()
+            axs[0, 1].remove()
+            axs[1, 0].remove()
+            axs[1, 1].remove()
+
+            plt.show()
+        
+        return E_array
+
     # Constantes
     G = 6.67384e-11 # m^3 kg^-1 s^-2
     M = 1.9891e30   # kg (sol)
@@ -172,99 +330,115 @@ def ejercicioII() -> None:
     GM = G*M
 
     # Condiciones Iniciales
-    x = 1.4719e11  # m (perihelio)
-    y = 0          # m
-    vx = 0         # m/s
-    vy = 3.0287e4  # m/s (tangencial)
-    ax, ay = aceleración([x, y]) # m/s^2
+    x0 = 1.4719e11  # m (perihelio)
+    y0 = 0          # m
+    vx0 = 0         # m/s
+    vy0 = 3.0287e4  # m/s (tangencial)
 
     # Tiempo de simulación
     t_max = 5*365*24*3600 # 5y en s
     dt = 3600.            # 1h en s
     t_array = np.arange(0, t_max, dt)
-    
-    x_array, y_array, r_array = [],[],[]
-    T_array, U_array, E_array = [],[],[]
-    
-    metodo = input('Introduce el método (Verlet (\'v\'), Euler (\'e\'), Runge Kutta II (\'rk2\')): ')
-    t = 0
-    while t < t_max:
-        x_array.append(x)
-        y_array.append(y)
-        r_array.append(sqrt(x**2 + y**2))
-        
-        T = 0.5*m*(vx**2 + vy**2)
-        U = -GM*m / sqrt(x**2 + y**2)
-        T_array.append(T)
-        U_array.append(U)
-        E_array.append(T+U)
-        
-        if metodo == 'v': # Verlet
-            x = x + vx*dt + 0.5*ax*dt**2
-            y = y + vy*dt + 0.5*ay*dt**2
-            ax_nueva, ay_nueva = aceleración([x, y])
-            vx += 0.5 * (ax+ax_nueva)*dt
-            vy += 0.5 * (ay+ay_nueva)*dt
-            ax, ay = ax_nueva, ay_nueva
-        elif metodo == 'e': # Euler
-            ax, ay = aceleración([x, y])
-            x = x + vx*dt
-            y = y + vy*dt
-            vx = vx + ax*dt
-            vy = vy + ay*dt
-        elif metodo == 'rk2': # Runge Kutta 2
-            # paso 1
-            ax, ay = aceleración([x, y])
-            x_mid = x + 0.5*vx*dt
-            y_mid = y + 0.5*vy*dt
-            vx_mid = vx + 0.5*ax*dt
-            vy_mid = vy + 0.5*ay*dt
-            # paso 2
-            ax_mid, ay_mid = aceleración([x_mid, y_mid])
-            x = x + vx_mid*dt
-            y = y + vy_mid*dt
-            vx = vx + ax_mid*dt
-            vy = vy + ay_mid*dt
-        else:
-            raise Exception("Usa 'Verlet', 'Euler', o 'RK2'")
-        t += dt
-    
-    h, k = np.mean(x_array), np.mean(y_array) # Centro
-    theta = np.linspace(0, 2*np.pi, 100)
 
-    plt.figure(figsize=(10,10))
-    plt.axes().set_aspect('equal')
-    plt.plot(x_array, y_array, label='Órbita Terrestre', c='blue')
-    plt.plot(x_array[0]*cos(theta), x_array[0]*sin(theta), label='Círculo de radio = perihelio', c='orange')
-    plt.scatter(0,0,marker='x',c='orange',label='Centro del círculo')
-    plt.scatter(h,k,marker='x',c='blue',label='Centro de la elipse')
-    plt.xlabel("x (m)")
-    plt.ylabel("y (m)")
-    plt.title("Trayectoria de la Tierra alrededor del Sol")
-    plt.legend(loc=(0.35,0.7))
-    plt.grid()
+    # Métodos implementados
+    simular('euler')
+    simular('verlet')
+    simular('rk2')
+    simular('rk4')
     
-    plt.figure()
-    plt.plot(t_array, r_array, label="Radio orbital")
-    plt.xlabel("Tiempo (s)")
-    plt.ylabel("Radio (m)")
-    plt.title("Radio en función del tiempo")
-    plt.legend(loc='upper right')
-    plt.grid()
+    # Métodos de librerías
+    x_odeint, y_odeint, _ = simular_odeint()
+    x_solve_ivp, y_solve_ivp = simular_solve_ivp()
+    theta = np.linspace(0, 2 * np.pi, 100)
     
-    plt.figure()
-    plt.plot(t_array, T_array, label="Energía cinética")
-    plt.plot(t_array, U_array, label="Energía potencial")
-    plt.plot(t_array, E_array, label="Energía total")
-    plt.xlabel("Tiempo (s)")
-    plt.ylabel("Energía (J)")
-    plt.title("Energía en función del tiempo")
-    plt.legend(loc=(0.62,0.72))
-    plt.grid()
+    fig, ax_orbita = plt.subplots(figsize=(8,8))
+    ax_orbita.set_aspect('equal')
+    ax_orbita.plot(x_odeint, y_odeint, label='Trayectoria con Odeint', c='blue')
+    ax_orbita.plot(x_solve_ivp, y_solve_ivp, label='Trayectoria con SolveIvp', c='red')
     
+    ax_orbita.scatter(0, 0, marker='x', c='orange', label='Centro del círculo')
+    ax_orbita.set_xlabel("x (m)")
+    ax_orbita.set_ylabel("y (m)")
+    ax_orbita.set_title(f"Trayectoria de la Tierra alrededor del Sol con Odeint y SolveIVP")
+    ax_orbita.legend(loc=(0.28,0.65))
+    ax_orbita.grid()
     plt.show()
     
-    return None
+    # Vemos que solveivp es nefasto, solo voy a comparar la energía con odeint
+    
+    ##########################
+    # COMPARATIVA ENERGÉTICA #
+    ##########################
+    # Tiempo de simulación para la comparativa energética
+    t_max = 50*365*24*3600 # 50y en s
+    dt = 3600*12.          # 12h en s
+    t_array = np.arange(0, t_max, dt)
+
+    energia_euler =  simular('euler',  plot=False)
+    energia_verlet = simular('verlet', plot=False)
+    energia_rk2 =    simular('rk2',    plot=False)
+    energia_rk4 =    simular('rk4',    plot=False)
+    _, _, energia_odeint = simular_odeint()
+
+    fig, axs = plt.subplots(1, 2, figsize=(14, 8))
+    plt.subplots_adjust(wspace=0.5)
+    plt.suptitle('Conservación de la energía',fontsize=20,weight='bold')
+
+    axs[0].plot(t_array/(365*24*3600), energia_euler,  label='Euler',          c='#d62728')
+    axs[0].plot(t_array/(365*24*3600), energia_verlet, label='Verlet',         c='#1f77b4')
+    axs[0].plot(t_array/(365*24*3600), energia_rk2,    label='Runge-Kutta II', c='#ff7f0e')
+    axs[0].plot(t_array/(365*24*3600), energia_rk4,    label='Runge-Kutta IV', c='#2ca02c')
+    axs[0].plot(t_array/(365*24*3600), energia_odeint, label='Odeint',         c='#9467bd')
+    axs[0].set_xlabel('Tiempo (años)')
+    axs[0].set_ylabel('Energía total (J)')
+    axs[0].set_title('Comparación con el método de Euler')
+    axs[0].legend()
+    axs[0].grid(True)
+
+    axs[1].plot(t_array/(365*24*3600), energia_verlet, label='Verlet',         c='#1f77b4')
+    axs[1].plot(t_array/(365*24*3600), energia_rk2,    label='Runge-Kutta II', c='#ff7f0e')
+    axs[1].plot(t_array/(365*24*3600), energia_rk4,    label='Runge-Kutta IV', c='#2ca02c')
+    axs[1].plot(t_array/(365*24*3600), energia_odeint, label='Odeint',         c='#9467bd')
+    axs[1].set_xlabel('Tiempo (años)')
+    axs[1].set_ylabel('Energía total (J)')
+    axs[1].set_title('Conservación de la energía en métodos más precisos')
+    axs[1].legend()
+    axs[1].grid(True)
+
+    plt.show()
+
+    """
+    El método de Euler, de primer orden, es inexacto para simulaciones
+    con largo plazo temporal, por la acumulación de errores que llevan
+    a una ganancia de energía. Esto hace que la trayectoria se desvíe
+    significativamente, provocando que la órbita se vuelva espiral,
+    alejándose del Sol poco a poco.
+
+    El método de Verlet, es una mejora en lo que a la conservación de
+    la energía se refiere. Conserva la energía en un sentido medio
+    (la energía media al principio y al final es la misma aunque tenga
+    pequeñas oscilaciones). Aunque la energía fluctúa, lo hace de forma
+    acotada y sin desviarse cumulativamente como lo hace Euler.
+
+    El método de Runge-Kutta de segundo orden (RK2), es una mejora
+    respecto al de Euler, pero sigue teniendo problemas cuando se amplía
+    el rango temporal, ya que acumula errores en la energía total aunque
+    sea a una razón menor que la que acumula Euler. Es casi igual de
+    simple que el método de Euler ganando en algo de precisión, a la vez
+    que mantiene el balance entre costo computacional y exactitud.
+
+    El método de Runge-Kutta de cuarto orden (RK4), mejora mucho en lo
+    que a la conservación de la energía se refiere. Al tener la trayectoria
+    con un error de orden o(dt^4), las fluctuaciones en la energía total
+    son mucho menores comparadas con los otros métodos. Esto se debe a que
+    considera los efectos de la aceleración en diferentes puntos de un 
+    intervalo de temporal, promediando el efecto para obtener una mejor
+    predicción de la posición y velocidad futuras.
+
+    En conclusión, RKIV es el método más adecuado para la simulación de
+    órbitas en lo que a la conservación de la energía se refiere. Odeint 
+    se le acerca aunque es muy extraño cómo oscila su cálculo de la energía.
+    """
 
 
 def main() -> None:

@@ -28,6 +28,7 @@ def Decay(N0,T12,t):
 def Activity(T12,N):
     return landa(T12) * N
 
+
 # Tasks
 def task1(N0, T12_U235, T12_U238):
     t = 1e10 # years
@@ -121,66 +122,68 @@ def task3(N0, T12_U235, T12_U238):
     plt.legend(loc='upper right')
     return None
 
-def task4(N0, T):
-    '''
-    N0: int, nº de núcleos de uranio inicial
-    T: [float], [(str, T12U, str), (str, T12Th, str), 
-                (str, T12U, str), (str, T12Th, str)]
-    '''
-    lambdas = [landa(convertir_a_segundos(isotopo[1], isotopo[2])) for isotopo in T]
-
-    def crear_sistema(lambdas):
-        def system(N, t):
-            dNdt = np.zeros(len(N))
-            for i in range(len(N)):                   # for isotope in chain
-                dNdt[i] = -lambdas[i] * N[i]          # decay of isotope i
-                if i + 1 < len(N):
-                    dNdt[i+1] += lambdas[i] * N[i]    # production of next isotope
-            return dNdt
-        return system
-
-    def plot_nuclei_and_activity(isotopos, resultados, lambdas, t):
-        # Crear gráficas para el número de núcleos y la actividad de cada isótopo
-        for i, (name, _, _) in enumerate(isotopos):
-            fig, ax1 = plt.subplots(figsize=(10, 8))
-
-            # Plot del número de núcleos
-            ax1.plot(t, resultados[:, i], label=f"Número de núcleos de {name}", color=f"C{i}")
-            ax1.set_xlabel('Tiempo (s)')
-            ax1.set_ylabel('Número de núcleos')
-            ax1.grid()
-
-            # Plot de la actividad
-            ax2 = ax1.twinx()
-            actividad = lambdas[i] * resultados[:, i]
-            ax2.plot(t, actividad, label=f"Actividad de {name}", linestyle='--', color=f"C{i+1}")
-            ax2.set_ylabel('Actividad (desintegraciones por segundo)')
-
-            # Leyendas y título
-            fig.legend(loc="upper right")
-            plt.title(f"Evolución del Número de Núcleos y Actividad de {name}")
-
-    t_max = 1e10
-    sistema = crear_sistema(lambdas)
-    c_iniciales = [N0] + [0]*(len(T)-1)
-    t = np.linspace(0, t_max, 1000)
-    resultados = odeint(sistema, c_iniciales, t)
-    plot_nuclei_and_activity(T, resultados, lambdas, t)
-
-    return None
+def task4(N0, isotopos):
+    isotopos_seg = [(name, convertir_a_segundos(T12, unidad)) for name, T12, unidad in isotopos]
+    
+    t_max = convertir_a_segundos(1e10, 'y')
+    t_points = 1000
+    t = np.linspace(0, t_max, t_points)
+    
+    decays = {}
+    activities = {}
+    
+    for i, (name, T12) in enumerate(isotopos_seg):
+        if name == 'Uranium 238':
+            daughter_name = 'Torium 234'
+        elif name == 'Uranium 235':
+            daughter_name = 'Torium 231'
+        else:
+            continue
+        
+        N_parent = Decay(N0, T12, t)
+        N_daughter = N0 - N_parent
+        A_parent = Activity(T12, N_parent)
+        A_daughter = Activity(T12, N_daughter)
+        
+        decays[name] = N_parent
+        decays[daughter_name] = N_daughter
+        activities[name] = A_parent
+        activities[daughter_name] = A_daughter
+    
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    for name, N in decays.items():
+        plt.plot(t / convertir_a_segundos(1, 'y'), N, label=name)
+    plt.xlabel('Time (years)')
+    plt.ylabel('Number of Nuclei')
+    plt.title('Number of Nuclei Over Time')
+    plt.legend()
+    plt.grid()
+    
+    plt.subplot(1, 2, 2)
+    for name, A in activities.items():
+        plt.plot(t / convertir_a_segundos(1, 'y'), A, label=name)
+    plt.xlabel('Time (years)')
+    plt.ylabel('Activity (Bq)')
+    plt.title('Activity Over Time')
+    plt.legend()
+    plt.grid()
+    
+    plt.tight_layout()
+    plt.show()
 
 def task5(N0, T):
     percentages = [0.9, 0.5, 0.1]
-    unidades = {'y':'años', 'h':'horas', 'd':'días', 's':'segundos'}
+    unidades = {'y':'years', 'h':'hours', 'd':'days', 's':'seconds'}
     
     for nombre, T12, unidad in T:
-        print(f"\nDecaimiento del {nombre}")
+        print(f"\nDecay of {nombre}")
         for p in percentages:
             t, N_new = 1, N0*p + 1 # +1 para que entre en el while
             while N_new > N0*p:
                 N_new = Decay(N0, T12, t)
                 t *= 1.00006 # de esta forma sea la unidad que sea el rango es razonable
-            print(f"  al {p*100}%: {Decimal(t):.3E} {unidades[unidad]}")
+            print(f"  to {p*100}%: {Decimal(t):.3E} {unidades[unidad]}")
 
 def main() -> None:  
     N0 = 1e6                    # nuclii
@@ -190,14 +193,14 @@ def main() -> None:
     T12_Th231 = 25.52           # horas
     T12_Th234 = 24.1            # dias
     
-    isotopos = [('Uranio 238', T12_U238, 'y'), ('Torio 234', T12_Th234, 'd'),
-                ('Uranio 235', T12_U235, 'y'), ('Torio 231', T12_Th231, 'h')]
+    isotopos = [('Uranium 238', T12_U238, 'y'), ('Torium 234', T12_Th234, 'd'),
+                ('Uranium 235', T12_U235, 'y'), ('Torium 231', T12_Th231, 'h')]
 
-    # task1(N0, T12_U235, T12_U238)
+    task1(N0, T12_U235, T12_U238)
     task2(N0, T12_U235, T12_U238)
     task3(N0, T12_U235, T12_U238)
-    # task4(N0, (isotopos[0],isotopos[2])) # revisar
-    # task5(N0, isotopos)
+    task4(N0, isotopos)
+    task5(N0, isotopos)
 
     plt.show()
 
